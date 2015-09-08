@@ -1,0 +1,19 @@
+{
+  "slug": "elm",
+  "language": "Elm",
+  "repository": "https://github.com/exercism/xelm",
+  "active": false,
+  "test_pattern": "TODO",
+  "problems": [
+
+  ],
+  "deprecated": [
+
+  ],
+  "ignored": [
+    "bin"
+  ],
+  "foregone": [
+
+  ]
+}
