@@ -16,7 +16,9 @@
         "./exercises/difference-of-squares",
         "./exercises/anagram",
         "./exercises/raindrops",
-        "./exercises/triangle"
+        "./exercises/triangle",
+        "Leap",
+        "Accumulate"
     ],
     "exposed-modules": [],
     "dependencies": {

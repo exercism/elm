@@ -19,7 +19,8 @@
      "run-length-encoding"
   ],
   "deprecated": [
-
+    "Leap",
+    "Accumulate"
   ],
   "ignored": [
     "bin",
