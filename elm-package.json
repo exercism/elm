@@ -18,7 +18,8 @@
         "./exercises/raindrops",
         "./exercises/triangle",
         "Leap",
-        "Accumulate"
+        "Accumulate",
+        "Sublist"
     ],
     "exposed-modules": [],
     "dependencies": {
