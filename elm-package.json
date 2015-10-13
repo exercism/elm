@@ -26,7 +26,8 @@
         "Strain",
         "SpaceAge",
         "Anagram",
-        "NucleotideCount"
+        "NucleotideCount",
+        "PhoneNumber"
     ],
     "exposed-modules": [],
     "dependencies": {
