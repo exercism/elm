@@ -22,7 +22,8 @@
         "RNATranscription",
         "Sublist",
         "Bob",
-        "sumOfMultiples"
+        "SumOfMultiples",
+        "Strain"
     ],
     "exposed-modules": [],
     "dependencies": {
