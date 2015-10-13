@@ -5,10 +5,8 @@ import String
 sublist : List a -> List a -> String
 sublist alist blist =
   if alist == blist then "Equal" else
-    if alist == [] then "Sublist" else
-      if blist == [] then  "Superlist" else
-        if inList alist blist then "Superlist" else
-          if inList blist alist then "Sublist" else "Unequal"
+    if inList alist blist then "Superlist" else
+      if inList blist alist then "Sublist" else "Unequal"
 
 inList : List a -> List a -> Bool
 inList alist blist =
