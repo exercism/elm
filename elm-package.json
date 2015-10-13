@@ -19,7 +19,10 @@
         "./exercises/triangle",
         "Leap",
         "Accumulate",
-        "Sublist"
+        "RNATranscription",
+        "Sublist",
+        "Bob",
+        "sumOfMultiples"
     ],
     "exposed-modules": [],
     "dependencies": {
