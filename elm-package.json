@@ -27,7 +27,8 @@
         "SpaceAge",
         "Anagram",
         "NucleotideCount",
-        "PhoneNumber"
+        "PhoneNumber",
+        "GradeSchool"
     ],
     "exposed-modules": [],
     "dependencies": {
