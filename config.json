@@ -5,13 +5,15 @@
   "active": false,
   "test_pattern": "TODO",
   "problems": [
-
+     "hello_world"
   ],
   "deprecated": [
 
   ],
   "ignored": [
     "bin",
+    "elm-stuff",
+    "node_modules",
     "docs"
   ],
   "foregone": [

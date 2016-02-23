@@ -1,0 +1,9 @@
+module HelloWorld where
+
+helloworld : Maybe String -> String
+helloworld name =
+  case name of
+    Just name ->
+       "Hello, " ++ name ++ "!"
+    Nothing ->
+      "Hello, World!"

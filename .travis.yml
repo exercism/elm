@@ -1,5 +1,17 @@
 ---
 language: bash
+
+
+sudo: false
+
+install:
+  - nvm install 0.12
+  - nvm use 0.12
+  - npm install -g elm@0.16.0
+  - elm package install -y
+  - npm install elm-test
+
 script:
-- bin/fetch-configlet
-- bin/configlet .
+  - bin/fetch-configlet
+  - bin/configlet .
+  - bin/build.sh
