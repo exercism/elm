@@ -5,7 +5,8 @@
     "license": "BSD3",
     "source-directories": [
         ".",
-        "./exercises/hello_world"
+        "./exercises/hello_world",
+        "./exercises/bob"
     ],
     "exposed-modules": [],
     "dependencies": {
