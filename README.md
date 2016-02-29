@@ -1,4 +1,4 @@
-# xElixir
+# xElm
 ![build status](https://travis-ci.org/exercism/xelm.svg?branch=master)
 
 Exercism Exercises in Elm
@@ -38,7 +38,7 @@ Please keep the following in mind:
 
 - Test files should use the following format:
 
-```elixir
+```elm
 import Task
 import Console
 import ElmTest exposing (..)
