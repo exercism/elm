@@ -6,6 +6,7 @@
   "test_pattern": "TODO",
   "problems": [
      "hello_world",
+     "leap",
      "bob"
   ],
   "deprecated": [
