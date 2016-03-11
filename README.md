@@ -59,7 +59,7 @@ port runner =
 
  - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
 
- - If you are submitting a new exercise, be sure to add it to the appropriate place in `config.json`. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
+ - If you are submitting a new exercise, be sure to add it to the appropriate place in `config.json` and `elm-package.json` files. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
 
 ## License
 
