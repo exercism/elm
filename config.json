@@ -9,6 +9,7 @@
      "leap",
      "pangram",
      "rna-transcription",
+     "hamming",
      "bob"
   ],
   "deprecated": [
