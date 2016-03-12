@@ -1,8 +1,7 @@
-First, execute the following:
+Run tests with soemthing like the following command:
 ```bash
-$ elm-reactor
+$ elm-test exercises/bob/BobTests.elm
 ```
-Then go to `localhost:8000` in your browser and navigate to your test file.
 
 ## Making Your First Elm Module
 
