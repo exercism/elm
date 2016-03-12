@@ -4,14 +4,7 @@
     "repository": "https://github.com/exercism/xelm.git",
     "license": "BSD3",
     "source-directories": [
-        ".",
-        "./exercises/hello_world",
-        "./exercises/leap",
-        "./exercises/pangram",
-        "./exercises/rna-transcription",
-        "./exercises/hamming",
-        "./exercises/word-count",
-        "./exercises/bob"
+        "."
     ],
     "exposed-modules": [],
     "dependencies": {

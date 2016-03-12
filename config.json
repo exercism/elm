@@ -10,6 +10,7 @@
      "pangram",
      "rna-transcription",
      "hamming",
+     "word-count",
      "bob"
   ],
   "deprecated": [
