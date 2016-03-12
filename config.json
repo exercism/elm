@@ -11,7 +11,8 @@
      "rna-transcription",
      "hamming",
      "word-count",
-     "bob"
+     "bob",
+     "run-length-encoding"
   ],
   "deprecated": [
 
