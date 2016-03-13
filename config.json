@@ -13,7 +13,8 @@
      "word-count",
      "bob",
      "run-length-encoding",
-     "difference-of-squares"
+     "difference-of-squares",
+     "anagram"
   ],
   "deprecated": [
 
