@@ -12,7 +12,8 @@
      "hamming",
      "word-count",
      "bob",
-     "run-length-encoding"
+     "run-length-encoding",
+     "difference-of-squares"
   ],
   "deprecated": [
 
