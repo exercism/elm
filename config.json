@@ -7,7 +7,16 @@
   "problems": [
      "hello-world",
      "leap",
-     "bob"
+     "pangram",
+     "rna-transcription",
+     "hamming",
+     "word-count",
+     "bob",
+     "run-length-encoding",
+     "difference-of-squares",
+     "anagram",
+     "raindrops",
+     "triangle"
   ],
   "deprecated": [
 
