@@ -15,7 +15,8 @@
      "run-length-encoding",
      "difference-of-squares",
      "anagram",
-     "raindrops"
+     "raindrops",
+     "triangle"
   ],
   "deprecated": [
 
