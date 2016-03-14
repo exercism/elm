@@ -5,7 +5,7 @@
     "license": "BSD3",
     "source-directories": [
         ".",
-        "./exercises/hello_world",
+        "./exercises/hello-world",
         "./exercises/leap",
         "./exercises/bob"
     ],
