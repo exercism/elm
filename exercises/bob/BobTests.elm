@@ -1,3 +1,5 @@
+module Main (..) where
+
 import Task
 import Console
 import ElmTest exposing (..)
@@ -9,7 +11,8 @@ import Bob
 
 tests : Test
 tests =
-  suite "Bob"
+  suite
+    "Bob"
     [ test "stating something" (assertEqual "Whatever." (Bob.hey "Tom-ay-to, tom-aaaah-to."))
     , test "shouting" (assertEqual "Whoa, chill out!" (Bob.hey "WATCH OUT!"))
     , test "shouting gibberish" (assertEqual "Whoa, chill out!" (Bob.hey (uppercaseGibberish 10)))
