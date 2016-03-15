@@ -55,6 +55,8 @@ Please keep the following in mind:
 - Test files should use the following format:
 
 ```elm
+module Main (..) where
+
 import Task
 import Console
 import ElmTest exposing (..)
@@ -62,7 +64,8 @@ import ElmTest exposing (..)
 
 tests : Test
 tests =
-  suite "ExerciseModuleName"
+  suite
+    "ExerciseModuleName"
     [ test "first test" (assertEqual True True)
     , test "second test" (assertEqual False False)
     ]
