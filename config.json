@@ -6,17 +6,17 @@
   "test_pattern": "TODO",
   "problems": [
      "hello-world",
-     "leap",
-     "pangram",
-     "rna-transcription",
-     "hamming",
-     "word-count",
      "bob",
-     "run-length-encoding",
-     "difference-of-squares",
-     "anagram",
+     "leap",
      "raindrops",
-     "triangle"
+     "pangram",
+     "triangle",
+     "anagram",
+     "difference-of-squares",
+     "word-count",
+     "hamming",
+     "rna-transcription",
+     "run-length-encoding"
   ],
   "deprecated": [
 
