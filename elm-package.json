@@ -24,7 +24,9 @@
         "Bob",
         "SumOfMultiples",
         "Strain",
-        "SpaceAge"
+        "SpaceAge",
+        "Anagram",
+        "NucleotideCount"
     ],
     "exposed-modules": [],
     "dependencies": {
