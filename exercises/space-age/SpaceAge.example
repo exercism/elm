@@ -1,4 +1,4 @@
-module SpaceAgeExample where
+module SpaceAge (..) where
 
 type Planet = Mercury
             | Venus

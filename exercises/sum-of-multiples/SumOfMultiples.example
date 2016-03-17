@@ -1,4 +1,4 @@
-module SumOfMultiplesExample where
+module SumOfMultiples (..) where
 
 sumOfMultiples : List Int -> Int -> Int
 sumOfMultiples factors upperLimit =

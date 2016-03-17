@@ -1,12 +1,10 @@
-module PhoneNumberTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
-import PhoneNumberExample exposing (getNumber, printPretty)
-
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
+import PhoneNumber exposing (getNumber, printPretty)
 
 tests : Test
 tests = suite "PhoneNumber test suite"
@@ -25,4 +23,7 @@ tests = suite "PhoneNumber test suite"
         test "pretty print with full us phone number" (assertEqual "(123) 456-7890" (printPretty "11234567890"))
       ]
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)
+

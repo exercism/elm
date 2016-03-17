@@ -1,11 +1,10 @@
-module AccumulateTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
+import Accumulate exposing (accumulate)
 
-import AccumulateExample exposing (accumulate)
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
 import String
 
 square : Int -> Int
@@ -19,4 +18,6 @@ tests = suite "Accumulate"
           test "reverse Accumulate" (assertEqual ["olleh","dlrow"] (accumulate String.reverse ["hello" , "world"]))
         ]
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)

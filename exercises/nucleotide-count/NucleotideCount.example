@@ -1,4 +1,4 @@
-module NucleotideCountExample where
+module NucleotideCount (..) where
 
 import String
 import List

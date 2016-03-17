@@ -1,12 +1,10 @@
-module SublistTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
-
-import SublistExample exposing (sublist)
+import Sublist exposing (sublist)
 
 tests : Test
 tests = suite "Sublist Test Suite"
@@ -30,4 +28,7 @@ tests = suite "Sublist Test Suite"
     test "recurring values unequal" (assertEqual "Unequal" (sublist [1,2,1,2,3] [1,2,3,1,2,3,2,3,2,1]))
   ]
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)
+

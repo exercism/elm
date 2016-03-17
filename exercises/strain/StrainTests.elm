@@ -1,12 +1,10 @@
-module StrainTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
-
-import StrainExample exposing (keep, discard)
+import Strain exposing (keep, discard)
 
 import String
 
@@ -31,4 +29,7 @@ tests = suite "Strain Test Suite"
     test "discard strings" (assertEqual ["apple", "banana", "cherimoya"] (discard (isFirstLetter "z") ["apple", "zebra", "banana", "zombies", "cherimoya", "zealot"]))
   ]
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)
+

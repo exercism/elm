@@ -1,12 +1,10 @@
-module NucleotideCountTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
-import NucleotideCountExample exposing (nucleotideCounts)
-
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
+import NucleotideCount exposing (nucleotideCounts)
 
 tests : Test
 tests = suite "NucleotideCount test suite"
@@ -19,4 +17,6 @@ tests = suite "NucleotideCount test suite"
                       (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"))
       ]
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)

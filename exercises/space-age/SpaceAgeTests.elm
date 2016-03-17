@@ -1,12 +1,10 @@
-module SpaceAgeTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
-
-import SpaceAgeExample exposing (Planet(..), ageOn)
+import SpaceAge exposing (Planet(..), ageOn)
 
 tests : Test
 tests = suite "SpaceAge Test Suite"
@@ -22,4 +20,7 @@ tests = suite "SpaceAge Test Suite"
   ]
 
 
-main = runDisplay tests
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)
+

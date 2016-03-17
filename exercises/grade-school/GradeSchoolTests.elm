@@ -1,16 +1,10 @@
-module GradeSchoolTest where
+module Main (..) where
 
--- TODO - remove example inclusion once Problem sets are ready to go live or CI is set up.
+import Task
+import Console
+import ElmTest exposing (..)
 
--- import GradeSchoolExample exposing (addStudent,
---   newSchool, gradeWithStudents, schoolFromList,
---   studentsInGrade, schoolToList)
-
-import GradeSchoolExample as S exposing (..)
-
-import ElmTest.Test exposing (test, Test, suite)
-import ElmTest.Assertion exposing (assert, assertEqual)
-import ElmTest.Runner.Element exposing (runDisplay)
+import GradeSchool as S exposing (..)
 
 import Dict
 
@@ -28,4 +22,7 @@ tests = suite "GradeSchool Test Suite"
         test "get students in a non-existent grade" (assertEqual [] (S.studentsInGrade 1 S.newSchool))
         ]
 
-main = runDisplay tests
+
+port runner : Signal (Task.Task x ())
+port runner =
+  Console.run (consoleRunner tests)

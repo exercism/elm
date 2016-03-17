@@ -1,4 +1,4 @@
-module GradeSchoolExample where
+module GradeSchool (..) where
 
 import Dict exposing (..)
 import Result exposing (toMaybe)

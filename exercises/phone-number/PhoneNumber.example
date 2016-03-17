@@ -1,4 +1,4 @@
-module PhoneNumberExample where
+module PhoneNumber (..) where
 
 import String
 
