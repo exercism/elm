@@ -7,20 +7,24 @@ import Strain exposing (keep, discard)
 import String
 
 
-even =
-  \number -> number % 2 == 0
+even : Int -> Bool
+even number =
+  number % 2 == 0
 
 
-odd =
-  \number -> number % 2 == 1
+odd : Int -> Bool
+odd number =
+  number % 2 == 1
 
 
-isFirstLetter =
-  \letter -> \word -> (String.left 1 word) == letter
+isFirstLetter : String -> String -> Bool
+isFirstLetter letter word =
+  (String.left 1 word) == letter
 
 
-lessThanTen =
-  \num -> num < 10
+lessThanTen : number -> Bool
+lessThanTen num =
+  num < 10
 
 
 tests : Test
@@ -29,19 +33,34 @@ tests =
     "Strain"
     [ test
         "empty keep"
-        (assertEqual [] (keep lessThanTen []))
+        (assertEqual
+          []
+          (keep lessThanTen [])
+        )
     , test
         "keep everything"
-        (assertEqual [ 1, 2, 3 ] (keep lessThanTen [ 1, 2, 3 ]))
+        (assertEqual
+          [ 1, 2, 3 ]
+          (keep lessThanTen [ 1, 2, 3 ])
+        )
     , test
         "keep first and last"
-        (assertEqual [ 1, 3 ] (keep odd [ 1, 2, 3 ]))
+        (assertEqual
+          [ 1, 3 ]
+          (keep odd [ 1, 2, 3 ])
+        )
     , test
         "keep nothing"
-        (assertEqual [] (keep even [ 1, 3, 5, 7 ]))
+        (assertEqual
+          []
+          (keep even [ 1, 3, 5, 7 ])
+        )
     , test
         "keep neither first nor last"
-        (assertEqual [ 2 ] (keep even [ 1, 2, 3 ]))
+        (assertEqual
+          [ 2 ]
+          (keep even [ 1, 2, 3 ])
+        )
     , test
         "keep strings"
         (assertEqual
@@ -50,22 +69,40 @@ tests =
         )
     , test
         "empty discard"
-        (assertEqual [] (discard lessThanTen []))
+        (assertEqual
+          []
+          (discard lessThanTen [])
+        )
     , test
         "discard everything"
-        (assertEqual [] (discard lessThanTen [ 1, 2, 3 ]))
+        (assertEqual
+          []
+          (discard lessThanTen [ 1, 2, 3 ])
+        )
     , test
         "discard first and last"
-        (assertEqual [ 2 ] (discard odd [ 1, 2, 3 ]))
+        (assertEqual
+          [ 2 ]
+          (discard odd [ 1, 2, 3 ])
+        )
     , test
         "discard nothing"
-        (assertEqual [ 1, 3, 5, 7 ] (discard even [ 1, 3, 5, 7 ]))
+        (assertEqual
+          [ 1, 3, 5, 7 ]
+          (discard even [ 1, 3, 5, 7 ])
+        )
     , test
         "discard neither first nor last"
-        (assertEqual [ 1, 3 ] (discard even [ 1, 2, 3 ]))
+        (assertEqual
+          [ 1, 3 ]
+          (discard even [ 1, 2, 3 ])
+        )
     , test
         "discard strings"
-        (assertEqual [ "apple", "banana", "cherimoya" ] (discard (isFirstLetter "z") [ "apple", "zebra", "banana", "zombies", "cherimoya", "zealot" ]))
+        (assertEqual
+          [ "apple", "banana", "cherimoya" ]
+          (discard (isFirstLetter "z") [ "apple", "zebra", "banana", "zombies", "cherimoya", "zealot" ])
+        )
     ]
 
 

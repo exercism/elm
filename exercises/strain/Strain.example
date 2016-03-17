@@ -5,9 +5,17 @@ import List
 
 keep : (a -> Bool) -> List a -> List a
 keep predicate list =
-  List.filter predicate list
+  List.foldr (consIf predicate) [] list
 
 
 discard : (a -> Bool) -> List a -> List a
 discard predicate list =
-  (keep (\val -> not (predicate val)) list)
+  List.foldr (consIf (\v -> not <| predicate v)) [] list
+
+
+consIf : (a -> Bool) -> a -> List a -> List a
+consIf predicate value list =
+  if predicate value then
+    value :: list
+  else
+    list
