@@ -3,8 +3,7 @@ module Main (..) where
 import Task
 import Console
 import ElmTest exposing (..)
-import GradeSchool as S exposing (..)
-import Dict
+import GradeSchool exposing (addStudent, studentsInGrade, allStudents)
 
 
 tests : Test
@@ -14,30 +13,62 @@ tests =
     [ test
         "add student"
         (assertEqual
-          [ ( 2, [ "Aimee" ] ) ]
-          (S.schoolToList (S.addStudent 2 "Aimee" S.newSchool))
+          [ "Aimee" ]
+          (GradeSchool.empty
+            |> addStudent 2 "Aimee"
+            |> studentsInGrade 2
+          )
         )
     , test
         "add more students in same class"
         (assertEqual
-          [ ( 2, [ "Blair", "James", "Paul" ] ) ]
-          (S.schoolToList (S.gradeWithStudents 2 [ "James", "Blair", "Paul" ]))
+          [ "Blair", "James", "Paul" ]
+          (GradeSchool.empty
+            |> addStudent 2 "James"
+            |> addStudent 2 "Blair"
+            |> addStudent 2 "Paul"
+            |> studentsInGrade 2
+          )
         )
     , test
         "add students to different grades"
         (assertEqual
-          [ ( 3, [ "Chelsea" ] ), ( 7, [ "Logan" ] ) ]
-          (S.schoolToList (S.schoolFromList [ ( 3, "Chelsea" ), ( 7, "Logan" ) ]))
+          [ [ "Chelsea" ], [ "Logan" ] ]
+          (let
+            school =
+              GradeSchool.empty
+                |> addStudent 3 "Chelsea"
+                |> addStudent 7 "Logan"
+           in
+            [ studentsInGrade 3 school, studentsInGrade 7 school ]
+          )
         )
     , test
         "get students in a grade"
         (assertEqual
           [ "Bradley", "Franklin" ]
-          (S.studentsInGrade 5 (S.schoolFromList [ ( 5, "Franklin" ), ( 5, "Bradley" ), ( 1, "Jeff" ) ]))
+          (GradeSchool.empty
+            |> addStudent 5 "Franklin"
+            |> addStudent 5 "Bradley"
+            |> addStudent 1 "Jeff"
+            |> studentsInGrade 5
+          )
+        )
+    , test
+        "get all students in the school"
+        (assertEqual
+          [ ( 3, [ "Kyle" ] ), ( 4, [ "Christopher", "Jennifer" ] ), ( 6, [ "Kareem" ] ) ]
+          (GradeSchool.empty
+            |> addStudent 4 "Jennifer"
+            |> addStudent 6 "Kareem"
+            |> addStudent 4 "Christopher"
+            |> addStudent 3 "Kyle"
+            |> allStudents
+          )
         )
     , test
         "get students in a non-existent grade"
-        (assertEqual [] (S.studentsInGrade 1 S.newSchool))
+        (assertEqual [] (studentsInGrade 1 GradeSchool.empty))
     ]
 
 
