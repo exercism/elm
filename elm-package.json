@@ -23,7 +23,8 @@
         "Sublist",
         "Bob",
         "SumOfMultiples",
-        "Strain"
+        "Strain",
+        "SpaceAge"
     ],
     "exposed-modules": [],
     "dependencies": {
