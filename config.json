@@ -2,7 +2,7 @@
   "slug": "elm",
   "language": "Elm",
   "repository": "https://github.com/exercism/xelm",
-  "active": false,
+  "active": true,
   "problems": [
     "hello-world",
     "bob",
