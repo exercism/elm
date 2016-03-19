@@ -4,7 +4,8 @@ module DifferenceOfSquares (..) where
 squareOfSum : Int -> Int
 squareOfSum n =
   let
-    sum = n * (n + 1) // 2
+    sum =
+      n * (n + 1) // 2
   in
     sum * sum
 
