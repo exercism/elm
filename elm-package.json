@@ -16,7 +16,15 @@
         "./exercises/difference-of-squares",
         "./exercises/anagram",
         "./exercises/raindrops",
-        "./exercises/triangle"
+        "./exercises/triangle",
+        "./exercises/accumulate",
+        "./exercises/sublist",
+        "./exercises/sum-of-multiples",
+        "./exercises/strain",
+        "./exercises/space-age",
+        "./exercises/nucleotide-count",
+        "./exercises/phone-number",
+        "./exercises/grade-school"
     ],
     "exposed-modules": [],
     "dependencies": {

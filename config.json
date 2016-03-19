@@ -5,18 +5,26 @@
   "active": false,
   "test_pattern": "TODO",
   "problems": [
-     "hello-world",
-     "bob",
-     "leap",
-     "raindrops",
-     "pangram",
-     "triangle",
-     "anagram",
-     "difference-of-squares",
-     "word-count",
-     "hamming",
-     "rna-transcription",
-     "run-length-encoding"
+    "hello-world",
+    "bob",
+    "leap",
+    "raindrops",
+    "pangram",
+    "accumulate",
+    "triangle",
+    "anagram",
+    "space-age",
+    "strain",
+    "difference-of-squares",
+    "word-count",
+    "sum-of-multiples",
+    "hamming",
+    "rna-transcription",
+    "run-length-encoding",
+    "sublist",
+    "nucleotide-count",
+    "phone-number",
+    "grade-school"
   ],
   "deprecated": [
 
@@ -28,6 +36,5 @@
     "docs"
   ],
   "foregone": [
-
   ]
 }
