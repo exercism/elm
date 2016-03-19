@@ -5,10 +5,12 @@ import List exposing (head, tail)
 import Maybe exposing (withDefault)
 import Regex
 
+
 {-
 To the unaware: this was written by a very green elmer, so don't consider
 it an idiomatic exemplar to emulate.
 -}
+
 
 encode : String -> String
 encode string =

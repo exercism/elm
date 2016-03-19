@@ -13,16 +13,29 @@ toRNA dna =
     |> Result.map (String.join "")
 
 
+
 -- Copied from elm-result-extra
+
+
 resultExtraCombine : List (Result x a) -> Result x (List a)
-resultExtraCombine = List.foldr (Result.map2 (::)) (Ok [])
+resultExtraCombine =
+  List.foldr (Result.map2 (::)) (Ok [])
 
 
 toRNANucleotide : Char -> Result Char Char
 toRNANucleotide nuc =
   case nuc of
-    'C' -> Ok 'G'
-    'G' -> Ok 'C'
-    'A' -> Ok 'U'
-    'T' -> Ok 'A'
-    _ -> Err nuc
+    'C' ->
+      Ok 'G'
+
+    'G' ->
+      Ok 'C'
+
+    'A' ->
+      Ok 'U'
+
+    'T' ->
+      Ok 'A'
+
+    _ ->
+      Err nuc
