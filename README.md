@@ -50,6 +50,8 @@ Please keep the following in mind:
 
   - Make sure everything is good to go by running all tests with `bin/build.sh`.
 
+  - If you have [elm-format](https://github.com/avh4/elm-format) installed, you can easily check the project by running `WITH_FORMAT=true bin/build.sh`. If you get diffs on exercises other than the one you are working on, please submit a separate pull request.
+
 - Please do not commit any Elm configuration files or directories inside the exercise, such as `elm-stuff`. Please include only the standard `elm-package.json`.
 
 - Test files should use the following format:
