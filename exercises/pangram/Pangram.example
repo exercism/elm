@@ -1,4 +1,4 @@
-module Pangram (..) where
+module Pangram where
 
 import String exposing (toLower, contains, fromChar)
 

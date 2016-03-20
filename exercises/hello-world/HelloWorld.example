@@ -1,4 +1,4 @@
-module HelloWorld (..) where
+module HelloWorld where
 
 
 helloWorld : Maybe String -> String

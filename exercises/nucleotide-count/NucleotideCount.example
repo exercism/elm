@@ -1,4 +1,4 @@
-module NucleotideCount (..) where
+module NucleotideCount where
 
 import String
 import List

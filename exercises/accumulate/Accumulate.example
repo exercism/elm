@@ -1,4 +1,4 @@
-module Accumulate (..) where
+module Accumulate where
 
 
 accumulate : (a -> b) -> List a -> List b

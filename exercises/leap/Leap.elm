@@ -1,1 +1,1 @@
-module Leap (..) where
+module Leap where

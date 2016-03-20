@@ -1,4 +1,4 @@
-module WordCount (..) where
+module WordCount where
 
 import String
 import Dict exposing (Dict)

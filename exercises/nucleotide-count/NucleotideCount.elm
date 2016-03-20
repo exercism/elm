@@ -1,1 +1,1 @@
-module NucleotideCount (..) where
+module NucleotideCount where
