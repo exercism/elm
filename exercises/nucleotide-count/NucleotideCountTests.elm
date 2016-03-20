@@ -3,7 +3,8 @@ module Main (..) where
 import Task
 import Console
 import ElmTest exposing (..)
-import NucleotideCount exposing (nucleotideCounts)
+import NucleotideCount exposing (nucleotideCounts, version)
+import Dict
 
 
 tests : Test
@@ -11,22 +12,25 @@ tests =
   suite
     "NucleotideCount"
     [ test
+        "the solution is for the current version"
+        (assertEqual 2 version)
+    , test
         "empty dna strand has no nucleotides"
         (assertEqual
-          [ ( 'A', 0 ), ( 'T', 0 ), ( 'C', 0 ), ( 'G', 0 ) ]
-          (nucleotideCounts "")
+          []
+          (Dict.toList (nucleotideCounts ""))
         )
     , test
         "repetitive-sequence-has-only-guanosine"
         (assertEqual
-          [ ( 'A', 0 ), ( 'T', 0 ), ( 'C', 0 ), ( 'G', 8 ) ]
-          (nucleotideCounts "GGGGGGGG")
+          ([ ( 'G', 8 ) ])
+          (Dict.toList (nucleotideCounts "GGGGGGGG"))
         )
     , test
         "counts all nucleotides"
         (assertEqual
-          [ ( 'A', 20 ), ( 'T', 21 ), ( 'C', 12 ), ( 'G', 17 ) ]
-          (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+          [ ( 'A', 20 ), ( 'C', 12 ), ( 'G', 17 ), ( 'T', 21 ) ]
+          (Dict.toList (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"))
         )
     ]
 
