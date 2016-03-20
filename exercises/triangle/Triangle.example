@@ -1,4 +1,4 @@
-module Triangle (..) where
+module Triangle where
 
 import Set
 

@@ -1,1 +1,1 @@
-module SumOfMultiples (..) where
+module SumOfMultiples where

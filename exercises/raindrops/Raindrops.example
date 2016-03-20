@@ -1,4 +1,4 @@
-module Raindrops (..) where
+module Raindrops where
 
 import String
 

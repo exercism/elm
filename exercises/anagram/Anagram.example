@@ -1,4 +1,4 @@
-module Anagram (..) where
+module Anagram where
 
 import String exposing (toLower, toList)
 

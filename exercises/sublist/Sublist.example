@@ -1,4 +1,4 @@
-module Sublist (..) where
+module Sublist where
 
 import List exposing (..)
 import String

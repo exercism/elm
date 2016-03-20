@@ -1,4 +1,4 @@
-module DifferenceOfSquares (..) where
+module DifferenceOfSquares where
 
 
 squareOfSum : Int -> Int

@@ -1,4 +1,4 @@
-module Bob (..) where
+module Bob where
 
 import String
 import Regex

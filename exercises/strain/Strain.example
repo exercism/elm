@@ -1,4 +1,4 @@
-module Strain (..) where
+module Strain where
 
 import List
 

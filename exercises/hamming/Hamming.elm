@@ -1,1 +1,1 @@
-module Hamming (..) where
+module Hamming where

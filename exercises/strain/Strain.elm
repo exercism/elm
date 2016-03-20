@@ -1,1 +1,1 @@
-module Strain (..) where
+module Strain where

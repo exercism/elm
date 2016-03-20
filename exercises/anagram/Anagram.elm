@@ -1,1 +1,1 @@
-module Anagram (..) where
+module Anagram where
