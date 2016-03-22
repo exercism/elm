@@ -44,3 +44,5 @@ if [ $WITH_FORMAT ]; then
   fi
 fi
 
+echo "elm-stuff/exact-dependencies.json"
+cat elm-stuff/exact-dependencies.json
