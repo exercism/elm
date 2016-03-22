@@ -3,7 +3,6 @@
   "language": "Elm",
   "repository": "https://github.com/exercism/xelm",
   "active": false,
-  "test_pattern": "TODO",
   "problems": [
     "hello-world",
     "bob",
