@@ -1,18 +1,27 @@
-module NucleotideCount (..) where
+module NucleotideCount (nucleotideCounts, version) where
 
+import Dict
 import String
-import List
 
 
-nucleotideCounts : String -> List ( Char, Int )
-nucleotideCounts sequence =
-  [ (getCount 'A' sequence)
-  , (getCount 'T' sequence)
-  , (getCount 'C' sequence)
-  , (getCount 'G' sequence)
-  ]
+version =
+  2
 
 
-getCount : Char -> String -> ( Char, Int )
-getCount base sequence =
-  ( base, (List.length (String.split (String.fromChar base) sequence)) - 1 )
+empty =
+  Dict.fromList [ ( 'A', 0 ), ( 'C', 0 ), ( 'G', 0 ), ( 'T', 0 ) ]
+
+
+nucleotideCounts : String -> Dict.Dict Char Int
+nucleotideCounts dna =
+  String.foldl count empty dna
+
+
+count : comparable -> Dict.Dict comparable Int -> Dict.Dict comparable Int
+count item counts =
+  Dict.update item incrMaybe counts
+
+
+incrMaybe : Maybe Int -> Maybe Int
+incrMaybe maybe =
+  (Maybe.withDefault 0 maybe) + 1 |> Just
