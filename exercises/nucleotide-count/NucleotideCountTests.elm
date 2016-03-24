@@ -17,13 +17,13 @@ tests =
     , test
         "empty dna strand has no nucleotides"
         (assertEqual
-          []
+          [ ( 'A', 0 ), ( 'C', 0 ), ( 'G', 0 ), ( 'T', 0 ) ]
           (Dict.toList (nucleotideCounts ""))
         )
     , test
         "repetitive-sequence-has-only-guanosine"
         (assertEqual
-          ([ ( 'G', 8 ) ])
+          ([ ( 'A', 0 ), ( 'C', 0 ), ( 'G', 8 ), ( 'T', 0 ) ])
           (Dict.toList (nucleotideCounts "GGGGGGGG"))
         )
     , test

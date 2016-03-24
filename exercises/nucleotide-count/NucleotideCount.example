@@ -8,9 +8,13 @@ version =
   2
 
 
+empty =
+  Dict.fromList [ ( 'A', 0 ), ( 'C', 0 ), ( 'G', 0 ), ( 'T', 0 ) ]
+
+
 nucleotideCounts : String -> Dict.Dict Char Int
 nucleotideCounts dna =
-  String.foldl count Dict.empty dna
+  String.foldl count empty dna
 
 
 count : comparable -> Dict.Dict comparable Int -> Dict.Dict comparable Int
