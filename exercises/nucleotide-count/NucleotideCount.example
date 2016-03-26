@@ -3,6 +3,10 @@ module NucleotideCount (..) where
 import String
 
 
+version =
+  2
+
+
 nucleotideCounts : String -> { a : Int, t : Int, c : Int, g : Int }
 nucleotideCounts sequence =
   let
