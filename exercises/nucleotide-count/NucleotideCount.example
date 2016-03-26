@@ -1,18 +1,16 @@
 module NucleotideCount (..) where
 
 import String
-import List
 
 
-nucleotideCounts : String -> List ( Char, Int )
+nucleotideCounts : String -> { a : Int, t : Int, c : Int, g : Int }
 nucleotideCounts sequence =
-  [ (getCount 'A' sequence)
-  , (getCount 'T' sequence)
-  , (getCount 'C' sequence)
-  , (getCount 'G' sequence)
-  ]
-
-
-getCount : Char -> String -> ( Char, Int )
-getCount base sequence =
-  ( base, (List.length (String.split (String.fromChar base) sequence)) - 1 )
+  let
+    getCount n =
+      String.filter (\c -> c == n) sequence |> String.length
+  in
+    { a = getCount 'A'
+    , t = getCount 'T'
+    , c = getCount 'C'
+    , g = getCount 'G'
+    }

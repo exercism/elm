@@ -13,19 +13,19 @@ tests =
     [ test
         "empty dna strand has no nucleotides"
         (assertEqual
-          [ ( 'A', 0 ), ( 'T', 0 ), ( 'C', 0 ), ( 'G', 0 ) ]
+          { a = 0, t = 0, c = 0, g = 0 }
           (nucleotideCounts "")
         )
     , test
         "repetitive-sequence-has-only-guanosine"
         (assertEqual
-          [ ( 'A', 0 ), ( 'T', 0 ), ( 'C', 0 ), ( 'G', 8 ) ]
+          { a = 0, t = 0, c = 0, g = 8 }
           (nucleotideCounts "GGGGGGGG")
         )
     , test
         "counts all nucleotides"
         (assertEqual
-          [ ( 'A', 20 ), ( 'T', 21 ), ( 'C', 12 ), ( 'G', 17 ) ]
+          { a = 20, t = 21, c = 12, g = 17 }
           (nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
         )
     ]
