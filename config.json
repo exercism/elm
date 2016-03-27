@@ -23,7 +23,8 @@
     "sublist",
     "nucleotide-count",
     "phone-number",
-    "grade-school"
+    "grade-school",
+    "allergies"
   ],
   "deprecated": [
 
