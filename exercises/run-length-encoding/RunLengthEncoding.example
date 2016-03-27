@@ -1,4 +1,4 @@
-module RunLengthEncoding (encode, decode) where
+module RunLengthEncoding (version, encode, decode) where
 
 import String exposing (fromChar)
 import List exposing (head, tail)
@@ -10,6 +10,10 @@ import Regex
 To the unaware: this was written by a very green elmer, so don't consider
 it an idiomatic exemplar to emulate.
 -}
+
+
+version =
+  2
 
 
 encode : String -> String
