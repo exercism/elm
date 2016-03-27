@@ -22,6 +22,7 @@
     "run-length-encoding",
     "sublist",
     "nucleotide-count",
+    "series",
     "phone-number",
     "grade-school"
   ],
