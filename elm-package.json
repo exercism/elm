@@ -25,7 +25,8 @@
         "./exercises/nucleotide-count",
         "./exercises/phone-number",
         "./exercises/grade-school",
-        "./exercises/allergies"
+        "./exercises/allergies",
+        "./exercises/robot-simulator"
     ],
     "exposed-modules": [],
     "dependencies": {
