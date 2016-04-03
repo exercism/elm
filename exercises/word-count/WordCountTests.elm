@@ -10,7 +10,7 @@ import WordCount exposing (wordCount)
 tests : Test
 tests =
   suite
-    "Hamming"
+    "Word Count"
     [ test
         "count one word"
         (assertEqual
