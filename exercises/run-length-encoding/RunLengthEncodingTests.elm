@@ -3,7 +3,8 @@ module Main (..) where
 import Task
 import Console
 import ElmTest exposing (..)
-import RunLengthEncoding exposing (decode, encode)
+import RunLengthEncoding exposing (version, decode, encode)
+import RunLengthEncodingPropertyChecks exposing (propertyTests)
 
 
 tests : Test
@@ -11,6 +12,9 @@ tests =
   suite
     "RunLengthEncoding"
     [ test
+        "the solution is for the correct version of the test"
+        (assertEqual 2 version)
+    , test
         "encode simple"
         (assertEqual "2A3B4C" (encode "AABBBCCCC"))
     , test
@@ -29,10 +33,16 @@ tests =
           (decode "12WB12W3B24WB")
         )
     , test
-        "decode(encode(...)) combination"
+        "(decode (encode (...)) combination"
         (assertEqual
           "zzz ZZ  zZ"
           (decode (encode "zzz ZZ  zZ"))
+        )
+    , test
+        "decode with a x10 value"
+        (assertEqual
+          "WWWWWWWWWW"
+          (decode "10W")
         )
     , test
         "encode unicode"
@@ -40,6 +50,7 @@ tests =
     , test
         "decode unicode"
         (assertEqual "⏰⚽⚽⚽⭐⭐⏰" (decode "⏰3⚽2⭐⏰"))
+    , propertyTests
     ]
 
 
