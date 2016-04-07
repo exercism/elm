@@ -24,7 +24,8 @@
         "./exercises/space-age",
         "./exercises/nucleotide-count",
         "./exercises/phone-number",
-        "./exercises/grade-school"
+        "./exercises/grade-school",
+        "./exercises/allergies"
     ],
     "exposed-modules": [],
     "dependencies": {
