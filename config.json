@@ -24,7 +24,8 @@
     "nucleotide-count",
     "phone-number",
     "grade-school",
-    "allergies"
+    "allergies",
+    "robot-simulator"
   ],
   "deprecated": [
 
