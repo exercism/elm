@@ -95,4 +95,4 @@ simulate directions robot =
     directions
       |> String.toList
       |> List.map action
-      |> List.foldl (\a r -> a r) robot
+      |> List.foldl (<|) robot
