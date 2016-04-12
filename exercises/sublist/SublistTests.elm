@@ -3,7 +3,7 @@ module Main (..) where
 import Task
 import Console
 import ElmTest exposing (..)
-import Sublist exposing (sublist, ListComparison(..))
+import Sublist exposing (version, sublist, ListComparison(..))
 
 
 tests : Test
@@ -11,6 +11,9 @@ tests =
   suite
     "Sublist"
     [ test
+        "the solution is for the correct version of the test"
+        (assertEqual 2 version)
+    , test
         "empty equals empty"
         (assertEqual Equal (sublist [] []))
     , test

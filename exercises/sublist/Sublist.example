@@ -1,6 +1,11 @@
 module Sublist (..) where
 
 
+version : Int
+version =
+  2
+
+
 type ListComparison
   = Equal
   | Superlist
