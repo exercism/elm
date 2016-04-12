@@ -23,6 +23,7 @@
         "./exercises/strain",
         "./exercises/space-age",
         "./exercises/nucleotide-count",
+        "./exercises/series",
         "./exercises/phone-number",
         "./exercises/grade-school",
         "./exercises/allergies",
