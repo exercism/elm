@@ -1,31 +1,35 @@
 module Sublist (..) where
 
-import List exposing (..)
-import String
+
+version : Int
+version =
+  2
 
 
-sublist : List a -> List a -> String
+type ListComparison
+  = Equal
+  | Superlist
+  | Sublist
+  | Unequal
+
+
+sublist : List a -> List a -> ListComparison
 sublist alist blist =
   if alist == blist then
-    "Equal"
+    Equal
   else if inList alist blist then
-    "Superlist"
+    Superlist
   else if inList blist alist then
-    "Sublist"
+    Sublist
   else
-    "Unequal"
+    Unequal
 
 
 inList : List a -> List a -> Bool
 inList alist blist =
   let
     getLastInList sublist =
-      case (List.tail sublist) of
-        Just list ->
-          list
-
-        Nothing ->
-          []
+      Maybe.withDefault [] (List.tail sublist)
   in
     if (List.length alist) < (List.length blist) then
       False
