@@ -14,38 +14,38 @@ tests =
     [ test
         "count one word"
         (assertEqual
-          (Dict.fromList [ ( "word", 1 ) ])
-          (wordCount "word")
+          [ ( "word", 1 ) ]
+          (wordCount "word" |> Dict.toList)
         )
     , test
         "count one of each word"
         (assertEqual
-          (Dict.fromList [ ( "one", 1 ), ( "of", 1 ), ( "each", 1 ) ])
-          (wordCount "one of each")
+          [ ( "each", 1 ), ( "of", 1 ), ( "one", 1 ) ]
+          (wordCount "one of each" |> Dict.toList)
         )
     , test
         "multiple occurrences of a word"
         (assertEqual
-          (Dict.fromList [ ( "one", 1 ), ( "fish", 4 ), ( "two", 1 ), ( "red", 1 ), ( "blue", 1 ) ])
-          (wordCount "one fish two fish red fish blue fish")
+          [ ( "blue", 1 ), ( "fish", 4 ), ( "one", 1 ), ( "red", 1 ), ( "two", 1 ) ]
+          (wordCount "one fish two fish red fish blue fish" |> Dict.toList)
         )
     , test
         "ignore punctuation"
         (assertEqual
-          (Dict.fromList [ ( "car", 1 ), ( "carpet", 1 ), ( "as", 1 ), ( "java", 1 ), ( "javascript", 1 ) ])
-          (wordCount "car : carpet as java : javascript!!&@$%^&")
+          [ ( "as", 1 ), ( "car", 1 ), ( "carpet", 1 ), ( "java", 1 ), ( "javascript", 1 ) ]
+          (wordCount "car : carpet as java : javascript!!&@$%^&" |> Dict.toList)
         )
     , test
         "include numbers"
         (assertEqual
-          (Dict.fromList [ ( "testing", 2 ), ( "1", 1 ), ( "2", 1 ) ])
-          (wordCount "testing, 1, 2 testing")
+          [ ( "1", 1 ), ( "2", 1 ), ( "testing", 2 ) ]
+          (wordCount "testing, 1, 2 testing" |> Dict.toList)
         )
     , test
         "normalize case"
         (assertEqual
-          (Dict.fromList [ ( "go", 3 ), ( "stop", 2 ) ])
-          (wordCount "go Go GO Stop stop")
+          [ ( "go", 3 ), ( "stop", 2 ) ]
+          (wordCount "go Go GO Stop stop" |> Dict.toList)
         )
     ]
 
