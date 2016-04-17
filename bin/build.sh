@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 declare -i TEST_RESULT=0
 FAILED_EXERCISES=''
 
