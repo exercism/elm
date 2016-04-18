@@ -23,7 +23,7 @@ tests =
     , suite
         "map"
         [ test "empty list" (assertEqual [] (map ((+) 1) []))
-        , test "non-empty list" (assertEqual [ 2, 3, 4, 5 ] (map ((+) 1) [1..4]))
+        , test "non-empty list" (assertEqual [2..5] (map ((+) 1) [1..4]))
         ]
     , suite
         "filter"
@@ -33,7 +33,7 @@ tests =
             (assertEqual [ 2, 4 ] (filter (\x -> x % 2 == 0) [1..4]))
         ]
     , suite
-        "foldr"
+        "foldl"
         [ test "empty list" (assertEqual 0 (foldl (+) 0 []))
         , test "non-empty list" (assertEqual 10 (foldl (+) 0 [1..4]))
         ]
