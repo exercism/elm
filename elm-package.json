@@ -27,7 +27,8 @@
         "./exercises/phone-number",
         "./exercises/grade-school",
         "./exercises/allergies",
-        "./exercises/robot-simulator"
+        "./exercises/robot-simulator",
+        "./exercises/list-ops"
     ],
     "exposed-modules": [],
     "dependencies": {
