@@ -26,7 +26,8 @@
     "phone-number",
     "grade-school",
     "allergies",
-    "robot-simulator"
+    "robot-simulator",
+    "list-ops"
   ],
   "deprecated": [
 
