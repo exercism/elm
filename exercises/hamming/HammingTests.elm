@@ -12,46 +12,46 @@ tests =
     "Hamming"
     [ test
         "identical strands"
-        (assertEqual (distance "A" "A") (Just 0))
+        (assertEqual (Just 0) (distance "A" "A"))
     , test
         "long identical strands"
-        (assertEqual (distance "GGACTGA" "GGACTGA") (Just 0))
+        (assertEqual (Just 0) (distance "GGACTGA" "GGACTGA"))
     , test
         "complete distance in single nucleotide strands"
-        (assertEqual (distance "A" "G") (Just 1))
+        (assertEqual (Just 1) (distance "A" "G"))
     , test
         "complete distance in small strands"
-        (assertEqual (distance "AG" "CT") (Just 2))
+        (assertEqual (Just 2) (distance "AG" "CT"))
     , test
         "small distance in small strands"
-        (assertEqual (distance "AT" "CT") (Just 1))
+        (assertEqual (Just 1) (distance "AT" "CT"))
     , test
         "small distance"
-        (assertEqual (distance "GGACG" "GGTCG") (Just 1))
+        (assertEqual (Just 1) (distance "GGACG" "GGTCG"))
     , test
         "small distance in long strands"
-        (assertEqual (distance "ACCAGGG" "ACTATGG") (Just 2))
+        (assertEqual (Just 2) (distance "ACCAGGG" "ACTATGG"))
     , test
         "non-unique character in first strand"
-        (assertEqual (distance "AGA" "AGG") (Just 1))
+        (assertEqual (Just 1) (distance "AGA" "AGG"))
     , test
         "non-unique character in second strand"
-        (assertEqual (distance "AGG" "AGA") (Just 1))
+        (assertEqual (Just 1) (distance "AGG" "AGA"))
     , test
         "large distance"
-        (assertEqual (distance "GATACA" "GCATAA") (Just 4))
+        (assertEqual (Just 4) (distance "GATACA" "GCATAA"))
     , test
         "large distance in off-by-one strand"
-        (assertEqual (distance "GGACGGATTCTG" "AGGACGGATTCT") (Just 9))
+        (assertEqual (Just 9) (distance "GGACGGATTCTG" "AGGACGGATTCT"))
     , test
         "empty strands"
-        (assertEqual (distance "" "") (Just 0))
+        (assertEqual (Just 0) (distance "" ""))
     , test
         "disallow first strand longer"
-        (assertEqual (distance "AATG" "AAA") Nothing)
+        (assertEqual Nothing (distance "AATG" "AAA"))
     , test
         "disallow second strand longer"
-        (assertEqual (distance "ATA" "AGTG") Nothing)
+        (assertEqual Nothing (distance "ATA" "AGTG"))
     ]
 
 
