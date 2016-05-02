@@ -28,7 +28,8 @@
     "allergies",
     "robot-simulator",
     "list-ops",
-    "atbash-cipher"
+    "atbash-cipher",
+    "say"
   ],
   "deprecated": [
 
