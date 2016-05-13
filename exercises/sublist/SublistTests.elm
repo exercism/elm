@@ -43,7 +43,7 @@ tests =
         (assertEqual Sublist (sublist [ 3, 4, 5 ] [1..100000]))
     , test
         "huge sublist not in list"
-        (assertEqual Unequal (sublist [10..100001] [1..100000]))
+        (assertEqual Unequal (sublist [10..5001] [1..5000]))
     , test
         "superlist at start"
         (assertEqual Superlist (sublist [ 1, 2, 3, 4, 5 ] [ 1, 2, 3 ]))
