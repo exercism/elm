@@ -7,7 +7,7 @@ file. It has to stay just the way it is.
 -}
 
 
-module HelloWorld (..) where
+module HelloWorld exposing (..)
 
 -- It's good style to include a types at the top level of your modules.
 

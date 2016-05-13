@@ -1,4 +1,4 @@
-module Sublist (..) where
+module Sublist exposing (..)
 
 
 version : Int

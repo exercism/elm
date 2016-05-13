@@ -1,4 +1,4 @@
-module PhoneNumber (..) where
+module PhoneNumber exposing (..)
 
 import String
 

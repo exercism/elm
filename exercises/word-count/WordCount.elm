@@ -1,1 +1,1 @@
-module WordCount (..) where
+module WordCount exposing (..)

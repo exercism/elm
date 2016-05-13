@@ -1,1 +1,1 @@
-module RunLengthEncoding (..) where
+module RunLengthEncoding exposing (..)

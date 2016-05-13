@@ -1,7 +1,5 @@
-module Main (..) where
+module Main exposing (..)
 
-import Task
-import Console
 import ElmTest exposing (..)
 import String
 import Char
@@ -58,7 +56,7 @@ listOfCharacters length characterList =
 
 gibberish : Int -> Random.Generator Char -> String
 gibberish length characterList =
-  fst (Random.generate (Random.map String.fromList (listOfCharacters length characterList)) (Random.initialSeed 424242))
+  fst (Random.step (Random.map String.fromList (listOfCharacters length characterList)) (Random.initialSeed 424242))
 
 
 uppercaseGibberish : Int -> String
@@ -71,6 +69,6 @@ gibberishQuestion length =
   (gibberish length anyCharacter) ++ "?"
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests

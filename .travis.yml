@@ -7,7 +7,7 @@ sudo: false
 install:
   - nvm install 0.12
   - nvm use 0.12
-  - npm install -g elm@0.16.0 elm-test@0.16.0
+  - npm install -g elm@0.17.0 elm-test@0.16.1-alpha4
   - elm package install -y
 
 script:

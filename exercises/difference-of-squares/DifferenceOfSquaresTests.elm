@@ -1,7 +1,5 @@
-module Main (..) where
+module Main exposing (..)
 
-import Task
-import Console
 import ElmTest exposing (..)
 import DifferenceOfSquares exposing (squareOfSum, sumOfSquares, difference)
 
@@ -32,6 +30,6 @@ tests =
     ]
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests

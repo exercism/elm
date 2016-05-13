@@ -1,4 +1,4 @@
-module RunLengthEncodingPropertyChecks (propertyTests) where
+module RunLengthEncodingPropertyChecks exposing (propertyTests)
 
 import ElmTest
 import Check exposing (suite, claim, that, is, for, quickCheck)
@@ -10,6 +10,8 @@ import Char
 
 
 {-
+Currently disabled until elm-check is updated to support Elm 0.17
+
 Welcome! This is a property based test which will generate a bunch of random
 test cases in an attempt to find edge cases in your solution. If all goes well,
 any code that passes the regular tests should be fine here as well. If it goes

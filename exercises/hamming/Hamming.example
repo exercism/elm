@@ -1,4 +1,4 @@
-module Hamming (..) where
+module Hamming exposing (..)
 
 import String exposing (length, toList)
 

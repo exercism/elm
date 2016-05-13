@@ -1,4 +1,4 @@
-module Strain (..) where
+module Strain exposing (..)
 
 import List
 

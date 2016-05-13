@@ -1,1 +1,1 @@
-module Series (..) where
+module Series exposing (..)

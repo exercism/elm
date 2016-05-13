@@ -1,4 +1,4 @@
-module Series (..) where
+module Series exposing (..)
 
 import String
 import List

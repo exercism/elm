@@ -1,4 +1,4 @@
-module SumOfMultiples (..) where
+module SumOfMultiples exposing (..)
 
 
 sumOfMultiples : List Int -> Int -> Int

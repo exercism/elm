@@ -1,1 +1,1 @@
-module Triangle (..) where
+module Triangle exposing (..)

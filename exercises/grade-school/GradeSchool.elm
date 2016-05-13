@@ -1,2 +1,2 @@
-module GradeSchool (..) where
+module GradeSchool exposing (..)
 
