@@ -12,7 +12,7 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise"
 
-  elm-make $exercise_dir/*Tests.elm --output build.js && node build.js
+  elm-make $exercise_dir/*Tests.elm --yes --output build.js && node build.js
 
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
