@@ -11,7 +11,8 @@ do
   mv "$exercise_dir/$exercise.example" "$exercise_dir/$exercise.elm"
   echo '-------------------------------------------------------'
   echo "Testing $exercise"
-  elm-test $exercise_dir/*Tests.elm
+
+  elm-make $exercise_dir/*Tests.elm --output build.js && node build.js
 
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
