@@ -1,1 +1,1 @@
-module Accumulate (..) where
+module Accumulate exposing (..)

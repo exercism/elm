@@ -1,4 +1,4 @@
-module Allergies (..) where
+module Allergies exposing (..)
 
 import List
 import Bitwise

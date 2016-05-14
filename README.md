@@ -44,7 +44,7 @@ Please keep the following in mind:
 - Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention. The example solution should be named `ExerciseModuleName.example`. The template file should be named `ExerciseModuleName.elm`. Test file should be named `ExerciseModuleNameTest.elm`.
 
 - The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `ExerciseModuleNameTest.elm`.
-  - Test the new exercise directly by running `elm-test exercises/exercise_module_name/ExerciseModuleNameTest.elm`. 
+  - Test the new exercise directly by running `elm-test exercises/exercise_module_name/ExerciseModuleNameTest.elm`.
 
   - Once the implementation of the exercise is complete, move `ExerciseModuleName.elm` to `ExerciseModuleName.example` and create the template file.
 
@@ -57,10 +57,8 @@ Please keep the following in mind:
 - Test files should use the following format:
 
 ```elm
-module Main (..) where
+module Main exposing (..)
 
-import Task
-import Console
 import ElmTest exposing (..)
 
 
@@ -73,9 +71,9 @@ tests =
     ]
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests
 ```
 
  - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.

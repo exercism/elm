@@ -1,7 +1,5 @@
-module Main (..) where
+module Main exposing (..)
 
-import Task
-import Console
 import ElmTest exposing (..)
 import PhoneNumber exposing (getNumber, prettyPrint)
 
@@ -49,6 +47,6 @@ tests =
     ]
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests

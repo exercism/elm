@@ -1,4 +1,4 @@
-module Bob (..) where
+module Bob exposing (..)
 
 import String
 import Regex

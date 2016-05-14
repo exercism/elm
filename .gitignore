@@ -4,3 +4,4 @@ bin/configlet
 bin/configlet.exe
 elm-stuff
 CHECKLIST
+build.js

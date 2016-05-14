@@ -1,4 +1,4 @@
-module GradeSchool (..) where
+module GradeSchool exposing (..)
 
 import Dict exposing (..)
 

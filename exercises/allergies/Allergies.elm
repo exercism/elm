@@ -1,1 +1,1 @@
-module Allergies (..) where
+module Allergies exposing (..)

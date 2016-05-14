@@ -1,4 +1,4 @@
-module RNATranscription (toRNA) where
+module RNATranscription exposing (toRNA)
 
 import String
 

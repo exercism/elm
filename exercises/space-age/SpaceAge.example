@@ -1,4 +1,4 @@
-module SpaceAge (..) where
+module SpaceAge exposing (..)
 
 
 type Planet

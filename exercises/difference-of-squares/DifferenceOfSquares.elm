@@ -1,1 +1,1 @@
-module DifferenceOfSquares (..) where
+module DifferenceOfSquares exposing (..)

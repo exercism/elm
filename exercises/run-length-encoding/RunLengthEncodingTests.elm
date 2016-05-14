@@ -1,10 +1,7 @@
-module Main (..) where
+module Main exposing (..)
 
-import Task
-import Console
 import ElmTest exposing (..)
 import RunLengthEncoding exposing (version, decode, encode)
-import RunLengthEncodingPropertyChecks exposing (propertyTests)
 
 
 tests : Test
@@ -50,10 +47,9 @@ tests =
     , test
         "decode unicode"
         (assertEqual "⏰⚽⚽⚽⭐⭐⏰" (decode "⏰3⚽2⭐⏰"))
-    , propertyTests
     ]
 
 
-port runner : Signal (Task.Task x ())
-port runner =
-  Console.run (consoleRunner tests)
+main : Program Never
+main =
+  runSuite tests

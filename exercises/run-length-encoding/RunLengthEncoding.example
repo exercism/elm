@@ -1,4 +1,4 @@
-module RunLengthEncoding (version, encode, decode) where
+module RunLengthEncoding exposing (version, encode, decode)
 
 import String exposing (fromChar)
 import List exposing (head, tail)

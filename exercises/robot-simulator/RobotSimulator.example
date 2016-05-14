@@ -1,4 +1,4 @@
-module RobotSimulator (..) where
+module RobotSimulator exposing (..)
 
 import String
 
