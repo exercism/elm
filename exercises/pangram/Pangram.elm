@@ -1,1 +1,1 @@
-module Pangram where
+module Pangram exposing (..)
