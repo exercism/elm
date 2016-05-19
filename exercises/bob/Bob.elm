@@ -1,1 +1,1 @@
-module Bob where
+module Bob exposing (..)
