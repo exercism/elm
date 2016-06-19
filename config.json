@@ -29,7 +29,8 @@
     "robot-simulator",
     "list-ops",
     "atbash-cipher",
-    "say"
+    "say",
+    "largest-series-product"
   ],
   "deprecated": [
 

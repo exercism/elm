@@ -30,7 +30,8 @@
         "./exercises/robot-simulator",
         "./exercises/list-ops",
         "./exercises/atbash-cipher",
-        "./exercises/say"
+        "./exercises/say",
+        "./exercises/largest-series-product"
     ],
     "exposed-modules": [],
     "dependencies": {
