@@ -5,17 +5,17 @@ import Set
 
 triangleKind : number -> number -> number -> Result String String
 triangleKind x y z =
-  if x <= 0 || y <= 0 || z <= 0 then
-    Err "Invalid lengths"
-  else if x + y <= z || x + z <= y || y + z <= x then
-    Err "Violates inequality"
-  else
-    case Set.size (Set.fromList [ x, y, z ]) of
-      1 ->
-        Ok "equilateral"
+    if x <= 0 || y <= 0 || z <= 0 then
+        Err "Invalid lengths"
+    else if x + y <= z || x + z <= y || y + z <= x then
+        Err "Violates inequality"
+    else
+        case Set.size (Set.fromList [ x, y, z ]) of
+            1 ->
+                Ok "equilateral"
 
-      2 ->
-        Ok "isosceles"
+            2 ->
+                Ok "isosceles"
 
-      _ ->
-        Ok "scalene"
+            _ ->
+                Ok "scalene"
