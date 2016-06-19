@@ -1,0 +1,1 @@
+module LargestSeriesProduct exposing (largestProduct)
