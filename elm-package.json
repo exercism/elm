@@ -28,7 +28,8 @@
         "./exercises/grade-school",
         "./exercises/allergies",
         "./exercises/robot-simulator",
-        "./exercises/list-ops"
+        "./exercises/list-ops",
+        "./exercises/atbash-cipher"
     ],
     "exposed-modules": [],
     "dependencies": {
