@@ -1,5 +1,5 @@
 # xElm
-![build status](https://travis-ci.org/exercism/xelm.svg?branch=master)
+[![build status](https://travis-ci.org/exercism/xelm.svg?branch=master)](https://travis-ci.org/exercism/xelm)
 
 Exercism Exercises in Elm
 
