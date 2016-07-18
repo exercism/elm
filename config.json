@@ -30,7 +30,8 @@
     "list-ops",
     "atbash-cipher",
     "say",
-    "largest-series-product"
+    "largest-series-product",
+    "roman-numerals"
   ],
   "deprecated": [
 

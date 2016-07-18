@@ -31,7 +31,8 @@
         "./exercises/list-ops",
         "./exercises/atbash-cipher",
         "./exercises/say",
-        "./exercises/largest-series-product"
+        "./exercises/largest-series-product",
+        "./exercises/roman-numerals"
     ],
     "exposed-modules": [],
     "dependencies": {
