@@ -3,18 +3,18 @@ module DifferenceOfSquares exposing (..)
 
 squareOfSum : Int -> Int
 squareOfSum n =
-  let
-    sum =
-      n * (n + 1) // 2
-  in
-    sum * sum
+    let
+        sum =
+            n * (n + 1) // 2
+    in
+        sum * sum
 
 
 sumOfSquares : Int -> Int
 sumOfSquares n =
-  List.sum (List.map (\m -> m * m) [0..n])
+    List.sum (List.map (\m -> m * m) [0..n])
 
 
 difference : Int -> Int
 difference n =
-  squareOfSum n - sumOfSquares n
+    squareOfSum n - sumOfSquares n
