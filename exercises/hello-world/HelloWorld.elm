@@ -9,7 +9,7 @@ file. It has to stay just the way it is.
 
 module HelloWorld exposing (..)
 
--- It's good style to include a types at the top level of your modules.
+-- It's good style to include any types at the top level of your modules.
 
 
 helloWorld : Maybe String -> String
