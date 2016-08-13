@@ -27,10 +27,12 @@ tests =
         , suite "foldl"
             [ test "empty list" (assertEqual 0 (foldl (+) 0 []))
             , test "non-empty list" (assertEqual 10 (foldl (+) 0 [1..4]))
+            , test "direction" (assertEqual [4,3,2,1] (foldl (::) [] [1..4]))
             ]
         , suite "foldr"
             [ test "empty list" (assertEqual 0 (foldr (+) 0 []))
             , test "non-empty list" (assertEqual 10 (foldr (+) 0 [1..4]))
+            , test "direction" (assertEqual [1..4] (foldr (::) [] [1..4]))
             ]
         , suite "append"
             [ test "empty lists" (assertEqual [] (append [] []))
