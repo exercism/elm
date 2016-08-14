@@ -5,9 +5,9 @@ language: bash
 sudo: false
 
 install:
-  - nvm install 0.12
-  - nvm use 0.12
-  - npm install -g elm@0.17.0 elm-test@0.16.1-alpha4
+  - nvm install 6
+  - nvm use 6
+  - npm install -g elm@0.17.1 elm-test@0.17.1
   - elm package install -y
 
 script:
