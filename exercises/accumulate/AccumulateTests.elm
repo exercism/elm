@@ -1,6 +1,9 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import Accumulate exposing (accumulate)
 import String
 
@@ -12,18 +15,21 @@ square x =
 
 tests : Test
 tests =
-    suite "Accumulate"
+    describe "Accumulate"
         [ test "[]] Accumulate"
-            (assertEqual [] (accumulate square []))
+            (\() -> Expect.equal [] (accumulate square []))
         , test "square Accumulate"
-            (assertEqual [ 1, 4, 9 ] (accumulate square [ 1, 2, 3 ]))
+            (\() -> Expect.equal [ 1, 4, 9 ] (accumulate square [ 1, 2, 3 ]))
         , test "toUpper Accumulate"
-            (assertEqual [ "HELLO", "WORLD" ] (accumulate String.toUpper [ "hello", "world" ]))
+            (\() -> Expect.equal [ "HELLO", "WORLD" ] (accumulate String.toUpper [ "hello", "world" ]))
         , test "reverse Accumulate"
-            (assertEqual [ "olleh", "dlrow" ] (accumulate String.reverse [ "hello", "world" ]))
+            (\() -> Expect.equal [ "olleh", "dlrow" ] (accumulate String.reverse [ "hello", "world" ]))
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

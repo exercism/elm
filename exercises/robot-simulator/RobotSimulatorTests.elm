@@ -1,117 +1,132 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import RobotSimulator exposing (defaultRobot, Robot, Bearing(North, East, West, South), turnRight, turnLeft, advance, simulate)
 
 
 tests : Test
 tests =
-    suite "RobotSimulator"
-        [ suite "init"
+    describe "RobotSimulator"
+        [ describe "init"
             (let
                 robot =
                     defaultRobot
              in
-                [ test "coordinates" (assertEqual { x = 0, y = 0 } robot.coordinates)
-                , test "bearing" (assertEqual North robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = 0, y = 0 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal North robot.bearing)
                 ]
             )
-        , suite "setup"
+        , describe "setup"
             (let
                 robot =
                     Robot South { x = -1, y = 1 }
              in
-                [ test "coordinates" (assertEqual { x = -1, y = 1 } robot.coordinates)
-                , test "bearing" (assertEqual South robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = -1, y = 1 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal South robot.bearing)
                 ]
             )
-        , suite "turn right"
+        , describe "turn right"
             ([1..3]
                 |> List.scanl (\_ r -> turnRight r) defaultRobot
                 |> List.map .bearing
                 |> assertionList [ North, East, South, West ]
-                |> List.map defaultTest
+                |> List.indexedMap (\i e -> test ("step " ++ toString i) (\() -> e))
             )
-        , suite "turn left"
+        , describe
+            "turn left"
             ([1..3]
                 |> List.scanl (\_ r -> turnLeft r) defaultRobot
                 |> List.map .bearing
                 |> assertionList [ North, West, South, East ]
-                |> List.map defaultTest
+                |> List.indexedMap (\i e -> test ("step " ++ toString i) (\() -> e))
             )
-        , suite "advance positive north"
+        , describe "advance positive north"
             (let
                 robot =
                     Robot North { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (assertEqual { x = 0, y = 1 } robot.coordinates)
-                , test "bearing" (assertEqual North robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = 0, y = 1 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal North robot.bearing)
                 ]
             )
-        , suite "advance positive east"
+        , describe "advance positive east"
             (let
                 robot =
                     Robot East { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (assertEqual { x = 1, y = 0 } robot.coordinates)
-                , test "bearing" (assertEqual East robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = 1, y = 0 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal East robot.bearing)
                 ]
             )
-        , suite "advance negative south"
+        , describe "advance negative south"
             (let
                 robot =
                     Robot South { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (assertEqual { x = 0, y = -1 } robot.coordinates)
-                , test "bearing" (assertEqual South robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = 0, y = -1 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal South robot.bearing)
                 ]
             )
-        , suite "advance positive west"
+        , describe "advance positive west"
             (let
                 robot =
                     Robot West { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (assertEqual { x = -1, y = 0 } robot.coordinates)
-                , test "bearing" (assertEqual West robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = -1, y = 0 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal West robot.bearing)
                 ]
             )
-        , suite "simulate prog 1"
+        , describe "simulate prog 1"
             (let
                 robot =
                     Robot North { x = 0, y = 0 }
                         |> simulate "LAAARALA"
              in
-                [ test "coordinates" (assertEqual { x = -4, y = 1 } robot.coordinates)
-                , test "bearing" (assertEqual West robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = -4, y = 1 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal West robot.bearing)
                 ]
             )
-        , suite "simulate prog 2"
+        , describe "simulate prog 2"
             (let
                 robot =
                     Robot East { x = 2, y = -7 }
                         |> simulate "RRAAAAALA"
              in
-                [ test "coordinates" (assertEqual { x = -3, y = -8 } robot.coordinates)
-                , test "bearing" (assertEqual South robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = -3, y = -8 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal South robot.bearing)
                 ]
             )
-        , suite "simulate prog 3"
+        , describe "simulate prog 3"
             (let
                 robot =
                     Robot South { x = 8, y = 4 }
                         |> simulate "LAAARRRALLLL"
              in
-                [ test "coordinates" (assertEqual { x = 11, y = 5 } robot.coordinates)
-                , test "bearing" (assertEqual North robot.bearing)
+                [ test "coordinates" (\() -> Expect.equal { x = 11, y = 5 } robot.coordinates)
+                , test "bearing" (\() -> Expect.equal North robot.bearing)
                 ]
             )
         ]
 
 
+{-| Given a list of values and another list of expected values,
+generate a list of Assert Equal assertions.
+-}
+assertionList : List a -> List a -> List Expect.Expectation
+assertionList xs ys =
+    List.map2 Expect.equal xs ys
+
+
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

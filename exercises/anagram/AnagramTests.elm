@@ -1,95 +1,121 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import Anagram exposing (detect)
 
 
 tests : Test
 tests =
-    suite "Anagram"
+    describe "Anagram"
         [ test "no matches"
-            (assertEqual []
-                (detect "diaper" [ "hello", "world", "zombies", "pants" ])
+            (\() ->
+                Expect.equal []
+                    (detect "diaper" [ "hello", "world", "zombies", "pants" ])
             )
         , test "detects simple anagram"
-            (assertEqual [ "tan" ]
-                (detect "ant" [ "tan", "stand", "at" ])
+            (\() ->
+                Expect.equal [ "tan" ]
+                    (detect "ant" [ "tan", "stand", "at" ])
             )
         , test "does not detect false positives"
-            (assertEqual []
-                (detect "galea" [ "eagle" ])
+            (\() ->
+                Expect.equal []
+                    (detect "galea" [ "eagle" ])
             )
         , test "detects multiple anagrams"
-            (assertEqual [ "stream", "maters" ]
-                (detect "master" [ "stream", "pigeon", "maters" ])
+            (\() ->
+                Expect.equal [ "stream", "maters" ]
+                    (detect "master" [ "stream", "pigeon", "maters" ])
             )
         , test "does not detect anagram subsets"
-            (assertEqual []
-                (detect "good" [ "dog", "goody" ])
+            (\() ->
+                Expect.equal []
+                    (detect "good" [ "dog", "goody" ])
             )
         , test "detects anagram"
-            (assertEqual [ "inlets" ]
-                (detect "listen" [ "enlists", "google", "inlets", "banana" ])
+            (\() ->
+                Expect.equal [ "inlets" ]
+                    (detect "listen" [ "enlists", "google", "inlets", "banana" ])
             )
         , test "detects multiple anagrams"
-            (assertEqual [ "gallery", "regally", "largely" ]
-                (detect "allergy" [ "gallery", "ballerina", "regally", "clergy", "largely", "leading" ])
+            (\() ->
+                Expect.equal [ "gallery", "regally", "largely" ]
+                    (detect "allergy" [ "gallery", "ballerina", "regally", "clergy", "largely", "leading" ])
             )
         , test "does not detect indentical words"
-            (assertEqual [ "cron" ]
-                (detect "corn" [ "corn", "dark", "Corn", "rank", "CORN", "cron", "park" ])
+            (\() ->
+                Expect.equal [ "cron" ]
+                    (detect "corn" [ "corn", "dark", "Corn", "rank", "CORN", "cron", "park" ])
             )
         , test "does not detect non-anagrams with identical checksum"
-            (assertEqual []
-                (detect "mass" [ "last" ])
+            (\() ->
+                Expect.equal []
+                    (detect "mass" [ "last" ])
             )
         , test "detects anagrams case-insensitively"
-            (assertEqual [ "Carthorse" ]
-                (detect "Orchestra" [ "cashregister", "Carthorse", "radishes" ])
+            (\() ->
+                Expect.equal [ "Carthorse" ]
+                    (detect "Orchestra" [ "cashregister", "Carthorse", "radishes" ])
             )
         , test "detects anagrams using case-insensitive subject"
-            (assertEqual [ "carthorse" ]
-                (detect "Orchestra" [ "cashregister", "carthorse", "radishes" ])
+            (\() ->
+                Expect.equal [ "carthorse" ]
+                    (detect "Orchestra" [ "cashregister", "carthorse", "radishes" ])
             )
         , test "detects anagrams using case-insensitve possible matches"
-            (assertEqual [ "Carthorse" ]
-                (detect "orchestra" [ "cashregister", "Carthorse", "radishes" ])
+            (\() ->
+                Expect.equal [ "Carthorse" ]
+                    (detect "orchestra" [ "cashregister", "Carthorse", "radishes" ])
             )
         , test "does not detect a word as its own anagram"
-            (assertEqual []
-                (detect "banana" [ "Banana" ])
+            (\() ->
+                Expect.equal []
+                    (detect "banana" [ "Banana" ])
             )
         , test "does not detect a anagram if the original word is repeated"
-            (assertEqual []
-                (detect "go" [ "go Go GO" ])
+            (\() ->
+                Expect.equal []
+                    (detect "go" [ "go Go GO" ])
             )
         , test "anagrams must use all letters exactly once"
-            (assertEqual []
-                (detect "tapper" [ "patter" ])
+            (\() ->
+                Expect.equal []
+                    (detect "tapper" [ "patter" ])
             )
         , test "eliminates anagrams with the same checksum"
-            (assertEqual []
-                (detect "mass" [ "last" ])
+            (\() ->
+                Expect.equal []
+                    (detect "mass" [ "last" ])
             )
         , test "detects unicode anagrams"
-            (assertEqual [ "ΒΓΑ", "γβα" ]
-                (detect "ΑΒΓ" [ "ΒΓΑ", "ΒΓΔ", "γβα" ])
+            (\() ->
+                Expect.equal [ "ΒΓΑ", "γβα" ]
+                    (detect "ΑΒΓ" [ "ΒΓΑ", "ΒΓΔ", "γβα" ])
             )
         , test "eliminates misleading unicode anagrams"
-            (assertEqual []
-                (detect "ΑΒΓ" [ "ABΓ" ])
+            (\() ->
+                Expect.equal []
+                    (detect "ΑΒΓ" [ "ABΓ" ])
             )
         , test "capital word is not own anagram"
-            (assertEqual []
-                (detect "BANANA" [ "Banana" ])
+            (\() ->
+                Expect.equal []
+                    (detect "BANANA" [ "Banana" ])
             )
         , test "anagrams must use all letters exactly once"
-            (assertEqual []
-                (detect "patter" [ "tapper" ])
+            (\() ->
+                Expect.equal []
+                    (detect "patter" [ "tapper" ])
             )
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

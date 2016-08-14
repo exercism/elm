@@ -1,21 +1,27 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import SumOfMultiples exposing (sumOfMultiples)
 
 
 tests : Test
 tests =
-    suite "Sum Of Multiples"
-        [ test "[3, 5] 15" (assertEqual 45 (sumOfMultiples [ 3, 5 ] 15))
-        , test "[7, 13, 17] 20" (assertEqual 51 (sumOfMultiples [ 7, 13, 17 ] 20))
-        , test "[4, 6] 15" (assertEqual 30 (sumOfMultiples [ 4, 6 ] 15))
-        , test "[5, 6, 8] 150" (assertEqual 4419 (sumOfMultiples [ 5, 6, 8 ] 150))
-        , test "[43, 47] 10000" (assertEqual 2203160 (sumOfMultiples [ 43, 47 ] 10000))
-        , test "[5, 25] 51" (assertEqual 275 (sumOfMultiples [ 5, 25 ] 51))
+    describe "Sum Of Multiples"
+        [ test "[3, 5] 15" (\() -> Expect.equal 45 (sumOfMultiples [ 3, 5 ] 15))
+        , test "[7, 13, 17] 20" (\() -> Expect.equal 51 (sumOfMultiples [ 7, 13, 17 ] 20))
+        , test "[4, 6] 15" (\() -> Expect.equal 30 (sumOfMultiples [ 4, 6 ] 15))
+        , test "[5, 6, 8] 150" (\() -> Expect.equal 4419 (sumOfMultiples [ 5, 6, 8 ] 150))
+        , test "[43, 47] 10000" (\() -> Expect.equal 2203160 (sumOfMultiples [ 43, 47 ] 10000))
+        , test "[5, 25] 51" (\() -> Expect.equal 275 (sumOfMultiples [ 5, 25 ] 51))
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

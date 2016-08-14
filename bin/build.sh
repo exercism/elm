@@ -12,7 +12,8 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise"
 
-  elm-make $exercise_dir/*Tests.elm --yes --output build.js && node build.js
+  elm-package install
+  elm-test $exercise_dir/*Tests.elm
 
   if [ $? -ne 0 ]; then
       TEST_RESULT=1

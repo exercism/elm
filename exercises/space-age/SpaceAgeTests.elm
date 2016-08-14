@@ -1,31 +1,37 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import SpaceAge exposing (Planet(..), ageOn)
 
 
 tests : Test
 tests =
-    suite "SpaceAge"
+    describe "SpaceAge"
         [ test "age in earth years"
-            (assertEqual 32 (round (ageOn Earth 1000000000)))
+            (\() -> Expect.equal 32 (round (ageOn Earth 1000000000)))
         , test "age in mercury years"
-            (assertEqual 281 (round (ageOn Mercury 2134835688)))
+            (\() -> Expect.equal 281 (round (ageOn Mercury 2134835688)))
         , test "age in venus years"
-            (assertEqual 10 (round (ageOn Venus 189839836)))
+            (\() -> Expect.equal 10 (round (ageOn Venus 189839836)))
         , test "age on mars"
-            (assertEqual 39 (round (ageOn Mars 2329871239)))
+            (\() -> Expect.equal 39 (round (ageOn Mars 2329871239)))
         , test "age on jupiter"
-            (assertEqual 2 (round (ageOn Jupiter 901876382)))
+            (\() -> Expect.equal 2 (round (ageOn Jupiter 901876382)))
         , test "age on saturn"
-            (assertEqual 3 (round (ageOn Saturn 3000000000)))
+            (\() -> Expect.equal 3 (round (ageOn Saturn 3000000000)))
         , test "age on uranus"
-            (assertEqual 1 (round (ageOn Uranus 3210123456)))
+            (\() -> Expect.equal 1 (round (ageOn Uranus 3210123456)))
         , test "age on neptune"
-            (assertEqual 2 (round (ageOn Neptune 8210123456)))
+            (\() -> Expect.equal 2 (round (ageOn Neptune 8210123456)))
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg
