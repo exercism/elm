@@ -15,8 +15,10 @@ tests =
                 robot =
                     defaultRobot
              in
-                [ test "coordinates" (\() -> Expect.equal { x = 0, y = 0 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal North robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = 0, y = 0 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal North robot.bearing
                 ]
             )
         , describe "setup"
@@ -24,8 +26,10 @@ tests =
                 robot =
                     Robot South { x = -1, y = 1 }
              in
-                [ test "coordinates" (\() -> Expect.equal { x = -1, y = 1 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal South robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = -1, y = 1 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal South robot.bearing
                 ]
             )
         , describe "turn right"
@@ -49,8 +53,10 @@ tests =
                     Robot North { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (\() -> Expect.equal { x = 0, y = 1 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal North robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = 0, y = 1 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal North robot.bearing
                 ]
             )
         , describe "advance positive east"
@@ -59,8 +65,10 @@ tests =
                     Robot East { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (\() -> Expect.equal { x = 1, y = 0 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal East robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = 1, y = 0 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal East robot.bearing
                 ]
             )
         , describe "advance negative south"
@@ -69,8 +77,10 @@ tests =
                     Robot South { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (\() -> Expect.equal { x = 0, y = -1 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal South robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = 0, y = -1 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal South robot.bearing
                 ]
             )
         , describe "advance positive west"
@@ -79,8 +89,10 @@ tests =
                     Robot West { x = 0, y = 0 }
                         |> advance
              in
-                [ test "coordinates" (\() -> Expect.equal { x = -1, y = 0 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal West robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = -1, y = 0 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal West robot.bearing
                 ]
             )
         , describe "simulate prog 1"
@@ -89,8 +101,10 @@ tests =
                     Robot North { x = 0, y = 0 }
                         |> simulate "LAAARALA"
              in
-                [ test "coordinates" (\() -> Expect.equal { x = -4, y = 1 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal West robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = -4, y = 1 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal West robot.bearing
                 ]
             )
         , describe "simulate prog 2"
@@ -99,8 +113,10 @@ tests =
                     Robot East { x = 2, y = -7 }
                         |> simulate "RRAAAAALA"
              in
-                [ test "coordinates" (\() -> Expect.equal { x = -3, y = -8 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal South robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = -3, y = -8 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal South robot.bearing
                 ]
             )
         , describe "simulate prog 3"
@@ -109,8 +125,10 @@ tests =
                     Robot South { x = 8, y = 4 }
                         |> simulate "LAAARRRALLLL"
              in
-                [ test "coordinates" (\() -> Expect.equal { x = 11, y = 5 } robot.coordinates)
-                , test "bearing" (\() -> Expect.equal North robot.bearing)
+                [ test "coordinates" <|
+                    \() -> Expect.equal { x = 11, y = 5 } robot.coordinates
+                , test "bearing" <|
+                    \() -> Expect.equal North robot.bearing
                 ]
             )
         ]
