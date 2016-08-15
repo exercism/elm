@@ -7,7 +7,9 @@ import Triangle exposing (..)
 tests : Test
 tests =
     suite "triangleKind"
-        [ test "equilateral triangles have equal sides"
+        [ test "the solution is for the correct version of the test"
+            (assertEqual 2 version)
+        , test "equilateral triangles have equal sides"
             (assertEqual (Ok Equilateral) (triangleKind 2 2 2))
         , test "larger equilateral triangles also have equal sides"
             (assertEqual (Ok Equilateral) (triangleKind 10 10 10))
