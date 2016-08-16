@@ -3,7 +3,18 @@ module Triangle exposing (..)
 import Set
 
 
-triangleKind : number -> number -> number -> Result String String
+type Triangle
+    = Equilateral
+    | Isosceles
+    | Scalene
+
+
+version : Int
+version =
+    2
+
+
+triangleKind : number -> number -> number -> Result String Triangle
 triangleKind x y z =
     if x <= 0 || y <= 0 || z <= 0 then
         Err "Invalid lengths"
@@ -12,10 +23,10 @@ triangleKind x y z =
     else
         case Set.size (Set.fromList [ x, y, z ]) of
             1 ->
-                Ok "equilateral"
+                Ok Equilateral
 
             2 ->
-                Ok "isosceles"
+                Ok Isosceles
 
             _ ->
-                Ok "scalene"
+                Ok Scalene
