@@ -1,8 +1,8 @@
-Elm exercises within your exercism project directory can be run by changing to the exercise directory, and running `./runtests.sh` (or `runtests.bat` on Windows).
+The Elm exercise test suites may be run from the exercise directory.
 
 ```bash
 $ cd exercism/project/directory/elm/hello-world
-$ ./runtests.sh
+$ elm-test *Tests.elm
 ```
 
 ## Hints and tips

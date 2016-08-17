@@ -1,22 +1,35 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import Leap
 
 
 tests : Test
 tests =
-    suite "Leap"
-        [ test "leap year" (assertEqual True (Leap.isLeapYear 1996))
-        , test "non-leap year" (assertEqual False (Leap.isLeapYear 1997))
-        , test "non-leap even year" (assertEqual False (Leap.isLeapYear 1998))
-        , test "century" (assertEqual False (Leap.isLeapYear 1900))
-        , test "second century" (assertEqual False (Leap.isLeapYear 1800))
-        , test "fourth century" (assertEqual True (Leap.isLeapYear 2400))
-        , test "y2k" (assertEqual True (Leap.isLeapYear 2000))
+    describe "Leap"
+        [ test "leap year" <|
+            \() -> Expect.equal True (Leap.isLeapYear 1996)
+        , test "non-leap year" <|
+            \() -> Expect.equal False (Leap.isLeapYear 1997)
+        , test "non-leap even year" <|
+            \() -> Expect.equal False (Leap.isLeapYear 1998)
+        , test "century" <|
+            \() -> Expect.equal False (Leap.isLeapYear 1900)
+        , test "second century" <|
+            \() -> Expect.equal False (Leap.isLeapYear 1800)
+        , test "fourth century" <|
+            \() -> Expect.equal True (Leap.isLeapYear 2400)
+        , test "y2k" <|
+            \() -> Expect.equal True (Leap.isLeapYear 2000)
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg

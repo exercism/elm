@@ -1,18 +1,30 @@
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 import HelloWorld exposing (helloWorld)
 
 
 tests : Test
 tests =
-    suite "Hello, World!"
-        [ test "Hello with no name" (assertEqual "Hello, World!" (helloWorld Nothing))
-        , test "Hello to a sample name" (assertEqual "Hello, Alice!" (helloWorld (Just "Alice")))
-        , test "Hello to another sample name" (assertEqual "Hello, Bob!" (helloWorld (Just "Bob")))
+    describe "Hello, World!"
+        [ test "Hello with no name" <|
+            \() ->
+                Expect.equal "Hello, World!" (helloWorld Nothing)
+        , test "Hello to a sample name" <|
+            \() ->
+                Expect.equal "Hello, Alice!" (helloWorld (Just "Alice"))
+        , test "Hello to another sample name" <|
+            \() ->
+                Expect.equal "Hello, Bob!" (helloWorld (Just "Bob"))
         ]
 
 
 main : Program Never
 main =
-    runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg
