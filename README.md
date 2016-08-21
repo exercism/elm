@@ -71,7 +71,7 @@ tests =
     ]
 
 
-main : Program Never
+main : Program Value
 main =
   runSuite tests
 ```

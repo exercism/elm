@@ -45,7 +45,7 @@ tests =
         ]
 
 
-main : Program Never
+main : Program Value
 main =
     run emit tests
 
