@@ -142,7 +142,7 @@ assertionList xs ys =
     List.map2 Expect.equal xs ys
 
 
-main : Program Never
+main : Program Value
 main =
     run emit tests
 
