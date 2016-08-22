@@ -150,7 +150,7 @@ gibberishQuestion length =
     (gibberish length anyCharacter) ++ "?"
 
 
-main : Program Never
+main : Program Value
 main =
     run emit tests
 
