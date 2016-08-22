@@ -16,12 +16,13 @@ do
 
   mv $exercise_dir/elm-package.json $exercise_dir/elm-package.json.disabled
   elm-test $exercise_dir/*Tests.elm
-  mv $exercise_dir/elm-package.json.disabled $exercise_dir/elm-package.json
 
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
       FAILED_EXERCISES+="$exercise\n"
   fi
+
+  mv $exercise_dir/elm-package.json.disabled $exercise_dir/elm-package.json
 
   if [ $WITH_FORMAT ]; then
     elm-format $exercise_dir/*.elm --yes
