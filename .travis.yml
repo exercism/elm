@@ -14,7 +14,3 @@ script:
   - bin/fetch-configlet
   - bin/configlet .
   - bin/build.sh
-
-cache:
-  directories:
-  - elm-stuff
