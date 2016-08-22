@@ -37,8 +37,6 @@ tests =
         , test "triangles violating triangle inequality are illegal 1" <|
             \() -> Expect.equal (Err "Violates inequality") (triangleKind 1 1 3)
         , test "triangles violating triangle inequality are illegal 2" <|
-            \() -> Expect.equal (Err "Violates inequality") (triangleKind 2 4 2)
-        , test "triangles violating triangle inequality are illegal 3" <|
             \() -> Expect.equal (Err "Violates inequality") (triangleKind 7 3 2)
         ]
 
