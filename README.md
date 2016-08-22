@@ -57,9 +57,12 @@ Please keep the following in mind:
 - Test files should use the following format:
 
 ```elm
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 
 
 tests : Test
