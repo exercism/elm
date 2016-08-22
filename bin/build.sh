@@ -15,6 +15,7 @@ do
   echo "Testing $exercise"
 
   mv $exercise_dir/elm-package.json $exercise_dir/elm-package.json.disabled
+  mkdir $exercise_dir/elm-stuff
   elm-test $exercise_dir/*Tests.elm
 
   if [ $? -ne 0 ]; then
