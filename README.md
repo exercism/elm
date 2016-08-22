@@ -57,23 +57,34 @@ Please keep the following in mind:
 - Test files should use the following format:
 
 ```elm
-module Main exposing (..)
+port module Main exposing (..)
 
-import ElmTest exposing (..)
+import Test.Runner.Node exposing (run)
+import Json.Encode exposing (Value)
+import Test exposing (..)
+import Expect
 
 
 tests : Test
 tests =
-  suite
-    "ExerciseModuleName"
-    [ test "first test" (assertEqual True True)
-    , test "second test" (assertEqual False False)
-    ]
+    describe "Bob"
+        [ test "first test" <|
+            \() ->
+                True
+                    |> Expect.equal True
+        , test "second test" <|
+            \() ->
+                False
+                    |> Expect.equal False
+        ]
 
 
 main : Program Never
 main =
-  runSuite tests
+    run emit tests
+
+
+port emit : ( String, Value ) -> Cmd msg
 ```
 
  - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
