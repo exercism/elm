@@ -3,6 +3,8 @@
 declare -i TEST_RESULT=0
 FAILED_EXERCISES=''
 
+elm-package install
+
 for example_file in exercises/**/*.example
 do
   exercise_dir=$(dirname $example_file)
@@ -12,7 +14,6 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise"
 
-  elm-package install
   elm-test $exercise_dir/*Tests.elm
 
   if [ $? -ne 0 ]; then
