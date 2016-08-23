@@ -3,6 +3,8 @@
 declare -i TEST_RESULT=0
 FAILED_EXERCISES=''
 
+elm-package install
+
 for example_file in exercises/**/*.example
 do
   exercise_dir=$(dirname $example_file)
@@ -12,13 +14,19 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise"
 
-  elm-package install
+  # prevent elm-test from installing dependencies
+  mv $exercise_dir/elm-package.json $exercise_dir/elm-package.json.disabled
+
   elm-test $exercise_dir/*Tests.elm
 
+  # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
       FAILED_EXERCISES+="$exercise\n"
   fi
+
+  # be kind, rewind
+  mv $exercise_dir/elm-package.json.disabled $exercise_dir/elm-package.json
 
   if [ $WITH_FORMAT ]; then
     elm-format $exercise_dir/*.elm --yes
