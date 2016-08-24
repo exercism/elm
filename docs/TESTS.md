@@ -4,7 +4,7 @@ The Elm exercise test suites may be run from the exercise directory.
 $ cd exercism/project/directory/elm/hello-world
 $ elm-test *Tests.elm
 ```
-Replace * with the name of the exercise you're on, e.g. HelloWorld for the Hello World exercise.
+Replace `*` with the name of the exercise you're on, e.g. HelloWorld for the Hello World exercise.
 
 ## Hints and tips
 
