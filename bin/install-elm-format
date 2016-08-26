@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# choose file for system
+# Example:
+#   bin/install-elm-format linux
+#   bin/install-elm-format mac
+case $1 in
+  mac)
+    FILE=https://github.com/avh4/elm-format/releases/download/0.4.0-alpha/elm-format-0.17-0.4.0-alpha-mac-x64.tgz
+    ;;
+  linux)
+    FILE=https://github.com/avh4/elm-format/releases/download/0.4.0-alpha/elm-format-0.17-0.4.0-alpha-linux-x64.tgz
+    ;;
+  *)
+    echo "please specify operating system"
+    exit 1
+esac
+
+# download file into bin
+curl -L $FILE | tar -xvzO > bin/elm-format
+
+# give user execute
+chmod u+x bin/elm-format

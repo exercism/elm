@@ -9,6 +9,8 @@ install:
   - nvm use 6
   - npm install -g elm@0.17.1 elm-test@0.17.3
   - elm package install -y
+  - bin/install-elm-format linux
+  - export PATH=$PATH:$PWD/bin
 
 script:
   - bin/fetch-configlet
