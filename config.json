@@ -31,7 +31,8 @@
     "atbash-cipher",
     "say",
     "largest-series-product",
-    "roman-numerals"
+    "roman-numerals",
+    "gigasecond"
   ],
   "exercises": [
     {
