@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+OS=$(
+case $(uname) in
+    (Darwin*)
+        echo "mac";;
+    (Linux*)
+        echo "linux";;
+    (Windows*)
+        echo "windows";;
+    (*)
+        echo "linux";;
+esac)
+
+URL=https://github.com/avh4/elm-format/releases/download/0.4.0-alpha/elm-format-0.17-0.4.0-alpha-$OS-x64.tgz
+
+curl -L $URL | tar -xvzO > bin/elm-format
+
+chmod u+x bin/elm-format
