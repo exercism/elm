@@ -2,120 +2,13 @@ module Gigasecond exposing (add)
 
 import Date
 import Time
-import String
 
 
-add : String -> Result String String
-add x =
-    x
-        |> Date.fromString
-        |> Result.map (add' gigasecond)
-        |> Result.map format
-
-
-add' : Time.Time -> Date.Date -> Date.Date
-add' t d =
-    d
-        |> Date.toTime
-        |> flip (+) t
-        |> Date.fromTime
+add : Date.Date -> Date.Date
+add =
+    Date.toTime >> (+) gigasecond >> Date.fromTime
 
 
 gigasecond : Time.Time
 gigasecond =
     10 ^ 12
-
-
-format : Date.Date -> String
-format date =
-    let
-        date =
-            toGMT date
-    in
-        --toString date
-        [ Date.year date
-            |> toString
-        , "-"
-        , Date.month date
-            |> monthToInt
-            |> Maybe.withDefault 1
-            |> toString
-            |> String.pad 2 '0'
-        , "-"
-        , Date.day date
-            |> toString
-            |> String.pad 2 '0'
-        , "T"
-        , Date.hour date
-            |> toString
-            |> String.pad 2 '0'
-        , ":"
-        , Date.minute date
-            |> toString
-            |> String.pad 2 '0'
-        , ":"
-        , Date.second date
-            |> toString
-            |> String.pad 2 '0'
-        ]
-            |> String.concat
-
-
-monthToInt : Date.Month -> Maybe Int
-monthToInt n =
-    case n of
-        Date.Jan ->
-            Just 1
-
-        Date.Feb ->
-            Just 2
-
-        Date.Mar ->
-            Just 3
-
-        Date.Apr ->
-            Just 4
-
-        Date.May ->
-            Just 5
-
-        Date.Jun ->
-            Just 6
-
-        Date.Jul ->
-            Just 7
-
-        Date.Aug ->
-            Just 8
-
-        Date.Sep ->
-            Just 9
-
-        Date.Oct ->
-            Just 10
-
-        Date.Nov ->
-            Just 11
-
-        Date.Dec ->
-            Just 12
-
-
-toGMT : Date.Date -> Date.Date
-toGMT date =
-    let
-        tzOffset =
-            date
-                |> toString
-                |> String.split " "
-                |> List.drop 5
-                |> List.head
-                |> Maybe.withDefault "GMT-0000"
-                |> String.dropLeft 3
-                |> String.toInt
-                |> Result.withDefault 0
-                |> flip (//) 100
-                |> toFloat
-                |> (*) -Time.hour
-    in
-        add' tzOffset date
