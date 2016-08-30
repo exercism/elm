@@ -14,31 +14,31 @@ tests =
         [ describe "add"
             [ test "2011-04-25" <|
                 \() ->
-                    Expect.equal (actual "2011-04-25") (expected "2043-01-01T01:46:40")
+                    Expect.equal (date "2043-01-01T01:46:40") (Gigasecond.add (date "2011-04-25"))
             , test "1977-06-13" <|
                 \() ->
-                    Expect.equal (actual "1977-06-13") (expected "2009-02-19T01:46:40")
+                    Expect.equal (date "2009-02-19T01:46:40") (Gigasecond.add (date "1977-06-13"))
             , test "1959-07-19" <|
                 \() ->
-                    Expect.equal (actual "1959-07-19") (expected "1991-03-27T01:46:40")
+                    Expect.equal (date "1991-03-27T01:46:40") (Gigasecond.add (date "1959-07-19"))
             , test "full time specified" <|
                 \() ->
-                    Expect.equal (actual "2015-01-24T22:00:00") (expected "2046-10-02T23:46:40")
+                    Expect.equal (date "2046-10-02T23:46:40") (Gigasecond.add (date "2015-01-24T22:00:00"))
             , test "full time with day roll-over" <|
                 \() ->
-                    Expect.equal (actual "2015-01-24T23:59:59") (expected "2046-10-03T01:46:39")
+                    Expect.equal (date "2046-10-03T01:46:39") (Gigasecond.add (date "2015-01-24T23:59:59"))
             ]
         ]
 
 
-actual : String -> Result String Date.Date
-actual =
-    Date.fromString >> Result.map Gigasecond.add
+date : String -> Date.Date
+date input =
+    case Date.fromString input of
+        Ok date ->
+            date
 
-
-expected : String -> Result String Date.Date
-expected =
-    Date.fromString
+        Err reason ->
+            Debug.crash reason
 
 
 main : Program Value
