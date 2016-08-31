@@ -32,7 +32,8 @@
         "./exercises/atbash-cipher",
         "./exercises/say",
         "./exercises/largest-series-product",
-        "./exercises/roman-numerals"
+        "./exercises/roman-numerals",
+        "./exercises/gigasecond"
     ],
     "exposed-modules": [],
     "dependencies": {
