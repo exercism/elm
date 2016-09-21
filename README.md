@@ -96,3 +96,6 @@ port emit : ( String, Value ) -> Cmd msg
 The MIT License (MIT)
 
 Copyright (c) 2016 Katrina Owen, _@kytrinyx.com
+
+### Elm icon
+We were unable to find copyright information about the Elm logo, nor information about who designed it. Presumably Evan Czaplicki, creator of the Elm language, also made the logo, and holds copyright. It may also fall within the public domain, since it is a geometric shape. We've adapted the official Elm logo by changing the colors, which we believe falls under "fair use".
