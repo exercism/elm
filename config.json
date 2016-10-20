@@ -11,6 +11,7 @@
     "pangram",
     "accumulate",
     "triangle",
+    "scrabble-score",
     "anagram",
     "space-age",
     "strain",
@@ -67,6 +68,11 @@
     },
     {
       "slug": "triangle",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
+      "slug": "scrabble-score",
       "difficulty": 1,
       "topics": []
     },

@@ -17,6 +17,7 @@
         "./exercises/anagram",
         "./exercises/raindrops",
         "./exercises/triangle",
+        "./exercises/scrabble-score",
         "./exercises/accumulate",
         "./exercises/sublist",
         "./exercises/sum-of-multiples",
