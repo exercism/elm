@@ -76,7 +76,7 @@ tests =
             \() ->
                 Expect.equal
                     "Whoa, chill out!"
-                    (Bob.hey "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!)")
+                    (Bob.hey "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
         , test "shouting with no exclamation mark" <|
             \() ->
                 Expect.equal
