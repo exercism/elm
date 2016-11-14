@@ -40,6 +40,11 @@
       "topics": []
     },
     {
+      "slug": "scrabble-score",
+      "difficulty": 1,
+      "topics": []
+    },
+    {
       "slug": "anagram",
       "difficulty": 1,
       "topics": []
