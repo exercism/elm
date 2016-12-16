@@ -34,7 +34,8 @@
         "./exercises/say",
         "./exercises/largest-series-product",
         "./exercises/roman-numerals",
-        "./exercises/gigasecond"
+        "./exercises/gigasecond",
+        "./exercises/bowling"
     ],
     "exposed-modules": [],
     "dependencies": {

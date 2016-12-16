@@ -153,6 +153,11 @@
       "slug": "gigasecond",
       "difficulty": 1,
       "topics": []
+    },
+    {
+      "slug": "bowling",
+      "difficulty": 1,
+      "topics": []
     }
   ],
   "deprecated": [
