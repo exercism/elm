@@ -40,7 +40,7 @@ do
   mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.impl"
   mv "$exercise_dir/$exercise_name.example.elm" "$exercise_dir/$exercise_name.elm"
   echo '-------------------------------------------------------'
-  echo "Testing $exercise"
+  echo "Testing $exercise_name"
 
   # prevent elm-test from installing dependencies
   mv $exercise_dir/elm-package.json $exercise_dir/elm-package.json.disabled
@@ -50,7 +50,7 @@ do
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
-      FAILED_EXERCISES+="$exercise\n"
+      FAILED_EXERCISES+="$exercise_name\n"
   fi
 
   # be kind, rewind
