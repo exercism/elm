@@ -1,10 +1,13 @@
 {
-  "scripts": {
-    "postinstall": "elm package install -y",
-    "test": "elm-test Tests.elm"
-  },
-  "dependencies": {
-    "elm": "^0.18.0",
-    "elm-test": "^0.18.0"
-  }
+    "description": "Excercism/Elm",
+    "repository": "https://github.com/exercism/xelm.git",
+    "license": "MIT",
+    "scripts": {
+        "postinstall": "elm-package install -y",
+        "test": "elm-test Tests.elm"
+    },
+    "dependencies": {
+        "elm": "^0.18.0",
+        "elm-test": "^0.18.0"
+    }
 }

@@ -12,7 +12,7 @@ case $(uname) in
         echo "linux";;
 esac)
 
-URL=https://github.com/avh4/elm-format/releases/download/0.4.0-alpha/elm-format-0.17-0.4.0-alpha-$OS-x64.tgz
+URL=https://github.com/avh4/elm-format/releases/download/0.5.2-alpha/elm-format-0.18-0.5.2-alpha-$OS-x64.tgz
 
 curl -L $URL | tar -xvzO > bin/elm-format
 
