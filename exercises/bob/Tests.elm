@@ -137,7 +137,7 @@ listOfCharacters length characterList =
 
 gibberish : Int -> Random.Generator Char -> String
 gibberish length characterList =
-    fst (Random.step (Random.map String.fromList (listOfCharacters length characterList)) (Random.initialSeed 424242))
+    Tuple.first (Random.step (Random.map String.fromList (listOfCharacters length characterList)) (Random.initialSeed 424242))
 
 
 uppercaseGibberish : Int -> String

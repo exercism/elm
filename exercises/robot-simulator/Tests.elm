@@ -33,7 +33,7 @@ tests =
                 ]
             )
         , describe "turn right"
-            ([1..3]
+            ((List.range 1 3)
                 |> List.scanl (\_ r -> turnRight r) defaultRobot
                 |> List.map .bearing
                 |> assertionList [ North, East, South, West ]
@@ -41,7 +41,7 @@ tests =
             )
         , describe
             "turn left"
-            ([1..3]
+            ((List.range 1 3)
                 |> List.scanl (\_ r -> turnLeft r) defaultRobot
                 |> List.map .bearing
                 |> assertionList [ North, West, South, East ]

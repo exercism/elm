@@ -37,7 +37,7 @@ countChars current counted =
             [ ( 1, current ) ]
 
 
-stringifyCounts : ( number, Char ) -> String
+stringifyCounts : ( comparable, Char ) -> String
 stringifyCounts ( count, char ) =
     if count > 1 then
         toString count ++ fromChar char
@@ -51,7 +51,7 @@ decode string =
         |> Regex.find Regex.All (Regex.regex "(\\d+)|(\\D)")
         |> List.map .match
         |> List.foldl expandCounts ( "", Nothing )
-        |> fst
+        |> Tuple.first
 
 
 expandCounts : String -> ( String, Maybe Int ) -> ( String, Maybe Int )

@@ -23,7 +23,7 @@ isFirstLetter letter word =
     (String.left 1 word) == letter
 
 
-lessThanTen : number -> Bool
+lessThanTen : comparable -> Bool
 lessThanTen num =
     num < 10
 

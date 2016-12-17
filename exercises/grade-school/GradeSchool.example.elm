@@ -37,4 +37,4 @@ studentsInGrade grade school =
 
 allStudents : School -> List ( Grade, List Student )
 allStudents school =
-    Dict.toList school |> List.sortBy fst
+    Dict.toList school |> List.sortBy Tuple.first

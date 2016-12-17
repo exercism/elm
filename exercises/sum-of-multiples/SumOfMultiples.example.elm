@@ -3,7 +3,7 @@ module SumOfMultiples exposing (..)
 
 sumOfMultiples : List Int -> Int -> Int
 sumOfMultiples multiples limit =
-    List.sum (List.filter (inMultiples multiples) [1..(limit - 1)])
+    List.sum (List.filter (inMultiples multiples) (List.range 1 (limit - 1)))
 
 
 inMultiples : List Int -> Int -> Bool

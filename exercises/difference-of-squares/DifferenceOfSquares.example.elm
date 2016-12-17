@@ -12,7 +12,7 @@ squareOfSum n =
 
 sumOfSquares : Int -> Int
 sumOfSquares n =
-    List.sum (List.map (\m -> m * m) [0..n])
+    List.sum (List.map (\m -> m * m) (List.range 0 n))
 
 
 difference : Int -> Int

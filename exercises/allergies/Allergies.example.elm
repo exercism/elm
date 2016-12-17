@@ -12,9 +12,9 @@ isAllergicTo name score =
 toList : Int -> List String
 toList score =
     allergies
-        |> List.indexedMap (\i n -> ( Bitwise.shiftLeft 1 i, n ))
+        |> List.indexedMap (\i n -> ( Bitwise.shiftLeftBy i 1, n ))
         |> List.filter (\( s, n ) -> Bitwise.and s score > 0)
-        |> List.map snd
+        |> List.map Tuple.second
 
 
 allergies : List String
