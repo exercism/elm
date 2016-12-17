@@ -1,16 +1,14 @@
 port module Main exposing (..)
 
-import Test.Runner.Node exposing (run, TestProgram)
+import Test.Runner.Node exposing (run)
 import Json.Encode exposing (Value)
 import Test exposing (..)
 import Expect
-import Fuzz exposing (list, int, tuple, string)
-import String
 import Bowling
 
 
-all : Test
-all =
+tests : Test
+tests =
     describe "Check game can be scored correctly."
         [ test "should be able to score a game with all zeros" <|
             \() ->
@@ -127,9 +125,9 @@ all =
         ]
 
 
-main : TestProgram
+main : Program Value
 main =
-    run emit all
+    run emit tests
 
 
 port emit : ( String, Value ) -> Cmd msg
