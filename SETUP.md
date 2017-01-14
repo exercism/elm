@@ -1,11 +1,12 @@
 ## Elm Installation
 
-Refer to the [exercism help page][http://exercism.io/languages/elm] for Elm installation and learning
-resources.
+Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
+installation and learning resources.
 
 ## Writing the Code
 
-The first time you start an exercise, you'll need to ensure you have the appropriate dependancies installed.
+The first time you start an exercise, you'll need to ensure you have the
+appropriate dependencies installed.
 
 ```bash
 $ npm install
