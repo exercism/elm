@@ -16,7 +16,7 @@ tests =
             \() ->
                 Expect.equal { a = 0, t = 0, c = 0, g = 0 }
                     (nucleotideCounts "")
-        , test "repetitive-sequence-has-only-guanosine" <|
+        , test "repetitive sequence has only guanine" <|
             \() ->
                 Expect.equal { a = 0, t = 0, c = 0, g = 8 }
                     (nucleotideCounts "GGGGGGGG")
