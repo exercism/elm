@@ -16,7 +16,7 @@ square x =
 tests : Test
 tests =
     describe "Accumulate"
-        [ test "[]] Accumulate" <|
+        [ test "[] Accumulate" <|
             \() -> Expect.equal [] (accumulate square [])
         , test "square Accumulate" <|
             \() -> Expect.equal [ 1, 4, 9 ] (accumulate square [ 1, 2, 3 ])
