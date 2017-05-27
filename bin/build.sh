@@ -35,6 +35,9 @@ FAILED_EXERCISES=''
 
 for example_file in exercises/**/*.example.elm
 do
+  # clean up generated code from last run
+  rm -rf tests/elm-stuff/generated-code/
+
   exercise_dir=$(dirname $example_file)
   exercise_name=$(basename $example_file .example.elm)
   mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.impl"
@@ -42,7 +45,9 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise_name"
 
-  npm test -- $exercise_dir/tests/Tests.elm
+  cp "$exercise_dir/tests/Tests.elm" tests/
+
+  npm test -- tests/Tests.elm
 
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
@@ -53,6 +58,7 @@ do
   # be kind, rewind
   mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.example.elm"
   mv "$exercise_dir/$exercise_name.impl" "$exercise_dir/$exercise_name.elm"
+  rm tests/Tests.elm
 done
 
 if [ $TEST_RESULT -ne 0 ]; then
