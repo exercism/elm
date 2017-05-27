@@ -12,7 +12,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-elm-format --yes --validate exercises/**/{*.example.elm,Tests.elm}
+elm-format --yes --validate exercises/**/*.example.elm  exercises/**/tests/Tests.elm
 
 if [ $? -ne 0 ]; then
     echo "*******************************************************************"
@@ -42,10 +42,7 @@ do
   echo '-------------------------------------------------------'
   echo "Testing $exercise_name"
 
-  # prevent elm-test from installing dependencies
-  mv $exercise_dir/elm-package.json $exercise_dir/elm-package.json.disabled
-
-  npm test -- $exercise_dir/Tests.elm
+  npm test -- $exercise_dir/tests/Tests.elm
 
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
@@ -54,7 +51,6 @@ do
   fi
 
   # be kind, rewind
-  mv $exercise_dir/elm-package.json.disabled $exercise_dir/elm-package.json
   mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.example.elm"
   mv "$exercise_dir/$exercise_name.impl" "$exercise_dir/$exercise_name.elm"
 done

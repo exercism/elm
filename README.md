@@ -59,8 +59,6 @@ Please keep the following in mind:
 ```elm
 port module Main exposing (..)
 
-import Test.Runner.Node exposing (run)
-import Json.Encode exposing (Value)
 import Test exposing (..)
 import Expect
 
@@ -77,14 +75,6 @@ tests =
                 False
                     |> Expect.equal False
         ]
-
-
-main : Program Value
-main =
-    run emit tests
-
-
-port emit : ( String, Value ) -> Cmd msg
 ```
 
  - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
