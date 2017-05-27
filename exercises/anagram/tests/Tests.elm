@@ -64,7 +64,7 @@ tests =
             \() ->
                 Expect.equal []
                     (detect "go" [ "go Go GO" ])
-        , test "anagrams must use all letters exactly once" <|
+        , test "anagrams must use all letters exactly once (go)" <|
             \() ->
                 Expect.equal []
                     (detect "tapper" [ "patter" ])
@@ -84,7 +84,7 @@ tests =
             \() ->
                 Expect.equal []
                     (detect "BANANA" [ "Banana" ])
-        , test "anagrams must use all letters exactly once" <|
+        , test "anagrams must use all letters exactly once (banana)" <|
             \() ->
                 Expect.equal []
                     (detect "patter" [ "tapper" ])
