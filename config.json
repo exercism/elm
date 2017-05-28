@@ -1,169 +1,169 @@
 {
-  "slug": "elm",
-  "language": "Elm",
-  "repository": "https://github.com/exercism/xelm",
-  "active": true,
-  "exercises": [
-    {
-      "slug": "hello-world",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "bob",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "leap",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "raindrops",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "pangram",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "accumulate",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "triangle",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "scrabble-score",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "anagram",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "space-age",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "strain",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "difference-of-squares",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "word-count",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "sum-of-multiples",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "hamming",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "rna-transcription",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "run-length-encoding",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "sublist",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "nucleotide-count",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "series",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "phone-number",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "grade-school",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "allergies",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "robot-simulator",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "list-ops",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "atbash-cipher",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "say",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "largest-series-product",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "roman-numerals",
-      "difficulty": 1,
-      "topics": []
-    },
-    {
-      "slug": "gigasecond",
-      "difficulty": 1,
-      "topics": []
-    }
-  ],
-  "deprecated": [
-
-  ],
-  "ignored": [
-    "bin",
-    "elm-stuff",
-    "node_modules",
-    "docs"
-  ],
-  "foregone": [
-  ]
+    "slug": "elm",
+    "language": "Elm",
+    "repository": "https://github.com/exercism/xelm",
+    "active": true,
+    "exercises": [
+        {
+            "slug": "hello-world",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "bob",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "leap",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "raindrops",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "pangram",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "accumulate",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "triangle",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "scrabble-score",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "anagram",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "space-age",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "strain",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "difference-of-squares",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "word-count",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "sum-of-multiples",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "hamming",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "rna-transcription",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "run-length-encoding",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "sublist",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "nucleotide-count",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "series",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "phone-number",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "grade-school",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "allergies",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "robot-simulator",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "list-ops",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "atbash-cipher",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "say",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "largest-series-product",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "roman-numerals",
+            "difficulty": 1,
+            "topics": []
+        },
+        {
+            "slug": "gigasecond",
+            "difficulty": 1,
+            "topics": []
+        }
+    ],
+    "deprecated": [],
+    "ignored": [
+        "bin",
+        "elm-stuff",
+        "node_modules",
+        "docs",
+        "tests",
+        "libsysconfcpus",
+        "sysconfcpus"
+    ],
+    "foregone": []
 }

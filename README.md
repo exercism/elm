@@ -10,9 +10,8 @@ The simplest way to install Elm is via Node.js/NPM.
 If you don't already have Node.js installed on your computer, you can download it from [the official site](https://nodejs.org/). Once you have Node.js up and running, follow these steps to install the Elm platform and elm-test.
 
 ```bash
-$ npm install --global elm elm-test
+$ npm install
 ```
-
 
 ## Contributing
 
@@ -41,28 +40,26 @@ Please keep the following in mind:
 - Please do not add a README or README.md file to the exercise directory. The READMEs are constructed using shared metadata, which lives in the
 [exercism/x-common](https://github.com/exercism/x-common) repository.
 
-- Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention. The example solution should be named `ExerciseModuleName.example`. The template file should be named `ExerciseModuleName.elm`. Test file should be named `ExerciseModuleNameTest.elm`.
+- Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention. The example solution should be named `ExerciseModuleName.example`. The template file should be named `ExerciseModuleName.elm`. Test file should be named `Tests.elm`.
 
-- The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `ExerciseModuleNameTest.elm`.
-  - Test the new exercise directly by running `elm-test exercises/exercise_module_name/ExerciseModuleNameTest.elm`.
+- The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `tests/Tests.elm`. You'll likely want to copy one of the existing exercise directories as a quick start.
+  - Test the new exercise directly by running `npm test` from the exercise directory.
 
-  - Once the implementation of the exercise is complete, move `ExerciseModuleName.elm` to `ExerciseModuleName.example` and create the template file.
+  - Once the implementation of the exercise is complete, rename `ExerciseModuleName.elm` to `ExerciseModuleName.example.elm` and create the template `ExerciseModuleName.elm`.
 
   - Make sure everything is good to go by running all tests with `bin/build.sh`.
-
-  - If you have [elm-format](https://github.com/avh4/elm-format) installed, you can easily check the project by running `WITH_FORMAT=true bin/build.sh`. If you get diffs on exercises other than the one you are working on, please submit a separate pull request.
 
 - Please do not commit any Elm configuration files or directories inside the exercise, such as `elm-stuff`. Please include only the standard `elm-package.json`.
 
 - Test files should use the following format:
 
 ```elm
-port module Main exposing (..)
 
-import Test.Runner.Node exposing (run)
-import Json.Encode exposing (Value)
+module Tests exposing (..)
+
 import Test exposing (..)
 import Expect
+import ExerciseModuleName
 
 
 tests : Test
@@ -77,19 +74,11 @@ tests =
                 False
                     |> Expect.equal False
         ]
-
-
-main : Program Value
-main =
-    run emit tests
-
-
-port emit : ( String, Value ) -> Cmd msg
 ```
 
  - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
 
- - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` and `elm-package.json` files. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
+ - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
 
 ## License
 
