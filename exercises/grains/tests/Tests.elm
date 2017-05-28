@@ -26,12 +26,13 @@ tests =
                 \() -> Expect.equal Nothing (square 0)
             , test "negative square raises an exception" <|
                 \() -> Expect.equal Nothing (square -1)
-              {-
-                 Where are the bigger test values?!? Because Javascript's numbers
-                 can't represent values higher than `Number.MAX_SAFE_INTEGER`
-                 (i.e. 9007199254740991), we chose to exclude these final values
-                 to avoid the weirdness. A bit more information can be found
-                 here: https://github.com/elm-lang/elm-compiler/issues/1246
-              -}
+
+            {-
+               Where are the bigger test values?!? Because Javascript's numbers
+               can't represent values higher than `Number.MAX_SAFE_INTEGER`
+               (i.e. 9007199254740991), we chose to exclude these final values
+               to avoid the weirdness. A bit more information can be found
+               here: https://github.com/elm-lang/elm-compiler/issues/1246
+            -}
             ]
         ]
