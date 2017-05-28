@@ -33,32 +33,30 @@ fi
 declare -i TEST_RESULT=0
 FAILED_EXERCISES=''
 
+mkdir -p build/tests
+
 for example_file in exercises/**/*.example.elm
 do
   # clean up generated code from last run
-  rm -rf tests/elm-stuff/generated-code/
+  rm -rf build/tests/elm-stuff/generated-code/
 
   exercise_dir=$(dirname $example_file)
   exercise_name=$(basename $example_file .example.elm)
-  mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.impl"
-  mv "$exercise_dir/$exercise_name.example.elm" "$exercise_dir/$exercise_name.elm"
+  cp "$exercise_dir/$exercise_name.example.elm" "build/$exercise_name.elm"
+  cp "$exercise_dir/tests/elm-package.json" build/tests/
+  cp "$exercise_dir/tests/Tests.elm" build/tests/
+
   echo '-------------------------------------------------------'
   echo "Testing $exercise_name"
 
-  cp "$exercise_dir/tests/Tests.elm" tests/
 
-  npm test -- tests/Tests.elm
+  npm test -- build/tests/Tests.elm
 
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
       TEST_RESULT=1
       FAILED_EXERCISES+="$exercise_name\n"
   fi
-
-  # be kind, rewind
-  mv "$exercise_dir/$exercise_name.elm" "$exercise_dir/$exercise_name.example.elm"
-  mv "$exercise_dir/$exercise_name.impl" "$exercise_dir/$exercise_name.elm"
-  rm tests/Tests.elm
 done
 
 if [ $TEST_RESULT -ne 0 ]; then
