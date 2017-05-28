@@ -22,6 +22,10 @@ tests =
             \() ->
                 Expect.equal False
                     (isPangram "a quick movement of the enemy will jeopardize five gunboats")
+        , test "missing character 'z'" <|
+            \() ->
+                Expect.equal False
+                    (isPangram "a quick movement of the enemy will jeopardixe five gunboats")
         , test "another missing character 'x'" <|
             \() ->
                 Expect.equal False
