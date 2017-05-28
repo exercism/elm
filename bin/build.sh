@@ -5,14 +5,12 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-which elm-format > /dev/null
-
-if [ $? -ne 0 ]; then
-  echo "elm-format not found"
-  exit 1
+if [ ! -f "bin/elm-format" ]; then
+  echo "Installing local copy of elm-format"
+  bin/install-elm-format
 fi
 
-elm-format --yes --validate exercises/**/*.example.elm  exercises/**/tests/Tests.elm
+bin/elm-format --yes --validate exercises/**/*.example.elm  exercises/**/tests/Tests.elm
 
 if [ $? -ne 0 ]; then
     echo "*******************************************************************"
@@ -24,9 +22,8 @@ if [ $? -ne 0 ]; then
     echo "*******************************************************************"
     exit 1
 else
-  echo "formatting looks good!"
+  echo "Formatting looks good!"
 fi
-
 
 # TEST
 
