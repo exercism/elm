@@ -4,10 +4,10 @@
     "license": "MIT",
     "scripts": {
         "postinstall": "elm-package install -y",
-        "test": "elm-test Tests.elm"
+        "test": "elm-test"
     },
     "dependencies": {
-        "elm": "^0.18.0",
-        "elm-test": "^0.18.0"
+        "elm": "0.18.0",
+        "elm-test": "0.18.3"
     }
 }

@@ -1,10 +1,9 @@
-port module Main exposing (..)
+module Tests exposing (..)
 
-import Test.Runner.Node exposing (run, TestProgram)
-import Json.Encode exposing (Value)
-import Test exposing (..)
 import Expect
 import Grains exposing (square)
+import Json.Encode exposing (Value)
+import Test exposing (..)
 
 
 tests : Test
@@ -29,11 +28,3 @@ tests =
                 \() -> Expect.equal Nothing (square -1)
             ]
         ]
-
-
-main : TestProgram
-main =
-    run emit tests
-
-
-port emit : ( String, Value ) -> Cmd msg
