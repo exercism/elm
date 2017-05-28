@@ -1,0 +1,145 @@
+module Bowling exposing (..)
+
+import List exposing (..)
+
+
+rolls : List Int -> Int
+rolls rolls =
+    removeInvalid rolls
+        |> scoreFrames 1
+        |> sum
+
+
+removeInvalid : List Int -> List Int
+removeInvalid rolls =
+    if length ((List.filter (\n -> rollIsInvalid n) rolls)) >= 1 then
+        []
+    else
+        rolls
+
+
+rollIsInvalid : Int -> Bool
+rollIsInvalid roll =
+    roll < 0 || roll > 10
+
+
+scoreFrames : Int -> List Int -> List Int
+scoreFrames frameNo allRolls =
+    let
+        firstRoll =
+            toScore (List.head allRolls)
+
+        secondRoll =
+            toScore (List.head (reverse (take 2 allRolls)))
+
+        thirdRoll =
+            (toScore (List.head (reverse allRolls)))
+
+        frameType =
+            (toFrameType firstRoll secondRoll)
+
+        nextRolls =
+            getNextRolls frameType allRolls
+
+        nextFrameNo =
+            frameNo + 1
+
+        frameScore =
+            if frameNo < 10 then
+                (scoreFrame frameType allRolls)
+            else if frameNo == 10 then
+                (toTenthFrameType frameType secondRoll thirdRoll allRolls)
+                    |> scoreTenthFrame allRolls
+            else
+                -1
+    in
+        if frameNo < 10 then
+            frameScore :: (scoreFrames nextFrameNo nextRolls)
+        else
+            [ frameScore ]
+
+
+getNextRolls : Frame -> List Int -> List Int
+getNextRolls frame allRolls =
+    if frame == Strike then
+        drop 1 allRolls
+    else
+        drop 2 allRolls
+
+
+type Frame
+    = Open
+    | Strike
+    | Spare
+    | Invalid
+
+
+toFrameType : Int -> Int -> Frame
+toFrameType firstRoll secondRoll =
+    if firstRoll == 10 then
+        Strike
+    else if firstRoll + secondRoll == 10 then
+        Spare
+    else if firstRoll + secondRoll < 10 then
+        Open
+    else
+        Invalid
+
+
+scoreFrame : Frame -> List Int -> Int
+scoreFrame frame allRolls =
+    case frame of
+        Strike ->
+            (sum (take 3 allRolls))
+
+        Spare ->
+            (sum (take 3 allRolls))
+
+        Open ->
+            (sum (take 2 allRolls))
+
+        Invalid ->
+            -1
+
+
+toTenthFrameType : Frame -> Int -> Int -> List Int -> Frame
+toTenthFrameType frame secondRoll thirdRoll allRolls =
+    if frame == Strike then
+        if length allRolls /= 3 then
+            Invalid
+        else if secondRoll < 10 && thirdRoll + secondRoll > 10 then
+            Invalid
+        else
+            Strike
+    else if frame == Spare then
+        if length allRolls /= 3 then
+            Invalid
+        else
+            Spare
+    else if frame == Open && length allRolls == 2 then
+        Open
+    else
+        Invalid
+
+
+scoreTenthFrame : List Int -> Frame -> Int
+scoreTenthFrame allRolls frame =
+    if frame /= Invalid then
+        sum allRolls
+    else
+        -1
+
+
+toScore : Maybe Int -> Int
+toScore maybe =
+    case maybe of
+        Just score ->
+            score
+
+        Nothing ->
+            0
+
+
+sum : List Int -> Int
+sum frames =
+    List.foldl (+) 0 frames
