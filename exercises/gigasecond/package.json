@@ -7,7 +7,7 @@
         "test": "elm-test"
     },
     "dependencies": {
-        "elm": "^0.18.0",
-        "elm-test": "^0.18.0"
+        "elm": "0.18.0",
+        "elm-test": "0.18.3"
     }
 }
