@@ -5,7 +5,7 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-if [ ! -f "bin/elm-format" ]; then
+if [ ! -f "bin/elm-format" ] || [[ ! $(bin/elm-format --help | grep "elm-format-0.18 0.6.1-alpha") ]]; then
   echo "Installing local copy of elm-format"
   bin/install-elm-format
 fi
