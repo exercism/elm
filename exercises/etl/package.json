@@ -1,0 +1,14 @@
+{
+    "description": "Exercism/Elm",
+    "repository": "https://github.com/exercism/elm.git",
+    "license": "MIT",
+    "scripts": {
+        "postinstall": "elm-package install -y",
+        "watch": "elm-test --watch",
+        "test": "elm-test"
+    },
+    "dependencies": {
+        "elm": "0.18.0",
+        "elm-test": "0.18.3"
+    }
+}
