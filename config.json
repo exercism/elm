@@ -225,15 +225,6 @@
   "deprecated": [
 
   ],
-  "ignored": [
-    "bin",
-    "elm-stuff",
-    "node_modules",
-    "docs",
-    "tests",
-    "libsysconfcpus",
-    "sysconfcpus"
-  ],
   "foregone": [
 
   ]
