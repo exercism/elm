@@ -1,5 +1,5 @@
-# xElm
-[![build status](https://travis-ci.org/exercism/xelm.svg?branch=master)](https://travis-ci.org/exercism/xelm)
+# Exercism Elm Track
+[![build status](https://travis-ci.org/exercism/elm.svg?branch=master)](https://travis-ci.org/exercism/elm)
 
 Exercism Exercises in Elm
 
@@ -76,7 +76,7 @@ tests =
         ]
 ```
 
- - All the tests for xElm exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
+ - All the tests for Exercism Elm Track exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
 
  - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
 
