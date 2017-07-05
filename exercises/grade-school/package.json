@@ -4,6 +4,7 @@
     "license": "MIT",
     "scripts": {
         "postinstall": "elm-package install -y",
+        "watch": "elm-test --watch",
         "test": "elm-test"
     },
     "dependencies": {
