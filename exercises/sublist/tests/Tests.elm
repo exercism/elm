@@ -10,9 +10,8 @@ tests =
     describe "Sublist"
         [ test "the solution is for the correct version of the test" <|
             \() -> Expect.equal 2 version
-        , skip <|
-            test "empty equals empty" <|
-                \() -> Expect.equal Equal (sublist [] [])
+        , test "empty equals empty" <|
+            \() -> Expect.equal Equal (sublist [] [])
         , skip <|
             test "empty is a sublist of anything" <|
                 \() -> Expect.equal Sublist (sublist [] [ 1, 2 ])

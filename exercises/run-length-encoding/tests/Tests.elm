@@ -10,9 +10,8 @@ tests =
     describe "RunLengthEncoding"
         [ test "the solution is for the correct version of the test" <|
             \() -> Expect.equal 2 version
-        , skip <|
-            test "encode simple" <|
-                \() -> Expect.equal "2A3B4C" (encode "AABBBCCCC")
+        , test "encode simple" <|
+            \() -> Expect.equal "2A3B4C" (encode "AABBBCCCC")
         , skip <|
             test "decode simple" <|
                 \() -> Expect.equal "AABBBCCCC" (decode "2A3B4C")

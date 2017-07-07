@@ -10,11 +10,10 @@ tests =
     describe "NucleotideCount"
         [ test "the solution is for the correct version of the test" <|
             \() -> Expect.equal 2 version
-        , skip <|
-            test "empty dna strand has no nucleotides" <|
-                \() ->
-                    Expect.equal { a = 0, t = 0, c = 0, g = 0 }
-                        (nucleotideCounts "")
+        , test "empty dna strand has no nucleotides" <|
+            \() ->
+                Expect.equal { a = 0, t = 0, c = 0, g = 0 }
+                    (nucleotideCounts "")
         , skip <|
             test "repetitive sequence has only guanine" <|
                 \() ->
