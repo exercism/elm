@@ -33,21 +33,23 @@ tests =
                         \() -> Expect.equal South robot.bearing
                 ]
             )
-        , describe "turn right"
-            ((List.range 1 3)
-                |> List.scanl (\_ r -> turnRight r) defaultRobot
-                |> List.map .bearing
-                |> assertionList [ North, East, South, West ]
-                |> List.indexedMap (\i e -> skip <| test ("step " ++ toString i) (\() -> e))
-            )
-        , describe
-            "turn left"
-            ((List.range 1 3)
-                |> List.scanl (\_ r -> turnLeft r) defaultRobot
-                |> List.map .bearing
-                |> assertionList [ North, West, South, East ]
-                |> List.indexedMap (\i e -> skip <| test ("step " ++ toString i) (\() -> e))
-            )
+        , skip <|
+            describe "turn right"
+                ((List.range 1 3)
+                    |> List.scanl (\_ r -> turnRight r) defaultRobot
+                    |> List.map .bearing
+                    |> assertionList [ North, East, South, West ]
+                    |> List.indexedMap (\i e -> test ("step " ++ toString i) (\() -> e))
+                )
+        , skip <|
+            describe
+                "turn left"
+                ((List.range 1 3)
+                    |> List.scanl (\_ r -> turnLeft r) defaultRobot
+                    |> List.map .bearing
+                    |> assertionList [ North, West, South, East ]
+                    |> List.indexedMap (\i e -> test ("step " ++ toString i) (\() -> e))
+                )
         , describe "advance positive north"
             (let
                 robot =
