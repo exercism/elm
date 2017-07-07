@@ -8,6 +8,14 @@ $ npm test
 
 ## Hints and tips
 
+### Watch for changes
+
+Automatically run tests again when you save changes:
+
+```bash
+$ npm run watch
+```
+
 ### Coding the exercise
 
 The README.md for each exercise gives a general description, but the Elm test program will be very specific. Open the test program and give it a quick look - if it seems like cheating, do it anyway. Look for helpful comments, test data, and just the names of the test functions. Try running the test command before you have written anything and see if the error messages give you an idea of where to start.

@@ -17,3 +17,9 @@ Execute the tests with:
 ```bash
 $ npm test
 ```
+
+Automatically run tests again when you save changes:
+
+```bash
+$ npm run watch
+```
