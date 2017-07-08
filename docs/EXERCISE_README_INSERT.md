@@ -18,5 +18,11 @@ Execute the tests with:
 $ npm test
 ```
 
+Automatically run tests again when you save changes:
+
+```bash
+$ npm run watch
+```
+
 As you work your way through the test suite, be sure to remove the `skip <|`
 calls from each test until you get them all passing!

@@ -45,6 +45,8 @@ Please keep the following in mind:
 - The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `tests/Tests.elm`. You'll likely want to copy one of the existing exercise directories as a quick start.
   - Test the new exercise directly by running `npm test` from the exercise directory.
 
+  - Automatically run tests again when you save changes by running `npm run watch` from the exercise directory.
+
   - Once the implementation of the exercise is complete, rename `ExerciseModuleName.elm` to `ExerciseModuleName.example.elm` and create the template `ExerciseModuleName.elm`.
 
   - Make sure everything is good to go by running all tests with `bin/build.sh`.
