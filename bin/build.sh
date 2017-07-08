@@ -41,7 +41,7 @@ do
   exercise_name=$(basename $example_file .example.elm)
   cp "$exercise_dir/$exercise_name.example.elm" "build/$exercise_name.elm"
   cp "$exercise_dir/tests/elm-package.json" build/tests/
-  cp "$exercise_dir/tests/Tests.elm" build/tests/
+  cat "$exercise_dir/tests/Tests.elm" | sed 's/skip <|//g' > build/tests/Tests.elm
 
   echo '-------------------------------------------------------'
   echo "Testing $exercise_name"

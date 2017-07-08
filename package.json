@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "postinstall": "elm package install -y",
     "test": "elm-test"
   },
   "dependencies": {
