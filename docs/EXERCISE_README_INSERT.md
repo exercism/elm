@@ -17,3 +17,6 @@ Execute the tests with:
 ```bash
 $ npm test
 ```
+
+As you work your way through the test suite, be sure to remove the `skip <|`
+calls from each test until you get them all passing!
