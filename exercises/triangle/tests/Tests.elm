@@ -2,13 +2,15 @@ module Tests exposing (..)
 
 import Test exposing (..)
 import Expect
-import Triangle exposing (triangleKind, Triangle(..))
+import Triangle exposing (triangleKind, Triangle(..), version)
 
 
 tests : Test
 tests =
     describe "triangleKind"
-        [ test "equilateral triangles have equal sides" <|
+        [ test "the solution is for the correct version of the test" <|
+            \() -> Expect.equal 2 version
+        , test "equilateral triangles have equal sides" <|
             \() -> Expect.equal (Ok Equilateral) (triangleKind 2 2 2)
         , test "larger equilateral triangles also have equal sides" <|
             \() -> Expect.equal (Ok Equilateral) (triangleKind 10 10 10)
