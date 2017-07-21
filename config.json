@@ -1,7 +1,5 @@
 {
-  "slug": "elm",
   "language": "Elm",
-  "repository": "https://github.com/exercism/elm",
   "active": true,
   "exercises": [
     {
