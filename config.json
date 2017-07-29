@@ -5,232 +5,325 @@
   "active": true,
   "exercises": [
     {
+      "uuid": "2c3902df-93e1-48d1-829d-4daa93a1f06f",
       "slug": "hello-world",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
       "slug": "bob",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
       "slug": "leap",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
       "slug": "raindrops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "a70503ba-f1f3-4583-9226-c3ada98e9500",
       "slug": "pangram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "0b4561f3-59a7-4463-a733-c7fa8f9f332a",
       "slug": "accumulate",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "767f6825-8736-4307-85c7-090a9a327fd9",
       "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "16ccc1fa-34b0-4a7e-b3cf-33a711e857ea",
       "slug": "scrabble-score",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "5845a108-d8b2-41dd-b371-cf9eff7a2230",
       "slug": "anagram",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
       "slug": "space-age",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "992c5ed1-9127-42a4-b508-61c9487612c5",
       "slug": "strain",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "646c7164-cfa4-42c3-9af5-2f672e6ec81e",
       "slug": "difference-of-squares",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "9c9507a6-8187-4ce6-b0bc-b4765effb74c",
       "slug": "word-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "75859d00-8772-4471-97a7-d6fe432edc5e",
       "slug": "sum-of-multiples",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "472c2e13-6608-4862-b884-a7e458e0bcdd",
       "slug": "hamming",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "3af96d19-87d7-4d8b-aecb-f63122815501",
       "slug": "rna-transcription",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
       "slug": "run-length-encoding",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "8e1cb827-2fa9-46a4-ac50-7f8b3ba66809",
       "slug": "sublist",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "c9e00708-3d18-4a0b-a3de-cae4d979a981",
       "slug": "nucleotide-count",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "1e17ed2b-57b4-4cad-a684-ce7070d5023b",
       "slug": "series",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "1071ec57-5527-4eb1-b297-77355ed64547",
       "slug": "phone-number",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
       "slug": "grade-school",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
       "slug": "allergies",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
       "slug": "robot-simulator",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "114b5717-0d82-459e-90c4-f00d8b6beb5b",
       "slug": "list-ops",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "8322872b-e020-4a9e-9206-015c0fdacb62",
       "slug": "atbash-cipher",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
       "slug": "say",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "1902d726-5a62-475b-b7d3-7188a50e717f",
       "slug": "largest-series-product",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "c1461035-6abe-4f17-a818-7a3ac6642c18",
       "slug": "roman-numerals",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "5ddfed31-b787-48f9-b3bf-4a8d157d1c3d",
       "slug": "gigasecond",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "41518694-4293-49f6-8af5-1cdad84acf78",
       "slug": "grains",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     },
     {
+      "uuid": "1f39d315-324c-4e2f-bf48-ce8432836596",
       "slug": "etl",
+      "core": false,
+      "unlocked_by": null,
       "difficulty": 1,
       "topics": [
 
       ]
     }
-  ],
-  "deprecated": [
-
   ],
   "foregone": [
 
