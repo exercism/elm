@@ -323,6 +323,7 @@
       ]
     },
     {
+      "uuid": "1f52ab74-02d5-db80-8f95-521aba04d183e704422",
       "slug": "collatz-conjecture",
       "core": false,
       "unlocked_by": null,
