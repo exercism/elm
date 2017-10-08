@@ -9,7 +9,7 @@ collatz start =
         Ok (collatzHelper 0 start)
 
 
-collatzHelper : Int ->  Int -> Int
+collatzHelper : Int -> Int -> Int
 collatzHelper steps start =
     if start == 1 then
         steps
