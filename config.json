@@ -323,6 +323,16 @@
       ]
     },
     {
+      "uuid": "7890045d-0cf5-1980-21ae-7bd0228ad2a2993ae82",
+      "slug": "all-your-base",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "a730ca85-057d-db80-e44e-25b8028acede6337cca",
       "slug": "pascals-triangle",
       "core": false,
