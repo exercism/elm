@@ -8,12 +8,20 @@ case $(uname) in
         echo "linux";;
     (Windows*)
         echo "windows";;
+    (MINGW*)
+        echo "windows";;
     (*)
         echo "linux";;
 esac)
 
-URL=https://github.com/avh4/elm-format/releases/download/0.6.1-alpha/elm-format-0.18-0.6.1-alpha-$OS-x64.tgz
-
-curl -L $URL | tar -xvzO > bin/elm-format
+if [ "$OS" == "windows" ]; then
+  echo $URL
+  URL=https://github.com/avh4/elm-format/releases/download/0.6.1-alpha/elm-format-0.18-0.6.1-alpha-win-i386.zip
+  curl -L $URL | funzip > bin/elm-format
+else
+  echo $URL
+  URL=https://github.com/avh4/elm-format/releases/download/0.6.1-alpha/elm-format-0.18-0.6.1-alpha-$OS-x64.tgz
+  curl -L $URL | tar -xvzO > bin/elm-format
+fi
 
 chmod u+x bin/elm-format
