@@ -5,16 +5,16 @@ import List
 import Char
 
 
-isLetter : Char -> Bool
-isLetter c =
-    Char.isHexDigit c && (not <| Char.isDigit c)
+isAlpha : Char -> Bool
+isAlpha char =
+    Char.isUpper char || Char.isLower char
 
 
 isIsogram : String -> Bool
 isIsogram sentence =
     let
         sanitized =
-            String.filter isLetter sentence
+            String.filter isAlpha sentence
                 |> String.toLower
                 |> String.toList
                 |> List.sort
