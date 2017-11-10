@@ -323,7 +323,7 @@
       ]
     },
     {
-      "uuid": "1f52ab74-02d5-db80-8f95-521aba04d183e704422",
+      "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
       "slug": "collatz-conjecture",
       "core": false,
       "unlocked_by": null,
@@ -333,7 +333,7 @@
       ]
     },
     {
-      "uuid": "7890045d-0cf5-1980-21ae-7bd0228ad2a2993ae82",
+      "uuid": "bdb8364b-d8b2-4d58-a824-1035cddedb42",
       "slug": "all-your-base",
       "core": false,
       "unlocked_by": null,
@@ -343,7 +343,7 @@
       ]
     },
     {
-      "uuid": "a730ca85-057d-db80-e44e-25b8028acede6337cca",
+      "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
       "slug": "pascals-triangle",
       "core": false,
       "unlocked_by": null,
@@ -354,7 +354,7 @@
       ]
     },
     {
-      "uuid": "5f540090-061e-2f80-40a8-d9782700ed2efdf8965",
+      "uuid": "6b6e9f4d-9c45-4d8c-9e8e-b2144204d2da",
       "slug": "isogram",
       "core": false,
       "unlocked_by": null,
