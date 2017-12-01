@@ -23,6 +23,15 @@
       ]
     },
     {
+      "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
+      "slug": "twelve-days",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+      ]
+    },
+    {
       "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
       "slug": "leap",
       "core": false,
