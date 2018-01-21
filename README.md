@@ -38,9 +38,12 @@ Please keep the following in mind:
 - Exercises should use only the Elm core libraries.
 
 - Please do not add a README or README.md file to the exercise directory. The READMEs are constructed using shared metadata, which lives in the
-[exercism/x-common](https://github.com/exercism/x-common) repository.
+[exercism/problem-specifications](https://github.com/exercism/problem-specifications) repository.
 
-- Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention. The example solution should be named `ExerciseModuleName.example`. The template file should be named `ExerciseModuleName.elm`. Test file should be named `Tests.elm`.
+- Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention:
+  - The example solution should be named `ExerciseModuleName.example`. 
+  - The template file should be named `ExerciseModuleName.elm`. 
+  - Test file should be named `Tests.elm`.
 
 - The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `tests/Tests.elm`. You'll likely want to copy one of the existing exercise directories as a quick start.
   - Test the new exercise directly by running `npm test` from the exercise directory.
@@ -55,28 +58,28 @@ Please keep the following in mind:
 
 - Test files should use the following format:
 
-```elm
+  ```elm
 
-module Tests exposing (..)
+  module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
-import ExerciseModuleName
+  import Test exposing (..)
+  import Expect
+  import ExerciseModuleName
 
 
-tests : Test
-tests =
-    describe "Bob"
-        [ test "first test" <|
-            \() ->
-                True
-                    |> Expect.equal True
-        , test "second test" <|
-            \() ->
-                False
-                    |> Expect.equal False
-        ]
-```
+  tests : Test
+  tests =
+      describe "Bob"
+          [ test "first test" <|
+              \() ->
+                  True
+                      |> Expect.equal True
+          , test "second test" <|
+              \() ->
+                  False
+                      |> Expect.equal False
+          ]
+  ```
 
  - All the tests for Exercism Elm Track exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
 
