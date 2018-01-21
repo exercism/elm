@@ -1,7 +1,7 @@
 module Bob exposing (..)
 
-import String
 import Regex
+import String
 
 
 hey : String -> String

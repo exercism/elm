@@ -1,9 +1,9 @@
-module RunLengthEncoding exposing (version, encode, decode)
+module RunLengthEncoding exposing (decode, encode, version)
 
-import String exposing (fromChar)
 import List exposing (head, tail)
 import Maybe exposing (withDefault)
 import Regex
+import String exposing (fromChar)
 
 
 {-

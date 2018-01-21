@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
 import AllYourBase exposing (rebase)
+import Expect
+import Test exposing (..)
 
 
 tests : Test

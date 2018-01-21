@@ -18,7 +18,7 @@ toRoman number =
                     |> Dict.get part
                     |> Maybe.withDefault ""
         in
-            letter ++ (toRoman (number - part))
+        letter ++ toRoman (number - part)
 
 
 largestFactor : Int -> Int

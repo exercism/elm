@@ -1,8 +1,8 @@
 module WordCount exposing (..)
 
-import String
 import Dict exposing (Dict)
 import Regex
+import String
 
 
 wordCount : String -> Dict String Int
@@ -21,4 +21,4 @@ depunctuate =
 
 incrMaybe : Maybe Int -> Maybe Int
 incrMaybe maybe =
-    (Maybe.withDefault 0 maybe) + 1 |> Just
+    Maybe.withDefault 0 maybe + 1 |> Just
