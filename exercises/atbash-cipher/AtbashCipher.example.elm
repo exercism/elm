@@ -1,9 +1,9 @@
 module AtbashCipher exposing (..)
 
-import String
-import Dict
 import Char
+import Dict
 import Regex exposing (HowMany(All), regex)
+import String
 
 
 encode : String -> String
@@ -12,11 +12,11 @@ encode plain =
         translate =
             toTranslator alphabet reversedAlphabet
     in
-        plain
-            |> String.toLower
-            |> String.filter (\c -> Char.isLower c || Char.isDigit c)
-            |> String.map translate
-            |> insertEvery 5 " "
+    plain
+        |> String.toLower
+        |> String.filter (\c -> Char.isLower c || Char.isDigit c)
+        |> String.map translate
+        |> insertEvery 5 " "
 
 
 decode : String -> String
@@ -25,9 +25,9 @@ decode cipher =
         translate =
             toTranslator reversedAlphabet alphabet
     in
-        cipher
-            |> String.filter ((/=) ' ')
-            |> String.map translate
+    cipher
+        |> String.filter ((/=) ' ')
+        |> String.map translate
 
 
 alphabet : String
@@ -52,7 +52,7 @@ toTranslator from to =
             Dict.get key table
                 |> Maybe.withDefault key
     in
-        translate
+    translate
 
 
 insertEvery : Int -> String -> String -> String

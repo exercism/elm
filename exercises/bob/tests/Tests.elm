@@ -1,11 +1,11 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
-import String
-import Char
-import Random
 import Bob
+import Char
+import Expect
+import Random
+import String
+import Test exposing (..)
 
 
 tests : Test
@@ -164,4 +164,4 @@ uppercaseGibberish length =
 
 gibberishQuestion : Int -> String
 gibberishQuestion length =
-    (gibberish length anyCharacter) ++ "?"
+    gibberish length anyCharacter ++ "?"

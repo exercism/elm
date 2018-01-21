@@ -1,9 +1,9 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
 import Accumulate exposing (accumulate)
+import Expect
 import String
+import Test exposing (..)
 
 
 square : Int -> Int

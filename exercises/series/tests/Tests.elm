@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import Series exposing (slices)
+import Test exposing (..)
 
 
 tests : Test
@@ -40,7 +40,7 @@ tests =
         , skip <|
             test "overly short slice" <|
                 \() ->
-                    Expect.equal (Err ("Invalid size: 0"))
+                    Expect.equal (Err "Invalid size: 0")
                         (slices 0 "01234")
         , skip <|
             test "input has non numbers" <|
