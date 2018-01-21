@@ -18,13 +18,13 @@ earthYearInSeconds =
 
 ageOn : Planet -> Float -> Float
 ageOn planet seconds =
-    seconds / (secondsPerYear planet)
+    seconds / secondsPerYear planet
 
 
 secondsPerYear : Planet -> Float
 secondsPerYear planet =
     earthYearInSeconds
-        * case planet of
+        * (case planet of
             Mercury ->
                 0.2408467
 
@@ -48,3 +48,4 @@ secondsPerYear planet =
 
             Neptune ->
                 164.79132
+          )

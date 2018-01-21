@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import SpaceAge exposing (Planet(..), ageOn)
+import Test exposing (..)
 
 
 tests : Test

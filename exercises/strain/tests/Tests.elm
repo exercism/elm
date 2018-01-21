@@ -1,9 +1,9 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
-import Strain exposing (keep, discard)
+import Strain exposing (discard, keep)
 import String
+import Test exposing (..)
 
 
 even : Int -> Bool
@@ -18,7 +18,7 @@ odd number =
 
 isFirstLetter : String -> String -> Bool
 isFirstLetter letter word =
-    (String.left 1 word) == letter
+    String.left 1 word == letter
 
 
 lessThanTen : comparable -> Bool

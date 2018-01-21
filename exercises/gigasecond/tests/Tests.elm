@@ -1,9 +1,9 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
 import Date
+import Expect
 import Gigasecond exposing (add)
+import Test exposing (..)
 
 
 tests : Test

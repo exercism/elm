@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
-import Triangle exposing (triangleKind, Triangle(..), version)
+import Test exposing (..)
+import Triangle exposing (Triangle(..), triangleKind, version)
 
 
 tests : Test

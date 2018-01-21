@@ -1,9 +1,9 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
 import Allergies exposing (isAllergicTo, toList)
+import Expect
 import List
+import Test exposing (..)
 
 
 tests : Test
@@ -38,10 +38,10 @@ tests =
         , describe "toList"
             [ skip <|
                 test "no allergies at all" <|
-                    \() -> Expect.equal [] (toList (0))
+                    \() -> Expect.equal [] (toList 0)
             , skip <|
                 test "allergic to just peanuts" <|
-                    \() -> Expect.equal [ "peanuts" ] (toList (2))
+                    \() -> Expect.equal [ "peanuts" ] (toList 2)
             , skip <|
                 test "allergic to everything" <|
                     \() ->

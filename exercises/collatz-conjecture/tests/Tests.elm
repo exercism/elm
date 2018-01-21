@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
-import Expect
 import CollatzConjecture exposing (collatz)
+import Expect
+import Test exposing (..)
 
 
 tests : Test

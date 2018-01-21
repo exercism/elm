@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import ScrabbleScore exposing (scoreWord)
+import Test exposing (..)
 
 
 tests : Test

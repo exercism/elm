@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import PhoneNumber exposing (getNumber, prettyPrint)
+import Test exposing (..)
 
 
 tests : Test

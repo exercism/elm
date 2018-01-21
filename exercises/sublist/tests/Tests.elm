@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
-import Sublist exposing (version, sublist, ListComparison(..))
+import Sublist exposing (ListComparison(..), sublist, version)
+import Test exposing (..)
 
 
 tests : Test
