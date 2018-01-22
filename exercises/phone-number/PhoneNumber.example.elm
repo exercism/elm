@@ -20,7 +20,7 @@ getNumber : String -> Maybe String
 getNumber phoneNumber =
     let
         numberFormat =
-            regex "^\\D*(\\+?1[\\-\\s\\.]?)?((\\([2-9]\\d{2}\\))|([2-9]\\d{2}))[\\-\\s\\.]?[2-9]\\d{2}[\\-\\s\\.]?\\d{4}\\D*$"
+            regex "^\\D*(\\+?1\\s*[\\-\\.]?\\s*)?((\\([2-9]\\d{2}\\))|([2-9]\\d{2}))\\s*[\\-\\.]?\\s*[2-9]\\d{2}\\s*[\\-\\.]?\\s*\\d{4}\\D*$"
 
         numbers =
             regex "\\d"
