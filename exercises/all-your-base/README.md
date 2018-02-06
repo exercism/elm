@@ -60,6 +60,5 @@ $ npm run watch
 As you work your way through the test suite, be sure to remove the `skip <|`
 calls from each test until you get them all passing!
 
-
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
