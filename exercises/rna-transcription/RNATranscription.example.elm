@@ -3,7 +3,7 @@ module RNATranscription exposing (toRNA)
 import String
 
 
-toRNA : String -> Result Char String
+toRNA : String -> Result String String
 toRNA dna =
     dna
         |> String.toList
@@ -22,7 +22,7 @@ resultExtraCombine =
     List.foldr (Result.map2 (::)) (Ok [])
 
 
-toRNANucleotide : Char -> Result Char Char
+toRNANucleotide : Char -> Result String Char
 toRNANucleotide nuc =
     case nuc of
         'C' ->
@@ -38,4 +38,4 @@ toRNANucleotide nuc =
             Ok 'A'
 
         _ ->
-            Err nuc
+            Err (toString nuc ++ " is not a valid nucleotide")
