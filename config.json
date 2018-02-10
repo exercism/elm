@@ -353,14 +353,16 @@
         "Control-flow"
       ]
     },
-    {
-      "uuid": "6b6e9f4d-9c45-4d8c-9e8e-b2144204d2da",
-      "slug": "isogram",
+    { 
+      "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
+      "slug": "binary-search",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 3,
+      "difficulty": 7,
       "topics": [
-        "Lists"
+        "algorithms",
+        "arrays",
+        "recursion"
       ]
     }
   ],
