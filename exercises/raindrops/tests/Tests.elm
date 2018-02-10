@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import Raindrops exposing (raindrops)
+import Test exposing (..)
 
 
 tests : Test

@@ -72,7 +72,7 @@ advance { bearing, coordinates } =
                 West ->
                     { coordinates | x = coordinates.x - 1 }
     in
-        { bearing = bearing, coordinates = updated }
+    { bearing = bearing, coordinates = updated }
 
 
 simulate : String -> Robot -> Robot
@@ -92,7 +92,7 @@ simulate directions robot =
                 _ ->
                     identity
     in
-        directions
-            |> String.toList
-            |> List.map action
-            |> List.foldl (\a r -> a r) robot
+    directions
+        |> String.toList
+        |> List.map action
+        |> List.foldl (\a r -> a r) robot

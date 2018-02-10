@@ -1,7 +1,7 @@
 module Allergies exposing (..)
 
-import List
 import Bitwise
+import List
 
 
 isAllergicTo : String -> Int -> Bool

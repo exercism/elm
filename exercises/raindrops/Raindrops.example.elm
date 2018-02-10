@@ -24,7 +24,7 @@ raindrops number =
         result =
             String.join "" drops
     in
-        if result == "" then
-            toString number
-        else
-            result
+    if result == "" then
+        toString number
+    else
+        result

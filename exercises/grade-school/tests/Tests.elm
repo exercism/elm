@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
-import GradeSchool exposing (addStudent, studentsInGrade, allStudents)
+import GradeSchool exposing (addStudent, allStudents, studentsInGrade)
+import Test exposing (..)
 
 
 tests : Test
@@ -35,7 +35,7 @@ tests =
                                     |> addStudent 3 "Chelsea"
                                     |> addStudent 7 "Logan"
                          in
-                            [ studentsInGrade 3 school, studentsInGrade 7 school ]
+                         [ studentsInGrade 3 school, studentsInGrade 7 school ]
                         )
         , skip <|
             test "get students in a grade" <|

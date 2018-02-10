@@ -31,9 +31,9 @@ inList alist blist =
         getLastInList sublist =
             Maybe.withDefault [] (List.tail sublist)
     in
-        if (List.length alist) < (List.length blist) then
-            False
-        else if (List.take (List.length blist) alist) == blist then
-            True
-        else
-            inList (getLastInList alist) blist
+    if List.length alist < List.length blist then
+        False
+    else if List.take (List.length blist) alist == blist then
+        True
+    else
+        inList (getLastInList alist) blist

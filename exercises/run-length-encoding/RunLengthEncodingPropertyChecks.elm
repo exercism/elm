@@ -1,12 +1,12 @@
 module RunLengthEncodingPropertyChecks exposing (propertyTests)
 
-import ElmTest
-import Check exposing (suite, claim, that, is, for, quickCheck)
+import Char
+import Check exposing (claim, for, is, quickCheck, suite, that)
 import Check.Producer as P
 import Check.Test
+import ElmTest
 import RunLengthEncoding exposing (decode, encode)
 import String as S
-import Char
 
 
 {-

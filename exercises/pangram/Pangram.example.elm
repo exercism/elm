@@ -1,6 +1,6 @@
 module Pangram exposing (..)
 
-import String exposing (toLower, contains, fromChar)
+import String exposing (contains, fromChar, toLower)
 
 
 isPangram : String -> Bool
@@ -9,7 +9,7 @@ isPangram sentence =
         normalized =
             toLower sentence
     in
-        String.all (\c -> contains (fromChar c) normalized) alphabet
+    String.all (\c -> contains (fromChar c) normalized) alphabet
 
 
 alphabet : String

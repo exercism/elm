@@ -36,9 +36,9 @@ formatNumber : String -> String
 formatNumber input =
     String.concat
         [ "("
-        , (String.slice 0 3 input)
+        , String.slice 0 3 input
         , ") "
-        , (String.slice 3 6 input)
+        , String.slice 3 6 input
         , "-"
-        , (String.slice 6 10 input)
+        , String.slice 6 10 input
         ]
