@@ -6,7 +6,9 @@ import String
 
 hey : String -> String
 hey remark =
-    if isShouting remark then
+    if isShouting remark && isQuestion remark then
+        "Calm down, I know what I'm doing!"
+    else if isShouting remark then
         "Whoa, chill out!"
     else if isQuestion remark then
         "Sure."
