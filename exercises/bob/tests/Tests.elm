@@ -61,7 +61,7 @@ tests =
             test "forceful questions" <|
                 \() ->
                     Expect.equal
-                        "Whoa, chill out!"
+                        "Calm down, I know what I'm doing!"
                         (Bob.hey "WHAT THE HELL WERE YOU THINKING?")
         , skip <|
             test "shouting numbers" <|
