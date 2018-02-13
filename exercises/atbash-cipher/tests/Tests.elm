@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
+import AtbashCipher exposing (decode, encode)
 import Expect
-import AtbashCipher exposing (encode, decode)
+import Test exposing (..)
 
 
 tests : Test

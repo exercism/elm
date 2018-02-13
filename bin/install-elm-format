@@ -15,10 +15,10 @@ case $(uname) in
 esac)
 
 if [ "$OS" == "windows" ]; then
-  URL=https://github.com/avh4/elm-format/releases/download/0.6.1-alpha/elm-format-0.18-0.6.1-alpha-win-i386.zip
+  URL=https://github.com/avh4/elm-format/releases/download/0.7.0-exp/elm-format-0.18-0.7.0-exp-win-i386.zip
   curl -L $URL | funzip > bin/elm-format
 else
-  URL=https://github.com/avh4/elm-format/releases/download/0.6.1-alpha/elm-format-0.18-0.6.1-alpha-$OS-x64.tgz
+  URL=https://github.com/avh4/elm-format/releases/download/0.7.0-exp/elm-format-0.18-0.7.0-exp-$OS-x64.tgz
   curl -L $URL | tar -xvzO > bin/elm-format
 fi
 

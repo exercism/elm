@@ -7,7 +7,7 @@ squareOfSum n =
         sum =
             n * (n + 1) // 2
     in
-        sum * sum
+    sum * sum
 
 
 sumOfSquares : Int -> Int

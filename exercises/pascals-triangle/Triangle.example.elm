@@ -17,7 +17,7 @@ rows n =
             else
                 row :: loop (i + 1) (nextRow row)
     in
-        if n < 0 then
-            []
-        else
-            loop 0 [ 1 ]
+    if n < 0 then
+        []
+    else
+        loop 0 [ 1 ]

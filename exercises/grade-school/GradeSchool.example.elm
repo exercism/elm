@@ -22,12 +22,12 @@ empty =
 
 addStudent : Grade -> Student -> School -> School
 addStudent grade student school =
-    Dict.insert grade (List.sort (student :: (studentsInGrade grade school))) school
+    Dict.insert grade (List.sort (student :: studentsInGrade grade school)) school
 
 
 studentsInGrade : Grade -> School -> List Student
 studentsInGrade grade school =
-    case (Dict.get grade school) of
+    case Dict.get grade school of
         Just list ->
             list
 
