@@ -43,18 +43,17 @@ getNumber phoneNumber =
 
 
 prettyPrint : String -> Maybe String
-prettyPrint phoneNumber =
-    let
-        numberFormat =
-            regex "^1?[2-9]\\d{2}[2-9]\\d{2}\\d{4}$"
+prettyPrint input =
+    Maybe.map formatNumber (getNumber input)
 
-        prettyNumber =
-            if phoneNumber |> startsWith "1" then
-                "(" ++ (slice 1 4 phoneNumber) ++ ") " ++ (slice 4 7 phoneNumber) ++ "-" ++ (slice 7 11 phoneNumber)
-            else
-                "(" ++ (slice 0 3 phoneNumber) ++ ") " ++ (slice 3 6 phoneNumber) ++ "-" ++ (slice 6 10 phoneNumber)
-    in
-        if phoneNumber |> matchesFormat numberFormat then
-            Just prettyNumber
-        else
-            Nothing
+
+formatNumber : String -> String
+formatNumber input =
+    String.concat
+        [ "("
+        , String.slice 0 3 input
+        , ") "
+        , String.slice 3 6 input
+        , "-"
+        , String.slice 6 10 input
+        ]

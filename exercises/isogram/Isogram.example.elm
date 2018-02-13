@@ -1,8 +1,8 @@
 module Isogram exposing (isIsogram)
 
-import String
-import List
 import Char
+import List
+import String
 
 
 isAlpha : Char -> Bool
@@ -20,7 +20,7 @@ isIsogram sentence =
                 |> List.sort
                 |> group
     in
-        List.all (\x -> List.length x == 1) sanitized
+    List.all (\x -> List.length x == 1) sanitized
 
 
 
@@ -38,7 +38,7 @@ group list =
                 ( ys, zs ) =
                     span ((==) x) xs
             in
-                (x :: ys) :: group zs
+            (x :: ys) :: group zs
 
 
 span : (a -> Bool) -> List a -> ( List a, List a )
@@ -55,12 +55,12 @@ takeWhile predicate =
                     List.reverse acc
 
                 x :: xs ->
-                    if (predicate x) then
+                    if predicate x then
                         takeWhileHelper (x :: acc) xs
                     else
                         List.reverse acc
     in
-        takeWhileHelper []
+    takeWhileHelper []
 
 
 dropWhile : (a -> Bool) -> List a -> List a
@@ -70,7 +70,7 @@ dropWhile predicate list =
             []
 
         x :: xs ->
-            if (predicate x) then
+            if predicate x then
                 dropWhile predicate xs
             else
                 list

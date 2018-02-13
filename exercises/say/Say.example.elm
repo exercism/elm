@@ -1,4 +1,4 @@
-module Say exposing (say, SayError(..))
+module Say exposing (SayError(..), say)
 
 import Array
 import Dict
@@ -19,7 +19,7 @@ say number =
         if number % 10 == 0 then
             Ok (saySmall number)
         else
-            Ok (sayTens (number // 10 * 10) ++ "-" ++ (saySmall (number % 10)))
+            Ok (sayTens (number // 10 * 10) ++ "-" ++ saySmall (number % 10))
     else if number < 1000 then
         Ok (sayLarge number 100 "hundred")
     else if number < million then
@@ -54,7 +54,7 @@ saySmall number =
 
 sayTens : Int -> String
 sayTens number =
-    Dict.get (number) tens |> Maybe.withDefault ""
+    Dict.get number tens |> Maybe.withDefault ""
 
 
 sayLarge : Int -> Int -> String -> String
@@ -62,7 +62,7 @@ sayLarge number large name =
     if number % large == 0 then
         safeSay (number // large) ++ " " ++ name
     else
-        safeSay (number // large) ++ " " ++ name ++ " " ++ (andSay (number % large))
+        safeSay (number // large) ++ " " ++ name ++ " " ++ andSay (number % large)
 
 
 smalls : Array.Array String

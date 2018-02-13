@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import Pangram exposing (isPangram)
+import Test exposing (..)
 
 
 tests : Test

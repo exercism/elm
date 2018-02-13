@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import LargestSeriesProduct exposing (largestProduct)
+import Test exposing (..)
 
 
 tests : Test

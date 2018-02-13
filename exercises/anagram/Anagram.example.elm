@@ -1,6 +1,6 @@
 module Anagram exposing (..)
 
-import String exposing (toLower, toList)
+import String exposing (toList, toLower)
 
 
 detect : String -> List String -> List String
@@ -12,7 +12,7 @@ detect word candidates =
         ref =
             normalize word
     in
-        List.filter (\w -> normalize w == ref && toLower w /= original) candidates
+    List.filter (\w -> normalize w == ref && toLower w /= original) candidates
 
 
 normalize : String -> List Char

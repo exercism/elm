@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
 import SumOfMultiples exposing (sumOfMultiples)
+import Test exposing (..)
 
 
 tests : Test

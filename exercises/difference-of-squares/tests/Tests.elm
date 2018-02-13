@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import Test exposing (..)
+import DifferenceOfSquares exposing (difference, squareOfSum, sumOfSquares)
 import Expect
-import DifferenceOfSquares exposing (squareOfSum, sumOfSquares, difference)
+import Test exposing (..)
 
 
 tests : Test
