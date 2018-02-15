@@ -1,9 +1,9 @@
 module PhoneNumber exposing (..)
 
-import Regex exposing (Regex, regex, find, HowMany(..))
-import String exposing (concat, startsWith, length, slice)
-import List exposing (map, head)
+import List exposing (head, map)
 import Maybe exposing (andThen)
+import Regex exposing (HowMany(..), Regex, find, regex)
+import String exposing (concat, length, slice, startsWith)
 
 
 matchesFormat : Regex -> String -> Bool
@@ -36,10 +36,10 @@ getNumber phoneNumber =
         stripNumber =
             concat << dropCountryCode << map .match << find All numbers
     in
-        if phoneNumber |> matchesFormat numberFormat then
-            Just <| stripNumber <| phoneNumber
-        else
-            Nothing
+    if phoneNumber |> matchesFormat numberFormat then
+        Just <| stripNumber <| phoneNumber
+    else
+        Nothing
 
 
 prettyPrint : String -> Maybe String
