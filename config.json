@@ -362,6 +362,18 @@
       "topics": [
         "Lists"
       ]
+    },
+    {
+      "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
+      "slug": "binary-search",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 7,
+      "topics": [
+        "algorithms",
+        "arrays",
+        "recursion"
+      ]
     }
   ],
   "foregone": [
