@@ -362,6 +362,16 @@
       "topics": [
         "Lists"
       ]
+    },
+    {
+      "uuid": "2cb2a013-098c-c580-8c78-ef03977e692359580e9",
+      "slug": "rotational-cipher",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "string processing"
+      ]
     }
   ],
   "foregone": [
