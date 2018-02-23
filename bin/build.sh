@@ -47,7 +47,7 @@ do
   echo "Testing $exercise_name"
 
 
-  elm-test -- build/tests/Tests.elm
+  npm test -- build/tests/Tests.elm
 
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
