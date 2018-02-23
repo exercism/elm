@@ -1,7 +1,7 @@
 module Tests exposing (..)
 
-import Test exposing (..)
 import Expect
+import Test exposing (..)
 import TwelveDays
 
 

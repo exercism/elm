@@ -24,7 +24,7 @@ lyric day =
             else
                 verseEnd day
     in
-        concat [ beginning, ending, "." ]
+    concat [ beginning, ending, "." ]
 
 
 verseBegin : Int -> String
@@ -42,12 +42,12 @@ verseEnd day =
         dayGift =
             concat [ ", ", gift day ]
     in
-        case day of
-            1 ->
-                concat [ ", and ", gift day ]
+    case day of
+        1 ->
+            concat [ ", and ", gift day ]
 
-            _ ->
-                concat [ dayGift, verseEnd (day - 1) ]
+        _ ->
+            concat [ dayGift, verseEnd (day - 1) ]
 
 
 dayStr : Int -> String
@@ -145,4 +145,4 @@ withinSong start stop =
         goodStop =
             stop >= 1 && start <= 12
     in
-        start <= stop && goodStart && goodStop
+    start <= stop && goodStart && goodStop
