@@ -29,19 +29,19 @@ The first time you start an exercise, you'll need to ensure you have the
 appropriate dependencies installed.
 
 ```bash
-$ npm install
+$ elm-package install --yes
 ```
 
 Execute the tests with:
 
 ```bash
-$ npm test
+$ elm-test
 ```
 
 Automatically run tests again when you save changes:
 
 ```bash
-$ npm run watch
+$ elm-test --watch
 ```
 
 As you work your way through the test suite, be sure to remove the `skip <|`
@@ -49,7 +49,7 @@ calls from each test until you get them all passing!
 
 ## Source
 
-Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
+Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
