@@ -333,6 +333,16 @@
       ]
     },
     {
+      "uuid": "851ddd78-13a0-4d8f-adda-41abde670687",
+      "slug": "acronym",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+
+      ]
+    },
+    {
       "uuid": "bdb8364b-d8b2-4d58-a824-1035cddedb42",
       "slug": "all-your-base",
       "core": false,
