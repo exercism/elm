@@ -2,7 +2,7 @@ module Tests exposing (..)
 
 import Acronym exposing (abbreviate)
 import Expect
-import Test exposing (Test, describe, test, skip)
+import Test exposing (Test, describe, skip, test)
 
 
 tests : Test
