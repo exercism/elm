@@ -6,8 +6,6 @@ Bob answers 'Sure.' if you ask him a question.
 
 He answers 'Whoa, chill out!' if you yell at him.
 
-He answers 'Calm down, I know what I'm doing!' if you yell a question at him.
-
 He says 'Fine. Be that way!' if you address him without actually saying
 anything.
 
@@ -24,19 +22,19 @@ The first time you start an exercise, you'll need to ensure you have the
 appropriate dependencies installed.
 
 ```bash
-$ npm install
+$ elm-package install --yes
 ```
 
 Execute the tests with:
 
 ```bash
-$ npm test
+$ elm-test
 ```
 
 Automatically run tests again when you save changes:
 
 ```bash
-$ npm run watch
+$ elm-test --watch
 ```
 
 As you work your way through the test suite, be sure to remove the `skip <|`

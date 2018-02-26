@@ -53,19 +53,19 @@ The first time you start an exercise, you'll need to ensure you have the
 appropriate dependencies installed.
 
 ```bash
-$ npm install
+$ elm-package install --yes
 ```
 
 Execute the tests with:
 
 ```bash
-$ npm test
+$ elm-test
 ```
 
 Automatically run tests again when you save changes:
 
 ```bash
-$ npm run watch
+$ elm-test --watch
 ```
 
 As you work your way through the test suite, be sure to remove the `skip <|`
