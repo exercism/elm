@@ -373,6 +373,15 @@
       ]
     },
     {
+      "uuid": "39464d44-1475-47c1-8f08-2aba9e6b2d85",
+      "slug": "luhn",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+      ]
+    },
+    {
       "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
       "slug": "binary-search",
       "core": false,
