@@ -14,10 +14,10 @@ valid input =
         tooShort =
             String.length (String.trim input) < 2
     in
-        if nonDigit || tooShort then
-            False
-        else
-            luhn (stripToList input) == 0
+    if nonDigit || tooShort then
+        False
+    else
+        luhn (stripToList input) == 0
 
 
 luhn : List ( Int, Int ) -> Int
@@ -35,16 +35,16 @@ luhn list =
         remainder x =
             x % 10
     in
-        list
-            |> List.map
-                (\( i, x ) ->
-                    if i % 2 == 0 then
-                        x
-                    else
-                        (subtract << double) x
-                )
-            |> List.sum
-            |> remainder
+    list
+        |> List.map
+            (\( i, x ) ->
+                if i % 2 == 0 then
+                    x
+                else
+                    (subtract << double) x
+            )
+        |> List.sum
+        |> remainder
 
 
 stripToList : String -> List ( Int, Int )
@@ -53,9 +53,9 @@ stripToList input =
         toInt =
             Result.withDefault 0 << String.toInt << String.fromChar
     in
-        input
-            |> String.filter isDigit
-            |> String.reverse
-            |> String.toList
-            |> List.map toInt
-            |> List.indexedMap (,)
+    input
+        |> String.filter isDigit
+        |> String.reverse
+        |> String.toList
+        |> List.map toInt
+        |> List.indexedMap (,)
