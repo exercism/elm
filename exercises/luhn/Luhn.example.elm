@@ -12,50 +12,40 @@ valid input =
             Regex.contains (regex "[^0-9 ]") input
 
         tooShort =
-            String.length (String.trim input) < 2
+            String.length digits < 2
+
+        digits =
+            String.filter isDigit input
     in
     if nonDigit || tooShort then
         False
     else
-        luhn (stripToList input) == 0
+        checksum digits == 0
 
 
-luhn : List ( Int, Int ) -> Int
-luhn list =
+checksum : String -> Int
+checksum input =
     let
-        subtract x =
-            if x > 9 then
-                x - 9
+        calculate x =
+            if x < 5 then
+                x * 2
             else
-                x
-
-        double =
-            (*) 2
+                x * 2 - 9
 
         remainder x =
             x % 10
     in
-    list
+    input
+        |> String.reverse
+        |> String.toList
+        |> List.map (Result.withDefault 0 << String.toInt << String.fromChar)
+        |> List.indexedMap (,)
         |> List.map
             (\( i, x ) ->
                 if i % 2 == 0 then
                     x
                 else
-                    (subtract << double) x
+                    calculate x
             )
         |> List.sum
         |> remainder
-
-
-stripToList : String -> List ( Int, Int )
-stripToList input =
-    let
-        toInt =
-            Result.withDefault 0 << String.toInt << String.fromChar
-    in
-    input
-        |> String.filter isDigit
-        |> String.reverse
-        |> String.toList
-        |> List.map toInt
-        |> List.indexedMap (,)
