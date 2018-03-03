@@ -392,6 +392,15 @@
       ]
     },
     {
+      "uuid": "66fef1df-aa12-40eb-b572-7ea9b6a920ed",
+      "slug": "transpose",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+      ]
+    },
+    {
       "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
       "slug": "binary-search",
       "core": false,
