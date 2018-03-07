@@ -11,182 +11,192 @@ tests =
         [ test "empty string" <|
             \_ ->
                 Expect.equal [] (transpose [])
-        , test "two characters in a row" <|
-            \_ ->
-                Expect.equal
-                    [ "A"
-                    , "1"
-                    ]
-                    (transpose [ "A1" ])
-        , test "two characters in a column" <|
-            \_ ->
-                Expect.equal
-                    [ "A1" ]
-                    (transpose
+        , skip <|
+            test "two characters in a row" <|
+                \_ ->
+                    Expect.equal
                         [ "A"
                         , "1"
                         ]
-                    )
-        , test "simple" <|
-            \_ ->
-                Expect.equal
-                    [ "A1"
-                    , "B2"
-                    , "C3"
-                    ]
-                    (transpose
-                        [ "ABC"
-                        , "123"
+                        (transpose [ "A1" ])
+        , skip <|
+            test "two characters in a column" <|
+                \_ ->
+                    Expect.equal
+                        [ "A1" ]
+                        (transpose
+                            [ "A"
+                            , "1"
+                            ]
+                        )
+        , skip <|
+            test "simple" <|
+                \_ ->
+                    Expect.equal
+                        [ "A1"
+                        , "B2"
+                        , "C3"
                         ]
-                    )
-        , test "single line" <|
-            \_ ->
-                Expect.equal
-                    [ "S"
-                    , "i"
-                    , "n"
-                    , "g"
-                    , "l"
-                    , "e"
-                    , " "
-                    , "l"
-                    , "i"
-                    , "n"
-                    , "e"
-                    , "."
-                    ]
-                    (transpose [ "Single line." ])
-        , test "first line longer than second line" <|
-            \_ ->
-                Expect.equal
-                    [ "TT"
-                    , "hh"
-                    , "ee"
-                    , "  "
-                    , "ff"
-                    , "oi"
-                    , "uf"
-                    , "rt"
-                    , "th"
-                    , "h "
-                    , " l"
-                    , "li"
-                    , "in"
-                    , "ne"
-                    , "e."
-                    , "."
-                    ]
-                    (transpose
-                        [ "The fourth line."
-                        , "The fifth line."
+                        (transpose
+                            [ "ABC"
+                            , "123"
+                            ]
+                        )
+        , skip <|
+            test "single line" <|
+                \_ ->
+                    Expect.equal
+                        [ "S"
+                        , "i"
+                        , "n"
+                        , "g"
+                        , "l"
+                        , "e"
+                        , " "
+                        , "l"
+                        , "i"
+                        , "n"
+                        , "e"
+                        , "."
                         ]
-                    )
-        , test "second line longer than first line" <|
-            \_ ->
-                Expect.equal
-                    [ "TT"
-                    , "hh"
-                    , "ee"
-                    , "  "
-                    , "fs"
-                    , "ie"
-                    , "rc"
-                    , "so"
-                    , "tn"
-                    , " d"
-                    , "l "
-                    , "il"
-                    , "ni"
-                    , "en"
-                    , ".e"
-                    , " ."
-                    ]
-                    (transpose
-                        [ "The first line."
-                        , "The second line."
+                        (transpose [ "Single line." ])
+        , skip <|
+            test "first line longer than second line" <|
+                \_ ->
+                    Expect.equal
+                        [ "TT"
+                        , "hh"
+                        , "ee"
+                        , "  "
+                        , "ff"
+                        , "oi"
+                        , "uf"
+                        , "rt"
+                        , "th"
+                        , "h "
+                        , " l"
+                        , "li"
+                        , "in"
+                        , "ne"
+                        , "e."
+                        , "."
                         ]
-                    )
-        , test "mixed line length" <|
-            \_ ->
-                Expect.equal
-                    [ "TAAA"
-                    , "h   "
-                    , "elll"
-                    , " ooi"
-                    , "lnnn"
-                    , "ogge"
-                    , "n e."
-                    , "glr"
-                    , "ei "
-                    , "snl"
-                    , "tei"
-                    , " .n"
-                    , "l e"
-                    , "i ."
-                    , "n"
-                    , "e"
-                    , "."
-                    ]
-                    (transpose
-                        [ "The longest line."
-                        , "A long line."
-                        , "A longer line."
-                        , "A line."
+                        (transpose
+                            [ "The fourth line."
+                            , "The fifth line."
+                            ]
+                        )
+        , skip <|
+            test "second line longer than first line" <|
+                \_ ->
+                    Expect.equal
+                        [ "TT"
+                        , "hh"
+                        , "ee"
+                        , "  "
+                        , "fs"
+                        , "ie"
+                        , "rc"
+                        , "so"
+                        , "tn"
+                        , " d"
+                        , "l "
+                        , "il"
+                        , "ni"
+                        , "en"
+                        , ".e"
+                        , " ."
                         ]
-                    )
-        , test "square" <|
-            \_ ->
-                Expect.equal
-                    [ "HEART"
-                    , "EMBER"
-                    , "ABUSE"
-                    , "RESIN"
-                    , "TREND"
-                    ]
-                    (transpose
+                        (transpose
+                            [ "The first line."
+                            , "The second line."
+                            ]
+                        )
+        , skip <|
+            test "mixed line length" <|
+                \_ ->
+                    Expect.equal
+                        [ "TAAA"
+                        , "h   "
+                        , "elll"
+                        , " ooi"
+                        , "lnnn"
+                        , "ogge"
+                        , "n e."
+                        , "glr"
+                        , "ei "
+                        , "snl"
+                        , "tei"
+                        , " .n"
+                        , "l e"
+                        , "i ."
+                        , "n"
+                        , "e"
+                        , "."
+                        ]
+                        (transpose
+                            [ "The longest line."
+                            , "A long line."
+                            , "A longer line."
+                            , "A line."
+                            ]
+                        )
+        , skip <|
+            test "square" <|
+                \_ ->
+                    Expect.equal
                         [ "HEART"
                         , "EMBER"
                         , "ABUSE"
                         , "RESIN"
                         , "TREND"
                         ]
-                    )
-        , test "rectangle" <|
-            \_ ->
-                Expect.equal
-                    [ "FOBS"
-                    , "RULE"
-                    , "ATOP"
-                    , "CLOT"
-                    , "TIME"
-                    , "UNIT"
-                    , "RENT"
-                    , "EDGE"
-                    ]
-                    (transpose
-                        [ "FRACTURE"
-                        , "OUTLINED"
-                        , "BLOOMING"
-                        , "SEPTETTE"
+                        (transpose
+                            [ "HEART"
+                            , "EMBER"
+                            , "ABUSE"
+                            , "RESIN"
+                            , "TREND"
+                            ]
+                        )
+        , skip <|
+            test "rectangle" <|
+                \_ ->
+                    Expect.equal
+                        [ "FOBS"
+                        , "RULE"
+                        , "ATOP"
+                        , "CLOT"
+                        , "TIME"
+                        , "UNIT"
+                        , "RENT"
+                        , "EDGE"
                         ]
-                    )
-        , test "triangle" <|
-            \_ ->
-                Expect.equal
-                    [ "TEASER"
-                    , " EASER"
-                    , "  ASER"
-                    , "   SER"
-                    , "    ER"
-                    , "     R"
-                    ]
-                    (transpose
-                        [ "T"
-                        , "EE"
-                        , "AAA"
-                        , "SSSS"
-                        , "EEEEE"
-                        , "RRRRRR"
+                        (transpose
+                            [ "FRACTURE"
+                            , "OUTLINED"
+                            , "BLOOMING"
+                            , "SEPTETTE"
+                            ]
+                        )
+        , skip <|
+            test "triangle" <|
+                \_ ->
+                    Expect.equal
+                        [ "TEASER"
+                        , " EASER"
+                        , "  ASER"
+                        , "   SER"
+                        , "    ER"
+                        , "     R"
                         ]
-                    )
+                        (transpose
+                            [ "T"
+                            , "EE"
+                            , "AAA"
+                            , "SSSS"
+                            , "EEEEE"
+                            , "RRRRRR"
+                            ]
+                        )
         ]
