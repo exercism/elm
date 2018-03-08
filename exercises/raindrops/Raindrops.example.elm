@@ -1,4 +1,4 @@
-module Raindrops exposing (..)
+module Raindrops exposing (raindrops)
 
 import String
 

@@ -1,4 +1,4 @@
-module Accumulate exposing (..)
+module Accumulate exposing (accumulate)
 
 
 accumulate : (a -> b) -> List a -> List b

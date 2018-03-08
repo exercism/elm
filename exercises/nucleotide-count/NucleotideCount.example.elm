@@ -1,4 +1,4 @@
-module NucleotideCount exposing (..)
+module NucleotideCount exposing (nucleotideCounts, version)
 
 import String
 

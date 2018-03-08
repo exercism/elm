@@ -1,4 +1,4 @@
-module Leap exposing (..)
+module Leap exposing (isLeapYear)
 
 
 isLeapYear : Int -> Bool

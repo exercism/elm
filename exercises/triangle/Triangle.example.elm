@@ -1,4 +1,4 @@
-module Triangle exposing (..)
+module Triangle exposing (Triangle(..), triangleKind, version)
 
 import Set
 

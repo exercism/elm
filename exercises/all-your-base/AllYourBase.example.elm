@@ -1,4 +1,4 @@
-module AllYourBase exposing (..)
+module AllYourBase exposing (rebase)
 
 import List
 

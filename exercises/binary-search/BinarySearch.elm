@@ -5,5 +5,4 @@ import Array exposing (Array)
 
 find : Int -> Array Int -> Int
 find target xs =
-    -- TODO:
-    -1
+    Debug.crash "Please implement this function"

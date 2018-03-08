@@ -1,4 +1,4 @@
-module Grains exposing (..)
+module Grains exposing (square)
 
 
 square : Int -> Maybe Int

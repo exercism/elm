@@ -7,14 +7,14 @@
 -}
 
 
-module HelloWorld exposing (..)
+module HelloWorld exposing (helloWorld)
 
 -- It's good style to include any types at the top level of your modules.
 
 
 helloWorld : Maybe String -> String
 helloWorld name =
-    "replace with your code!"
+    Debug.crash "Please implement this function"
 
 
 

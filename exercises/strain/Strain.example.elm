@@ -1,4 +1,4 @@
-module Strain exposing (..)
+module Strain exposing (discard, keep)
 
 import List
 

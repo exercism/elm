@@ -1,4 +1,4 @@
-module Anagram exposing (..)
+module Anagram exposing (detect)
 
 import String exposing (toList, toLower)
 

@@ -1,4 +1,4 @@
-module Series exposing (..)
+module Series exposing (slices)
 
 import List
 import Result

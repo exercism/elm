@@ -1,4 +1,4 @@
-module Allergies exposing (..)
+module Allergies exposing (isAllergicTo, toList)
 
 import Bitwise
 import List

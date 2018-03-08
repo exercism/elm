@@ -1,4 +1,4 @@
-module ScrabbleScore exposing (..)
+module ScrabbleScore exposing (scoreWord)
 
 import String exposing (contains, foldl, fromChar, toUpper)
 
