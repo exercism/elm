@@ -39,7 +39,7 @@ turnLeft robot =
 
 
 advance : Robot -> Robot
-advance { bearing, coordinates } =
+advance robot =
     Debug.crash "Please implement this function"
 
 
