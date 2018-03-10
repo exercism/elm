@@ -1,6 +1,6 @@
 module RobotSimulator
     exposing
-        ( Bearing(East, North, South, West)
+        ( Bearing(..)
         , Robot
         , advance
         , defaultRobot
