@@ -1,4 +1,4 @@
-module SpaceAge exposing (..)
+module SpaceAge exposing (Planet(..), ageOn)
 
 
 type Planet

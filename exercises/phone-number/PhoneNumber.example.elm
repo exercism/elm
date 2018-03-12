@@ -1,4 +1,4 @@
-module PhoneNumber exposing (..)
+module PhoneNumber exposing (getNumber, prettyPrint)
 
 import List exposing (head, map)
 import Maybe exposing (andThen)

@@ -1,4 +1,4 @@
-module DifferenceOfSquares exposing (..)
+module DifferenceOfSquares exposing (difference, squareOfSum, sumOfSquares)
 
 
 squareOfSum : Int -> Int

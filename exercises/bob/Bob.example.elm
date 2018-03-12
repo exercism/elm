@@ -1,4 +1,4 @@
-module Bob exposing (..)
+module Bob exposing (hey)
 
 import Regex
 import String

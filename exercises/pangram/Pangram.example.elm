@@ -1,4 +1,4 @@
-module Pangram exposing (..)
+module Pangram exposing (isPangram)
 
 import String exposing (contains, fromChar, toLower)
 

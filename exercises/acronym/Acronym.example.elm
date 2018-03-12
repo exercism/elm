@@ -1,4 +1,4 @@
-module Acronym exposing (..)
+module Acronym exposing (abbreviate)
 
 import Regex exposing (HowMany(All), regex)
 import String

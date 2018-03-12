@@ -1,4 +1,4 @@
-module GradeSchool exposing (..)
+module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
 
 import Dict exposing (..)
 

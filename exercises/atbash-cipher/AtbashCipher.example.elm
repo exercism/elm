@@ -1,4 +1,4 @@
-module AtbashCipher exposing (..)
+module AtbashCipher exposing (decode, encode)
 
 import Char
 import Dict

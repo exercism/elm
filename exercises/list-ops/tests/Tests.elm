@@ -1,7 +1,7 @@
 module Tests exposing (..)
 
 import Expect
-import ListOps exposing (..)
+import ListOps exposing (append, concat, filter, foldl, foldr, length, map, reverse)
 import Test exposing (..)
 
 

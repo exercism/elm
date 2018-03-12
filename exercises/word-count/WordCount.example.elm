@@ -1,4 +1,4 @@
-module WordCount exposing (..)
+module WordCount exposing (wordCount)
 
 import Dict exposing (Dict)
 import Regex
