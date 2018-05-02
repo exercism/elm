@@ -1,0 +1,5 @@
+module {exercise} exposing ({function})
+
+
+{function} =
+    Debug.crash "Please implement this function"

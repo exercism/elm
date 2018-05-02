@@ -85,6 +85,56 @@ Please keep the following in mind:
 
  - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
 
+### Generating Setup
+
+To make implementing a new exercise a little bit easier, a new script was added
+to the `bin` folder. Running `bin/stub-new-exercise <exercise-slug>` will setup
+the exercise folder and then re-direct you back to this section of the README to
+do the next steps.
+
+The next steps after generating the files include
+
+1. Run `bin/configlet uuid` to generate a UUID for placing in `config.json`
+2. Add the exercise configuration to `config.json`, replacing the placeholders
+   with the exercise specific information
+   ```json
+   {
+     "core": false,
+     "difficulty": 1,
+     "slug": "<exercise-slug",
+     "topics": null,
+     "unlocked_by": null,
+     "uuid": "<generated-uuid>"
+   }
+   ```
+   **Note**: Each exercise configuration will be different by potentially more than
+   the UUID. If you have questions, you can wait until submitting the PR and it can
+   get resolved then.
+3. The following search shows all the locations in the template files you need
+   to change before renaming them to just `*.elm` files instead of
+   `*.elm.template`.
+   ```bash
+   $ grep -r "{exercise}" exercises/<exercise>
+   ./Exercise.elm.template:module {exercise} exposing ({method})
+   ./Exercise.example.elm.template:module {exercise} exposing ({method})
+   ./tests/Tests.elm.template:import {exercise} exposing ({method})
+   ./tests/Tests.elm.template:    describe "{exercise}"
+   $ grep -r "{function}" exercises/<exercise>
+   ./Exercise.elm.template:module {exercise} exposing ({function})
+   ./Exercise.elm.template:{function} =
+   ./Exercise.example.elm.template:module {exercise} exposing ({function})
+   ./Exercise.example.elm.template:{function} =
+   ./tests/Tests.elm.template:import {exercise} exposing ({function})
+   ```
+3. The `bin/stub-new-exercise` script has to pull down the
+   `problem-specifications` repo to generate the README. You will also be
+   able to get the canonical test data from that repo in the
+   `exercises/<exercise-slug>/canonical-data.json` file. With the test data, you
+   should have enough to get started with the tests.
+4. After the tests are written, you can start writing an implementation example
+   in `<exercise>.example.elm`.
+5. Also remember to stub out the `<exercise>.elm` file, which is what users will
+   get when they run `exercism fetch`.
 
 ### Elm icon
 We were unable to find copyright information about the Elm logo, nor information about who designed it. Presumably Evan Czaplicki, creator of the Elm language, also made the logo, and holds copyright. It may also fall within the public domain, since it is a geometric shape. We've adapted the official Elm logo by changing the colors, which we believe falls under "fair use".
