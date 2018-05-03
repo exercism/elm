@@ -2,6 +2,7 @@ The Elm exercise test suites may be run from the exercise directory.
 
 ```bash
 $ cd ~/exercism/elm/hello-world
+$ elm-package install --yes  # only required the first time you start an exercise
 $ elm test
 ```
 
