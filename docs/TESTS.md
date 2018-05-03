@@ -1,9 +1,8 @@
 The Elm exercise test suites may be run from the exercise directory.
 
 ```bash
-$ cd exercism/project/directory/elm/hello-world
-$ npm install  # only required the first time you start an exercise
-$ npm test
+$ cd ~/exercism/elm/hello-world
+$ elm test
 ```
 
 ## Hints and tips
@@ -13,7 +12,7 @@ $ npm test
 Automatically run tests again when you save changes:
 
 ```bash
-$ npm run watch
+$ elm test --watch
 ```
 
 ### Coding the exercise
