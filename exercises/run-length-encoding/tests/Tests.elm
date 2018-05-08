@@ -3,6 +3,9 @@ module Tests exposing (..)
 import Expect
 import RunLengthEncoding exposing (decode, encode, version)
 import Test exposing (..)
+import Fuzz exposing (Fuzzer)
+import Regex exposing (regex)
+import Char
 
 
 tests : Test
@@ -41,4 +44,21 @@ tests =
         , skip <|
             test "decode unicode" <|
                 \() -> Expect.equal "⏰⚽⚽⚽⭐⭐⏰" (decode "⏰3⚽2⭐⏰")
+        , skip <|
+            fuzz nonDigitString "restores original string if you run it again" <|
+                \randomNoDigitString ->
+                    randomNoDigitString
+                        |> encode
+                        |> decode
+                        |> Expect.equal randomNoDigitString
         ]
+
+
+nonDigitString : Fuzzer String
+nonDigitString =
+    Fuzz.conditional
+        { condition = not << Regex.contains (regex "\\d")
+        , fallback = String.filter (not << Char.isDigit)
+        , retries = 5
+        }
+        Fuzz.string
