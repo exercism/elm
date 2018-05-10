@@ -1,9 +1,6 @@
 module Tests exposing (..)
 
-import Char
 import Expect
-import Fuzz exposing (Fuzzer)
-import Regex exposing (regex)
 import RunLengthEncoding exposing (decode, encode, version)
 import Test exposing (..)
 
@@ -62,27 +59,4 @@ tests =
                 \() ->
                     Expect.equal "WWWWWWWWWW"
                         (decode "10W")
-        , skip <|
-            test "encode unicode" <|
-                \() -> Expect.equal "⏰3⚽2⭐⏰" (encode "⏰⚽⚽⚽⭐⭐⏰")
-        , skip <|
-            test "decode unicode" <|
-                \() -> Expect.equal "⏰⚽⚽⚽⭐⭐⏰" (decode "⏰3⚽2⭐⏰")
-        , skip <|
-            fuzz nonDigitString "restores original string if you run it again" <|
-                \randomNoDigitString ->
-                    randomNoDigitString
-                        |> encode
-                        |> decode
-                        |> Expect.equal randomNoDigitString
         ]
-
-
-nonDigitString : Fuzzer String
-nonDigitString =
-    Fuzz.conditional
-        { condition = not << Regex.contains (regex "\\d")
-        , fallback = String.filter (not << Char.isDigit)
-        , retries = 5
-        }
-        Fuzz.string
