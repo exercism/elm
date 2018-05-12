@@ -1,11 +1,6 @@
-module PhoneNumber exposing (getNumber, prettyPrint)
+module PhoneNumber exposing (getNumber)
 
 
 getNumber : String -> Maybe String
 getNumber phoneNumber =
-    Debug.crash "Please implement this function"
-
-
-prettyPrint : String -> Maybe String
-prettyPrint input =
     Debug.crash "Please implement this function"
