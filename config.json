@@ -328,6 +328,14 @@
     },
     {
       "core": false,
+      "difficulty": 5,
+      "slug": "bracket-push",
+      "topics": null,
+      "unlocked_by": null,
+      "uuid": "5b2f0983-6feb-4329-aff2-d822274a9882"
+    },
+    {
+      "core": false,
       "difficulty": 7,
       "slug": "binary-search",
       "topics": [
