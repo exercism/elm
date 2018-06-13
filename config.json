@@ -9,7 +9,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings"
+      ]
     },
     {
       "slug": "bob",
@@ -17,7 +19,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "conditionals",
+        "strings",
+        "text_formatting"
+      ]
     },
     {
       "slug": "twelve-days",
@@ -25,7 +31,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 3,
-      "topics": null
+      "topics": [
+        "conditionals",
+        "strings",
+        "text_formatting"
+      ]
     },
     {
       "slug": "leap",
@@ -33,7 +43,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "conditionals",
+        "integers"
+      ]
     },
     {
       "slug": "raindrops",
@@ -41,7 +54,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "filtering",
+        "text_formatting"
+      ]
     },
     {
       "slug": "pangram",
@@ -49,7 +65,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "booleans",
+        "strings"
+      ]
     },
     {
       "slug": "accumulate",
@@ -57,7 +76,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "recursion",
+        "transforming"
+      ]
     },
     {
       "slug": "triangle",
@@ -65,7 +87,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics"
+      ]
     },
     {
       "slug": "scrabble-score",
@@ -73,7 +97,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "transforming"
+      ]
     },
     {
       "slug": "anagram",
@@ -81,7 +107,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "filtering",
+        "strings"
+      ]
     },
     {
       "slug": "space-age",
@@ -89,7 +118,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "floating_point_numbers"
+      ]
     },
     {
       "slug": "strain",
@@ -97,7 +128,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "filtering",
+        "sequences"
+      ]
     },
     {
       "slug": "difference-of-squares",
@@ -105,7 +139,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "integers"
+      ]
     },
     {
       "slug": "word-count",
@@ -113,7 +149,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "maps",
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "sum-of-multiples",
@@ -121,7 +161,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "lists",
+        "transforming"
+      ]
     },
     {
       "slug": "hamming",
@@ -129,7 +172,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "filtering",
+        "strings"
+      ]
     },
     {
       "slug": "rna-transcription",
@@ -137,7 +183,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "run-length-encoding",
@@ -145,7 +194,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "algorithms",
+        "transforming"
+      ]
     },
     {
       "slug": "sublist",
@@ -153,7 +205,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "lists",
+        "recursion"
+      ]
     },
     {
       "slug": "nucleotide-count",
@@ -161,7 +216,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "maps",
+        "strings"
+      ]
     },
     {
       "slug": "series",
@@ -169,7 +227,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "lists",
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "phone-number",
@@ -177,7 +239,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "parsing",
+        "transforming"
+      ]
     },
     {
       "slug": "grade-school",
@@ -185,7 +250,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "maps",
+        "sorting"
+      ]
     },
     {
       "slug": "allergies",
@@ -193,7 +261,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "bitwise_operations",
+        "enumerations",
+        "filtering"
+      ]
     },
     {
       "slug": "robot-simulator",
@@ -201,7 +273,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "records",
+        "tuples"
+      ]
     },
     {
       "slug": "list-ops",
@@ -209,7 +284,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "lists",
+        "recursion"
+      ]
     },
     {
       "slug": "atbash-cipher",
@@ -217,7 +295,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "algorithms",
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "say",
@@ -225,7 +307,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "text_formatting",
+        "transforming"
+      ]
     },
     {
       "slug": "largest-series-product",
@@ -233,7 +319,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "integers",
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "roman-numerals",
@@ -241,7 +331,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "recursion",
+        "transforming"
+      ]
     },
     {
       "slug": "gigasecond",
@@ -249,7 +342,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "dates"
+      ]
     },
     {
       "slug": "grains",
@@ -257,7 +352,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "integers"
+      ]
     },
     {
       "slug": "etl",
@@ -265,7 +362,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "maps",
+        "transforming"
+      ]
     },
     {
       "slug": "collatz-conjecture",
@@ -273,7 +373,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "mathematics"
+      ]
     },
     {
       "slug": "acronym",
@@ -281,7 +383,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
-      "topics": null
+      "topics": [
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "all-your-base",
@@ -289,7 +394,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 2,
-      "topics": null
+      "topics": [
+        "integers",
+        "mathematics",
+        "transforming"
+      ]
     },
     {
       "slug": "pascals-triangle",
@@ -298,8 +407,9 @@
       "unlocked_by": null,
       "difficulty": 4,
       "topics": [
-        "control_flow",
-        "lists"
+        "lists",
+        "mathematics",
+        "recursion"
       ]
     },
     {
@@ -309,7 +419,8 @@
       "unlocked_by": null,
       "difficulty": 3,
       "topics": [
-        "lists"
+        "filtering",
+        "strings"
       ]
     },
     {
@@ -318,7 +429,11 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 5,
-      "topics": null
+      "topics": [
+        "algorithms",
+        "strings",
+        "transforming"
+      ]
     },
     {
       "slug": "transpose",
@@ -326,7 +441,9 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 5,
-      "topics": null
+      "topics": [
+        "matrices"
+      ]
     },
     {
       "slug": "bracket-push",
@@ -334,7 +451,10 @@
       "core": false,
       "unlocked_by": null,
       "difficulty": 5,
-      "topics": null
+      "topics": [
+        "parsing",
+        "stacks"
+      ]
     },
     {
       "slug": "binary-search",
@@ -344,7 +464,7 @@
       "difficulty": 7,
       "topics": [
         "algorithms",
-        "arrays",
+        "lists",
         "recursion"
       ]
     }
