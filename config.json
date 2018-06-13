@@ -6,7 +6,7 @@
     {
       "slug": "hello-world",
       "uuid": "2c3902df-93e1-48d1-829d-4daa93a1f06f",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -16,7 +16,7 @@
     {
       "slug": "bob",
       "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -40,7 +40,7 @@
     {
       "slug": "leap",
       "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -51,7 +51,7 @@
     {
       "slug": "raindrops",
       "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -73,7 +73,7 @@
     {
       "slug": "accumulate",
       "uuid": "0b4561f3-59a7-4463-a733-c7fa8f9f332a",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -115,7 +115,7 @@
     {
       "slug": "space-age",
       "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -158,7 +158,7 @@
     {
       "slug": "sum-of-multiples",
       "uuid": "75859d00-8772-4471-97a7-d6fe432edc5e",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -247,7 +247,7 @@
     {
       "slug": "grade-school",
       "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -258,7 +258,7 @@
     {
       "slug": "allergies",
       "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -270,7 +270,7 @@
     {
       "slug": "robot-simulator",
       "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
-      "core": false,
+      "core": true,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
