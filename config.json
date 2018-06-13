@@ -1,7 +1,7 @@
 {
   "language": "Elm",
   "active": true,
-  "blurb": "",
+  "blurb": "Elm is a pure, functional language that compiles to javascript",
   "exercises": [
     {
       "slug": "hello-world",
