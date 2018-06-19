@@ -415,7 +415,7 @@
     },
     {
       "slug": "isogram",
-      "uuid": "5f540090-061e-2f80-40a8-d9782700ed2efdf8965",
+      "uuid": "7b03583a-fa85-4bd0-af30-0b84968d35f9",
       "core": false,
       "unlocked_by": "hello-world",
       "difficulty": 3,
@@ -459,7 +459,7 @@
     },
     {
       "slug": "binary-search",
-      "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
+      "uuid": "939e71ab-38fb-4d39-97f1-c7d2f12922fe",
       "core": false,
       "unlocked_by": "sum-of-multiples",
       "difficulty": 7,
