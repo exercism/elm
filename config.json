@@ -31,7 +31,7 @@
       "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
       "core": false,
       "unlocked_by": "hello-world",
-      "difficulty": 3,
+      "difficulty": 4,
       "topics": [
         "conditionals",
         "strings",
@@ -54,7 +54,7 @@
       "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "filtering",
         "text_formatting"
@@ -65,7 +65,7 @@
       "uuid": "a70503ba-f1f3-4583-9226-c3ada98e9500",
       "core": false,
       "unlocked_by": "hello-world",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "booleans",
         "strings"
@@ -76,7 +76,7 @@
       "uuid": "0b4561f3-59a7-4463-a733-c7fa8f9f332a",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "recursion",
         "transforming"
@@ -87,7 +87,7 @@
       "uuid": "767f6825-8736-4307-85c7-090a9a327fd9",
       "core": false,
       "unlocked_by": "space-age",
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
         "mathematics"
       ]
@@ -97,7 +97,7 @@
       "uuid": "16ccc1fa-34b0-4a7e-b3cf-33a711e857ea",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
         "transforming"
       ]
@@ -107,7 +107,7 @@
       "uuid": "5845a108-d8b2-41dd-b371-cf9eff7a2230",
       "core": false,
       "unlocked_by": "bob",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "filtering",
         "strings"
@@ -128,7 +128,7 @@
       "uuid": "992c5ed1-9127-42a4-b508-61c9487612c5",
       "core": false,
       "unlocked_by": "raindrops",
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
         "filtering",
         "sequences"
@@ -149,7 +149,7 @@
       "uuid": "9c9507a6-8187-4ce6-b0bc-b4765effb74c",
       "core": false,
       "unlocked_by": "grade-school",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "maps",
         "strings",
@@ -172,7 +172,7 @@
       "uuid": "472c2e13-6608-4862-b884-a7e458e0bcdd",
       "core": false,
       "unlocked_by": "hello-world",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "filtering",
         "strings"
@@ -194,7 +194,7 @@
       "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 5,
       "topics": [
         "algorithms",
         "transforming"
@@ -205,7 +205,7 @@
       "uuid": "8e1cb827-2fa9-46a4-ac50-7f8b3ba66809",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 7,
       "topics": [
         "lists",
         "recursion"
@@ -216,7 +216,7 @@
       "uuid": "c9e00708-3d18-4a0b-a3de-cae4d979a981",
       "core": false,
       "unlocked_by": "grade-school",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "maps",
         "strings"
@@ -227,7 +227,7 @@
       "uuid": "1e17ed2b-57b4-4cad-a684-ce7070d5023b",
       "core": false,
       "unlocked_by": "bob",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "lists",
         "strings",
@@ -239,7 +239,7 @@
       "uuid": "1071ec57-5527-4eb1-b297-77355ed64547",
       "core": false,
       "unlocked_by": "hello-world",
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
         "parsing",
         "transforming"
@@ -250,7 +250,7 @@
       "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "maps",
         "sorting"
@@ -261,7 +261,7 @@
       "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "bitwise_operations",
         "enumerations",
@@ -273,7 +273,7 @@
       "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 1,
+      "difficulty": 3,
       "topics": [
         "records",
         "tuples"
@@ -284,7 +284,7 @@
       "uuid": "114b5717-0d82-459e-90c4-f00d8b6beb5b",
       "core": false,
       "unlocked_by": "accumulate",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "lists",
         "recursion"
@@ -295,7 +295,7 @@
       "uuid": "8322872b-e020-4a9e-9206-015c0fdacb62",
       "core": false,
       "unlocked_by": "bob",
-      "difficulty": 1,
+      "difficulty": 5,
       "topics": [
         "algorithms",
         "strings",
@@ -307,7 +307,7 @@
       "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
       "core": false,
       "unlocked_by": "robot-simulator",
-      "difficulty": 1,
+      "difficulty": 8,
       "topics": [
         "strings",
         "text_formatting",
@@ -319,7 +319,7 @@
       "uuid": "1902d726-5a62-475b-b7d3-7188a50e717f",
       "core": false,
       "unlocked_by": "leap",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "integers",
         "strings",
@@ -331,7 +331,7 @@
       "uuid": "c1461035-6abe-4f17-a818-7a3ac6642c18",
       "core": false,
       "unlocked_by": "accumulate",
-      "difficulty": 1,
+      "difficulty": 5,
       "topics": [
         "recursion",
         "transforming"
@@ -352,7 +352,7 @@
       "uuid": "41518694-4293-49f6-8af5-1cdad84acf78",
       "core": false,
       "unlocked_by": "leap",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "integers"
       ]
@@ -362,7 +362,7 @@
       "uuid": "1f39d315-324c-4e2f-bf48-ce8432836596",
       "core": false,
       "unlocked_by": "grade-school",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "maps",
         "transforming"
@@ -373,7 +373,7 @@
       "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
       "core": false,
       "unlocked_by": "sum-of-multiples",
-      "difficulty": 1,
+      "difficulty": 2,
       "topics": [
         "mathematics"
       ]
@@ -383,7 +383,7 @@
       "uuid": "851ddd78-13a0-4d8f-adda-41abde670687",
       "core": false,
       "unlocked_by": "bob",
-      "difficulty": 1,
+      "difficulty": 4,
       "topics": [
         "strings",
         "transforming"
@@ -394,7 +394,7 @@
       "uuid": "bdb8364b-d8b2-4d58-a824-1035cddedb42",
       "core": false,
       "unlocked_by": "leap",
-      "difficulty": 2,
+      "difficulty": 4,
       "topics": [
         "integers",
         "mathematics",
@@ -441,7 +441,7 @@
       "uuid": "66fef1df-aa12-40eb-b572-7ea9b6a920ed",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 5,
+      "difficulty": 6,
       "topics": [
         "matrices"
       ]
@@ -451,7 +451,7 @@
       "uuid": "5b2f0983-6feb-4329-aff2-d822274a9882",
       "core": false,
       "unlocked_by": null,
-      "difficulty": 5,
+      "difficulty": 7,
       "topics": [
         "parsing",
         "stacks"
@@ -462,7 +462,7 @@
       "uuid": "939e71ab-38fb-4d39-97f1-c7d2f12922fe",
       "core": false,
       "unlocked_by": "sum-of-multiples",
-      "difficulty": 7,
+      "difficulty": 3,
       "topics": [
         "algorithms",
         "lists",
