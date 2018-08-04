@@ -33,7 +33,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "integers"
+        "integers",
+        "math"
       ]
     },
     {
@@ -86,6 +87,7 @@
       "difficulty": 1,
       "topics": [
         "lists",
+        "math",
         "transforming"
       ]
     },
@@ -107,7 +109,7 @@
       "unlocked_by": "sum-of-multiples",
       "difficulty": 2,
       "topics": [
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -258,9 +260,7 @@
       "core": false,
       "unlocked_by": "space-age",
       "difficulty": 3,
-      "topics": [
-        "mathematics"
-      ]
+      "topics": []
     },
     {
       "slug": "acronym",
@@ -281,7 +281,7 @@
       "difficulty": 4,
       "topics": [
         "integers",
-        "mathematics",
+        "math",
         "transforming"
       ]
     },
@@ -316,6 +316,7 @@
       "difficulty": 4,
       "topics": [
         "integers",
+        "math",
         "strings",
         "transforming"
       ]
@@ -339,7 +340,7 @@
       "difficulty": 4,
       "topics": [
         "lists",
-        "mathematics",
+        "math",
         "recursion"
       ]
     },
