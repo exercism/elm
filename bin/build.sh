@@ -5,7 +5,7 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-if [ ! -f "bin/elm-format" ] || [[ ! $(bin/elm-format --help | grep "elm-format-0.18 0.7.0-exp") ]]; then
+if [ ! -f "bin/elm-format" ] || [[ ! $(bin/elm-format --help | grep "elm-format-0.19 0.8.0") ]]; then
   echo "Installing local copy of elm-format"
   bin/install-elm-format
 fi
@@ -13,14 +13,14 @@ fi
 bin/elm-format --yes --validate exercises/**/*.example.elm  exercises/**/tests/Tests.elm
 
 if [ $? -ne 0 ]; then
-    echo "*******************************************************************"
-    echo "*******************************************************************"
-    echo "**                       elm-format failed                       **"
-    echo "**        perhaps some of your changes are not formatted?        **"
-    echo "**             Please run elm-format before pushing.             **"
-    echo "*******************************************************************"
-    echo "*******************************************************************"
-    exit 1
+  echo "*******************************************************************"
+  echo "*******************************************************************"
+  echo "**                       elm-format failed                       **"
+  echo "**        perhaps some of your changes are not formatted?        **"
+  echo "**             Please run elm-format before pushing.             **"
+  echo "*******************************************************************"
+  echo "*******************************************************************"
+  exit 1
 else
   echo "Formatting looks good!"
 fi
@@ -40,14 +40,14 @@ do
   exercise_dir=$(dirname $example_file)
   exercise_name=$(basename $example_file .example.elm)
   cp "$exercise_dir/$exercise_name.example.elm" "build/$exercise_name.elm"
-  cp "$exercise_dir/tests/elm-package.json" build/tests/
+  cp "$exercise_dir/elm.json" build/
   cat "$exercise_dir/tests/Tests.elm" | sed 's/skip <|//g' > build/tests/Tests.elm
 
   echo '-------------------------------------------------------'
   echo "Testing $exercise_name"
 
 
-  npm test -- build/tests/Tests.elm
+  npm test -- build/
 
   # capture result from last command (elm-test)
   if [ $? -ne 0 ]; then
