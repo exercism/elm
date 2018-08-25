@@ -1,13 +1,13 @@
 module Acronym exposing (abbreviate)
 
-import Regex exposing (HowMany(All), regex)
+import Regex exposing (Regex)
 import String
 
 
 abbreviate : String -> String
 abbreviate phrase =
     phrase
-        |> Regex.split All (regex "[ -]")
+        |> Regex.split dashOrSpace
         |> List.map firstLetter
         |> String.join ""
 
@@ -20,3 +20,9 @@ firstLetter word =
 
         Nothing ->
             ""
+
+
+dashOrSpace : Regex
+dashOrSpace =
+    Maybe.withDefault Regex.never <|
+        Regex.fromString "[ -]"
