@@ -57,6 +57,7 @@ takeWhile predicate =
                 x :: xs ->
                     if predicate x then
                         takeWhileHelper (x :: acc) xs
+
                     else
                         List.reverse acc
     in
@@ -72,5 +73,6 @@ dropWhile predicate list =
         x :: xs ->
             if predicate x then
                 dropWhile predicate xs
+
             else
                 list

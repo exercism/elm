@@ -38,6 +38,7 @@ getNumber phoneNumber =
     in
     if phoneNumber |> matchesFormat numberFormat then
         Just <| stripNumber <| phoneNumber
+
     else
         Nothing
 

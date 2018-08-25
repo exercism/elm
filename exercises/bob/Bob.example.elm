@@ -8,12 +8,16 @@ hey : String -> String
 hey remark =
     if isShouting remark && isQuestion remark then
         "Calm down, I know what I'm doing!"
+
     else if isShouting remark then
         "Whoa, chill out!"
+
     else if isQuestion remark then
         "Sure."
+
     else if isSilence remark then
         "Fine. Be that way!"
+
     else
         "Whatever."
 

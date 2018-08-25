@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
 import GradeSchool exposing (addStudent, allStudents, studentsInGrade)

@@ -1,14 +1,13 @@
-module ListOps
-    exposing
-        ( append
-        , concat
-        , filter
-        , foldl
-        , foldr
-        , length
-        , map
-        , reverse
-        )
+module ListOps exposing
+    ( append
+    , concat
+    , filter
+    , foldl
+    , foldr
+    , length
+    , map
+    , reverse
+    )
 
 
 length : List a -> Int
@@ -52,6 +51,7 @@ filter f list =
         (\x acc ->
             if f x then
                 x :: acc
+
             else
                 acc
         )

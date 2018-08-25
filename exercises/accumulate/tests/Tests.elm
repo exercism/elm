@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (square, tests)
 
 import Accumulate exposing (accumulate)
 import Expect

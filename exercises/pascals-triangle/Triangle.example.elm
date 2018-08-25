@@ -14,10 +14,12 @@ rows n =
         loop i row =
             if i == n then
                 []
+
             else
                 row :: loop (i + 1) (nextRow row)
     in
     if n < 0 then
         []
+
     else
         loop 0 [ 1 ]

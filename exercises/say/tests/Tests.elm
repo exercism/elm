@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
 import Say exposing (SayError(Negative, TooLarge), say)

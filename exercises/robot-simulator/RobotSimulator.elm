@@ -1,13 +1,12 @@
-module RobotSimulator
-    exposing
-        ( Bearing(..)
-        , Robot
-        , advance
-        , defaultRobot
-        , simulate
-        , turnLeft
-        , turnRight
-        )
+module RobotSimulator exposing
+    ( Bearing(..)
+    , Robot
+    , advance
+    , defaultRobot
+    , simulate
+    , turnLeft
+    , turnRight
+    )
 
 
 type Bearing

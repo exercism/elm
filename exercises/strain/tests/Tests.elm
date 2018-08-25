@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (even, isFirstLetter, lessThanTen, odd, tests)
 
 import Expect
 import Strain exposing (discard, keep)

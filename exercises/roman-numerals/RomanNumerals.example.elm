@@ -8,6 +8,7 @@ toRoman : Int -> String
 toRoman number =
     if number == 0 then
         ""
+
     else
         let
             part =

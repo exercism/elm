@@ -6,6 +6,7 @@ import Regex
 import String exposing (fromChar)
 
 
+
 {-
    To the unaware: this was written by a very green elmer, so don't consider
    it an idiomatic exemplar to emulate.
@@ -30,6 +31,7 @@ countChars current counted =
         Just ( count, previous ) ->
             if previous == current then
                 ( count + 1, current ) :: withDefault [] (tail counted)
+
             else
                 ( 1, current ) :: counted
 
@@ -41,6 +43,7 @@ stringifyCounts : ( comparable, Char ) -> String
 stringifyCounts ( count, char ) =
     if count > 1 then
         toString count ++ fromChar char
+
     else
         fromChar char
 

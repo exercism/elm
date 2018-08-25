@@ -19,6 +19,7 @@ valid input =
     in
     if nonDigit || tooShort then
         False
+
     else
         checksum digits == 0
 
@@ -29,6 +30,7 @@ checksum input =
         calculate x =
             if x < 5 then
                 x * 2
+
             else
                 x * 2 - 9
 
@@ -44,6 +46,7 @@ checksum input =
             (\( i, x ) ->
                 if i % 2 == 0 then
                     x
+
                 else
                     calculate x
             )

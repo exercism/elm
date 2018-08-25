@@ -19,6 +19,7 @@ isPaired input =
                 top :: visited ->
                     if isPairMatch top bracket then
                         visited
+
                     else
                         bracket :: top :: visited
 

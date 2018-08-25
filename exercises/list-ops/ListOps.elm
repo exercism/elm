@@ -1,14 +1,13 @@
-module ListOps
-    exposing
-        ( append
-        , concat
-        , filter
-        , foldl
-        , foldr
-        , length
-        , map
-        , reverse
-        )
+module ListOps exposing
+    ( append
+    , concat
+    , filter
+    , foldl
+    , foldr
+    , length
+    , map
+    , reverse
+    )
 
 
 length : List a -> Int

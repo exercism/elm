@@ -8,6 +8,7 @@ recite : Int -> Int -> List String
 recite start stop =
     if withinSong start stop then
         map lyric (range start stop)
+
     else
         Debug.crash "I would make up verses if I could...sorry about this"
 
@@ -21,6 +22,7 @@ lyric day =
         ending =
             if day == 1 then
                 concat [ ", ", gift day ]
+
             else
                 verseEnd day
     in

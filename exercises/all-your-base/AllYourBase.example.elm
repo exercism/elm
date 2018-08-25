@@ -14,6 +14,7 @@ fromBase base =
                 Just n ->
                     if x >= 0 && x < base then
                         Just (n * base + x)
+
                     else
                         Nothing
     in
@@ -59,6 +60,7 @@ rebase inBase digits outBase =
     in
     if inBase < 2 || outBase < 2 || length == 0 || length == numZeros then
         Nothing
+
     else
         case fromBase inBase digits of
             Just v ->

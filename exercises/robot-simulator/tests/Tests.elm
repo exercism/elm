@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (assertionList, tests)
 
 import Expect
 import RobotSimulator exposing (Bearing(East, North, South, West), Robot, advance, defaultRobot, simulate, turnLeft, turnRight)

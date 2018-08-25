@@ -34,6 +34,7 @@ transpose lines =
                     (\x ( ignore, list ) ->
                         if ignore && x == Nothing then
                             ( ignore, list )
+
                         else
                             ( False, x :: list )
                     )

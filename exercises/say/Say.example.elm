@@ -13,23 +13,32 @@ say : Int -> Result SayError String
 say number =
     if number < 0 then
         Err Negative
+
     else if number < 20 then
         Ok (saySmall number)
+
     else if number < 100 then
         if number % 10 == 0 then
             Ok (saySmall number)
+
         else
             Ok (sayTens (number // 10 * 10) ++ "-" ++ saySmall (number % 10))
+
     else if number < 1000 then
         Ok (sayLarge number 100 "hundred")
+
     else if number < million then
         Ok (sayLarge number 1000 "thousand")
+
     else if number < billion then
         Ok (sayLarge number million "million")
+
     else if number < trillion then
         Ok (sayLarge number billion "billion")
+
     else if number < quintillion then
         Ok (sayLarge number trillion "trillion")
+
     else
         Err TooLarge
 
@@ -43,6 +52,7 @@ andSay : Int -> String
 andSay number =
     if number < 100 then
         "and " ++ safeSay number
+
     else
         safeSay number
 
@@ -61,6 +71,7 @@ sayLarge : Int -> Int -> String -> String
 sayLarge number large name =
     if number % large == 0 then
         safeSay (number // large) ++ " " ++ name
+
     else
         safeSay (number // large) ++ " " ++ name ++ " " ++ andSay (number % large)
 

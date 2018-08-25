@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
 import ListOps exposing (append, concat, filter, foldl, foldr, length, map, reverse)

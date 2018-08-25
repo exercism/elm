@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import DifferenceOfSquares exposing (difference, squareOfSum, sumOfSquares)
 import Expect

@@ -9,6 +9,7 @@ slices : Int -> String -> Result String (List (List Int))
 slices size input =
     if size < 1 then
         Err ("Invalid size: " ++ toString size)
+
     else
         String.split "" input
             |> List.map String.toInt
@@ -24,6 +25,7 @@ takeRuns size numbers =
     in
     if List.length candidate < size || size < 1 then
         []
+
     else
         candidate :: takeRuns size (List.drop 1 numbers)
 

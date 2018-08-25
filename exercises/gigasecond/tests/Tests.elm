@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (date, tests)
 
 import Date
 import Expect

@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Allergies exposing (isAllergicTo, toList)
 import Expect

@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (anyCharacter, character, gibberish, gibberishQuestion, listOfCharacters, tests, uppercaseCharacter, uppercaseGibberish)
 
 import Bob
 import Char

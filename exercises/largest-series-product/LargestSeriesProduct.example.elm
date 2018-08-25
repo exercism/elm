@@ -7,8 +7,10 @@ largestProduct : Int -> String -> Maybe Int
 largestProduct length series =
     if length < 0 then
         Nothing
+
     else if length == 0 then
         Just 1
+
     else
         String.split "" series
             |> List.map String.toInt
@@ -30,6 +32,7 @@ takeRuns size items =
     in
     if List.length candidate < size || size < 1 then
         []
+
     else
         candidate :: takeRuns size (List.drop 1 items)
 

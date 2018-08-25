@@ -17,10 +17,13 @@ sublist : List a -> List a -> ListComparison
 sublist alist blist =
     if alist == blist then
         Equal
+
     else if inList alist blist then
         Superlist
+
     else if inList blist alist then
         Sublist
+
     else
         Unequal
 
@@ -33,7 +36,9 @@ inList alist blist =
     in
     if List.length alist < List.length blist then
         False
+
     else if List.take (List.length blist) alist == blist then
         True
+
     else
         inList (getLastInList alist) blist
