@@ -15,7 +15,6 @@ largestProduct length series =
         String.split "" series
             |> List.map String.toInt
             |> combineResults
-            |> Result.toMaybe
             |> Maybe.map
                 (takeRuns length
                     >> List.map List.product
@@ -41,9 +40,9 @@ takeRuns size items =
 -- inlined from Results.Extra and Maybe.Extra
 
 
-combineResults : List (Result x a) -> Result x (List a)
+combineResults : List (Maybe a) -> Maybe (List a)
 combineResults =
-    List.foldr (Result.map2 (::)) (Ok [])
+    List.foldr (Maybe.map2 (::)) (Just [])
 
 
 joinMaybe : Maybe (Maybe a) -> Maybe a
