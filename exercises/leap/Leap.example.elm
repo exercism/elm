@@ -3,4 +3,4 @@ module Leap exposing (isLeapYear)
 
 isLeapYear : Int -> Bool
 isLeapYear year =
-    year % 4 == 0 && (year % 100 /= 0 || year % 400 == 0)
+    modBy 4 year == 0 && (not (modBy 100 year == 0) || modBy 400 year == 0)
