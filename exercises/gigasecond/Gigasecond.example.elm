@@ -1,14 +1,16 @@
 module Gigasecond exposing (add)
 
-import Date
 import Time
 
 
-add : Date.Date -> Date.Date
-add =
-    Date.toTime >> (+) gigasecond >> Date.fromTime
+add : Time.Posix -> Time.Posix
+add timestamp =
+    timestamp
+        |> Time.posixToMillis
+        |> (+) gigasecond
+        |> Time.millisToPosix
 
 
-gigasecond : Time.Time
+gigasecond : Int
 gigasecond =
     10 ^ 12
