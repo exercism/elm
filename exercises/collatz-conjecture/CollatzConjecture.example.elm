@@ -15,7 +15,7 @@ collatzHelper steps start =
     if start == 1 then
         steps
 
-    else if start % 2 == 0 then
+    else if modBy 2 start == 0 then
         collatzHelper (1 + steps) (start // 2)
 
     else
