@@ -44,7 +44,8 @@ hasCharacters remark =
 
 characterRegex : Regex.Regex
 characterRegex =
-    Regex.regex "[a-zA-Z]"
+    Regex.fromString "[a-zA-Z]"
+        |> Maybe.withDefault Regex.never
 
 
 isSilence : String -> Bool
