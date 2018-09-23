@@ -1,6 +1,8 @@
 module Etl exposing (transform)
 
+import Dict exposing (Dict)
+
 
 transform : Dict Int (List String) -> Dict String Int
 transform input =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
