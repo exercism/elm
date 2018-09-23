@@ -1,5 +1,7 @@
 module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
 
+import Dict exposing (Dict)
+
 
 type alias Grade =
     Int
@@ -15,19 +17,19 @@ type alias School =
 
 empty : School
 empty =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
 
 
 addStudent : Grade -> Student -> School -> School
 addStudent grade student school =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
 
 
 studentsInGrade : Grade -> School -> List Student
 studentsInGrade grade school =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
 
 
 allStudents : School -> List ( Grade, List Student )
 allStudents school =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
