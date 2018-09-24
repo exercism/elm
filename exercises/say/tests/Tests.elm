@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import Say exposing (SayError(Negative, TooLarge), say)
+import Say exposing (SayError(..), say)
 import Test exposing (..)
 
 

@@ -18,11 +18,11 @@ say number =
         Ok (saySmall number)
 
     else if number < 100 then
-        if number % 10 == 0 then
+        if modBy 10 number == 0 then
             Ok (saySmall number)
 
         else
-            Ok (sayTens (number // 10 * 10) ++ "-" ++ saySmall (number % 10))
+            Ok (sayTens (number // 10 * 10) ++ "-" ++ saySmall (modBy 10 number))
 
     else if number < 1000 then
         Ok (sayLarge number 100 "hundred")
@@ -69,11 +69,11 @@ sayTens number =
 
 sayLarge : Int -> Int -> String -> String
 sayLarge number large name =
-    if number % large == 0 then
+    if modBy large number == 0 then
         safeSay (number // large) ++ " " ++ name
 
     else
-        safeSay (number // large) ++ " " ++ name ++ " " ++ andSay (number % large)
+        safeSay (number // large) ++ " " ++ name ++ " " ++ andSay (modBy large number)
 
 
 smalls : Array.Array String
