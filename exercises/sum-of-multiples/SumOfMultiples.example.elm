@@ -8,4 +8,4 @@ sumOfMultiples multiples limit =
 
 inMultiples : List Int -> Int -> Bool
 inMultiples multiples candidate =
-    List.any (\factor -> candidate % factor == 0) multiples
+    List.any (\factor -> modBy factor candidate == 0) multiples
