@@ -16,7 +16,7 @@ wordCount sentence =
 
 depunctuate : String -> String
 depunctuate =
-    Regex.replace Regex.All (Regex.regex "[^a-z0-9 ]") (\_ -> "")
+    Regex.replace (Maybe.withDefault Regex.never <| Regex.fromString "[^a-z0-9 ]") (\_ -> "")
 
 
 incrMaybe : Maybe Int -> Maybe Int
