@@ -31,8 +31,8 @@ sublist alist blist =
 inList : List a -> List a -> Bool
 inList alist blist =
     let
-        getLastInList sublist =
-            Maybe.withDefault [] (List.tail sublist)
+        getLastInList sublist_ =
+            Maybe.withDefault [] (List.tail sublist_)
     in
     if List.length alist < List.length blist then
         False
