@@ -7,14 +7,24 @@ import String
 
 slices : Int -> String -> Result String (List (List Int))
 slices size input =
-    if size < 1 then
-        Err ("Invalid size: " ++ toString size)
+    if size < 0 then
+        Err "slice length cannot be negative"
+
+    else if size == 0 then
+        Err "slice length cannot be zero"
+
+    else if String.isEmpty input then
+        Err "series cannot be empty"
+
+    else if String.length input < size then
+        Err "slice length cannot be greater than series length"
 
     else
         String.split "" input
             |> List.map String.toInt
             |> combine
-            |> Result.map (takeRuns size)
+            |> Maybe.map (takeRuns size)
+            |> Result.fromMaybe ""
 
 
 takeRuns : Int -> List Int -> List (List Int)
@@ -30,6 +40,6 @@ takeRuns size numbers =
         candidate :: takeRuns size (List.drop 1 numbers)
 
 
-combine : List (Result x a) -> Result x (List a)
+combine : List (Maybe a) -> Maybe (List a)
 combine =
-    List.foldr (Result.map2 (::)) (Ok [])
+    List.foldr (Maybe.map2 (::)) (Just [])
