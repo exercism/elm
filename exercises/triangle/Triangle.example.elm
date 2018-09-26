@@ -14,7 +14,7 @@ version =
     2
 
 
-triangleKind : comparable -> comparable -> comparable -> Result String Triangle
+triangleKind : number -> number -> number -> Result String Triangle
 triangleKind x y z =
     if x <= 0 || y <= 0 || z <= 0 then
         Err "Invalid lengths"

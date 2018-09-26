@@ -7,6 +7,6 @@ type Triangle
     | Scalene
 
 
-triangleKind : comparable -> comparable -> comparable -> Result String Triangle
+triangleKind : number -> number -> number -> Result String Triangle
 triangleKind x y z =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
