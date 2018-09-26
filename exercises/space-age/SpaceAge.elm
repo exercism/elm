@@ -14,4 +14,4 @@ type Planet
 
 ageOn : Planet -> Float -> Float
 ageOn planet seconds =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"

@@ -11,4 +11,4 @@ type alias NucleotideCounts =
 
 nucleotideCounts : String -> NucleotideCounts
 nucleotideCounts sequence =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
