@@ -1,7 +1,7 @@
 module Tests exposing (..)
 
 import Expect
-import RunLengthEncoding exposing (decode, encode, version)
+import RunLengthEncoding exposing (decode, encode)
 import Test exposing (..)
 
 

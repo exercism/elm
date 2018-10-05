@@ -1,8 +1,4 @@
-module RunLengthEncoding exposing (decode, encode, version)
-
-
-version =
-    2
+module RunLengthEncoding exposing (decode, encode)
 
 
 encode : String -> String

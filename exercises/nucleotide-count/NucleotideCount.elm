@@ -1,9 +1,4 @@
-module NucleotideCount exposing (nucleotideCounts, version)
-
-
-version : Int
-version =
-    2
+module NucleotideCount exposing (nucleotideCounts)
 
 
 type alias NucleotideCounts =

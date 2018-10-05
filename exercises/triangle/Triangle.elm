@@ -1,15 +1,10 @@
-module Triangle exposing (Triangle(..), triangleKind, version)
+module Triangle exposing (Triangle(..), triangleKind)
 
 
 type Triangle
     = Equilateral
     | Isosceles
     | Scalene
-
-
-version : Int
-version =
-    2
 
 
 triangleKind : comparable -> comparable -> comparable -> Result String Triangle
