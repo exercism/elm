@@ -1,16 +1,14 @@
 module Tests exposing (..)
 
 import Expect
-import Sublist exposing (ListComparison(..), sublist, version)
+import Sublist exposing (ListComparison(..), sublist)
 import Test exposing (..)
 
 
 tests : Test
 tests =
     describe "Sublist"
-        [ test "the solution is for the correct version of the test" <|
-            \() -> Expect.equal 2 version
-        , test "empty equals empty" <|
+        [ test "empty equals empty" <|
             \() -> Expect.equal Equal (sublist [] [])
         , skip <|
             test "empty is a sublist of anything" <|

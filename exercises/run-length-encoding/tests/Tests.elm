@@ -1,16 +1,14 @@
 module Tests exposing (..)
 
 import Expect
-import RunLengthEncoding exposing (decode, encode, version)
+import RunLengthEncoding exposing (decode, encode)
 import Test exposing (..)
 
 
 tests : Test
 tests =
     describe "RunLengthEncoding"
-        [ test "the solution is for the correct version of the test" <|
-            \() -> Expect.equal 2 version
-        , describe "run-length encode a string"
+        [ describe "run-length encode a string"
             [ test "empty string" <|
                 \() -> Expect.equal "" (encode "")
             , skip <|
