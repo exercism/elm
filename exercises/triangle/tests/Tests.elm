@@ -8,9 +8,7 @@ import Triangle exposing (Triangle(..), triangleKind, version)
 tests : Test
 tests =
     describe "triangleKind"
-        [ test "the solution is for the correct version of the test" <|
-            \() -> Expect.equal 2 version
-        , test "equilateral triangles have equal sides" <|
+        [ test "equilateral triangles have equal sides" <|
             \() -> Expect.equal (Ok Equilateral) (triangleKind 2 2 2)
         , skip <|
             test "larger equilateral triangles also have equal sides" <|
