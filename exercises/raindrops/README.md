@@ -25,11 +25,8 @@ installation and learning resources.
 ## Writing the Code
 
 The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed.
-
-```bash
-$ elm-package install --yes
-```
+appropriate dependencies installed. Thankfully, Elm makes that easy for you and
+will install dependencies when you try to run tests or build the code.
 
 Execute the tests with:
 
@@ -51,4 +48,6 @@ calls from each test until you get them all passing!
 A variation on a famous interview question intended to weed out potential candidates. [http://jumpstartlab.com](http://jumpstartlab.com)
 
 ## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+
+It is possible to submit an incomplete solution so you can see how others have
+completed the exercise.
