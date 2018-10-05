@@ -1,11 +1,6 @@
-module NucleotideCount exposing (nucleotideCounts, version)
+module NucleotideCount exposing (nucleotideCounts)
 
 import String
-
-
-version : Int
-version =
-    2
 
 
 type alias NucleotideCounts =

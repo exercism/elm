@@ -1,4 +1,4 @@
-module Triangle exposing (Triangle(..), triangleKind, version)
+module Triangle exposing (Triangle(..), triangleKind)
 
 import Set
 
@@ -7,11 +7,6 @@ type Triangle
     = Equilateral
     | Isosceles
     | Scalene
-
-
-version : Int
-version =
-    2
 
 
 triangleKind : number -> number -> number -> Result String Triangle

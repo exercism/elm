@@ -1,4 +1,4 @@
-module RunLengthEncoding exposing (decode, encode, version)
+module RunLengthEncoding exposing (decode, encode)
 
 import List exposing (head, tail)
 import Maybe exposing (withDefault)
@@ -11,10 +11,6 @@ import String exposing (fromChar)
    To the unaware: this was written by a very green elmer, so don't consider
    it an idiomatic exemplar to emulate.
 -}
-
-
-version =
-    2
 
 
 encode : String -> String

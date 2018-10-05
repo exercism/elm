@@ -1,9 +1,4 @@
-module Sublist exposing (ListComparison(..), sublist, version)
-
-
-version : Int
-version =
-    2
+module Sublist exposing (ListComparison(..), sublist)
 
 
 type ListComparison
