@@ -17,5 +17,6 @@ consIf : (a -> Bool) -> a -> List a -> List a
 consIf predicate value list =
     if predicate value then
         value :: list
+
     else
         list

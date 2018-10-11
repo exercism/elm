@@ -8,4 +8,4 @@ type SayError
 
 say : Int -> Result SayError String
 say number =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"

@@ -2,8 +2,9 @@ module AtbashCipher exposing (decode, encode)
 
 import Char
 import Dict
-import Regex exposing (HowMany(All), regex)
+import Regex exposing (Regex)
 import String
+import Tuple
 
 
 encode : String -> String
@@ -37,7 +38,6 @@ alphabet =
 
 reversedAlphabet : String
 reversedAlphabet =
-    -- AKA tebahpla
     String.reverse alphabet
 
 
@@ -45,7 +45,7 @@ toTranslator : String -> String -> Char -> Char
 toTranslator from to =
     let
         table =
-            List.map2 (,) (String.toList from) (String.toList to)
+            List.map2 Tuple.pair (String.toList from) (String.toList to)
                 |> Dict.fromList
 
         translate key =
@@ -57,7 +57,13 @@ toTranslator from to =
 
 insertEvery : Int -> String -> String -> String
 insertEvery size insertion string =
-    Regex.replace All
-        (regex (".{" ++ toString size ++ "}(?!$)"))
-        (\{ match } -> match ++ insertion)
-        string
+    let
+        sizeRegex =
+            ".{" ++ String.fromInt size ++ "}(?!$)"
+    in
+    case Regex.fromString sizeRegex of
+        Nothing ->
+            string
+
+        Just regex ->
+            Regex.replace regex (\{ match } -> match ++ insertion) string

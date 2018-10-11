@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
 import ListOps exposing (append, concat, filter, foldl, foldr, length, map, reverse)
@@ -37,7 +37,7 @@ tests =
                     \() -> Expect.equal [] (ListOps.filter (\_ -> True) [])
             , skip <|
                 test "non-empty list" <|
-                    \() -> Expect.equal [ 2, 4 ] (ListOps.filter (\x -> x % 2 == 0) (List.range 1 4))
+                    \() -> Expect.equal [ 2, 4 ] (ListOps.filter (\x -> modBy 2 x == 0) (List.range 1 4))
             ]
         , describe "foldl"
             [ skip <|

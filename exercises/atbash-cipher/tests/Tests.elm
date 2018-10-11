@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import AtbashCipher exposing (decode, encode)
 import Expect

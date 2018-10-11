@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import CollatzConjecture exposing (collatz)
 import Expect

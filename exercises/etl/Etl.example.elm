@@ -12,4 +12,4 @@ addLetters : Int -> List String -> Dict String Int -> Dict String Int
 addLetters score letters output =
     letters
         |> List.map String.toLower
-        |> List.foldl (\letter output -> Dict.insert letter score output) output
+        |> List.foldl (\letter output_ -> Dict.insert letter score output_) output

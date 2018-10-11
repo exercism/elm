@@ -7,16 +7,19 @@ raindrops : Int -> String
 raindrops number =
     let
         drops =
-            [ if number % 3 == 0 then
+            [ if modBy 3 number == 0 then
                 "Pling"
+
               else
                 ""
-            , if number % 5 == 0 then
+            , if modBy 5 number == 0 then
                 "Plang"
+
               else
                 ""
-            , if number % 7 == 0 then
+            , if modBy 7 number == 0 then
                 "Plong"
+
               else
                 ""
             ]
@@ -25,6 +28,7 @@ raindrops number =
             String.join "" drops
     in
     if result == "" then
-        toString number
+        String.fromInt number
+
     else
         result

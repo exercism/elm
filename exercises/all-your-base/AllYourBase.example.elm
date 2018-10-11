@@ -14,6 +14,7 @@ fromBase base =
                 Just n ->
                     if x >= 0 && x < base then
                         Just (n * base + x)
+
                     else
                         Nothing
     in
@@ -24,7 +25,7 @@ toBase : Int -> Int -> List Int
 toBase base =
     let
         divMod a b =
-            ( a // b, a % b )
+            ( a // b, modBy b a )
 
         swap ( a, b ) =
             ( b, a )
@@ -37,7 +38,7 @@ toBase base =
                 Nothing ->
                     []
 
-        f x =
+        fn x =
             case x of
                 0 ->
                     Nothing
@@ -45,7 +46,7 @@ toBase base =
                 _ ->
                     Just (swap (divMod x base))
     in
-    List.reverse << unfold f
+    List.reverse << unfold fn
 
 
 rebase : Int -> List Int -> Int -> Maybe (List Int)
@@ -59,6 +60,7 @@ rebase inBase digits outBase =
     in
     if inBase < 2 || outBase < 2 || length == 0 || length == numZeros then
         Nothing
+
     else
         case fromBase inBase digits of
             Just v ->

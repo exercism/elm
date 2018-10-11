@@ -16,11 +16,12 @@ isPaired input =
                 [] ->
                     bracket :: visited
 
-                top :: visited ->
+                top :: visited_ ->
                     if isPairMatch top bracket then
-                        visited
+                        visited_
+
                     else
-                        bracket :: top :: visited
+                        bracket :: top :: visited_
 
         isPairMatch prev current =
             case Dict.get prev bracketDict of
@@ -48,3 +49,8 @@ bracketDict =
         , ( '[', ']' )
         , ( '(', ')' )
         ]
+
+
+flip : (a -> b -> c) -> b -> a -> c
+flip f b a =
+    f a b

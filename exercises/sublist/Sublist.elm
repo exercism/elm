@@ -10,4 +10,4 @@ type ListComparison
 
 sublist : List a -> List a -> ListComparison
 sublist alist blist =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"

@@ -1,13 +1,12 @@
-module RobotSimulator
-    exposing
-        ( Bearing(East, North, South, West)
-        , Robot
-        , advance
-        , defaultRobot
-        , simulate
-        , turnLeft
-        , turnRight
-        )
+module RobotSimulator exposing
+    ( Bearing(..)
+    , Robot
+    , advance
+    , defaultRobot
+    , simulate
+    , turnLeft
+    , turnRight
+    )
 
 import String
 

@@ -1,19 +1,16 @@
-module RunLengthEncoding exposing (decode, encode, version)
+module RunLengthEncoding exposing (decode, encode)
 
 import List exposing (head, tail)
 import Maybe exposing (withDefault)
-import Regex
+import Regex exposing (Regex)
 import String exposing (fromChar)
+
 
 
 {-
    To the unaware: this was written by a very green elmer, so don't consider
    it an idiomatic exemplar to emulate.
 -}
-
-
-version =
-    2
 
 
 encode : String -> String
@@ -30,6 +27,7 @@ countChars current counted =
         Just ( count, previous ) ->
             if previous == current then
                 ( count + 1, current ) :: withDefault [] (tail counted)
+
             else
                 ( 1, current ) :: counted
 
@@ -37,10 +35,11 @@ countChars current counted =
             [ ( 1, current ) ]
 
 
-stringifyCounts : ( comparable, Char ) -> String
+stringifyCounts : ( Int, Char ) -> String
 stringifyCounts ( count, char ) =
     if count > 1 then
-        toString count ++ fromChar char
+        String.fromInt count ++ fromChar char
+
     else
         fromChar char
 
@@ -48,7 +47,7 @@ stringifyCounts ( count, char ) =
 decode : String -> String
 decode string =
     string
-        |> Regex.find Regex.All (Regex.regex "(\\d+)|(\\D)")
+        |> Regex.find (regex "(\\d+)|(\\D)")
         |> List.map .match
         |> List.foldl expandCounts ( "", Nothing )
         |> Tuple.first
@@ -62,8 +61,15 @@ expandCounts match ( result, count ) =
 
         Nothing ->
             case String.toInt match of
-                Ok number ->
+                Just number ->
                     ( result, Just number )
 
-                Err _ ->
+                Nothing ->
                     ( result ++ match, Nothing )
+
+
+regex : String -> Regex
+regex string =
+    string
+        |> Regex.fromString
+        |> Maybe.withDefault Regex.never

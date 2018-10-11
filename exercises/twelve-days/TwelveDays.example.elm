@@ -8,8 +8,9 @@ recite : Int -> Int -> List String
 recite start stop =
     if withinSong start stop then
         map lyric (range start stop)
+
     else
-        Debug.crash "I would make up verses if I could...sorry about this"
+        Debug.todo "I would make up verses if I could...sorry about this"
 
 
 lyric : Int -> String
@@ -21,6 +22,7 @@ lyric day =
         ending =
             if day == 1 then
                 concat [ ", ", gift day ]
+
             else
                 verseEnd day
     in
@@ -90,7 +92,7 @@ dayStr day =
             "twelfth"
 
         _ ->
-            Debug.crash "Um, that's not a day I recognize...sorry"
+            Debug.todo "Um, that's not a day I recognize...sorry"
 
 
 gift : Int -> String
@@ -133,7 +135,7 @@ gift day =
             "twelve Drummers Drumming"
 
         _ ->
-            Debug.crash "I don't have a gift for you...sorry"
+            Debug.todo "I don't have a gift for you...sorry"
 
 
 withinSong : Int -> Int -> Bool

@@ -3,4 +3,4 @@ module Acronym exposing (abbreviate)
 
 abbreviate : String -> String
 abbreviate phrase =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"

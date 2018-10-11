@@ -1,4 +1,4 @@
-module Triangle exposing (Triangle(..), triangleKind, version)
+module Triangle exposing (Triangle(..), triangleKind)
 
 import Set
 
@@ -9,17 +9,14 @@ type Triangle
     | Scalene
 
 
-version : Int
-version =
-    2
-
-
-triangleKind : comparable -> comparable -> comparable -> Result String Triangle
+triangleKind : number -> number -> number -> Result String Triangle
 triangleKind x y z =
     if x <= 0 || y <= 0 || z <= 0 then
         Err "Invalid lengths"
+
     else if x + y <= z || x + z <= y || y + z <= x then
         Err "Violates inequality"
+
     else
         case Set.size (Set.fromList [ x, y, z ]) of
             1 ->

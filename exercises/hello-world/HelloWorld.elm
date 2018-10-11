@@ -14,7 +14,7 @@ module HelloWorld exposing (helloWorld)
 
 helloWorld : Maybe String -> String
 helloWorld name =
-    Debug.crash "Please implement this function"
+    Debug.todo "Please implement this function"
 
 
 

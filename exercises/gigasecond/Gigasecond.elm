@@ -1,6 +1,8 @@
 module Gigasecond exposing (add)
 
+import Time
 
-add : Date.Date -> Date.Date
-add date =
-    Debug.crash "Please implement this function"
+
+add : Time.Posix -> Time.Posix
+add timestamp =
+    Debug.todo "Please implement this function"
