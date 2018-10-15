@@ -54,111 +54,123 @@ tests =
                     |> fromTree
                     |> Maybe.map toTree
                     |> Expect.equal (Just t1)
-        , test "left, right and value" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen right
-                    |> Maybe.map value
-                    |> Expect.equal (Just 3)
-        , test "dead end" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen left
-                    |> Expect.equal Nothing
-        , test "traversing up from top" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen up
-                    |> Expect.equal Nothing
-        , test "left, right, and up" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen up
-                    |> Maybe.andThen right
-                    |> Maybe.andThen up
-                    |> Maybe.andThen left
-                    |> Maybe.andThen right
-                    |> Maybe.map value
-                    |> Expect.equal (Just 3)
-        , test "tree from deep focus" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen right
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t1)
-        , test "setValue" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.map (setValue 5)
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t2)
-        , test "setValue after traversing up" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen right
-                    |> Maybe.andThen up
-                    |> Maybe.map (setValue 5)
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t2)
-        , test "setLeft with Just" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.map (setLeft (Node Leaf 5 Leaf))
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t3)
-        , test "setRight with Nothing" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.map (setRight Leaf)
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t4)
-        , test "setRight with subtree" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.map (setRight t5)
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t6)
-        , test "setValue on deep focus" <|
-            \_ ->
-                t1
-                    |> fromTree
-                    |> Maybe.andThen left
-                    |> Maybe.andThen right
-                    |> Maybe.map (setValue 5)
-                    |> Maybe.map toTree
-                    |> Expect.equal (Just t7)
-        , test "different paths to same zipper" <|
-            \_ ->
-                let
-                    path1 =
-                        t1
-                            |> fromTree
-                            |> Maybe.andThen left
-                            |> Maybe.andThen up
-                            |> Maybe.andThen right
+        , skip <|
+            test "left, right and value" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen right
+                        |> Maybe.map value
+                        |> Expect.equal (Just 3)
+        , skip <|
+            test "dead end" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen left
+                        |> Expect.equal Nothing
+        , skip <|
+            test "traversing up from top" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen up
+                        |> Expect.equal Nothing
+        , skip <|
+            test "left, right, and up" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen up
+                        |> Maybe.andThen right
+                        |> Maybe.andThen up
+                        |> Maybe.andThen left
+                        |> Maybe.andThen right
+                        |> Maybe.map value
+                        |> Expect.equal (Just 3)
+        , skip <|
+            test "tree from deep focus" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen right
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t1)
+        , skip <|
+            test "setValue" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.map (setValue 5)
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t2)
+        , skip <|
+            test "setValue after traversing up" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen right
+                        |> Maybe.andThen up
+                        |> Maybe.map (setValue 5)
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t2)
+        , skip <|
+            test "setLeft with Just" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.map (setLeft (Node Leaf 5 Leaf))
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t3)
+        , skip <|
+            test "setRight with Nothing" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.map (setRight Leaf)
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t4)
+        , skip <|
+            test "setRight with subtree" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.map (setRight t5)
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t6)
+        , skip <|
+            test "setValue on deep focus" <|
+                \_ ->
+                    t1
+                        |> fromTree
+                        |> Maybe.andThen left
+                        |> Maybe.andThen right
+                        |> Maybe.map (setValue 5)
+                        |> Maybe.map toTree
+                        |> Expect.equal (Just t7)
+        , skip <|
+            test "different paths to same zipper" <|
+                \_ ->
+                    let
+                        path1 =
+                            t1
+                                |> fromTree
+                                |> Maybe.andThen left
+                                |> Maybe.andThen up
+                                |> Maybe.andThen right
 
-                    path2 =
-                        t1
-                            |> fromTree
-                            |> Maybe.andThen right
-                in
-                    Expect.equal path2 path1
+                        path2 =
+                            t1
+                                |> fromTree
+                                |> Maybe.andThen right
+                    in
+                        Expect.equal path2 path1
         ]
