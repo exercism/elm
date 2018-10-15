@@ -7,7 +7,7 @@ it from [the official site](https://nodejs.org/). Once you have Node.js up and
 running, you can install elm and elm-test using 
 
 ```bash
-npm install -g elm elm-test
+npm install -g elm elm-test@beta
 ```
 
-which will install elm and place any tooling on `$PATH`.
+which will install Elm and place any tooling on `$PATH`.
