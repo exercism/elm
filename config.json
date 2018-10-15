@@ -469,6 +469,17 @@
         "text_formatting",
         "transforming"
       ]
+    },
+    {
+      "slug": "zipper",
+      "uuid": "a2cd4de2-6926-4cde-a41a-3f377383b291",
+      "core": false,
+      "unlocked_by": "difference-of-squares",
+      "difficulty": 10,
+      "topics": [
+        "define_type",
+        "maybe"
+      ]
     }
   ]
 }
