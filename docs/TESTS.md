@@ -12,7 +12,7 @@ $ elm-test
 Automatically run tests again when you save changes:
 
 ```bash
-$ elm test --watch
+$ elm-test --watch
 ```
 
 ### Coding the exercise
