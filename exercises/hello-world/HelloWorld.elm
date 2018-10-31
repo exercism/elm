@@ -12,8 +12,8 @@ module HelloWorld exposing (helloWorld)
 -- It's good style to include any types at the top level of your modules.
 
 
-helloWorld : Maybe String -> String
-helloWorld name =
+helloWorld : String
+helloWorld =
     Debug.todo "Please implement this function"
 
 
