@@ -28,8 +28,8 @@ Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
 ## Elm Installation
 
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
+Refer to the [Installing Elm](https://exercism.io/tracks/elm/installation) page
+for information about installing elm.
 
 ## Writing the Code
 

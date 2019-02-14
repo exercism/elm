@@ -44,8 +44,8 @@ See also: http://www.novaroma.org/via_romana/numbers.html
 
 ## Elm Installation
 
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
+Refer to the [Installing Elm](https://exercism.io/tracks/elm/installation) page
+for information about installing elm.
 
 ## Writing the Code
 
