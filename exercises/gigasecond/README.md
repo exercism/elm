@@ -1,13 +1,14 @@
 # Gigasecond
 
-Calculate the moment when someone has lived for 10^9 seconds.
+Given a moment, determine the moment that would be after a gigasecond
+has passed.
 
 A gigasecond is 10^9 (1,000,000,000) seconds.
 
 ## Elm Installation
 
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
+Refer to the [Installing Elm](https://exercism.io/tracks/elm/installation) page
+for information about installing elm.
 
 ## Writing the Code
 
