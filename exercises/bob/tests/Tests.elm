@@ -133,19 +133,19 @@ tests =
             test "shouting with extra space " <|
                 \() ->
                     Expect.equal
-                        "Whatever."
+                        "Whoa, chill out!"
                         (Bob.hey "\tCLEAN YOUR ROOM! \t\t")
         , skip <|
             test "forceful question with extra space " <|
                 \() ->
                     Expect.equal
-                        "Whatever."
+                        "Calm down, I know what I'm doing!"
                         (Bob.hey "\tDO YOU THINK IT'S NORMAL? \t\t")
         , skip <|
             test "simple question with extra space " <|
                 \() ->
                     Expect.equal
-                        "Whatever."
+                        "Sure."
                         (Bob.hey "\tShould we go to the theater? \t\t")
         ]
 
