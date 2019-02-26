@@ -129,6 +129,24 @@ tests =
                     Expect.equal
                         "Whatever."
                         (Bob.hey "\nDoes this cryogenic chamber make me look fat?\nno")
+        , skip <|
+            test "shouting with extra space " <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "\tCLEAN YOUR ROOM! \t\t")
+        , skip <|
+            test "forceful question with extra space " <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "\tDO YOU THINK IT'S NORMAL? \t\t")
+        , skip <|
+            test "simple question with extra space " <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "\tShould we go to the theater? \t\t")
         ]
 
 
