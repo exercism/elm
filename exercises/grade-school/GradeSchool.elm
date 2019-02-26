@@ -12,7 +12,7 @@ type alias Student =
 
 
 type alias School =
-    Dict Int (List Student)
+    Dict Grade (List Student)
 
 
 empty : School
