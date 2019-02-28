@@ -6,16 +6,20 @@ import String
 
 hey : String -> String
 hey remark =
-    if isShouting remark && isQuestion remark then
+    let
+        trimmedRemark =
+            String.trim remark
+    in
+    if isShouting trimmedRemark && isQuestion trimmedRemark then
         "Calm down, I know what I'm doing!"
 
-    else if isShouting remark then
+    else if isShouting trimmedRemark then
         "Whoa, chill out!"
 
-    else if isQuestion remark then
+    else if isQuestion trimmedRemark then
         "Sure."
 
-    else if isSilence remark then
+    else if isSilence trimmedRemark then
         "Fine. Be that way!"
 
     else
@@ -49,5 +53,5 @@ characterRegex =
 
 
 isSilence : String -> Bool
-isSilence remark =
-    String.isEmpty (String.trim remark)
+isSilence =
+    String.isEmpty
