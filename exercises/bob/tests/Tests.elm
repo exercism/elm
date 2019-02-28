@@ -135,6 +135,48 @@ tests =
                     Expect.equal
                         "Sure."
                         (Bob.hey "Okay if like my  spacebar  quite a bit?   ")
+        , skip <|
+            test "no letters" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "1, 2, 3")
+        , skip <|
+            test "question with no letters" <|
+                \() ->
+                    Expect.equal
+                        "Sure."
+                        (Bob.hey "4?")
+        , skip <|
+            test "statement containing question mark" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "Ending with ? means a question.")
+        , skip <|
+            test "non-letters with question" <|
+                \() ->
+                    Expect.equal
+                        "Sure."
+                        (Bob.hey ":) ?")
+        , skip <|
+            test "starting with whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "         hmmmmmmm...")
+        , skip <|
+            test "other whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Fine. Be that way!"
+                        (Bob.hey "\n\u{000D} \t")
+        , skip <|
+            test "non-question ending with whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "This is a statement ending with whitespace      ")
         ]
 
 
