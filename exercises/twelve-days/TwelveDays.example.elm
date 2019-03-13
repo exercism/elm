@@ -39,10 +39,10 @@ verseBegin day =
 
 
 verseEnd : Int -> Int -> String
-verseEnd day original_day =
+verseEnd day originalDay =
     let
         dayGift =
-            if day == original_day then
+            if day == originalDay then
                 gift day
 
             else
@@ -53,7 +53,7 @@ verseEnd day original_day =
             concat [ ", and ", gift day ]
 
         _ ->
-            concat [ dayGift, verseEnd (day - 1) original_day ]
+            concat [ dayGift, verseEnd (day - 1) originalDay ]
 
 
 dayStr : Int -> String
