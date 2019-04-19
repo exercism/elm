@@ -1,4 +1,4 @@
-module TwelveDays exposing (recite)
+module TwelveDays exposing (gifts, recite)
 
 import List exposing (map, range)
 import String exposing (concat)
@@ -13,20 +13,29 @@ recite start stop =
         Debug.todo "I would make up verses if I could...sorry about this"
 
 
-lyric : Int -> String
-lyric day =
-    let
-        beginning =
-            verseBegin day
+gifts : Int -> Int -> String
+gifts last first =
+    List.range (first + 1) last
+        |> List.reverse
+        |> List.map gift
+        |> String.join ", "
+        |> addFirstGift first
 
-        ending =
-            if day == 1 then
-                concat [ ", ", gift day ]
+
+addFirstGift : Int -> String -> String
+addFirstGift day giftVerse =
+    giftVerse
+        ++ (if String.isEmpty giftVerse then
+                gift day
 
             else
-                verseEnd day
-    in
-    concat [ beginning, ending, "." ]
+                ", and " ++ gift day
+           )
+
+
+lyric : Int -> String
+lyric day =
+    concat [ verseBegin day, gifts day 1, "." ]
 
 
 verseBegin : Int -> String
@@ -34,7 +43,7 @@ verseBegin day =
     concat
         [ "On the "
         , dayStr day
-        , " day of Christmas my true love gave to me"
+        , " day of Christmas my true love gave to me, "
         ]
 
 
