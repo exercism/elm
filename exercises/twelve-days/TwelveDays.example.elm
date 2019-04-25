@@ -21,10 +21,10 @@ lyric day =
 
         ending =
             if day == 1 then
-                concat [ ", ", gift day ]
+                gift day
 
             else
-                verseEnd day
+                verseEnd day day
     in
     concat [ beginning, ending, "." ]
 
@@ -34,22 +34,26 @@ verseBegin day =
     concat
         [ "On the "
         , dayStr day
-        , " day of Christmas my true love gave to me"
+        , " day of Christmas my true love gave to me: "
         ]
 
 
-verseEnd : Int -> String
-verseEnd day =
+verseEnd : Int -> Int -> String
+verseEnd day originalDay =
     let
         dayGift =
-            concat [ ", ", gift day ]
+            if day == originalDay then
+                gift day
+
+            else
+                concat [ ", ", gift day ]
     in
     case day of
         1 ->
             concat [ ", and ", gift day ]
 
         _ ->
-            concat [ dayGift, verseEnd (day - 1) ]
+            concat [ dayGift, verseEnd (day - 1) originalDay ]
 
 
 dayStr : Int -> String
