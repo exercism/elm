@@ -200,7 +200,7 @@
     },
     {
       "slug": "binary-search",
-      "uuid": "939e71ab-38fb-4d39-97f1-c7d2f12922fe",
+      "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
       "core": false,
       "unlocked_by": "sum-of-multiples",
       "difficulty": 3,
@@ -211,8 +211,13 @@
       ]
     },
     {
+      "slug": "binary-search-dupicate",
+      "uuid": "939e71ab-38fb-4d39-97f1-c7d2f12922fe",
+      "deprecated": true
+    },
+    {
       "slug": "isogram",
-      "uuid": "7b03583a-fa85-4bd0-af30-0b84968d35f9",
+      "uuid": "5f540090-061e-2f80-40a8-d9782700ed2efdf8965",
       "core": false,
       "unlocked_by": "hello-world",
       "difficulty": 3,
@@ -220,6 +225,11 @@
         "filtering",
         "strings"
       ]
+    },
+    {
+      "slug": "isogram-duplicate",
+      "uuid": "7b03583a-fa85-4bd0-af30-0b84968d35f9",
+      "deprecated": true
     },
     {
       "slug": "phone-number",
