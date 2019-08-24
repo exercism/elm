@@ -213,6 +213,10 @@
     {
       "slug": "binary-search-dupicate",
       "uuid": "939e71ab-38fb-4d39-97f1-c7d2f12922fe",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
       "deprecated": true
     },
     {
@@ -229,6 +233,10 @@
     {
       "slug": "isogram-duplicate",
       "uuid": "7b03583a-fa85-4bd0-af30-0b84968d35f9",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 0,
+      "topics": null,
       "deprecated": true
     },
     {
