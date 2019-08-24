@@ -92,7 +92,7 @@
     {
       "slug": "sum-of-multiples",
       "uuid": "75859d00-8772-4471-97a7-d6fe432edc5e",
-      "core": true,
+      "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
@@ -104,7 +104,7 @@
     {
       "slug": "accumulate",
       "uuid": "0b4561f3-59a7-4463-a733-c7fa8f9f332a",
-      "core": true,
+      "core": false,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
@@ -116,7 +116,7 @@
       "slug": "collatz-conjecture",
       "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": null,
       "difficulty": 2,
       "topics": [
         "math"
@@ -202,7 +202,7 @@
       "slug": "binary-search",
       "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -353,7 +353,7 @@
       "slug": "list-ops",
       "uuid": "114b5717-0d82-459e-90c4-f00d8b6beb5b",
       "core": false,
-      "unlocked_by": "accumulate",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "lists",
@@ -364,7 +364,7 @@
       "slug": "pascals-triangle",
       "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
       "core": false,
-      "unlocked_by": "accumulate",
+      "unlocked_by": null,
       "difficulty": 4,
       "topics": [
         "lists",
@@ -436,7 +436,7 @@
       "slug": "roman-numerals",
       "uuid": "c1461035-6abe-4f17-a818-7a3ac6642c18",
       "core": false,
-      "unlocked_by": "accumulate",
+      "unlocked_by": null,
       "difficulty": 5,
       "topics": [
         "recursion",
