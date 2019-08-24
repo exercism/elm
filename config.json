@@ -37,6 +37,72 @@
       ]
     },
     {
+      "slug": "leap",
+      "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "integers"
+      ]
+    },
+    {
+      "slug": "space-age",
+      "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "floating_point_numbers"
+      ]
+    },
+    {
+      "slug": "grade-school",
+      "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "maps",
+        "sorting"
+      ]
+    },
+    {
+      "slug": "raindrops",
+      "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "filtering",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "robot-simulator",
+      "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "records",
+        "tuples"
+      ]
+    },
+    {
+      "slug": "allergies",
+      "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 4,
+      "topics": [
+        "bitwise_operations",
+        "enumerations",
+        "filtering"
+      ]
+    },
+    {
       "slug": "difference-of-squares",
       "uuid": "646c7164-cfa4-42c3-9af5-2f672e6ec81e",
       "core": false,
@@ -58,17 +124,6 @@
       ]
     },
     {
-      "slug": "leap",
-      "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "integers"
-      ]
-    },
-    {
       "slug": "rna-transcription",
       "uuid": "3af96d19-87d7-4d8b-aecb-f63122815501",
       "core": false,
@@ -77,16 +132,6 @@
       "topics": [
         "strings",
         "transforming"
-      ]
-    },
-    {
-      "slug": "space-age",
-      "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "floating_point_numbers"
       ]
     },
     {
@@ -134,17 +179,6 @@
       ]
     },
     {
-      "slug": "grade-school",
-      "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "maps",
-        "sorting"
-      ]
-    },
-    {
       "slug": "grains",
       "uuid": "41518694-4293-49f6-8af5-1cdad84acf78",
       "core": false,
@@ -185,17 +219,6 @@
       "topics": [
         "booleans",
         "strings"
-      ]
-    },
-    {
-      "slug": "raindrops",
-      "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 2,
-      "topics": [
-        "filtering",
-        "text_formatting"
       ]
     },
     {
@@ -251,17 +274,6 @@
       ]
     },
     {
-      "slug": "robot-simulator",
-      "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 3,
-      "topics": [
-        "records",
-        "tuples"
-      ]
-    },
-    {
       "slug": "scrabble-score",
       "uuid": "16ccc1fa-34b0-4a7e-b3cf-33a711e857ea",
       "core": false,
@@ -311,18 +323,6 @@
         "integers",
         "math",
         "transforming"
-      ]
-    },
-    {
-      "slug": "allergies",
-      "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 4,
-      "topics": [
-        "bitwise_operations",
-        "enumerations",
-        "filtering"
       ]
     },
     {
