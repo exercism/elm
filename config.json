@@ -25,29 +25,6 @@
       ]
     },
     {
-      "slug": "bob",
-      "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "strings",
-        "text_formatting"
-      ]
-    },
-    {
-      "slug": "leap",
-      "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "conditionals",
-        "integers"
-      ]
-    },
-    {
       "slug": "space-age",
       "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
       "core": true,
@@ -69,14 +46,26 @@
       ]
     },
     {
-      "slug": "raindrops",
-      "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
+      "slug": "allergies",
+      "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 2,
+      "difficulty": 4,
       "topics": [
-        "filtering",
-        "text_formatting"
+        "bitwise_operations",
+        "enumerations",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "leap",
+      "uuid": "e943e3bf-920e-4541-95c3-be7bf6024afe",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "integers"
       ]
     },
     {
@@ -91,15 +80,26 @@
       ]
     },
     {
-      "slug": "allergies",
-      "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
+      "slug": "raindrops",
+      "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 4,
+      "difficulty": 2,
       "topics": [
-        "bitwise_operations",
-        "enumerations",
-        "filtering"
+        "filtering",
+        "text_formatting"
+      ]
+    },
+    {
+      "slug": "bob",
+      "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "conditionals",
+        "strings",
+        "text_formatting"
       ]
     },
     {
