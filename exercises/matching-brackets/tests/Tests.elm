@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
-import MatchingBrackets exposing (isPaired)
 import Expect
+import MatchingBrackets exposing (isPaired)
 import String
 import Test exposing (..)
 
