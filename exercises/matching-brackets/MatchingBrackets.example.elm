@@ -1,4 +1,4 @@
-module BracketPush exposing (isPaired)
+module MatchingBrackets exposing (isPaired)
 
 import Dict exposing (Dict)
 import List
