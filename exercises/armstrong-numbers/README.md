@@ -1,4 +1,4 @@
-# Armstrong Number
+# Armstrong Numbers
 
 An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
 
@@ -39,7 +39,7 @@ calls from each test until you get them all passing!
 
 ## Source
 
-A variation on JavaRanch CattleDrive, exercise 4a [http://www.javaranch.com/say.jsp](http://www.javaranch.com/say.jsp)
+Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
 
 ## Submitting Incomplete Solutions
 
