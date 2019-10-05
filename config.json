@@ -113,6 +113,19 @@
       ]
     },
     {
+      "slug": "binary-search-tree",
+      "uuid": "760fd5d1-577a-4532-9419-1b563dc89f83",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+	"lists",
+	"trees",
+	"sorting",
+        "recursion"
+      ]
+    },
+    {
       "slug": "collatz-conjecture",
       "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
       "core": false,
