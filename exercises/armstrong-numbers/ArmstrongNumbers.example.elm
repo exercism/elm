@@ -7,10 +7,7 @@ check nb =
         ( digits, nbDigits ) =
             digitsAndLength nb
     in
-    nb
-        == List.foldl (+)
-            0
-            (List.map (\a -> a ^ nbDigits) digits)
+    nb == List.sum (List.map (\a -> a ^ nbDigits) digits)
 
 
 digitsAndLength : Int -> ( List Int, Int )
