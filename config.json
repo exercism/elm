@@ -468,6 +468,22 @@
         "recursion"
       ]
     },
+        {
+      "slug": "bowling",
+      "uuid": "22fe4630-7f22-4b70-b68f-bd41688cd4f9",
+      "core": false,
+      "unlocked_by": "grade-school",
+      "difficulty": 8,
+      "topics": [
+        "arrays",
+        "conditionals",
+        "loops",
+        "exception_handling",
+        "games",
+        "parsing",
+        "text_formatting"
+      ]
+    },
     {
       "slug": "say",
       "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",

@@ -1,5 +1,0 @@
-module {exercise} exposing ({function})
-
-
-{function} =
-    Debug.todo "Please implement this function"

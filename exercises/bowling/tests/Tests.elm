@@ -1,9 +1,10 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
-import {exercise} exposing ({function})
+import Bowling exposing (Rolls, score)
 import Expect
 import String
 import Test exposing (..)
+
 
 tests : Test
 tests =
