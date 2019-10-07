@@ -1,4 +1,5 @@
-# Pythagorean triplet
+# Pythagorean Triplet
+
 A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for
 which,
 
@@ -50,7 +51,7 @@ calls from each test until you get them all passing!
 
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+Problem 9 at Project Euler [http://projecteuler.net/problem=9](http://projecteuler.net/problem=9)
 
 ## Submitting Incomplete Solutions
 
