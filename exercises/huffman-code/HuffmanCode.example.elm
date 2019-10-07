@@ -10,27 +10,40 @@ type BinaryTree
 
 binaryTree : String -> Maybe BinaryTree
 binaryTree str =
-    List.foldl updateDicoAcc Dict.empty (String.toList str)
-        |> Dict.toList
+    countChars str
         |> List.map (\( c, v ) -> Leaf v c)
-        |> recursiveReduceBinaryTreeList
+        |> reduceBinaryTreeList
         |> List.head
 
 
-recursiveReduceBinaryTreeList : List BinaryTree -> List BinaryTree
-recursiveReduceBinaryTreeList lbt =
-    case List.sortBy (\n -> getValue n) lbt of
-        [] ->
-            []
+countChars : String -> List ( Char, Int )
+countChars str =
+    let
+        acc c dic =
+            Dict.update c
+                (\value ->
+                    case value of
+                        Just v ->
+                            Just (v + 1)
 
-        h1 :: tail1 ->
-            case tail1 of
-                [] ->
-                    [ h1 ]
+                        Nothing ->
+                            Just 1
+                )
+                dic
+    in
+    List.foldl acc Dict.empty (String.toList str)
+        |> Dict.toList
 
-                h2 :: tail2 ->
-                    recursiveReduceBinaryTreeList
-                        (Node (getValue h1 + getValue h2) h1 h2 :: tail2)
+
+reduceBinaryTreeList : List BinaryTree -> List BinaryTree
+reduceBinaryTreeList lbt =
+    case List.sortBy getValue lbt of
+        h1 :: h2 :: tail2 ->
+            reduceBinaryTreeList
+                (Node (getValue h1 + getValue h2) h1 h2 :: tail2)
+
+        _ ->
+            lbt
 
 
 getValue : BinaryTree -> Int
@@ -41,17 +54,3 @@ getValue bt =
 
         Node v _ _ ->
             v
-
-
-updateDicoAcc : Char -> Dict Char Int -> Dict Char Int
-updateDicoAcc c dico =
-    Dict.update c
-        (\value ->
-            case value of
-                Just v ->
-                    Just (v + 1)
-
-                Nothing ->
-                    Just 1
-        )
-        dico
