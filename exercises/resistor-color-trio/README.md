@@ -1,4 +1,4 @@
-# Resistor color trio
+# Resistor Color Trio
 
 If you want to build something using a Raspberry Pi, you'll probably use _resistors_. For this exercise, you need to know only three things about them:
 
@@ -72,7 +72,7 @@ calls from each test until you get them all passing!
 
 ## Source
 
-A variation on JavaRanch CattleDrive, exercise 4a [http://www.javaranch.com/say.jsp](http://www.javaranch.com/say.jsp)
+Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1549](https://github.com/exercism/problem-specifications/issues/1549)
 
 ## Submitting Incomplete Solutions
 
