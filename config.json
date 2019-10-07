@@ -215,7 +215,7 @@
       "slug": "binary-search",
       "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
       "core": false,
-      "unlocked_by": "sum-of-multiples",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "algorithms",
@@ -227,7 +227,7 @@
       "slug": "huffman-code",
       "uuid": "27cd2e36-cb5d-4701-b5ff-8d2d0efaef95",
       "core": false,
-      "unlocked_by": "binary-search",
+      "unlocked_by": null,
       "difficulty": 3,
       "topics": [
         "algorithms",
