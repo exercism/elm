@@ -437,6 +437,17 @@
       "topics": ["algorithms", "conditionals", "loops", "integers", "math"]
     },
     {
+      "slug": "resistor-color-trio",
+      "uuid": "6bd17fc6-9ff4-4660-8a7b-37861267d26d",
+      "core": false,
+      "unlocked_by": "bob",
+      "difficulty": 5,
+      "topics": [
+        "conditionals",
+        "loops"
+      ]
+    },
+    {
       "slug": "roman-numerals",
       "uuid": "c1461035-6abe-4f17-a818-7a3ac6642c18",
       "core": false,
