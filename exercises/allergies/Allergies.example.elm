@@ -1,15 +1,26 @@
-module Allergies exposing (isAllergicTo, toList)
+module Allergies exposing (Allergy(..), isAllergicTo, toList)
 
 import Bitwise
 import List
 
 
-isAllergicTo : String -> Int -> Bool
-isAllergicTo name score =
-    List.member name (toList score)
+type Allergy
+    = Eggs
+    | Peanuts
+    | Shellfish
+    | Strawberries
+    | Tomatoes
+    | Chocolate
+    | Pollen
+    | Cats
 
 
-toList : Int -> List String
+isAllergicTo : Allergy -> Int -> Bool
+isAllergicTo allergy score =
+    List.member allergy (toList score)
+
+
+toList : Int -> List Allergy
 toList score =
     allergies
         |> List.indexedMap (\i n -> ( Bitwise.shiftLeftBy i 1, n ))
@@ -17,14 +28,14 @@ toList score =
         |> List.map Tuple.second
 
 
-allergies : List String
+allergies : List Allergy
 allergies =
-    [ "eggs"
-    , "peanuts"
-    , "shellfish"
-    , "strawberries"
-    , "tomatoes"
-    , "chocolate"
-    , "pollen"
-    , "cats"
+    [ Eggs
+    , Peanuts
+    , Shellfish
+    , Strawberries
+    , Tomatoes
+    , Chocolate
+    , Pollen
+    , Cats
     ]
