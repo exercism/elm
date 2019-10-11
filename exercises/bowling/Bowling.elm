@@ -5,6 +5,6 @@ type alias Rolls =
     List Int
 
 
-score : Rolls -> Int
-score _ =
-    Debug.todo "Please implement this function"
+score : Rolls -> Result String Int
+score rolls =
+    Debug.todo "implement this function"
