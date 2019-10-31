@@ -30,6 +30,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": null
+    },
+    {
+      "github_username": "mpizenberg",
+      "alumnus": false,
+      "show_on_website": true,
+      "name": "Matthieu Pizenberg",
+      "link_text": null,
+      "link_url": null,
+      "avatar_url": null,
+      "bio": "Passionate about robotics, photo, computer vision, and raclette!"
     }
   ]
 }
