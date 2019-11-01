@@ -27,37 +27,16 @@ fi
 
 # TEST
 
-declare -i TEST_RESULT=0
-FAILED_EXERCISES=''
-
+rm -rf build/tests/ build/*.elm
 mkdir -p build/tests
+cp template/elm.json build/
 
 for example_file in exercises/**/*.example.elm
 do
-  # clean up generated code from last run
-  rm -rf build/tests/elm-stuff/generated-code/
-
   exercise_dir=$(dirname $example_file)
   exercise_name=$(basename $example_file .example.elm)
-  cp "$exercise_dir/$exercise_name.example.elm" "build/$exercise_name.elm"
-  cp "$exercise_dir/elm.json" build/
-  cat "$exercise_dir/tests/Tests.elm" | sed 's/skip <|//g' > build/tests/Tests.elm
-
-  echo '-------------------------------------------------------'
-  echo "Testing $exercise_name"
-
-
-  npm test -- build/
-
-  # capture result from last command (elm-test)
-  if [ $? -ne 0 ]; then
-      TEST_RESULT=1
-      FAILED_EXERCISES+="$exercise_name\n"
-  fi
+  cp $example_file "build/$exercise_name.elm"
+  cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-if [ $TEST_RESULT -ne 0 ]; then
-  echo "The following exercises failed"
-  printf $FAILED_EXERCISES
-  exit $TEST_RESULT
-fi
+npm test -- build/tests/
