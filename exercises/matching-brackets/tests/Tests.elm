@@ -1,14 +1,14 @@
 module Tests exposing (tests)
 
-import BracketPush exposing (isPaired)
 import Expect
+import MatchingBrackets exposing (isPaired)
 import String
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "BracketPush"
+    describe "MatchingBrackets"
         [ test "paired square brackets" <|
             \_ ->
                 Expect.equal True (isPaired "[]")

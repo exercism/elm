@@ -1,4 +1,4 @@
-module BracketPush exposing (isPaired)
+module MatchingBrackets exposing (isPaired)
 
 import Dict exposing (Dict)
 import List
@@ -9,7 +9,7 @@ isPaired : String -> Bool
 isPaired input =
     let
         onlyBrackets =
-            String.filter (flip List.member bracketList)
+            String.filter (\a -> List.member a bracketList)
 
         tryMatching bracket visited =
             case visited of
