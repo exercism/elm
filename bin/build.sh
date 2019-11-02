@@ -5,12 +5,12 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-if [ ! -f "bin/elm-format" ] || [[ ! $(bin/elm-format --help | grep "elm-format-0.19 0.8.0") ]]; then
-  echo "Installing local copy of elm-format"
-  bin/install-elm-format
+if [[ ! $(npx --no-install elm-format --help | grep "elm-format 0.8.2") ]]; then
+  echo "Please run npm install first"
+  exit 1
 fi
 
-bin/elm-format --yes --validate exercises/**/*.example.elm  exercises/**/tests/Tests.elm
+npx --no-install elm-format --yes --validate exercises/**/src/*.example.elm  exercises/**/tests/Tests.elm
 
 if [ $? -ne 0 ]; then
   echo "*******************************************************************"
@@ -27,16 +27,16 @@ fi
 
 # TEST
 
-rm -rf build/tests/ build/*.elm
-mkdir -p build/tests
+rm -rf build/src build/tests
+mkdir -p build/src build/tests
 cp template/elm.json build/
 
-for example_file in exercises/**/*.example.elm
+for example_file in exercises/**/src/*.example.elm
 do
-  exercise_dir=$(dirname $example_file)
+  exercise_dir=$(dirname $(dirname $example_file))
   exercise_name=$(basename $example_file .example.elm)
-  cp $example_file "build/$exercise_name.elm"
+  cp $example_file "build/src/$exercise_name.elm"
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-npm test -- build/tests/
+npm test -- build/tests
