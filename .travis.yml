@@ -1,20 +1,10 @@
----
-language: bash
-
 sudo: false
 
-install:
-  - nvm install 6
-  - nvm use 6
-  - npm install
-  - bin/install-elm-format linux
-  - export PATH=$PATH:$PWD/bin
+language: node_js
+node_js:
+  - lts/*
 
 script:
   - bin/fetch-configlet
   - bin/configlet lint .
   - bin/build.sh
-
-cache:
-  directories:
-    - elm-stuff
