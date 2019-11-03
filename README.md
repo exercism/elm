@@ -84,18 +84,18 @@ Then, the general steps for implementing a missing exercise are the following.
 2. Move into that exercise directory
 3. Replace placeholder names in `src/` and `tests/`, rename `src/<exercise>.elm` accordingly
 4. Run `elm-test` to verify that everything is setup correctly
-6. Complete tests according to the `canonical-data.json` file of the exercise in [exercism/problem-specifications][problem-spec]
-7. Complete implementation of the solution in `src/<exercise>.elm` and check it passes all tests.
-8. Prepare files such that they are ready for student use:
-  * Rename `<exercise>.elm` into `<exercise>.example.elm`
-  * Prepare a starter file for students named `<exercise>.elm`. That is what `exercise download` will retrieve
-  * Add `skip <|` to all tests except the first one so that students can progress gradually
-9. Update `config.json` file with an entry for this exercise.
-  * Explanations regarding this file are provided in [Exercism documentation][exercise-config]
-  * The uuid should be generated with the command `bin/configlet uuid`
-10. Check that everything is configured correctly and that builds pass
-    by running `bin/configlet lint .` and `bin/build.sh` from the root of the directory
-11. Yeah! you can submit your PR
+5. Complete tests according to the `canonical-data.json` file of the exercise in [exercism/problem-specifications][problem-spec]
+6. Complete implementation of the solution in `src/<exercise>.elm` and check it passes all tests.
+7. Prepare files such that they are ready for student use:
+   * Rename `<exercise>.elm` into `<exercise>.example.elm`
+   * Prepare a starter file for students named `<exercise>.elm`. That is what `exercise download` will retrieve
+   * Add `skip <|` to all tests except the first one so that students can progress gradually
+8. Update `config.json` file with an entry for this exercise.
+   * Explanations regarding this file are provided in [Exercism documentation][exercise-config]
+   * The uuid should be generated with the command `bin/configlet uuid`
+9. Check that everything is configured correctly and that builds pass
+   by running `bin/configlet lint .` and `bin/build.sh` from the root of the directory
+10. Yeah! you can submit your PR
 
 [exercise-config]: https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md
 
