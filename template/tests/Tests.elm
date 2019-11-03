@@ -1,13 +1,13 @@
 module Tests exposing (tests)
 
-import {ExerciseSlug} exposing ({function})
+import <exercise> exposing (<function>)
 import Expect
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "{exercise}"
+    describe "<exercise>"
         [ test "foo" <|
             \() -> Expect.equal "foo" "foo"
         , skip <|

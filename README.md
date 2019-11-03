@@ -82,7 +82,7 @@ Then, the general steps for implementing a missing exercise are the following.
 
 1. Run the command `bin/stub-new-exercise.sh <exercise-slug>`
 2. Move into that exercise directory
-3. Replace placeholder names in `src/` and `tests/`, rename `src/ExerciseSlug.elm` accordingly
+3. Replace placeholder names in `src/` and `tests/`, rename `src/<exercise>.elm` accordingly
 4. Run `elm-test` to verify that everything is setup correctly
 6. Complete tests according to the `canonical-data.json` file of the exercise in [exercism/problem-specifications][problem-spec]
 7. Complete implementation of the solution in `src/<exercise>.elm` and check it passes all tests.
