@@ -1,6 +1,6 @@
 module Tests exposing (tests)
 
-import {exercise} exposing ({function})
+import {ExerciseSlug} exposing ({function})
 import Expect
 import Test exposing (..)
 

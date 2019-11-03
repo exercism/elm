@@ -1,4 +1,4 @@
-module {exercise} exposing ({function})
+module {ExerciseSlug} exposing ({function})
 
 
 {function} : _ -> _

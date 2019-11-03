@@ -3,138 +3,113 @@
 
 Exercism Exercises in Elm
 
-## Setup
+## Track Organization
 
-The simplest way to install Elm is via Node.js/NPM.
-
-If you don't already have Node.js installed on your computer, you can download it from [the official site](https://nodejs.org/). Once you have Node.js up and running, follow these steps to install the Elm platform and elm-test.
-
-```bash
-$ npm install
+The track is organized with the following main directories and files:
+```
+bin/          # executables required to manage the track
+config/       # configuration files for the track
+docs/         # documentation files for automatically generated web pages on exercism.io
+exercises/    # contains one directory per exercise
+template/     # template used when generating a new exercise
+.travis.yml   # Travis automatic build and tests configuration
+config.json   # configuration file for all exercises metadata
+package.json  # Node package configuration required for running builds and tests
+```
+Each exercise within the `exercises/` directory has the following structure:
+```
+src/                   # directory for elm source files
+  Exercise.elm         # template downloaded by students
+  Exercise.example.elm # example solution for this exercise
+tests/
+  Tests.elm            # test file as downloaded by students
+README.md              # generated readme (do not edit by hand)
+elm.json               # elm json config file
 ```
 
 ## Contributing
 
-Thank you so much for contributing! :tada:
+We welcome contributions of all sorts and sizes,
+from reporting issues to submitting patches or implementing missing exercises.
+Please read first [Exercism contribution guidelines][contributing].
+If you are not familiar with git and GitHub,
+you can also have a look at [GitHub's getting started documentation][github-start].
 
-Please start by reading the general Exercism [contributing guide](https://github.com/exercism/x-api/blob/master/CONTRIBUTING.md#the-exercise-data).
+[contributing]: https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md
+[github-start]: https://help.github.com/en/github/getting-started-with-github
 
-We welcome pull requests that provide fixes and improvements to existing exercises. If you're unsure, then go ahead and open a GitHub issue, and we'll discuss the change.
+### Setup
 
-Please keep the following in mind:
+In order to contribute code to this track, you need to have already installed
+[npm][npm-install], [elm][elm-install], [elm-test][elm-test], and [elm-format][elm-format].
+The build and tests script for this track lives at `bin/build.sh`.
+It uses the locally installed versions of elm, elm-test and elm-format,
+specified in the `package.json` file.
+Thus you can run `bin/build.sh` without the need of having those installed globally
+but it will be quite inconvenient when working on single exercises.
 
-- Pull requests should be focused on a single exercise, issue, or change.
+[npm-install]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+[elm-install]: https://guide.elm-lang.org/install/elm.html
+[elm-test]: https://www.npmjs.com/package/elm-test
+[elm-format]: https://github.com/avh4/elm-format
 
-- We welcome changes to code style, and wording. Please open a separate PR for these changes if possible.
+### Preparing for v3 of Exercism
 
-- Please open an issue before creating a PR that makes significant (breaking) changes to an existing exercise or makes changes across many exercises. It is best to discuss these changes before doing the work.
+If you are interesting in investing mid-term and long-term energy into this project,
+have a look at [issue #280][v3-issue].
 
-- Follow the coding standards found in [The Elm Style Guide](http://elm-lang.org/docs/style-guide). Please consider running [elm-format](https://github.com/avh4/elm-format) before submitting a pull request.
+[v3-issue]: https://github.com/exercism/elm/issues/280
 
-- Watch out for trailing spaces, extra blank lines, and spaces in blank lines.
+### Adding Missing Exercise
 
-- Each exercise must stand on its own. Do not reference files outside the exercise directory. They will not be included when the user fetches the exercise.
+All tracks share a common pool of exercises specified in
+[exercism/problem-specifications][problem-spec] repository.
+You can find a list of all missing exercises on [tracks.exercism.io][missing-exercises].
+Please read first [Exercism documentation about implementing an exercise][impl-exercise].
 
-- Exercises should use only the Elm core libraries.
+[problem-spec]: https://github.com/exercism/problem-specifications
+[missing-exercises]: https://tracks.exercism.io/elm/master/unimplemented
+[impl-exercise]: https://github.com/exercism/docs/blob/master/you-can-help/implement-an-exercise-from-specification.md
 
-- Please do not add a README or README.md file to the exercise directory. The READMEs are constructed using shared metadata, which lives in the
-[exercism/problem-specifications](https://github.com/exercism/problem-specifications) repository.
+Before you start implementing a missing exercise, make sure your setup is already working.
+```sh
+bin/fetch-configlet # if not already retrieved
+bin/configlet lint .
+bin/build.sh
+```
 
-- Each exercise should have a test suite, an example solution, a template file for the real implementation and an `elm-package.json` file with the `elm-test` and `elm-console` dependencies. The CI build expects files to be named using the following convention:
-  - The example solution should be named `ExerciseModuleName.example`. 
-  - The template file should be named `ExerciseModuleName.elm`. 
-  - Test file should be named `Tests.elm`.
+Then, the general steps for implementing a missing exercise are the following.
 
-- The recommended workflow when working on an exercise is to first create the implementation and test files, `ExerciseModuleName.elm` and `tests/Tests.elm`. You'll likely want to copy one of the existing exercise directories as a quick start.
-  - Test the new exercise directly by running `npm test` from the exercise directory.
+1. Run the command `bin/stub-new-exercise.sh <exercise-slug>`
+2. Move into that exercise directory
+3. Replace placeholder names in `src/` and `tests/`, rename `src/ExerciseSlug.elm` accordingly
+4. Run `elm-test` to verify that everything is setup correctly
+6. Complete tests according to the `canonical-data.json` file of the exercise in [exercism/problem-specifications][problem-spec]
+7. Complete implementation of the solution in `src/<exercise>.elm` and check it passes all tests.
+8. Prepare files such that they are ready for student use:
+  * Rename `<exercise>.elm` into `<exercise>.example.elm`
+  * Prepare a starter file for students named `<exercise>.elm`. That is what `exercise download` will retrieve
+  * Add `skip <|` to all tests except the first one so that students can progress gradually
+9. Update `config.json` file with an entry for this exercise.
+  * Explanations regarding this file are provided in [Exercism documentation][exercise-config]
+  * The uuid should be generated with the command `bin/configlet uuid`
+10. Check that everything is configured correctly and that builds pass
+    by running `bin/configlet lint .` and `bin/build.sh` from the root of the directory
+11. Yeah! you can submit your PR
 
-  - Automatically run tests again when you save changes by running `npm run watch` from the exercise directory.
+[exercise-config]: https://github.com/exercism/docs/blob/master/language-tracks/configuration/exercises.md
 
-  - Once the implementation of the exercise is complete, rename `ExerciseModuleName.elm` to `ExerciseModuleName.example.elm` and create the template `ExerciseModuleName.elm`.
+### Make Up New Exercises
 
-  - Make sure everything is good to go by running all tests with `bin/build.sh`.
+Follow [instructions on Exercism documentation][new-exercise].
 
-- Please do not commit any Elm configuration files or directories inside the exercise, such as `elm-stuff`. Please include only the standard `elm-package.json`.
+[new-exercise]: https://github.com/exercism/docs/blob/master/you-can-help/make-up-new-exercises.md
 
-- Test files should use the following format:
+## Elm icon
 
-  ```elm
-
-  module Tests exposing (..)
-
-  import Test exposing (..)
-  import Expect
-  import ExerciseModuleName
-
-
-  tests : Test
-  tests =
-      describe "Bob"
-          [ test "first test" <|
-              \() ->
-                  True
-                      |> Expect.equal True
-          , test "second test" <|
-              \() ->
-                  False
-                      |> Expect.equal False
-          ]
-  ```
-
- - All the tests for Exercism Elm Track exercises can be run from the top level of the repo with `bin/build.sh`. Please run this command before submitting your PR.
-
- - If you are submitting a new exercise, be sure to add it to the appropriate place in the `config.json` file. Also, please run `bin/fetch-configlet && bin/configlet` to ensure the exercise is configured correctly.
-
-### Generating Setup
-
-To make implementing a new exercise a little bit easier, a new script was added
-to the `bin` folder. Running `bin/stub-new-exercise <exercise-slug>` will setup
-the exercise folder and then re-direct you back to this section of the README to
-do the next steps.
-
-The next steps after generating the files include
-
-1. Run `bin/configlet uuid` to generate a UUID for placing in `config.json`
-2. Add the exercise configuration to `config.json`, replacing the placeholders
-   with the exercise specific information
-   ```json
-   {
-     "core": false,
-     "difficulty": 1,
-     "slug": "<exercise-slug",
-     "topics": null,
-     "unlocked_by": null,
-     "uuid": "<generated-uuid>"
-   }
-   ```
-   **Note**: Each exercise configuration will be different by potentially more than
-   the UUID. If you have questions, you can wait until submitting the PR and it can
-   get resolved then.
-3. The following search shows all the locations in the template files you need
-   to change before renaming them to just `*.elm` files instead of
-   `*.elm.template`.
-   ```bash
-   $ grep -r "{exercise}" exercises/<exercise>
-   ./Exercise.elm.template:module {exercise} exposing ({method})
-   ./Exercise.example.elm.template:module {exercise} exposing ({method})
-   ./tests/Tests.elm.template:import {exercise} exposing ({method})
-   ./tests/Tests.elm.template:    describe "{exercise}"
-   $ grep -r "{function}" exercises/<exercise>
-   ./Exercise.elm.template:module {exercise} exposing ({function})
-   ./Exercise.elm.template:{function} =
-   ./Exercise.example.elm.template:module {exercise} exposing ({function})
-   ./Exercise.example.elm.template:{function} =
-   ./tests/Tests.elm.template:import {exercise} exposing ({function})
-   ```
-3. The `bin/stub-new-exercise` script has to pull down the
-   `problem-specifications` repo to generate the README. You will also be
-   able to get the canonical test data from that repo in the
-   `exercises/<exercise-slug>/canonical-data.json` file. With the test data, you
-   should have enough to get started with the tests.
-4. After the tests are written, you can start writing an implementation example
-   in `<exercise>.example.elm`.
-5. Also remember to stub out the `<exercise>.elm` file, which is what users will
-   get when they run `exercism fetch`.
-
-### Elm icon
-We were unable to find copyright information about the Elm logo, nor information about who designed it. Presumably Evan Czaplicki, creator of the Elm language, also made the logo, and holds copyright. It may also fall within the public domain, since it is a geometric shape. We've adapted the official Elm logo by changing the colors, which we believe falls under "fair use".
+We were unable to find copyright information about the Elm logo,
+nor information about who designed it.
+Presumably Evan Czaplicki, creator of the Elm language,
+also made the logo, and holds copyright.
+It may also fall within the public domain, since it is a geometric shape.
+We've adapted the official Elm logo by changing the colors, which we believe falls under "fair use".
