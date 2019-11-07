@@ -1,10 +1,19 @@
 ## Recommended Learning Resources
 
-Exercism provides exercises and feedback but can be difficult to jump into for those learning Elm for the first time. The best starting place is with the [official Elm docs](http://elm-lang.org/docs).
+The best place to start is the [official guide](https://guide.elm-lang.org/).
 
 ## Quick Start
 
-- [For JS Users](http://elm-lang.org/docs/from-javascript)
-- [Syntax Overview](http://elm-lang.org/docs/syntax)
-- [Core Libraries](https://package.elm-lang.org/packages/elm/core/latest/)
-- [Style Guide](http://elm-lang.org/docs/style-guide)
+Additional resources are also available from [the docs](http://elm-lang.org/docs).
+
+- [Syntax overview](http://elm-lang.org/docs/syntax)
+- [Syntax vs JavaScript](http://elm-lang.org/docs/from-javascript)
+- [Style guide](http://elm-lang.org/docs/style-guide)
+- [FAQ](http://elm-community.github.io/elm-faq/)
+- [Core libraries](https://package.elm-lang.org/packages/elm/core/latest/)
+
+## Books
+
+- [Elm in Action](https://www.manning.com/books/elm-in-action), _Richard Feldman_
+- [Programming Elm](https://pragprog.com/book/jfelm/programming-elm), _Jeremy Fairbank_
+- [Practical Elm for a Busy Developer](https://korban.net/elm/book/), _Alex Korban_
