@@ -48,3 +48,12 @@ such as VS Code, Sublime Text or Vim.
 
 [els]: https://github.com/elm-tooling/elm-language-server
 [intellij]: https://github.com/klazuka/intellij-elm
+
+## Permission Errors with npm
+
+You may be facing EACCESS permissions error with npm
+when installing elm-test or elm-format.
+Please follow instructions on npm website if that is the case.
+[Resolving EACCES permissions errors when installing packages globally][eaccess].
+
+[eaccess]: https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally
