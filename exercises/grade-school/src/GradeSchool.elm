@@ -17,7 +17,7 @@ type alias School =
 
 empty : School
 empty =
-    Debug.todo "Please implement this function"
+    Dict.empty
 
 
 addStudent : Grade -> Student -> School -> School
