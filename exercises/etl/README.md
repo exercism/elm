@@ -13,7 +13,7 @@ moaning about how stupid we could possibly be.)
 
 ### The goal
 
-We're going to extract some scrabble scores from a legacy system.
+We're going to extract some Scrabble scores from a legacy system.
 
 The old system stored a list of letters per score:
 
@@ -25,7 +25,7 @@ The old system stored a list of letters per score:
 - 8 points: "J", "X",
 - 10 points: "Q", "Z",
 
-The shiny new scrabble system instead stores the score per letter, which
+The shiny new Scrabble system instead stores the score per letter, which
 makes it much faster and easier to calculate the score for a word. It
 also stores the letters in lower-case regardless of the case of the
 input letters:
@@ -53,23 +53,22 @@ for information about installing elm.
 
 ## Writing the Code
 
-The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed. Thankfully, Elm makes that easy for you and
-will install dependencies when you try to run tests or build the code.
-
-Execute the tests with:
+The code you have to write is located inside the `src/` directory of the exercise.
+Elm automatically installs packages dependencies the first time you run the tests
+so we can start by running the tests from the exercise directory with:
 
 ```bash
 $ elm-test
 ```
 
-Automatically run tests again when you save changes:
+To automatically run tests again when you save changes:
 
 ```bash
 $ elm-test --watch
 ```
 
-As you work your way through the test suite, be sure to remove the `skip <|`
+As you work your way through the tests suite in the file `tests/Tests.elm`,
+be sure to remove the `skip <|`
 calls from each test until you get them all passing!
 
 ## Source

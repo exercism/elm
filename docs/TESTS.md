@@ -1,13 +1,12 @@
-The Elm exercise test suites may be run from the exercise directory.
+Tests for an Elm project live in the `tests/` subdirectory of that project.
+Each exercise tests suite can be run from that exercise root directory.
 
 ```bash
 $ cd ~/exercism/elm/hello-world
 $ elm-test
 ```
 
-## Hints and tips
-
-### Watch for changes
+## Watch for Changes
 
 Automatically run tests again when you save changes:
 
@@ -15,16 +14,36 @@ Automatically run tests again when you save changes:
 $ elm-test --watch
 ```
 
-### Coding the exercise
+## Test Driven Development Flow
 
-The README.md for each exercise gives a general description, but the Elm test program will be very specific. Open the test program and give it a quick look - if it seems like cheating, do it anyway. Look for helpful comments, test data, and just the names of the test functions. Try running the test command before you have written anything and see if the error messages give you an idea of where to start.
+In most exercises, tests are already written in the file `tests/Tests.elm`.
+Your goal is to make them pass by writing the code required
+in the `src/<exercise>.elm` file.
+Focus on the first failing test, fix it,
+then remove or comment the next `skip <|` snippet in the tests file and repeat
+until all tests pass.
 
-Your first goal it to get something to compile, even though it fails tests. For this, you should "stub" functions. That means leave the body empty, except for whatever it must return. Write something like `myFunc param = 0` or whatever it takes just to get it to compile. Sometimes to figure out function types you will have to go back to the test program and read in more detail. Once you have figured out all the required function signatures, the test program will complain that `0` is the wrong answer. Now start filling in function bodies.
+## Feeling Stuck?
 
-### Fixing
+Your first goal is to get your code to compile, even with `Debug.todo` in it.
+If you feel you don't know how to do something,
+it is often useful to extract that piece into its own unimplemented function.
 
-It will often be helpful to focus on the first failing test. Fix that one, repeat until no errors. Compile errors and warnings will produce lots of helpful output.
+```elm
+complexOperationOnMultipleStrings : List String -> List String
+complexOperationOnMultipleStrings allStrings =
+    List.map complexOperation allStrings
 
-### Cleaning up your code
 
-Consider running [`elm-format`](https://github.com/avh4/elm-format) on your code before submitting it.
+complexOperation : String -> String
+complexOperation input =
+    Debug.todo "Extracted operation into its own function"
+```
+
+Adding a type annotation on this extracted function
+will both help your thinking and the compiler to give you better error messages.
+
+## Cleaning up your code
+
+Consider running [`elm-format`](https://github.com/avh4/elm-format) on your code before submitting it
+and even setting it up in your text editor for automatic formatting on save.

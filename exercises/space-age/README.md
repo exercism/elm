@@ -2,9 +2,9 @@
 
 Given an age in seconds, calculate how old someone would be on:
 
-   - Earth: orbital period 365.25 Earth days, or 31557600 seconds
    - Mercury: orbital period 0.2408467 Earth years
    - Venus: orbital period 0.61519726 Earth years
+   - Earth: orbital period 1.0 Earth years, 365.25 Earth days, or 31557600 seconds
    - Mars: orbital period 1.8808158 Earth years
    - Jupiter: orbital period 11.862615 Earth years
    - Saturn: orbital period 29.447498 Earth years
@@ -24,23 +24,22 @@ for information about installing elm.
 
 ## Writing the Code
 
-The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed. Thankfully, Elm makes that easy for you and
-will install dependencies when you try to run tests or build the code.
-
-Execute the tests with:
+The code you have to write is located inside the `src/` directory of the exercise.
+Elm automatically installs packages dependencies the first time you run the tests
+so we can start by running the tests from the exercise directory with:
 
 ```bash
 $ elm-test
 ```
 
-Automatically run tests again when you save changes:
+To automatically run tests again when you save changes:
 
 ```bash
 $ elm-test --watch
 ```
 
-As you work your way through the test suite, be sure to remove the `skip <|`
+As you work your way through the tests suite in the file `tests/Tests.elm`,
+be sure to remove the `skip <|`
 calls from each test until you get them all passing!
 
 ## Source

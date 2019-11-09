@@ -24,7 +24,9 @@ type alias Robot =
 
 defaultRobot : Robot
 defaultRobot =
-    Debug.todo "Please implement this function"
+    { bearing = North
+    , coordinates = { x = 0, y = 0 }
+    }
 
 
 turnRight : Robot -> Robot

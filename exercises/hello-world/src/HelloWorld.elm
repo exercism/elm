@@ -14,7 +14,7 @@ module HelloWorld exposing (helloWorld)
 
 helloWorld : String
 helloWorld =
-    Debug.todo "Please implement this function"
+    "Please implement this function"
 
 
 

@@ -1,9 +1,13 @@
-Elm is a pure, functional language that compiles to javascript.
+Elm describes itself as a "delightful language for reliable webapps".
+It aims at producing web applications with great performances and no runtime exception.
 
-It was designed by Evan Czaplicki as part of writing his thesis on [Concurrent FRP for Functional GUIs](http://elm-lang.org/papers/concurrent-frp.pdf) and evolved into a language to help make making user interfaces better.
+Concretly, it is a functional programming language compiling to JavaScript.
+Its syntax and features originated from the ML family of languages, such as Haskell,
+but with [a strong emphasis on learnability and simplicity][blog-syntax].
 
-Elm's goal is to be the simplest and best language for making web-based user interfaces.
+You can learn more about elm on the official website, [elm-lang.org][elm-lang].
+Newcomers should start with the elm guide, located at [guide.elm-lang.org][guide].
 
-Elm aims to completely eliminate runtime exceptions by combining an aggressively helpful compiler with solid architectural principles.
-
-You can learn more about Elm at the [official website](http://elm-lang.org/).
+[blog-syntax]: https://elm-lang.org/news/the-syntax-cliff
+[elm-lang]: https://elm-lang.org
+[guide]: https://guide.elm-lang.org
