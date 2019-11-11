@@ -9,10 +9,15 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "{exercise}"
-        [ test "Single digit numbers are Armstrong numbers" <|
+        [ test "Zero is an Armstrong number" <|
             \() ->
                 Expect.equal True
-                    (ArmstrongNumbers.check 5)
+                    (ArmstrongNumbers.check 0)
+        , skip <|
+            test "Single digit numbers are Armstrong numbers" <|
+                \() ->
+                    Expect.equal True
+                        (ArmstrongNumbers.check 5)
         , skip <|
             test "There are no 2 digit Armstrong numbers" <|
                 \() ->
