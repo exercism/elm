@@ -415,6 +415,14 @@
       ]
     },
     {
+      "slug": "pythagorean-triplet",
+      "uuid": "d266a60c-4c41-4d98-a898-13dea7513cd8",
+      "core": false,
+      "unlocked_by": "space-age",
+      "difficulty": 5,
+      "topics": ["algorithms", "conditionals", "loops", "integers", "math"]
+    },
+    {
       "slug": "roman-numerals",
       "uuid": "c1461035-6abe-4f17-a818-7a3ac6642c18",
       "core": false,
