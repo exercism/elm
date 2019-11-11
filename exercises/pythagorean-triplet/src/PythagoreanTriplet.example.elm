@@ -1,4 +1,4 @@
-module PythagoreanTriplets exposing (triplets)
+module PythagoreanTriplet exposing (triplets)
 
 import List
 

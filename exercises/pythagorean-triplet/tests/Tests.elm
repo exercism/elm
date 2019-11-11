@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import PythagoreanTriplets exposing (triplets)
+import PythagoreanTriplet exposing (triplets)
 import Test exposing (Test, describe, skip, test)
 
 
