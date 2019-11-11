@@ -4,21 +4,6 @@
   "blurb": "Elm is a pure, functional language that compiles to javascript",
   "exercises": [
     {
-      "slug": "armstrong-numbers",
-      "uuid": "2a71bafa-87ac-4f36-ba45-a1b24dcca67a",
-      "core": false,
-      "auto_approve": true,
-      "unlocked_by": null,
-      "difficulty": 1,
-      "topics": [
-        "strings",
-        "integers",
-        "lists",
-        "algorithms",
-        "math"
-      ]
-    },
-    {
       "slug": "hello-world",
       "uuid": "2c3902df-93e1-48d1-829d-4daa93a1f06f",
       "core": true,
@@ -211,6 +196,20 @@
       "topics": [
         "filtering",
         "text_formatting"
+      ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "uuid": "2a71bafa-87ac-4f36-ba45-a1b24dcca67a",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "strings",
+        "integers",
+        "lists",
+        "algorithms",
+        "math"
       ]
     },
     {
