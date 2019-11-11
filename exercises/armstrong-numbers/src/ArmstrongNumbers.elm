@@ -1,6 +1,6 @@
-module ArmstrongNumbers exposing (check)
+module ArmstrongNumbers exposing (isArmstrongNumber)
 
 
-check : Int -> Bool
-check nb =
+isArmstrongNumber : Int -> Bool
+isArmstrongNumber nb =
     Debug.todo "Please implement this function"

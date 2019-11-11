@@ -1,8 +1,8 @@
-module ArmstrongNumbers exposing (check)
+module ArmstrongNumbers exposing (isArmstrongNumber)
 
 
-check : Int -> Bool
-check nb =
+isArmstrongNumber : Int -> Bool
+isArmstrongNumber nb =
     let
         ( digits, nbDigits ) =
             digitsAndLength nb
