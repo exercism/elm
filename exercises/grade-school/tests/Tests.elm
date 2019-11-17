@@ -50,12 +50,15 @@ tests =
         , skip <|
             test "get all students in the school" <|
                 \() ->
-                    Expect.equal [ ( 3, [ "Kyle" ] ), ( 4, [ "Christopher", "Jennifer" ] ), ( 6, [ "Kareem" ] ) ]
+                    Expect.equal [ ( 1, [ "Anna", "Barb", "Charlie" ] ), ( 2, [ "Alex", "Peter", "Zoe" ] ), ( 3, [ "Jim" ] ) ]
                         (GradeSchool.empty
-                            |> addStudent 4 "Jennifer"
-                            |> addStudent 6 "Kareem"
-                            |> addStudent 4 "Christopher"
-                            |> addStudent 3 "Kyle"
+                            |> addStudent 2 "Peter"
+                            |> addStudent 1 "Anna"
+                            |> addStudent 1 "Barb"
+                            |> addStudent 2 "Zoe"
+                            |> addStudent 2 "Alex"
+                            |> addStudent 3 "Jim"
+                            |> addStudent 1 "Charlie"
                             |> allStudents
                         )
         , skip <|
