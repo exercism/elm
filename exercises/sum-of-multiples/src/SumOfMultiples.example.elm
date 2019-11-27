@@ -2,10 +2,10 @@ module SumOfMultiples exposing (sumOfMultiples)
 
 
 sumOfMultiples : List Int -> Int -> Int
-sumOfMultiples multiples limit =
-    List.sum (List.filter (inMultiples multiples) (List.range 1 (limit - 1)))
+sumOfMultiples divisors limit =
+    List.sum (List.filter (inMultiples divisors) (List.range 1 (limit - 1)))
 
 
 inMultiples : List Int -> Int -> Bool
-inMultiples multiples candidate =
-    List.any (\factor -> modBy factor candidate == 0) multiples
+inMultiples divisors candidate =
+    List.any (\divisor -> modBy divisor candidate == 0) divisors
