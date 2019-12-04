@@ -49,4 +49,16 @@ tests =
         , skip <|
             test "invalid if exchange code starts with 1" <|
                 \() -> Expect.equal Nothing (getNumber "(223) 156-7890")
+        , skip <|
+            test "invalid if area code starts with 0 on valid 11-digit number" <|
+                \() -> Expect.equal Nothing (getNumber "1 (023) 456-7890")
+        , skip <|
+            test "invalid if area code starts with 1 on valid 11-digit number" <|
+                \() -> Expect.equal Nothing (getNumber "1 (123) 456-7890")
+        , skip <|
+            test "invalid if exchange code starts with 0 on valid 11-digit number" <|
+                \() -> Expect.equal Nothing (getNumber "1 (223) 056-7890")
+        , skip <|
+            test "invalid if exchange code starts with 1 on valid 11-digit number" <|
+                \() -> Expect.equal Nothing (getNumber "1 (223) 156-7890")
         ]
