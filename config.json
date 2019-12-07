@@ -501,6 +501,16 @@
         "text_formatting",
         "transforming"
       ]
+    },
+    {
+      "slug": "wordy",
+      "uuid": "7fcc7c1e-c8d4-4701-8be7-06ab6e039885",
+      "core": false,
+      "unlocked_by": "robot-simulator",
+      "difficulty": 8,
+      "topics": [
+        "parsing"
+      ]
     }
   ]
 }
