@@ -129,8 +129,9 @@ tests =
              [ skip <|
                 test "coordinates" <|
                     \() -> Expect.equal { x = -3, y = -8 } robot.coordinates
-             , test "bearing" <|
-                \() -> Expect.equal South robot.bearing
+             , skip <|
+                test "bearing" <|
+                    \() -> Expect.equal South robot.bearing
              ]
             )
         , describe "simulate prog 3"
