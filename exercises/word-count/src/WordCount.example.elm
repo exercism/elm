@@ -18,10 +18,11 @@ sanitizeSentence sentence =
 
 sanitizeWord : String -> String
 sanitizeWord word =
-    if String.startsWith "'" word && String.endsWith "'" word then
-        word
-            |> String.dropLeft 1
-            |> String.dropRight 1
+    if String.startsWith "'" word then
+        sanitizeWord (String.dropLeft 1 word)
+
+    else if String.endsWith "'" word then
+        sanitizeWord (String.dropRight 1 word)
 
     else
         word
