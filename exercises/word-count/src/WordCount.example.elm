@@ -1,24 +1,42 @@
 module WordCount exposing (wordCount)
 
 import Dict exposing (Dict)
-import Regex
-import String
+
+
+sanitizeSentence : String -> String
+sanitizeSentence sentence =
+    String.toLower sentence
+        |> String.map
+            (\char ->
+                if Char.isLower char || Char.isDigit char || char == '\'' then
+                    char
+
+                else
+                    ' '
+            )
+
+
+sanitizeWord : String -> String
+sanitizeWord word =
+    if String.startsWith "'" word && String.endsWith "'" word then
+        word
+            |> String.dropLeft 1
+            |> String.dropRight 1
+
+    else
+        word
 
 
 wordCount : String -> Dict String Int
 wordCount sentence =
-    sentence
-        |> String.toLower
-        |> depunctuate
+    sanitizeSentence sentence
         |> String.words
-        |> List.foldl (\w d -> Dict.update w incrMaybe d) Dict.empty
-
-
-depunctuate : String -> String
-depunctuate =
-    Regex.replace (Maybe.withDefault Regex.never <| Regex.fromString "[^a-z0-9 ]") (\_ -> "")
-
-
-incrMaybe : Maybe Int -> Maybe Int
-incrMaybe maybe =
-    Maybe.withDefault 0 maybe + 1 |> Just
+        |> List.map sanitizeWord
+        |> List.foldl
+            (\word dict ->
+                Dict.update
+                    word
+                    (\count -> Maybe.withDefault 0 count + 1 |> Just)
+                    dict
+            )
+            Dict.empty
