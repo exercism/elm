@@ -2,6 +2,10 @@
   "language": "Elm",
   "active": true,
   "blurb": "Elm is a pure, functional language that compiles to javascript",
+  "online_editor": {
+    "indent_style": "space",
+    "indent_size": 4
+  },
   "exercises": [
     {
       "slug": "hello-world",
