@@ -40,6 +40,16 @@
       "link_url": null,
       "avatar_url": null,
       "bio": "Passionate about robotics, photo, computer vision, and raclette!"
+    },
+    {
+      "github_username": "ceddlyburge",
+      "alumnus": false,
+      "show_on_website": true,
+      "name": "Cedd Burge",
+      "link_text": "Blog posts",
+      "link_url": "https://www.freecodecamp.org/news/author/cedd/",
+      "avatar_url": "https://github.com/ceddlyburge.png",
+      "bio": "I am a software lead / manager / architect type thing. I mostly program in Elm, C#, Python, Typescript and Delphi. I mentor on Exercism and for Code First Girls"
     }
   ]
 }
