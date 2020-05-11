@@ -3,7 +3,13 @@ module RNATranscription exposing (toRNA)
 import String
 
 
-toRNA : String -> Result Char String
+createErrorMessage : Char -> String
+createErrorMessage invalidNucleotide =
+    [ "'", String.fromChar invalidNucleotide, "' is not a valid nucleotide" ]
+        |> String.concat
+
+
+toRNA : String -> Result String String
 toRNA dna =
     dna
         |> String.toList
@@ -11,6 +17,7 @@ toRNA dna =
         |> resultExtraCombine
         |> Result.map (List.map String.fromChar)
         |> Result.map (String.join "")
+        |> Result.mapError createErrorMessage
 
 
 
