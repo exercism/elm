@@ -8,23 +8,6 @@ on:
     branches: [master]
 
 jobs:
-  precheck:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js LTS
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-
-      - name: Install project dependencies
-        run: npm ci
-
-      - name: Run exercism/elm ci precheck (checks config, lint code, and runs tests) for all exercises
-        # run: npx babel-node scripts/ci-check
-        run: echo "not implemented"
-
   ci:
     runs-on: ubuntu-latest
 
