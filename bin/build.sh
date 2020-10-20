@@ -5,7 +5,7 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-if [[ ! $(npx --no-install elm-format --help | grep "elm-format 0.8.3") ]]; then
+if [[ ! $(npx --no-install elm-format --help | grep "elm-format 0.8.4") ]]; then
   echo "Please run npm install first"
   exit 1
 fi
