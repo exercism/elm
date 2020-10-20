@@ -39,4 +39,4 @@ do
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-npm test -- build/tests
+npm test
