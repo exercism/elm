@@ -22,12 +22,12 @@ jobs:
         run: npm ci
 
       - name: Run exercism/elm ci precheck (stub files, config integrity) for changed exercises
-        run: |
-          PULL_REQUEST_URL=$(jq -r ".pull_request.url" "$GITHUB_EVENT_PATH")
-          curl --url $"${PULL_REQUEST_URL}/files" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
-            jq -c '.[] | select(.status == "added" or .status == "modified") | select(.filename | match("\\.(js|jsx|md|json)$")) | .filename' | \
-            xargs -r echo "not implemented"
-            # xargs -r npx babel-node scripts/pr-check
+        run: bin/build.sh
+        # run: |
+        #   PULL_REQUEST_URL=$(jq -r ".pull_request.url" "$GITHUB_EVENT_PATH")
+        #   curl --url $"${PULL_REQUEST_URL}/files" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
+        #     jq -c '.[] | select(.status == "added" or .status == "modified") | select(.filename | match("\\.(js|jsx|md|json)$")) | .filename' | \
+        #     xargs -r npx babel-node scripts/pr-check
 
   ci:
     runs-on: ubuntu-latest
@@ -49,9 +49,9 @@ jobs:
         run: npm ci
 
       - name: Run exercism/elm ci (runs tests) for changed/added exercises
-        run: |
-          PULL_REQUEST_URL=$(jq -r ".pull_request.url" "$GITHUB_EVENT_PATH")
-          curl --url $"${PULL_REQUEST_URL}/files" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
-            jq -c '.[] | select(.status == "added" or .status == "modified") | select(.filename | match("\\.(js|jsx|md|json)$")) | .filename' | \
-            xargs -r bin/build.sh
-            # xargs -r npx babel-node scripts/pr
+        run: bin/build.sh
+        # run: |
+        #   PULL_REQUEST_URL=$(jq -r ".pull_request.url" "$GITHUB_EVENT_PATH")
+        #   curl --url $"${PULL_REQUEST_URL}/files" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | \
+        #     jq -c '.[] | select(.status == "added" or .status == "modified") | select(.filename | match("\\.(js|jsx|md|json)$")) | .filename' | \
+        #     xargs -r npx babel-node scripts/pr
