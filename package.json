@@ -5,7 +5,7 @@
   "repository": "https://github.com/exercism/elm",
   "license": "MIT",
   "scripts": {
-    "test": "elm-test"
+    "test": "cd build && elm-test"
   },
   "devDependencies": {
     "elm": "latest-0.19.1",
