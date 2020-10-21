@@ -1,5 +1,5 @@
 # Exercism Elm Track
-[![build status](https://travis-ci.org/exercism/elm.svg?branch=master)](https://travis-ci.org/exercism/elm)
+[![build status](https://github.com/exercism/elm/workflows/elm%20%2F%20master/badge.svg)]
 
 Exercism Exercises in Elm
 
