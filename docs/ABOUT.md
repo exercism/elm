@@ -1,7 +1,7 @@
 Elm describes itself as a "delightful language for reliable webapps".
 It aims at producing web applications with great performances and no runtime exception.
 
-Concretly, it is a functional programming language compiling to JavaScript.
+Concretely, it is a functional programming language compiling to JavaScript.
 Its syntax and features originated from the ML family of languages, such as Haskell,
 but with [a strong emphasis on learnability and simplicity][blog-syntax].
 

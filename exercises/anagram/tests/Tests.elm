@@ -43,7 +43,7 @@ tests =
                     Expect.equal [ "gallery", "regally", "largely" ]
                         (detect "allergy" [ "gallery", "ballerina", "regally", "clergy", "largely", "leading" ])
         , skip <|
-            test "does not detect indentical words" <|
+            test "does not detect identical words" <|
                 \() ->
                     Expect.equal [ "cron" ]
                         (detect "corn" [ "corn", "dark", "Corn", "rank", "CORN", "cron", "park" ])
@@ -63,7 +63,7 @@ tests =
                     Expect.equal [ "carthorse" ]
                         (detect "Orchestra" [ "cashregister", "carthorse", "radishes" ])
         , skip <|
-            test "detects anagrams using case-insensitve possible matches" <|
+            test "detects anagrams using case-insensitive possible matches" <|
                 \() ->
                     Expect.equal [ "Carthorse" ]
                         (detect "orchestra" [ "cashregister", "Carthorse", "radishes" ])
