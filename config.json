@@ -1,6 +1,12 @@
 {
   "language": "Elm",
   "active": true,
+  "status": {
+    "concept_exercises": false,
+    "test_runner": false,
+    "representer": false,
+    "analyzer": false
+  },
   "blurb": "Elm is a pure, functional language that compiles to javascript",
   "version": 3,
   "online_editor": {
