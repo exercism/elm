@@ -2,6 +2,7 @@
   "language": "Elm",
   "active": true,
   "blurb": "Elm is a pure, functional language that compiles to javascript",
+  "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4
@@ -438,7 +439,13 @@
       "core": false,
       "unlocked_by": "space-age",
       "difficulty": 5,
-      "topics": ["algorithms", "conditionals", "loops", "integers", "math"]
+      "topics": [
+        "algorithms",
+        "conditionals",
+        "loops",
+        "integers",
+        "math"
+      ]
     },
     {
       "slug": "roman-numerals",
