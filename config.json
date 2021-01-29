@@ -1,5 +1,6 @@
 {
   "language": "Elm",
+  "slug": "elm",
   "active": true,
   "status": {
     "concept_exercises": false,
