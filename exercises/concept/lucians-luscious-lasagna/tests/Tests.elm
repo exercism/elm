@@ -1,14 +1,14 @@
 module Tests exposing (tests)
 
-import Cook exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
 import Expect
 import Fuzz
+import LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "Cook"
+    describe "LuciansLusciousLasagna"
         [ test "expectedMinutesInOven" <|
             \_ ->
                 expectedMinutesInOven
