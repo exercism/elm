@@ -7,7 +7,7 @@ import Transpose exposing (transpose)
 
 tests : Test
 tests =
-    describe "Hamming"
+    describe "Transpose"
         [ test "empty string" <|
             \_ ->
                 Expect.equal [] (transpose [])
