@@ -1,4 +1,4 @@
-module Cook exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
+module LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
 
 
 expectedMinutesInOven =
