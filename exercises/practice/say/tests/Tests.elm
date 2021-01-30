@@ -7,7 +7,7 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "Series"
+    describe "Say"
         [ test "one" <|
             \() ->
                 Expect.equal (Ok "one")
