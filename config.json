@@ -4,8 +4,8 @@
   "active": true,
   "status": {
     "concept_exercises": false,
-    "test_runner": false,
-    "representer": false,
+    "test_runner": true,
+    "representer": true,
     "analyzer": false
   },
   "blurb": "Elm is a friendly functional language for the Web",
