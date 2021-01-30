@@ -29,6 +29,10 @@ else
   echo "Formatting looks good!"
 fi
 
+# Fail if any of the tests fails.
+set -e
+set -o pipefail
+
 # TEST (concept)
 
 echo "Testing concept exercises ..."
