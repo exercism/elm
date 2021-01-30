@@ -8,7 +8,7 @@
     "representer": false,
     "analyzer": false
   },
-  "blurb": "Elm is a pure, functional language that compiles to javascript",
+  "blurb": "Elm is a friendly functional language for the Web",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
