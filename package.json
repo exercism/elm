@@ -4,9 +4,6 @@
   "description": "Exercism exercises in Elm",
   "repository": "https://github.com/exercism/elm",
   "license": "MIT",
-  "scripts": {
-    "test": "cd build && elm-test"
-  },
   "devDependencies": {
     "elm": "latest-0.19.1",
     "elm-format": "latest-0.19.1",
