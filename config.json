@@ -14,7 +14,38 @@
     "indent_style": "space",
     "indent_size": 4
   },
-  "key_features": [],
+  "key_features": [
+    {
+      "title": "For the Web",
+      "content": "Elm is for making Web applications.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Delightful",
+      "content": "Elm aims at the most enjoyable developer experience possible.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Excelent performances",
+      "content": "Elm has tiny compilation times, small assets and a fast runtime.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "No runtime exception",
+      "content": "Thanks to strict typing, Elm catches potential errors at compilation.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "JavaScript interop",
+      "content": "Elm has a dedicated interop mechanism with JavaScript called ports.",
+      "icon": "features-generic"
+    },
+    {
+      "title": "Functional but simple",
+      "content": "Elm is a simple pure functional language, a good gateway for more advanced functional languages.",
+      "icon": "features-functional"
+    }
+  ],
   "tags": [
     "paradigm/functional",
     "typing/static",
