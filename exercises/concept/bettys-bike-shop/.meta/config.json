@@ -1,0 +1,17 @@
+{
+  "authors": [
+    {
+      "github_username": "ceddlyburge",
+      "exercism_username": "ceddlyburge"
+    },
+    {
+      "github_username": "mpizenberg",
+      "exercism_username": "mpizenberg"
+    }
+  ],
+  "files": {
+    "solution": ["src/BettysBikeShop.elm"],
+    "test": ["tests/Tests.elm"],
+    "exemplar": [".meta/Exemplar.elm"]
+  }
+}
