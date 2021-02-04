@@ -1,15 +1,8 @@
-todo
+module BettysBikeShop exposing (formatPrice)
 
-module LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
-
-
-expectedMinutesInOven =
-    40
+import String
 
 
-preparationTimeInMinutes layers =
-    2 * layers
-
-
-elapsedTimeInMinutes layers passedAlready =
-    passedAlready + preparationTimeInMinutes layers
+formatPrice : Int -> String
+formatPrice priceInPence =
+    "£" ++ String.fromFloat (toFloat priceInPence / 100.0)

@@ -1,7 +1,7 @@
-todo
+module BettysBikeShop exposing (formatPrice)
 
-module LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
 
--- TODO: define the expectedMinutesInOven constant
--- TODO: define the preparationTimeInMinutes function
--- TODO: define the elapsedTimeInMinutes function
+
+-- TODO: import the String module
+-- TODO: define the type annotation for the formatPrice
+-- TODO: define the formatPrice function

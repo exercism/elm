@@ -1,31 +1,21 @@
-todo
 module Tests exposing (tests)
 
+import BettysBikeShop exposing (formatPrice)
 import Expect
 import Fuzz
-import LuciansLusciousLasagna exposing (elapsedTimeInMinutes, expectedMinutesInOven, preparationTimeInMinutes)
+import String
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "LuciansLusciousLasagna"
-        [ test "expectedMinutesInOven" <|
-            \_ ->
-                expectedMinutesInOven
-                    |> Expect.equal 40
-        , skip <|
-            fuzz positiveInt "preparationTimeInMinutes" <|
-                \layers ->
-                    preparationTimeInMinutes layers
-                        |> Expect.equal (2 * layers)
-        , skip <|
-            fuzz (Fuzz.tuple ( positiveInt, positiveInt )) "elapsedTimeInMinutes" <|
-                \( layers, passedAlready ) ->
-                    elapsedTimeInMinutes layers passedAlready
-                        |> Expect.equal (2 * layers + passedAlready)
+    describe "BettysBikeShop"
+        [ fuzz positiveInt "price in integer pence should be converted to a string in pounds" <|
+            \priceInPence ->
+                formatPrice priceInPence
+                    |> Expect.equal ("£" ++ String.fromFloat (toFloat priceInPence / 100.0))
         ]
 
 
 positiveInt =
-    Fuzz.intRange 0 1000000
+    Fuzz.intRange 0 10000
