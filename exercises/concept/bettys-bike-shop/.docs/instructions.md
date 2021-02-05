@@ -1,33 +1,20 @@
-Todo
+In this exercise you're going to write some code to help Betty's Bike Shop, an online shop for bikes and parts.
 
+## Format the price for display on the website
 
-In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cooking book.
+Currently, the price is stored as an integer number of *pence* (The bike shop is based in the UK)
 
-You have four tasks, all related to the time spent cooking the lasagna.
+On the website, we want to show the price in *pounds*, with the *pence* coming after the decimal point.
 
-## 1. Define the expected oven time in minutes
+There are 100 pence in a pound, so a price of 599 pence should be converted in to the string "£5.99"
 
-Define the `expectedMinutesInOven` constant to check how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Please define the `formatPrice` function to do this.
 
-```elm
-expectedMinutesInOven
-// => 40
-```
-
-## 2. Calculate the preparation time in minutes
-
-Define the `preparationTimeInMinutes` function that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+The function should have a Type Annotation, to define the types of the parameters that it takes, and the type of the value that it returns. This is not tested, as it is hard to do in Elm. In production code, you would probably integrate [Elm Review](https://package.elm-lang.org/packages/jfmengels/elm-review/latest/), and apply the [NoMissingTypeAnnotation](https://package.elm-lang.org/packages/jfmengels/elm-review-common/latest/NoMissingTypeAnnotation) rule.
 
 ```elm
-preparationTimeInMinutes 3
-// => 6
+-- add type annotation
+formatPrice priceInPence
+-- "£5.99" or similar
 ```
 
-## 3. Calculate the elapsed time in minutes
-
-Define the `elapsedTimeInMinutes` function that takes two parameters: the first parameter is the number of layers you added to the lasagna, and the second parameter is the number of minutes the lasagna has been in the oven. The function should return how many minutes you've worked on cooking the lasagna, which is the sum of the preparation time in minutes, and the time in minutes the lasagna has spent in the oven at the moment.
-
-```elm
-elapsedTimeInMinutes 3 20
-// => 26
-```
