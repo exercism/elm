@@ -1,14 +1,10 @@
-todo
-
 ## Learning objectives
 
-- Know how to define an Elm module / Elm file.
+- Know how to import functions from modules
 - Know how to export functions for use by other modules.
-- Know how to define a constant.
-- Know how to define a function.
-- Know how to indent code.
-- Know how to use basic math operators on numbers.
-- Know how to define single- and multiline comments.
+- Know how to define type annotations for functions
+- Know how to work with integers and floats.
+- Know how to use basic string operations.
 
 ## Out of scope
 
@@ -16,17 +12,16 @@ todo
 
 ## Concepts
 
-- `basics`: Know the basic syntax of an Elm file.
+- `foundations`: Know the foundations of Elm programming.
 
 ## Prequisites
 
-There are no prerequisites.
+- `basics`: Know the basic syntax of an Elm file.
 
 ## Analyzer
 
 This exercise could benefit from the following rules added to the the [analyzer][analyzer]:
 
 - Verify that the whitespace adheres to community defaults.
-- Verify that functions are re-used in other functions.
 
 [analyzer]: https://github.com/exercism/elm-analyzer

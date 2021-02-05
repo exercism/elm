@@ -61,6 +61,12 @@
       "slug": "basics",
       "name": "Basics",
       "blurb": "Learn basics of the Elm programming language syntax."
+    },
+    {
+      "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
+      "slug": "foundations",
+      "name": "Foundations",
+      "blurb": "Learn the foundations of ELm programming"
     }
   ],
   "files": {
