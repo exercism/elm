@@ -2,6 +2,17 @@
   {
     "url": "https://elm-lang.org/docs/syntax#modules",
     "description": "Modules"
+  },
+  {
+    "url": "https://elm-lang.org/docs/syntax#type-annotations",
+    "description": "Type annotations"
+  },
+  {
+    "url": "https://elmprogramming.com/simple-arithmetic.html",
+    "description": "Simple arithmetic"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/String",
+    "description": "String module"
   }
-  todo
 ]
