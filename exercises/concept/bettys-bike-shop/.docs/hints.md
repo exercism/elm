@@ -1,6 +1,10 @@
 ## General
 
-todo 
+- Basic integer operators are described in elm [Basics module documentation][foundations-int].
+- Basic float operators are described in elm [Basics module documentation][foundations-float].
+- String functionality is described in [String chapter of Beginning Elm][foundations-string] and in the elm [String module documentation][foundations-string-module].
 
-#- Basic numbers operators are described in elm [Basics module documentation][basics-doc].
-#[basics-doc]: https://package.elm-lang.org/packages/elm/core/latest/Basics#Int
+[foundations-int]: https://package.elm-lang.org/packages/elm/core/latest/Basics#Int
+[foundations-float]: https://package.elm-lang.org/packages/elm/core/latest/Basics#Float
+[foundations-string]: https://elmprogramming.com/string.html
+[foundations-string-module]: https://package.elm-lang.org/packages/elm/core/latest/String
