@@ -27,10 +27,12 @@ https://elm-lang.org/docs/syntax#modules
 ### Exporting functions
 
 Exporting functions was covered in the basics concept, but the concept is linked with importing functions, so a quick refresher is merited here.
+
 Each file in Elm is a module, and must contain a `module` statement before all other code.
+
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm, and Parser.Utils needs to be in file Parser/Utils.elm.
-Anything defined within a module is privatly scoped to it
-and cannot be accessed from outside this module, unless listed in `exposing`.
+
+Anything defined within a module is privatly scoped to it and cannot be accessed from outside this module, unless listed in `exposing`.
 
 ```elm
 -- Define the Calculator module, and expose the `add` function
@@ -55,7 +57,7 @@ https://elm-lang.org/docs/syntax#modules
 
 ### Type annotations
 
-Type Annotations are defined with `name : parameter types -> return type` , parameter types also being separated by `->`.
+Type Annotations are defined with `name : parameter types -> return type` , parameter types also being separated by `->`. 
 
 ```elm
 add :  Int -> Int -> Int
@@ -80,8 +82,3 @@ Elm has a native `String` type,  `++` string concatenation operator and `==` equ
 Most other string functions are in the String module, which needs to be imported.
 
 https://package.elm-lang.org/packages/elm/core/latest/String
-
-
-
-
-
