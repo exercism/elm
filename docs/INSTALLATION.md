@@ -1,3 +1,5 @@
+# Installation
+
 The current version of elm is 0.19.1.
 Installation instructions change as the language evolves.
 For up-to-date installation instructions head to
