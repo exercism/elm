@@ -1,3 +1,5 @@
+# About
+
 Elm describes itself as a "delightful language for reliable webapps".
 It aims at producing web applications with great performances and no runtime exception.
 

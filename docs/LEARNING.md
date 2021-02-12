@@ -1,3 +1,5 @@
+# Learning
+
 ## Recommended Learning Resources
 
 The best place to start is the [official guide](https://guide.elm-lang.org/).

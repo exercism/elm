@@ -1,4 +1,4 @@
-## Elm syntax basics
+# Elm syntax basics
 
 ### Constants and functions
 

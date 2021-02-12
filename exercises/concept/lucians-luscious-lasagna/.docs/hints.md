@@ -1,4 +1,4 @@
-## General
+# General
 
 - Basic numbers operators are described in elm [Basics module documentation][basics-doc].
 

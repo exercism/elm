@@ -1,3 +1,5 @@
+# Tests
+
 Tests for an Elm project live in the `tests/` subdirectory of that project.
 Each exercise tests suite can be run from that exercise root directory.
 
