@@ -1,6 +1,6 @@
 # Elm syntax basics
 
-### Constants and functions
+## Constants and functions
 
 A constant value is defined with `name = expression`,
 where in Elm, everything except definitions are expressions.
@@ -34,7 +34,7 @@ six = add 2 (1 * 4)
 twelve = add 2 1 * 4
 ```
 
-### Indentation / significant whitespace
+## Indentation / significant whitespace
 
 Elm doesn't use syntactic markers such as curly brackets, parentheses, or semicolons to specify code boundaries. It uses whitespaces and indentations instead.
 
@@ -50,7 +50,7 @@ add number1 number2 =
 
 https://elmprogramming.com/indentation.html
 
-### Modules
+## Modules
 
 Each file in Elm is a module, and must contain a `module` statement before all other code.
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm.
@@ -77,7 +77,7 @@ add number1 number2 = number1 + number2
 
 https://elm-lang.org/docs/syntax#modules
 
-### Comments
+## Comments
 
 A comment is some text within the Elm file that is not interpreted as code.
 It is mainly intented to be read by yourself and other programmers.
@@ -94,7 +94,7 @@ of opening and closing delimiters.
 -}
 ```
 
-### Formatting
+## Formatting
 
 There is a [style guide](https://elm-lang.org/docs/style-guide),
 and [elm-format](https://github.com/avh4/elm-format) can be used to automatically format code.
