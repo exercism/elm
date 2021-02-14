@@ -1,0 +1,14 @@
+{
+  "authors": [
+    {
+      "github_username": "mpizenberg",
+      "exercism_username": "mpizenberg"
+    }
+  ],
+  "forked_from": ["fsharp/AnnalynsInfiltration"],
+  "files": {
+    "solution": ["src/AnnalynsInfiltration.elm"],
+    "test": ["tests/Tests.elm"],
+    "exemplar": [".meta/Exemplar.elm"]
+  }
+}
