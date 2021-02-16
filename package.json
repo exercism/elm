@@ -6,7 +6,7 @@
   "license": "MIT",
   "devDependencies": {
     "elm": "latest-0.19.1",
-    "elm-format": "latest-0.19.1",
-    "elm-test": "^0.19.1-revision5"
+    "elm-format": "^0.8.5",
+    "elm-test": "^0.19.1-revision6"
   }
 }
