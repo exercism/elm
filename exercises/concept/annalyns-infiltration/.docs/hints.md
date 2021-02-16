@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - Boolean functions and operators are described in the [Elm documentation of the Basics module][bool].
