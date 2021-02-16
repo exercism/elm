@@ -5,7 +5,7 @@
 echo '-------------------------------------------------------'
 echo "Checking Formatting"
 
-if [[ ! $(npx --no-install elm-format --help | grep "elm-format 0.8.4") ]]; then
+if [[ ! $(npx --no-install elm-format --help | grep "elm-format 0.8.5") ]]; then
   echo "Please run npm install first"
   exit 1
 fi
@@ -13,7 +13,7 @@ fi
 npx --no-install elm-format --yes --validate \
   exercises/concept/**/.meta/*.elm \
   exercises/concept/**/tests/*.elm \
-  exercises/practice/**/src/*.example.elm \
+  exercises/practice/**/.meta/src/*.example.elm \
   exercises/practice/**/tests/*.elm
 
 if [ $? -ne 0 ]; then
@@ -49,7 +49,7 @@ do
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-cd build && npx --no-install elm-test
+cd build && npx --no-install elm-test --fuzz 10
 cd ..
 
 # TEST (practice)
@@ -59,13 +59,13 @@ rm -rf build
 mkdir -p build/src build/tests
 cp template/elm.json build/
 
-for example_file in exercises/practice/**/src/*.example.elm
+for example_file in exercises/practice/**/.meta/src/*.example.elm
 do
-  exercise_dir=$(dirname $(dirname $example_file))
+  exercise_dir=$(dirname $(dirname $(dirname $example_file)))
   exercise_name=$(basename $example_file .example.elm)
   cp $example_file "build/src/$exercise_name.elm"
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-cd build && npx --no-install elm-test
+cd build && npx --no-install elm-test --fuzz 10
 cd ..
