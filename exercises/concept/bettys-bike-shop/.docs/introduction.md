@@ -2,11 +2,11 @@
 
 ## Exporting functions
 
-Exporting functions was covered in the basics concept, but the concept is linked with importing functions, so a quick refresher is merited here.
+Exporting functions was covered in the basics concept, here is a quick refresher.
 
 Each file in Elm is a module, and must contain a `module` statement before all other code.
 
-Module names must match their file name, so module `Calculator` must be in file Calculator.elm, and Parser.Utils needs to be in file Parser/Utils.elm.
+Module names must match their file name, so module `Calculator` must be in file Calculator.elm, and module `Parser.Utils` needs to be in file Parser/Utils.elm.
 
 Anything defined within a module is privatly scoped to it and cannot be accessed from outside this module, unless listed in `exposing`.
 
@@ -32,13 +32,15 @@ https://elm-lang.org/docs/syntax#modules
 
 ## Importing functions from other modules
 
-There are various ways to import functions, as shown below.
+Accessing functions defined in other modules is done via imports.
+All functions within that module that were exposed by it are made accessible when importing that module.
+But how they are accessed varies depending on how the module is imported.
 
-Qualified imports always import all available functions from the module (for example `List`), and when using them, they must be prefixed with the module name (for example `List.map`).
+Qualified imports are the default, and accessing a function within such module (for example the `map` function in the `List` module) is done by prefixing the module name (`List.map`).
 
-Open imports can import all available functions (with `..`), or specific named functions (for eaxmple `map`). They do not require prefixing when used.
+Open imports enable direct access to the exposed functions within that module, without prefixing. They are done with the `exposing` keyword, like a mirror to the one used in exports. You can expose all available functions (with `..`), or specific ones (for example `map`).
 
-You can also import Type's, and their constructors from other modules, which is a later concept
+You can also import types, and their constructors from other modules, which is a later concept.
 
 Qualified imports are preferred to aid clarity and avoid name clashes.
 
