@@ -1,6 +1,6 @@
-## Elm foundations
+# About
 
-### Importing functions from other modules
+## Importing functions from other modules
 
 There are various ways to import functions, as shown below.
 
@@ -24,7 +24,7 @@ import List exposing ( map, foldl )    -- map, foldl
 
 https://elm-lang.org/docs/syntax#modules
 
-### Exporting functions
+## Exporting functions
 
 Exporting functions was covered in the basics concept, but the concept is linked with importing functions, so a quick refresher is merited here.
 
@@ -55,7 +55,7 @@ add number1 number2 = number1 + number2
 https://elm-lang.org/docs/syntax#modules
 
 
-### Type annotations
+## Type annotations
 
 Type Annotations are defined with `name : parameter types -> return type` , parameter types also being separated by `->`. 
 
@@ -75,7 +75,7 @@ map charMapperFunction string =
 
 https://elm-lang.org/docs/syntax#type-annotations
 
-### String operations
+## String operations
 
 Elm has a native `String` type,  `++` string concatenation operator and `==` equality operator. These are always available.
 

@@ -1,3 +1,5 @@
+# Hints
+
 ## General
 
 - Basic integer operators are described in elm [Basics module documentation][foundations-int].

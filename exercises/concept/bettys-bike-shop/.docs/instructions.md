@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you're going to write some code to help Betty's Bike Shop, an online shop for bikes and parts.
 
 ## Format the price for display on the website
