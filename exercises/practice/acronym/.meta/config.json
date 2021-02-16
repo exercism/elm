@@ -3,7 +3,9 @@
   "files": {
     "solution": [],
     "test": [],
-    "example": []
+    "example": [
+      ".meta/src/Acronym.example.elm"
+    ]
   },
   "source": "Julien Vanier",
   "source_url": "https://github.com/monkbroc"
