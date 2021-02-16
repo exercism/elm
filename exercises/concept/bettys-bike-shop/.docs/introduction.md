@@ -78,7 +78,16 @@ https://elm-lang.org/docs/syntax#type-annotations
 
 ## String operations
 
-Elm has a native `String` type, a string concatenation operator `++` and equality operator `==`. These are always available.
+To describe words and sentences in code, Elm has a native `String` type.
+String literals are written between double quotes such as `"Hello World!"`.
+A string concatenation operator `++` and equality operator `==` are available by default.
+
+```elm
+hello : String -> String
+hello subject = "Hello " ++ subject
+
+hello "World!" --> "Hello World!"
+```
 
 Most other string functions are in the String module, which needs to be imported.
 
