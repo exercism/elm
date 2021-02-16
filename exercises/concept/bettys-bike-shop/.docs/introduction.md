@@ -1,29 +1,5 @@
 # Introduction
 
-## Importing functions from other modules
-
-There are various ways to import functions, as shown below.
-
-Qualified imports always import all available functions from the module (for example `List`), and when using them, they must be prefixed with the module name (for example `List.map`).
-
-Open imports can import all available functions (with `..`), or specific named functions (for eaxmple `map`). They do not require prefixing when used.
-
-You can also import Type's, and their constructors from other modules, which is a later concept
-
-Qualified imports are preferred to aid clarity and avoid name clashes.
-
-```elm
--- qualified imports
-import List                            -- List.map, List.foldl
-import List as L                       -- L.map, L.foldl
-
--- open imports
-import List exposing (..)              -- map, foldl, concat, ...
-import List exposing ( map, foldl )    -- map, foldl
-```
-
-https://elm-lang.org/docs/syntax#modules
-
 ## Exporting functions
 
 Exporting functions was covered in the basics concept, but the concept is linked with importing functions, so a quick refresher is merited here.
@@ -54,6 +30,29 @@ add number1 number2 = number1 + number2
 
 https://elm-lang.org/docs/syntax#modules
 
+## Importing functions from other modules
+
+There are various ways to import functions, as shown below.
+
+Qualified imports always import all available functions from the module (for example `List`), and when using them, they must be prefixed with the module name (for example `List.map`).
+
+Open imports can import all available functions (with `..`), or specific named functions (for eaxmple `map`). They do not require prefixing when used.
+
+You can also import Type's, and their constructors from other modules, which is a later concept
+
+Qualified imports are preferred to aid clarity and avoid name clashes.
+
+```elm
+-- qualified imports
+import List                            -- List.map, List.foldl
+import List as L                       -- L.map, L.foldl
+
+-- open imports
+import List exposing (..)              -- map, foldl, concat, ...
+import List exposing ( map, foldl )    -- map, foldl
+```
+
+https://elm-lang.org/docs/syntax#modules
 
 ## Type annotations
 
