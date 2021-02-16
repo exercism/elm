@@ -3,7 +3,9 @@
   "files": {
     "solution": [],
     "test": [],
-    "example": []
+    "example": [
+      ".meta/src/MatchingBrackets.example.elm"
+    ]
   },
   "source": "Ginna Baker"
 }
