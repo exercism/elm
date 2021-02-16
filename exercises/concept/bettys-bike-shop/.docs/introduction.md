@@ -58,10 +58,10 @@ https://elm-lang.org/docs/syntax#modules
 
 ## Type annotations
 
-Type Annotations are defined with `name : parameter types -> return type` , parameter types also being separated by `->`. 
+Type annotations are defined with `name : parameter types -> return type`, parameter types also being separated by `->`.
 
 ```elm
-add :  Int -> Int -> Int
+add : Int -> Int -> Int
 add number1 number2 = number1 + number2
 ```
 
@@ -71,14 +71,14 @@ Parentheses can be used to define function parameters (which are themselves defi
 -- Transform every character in a string
 map : (Char -> Char) -> String -> String
 map charMapperFunction string =
-    --- ...
+    -- ...
 ```
 
 https://elm-lang.org/docs/syntax#type-annotations
 
 ## String operations
 
-Elm has a native `String` type,  `++` string concatenation operator and `==` equality operator. These are always available.
+Elm has a native `String` type, a string concatenation operator `++` and equality operator `==`. These are always available.
 
 Most other string functions are in the String module, which needs to be imported.
 
