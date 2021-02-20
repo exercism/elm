@@ -63,6 +63,20 @@
       "blurb": "Learn basics of the Elm programming language syntax."
     }
   ],
+  "files": {
+    "solution": [
+      "src/%{pascal_slug}.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/%{pascal_slug}.example.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
   "exercises": {
     "concept": [
       {
