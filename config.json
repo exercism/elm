@@ -65,16 +65,16 @@
   ],
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "src/%{pascal_slug}.elm"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "tests/Tests.elm"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/src/%{pascal_slug}.example.elm"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/Exemplar.elm"
     ]
   },
   "exercises": {
