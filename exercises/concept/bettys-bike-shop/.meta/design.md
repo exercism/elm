@@ -14,11 +14,11 @@
 
 ## Concepts
 
-- `foundations`: Know the foundations of Elm programming.
+- `bascics-2`: Know the basics of Elm programming.
 
 ## Prequisites
 
-- `basics`: Know the basic syntax of an Elm file.
+- `basics-1`: Know the basic syntax of an Elm file.
 
 ## Analyzer
 

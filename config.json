@@ -59,14 +59,14 @@
     {
       "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
       "slug": "basics-1",
-      "name": "Basics-1",
-      "blurb": "Learn basics of the Elm programming language syntax."
+      "name": "Basics 1",
+      "blurb": "Learn the basic syntax of an Elm file"
     },
     {
       "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
-      "slug": "foundations",
-      "name": "Foundations",
-      "blurb": "Learn the foundations of ELm programming"
+      "slug": "basics-2",
+      "name": "Basics 2",
+      "blurb": "Learn the basics of ELm programming"
     }
   ],
   "files": {
@@ -94,7 +94,18 @@
         ],
         "prerequisites": [],
         "status": "wip"
+      },
+      {
+        "slug": "bettys-bike-shop",
+        "name": "Betty's Bike Shop",
+        "uuid": "88818c16-fff8-4964-b9a4-c799833ff970",
+        "concepts": [
+          "basics-2"
+        ],
+        "prerequisites": [ "basics-1" ],
+        "status": "wip"
       }
+
     ],
     "practice": [
       {
