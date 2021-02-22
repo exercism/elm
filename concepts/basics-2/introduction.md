@@ -1,5 +1,3 @@
-# About
-
 ## Importing functions from other modules
 
 There are various ways to import functions, as shown below.
