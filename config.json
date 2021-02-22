@@ -58,8 +58,8 @@
   "concepts": [
     {
       "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
-      "slug": "basics",
-      "name": "Basics",
+      "slug": "basics-1",
+      "name": "Basics-1",
       "blurb": "Learn basics of the Elm programming language syntax."
     },
     {
@@ -90,7 +90,7 @@
         "name": "Lucian's Luscious Lasagna",
         "uuid": "54b70493-702b-4577-9d47-ec5ede4cc2c1",
         "concepts": [
-          "basics"
+          "basics-1"
         ],
         "prerequisites": [],
         "status": "wip"

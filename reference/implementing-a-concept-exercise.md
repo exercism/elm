@@ -99,7 +99,7 @@ If you have any questions regarding implementing this exercise, please post them
 [docs-rationale-for-v3]: https://github.com/exercism/v3/blob/main/docs/rationale-for-v3.md
 [docs-features-of-v3]: https://github.com/exercism/v3/blob/main/docs/features-of-v3.md
 [anatomy-of-a-concept-exercise]: https://www.youtube.com/watch?v=gkbBqd7hPrA
-[concept-exercise-basics]: ../exercises/concept/lucians-luscious-lasagna
+[concept-exercise-basics-1]: ../exercises/concept/lucians-luscious-lasagna
 [reference]: https://github.com/exercism/v3/blob/main/reference
 [dotnet-format]: https://github.com/dotnet/format
 [allowing-fork-pr-changes]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/allowing-changes-to-a-pull-request-branch-created-from-a-fork
