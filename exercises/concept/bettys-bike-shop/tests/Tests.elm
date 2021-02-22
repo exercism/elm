@@ -1,21 +1,30 @@
 module Tests exposing (tests)
 
-import BettysBikeShop exposing (formatPrice)
-import Expect
-import Fuzz
-import String
+import BettysBikeShop exposing (penceToPounds, poundsToString)
+import Expect exposing (FloatingPointTolerance(..))
 import Test exposing (..)
 
 
 tests : Test
 tests =
     describe "BettysBikeShop"
-        [ fuzz positiveInt "price in integer pence should be converted to a string in pounds" <|
-            \priceInPence ->
-                formatPrice priceInPence
-                    |> Expect.equal ("£" ++ String.fromFloat (toFloat priceInPence / 100.0))
+        [ test "599 pence should be 5.99 pounds" <|
+            \_ ->
+                penceToPounds 599
+                    |> Expect.within (Absolute 0.001) 5.99
+        , skip <|
+            test "33 pence should be 0.33 pounds" <|
+                \_ ->
+                    penceToPounds 33
+                        |> Expect.within (Absolute 0.001) 0.33
+        , skip <|
+            test "5.99 pounds should be formatted as £5.99" <|
+                \_ ->
+                    poundsToString 5.99
+                        |> Expect.equal "£5.99"
+        , skip <|
+            test "0.33 pounds should be formatted as £0.33" <|
+                \_ ->
+                    poundsToString 0.33
+                        |> Expect.equal "£0.33"
         ]
-
-
-positiveInt =
-    Fuzz.intRange 0 10000

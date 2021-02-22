@@ -1,8 +1,13 @@
-module BettysBikeShop exposing (formatPrice)
+module BettysBikeShop exposing (penceToPounds, poundsToString)
 
 import String
 
 
-formatPrice : Int -> String
-formatPrice priceInPence =
-    "£" ++ String.fromFloat (toFloat priceInPence / 100.0)
+penceToPounds : Int -> Float
+penceToPounds pence =
+    toFloat pence / 100.0
+
+
+poundsToString : Float -> String
+poundsToString pounds =
+    "£" ++ String.fromFloat pounds
