@@ -1,4 +1,5 @@
 {
+  "blurb": "TODO: add blurb for lucians-luscious-lasagna exercise",
   "authors": [
     {
       "github_username": "mpizenberg",
@@ -9,10 +10,18 @@
       "exercism_username": "ceddlyburge"
     }
   ],
-  "forked_from": ["fsharp/lucians-luscious-lasagna"],
+  "forked_from": [
+    "fsharp/lucians-luscious-lasagna"
+  ],
   "files": {
-    "solution": ["src/LuciansLusciousLasagna.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
+    "solution": [
+      "src/LuciansLusciousLasagna.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   }
 }
