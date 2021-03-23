@@ -1,14 +1,8 @@
 {
   "blurb": "TODO: add blurb for lucians-luscious-lasagna exercise",
   "authors": [
-    {
-      "github_username": "mpizenberg",
-      "exercism_username": "mpizenberg"
-    },
-    {
-      "github_username": "ceddlyburge",
-      "exercism_username": "ceddlyburge"
-    }
+    "mpizenberg",
+    "ceddlyburge"
   ],
   "forked_from": [
     "fsharp/lucians-luscious-lasagna"
