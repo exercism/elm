@@ -1,6 +1,18 @@
 {
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "bobwhitelock",
+    "iamvery",
+    "mpizenberg",
+    "nathanielknight",
+    "parkerl",
+    "Phippsaurus",
+    "thomchop",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

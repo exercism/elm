@@ -1,6 +1,17 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "bobwhitelock",
+    "iamvery",
+    "michaelkpfeifer",
+    "mpizenberg",
+    "nathanielknight",
+    "Phippsaurus",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

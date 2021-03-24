@@ -1,6 +1,17 @@
 {
   "blurb": "Convert a number to a string, the content of which depends on the number's factors.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "bobwhitelock",
+    "iamvery",
+    "mpizenberg",
+    "nathanielknight",
+    "parkerl",
+    "Phippsaurus",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

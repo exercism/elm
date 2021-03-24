@@ -1,6 +1,11 @@
 {
   "blurb": "Parse and evaluate simple math word problems returning the answer as an integer.",
-  "authors": [],
+  "authors": [
+    "SiriusStarr"
+  ],
+  "contributors": [
+    "mpizenberg"
+  ],
   "files": {
     "solution": [],
     "test": [],

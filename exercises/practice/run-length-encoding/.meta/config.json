@@ -1,6 +1,19 @@
 {
   "blurb": "Implement run-length encoding and decoding.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "bobwhitelock",
+    "iamvery",
+    "mpizenberg",
+    "mrattner",
+    "nathanielknight",
+    "parkerl",
+    "Phippsaurus",
+    "tuxagon",
+    "ulve"
+  ],
   "files": {
     "solution": [],
     "test": [],

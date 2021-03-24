@@ -1,6 +1,16 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [],
+  "contributors": [
+    "A5308Y",
+    "bobwhitelock",
+    "iamvery",
+    "mpizenberg",
+    "nathanielknight",
+    "Phippsaurus",
+    "tgecho",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

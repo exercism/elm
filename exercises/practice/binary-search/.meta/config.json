@@ -1,6 +1,14 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": [
+    "churchie317"
+  ],
+  "contributors": [
+    "michaelglass",
+    "mpizenberg",
+    "nathanielknight",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

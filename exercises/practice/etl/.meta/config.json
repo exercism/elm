@@ -1,6 +1,13 @@
 {
   "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "mpizenberg",
+    "nathanielknight",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

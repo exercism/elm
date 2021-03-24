@@ -1,6 +1,13 @@
 {
   "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
-  "authors": [],
+  "authors": [
+    "tuxagon"
+  ],
+  "contributors": [
+    "mpizenberg",
+    "nathanielknight",
+    "rebelwarrior"
+  ],
   "files": {
     "solution": [],
     "test": [],
