@@ -1,17 +1,18 @@
 {
+  "blurb": "TODO: add blurb for bettys-bike-shop exercise",
   "authors": [
-    {
-      "github_username": "ceddlyburge",
-      "exercism_username": "ceddlyburge"
-    },
-    {
-      "github_username": "mpizenberg",
-      "exercism_username": "mpizenberg"
-    }
+      "ceddlyburge",
+      "mpizenberg"
   ],
   "files": {
-    "solution": ["src/BettysBikeShop.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
+    "solution": [
+      "src/BettysBikeShop.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   }
 }
