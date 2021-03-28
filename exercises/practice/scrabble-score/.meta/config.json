@@ -1,6 +1,8 @@
 {
   "blurb": "Given a word, compute the Scrabble score for that word.",
-  "authors": [],
+  "authors": [
+    "woylie"
+  ],
   "contributors": [
     "A5308Y",
     "bobwhitelock",
