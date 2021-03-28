@@ -59,14 +59,12 @@
     {
       "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
       "slug": "basics-1",
-      "name": "Basics 1",
-      "blurb": "Learn the basic syntax of an Elm file"
+      "name": "Basics 1"
     },
     {
       "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
       "slug": "basics-2",
-      "name": "Basics 2",
-      "blurb": "Learn the basics of Elm programming"
+      "name": "Basics 2"
     }
   ],
   "files": {
