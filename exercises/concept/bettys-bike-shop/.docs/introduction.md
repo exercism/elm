@@ -2,15 +2,16 @@
 
 ## Exporting functions
 
-Exporting functions was covered in the basics concept, here is a quick refresher.
+Exporting functions was covered in the first concept, here is a quick refresher.
 
-Each file in Elm is a module, and must contain a `module` statement before all other code.
+Each file in Elm is a module and must contain a `module` statement before all other code.
 
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm, and module `Parser.Utils` needs to be in file Parser/Utils.elm.
 
 Anything defined within a module is privatly scoped to it and cannot be accessed from outside this module, unless listed in `exposing`.
 
 ```elm
+-- Calculator.elm
 -- Define the Calculator module, and expose the `add` function
 module Calculator exposing (add)
 
@@ -20,6 +21,7 @@ add number1 number2 = number1 + number2
 ```
 
 ```elm
+-- Calculator.elm
 -- Define the Calculator module, and expose everything within: `six` and `add`
 module Calculator exposing (..)
 
@@ -51,7 +53,7 @@ import List as L                       -- L.map, L.foldl
 
 -- open imports
 import List exposing (..)              -- map, foldl, concat, ...
-import List exposing ( map, foldl )    -- map, foldl
+import List exposing ( map, foldl )    -- map, foldl, List.concat
 ```
 
 https://elm-lang.org/docs/syntax#modules
@@ -89,6 +91,6 @@ hello subject = "Hello " ++ subject
 hello "World!" --> "Hello World!"
 ```
 
-Most other string functions are in the String module, which needs to be imported.
+Most other string functions are in the `String` module, which needs to be imported.
 
 https://package.elm-lang.org/packages/elm/core/latest/String
