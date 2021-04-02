@@ -78,6 +78,16 @@ map charMapperFunction string =
 
 https://elm-lang.org/docs/syntax#type-annotations
 
+## Numbers
+
+There are two types of numbers available in Elm, defined by the `Int` and `Float` types.
+`Int` corresponds to the set of positive and negative integers.
+`Float` corresponds to the set of real numbers, limited by the precision of the computer.
+Operations defined on numbers usually work on one type or the other, but not mixing them.
+There exists functions to convert between the two, such that `toFloat` which converts `Int` to `Float` and `round`, `floor`, `ceiling` or `truncate` which convert a `Float` to an `Int` with different semantics.
+
+https://package.elm-lang.org/packages/elm/core/latest/Basics#Int
+
 ## String operations
 
 To describe words and sentences in code, Elm has a native `String` type.
