@@ -1,6 +1,11 @@
 {
   "blurb": "Make sure the brackets and braces all match.",
-  "authors": [],
+  "authors": [
+    "tuxagon"
+  ],
+  "contributors": [
+    "edgerunner"
+  ],
   "files": {
     "solution": [],
     "test": [],

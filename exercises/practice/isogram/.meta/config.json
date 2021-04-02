@@ -1,6 +1,13 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "anuragsoni"
+  ],
+  "contributors": [
+    "nathanielknight",
+    "tgecho",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

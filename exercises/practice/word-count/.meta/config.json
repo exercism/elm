@@ -1,6 +1,17 @@
 {
   "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
-  "authors": [],
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "michaelkpfeifer",
+    "mpizenberg",
+    "nathanielknight",
+    "NobbZ",
+    "parkerl",
+    "rebelwarrior",
+    "tuxagon"
+  ],
   "files": {
     "solution": [],
     "test": [],

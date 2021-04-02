@@ -1,6 +1,11 @@
 {
   "blurb": "Take input text and output it transposed.",
-  "authors": [],
+  "authors": [
+    "tuxagon"
+  ],
+  "contributors": [
+    "nathanielknight"
+  ],
   "files": {
     "solution": [],
     "test": [],
