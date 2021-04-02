@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://elm-lang.org/docs/syntax#modules",
+    "description": "Modules"
+  },
+  {
+    "url": "https://elm-lang.org/docs/syntax#type-annotations",
+    "description": "Type annotations"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#Int",
+    "description": "Integers"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#Float",
+    "description": "Floats"
+  },
+  {
+    "url": "https://elmprogramming.com/string.html",
+    "description": "String chapter of Beginning Elm"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/String",
+    "description": "String module"
+  }
+]

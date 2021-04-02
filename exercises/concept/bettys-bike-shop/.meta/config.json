@@ -1,0 +1,18 @@
+{
+  "blurb": "TODO: add blurb for bettys-bike-shop exercise",
+  "authors": [
+      "ceddlyburge",
+      "mpizenberg"
+  ],
+  "files": {
+    "solution": [
+      "src/BettysBikeShop.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  }
+}
