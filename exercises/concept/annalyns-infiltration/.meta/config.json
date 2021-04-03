@@ -1,9 +1,10 @@
 {
+  "blurb": "Learn usage of Booleans while helping Annalyn rescue her friend",
   "authors": [
-    {
-      "github_username": "mpizenberg",
-      "exercism_username": "mpizenberg"
-    }
+    "mpizenberg"
+  ],
+  "contributors": [
+    "ceddlyburge"
   ],
   "forked_from": ["fsharp/AnnalynsInfiltration"],
   "files": {
