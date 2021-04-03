@@ -21,7 +21,8 @@ Implement the `canFastAttack` function that takes a boolean value that indicates
 ```elm
 knightIsAwake = True
 
-canFastAttack knightIsAwake --> False
+canFastAttack knightIsAwake
+    --> False
 ```
 
 ## 2. Check if the group can be spied upon
@@ -33,7 +34,8 @@ knightIsAwake = False
 archerIsAwake = True
 prisonerIsAwake = False
 
-canSpy knightIsAwake archerIsAwake prisonerIsAwake --> True
+canSpy knightIsAwake archerIsAwake prisonerIsAwake
+    --> True
 ```
 
 ## 3. Check if the prisoner can be signalled
@@ -44,7 +46,8 @@ Implement the `canSignalPrisoner` function that takes two boolean values, indica
 archerIsAwake = False
 prisonerIsAwake = True
 
-canSignalPrisoner archerIsAwake prisonerIsAwake --> True
+canSignalPrisoner archerIsAwake prisonerIsAwake
+    --> True
 ```
 
 ## 4. Check if the prisoner can be freed
@@ -57,7 +60,8 @@ archerIsAwake = True
 prisonerIsAwake = False
 petDogIsPresent = False
 
-canFreePrisoner knightIsAwake archerIsAwake prisonerIsAwake petDogIsPresent --> False
+canFreePrisoner knightIsAwake archerIsAwake prisonerIsAwake petDogIsPresent
+    --> False
 ```
 
 ## 5. Count the damage that a stealth attack could do
@@ -67,5 +71,6 @@ Implement the `stealthAttackDamage` function that takes a boolean value indicati
 ```elm
 annalynIsDetected = True
 
-stealthAttackDamage annalynIsDetected --> 7
+stealthAttackDamage annalynIsDetected
+    --> 7
 ```
