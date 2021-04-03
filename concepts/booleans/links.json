@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#Bool",
+    "description": "Boolean operators"
+  },
+  {
+    "url": "https://elm-lang.org/docs/syntax#conditionals",
+    "description": "Syntax for conditional branches"
+  }
+]

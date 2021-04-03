@@ -2,18 +2,41 @@
   "language": "Elm",
   "slug": "elm",
   "active": true,
-  "status": {
-    "concept_exercises": false,
-    "test_runner": true,
-    "representer": true,
-    "analyzer": false
-  },
   "blurb": "Elm is a friendly functional language for the Web",
   "version": 3,
   "online_editor": {
     "indent_style": "space",
     "indent_size": 4
   },
+  "status": {
+    "concept_exercises": false,
+    "test_runner": true,
+    "representer": true,
+    "analyzer": false
+  },
+  "files": {
+    "solution": [
+      "src/%{pascal_slug}.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/%{pascal_slug}.example.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "tags": [
+    "paradigm/functional",
+    "typing/static",
+    "typing/strong",
+    "execution_mode/compiled",
+    "platform/web",
+    "used_for/frontends",
+    "used_for/web_development"
+  ],
   "key_features": [
     {
       "title": "For the Web",
@@ -46,15 +69,6 @@
       "icon": "features-functional"
     }
   ],
-  "tags": [
-    "paradigm/functional",
-    "typing/static",
-    "typing/strong",
-    "execution_mode/compiled",
-    "platform/web",
-    "used_for/frontends",
-    "used_for/web_development"
-  ],
   "concepts": [
     {
       "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
@@ -65,22 +79,13 @@
       "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
       "slug": "basics-2",
       "name": "Basics 2"
+    },
+    {
+      "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
+      "slug": "booleans",
+      "name": "Booleans"
     }
   ],
-  "files": {
-    "solution": [
-      "src/%{pascal_slug}.elm"
-    ],
-    "test": [
-      "tests/Tests.elm"
-    ],
-    "example": [
-      ".meta/src/%{pascal_slug}.example.elm"
-    ],
-    "exemplar": [
-      ".meta/Exemplar.elm"
-    ]
-  },
   "exercises": {
     "concept": [
       {
@@ -102,8 +107,17 @@
         ],
         "prerequisites": [ "basics-1" ],
         "status": "wip"
+      },
+      {
+        "slug": "annalyns-infiltration",
+        "name": "Annalyn's Infiltration",
+        "uuid": "9f501a73-14e3-4ada-8359-fe051530554a",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [ "basics-2" ],
+        "status": "wip"
       }
-
     ],
     "practice": [
       {
