@@ -79,6 +79,11 @@
       "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
       "slug": "basics-2",
       "name": "Basics 2"
+    },
+    {
+      "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
+      "slug": "booleans",
+      "name": "Booleans"
     }
   ],
   "exercises": {
@@ -101,6 +106,16 @@
           "basics-2"
         ],
         "prerequisites": [ "basics-1" ],
+        "status": "wip"
+      },
+      {
+        "slug": "annalyns-infiltration",
+        "name": "Annalyn's Infiltration",
+        "uuid": "9f501a73-14e3-4ada-8359-fe051530554a",
+        "concepts": [
+          "booleans"
+        ],
+        "prerequisites": [ "basics-2" ],
         "status": "wip"
       }
     ],
