@@ -13,8 +13,12 @@
     "tuxagon"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/WordCount.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/WordCount.example.elm"
     ]

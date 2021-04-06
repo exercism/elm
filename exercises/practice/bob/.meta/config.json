@@ -14,8 +14,12 @@
     "tuxagon"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Bob.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Bob.example.elm"
     ]

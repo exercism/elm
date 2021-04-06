@@ -7,8 +7,12 @@
     "tuxagon"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/TwoFer.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/TwoFer.example.elm"
     ]

@@ -9,8 +9,12 @@
     "tuxagon"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Strain.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Strain.example.elm"
     ]

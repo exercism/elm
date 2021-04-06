@@ -9,8 +9,12 @@
     "tuxagon"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Raindrops.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Raindrops.example.elm"
     ]

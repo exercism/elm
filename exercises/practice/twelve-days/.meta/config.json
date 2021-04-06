@@ -8,8 +8,12 @@
     "rebelwarrior"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/TwelveDays.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/TwelveDays.example.elm"
     ]

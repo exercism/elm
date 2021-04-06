@@ -11,8 +11,12 @@
     "ulve"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/RunLengthEncoding.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/RunLengthEncoding.example.elm"
     ]

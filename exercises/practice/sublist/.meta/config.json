@@ -10,8 +10,12 @@
     "ulve"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Sublist.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Sublist.example.elm"
     ]
