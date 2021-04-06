@@ -12,8 +12,12 @@
     "yurrriq"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/SpaceAge.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/SpaceAge.example.elm"
     ]

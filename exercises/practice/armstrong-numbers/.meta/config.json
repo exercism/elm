@@ -7,8 +7,12 @@
     "mpizenberg"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/ArmstrongNumbers.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/ArmstrongNumbers.example.elm"
     ]

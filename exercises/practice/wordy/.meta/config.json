@@ -7,8 +7,12 @@
     "mpizenberg"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Wordy.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Wordy.example.elm"
     ]

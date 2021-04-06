@@ -7,8 +7,12 @@
     "nathanielknight"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Acronym.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Acronym.example.elm"
     ]

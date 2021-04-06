@@ -7,8 +7,12 @@
     "mpizenberg"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/PythagoreanTriplet.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/PythagoreanTriplet.example.elm"
     ]

@@ -7,8 +7,12 @@
     "nathanielknight"
   ],
   "files": {
-    "solution": [],
-    "test": [],
+    "solution": [
+      "src/Luhn.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
     "example": [
       ".meta/src/Luhn.example.elm"
     ]
