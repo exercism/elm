@@ -13,16 +13,14 @@ tests =
             \_ ->
                 expectedMinutesInOven
                     |> Expect.equal 40
-        , skip <|
-            fuzz positiveInt "preparationTimeInMinutes" <|
-                \layers ->
-                    preparationTimeInMinutes layers
-                        |> Expect.equal (2 * layers)
-        , skip <|
-            fuzz (Fuzz.tuple ( positiveInt, positiveInt )) "elapsedTimeInMinutes" <|
-                \( layers, passedAlready ) ->
-                    elapsedTimeInMinutes layers passedAlready
-                        |> Expect.equal (2 * layers + passedAlready)
+        , fuzz positiveInt "preparationTimeInMinutes" <|
+            \layers ->
+                preparationTimeInMinutes layers
+                    |> Expect.equal (2 * layers)
+        , fuzz (Fuzz.tuple ( positiveInt, positiveInt )) "elapsedTimeInMinutes" <|
+            \( layers, passedAlready ) ->
+                elapsedTimeInMinutes layers passedAlready
+                    |> Expect.equal (2 * layers + passedAlready)
         ]
 
 
