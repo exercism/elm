@@ -12,19 +12,16 @@ tests =
             \_ ->
                 penceToPounds 599
                     |> Expect.within (Absolute 0.001) 5.99
-        , skip <|
-            test "33 pence should be 0.33 pounds" <|
-                \_ ->
-                    penceToPounds 33
-                        |> Expect.within (Absolute 0.001) 0.33
-        , skip <|
-            test "5.99 pounds should be formatted as £5.99" <|
-                \_ ->
-                    poundsToString 5.99
-                        |> Expect.equal "£5.99"
-        , skip <|
-            test "0.33 pounds should be formatted as £0.33" <|
-                \_ ->
-                    poundsToString 0.33
-                        |> Expect.equal "£0.33"
+        , test "33 pence should be 0.33 pounds" <|
+            \_ ->
+                penceToPounds 33
+                    |> Expect.within (Absolute 0.001) 0.33
+        , test "5.99 pounds should be formatted as £5.99" <|
+            \_ ->
+                poundsToString 5.99
+                    |> Expect.equal "£5.99"
+        , test "0.33 pounds should be formatted as £0.33" <|
+            \_ ->
+                poundsToString 0.33
+                    |> Expect.equal "£0.33"
         ]
