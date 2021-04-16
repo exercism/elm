@@ -87,6 +87,7 @@
     }
   ],
   "exercises": {
+    "foregone": [],
     "concept": [
       {
         "slug": "lucians-luscious-lasagna",
@@ -105,7 +106,9 @@
         "concepts": [
           "basics-2"
         ],
-        "prerequisites": [ "basics-1" ],
+        "prerequisites": [
+          "basics-1"
+        ],
         "status": "wip"
       },
       {
@@ -115,7 +118,9 @@
         "concepts": [
           "booleans"
         ],
-        "prerequisites": [ "basics-2" ],
+        "prerequisites": [
+          "basics-2"
+        ],
         "status": "wip"
       }
     ],
