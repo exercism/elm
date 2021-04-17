@@ -17,42 +17,7 @@ Already implemented concepts are located in the `concepts/` directory of this re
 They are also represented as a dependency graph on [exercism website][concepts-graph-exercism].
 You can compare them with the graph of concepts we intend to implement represented below.
 
-<img height=480 src="https://markdown-engineering.herokuapp.com/svg/
-graph LR
-  Basics[Minimal compilable file] --> Independents[Import, Exposing, Functions, Float, Int, Type Annotations]
-  Independents --> Mathematical-Operators
-  Independents --> Mathematical-Functions
-  Independents --> Let-Expressions
-  Independents --> Equality
-  Equality --> Ordering
-  Ordering --> Comparisons
-  Independents --> String
-  String --> Regex
-  Independents --> Char
-  Independents --> List
-  List --> List-Extra
-  Independents --> Dict
-  Independents --> Set
-  Independents --> Array
-  Independents --> Type-alias
-  Independents --> Sum-types
-  Independents --> Booleans[Bool type / operators, If]
-  Sum-types --> Pattern-matching
-  Pattern-matching --> Maybe
-  Booleans --> Maybe
-  Maybe --> Result
-  Pattern-matching --> Parser
-  Independents --> Function-composition
-  Independents --> Function-chaining
-  Independents --> Partial-application
-  Partial-application --> Point-freestyle
-  Function-composition --> Point-freestyle
-  Function-chaining --> Point-freestyle
-  Point-freestyle --> Operator-functions
-  Independents --> Bitwise-operators
-  Independents --> Conversions
-  Independents --> Posix-time
-"/>
+<img height=1080 src="https://markdown-engineering.herokuapp.com/svg/graph LR;  Basics[Minimal compilable file] --> Independents[Import, Exposing, Functions, Float, Int, Type Annotations];  Independents --> Mathematical-Operators;  Independents --> Mathematical-Functions;  Independents --> Let-Expressions;  Independents --> Equality;  Equality --> Ordering;  Ordering --> Comparisons;  Independents --> String;  String --> Regex;  Independents --> Char;  Independents --> List;  List --> List-Extra;  Independents --> Dict;  Independents --> Set;  Independents --> Array;  Independents --> Type-alias;  Independents --> Sum-types;  Independents --> Booleans[Bool type & operators, If];  Sum-types --> Pattern-matching;  Pattern-matching --> Maybe;  Booleans --> Maybe;  Maybe --> Result;  Pattern-matching --> Parser;  Independents --> Function-composition;  Independents --> Function-chaining;  Independents --> Partial-application;  Partial-application --> Point-freestyle;  Function-composition --> Point-freestyle;  Function-chaining --> Point-freestyle;  Point-freestyle --> Operator-functions;  Independents --> Bitwise-operators;  Independents --> Conversions;  Independents --> Posix-time"/>
 
 
 [product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
