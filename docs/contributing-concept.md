@@ -40,6 +40,21 @@ The information provided should introduce the concept just enough for the studen
 Use proper technical terms to ease student online search but try to avoid links and to explain things concisely inline in the document.
 Introduce code syntax with code blocks.
 
+## 4. Find a story for the exercise
+
+Each concept exercise must be based on a story or a theme.
+We try to make them as inclusive as possible, knowing that Exercism is used worldwide.
+The first option is to reuse an existing story within the [list of stories recorded in the docs][stories].
+If you want to create a new story, don't hesitate to ping @exercism/leadership in your PR.
+You can now rename the `exercises/concept/<story-name>/` directory to match your story.
+
+## 5. Write the exercise instructions
+
+Once the story is found, we have to write precise instructions enumerating the tasks a student will have to perform.
+Both the story and the instructions are written in the `exercises/concept/<story-name>/.docs/instructions.md` document.
+As explained in [that document specification][instructions-spec], each task has its own level-2 markdown title (`## 1. Do X`) followed by a description and an example code usage.
+You can use the [`instructions.md` of the boolean concept exercise][instructions-bool] as a template starting point.
+
 
 [product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
 [concept-exercise-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
@@ -50,3 +65,6 @@ Introduce code syntax with code blocks.
 [design-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.meta/design.md
 [exercise-intro-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docsintroductionmd
 [intro-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/introduction.md
+[stories]: https://github.com/exercism/docs/tree/main/building/tracks/stories
+[instructions-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docsinstructionsmd
+[instructions-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/instructions.md
