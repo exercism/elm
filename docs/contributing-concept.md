@@ -25,9 +25,20 @@ Beware that the graph above is a moving target and may change as we find that pr
 ## 2. Define the learning goals
 
 It is important to know what a concept exercise aims to teach and what is out of scope so let's create our first file: `exercises/concept/<story-name>/.meta/design.md`.
-Since concept exercises are named after the story they use we don't know it yet, so we'll keep `<story-name>` for now and replace it later.
+Since concept exercises are named after the story they use we don't know it yet, so we'll keep `story-name` for now and replace it later.
 The [`design.md` specification][design-spec] states that this document should define the overall goal of the exercise, its multiple learning objectives, the things that are out of scope, the associated concept it unlocks and the concepts prerequisites to be able to complete the exercise.
-You can use the [`design.md` of the boolean concept exercise][design-bool] for a template starting point.
+You can use the [`design.md` of the boolean concept exercise][design-bool] as a template starting point.
+
+## 3. Write a concept introduction for the exercise
+
+Once the learning objectives are clear, it's time to write an introduction explaining enough of the concept for a student to then solve the exercise.
+Create a file `exercises/concept/<story-name>/.docs/introduction.md`.
+The detailed contents of this file are explained in [its specification][exercise-intro-spec].
+You can use the [`introduction.md` of the boolean concept exercise][intro-bool] as a template starting point.
+
+The information provided should introduce the concept just enough for the student to figure out the exercise solution themselves.
+Use proper technical terms to ease student online search but try to avoid links and to explain things concisely inline in the document.
+Introduce code syntax with code blocks.
 
 
 [product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
@@ -37,3 +48,5 @@ You can use the [`design.md` of the boolean concept exercise][design-bool] for a
 [concepts-graph-exercism]: https://exercism.lol/tracks/elm/concepts
 [design-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-metadesignmd
 [design-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.meta/design.md
+[exercise-intro-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docsintroductionmd
+[intro-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/introduction.md
