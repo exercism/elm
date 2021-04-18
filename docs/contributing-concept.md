@@ -54,7 +54,22 @@ Once the story is found, we have to write precise instructions enumerating the t
 Both the story and the instructions are written in the `exercises/concept/<story-name>/.docs/instructions.md` document.
 As explained in [that document specification][instructions-spec], each task has its own level-2 markdown title (`## 1. Do X`) followed by a description and an example code usage.
 You can use the [`instructions.md` of the boolean concept exercise][instructions-bool] as a template starting point.
+TODO: mention hints.
 
+## 6. Open a draft a pull request to validate the design
+
+Now is a good time to open a draft pull request for your concept exercise!
+We have enough material to evaluate the exercise and reshape it if necessary before commiting to its current state for the rest of the required files.
+Don't worry if the automatic checks in the CI fail because of missing documents, we will create them later!
+
+## 7. Write the code
+
+TODO: start with `template/`
+TODO: tests + exemplar
+
+## 8. Complete the different config files
+
+TODO
 
 [product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
 [concept-exercise-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
