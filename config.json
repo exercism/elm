@@ -97,7 +97,7 @@
           "basics-1"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "bettys-bike-shop",
@@ -109,7 +109,7 @@
         "prerequisites": [
           "basics-1"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "annalyns-infiltration",
@@ -121,7 +121,7 @@
         "prerequisites": [
           "basics-2"
         ],
-        "status": "wip"
+        "status": "beta"
       }
     ],
     "practice": [
