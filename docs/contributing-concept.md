@@ -70,8 +70,28 @@ Don't worry if the automatic checks in the CI fail because of missing documents,
 
 ## 7. Write the code
 
-TODO: start with `template/`
-TODO: tests + exemplar
+We will be writing the code as if we were solving the exercise, and later we will move files around to adhere to the specs.
+Let's start by copying the contents of the [`template/`][template] directory inside our `exercises/concept/<story-name>/` directory.
+It means we have the following files:
+
+```txt
+elm.json           # elm project configuration file
+src/Exercise.elm   # code for the exercise
+tests/Tests.elm    # tests for the exercise
+```
+
+Then rename `Exercise.elm` to use the PascalCase of the story name.
+For example, `annalyns-infiltration` becomes `AnnalynsInfiltration.elm`.
+Inside that source file, you can now write all the functions described in the `instructions.md` we just wrote.
+
+Once the exercise is implemented, update the `tests/Tests.elm` file contents to include relevant tests that naturally follow the order of the tasks in `instructions.md`.
+**Please refrain from using `Fuzz`** in the tests of concept exercises since it does not play well with the ability to debug the code with `Debug.log`.
+Instead, include a few corner cases and general cases unit tests.
+
+Once both the exercise and the tests are done and working well, do the following things:
+
+- Copy `src/<ExerciseSlug>.elm` to `.meta/Exemplar.elm`. Your implementation serves as a reference, an "exemplar" implementation for the exercise, which is used when running the track tests.
+- Remove all the implementations inside `src/<ExerciseSlug>.elm` to be left with a starter file ready for the student to start the exercise.
 
 ## 8. Complete the different config files
 
@@ -91,3 +111,4 @@ TODO
 [instructions-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/instructions.md
 [hints-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docshintsmd
 [hints-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/hints.md
+[template]: https://github.com/exercism/elm/tree/main/template
