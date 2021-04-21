@@ -107,7 +107,15 @@ And for the `about.md` document, start with the exercise intro and complete it s
 
 ## 9. Complete the different config files
 
-TODO
+Now that the code and documentation are done, we are left with the few config files to make this PR complete:
+
+- [`concepts/<concept>/.meta/config.json`][concept-config-json]: make yourself an author, potential reviewers contributors and add a "blurb" (short description).
+- [`exercises/concept/<story-name>/.meta/config.json`][exercise-config-json]: contains authors (you), contributors, blurb and other stuff. Refer to the linked spec.
+- `config.json`: add a [concept entry][track-config-json-concept] and a [concept exercise entry][track-config-json-concept-exercise] in the track `config.json` file. Use "wip" or "beta" for the status key of the concept exercise. The UUIDs can be generated thanks to the [configlet executable][configlet] provided by exercism.
+
+## 10. THANK YOU!
+
+Thank you for your contribution to exercism, you are awesome!
 
 [product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
 [concept-exercise-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
@@ -127,3 +135,8 @@ TODO
 [concept-intro-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-introductionmd
 [concept-about-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-aboutmd
 [concept-links-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-linksjson
+[concept-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-metaconfigjson
+[exercise-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-metaconfigjson
+[track-config-json-concept]: https://github.com/exercism/docs/blob/main/building/tracks/config-json.md#concepts
+[track-config-json-concept-exercise]: https://github.com/exercism/docs/blob/main/building/tracks/config-json.md#concept-exercises
+[configlet]: https://github.com/exercism/configlet
