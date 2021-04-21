@@ -54,7 +54,13 @@ Once the story is found, we have to write precise instructions enumerating the t
 Both the story and the instructions are written in the `exercises/concept/<story-name>/.docs/instructions.md` document.
 As explained in [that document specification][instructions-spec], each task has its own level-2 markdown title (`## 1. Do X`) followed by a description and an example code usage.
 You can use the [`instructions.md` of the boolean concept exercise][instructions-bool] as a template starting point.
-TODO: mention hints.
+
+In addition to `instructions.md`, we also need a `hints.md` file.
+It should contain the same level-2 titles (`## 1. Do X`) than the instructions file so that the right hints are given depending on the current task being worked on.
+There can also be a `## General` section for hints applying to all tasks.
+Hints should not spell out the solution directly.
+Also, beware that people clicking on hints might already be confused/overwhelmed/frustrated by the exercise.
+More info on this document is available in [its spec][hints-spec] and you can use the [`hints.md` of the boolean concept exercise][hints-bool] as a template starting point.
 
 ## 6. Open a draft a pull request to validate the design
 
@@ -83,3 +89,5 @@ TODO
 [stories]: https://github.com/exercism/docs/tree/main/building/tracks/stories
 [instructions-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docsinstructionsmd
 [instructions-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/instructions.md
+[hints-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docshintsmd
+[hints-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/hints.md
