@@ -3,10 +3,9 @@
 ![build status](https://github.com/exercism/elm/workflows/elm%20%2F%20master/badge.svg)
 ![configlet](https://github.com/exercism/elm/workflows/configlet/badge.svg)
 
-Exercism Exercises in Elm
 This is the Elm track, one of the many tracks on [Exercism][web-exercism].
 It holds all the Elm _Concepts_, _Concept Exercises_ and _Practice Exercises_ that are currently implemented and available for students to complete.
-You can find the definitions of these in [`config.json`][config-json].
+They are all listed in the [`config.json`][config-json] track config file.
 This readme file is mainly targeted at people wishing to contribute, but feel free to take a look around if you're interested in how Exercism language tracks are set up.
 
 [web-exercism]: https://exercism.io
@@ -16,32 +15,32 @@ This readme file is mainly targeted at people wishing to contribute, but feel fr
 The track is organized with the following main directories and files:
 
 ```
-bin/              # executables required to manage the track
-config/           # configuration files for the track
-docs/             # documentation files for automatically generated web pages on exercism.io
-.github/workflows # Travis automatic build and tests configuration
-exercises/        # contains one directory per exercise
-template/         # template used when generating a new exercise
-config.json       # configuration file for all exercises metadata
-package.json      # Node package configuration required for running builds and tests
+bin/               # executables required to manage the track
+config/            # configuration files for the track
+docs/              # documentation files for automatically generated web pages on exercism.io
+.github/workflows/ # CI config for automatic build and tests
+exercises/         # contains one directory per exercise
+template/          # template used when generating a new exercise
+config.json        # main track configuration file for all exercises metadata
+package.json       # Node package configuration required for running builds and tests
 ```
 
 Each exercise within the [`exercises/`](exercises) directory has the following structure:
 
 ```
-src/                   
-  <slug>.elm           # exercise template, where <slug> is the name of the exercise, appropriately cased
-.meta/
-  Examplar.elm         # exemplary / example solution for this exercise
-  config.json          # name of exercise, prerequisite concepts, concepts taught and similar
-  design.md            # describe the design of the exercise
+elm.json               # elm json config file for the exercise
+src/
+  <PascalCaseSlug>.elm # exercise template, where <PascalCaseSlug> is the name of the exercise using PascalCase.
 tests/
-  Tests.elm            # tests for exercise, imports function(s) from src/<slug>.elm
+  Tests.elm            # tests for exercise, imports function(s) from src/<PascalCaseSlug>.elm
+.meta/
+  Exemplar.elm         # exemplary / example solution for this exercise
+  config.json          # name of exercise, prerequisite concepts, concepts taught and similar
+  design.md            # describe the learning goals of the exercise
 .docs/
    introduction.md     # introduce the concept(s) that the exercise teaches to the student
-   instructions.md     # describe what must be done complete the exercise
+   instructions.md     # describe the tasks to complete the exercise
    hints.md            # provide hints to a student to help them get themselves unstuck in an exercise
-elm.json               # elm json config file
 ```
 
 ## Contributing
@@ -62,7 +61,7 @@ you can also have a look at [GitHub's getting started documentation][github-star
 
 In order to contribute code to this track, you will probably want
 [npm][npm-install], [elm][elm-install], [elm-test][elm-test], and [elm-format][elm-format] installed globally.
-The build and test script for this track lives at `bin/build.sh`, and use npx, so can work without the rest of the tools being installed if required.
+The build and test script for this track lives at `bin/build.sh`, and uses npx, so can work without the rest of the tools being installed if required.
 
 [npm-install]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [elm-install]: https://guide.elm-lang.org/install/elm.html
@@ -70,6 +69,8 @@ The build and test script for this track lives at `bin/build.sh`, and use npx, s
 [elm-format]: https://github.com/avh4/elm-format
 
 ### Adding Missing Concept Exercise
+
+TODO: link to the step-by-step guide instead here.
 
 Version 3 of Exercism introduced Concepts and Concept Exercises, which are a completely new thing. There is a [dependency diagram](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcbiAgQmFzaWNzW01pbmltYWwgY29tcGlsYWJsZSBmaWxlXSAtLT4gSW5kZXBlbmRlbnRzW0ltcG9ydCwgRXhwb3NpbmcsIEZ1bmN0aW9ucywgRmxvYXQsIEludCwgVHlwZSBBbm5vdGF0aW9uc10gLS0-IE1hdGhlbWF0aWNhbC1PcGVyYXRvcnNcbiAgSW5kZXBlbmRlbnRzIC0tPiBNYXRoZW1hdGljYWwtT3BlcmF0b3JzXG4gIEluZGVwZW5kZW50cyAtLT4gTWF0aGVtYXRpY2FsLUZ1bmN0aW9uc1xuICBJbmRlcGVuZGVudHMgLS0-IExldC1FeHByZXNzaW9uc1xuICBJbmRlcGVuZGVudHMgLS0-IEVxdWFsaXR5XG4gIEVxdWFsaXR5IC0tPiBPcmRlcmluZ1xuICBPcmRlcmluZyAtLT4gQ29tcGFyaXNvbnNcbiAgSW5kZXBlbmRlbnRzIC0tPiBTdHJpbmdcbiAgU3RyaW5nIC0tPiBSZWdleFxuICBJbmRlcGVuZGVudHMgLS0-IENoYXJcbiAgSW5kZXBlbmRlbnRzIC0tPiBMaXN0XG4gIExpc3QgLS0-IExpc3QtRXh0cmFcbiAgSW5kZXBlbmRlbnRzIC0tPiBEaWN0XG4gIEluZGVwZW5kZW50cyAtLT4gU2V0XG4gIEluZGVwZW5kZW50cyAtLT4gQXJyYXlcbiAgSW5kZXBlbmRlbnRzIC0tPiBUeXBlLWFsaWFzXG4gIEluZGVwZW5kZW50cyAtLT4gU3VtLXR5cGVzXG4gIEluZGVwZW5kZW50cyAtLT4gQm9vbGVhbnNbQm9vbCB0eXBlIC8gb3BlcmF0b3JzLCBJZl1cbiAgU3VtLXR5cGVzIC0tPiBQYXR0ZXJuLW1hdGNoaW5nXG4gIFBhdHRlcm4tbWF0Y2hpbmcgLS0-IE1heWJlXG4gIEJvb2xlYW5zIC0tPiBNYXliZVxuICBNYXliZSAtLT4gUmVzdWx0XG4gIFBhdHRlcm4tbWF0Y2hpbmcgLS0-IFBhcnNlclxuICBJbmRlcGVuZGVudHMgLS0-IEZ1bmN0aW9uLWNvbXBvc2l0aW9uXG4gIEluZGVwZW5kZW50cyAtLT4gRnVuY3Rpb24tY2hhaW5pbmdcbiAgSW5kZXBlbmRlbnRzIC0tPiBQYXJ0aWFsLWFwcGxpY2F0aW9uXG4gIFBhcnRpYWwtYXBwbGljYXRpb24gLS0-IFBvaW50LWZyZWVzdHlsZVxuICBGdW5jdGlvbi1jb21wb3NpdGlvbiAtLT4gUG9pbnQtZnJlZXN0eWxlXG4gIEZ1bmN0aW9uLWNoYWluaW5nIC0tPiBQb2ludC1mcmVlc3R5bGVcbiAgUG9pbnQtZnJlZXN0eWxlIC0tPiBPcGVyYXRvci1mdW5jdGlvbnNcbiAgSW5kZXBlbmRlbnRzIC0tPiBCaXR3aXNlLW9wZXJhdG9yc1xuICBJbmRlcGVuZGVudHMgLS0-IENvbnZlcnNpb25zXG4gIEluZGVwZW5kZW50cyAtLT4gUG9zaXgtdGltZSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9) showing all the Elm concepts. You can see all concepts currently defined in [`concepts/`](concepts/), and you can se all concept exercises defined in [`/exercises/concept`](/exercises/concept).
 
