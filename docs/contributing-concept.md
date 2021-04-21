@@ -93,7 +93,19 @@ Once both the exercise and the tests are done and working well, do the following
 - Copy `src/<ExerciseSlug>.elm` to `.meta/Exemplar.elm`. Your implementation serves as a reference, an "exemplar" implementation for the exercise, which is used when running the track tests.
 - Remove all the implementations inside `src/<ExerciseSlug>.elm` to be left with a starter file ready for the student to start the exercise.
 
-## 8. Complete the different config files
+## 8. Write the concept documentation
+
+Create a `concepts/<concept>/` directory for the concept associated with our `exercises/concept/<story-name>` exercise.
+Inside that new folder, we create two markdown documents [`introduction.md`][concept-intro-spec] and [`about.md`][concept-about-spec] and one [`links.json`][concept-links-spec] file (links lead to their spec).
+
+The `introduction.md` concept file contains the presentation that students will see on the concept page as long as they haven't completed the associated concept exercise.
+It should give them a good overview of what they will learn if the start the associated exercise.
+In contrast, the `about.md` concept file contains the concept summary that a student will see on the concept page only after they have completed the associated concept exercise.
+As such those are similar in contents than the `exercises/concept/<story-name>/.docs/introduction.md` file we have already written but not the same.
+I suggest to start from the exercise intro document and to simplify it to its essence for the concept file `introduction.md`.
+And for the `about.md` document, start with the exercise intro and complete it such that all relevant information regarding the concept are present in that page.
+
+## 9. Complete the different config files
 
 TODO
 
@@ -112,3 +124,6 @@ TODO
 [hints-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-docshintsmd
 [hints-bool]: https://github.com/exercism/elm/blob/contrib-concept/exercises/concept/annalyns-infiltration/.docs/hints.md
 [template]: https://github.com/exercism/elm/tree/main/template
+[concept-intro-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-introductionmd
+[concept-about-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-aboutmd
+[concept-links-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-linksjson
