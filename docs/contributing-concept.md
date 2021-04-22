@@ -3,9 +3,9 @@
 A [concept exercise][product-concept] aims to teach a single concept in a given language.
 It should have a clear learning goal and provide enough boilerplate to avoid the student having to learn unnecessary code.
 The associated concept has its own documentation, independent of the concept exercise.
-Concepts may have other concepts as prerequisites and be locked until the concept exercises of the prerequisites concepts are completed.
-Concepts exercises difficulty should not increase as the track progresses.
-A concept exercise should be solvable in 5 to 10 minutes by any developper familiar with the prerequisites concepts.
+Concepts may have other concepts as prerequisites and be locked until the concept exercises of the prerequisite concepts are completed.
+Concept exercise difficulty should not increase as the track progresses.
+A concept exercise should be solvable in 5 to 10 minutes by any developper familiar with the prerequisite concepts.
 
 Now that we are familiar with what a concept exercise is, let's detail how to implement one, and it's associated concept.
 For reference, the detailed [spec of a concept exercise][concept-exercise-spec] and of a [concept][concept-spec] are available in exercism [docs repository][docs-repo].
@@ -26,7 +26,7 @@ Beware that the graph above is a moving target and may change as we find that pr
 
 It is important to know what a concept exercise aims to teach and what is out of scope so let's create our first file: `exercises/concept/<story-name>/.meta/design.md`.
 Since concept exercises are named after the story they use we don't know it yet, so we'll keep `story-name` for now and replace it later.
-The [`design.md` specification][design-spec] states that this document should define the overall goal of the exercise, its multiple learning objectives, the things that are out of scope, the associated concept it unlocks and the concepts prerequisites to be able to complete the exercise.
+The [`design.md` specification][design-spec] states that this document should define the overall goal of the exercise, its multiple learning objectives, the things that are out of scope, the associated concept it unlocks and the concept prerequisites to be able to complete the exercise.
 You can use the [`design.md` of the boolean concept exercise][design-bool] as a template starting point.
 
 ## 3. Write a concept introduction for the exercise
@@ -56,7 +56,7 @@ As explained in [that document specification][instructions-spec], each task has 
 You can use the [`instructions.md` of the boolean concept exercise][instructions-bool] as a template starting point.
 
 In addition to `instructions.md`, we also need a `hints.md` file.
-It should contain the same level-2 titles (`## 1. Do X`) than the instructions file so that the right hints are given depending on the current task being worked on.
+It should contain the same level-2 titles (`## 1. Do X`) as the instructions file so that the right hints are given depending on the current task being worked on.
 There can also be a `## General` section for hints applying to all tasks.
 Hints should not spell out the solution directly.
 Also, beware that people clicking on hints might already be confused/overwhelmed/frustrated by the exercise.
