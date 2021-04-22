@@ -13,7 +13,7 @@ This documents gather info from many resources to act as a convenient step-by-st
 
 ## 1. Identify a missing concept to implement
 
-Already implemented concepts are located in the `concepts/` directory of this repository.
+Already implemented concepts are located in the [`concepts/`](/concepts) directory of this repository.
 They are also represented as a dependency graph on [exercism website][concepts-graph-exercism].
 You can compare them with the graph of concepts we intend to implement represented below (wait a few seconds and refresh if not visible).
 
