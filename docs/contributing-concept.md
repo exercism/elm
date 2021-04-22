@@ -37,7 +37,8 @@ The detailed contents of this file are explained in [its specification][exercise
 You can use the [`introduction.md` of the boolean concept exercise][intro-bool] as a template starting point.
 
 The information provided should introduce the concept just enough for the student to figure out the exercise solution themselves.
-Use proper technical terms to ease student online search but try to avoid links and to explain things concisely inline in the document.
+Use proper technical terms to ease student online search.
+Try to avoid links and instead explain things concisely inline.
 Introduce code syntax with code blocks.
 
 ## 4. Find a story for the exercise
