@@ -10,7 +10,7 @@ Define the `expectedMinutesInOven` constant to check how many minutes the lasagn
 
 ```elm
 expectedMinutesInOven
-// => 40
+    --> 40
 ```
 
 ## 2. Calculate the preparation time in minutes
@@ -19,7 +19,7 @@ Define the `preparationTimeInMinutes` function that takes the number of layers y
 
 ```elm
 preparationTimeInMinutes 3
-// => 6
+    --> 6
 ```
 
 ## 3. Calculate the elapsed time in minutes
@@ -28,5 +28,5 @@ Define the `elapsedTimeInMinutes` function that takes two parameters: the first 
 
 ```elm
 elapsedTimeInMinutes 3 20
-// => 26
+    --> 26
 ```
