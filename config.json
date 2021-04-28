@@ -284,7 +284,7 @@
       {
         "slug": "isogram",
         "name": "Isogram",
-        "uuid": "5f540090-061e-2f80-40a8-d9782700ed2efdf8965",
+        "uuid": "61ef49ef-1086-445b-aa0a-b99de263b728",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
@@ -457,7 +457,7 @@
       {
         "slug": "binary-search",
         "name": "Binary Search",
-        "uuid": "1F9FE5BC-8213-44FD-B7D1-5D4CC7F3A475",
+        "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
         "practices": [],
         "prerequisites": [],
         "difficulty": 3,
