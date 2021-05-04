@@ -1,8 +1,8 @@
 module Tests exposing (tests)
 
 import Expect
+import PascalsTriangle exposing (rows)
 import Test exposing (..)
-import Triangle exposing (rows)
 
 
 tests : Test

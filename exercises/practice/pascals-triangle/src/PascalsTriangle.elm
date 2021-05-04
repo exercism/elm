@@ -1,4 +1,4 @@
-module Triangle exposing (rows)
+module PascalsTriangle exposing (rows)
 
 
 rows : Int -> List (List Int)
