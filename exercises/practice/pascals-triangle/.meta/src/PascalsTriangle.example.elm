@@ -1,4 +1,4 @@
-module Triangle exposing (rows)
+module PascalsTriangle exposing (rows)
 
 import List
 
