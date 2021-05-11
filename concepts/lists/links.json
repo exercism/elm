@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://elmprogramming.com/list.html",
+    "description": "Lists"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/List",
+    "description": "List module"
+  },
+  {
+    "url": "https://www.elm.christmas/2020/8",
+    "description": "Pattern matching lists"
+  }
+]
