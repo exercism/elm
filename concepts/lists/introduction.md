@@ -13,16 +13,15 @@ threeValues = [ "a", "b", "c" ]
 The most common way to add an element to a list is through the `::` (cons) operator:
 
 ```elm
-let twoToFour = [2, 3, 4]
-let oneToFour = 1 :: twoToFour
--- => [1; 2; 3; 4]
+twoToFour = [ 2, 3, 4 ]
+oneToFour = 1 :: twoToFour -- => [ 1, 2, 3, 4 ]
 ```
 
 List can be appended using the `++` operator or `List.append`:
 
 ```elm
-[6, 7] ++ [8, 9]           -- => [6, 7, 8, 9]
-List.append [6, 7] [8, 9]  -- => [6, 7, 8, 9]
+[ 6, 7 ] ++ [ 8, 9 ]           -- => [ 6, 7, 8, 9 ]
+List.append [ 6, 7 ] [ 8, 9 ]  -- => [ 6, 7, 8, 9 ]
 ```
 
 Lists are manipulated by functions and operators defined in the [`List` module][list-module].
