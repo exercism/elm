@@ -10,6 +10,9 @@
     "ace_editor_language": "elm",
     "highlightjs_language": "elm"
   },
+  "test_runner": {
+    "average_run_time": 2.0
+  },
   "status": {
     "concept_exercises": false,
     "test_runner": true,
