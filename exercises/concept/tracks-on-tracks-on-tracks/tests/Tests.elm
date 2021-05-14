@@ -54,8 +54,7 @@ tests =
             \_ ->
                 existingList
                     |> reverseList
-                    |> Expect.equal
-                    |> List.reverse existingList
+                    |> Expect.equal (List.reverse existingList)
         , test "Reverse order of custom list" <|
             \_ ->
                 reverseList [ "Kotlin", "Java", "Scala", "Clojure" ]

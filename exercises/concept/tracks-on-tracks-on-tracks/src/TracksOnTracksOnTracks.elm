@@ -1,19 +1,25 @@
 module TracksOnTracksOnTracks exposing (..)
 
-newList = 
+
+newList =
     Debug.todo "implement this function and create a type annotation"
 
-existingList = 
+
+existingList =
     Debug.todo "implement this function and create a type annotation"
 
-addLanguage language languages = 
+
+addLanguage language languages =
     Debug.todo "implement this function and create a type annotation"
 
-countLanguages languages = 
+
+countLanguages languages =
     Debug.todo "implement this function and create a type annotation"
 
-reverseList languages = 
+
+reverseList languages =
     Debug.todo "implement this function and create a type annotation"
+
 
 excitingList languages =
     Debug.todo "implement this function and create a type annotation"

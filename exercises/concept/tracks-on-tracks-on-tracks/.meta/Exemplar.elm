@@ -1,38 +1,44 @@
-module TracksOnTracksOnTracks exposing(..)
+module TracksOnTracksOnTracks exposing (..)
 
-import List as List exposing (List)
+import List as List
 
-newList: List a
-newList = 
+
+newList : List a
+newList =
     []
 
+
 existingList : List String
-existingList = 
+existingList =
     [ "Elm", "Clojure", "Haskell" ]
 
+
 addLanguage : String -> List String -> List String
-addLanguage language languages = 
+addLanguage language languages =
     language :: languages
 
+
 countLanguages : List a -> Int
-countLanguages languages = 
+countLanguages languages =
     List.length languages
 
+
 reverseList : List String -> List String
-reverseList languages = 
+reverseList languages =
     List.reverse languages
 
-excitingList List String -> Bool
+
+excitingList : List String -> Bool
 excitingList languages =
     case languages of
-        "Elm" :: _ -> 
-            True
-        
-        [ _; "Elm" ] -> 
+        "Elm" :: _ ->
             True
 
-        [ _; "Elm"; _ ] -> 
+        [ _, "Elm" ] ->
             True
-        
-        _ -> 
+
+        [ _, "Elm", _ ] ->
+            True
+
+        _ ->
             False
