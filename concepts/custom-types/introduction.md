@@ -45,6 +45,6 @@ let describe flexibleNumber =
             "Invalid"
 ```
 
-[custom-types]: https://elmprogramming.com/type-system.html#creating-our-own-types
+[custom-types]: https://guide.elm-lang.org/types/custom_types.html
 [pattern-matching]: https://guide.elm-lang.org/types/pattern_matching.html
 [impossible-states]: https://www.youtube.com/watch?v=IcgmSRJHu_8
