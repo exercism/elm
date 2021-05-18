@@ -1,39 +1,45 @@
 module ValentinesDay exposing (..)
 
-type Approval =
-    Yes
+
+type Approval
+    = Yes
     | No
     | Maybe
 
-type Cuisine =
-    Korean
+
+type Cuisine
+    = Korean
     | Turkish
 
-type Genre =
-    Crime
+
+type Genre
+    = Crime
     | Horror
     | Romance
     | Thriller
 
-type Activity =
-    BoardGame
+
+type Activity
+    = BoardGame
     | Chill
     | Movie Genre
     | Restaurant Cuisine
 
+
 rateActivity : Activity -> Approval
 rateActivity activity =
     case activity of
-        Restaurant Korean -> 
+        Restaurant Korean ->
             Yes
-        
-        Restaurant Turkish -> 
+
+        Restaurant Turkish ->
             Maybe
-    
-        Movie Romance -> 
+
+        Movie Romance ->
             Yes
-        
-        Movie _ -> 
+
+        Movie _ ->
             No
-            
-        _ -> No
+
+        _ ->
+            No
