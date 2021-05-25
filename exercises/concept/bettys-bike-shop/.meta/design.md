@@ -14,7 +14,7 @@
 
 ## Concepts
 
-- `bascics-2`: Know the basics of Elm programming.
+- `basics-2`: Know the basics of Elm programming.
 
 ## Prequisites
 
