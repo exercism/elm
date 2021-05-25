@@ -36,7 +36,7 @@ age : Maybe Int
 age = Nothing
 ```
 
-## Reading the content a Maybe value
+## Reading the content of a Maybe value
 
 Reading the content of a `Maybe` value is done via "pattern matching".
 Pattern matching is also introduced in more details in another concept, so we just focus on how pattern matching a `Maybe` works.
