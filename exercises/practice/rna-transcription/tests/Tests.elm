@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import RNATranscription exposing (toRNA)
+import RnaTranscription exposing (toRNA)
 import Test exposing (..)
 
 
