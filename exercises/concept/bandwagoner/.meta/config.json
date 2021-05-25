@@ -1,0 +1,17 @@
+{
+  "blurb": "Learn usage of Records while keeping a history of basketball statistics",
+  "authors": [
+    "ceddlyburge"
+  ],
+  "contributors": [
+    "mpizenberg"
+  ],
+  "files": {
+    "test": [
+      "BandwagonerTests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  }
+}
