@@ -16,7 +16,7 @@
       "tests/Tests.elm"
     ],
     "example": [
-      ".meta/src/Triangle.example.elm"
+      ".meta/src/PascalsTriangle.example.elm"
     ]
   },
   "source": "Pascal's Triangle at Wolfram Math World",

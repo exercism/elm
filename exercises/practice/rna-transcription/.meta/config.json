@@ -17,7 +17,7 @@
       "tests/Tests.elm"
     ],
     "example": [
-      ".meta/src/RNATranscription.example.elm"
+      ".meta/src/RnaTranscription.example.elm"
     ]
   },
   "source": "Hyperphysics",

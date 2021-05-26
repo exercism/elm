@@ -1,4 +1,4 @@
-module RNATranscription exposing (toRNA)
+module RnaTranscription exposing (toRNA)
 
 
 toRNA : String -> Result String String
