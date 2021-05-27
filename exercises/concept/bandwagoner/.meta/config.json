@@ -11,7 +11,7 @@
       "src/Bandwagoner.elm"
     ],
     "test": [
-      "Tests/Tests.elm"
+      "tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
