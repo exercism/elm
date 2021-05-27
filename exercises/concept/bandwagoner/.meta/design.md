@@ -10,6 +10,7 @@
 - Know how to pattern match on records
 - Know that records are immutable
 - Know how to return a modified copy of a record
+- Know how to define extensible records
 
 ## Out of scope
 

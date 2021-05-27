@@ -1,6 +1,6 @@
 # Hints
 
-## 1. Define the model
+## 1. Define the type alias'
 
 - [This page][record-types] shows how to create a type alias for a record.
 
