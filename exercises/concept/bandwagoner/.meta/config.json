@@ -8,7 +8,7 @@
   ],
   "files": {
     "test": [
-      "BandwagonerTests.elm"
+      "Tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
