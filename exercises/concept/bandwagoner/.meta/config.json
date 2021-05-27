@@ -7,6 +7,9 @@
     "mpizenberg"
   ],
   "files": {
+    "solution": [
+      "src/Bandwagoner.elm"
+    ],
     "test": [
       "Tests/Tests.elm"
     ],
