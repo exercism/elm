@@ -1,0 +1,15 @@
+{
+  "blurb": "Learn usage of Maybe by designing game mechanics",
+  "authors": [
+    "mpizenberg"
+  ],
+  "contributors": [
+    "ceddlyburge"
+  ],
+  "forked_from": ["rust/role-playing-game"],
+  "files": {
+    "solution": ["src/RolePlayingGame.elm"],
+    "test": ["tests/Tests.elm"],
+    "exemplar": [".meta/Exemplar.elm"]
+  }
+}
