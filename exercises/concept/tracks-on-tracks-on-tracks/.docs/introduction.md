@@ -1,6 +1,8 @@
 # Introduction
 
-A `list` in Elm is an immutable collection of zero or more values. The values in a list must all have the same type. As lists are immutable, once a list has been constructed, its value can never change. Any functions/operators that appear to modify a list (such as adding an element), will actually return a new list.
+A `List` in Elm is an immutable collection of zero or more values of the same type.
+As lists are immutable, once a list has been constructed, its value can never change.
+Any functions/operators that appear to modify a list (such as adding an element), will actually return a new list.
 
 Lists can be defined as follows:
 
@@ -14,15 +16,15 @@ The most common way to add an element to a list is through the `::` (cons) opera
 
 ```elm
 twoToFour = [ 2, 3, 4 ]
-oneToFour = 1 :: twoToFour
--- => [ 1, 2, 3, 4 ]
+oneToFour = 1 :: twoToFour --> [ 1, 2, 3, 4 ]
 ```
 
-Elm list's have a _head_ (the first element) and a _tail_ (everything after the first element). The tail of a list is itself a list.
-
-Lists are either manipulated by functions and operators defined in the `List` module, or manually using pattern matching
+Elm list's have a _head_ (the first element) and a _tail_ (everything after the first element).
+The tail of a list is itself a list.
+Lists are either manipulated by functions and operators defined in the `List` module, or manually using pattern matching.
 
 ```elm
+describe : List String -> String
 describe list =
     case list of
         [] ->
@@ -34,7 +36,7 @@ describe list =
         x :: xs ->
             "Non-empty list with head: " ++ head
 
-describe []                   -- => "Empty list"
-describe [ "hello" ]          -- => "Singleton list with: hello"
-describe [ "hello", "world" ] -- => "Non-empty with head: hello"
+describe []                   --> "Empty list"
+describe [ "hello" ]          --> "Singleton list with: hello"
+describe [ "hello", "world" ] --> "Non-empty list with head: hello"
 ```
