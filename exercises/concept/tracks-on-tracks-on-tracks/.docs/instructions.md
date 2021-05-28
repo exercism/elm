@@ -6,11 +6,11 @@ You have six tasks, which will all involve dealing with lists.
 ## 1. Create a new list
 
 To keep track of the languages you want to learn, you'll need to create an new list.
-Define the `newList` function that contains a new, empty list.
+Define the `newList` constant that contains a new, empty list.
 
 ```elm
 newList
--- => []
+    --> []
 ```
 
 ## 2. Define an existing list
@@ -20,7 +20,7 @@ Define the `existingList` constant to represent this list.
 
 ```elm
 existingList
--- => [ "Elm", "Clojure", "Haskell" ]
+    --> [ "Elm", "Clojure", "Haskell" ]
 ```
 
 ## 3. Add a new language to a list
@@ -30,7 +30,7 @@ Implement the `addLanguage` function to add a new language to the beginning of y
 
 ```elm
 addLanguage "TypeScript" [ "JavaScript", "CoffeeScript" ]
--- => [ "TypeScript", "JavaScript", "CoffeeScript" ]
+    --> [ "TypeScript", "JavaScript", "CoffeeScript" ]
 ```
 
 ## 4. Count the languages in the list
@@ -40,7 +40,7 @@ Implement the `countLanguages` function to count the number of languages on your
 
 ```elm
 countLanguages [ "C#", "Racket", "Rust", "Ruby" ]
--- => 4
+    --> 4
 ```
 
 ## 5. Reverse the list
@@ -50,7 +50,7 @@ Implement the `reverseList` function to reverse your list.
 
 ```elm
 reverseList [ "Prolog", "C", "Idris", "Assembly" ]
--- => [ "Assembly", "Idris", "C", "Prolog" ]
+    --> [ "Assembly", "Idris", "C", "Prolog" ]
 ```
 
 ## 6. Check if list is exciting
@@ -65,5 +65,5 @@ Implement the `excitingList` function to check if a list of languages is excitin
 
 ```elm
 excitingList [ "Nim"; "Elm" ]
--- => True
+    --> True
 ```
