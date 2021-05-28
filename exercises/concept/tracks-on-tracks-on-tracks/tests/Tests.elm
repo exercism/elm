@@ -103,11 +103,11 @@ tests =
             \_ ->
                 excitingList [ "Erlang", "Elm", "C#", "Scheme" ]
                     |> Expect.equal False
-        , test "Four-item list with fsharp as third item is not exciting" <|
+        , test "Four-item list with Elm as third item is not exciting" <|
             \_ ->
                 excitingList [ "Erlang", "C#", "Elm", "Scheme" ]
                     |> Expect.equal False
-        , test "Four-item list with fsharp as fourth item is not exciting" <|
+        , test "Four-item list with Elm as fourth item is not exciting" <|
             \_ ->
                 excitingList [ "Erlang", "C#", "Scheme", "Elm" ]
                     |> Expect.equal False
