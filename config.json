@@ -88,6 +88,11 @@
       "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
       "slug": "booleans",
       "name": "Booleans"
+    },
+    {
+      "uuid": "4a948be3-4c5e-407f-b29d-a7e7f00fee67",
+      "slug": "maybe",
+      "name": "Maybe"
     }
   ],
   "exercises": {
@@ -124,6 +129,18 @@
         ],
         "prerequisites": [
           "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "role-playing-game",
+        "name": "Role Playing Game",
+        "uuid": "c62c5128-5733-4187-b46a-80660d9b5725",
+        "concepts": [
+          "maybe"
+        ],
+        "prerequisites": [
+          "records"
         ],
         "status": "beta"
       }
