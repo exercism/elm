@@ -2,7 +2,7 @@
 
 ## Learning objectives
 
-- Know of the existence of the `list` type.
+- Know of the existence of the `List` type.
 - Know that lists are immutable.
 - Know what head and tail refer to.
 - Know how to define an empty and non-empty list.
@@ -20,7 +20,7 @@
 
 ## Concepts
 
-- `lists`: know of the existence of the `list` type; know how to define an empty and non-empty list; know how to add an element to a list; know some common list functions; know how to pattern match on lists.
+- `lists`: know of the existence of the `List` type; know how to define an empty and non-empty list; know how to add an element to a list; know some common list functions; know how to pattern match on lists.
 
 ## Prerequisites
 
