@@ -11,7 +11,7 @@ The `Maybe` type is defined as follows:
 type Maybe a = Nothing | Just a
 ```
 
-This is know as a "custom type" definition in Elm terminology.
+This is known as a "custom type" definition in Elm terminology.
 Custom types are introduced in details in another concept of this track but we won't need it to understand specifically `Maybe`.
 The `a` in `Maybe a` and `Just a` represents a type variable, meaning it can be any type, such as `Int`, `Bool` or `String`.
 As such, a `Maybe String` is a variable that optionally holds a `String`, while a `Maybe Int` would optionally hold an `Int`.
