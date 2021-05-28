@@ -16,7 +16,7 @@ newList
 ## 2. Define an existing list
 
 Currently, you have a piece of paper listing the languages you want to learn: Elm, Clojure and Haskell.
-Define the `existingList` binding to represent this list.
+Define the `existingList` constant to represent this list.
 
 ```elm
 existingList
@@ -35,7 +35,7 @@ addLanguage "TypeScript" [ "JavaScript", "CoffeeScript" ]
 
 ## 4. Count the languages in the list
 
-Counting the languages one-by-one is inconvenient.
+Counting the languages manually is inconvenient.
 Implement the `countLanguages` function to count the number of languages on your list.
 
 ```elm
@@ -58,8 +58,8 @@ reverseList [ "Prolog", "C", "Idris", "Assembly" ]
 While you love all languages, Elm has a special place in your heart.
 As such, you're really excited about a list of languages if:
 
-- The first on the list is Elm.
-- The second item on the list is Elm and the list contain either two or three languages.
+- The first item on the list is Elm.
+- Or the second item on the list is Elm and the list contains three or less languages.
 
 Implement the `excitingList` function to check if a list of languages is exciting:
 
