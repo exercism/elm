@@ -1,0 +1,64 @@
+- name: "bug"
+  description: ""
+  color: "fc2929"
+
+- name: "dependencies"
+  description: "Pull requests that update a dependency file"
+  color: "0366d6"
+
+- name: "duplicate"
+  description: ""
+  color: "cccccc"
+
+- name: "enhancement"
+  description: ""
+  color: "84b6eb"
+
+- name: "first-timers only"
+  description: ""
+  color: "159818"
+
+- name: "good first issue"
+  description: ""
+  color: "9792f4"
+
+- name: "good first patch"
+  description: ""
+  color: "159818"
+
+- name: "help wanted"
+  description: ""
+  color: "159818"
+
+- name: "in progress"
+  description: ""
+  color: "fcd04e"
+
+- name: "invalid"
+  description: ""
+  color: "e6e6e6"
+
+- name: "meta"
+  description: ""
+  color: "90aa27"
+
+- name: "question"
+  description: ""
+  color: "cc317c"
+
+- name: "reputation/contributed_code/major"
+  description: "Increases the number of reputation points awarded by this PR"
+  color: "2E1491"
+
+- name: "reputation/contributed_code/minor"
+  description: "Decreases the number of reputation points awarded by this PR"
+  color: "C129A8"
+
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "E99695"
+
+- name: "wontfix"
+  description: ""
+  color: "ffffff"
+
