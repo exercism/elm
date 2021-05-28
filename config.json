@@ -88,6 +88,11 @@
       "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
       "slug": "booleans",
       "name": "Booleans"
+    },
+    {
+      "uuid": "33944880-b04c-4c36-9d30-e8859a39d3fa",
+      "slug": "lists",
+      "name": "Lists"
     }
   ],
   "exercises": {
@@ -121,6 +126,18 @@
         "uuid": "9f501a73-14e3-4ada-8359-fe051530554a",
         "concepts": [
           "booleans"
+        ],
+        "prerequisites": [
+          "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "tracks-on-tracks-on-tracks",
+        "name": "Tracks on Tracks on Tracks",
+        "uuid": "07b1a020-d534-4449-8698-2006e1176b3a",
+        "concepts": [
+          "lists"
         ],
         "prerequisites": [
           "basics-2"
