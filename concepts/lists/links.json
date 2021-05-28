@@ -1,11 +1,11 @@
 [
   {
     "url": "https://elmprogramming.com/list.html",
-    "description": "Lists"
+    "description": "Detailed book section about Elm lists"
   },
   {
     "url": "https://package.elm-lang.org/packages/elm/core/latest/List",
-    "description": "List module"
+    "description": "Code documentation of the List module"
   },
   {
     "url": "https://www.elm.christmas/2020/8",
