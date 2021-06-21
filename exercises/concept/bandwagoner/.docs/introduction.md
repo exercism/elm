@@ -127,7 +127,7 @@ firefly1 == firefly2
 
 Elm also supports [structural typing][structural-typing] meaning that if a function requires a record with an x and y field, it will work with any record that has those fields such as 2D points, 3D points, spaceships, etc.
 Those record types have a pipe `|` in their definition, such as `{ a | x : Float, y : Float }` and are called "extensible records" in Elm terminology.
-Beware of the difference between a pipe `|` in a type definition, which is an extensible record definition (`{ a | x : Int }`), and a pipe `|` an actual record instance which means that we are updating some fields of that record.
+Beware of the difference between a pipe `|` in a type definition, which is an extensible record definition (`{ a | x : Int }`), and a pipe `|` in an actual record instance which means that we are updating some fields of that record.
 
 ```elm
 point2d = { x = 1, y = 2 }

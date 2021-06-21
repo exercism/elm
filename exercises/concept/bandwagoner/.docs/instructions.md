@@ -31,10 +31,10 @@ Implement the `replaceCoach` function that takes the team and its new coach as p
 
 ```elm
 let
-    coach = Coach "Larry Bird" True
-    stats = Stats 58 24
-    team = Team "Indiana Pacers" coach stats
-    newCoach = Coach "Isiah Thomas" True
+    coach = { name = "Larry Bird", formerPlayer = True }
+    stats = { wins = 58, losses =  24 }
+    team = { name = "Indiana Pacers", coach = coach, stats =  stats }
+    newCoach = { name = "Isiah Thomas", formerPlayer = True }
 in
 replaceCoach team newCoach
 --> { name = "Indiana Pacers"
@@ -50,13 +50,13 @@ Implement the `isSameTeam` function that takes two teams and returns `True` if t
 
 ```elm
 let
-    pacersCoach = Coach "Larry Bird" True
-    pacersStats = Stats 58 24
-    pacersTeam = Team "Indiana Pacers" pacersCoach pacersStats
+    pacersCoach = { name = "Larry Bird", formerPlayer = True }
+    pacersStats = { wins = 58, losses = 24 }
+    pacersTeam = { name = "Indiana Pacers", coach = pacersCoach, stats = pacersStats }
 
-    lakersCoach = Coach "Del Harris" False
-    lakersStats = Stats 61 21
-    lakersTeam = Team "LA Lakers" lakersCoach lakersStats
+    lakersCoach = { name = "Del Harris", formerPlayer =  False }
+    lakersStats = { wins = 61, losses = 21 }
+    lakersTeam = { name = "LA Lakers", coach =  lakersCoach, stats = lakersStats }
 in
 isSameTeam pacersTeam lakersTeam
 --> False
@@ -72,9 +72,9 @@ Implement the `rootForTeam` function that takes a team and returns `True` if you
 
 ```elm
 let
-    spursCoach = Coach "Gregg Popovich" False
-    spursStats = Stats 56 26
-    spursTeam = Team "San Antonio Spurs" spursCoach spursStats
+    spursCoach = { name = "Gregg Popovich", formerPlayer =  False }
+    spursStats = { wins = 56, losses = 26 }
+    spursTeam = { name = "San Antonio Spurs", coach = spursCoach, stats = spursStats }
 in
 rootForTeam spursTeam
 --> True
