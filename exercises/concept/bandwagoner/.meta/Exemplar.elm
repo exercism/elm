@@ -25,11 +25,6 @@ replaceCoach newCoach team =
     { team | coach = newCoach }
 
 
-isSameTeam : Team -> Team -> Bool
-isSameTeam homeTeam awayTeam =
-    homeTeam == awayTeam
-
-
 rootForTeam : { a | stats : Stats } -> Bool
 rootForTeam { stats } =
     stats.wins > stats.losses

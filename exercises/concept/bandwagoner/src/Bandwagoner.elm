@@ -9,10 +9,6 @@ replaceCoach newCoach team =
     Debug.todo "Please implement this function"
 
 
-isSameTeam homeTeam awayTeam =
-    Debug.todo "Please implement this function"
-
-
 
 -- TODO: use an extensible record to accept any record that has a `stats: Stats` field
 -- TODO: use pattern matching in the function parameter to get the `stats` field from the record

@@ -48,40 +48,6 @@ tests =
                         replaceCoach newCoach team
                 in
                 Expect.equal newTeam (Team "New York Knicks" newCoach stats)
-        , test "isSameTeam is true for identical teams" <|
-            \_ ->
-                let
-                    coach =
-                        Coach "Pat Riley" True
-
-                    stats =
-                        Stats 57 25
-
-                    team =
-                        Team "Los Angeles Lakers" coach stats
-                in
-                isSameTeam team team
-                    |> Expect.equal True
-        , test "isSameTeam is false for different teams" <|
-            \_ ->
-                let
-                    coach =
-                        Coach "Pat Riley" True
-
-                    stats =
-                        Stats 57 25
-
-                    team =
-                        Team "Los Angeles Lakers" coach stats
-
-                    newStats =
-                        Stats 62 20
-
-                    teamWithDifferentStats =
-                        Team "Los Angeles Lakers" coach newStats
-                in
-                isSameTeam team teamWithDifferentStats
-                    |> Expect.equal False
         , test "should root for teams that have more wins than losses" <|
             \_ ->
                 Team "" (Coach "" True) (Stats 1 0)

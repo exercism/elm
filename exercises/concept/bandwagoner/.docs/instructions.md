@@ -42,26 +42,6 @@ replaceCoach newCoach team
 --  , stats = { wins = 58, losses = 24 } }
 ```
 
-## 6. Check for same team
-
-While digging into stats, you're keeping lists of teams and their records.
-Sometimes, you get things wrong and there are duplicate entries on your list.
-Implement the `isSameTeam` function that takes two teams and returns `True` if they are the same team; otherwise, return `False`:
-
-```elm
-let
-    pacersCoach = { name = "Larry Bird", formerPlayer = True }
-    pacersStats = { wins = 58, losses = 24 }
-    pacersTeam = { name = "Indiana Pacers", coach = pacersCoach, stats = pacersStats }
-
-    lakersCoach = { name = "Del Harris", formerPlayer =  False }
-    lakersStats = { wins = 61, losses = 21 }
-    lakersTeam = { name = "LA Lakers", coach =  lakersCoach, stats = lakersStats }
-in
-isSameTeam pacersTeam lakersTeam
---> False
-```
-
 ## 7. Check if you should root for a team
 
 In the future, you plan to come up with a complicated algorithm about whether to root for a team or not, but for the first attempt, you have decided that you should root for any team has more wins than losses.
