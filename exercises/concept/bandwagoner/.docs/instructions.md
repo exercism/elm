@@ -27,7 +27,7 @@ Define the `Team` type alias for a record with the following three fields:
 ## 5. Replace the coach
 
 NBA owners being impatient, you found that bad team results would often lead to the coach being replaced.
-Implement the `replaceCoach` function that takes the team and its new coach as parameters, and returns the team but with the new coach:
+Implement the `replaceCoach` function that takes the new coach and the team as parameters, and returns the team but with the new coach:
 
 ```elm
 let
@@ -36,7 +36,7 @@ let
     team = { name = "Indiana Pacers", coach = coach, stats =  stats }
     newCoach = { name = "Isiah Thomas", formerPlayer = True }
 in
-replaceCoach team newCoach
+replaceCoach newCoach team
 --> { name = "Indiana Pacers"
 --  , coach = { name = "Isiah Thomas", formerPlayer = True }
 --  , stats = { wins = 58, losses = 24 } }

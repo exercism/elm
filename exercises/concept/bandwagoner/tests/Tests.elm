@@ -45,7 +45,7 @@ tests =
                         Team "New York Knicks" coach stats
 
                     newTeam =
-                        replaceCoach team newCoach
+                        replaceCoach newCoach team
                 in
                 Expect.equal newTeam (Team "New York Knicks" newCoach stats)
         , test "isSameTeam is true for identical teams" <|

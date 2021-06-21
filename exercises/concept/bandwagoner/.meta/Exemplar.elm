@@ -20,8 +20,8 @@ type alias Team =
     }
 
 
-replaceCoach : Team -> Coach -> Team
-replaceCoach team newCoach =
+replaceCoach : Coach -> Team -> Team
+replaceCoach newCoach team =
     { team | coach = newCoach }
 
 

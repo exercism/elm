@@ -5,7 +5,7 @@ module Bandwagoner exposing (..)
 -- TODO: please define the 'Team' record
 
 
-replaceCoach team newCoach =
+replaceCoach newCoach team =
     Debug.todo "Please implement this function"
 
 
