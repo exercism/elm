@@ -38,8 +38,5 @@ rateActivity activity =
         Movie Romance ->
             Yes
 
-        Movie _ ->
-            No
-
         _ ->
             No
