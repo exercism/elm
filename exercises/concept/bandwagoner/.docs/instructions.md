@@ -26,7 +26,7 @@ Define the `Team` type alias for a record with the following three fields, in th
 
 ## 2. Create a team
 
-placholder
+You want to interface with some third party code that has the concept of a team, but which calls your code with the parameters in a different order. Add a `createTeam` function with the following signature `String -> Stats -> Coach -> Team`.
 
 ## 3. Replace the coach
 

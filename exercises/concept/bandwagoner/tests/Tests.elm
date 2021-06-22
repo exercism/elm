@@ -29,6 +29,19 @@ tests =
                         { name = "Boston Celtics", coach = coach, stats = stats }
                 in
                 Expect.equal team (Team "Boston Celtics" coach stats)
+        , test "createTeam creates a Team structural type" <|
+            \_ ->
+                let
+                    coach =
+                        Coach "Red Auerbach" False
+
+                    stats =
+                        Stats 58 22
+
+                    team =
+                        createTeam "Boston Celtics" stats coach
+                in
+                Expect.equal team (Team "Boston Celtics" coach stats)
         , test "can replace coach for a team" <|
             \_ ->
                 let

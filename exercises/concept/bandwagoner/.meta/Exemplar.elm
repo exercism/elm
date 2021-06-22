@@ -19,6 +19,9 @@ type alias Team =
     , stats : Stats
     }
 
+createTeam : String -> Stats -> Coach -> Team
+createTeam name stats coach =
+    { name = name, stats = stats, coach = coach }
 
 replaceCoach : Coach -> Team -> Team
 replaceCoach newCoach team =
