@@ -11,6 +11,7 @@ The goal of this exercise is to teach students about optional values enabled by 
 - Know how to create a `Maybe` value.
 - Know how to pattern match on its two values.
 - Know how it relates to optional values and simple error handling.
+- Know how to return a default value.
 
 ## Out of scope
 

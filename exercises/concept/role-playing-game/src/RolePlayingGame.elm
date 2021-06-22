@@ -1,11 +1,17 @@
-module RolePlayingGame exposing (Player, castSpell, revive)
+module RolePlayingGame exposing (Player, castSpell, introduce, revive)
 
 
 type alias Player =
-    { level : Int
+    { name : Maybe String
+    , level : Int
     , health : Int
     , mana : Maybe Int
     }
+
+
+introduce : Player -> String
+introduce { name } =
+    Debug.todo "Please implement this function"
 
 
 revive : Player -> Maybe Player

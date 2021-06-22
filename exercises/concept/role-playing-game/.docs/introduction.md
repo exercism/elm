@@ -40,6 +40,7 @@ age = Nothing
 
 Reading the content of a `Maybe` value is done via "pattern matching".
 Pattern matching is also introduced in more details in another concept, so we just focus on how pattern matching a `Maybe` works.
+Sometimes, we can also avoid pattern matching by using predefined functions such as `Maybe.withDefault`.
 
 ```elm
 -- This function returns "Hello, <name>!" if the name was provided.
@@ -55,6 +56,17 @@ sayHello (Just "Matthieu")
 
 sayHello Nothing
     --> "Hello, World!"
+
+-- Here we use Maybe.withDefault instead of pattern matching.
+sayHelloAgain : Maybe String -> String
+sayHelloAgain maybeName =
+    let
+        subject : String
+        subject =
+            Maybe.withDefault "World" maybeName
+    in
+    "Hello, " ++ subject ++ "!"
+
 ```
 
 Everytime you use a `Maybe` value, the Elm compiler will check that your code handles all possibilities so you can never pattern match a `Maybe` and only handle the case where there is a `Just someValue`.
