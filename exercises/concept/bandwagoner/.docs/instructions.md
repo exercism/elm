@@ -8,23 +8,27 @@ You have seven tasks to help you develop your proprietary _root-for-a-team_ algo
 
 ## 1. Define the model
 
-Define the `Coach` type alias for a record with the following two fields:
+Define the `Coach` type alias for a record with the following two fields, in the following order:
 
 - `name`: the coach's name, of type `String`.
 - `formerPlayer`: indicates if the coach was a former player, of type `Bool`.
 
-Define the `Stats` type alias for a record with the following two fields:
+Define the `Stats` type alias for a record with the following two fields, in the following order:
 
 - `wins`: the number of wins, of type `Int`.
 - `losses`: the number of losses, of type `Int`.
 
-Define the `Team` type alias for a record with the following three fields:
+Define the `Team` type alias for a record with the following three fields, in the following order:
 
 - `name`: the team's name, of type `String`.
 - `coach`: the team's coach, of type `Coach`.
 - `stats`: the team's stats, of type `Stats`.
 
-## 5. Replace the coach
+## 2. Create a team
+
+placholder
+
+## 3. Replace the coach
 
 NBA owners being impatient, you found that bad team results would often lead to the coach being replaced.
 Implement the `replaceCoach` function that takes the new coach and the team as parameters, and returns the team but with the new coach:
@@ -42,7 +46,7 @@ replaceCoach newCoach team
 --  , stats = { wins = 58, losses = 24 } }
 ```
 
-## 7. Check if you should root for a team
+## 4. Check if you should root for a team
 
 In the future, you plan to come up with a complicated algorithm about whether to root for a team or not, but for the first attempt, you have decided that you should root for any team has more wins than losses.
 

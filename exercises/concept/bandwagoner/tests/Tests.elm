@@ -8,15 +8,15 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "Bandwagoner"
-        [ test "has Coach type alias" <|
+        [ test "has Coach type alias with correct fields in correct order" <|
             \_ ->
                 Coach "Steve Kerr" True
-                    |> Expect.equal (Coach "Steve Kerr" True)
-        , test "has Stats type alias" <|
+                    |> Expect.equal { name = "Steve Kerr", formerPlayer = True }
+        , test "has Stats type alias with correct fields in correct order" <|
             \_ ->
                 Stats 55 27
-                    |> Expect.equal (Stats 55 27)
-        , test "has Team type alias" <|
+                    |> Expect.equal { wins = 55, losses = 27 }
+        , test "has Team type alias with correct fields in correct order" <|
             \_ ->
                 let
                     coach =
@@ -26,7 +26,7 @@ tests =
                         Stats 58 22
 
                     team =
-                        Team "Boston Celtics" coach stats
+                        { name = "Boston Celtics", coach = coach, stats = stats }
                 in
                 Expect.equal team (Team "Boston Celtics" coach stats)
         , test "can replace coach for a team" <|
