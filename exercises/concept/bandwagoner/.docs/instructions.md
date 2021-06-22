@@ -50,7 +50,7 @@ replaceCoach newCoach team
 
 In the future, you plan to come up with a complicated algorithm about whether to root for a team or not, but for the first attempt, you have decided that you should root for any team has more wins than losses.
 
-You want this function to be reusable in other contexts, so use an extensible record in the type signature to accept any record.
+You want this function to be reusable in other contexts, so use an extensible record in the type signature to accept any record that has the relevant fields.
 To keep the function as concise as possible, you want to use pattern matching to get the `stats` from the function parameter.
 Implement the `rootForTeam` function that takes a team and returns `True` if you should root for that team; otherwise, return `False`.
 

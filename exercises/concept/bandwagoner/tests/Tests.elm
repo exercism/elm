@@ -76,4 +76,9 @@ tests =
                 Team "" (Coach "" True) (Stats 143 143)
                     |> rootForTeam
                     |> Expect.equal False
+        , test "should root for extended teams that have more wins than losses" <|
+            \_ ->
+                { name = "", coach = Coach "" True, stats = Stats 1 0, someOtherField = "" }
+                    |> rootForTeam
+                    |> Expect.equal True
         ]
