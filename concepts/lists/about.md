@@ -5,15 +5,23 @@ As lists are immutable, once a list has been constructed, its value can never ch
 Elm lists have a _head_ (the first element) and a _tail_ (everything after the first element).
 The tail of a list is itself a list.
 
+Type annotations for lists can be defined as follows
+
+```elm
+List String --> a list of String
+List Int --> a list of Int
+```
+
 Lists can be defined as follows:
 
 ```elm
+empty : List Char
 empty = []
 
-singleValue = [ 5 ]
-singleValueAlternative = List.singleton 5
+singleValue = [ 5 ] --> List Int
+singleValueAlternative = List.singleton 5 --> List Int
 
-threeValues = [ "a", "b", "c" ]
+threeValues = [ "a", "b", "c" ] --> List String
 ```
 
 The most common way to add an element to a list is through the `::` (cons) operator:
