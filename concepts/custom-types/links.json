@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/types/custom_types.html",
+    "description": "Custom Types"
+  },
+  {
+    "url": "https://guide.elm-lang.org/types/pattern_matching.html",
+    "description": "Pattern matching"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=IcgmSRJHu_8",
+    "description": "Making impossible states impossible"
+  }
+]

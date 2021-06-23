@@ -1,0 +1,15 @@
+{
+  "blurb": "Learn usage of Custom Types while deciding what to do for Valentines Day",
+  "authors": [
+    "ceddlyburge"
+  ],
+  "contributors": [
+    "mpizenberg"
+  ],
+  "forked_from": ["fsharp/valentines-day"],
+  "files": {
+    "solution": ["src/ValentinesDay.elm"],
+    "test": ["tests/Tests.elm"],
+    "exemplar": [".meta/Exemplar.elm"]
+  }
+}
