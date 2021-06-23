@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/error_handling/maybe.html",
+    "description": "Official guide about Maybe"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Maybe",
+    "description": "Documentation of the Maybe module in elm/core"
+  }
+]

@@ -90,6 +90,11 @@
       "name": "Booleans"
     },
     {
+      "uuid": "4a948be3-4c5e-407f-b29d-a7e7f00fee67",
+      "slug": "maybe",
+      "name": "Maybe"
+    },
+    {
       "uuid": "33944880-b04c-4c36-9d30-e8859a39d3fa",
       "slug": "lists",
       "name": "Lists"
@@ -134,6 +139,18 @@
         ],
         "prerequisites": [
           "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "role-playing-game",
+        "name": "Role Playing Game",
+        "uuid": "c62c5128-5733-4187-b46a-80660d9b5725",
+        "concepts": [
+          "maybe"
+        ],
+        "prerequisites": [
+          "records"
         ],
         "status": "beta"
       },
