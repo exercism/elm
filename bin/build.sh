@@ -49,7 +49,7 @@ do
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-cd build && npx --no-install elm-test --fuzz 10
+cd build && npx --no-install elm-test-rs --fuzz 10
 cd ..
 
 # TEST (practice)
@@ -67,5 +67,5 @@ do
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
 done
 
-cd build && npx --no-install elm-test --fuzz 10
+cd build && npx --no-install elm-test-rs --fuzz 10
 cd ..
