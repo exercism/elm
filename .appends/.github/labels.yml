@@ -3,53 +3,13 @@
 # https://github.com/exercism/org-wide-files/blob/main/global-files/.github/labels.yml.     #
 # ----------------------------------------------------------------------------------------- #
 
-- name: "bug"
-  description: ""
-  color: "fc2929"
-
 - name: "dependencies"
   description: "Pull requests that update a dependency file"
   color: "0366d6"
 
-- name: "duplicate"
-  description: ""
-  color: "cccccc"
-
-- name: "enhancement"
-  description: ""
-  color: "84b6eb"
-
-- name: "first-timers only"
-  description: ""
-  color: "159818"
-
 - name: "good first issue"
-  description: ""
+  description: "Good task for first-time contributors, has a special meaning for GitHub"
   color: "9792f4"
-
-- name: "good first patch"
-  description: ""
-  color: "159818"
-
-- name: "help wanted"
-  description: ""
-  color: "159818"
-
-- name: "in progress"
-  description: ""
-  color: "fcd04e"
-
-- name: "invalid"
-  description: ""
-  color: "e6e6e6"
-
-- name: "meta"
-  description: ""
-  color: "90aa27"
-
-- name: "question"
-  description: ""
-  color: "cc317c"
 
 - name: "wontfix"
   description: ""
