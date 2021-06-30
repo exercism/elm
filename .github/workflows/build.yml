@@ -1,0 +1,32 @@
+name: elm / pr
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v2.3.4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2.1.5
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install elm + tools and cache the ELM_HOME directory
+        uses: mpizenberg/elm-tooling-action@v1.2
+        with:
+          cache-key: elm-${{ matrix.node-version }}-${{ hashFiles('elm-tooling.json', 'template/elm.json') }}
+          cache-restore-key: elm-${{ matrix.node-version }}
+
+      - name: Check that everything is alright
+        run: bin/build.sh
