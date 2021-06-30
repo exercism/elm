@@ -25,8 +25,8 @@ jobs:
       - name: Install elm + tools and cache the ELM_HOME directory
         uses: mpizenberg/elm-tooling-action@v1.2
         with:
-          cache-key: elm-${{ hashFiles('elm-tooling.json', 'template/elm.json') }}
-          cache-restore-key: elm
+          cache-key: elm-${{ matrix.node-version }}-${{ hashFiles('elm-tooling.json', 'template/elm.json') }}
+          cache-restore-key: elm-${{ matrix.node-version }}
 
       - name: Check that everything is alright
         run: bin/build.sh
