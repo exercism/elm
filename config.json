@@ -13,7 +13,7 @@
     "average_run_time": 2.0
   },
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": true,
     "analyzer": false
