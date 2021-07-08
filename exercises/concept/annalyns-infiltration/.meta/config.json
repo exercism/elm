@@ -6,7 +6,7 @@
   "contributors": [
     "ceddlyburge"
   ],
-  "forked_from": ["fsharp/AnnalynsInfiltration"],
+  "forked_from": ["fsharp/annalyns-infiltration"],
   "files": {
     "solution": ["src/AnnalynsInfiltration.elm"],
     "test": ["tests/Tests.elm"],
