@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.elm.christmas/2020/1",
+    "description": "a concise introduction to tuples"
+  },
+  {
+    "url": "https://elmprogramming.com/tuple.html",
+    "description": "an in depth introduction to tupes"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Tuple",
+    "description": "the core/Tuple package, containing some of the source code for tuples"
+  },
+  {
+    "url": "https://www.elm.christmas/2020/7",
+    "description": "simplifying code with ad-hoc tuples"
+  }
+]

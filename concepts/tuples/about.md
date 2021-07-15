@@ -1,6 +1,6 @@
 # Tuples
 
-Tuples in Elm can hold two or three values, and each value can have any type, although idiomatically the three value tuple is rarely used.
+Tuples in Elm can hold two or three values, and each value can have any type, although idiomatically the two value tuple is most commonly used.
 A common use is if you need to return more than one value from a function.
 A tuple's fields don't have names, they are accessed by means of destructuring or by position.
 
