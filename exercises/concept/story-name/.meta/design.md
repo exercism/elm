@@ -9,6 +9,7 @@ The goal of this exercise is to teach students how to consume and make generic c
 - Understand what a type variable is.
 - Know how to define generic types.
 - Know how to define generic functions.
+- Introduce higher order functions.
 
 ## Out of scope
 
@@ -24,3 +25,4 @@ The concepts this exercise unlock are:
 
 - `lists`: Learn how to use lists in an Elm program.
 - `records`: Learn how to use records in an Elm program.
+- `maybe`: Learn how to use optional values with the Maybe type.
