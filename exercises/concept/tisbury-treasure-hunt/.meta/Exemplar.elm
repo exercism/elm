@@ -4,31 +4,32 @@ module TisburyTreasureHunt exposing (penceToPounds, poundsToString)
 -- normally in Elm you would create record types, instead of 
 -- tuples for a problem like this
 
-type alias TreasureLocation = String
+type alias TreasureLocation = (Int, Char)
 
 type alias Treasure = (String, TreasureLocation)
 
-type alias PlaceLocation = (String, String)
+type alias PlaceLocation = (Char, Int)
 
 type alias Place = (String, PlaceLocation)
 
 -- This uses pattern matching on the function arguments
-placeCoordinateToTreasureCoordinate: Treasure -> String
-placeCoordinateToTreasureCoordinate (x, y) =
-    x ++ y
+-- and the creation of a tuple
+placeLocationToTreasureLocation: PlaceLocation -> TreasureLocation
+placeLocationToTreasureLocation (x, y) =
+    (y, x)
 
 -- This uses pattern matching on the function arguments, 
 -- and a discard argument
-treasureCoordinateMatchesPlace: String -> Place -> Bool
-treasureCoordinateMatchesPlace treasureCoordinate (_, placeCoordinate)
-    treasureCoordinate == placeCoordinateToTreasureCoordinate placeCoordinate
+treasureLocationMatchesPlace: TreasureLocation -> Place -> Bool
+treasureLocationMatchesPlace treasureLocation (_, placeLocation)
+    treasureLocation == placeLocationToTreasureLocation placeLocation
 
 -- This uses pattern matching on the function arguments, 
 -- and demonstrates the usefulness of Tuple.first / Tuple.second
 countTreasureLocations: Treasure -> List Place -> List String
-countTreasureLocations (_, treasureCoordinate) places =
+countTreasureLocations (_, treasureLocation) places =
     List.map Tuple.second places
-    |> List.filter (treasureCoordinateMatchesPlace treasureCoordinate)
+    |> List.filter (treasureLocationMatchesPlace treasureLocation)
     |> List.length
 
 -- special case swap
