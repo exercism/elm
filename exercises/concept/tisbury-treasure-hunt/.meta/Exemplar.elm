@@ -1,4 +1,4 @@
-module TisburyTreasureHunt exposing (penceToPounds, poundsToString)
+module TisburyTreasureHunt exposing (..)
 
 -- This problem is contrived to demonstrate the use of Tuples, 
 -- normally in Elm you would create record types, instead of 
@@ -20,16 +20,16 @@ placeLocationToTreasureLocation (x, y) =
 
 -- This uses pattern matching on the function arguments, 
 -- and a discard argument
-treasureLocationMatchesPlace: TreasureLocation -> Place -> Bool
-treasureLocationMatchesPlace treasureLocation (_, placeLocation)
+treasureLocationMatchesPlaceLocation: TreasureLocation -> PlaceLocation -> Bool
+treasureLocationMatchesPlaceLocation treasureLocation placeLocation =
     treasureLocation == placeLocationToTreasureLocation placeLocation
 
 -- This uses pattern matching on the function arguments, 
 -- and demonstrates the usefulness of Tuple.first / Tuple.second
-countTreasureLocations: Treasure -> List Place -> List String
+countTreasureLocations: Treasure -> List Place -> Int
 countTreasureLocations (_, treasureLocation) places =
     List.map Tuple.second places
-    |> List.filter (treasureLocationMatchesPlace treasureLocation)
+    |> List.filter (treasureLocationMatchesPlaceLocation treasureLocation)
     |> List.length
 
 -- special case swap
@@ -38,7 +38,7 @@ countTreasureLocations (_, treasureLocation) places =
 -- If you have the Brass Spyglass in the Abandoned Lighthouse you can swap it for any other treasure
 -- This uses the transient use of a tuple in a case statement, which
 -- is idiomatic in Elm
-specialCaseSwapPossible Treasure -> Place -> Treasure -> Bool
+specialCaseSwapPossible: Treasure -> Place -> Treasure -> Bool
 specialCaseSwapPossible (foundTreasure, _) (place, _) (desiredTreasure, _) =
     case (foundTreasure, place, desiredTreasure) of
         ("Amethyst Octopus", "Stormy Breakwater", "Crystal Crab") ->
@@ -51,6 +51,6 @@ specialCaseSwapPossible (foundTreasure, _) (place, _) (desiredTreasure, _) =
             True
         ("Brass Spyglass", "Abandoned Lighthouse", _) ->
             True
-        _ =>
+        _ ->
             False
 
