@@ -1,0 +1,15 @@
+{
+  "blurb": "Learn usage of Maybe by designing game mechanics",
+  "authors": [
+    "ceddlyburge"
+  ],
+  "contributors": [
+    "mpizenberg"
+  ],
+  "forked_from": ["python/tisbury-treasure-hunt"],
+  "files": {
+    "solution": ["src/TisburyTreasureHunt.elm"],
+    "test": ["tests/Tests.elm"],
+    "exemplar": [".meta/Exemplar.elm"]
+  }
+}
