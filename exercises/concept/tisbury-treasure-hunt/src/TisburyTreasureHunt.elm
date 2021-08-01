@@ -15,7 +15,7 @@ treasureLocationMatchesPlaceLocation placeLocation treasureLocation =
     Debug.todo "implement this function"
 
 
-countPlaceTreasures : ( String, (Char, Int) ) -> List ( String, (Int, Char) ) -> Int
+countPlaceTreasures : ( String, ( Char, Int ) ) -> List ( String, ( Int, Char ) ) -> Int
 countPlaceTreasures place treasures =
     Debug.todo "implement this function"
 
