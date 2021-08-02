@@ -96,8 +96,74 @@ pickActivity activity =
 
 ## Destructuring
 
-- Know how to use `as` in pattern matching.
-- Know how to destructure in case expressions.
-- Know how to destructure in function arguments.
-- Know how to destructure in assignments.
-- Know the naming limitations of destructuring records.
+Destructuring is very similar to pattern matching in the sense that it enables binding of variables to data inside types.
+The main difference is that we call that mechanism "destructuring" when there is only one shape possible, and we call it pattern matching for multiple shapes.
+Destructuring is often found in let bindings, in function arguments, and of course in case expressions, mixed with pattern matching.
+
+```elm
+pairSum : ( Int, Int ) -> Int
+pairSum pair =
+    -- Destructuring of a pair in a 'let' binding
+    let ( x, y ) = pair
+    in x + y
+
+-- Custom type containing a single variant
+type Container = Box String
+
+-- Destructuring of the container as function argument
+-- to bind its content directly without the need of 'let' or 'case'.
+unbox : Container -> String
+unbox (Box str) =
+    str
+
+-- Destructuring combined with pattern matching
+unboxMaybe : Maybe Container -> Maybe String
+unboxMaybe maybeContainer =
+    case maybeContainer of
+        Nothing -> Nothing
+        Just (Box "42") -> Just "The answer to the universe!"
+        Just (Box str) -> Just str
+```
+
+Destructuring can be used for single variant custom types, for tuples, and also for records, where it is very convenient.
+To destructure a record, one can use any number of its fields, one, two, ..., or all the fields.
+
+```elm
+type alias Circle =
+    { radius : Float
+    , center : ( Float, Float )
+    }
+
+perimeter : Circle -> Float
+perimeter { radius } =
+    2 * pi * radius
+```
+
+Unfortunately, the elm syntax does not enable recursive destructuring of records.
+In the previous `Circle` example, there is no way to access the x and y positions of the circle center in one go.
+We must first access the `center` and then destructure it for its x and y positions.
+
+```elm
+left : Circle -> Float
+left { radius, center } =
+    let ( x, _ ) = center
+    in x - radius
+```
+
+And we have one last tip!
+Sometimes we want easy access to both a thing as a whole and a part of it.
+This is where the `as` keyword can be useful.
+It enables giving an alias name to a thing as a whole, while still being able to destructure its content.
+
+```elm
+-- Make the circle smaller if the radius is sufficiently big.
+-- Otherwise, return the circle unchanged.
+smaller : Float -> Circle -> Circle
+smaller reduction ({ radius, center } as circle) =
+    if reduction < radius then
+        { radius = radius - reduction
+        , center = center
+        }
+    else
+        circle
+```
