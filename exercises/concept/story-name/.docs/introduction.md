@@ -51,12 +51,52 @@ hello entity =
 
 ## Advanced pattern matching
 
-- Know how to use literals in pattern matching.
-- Know how to pattern match recursively.
-- Know how to use `as` in pattern matching.
+In addition to custom types, we can also pattern match on types that have literals, such as `Char`, `String`, `Int` and `Floats`.
+
+```elm
+howMany : Int -> String
+howMany count =
+    case count of
+        0 -> "none!"
+        1 -> "there is one!"
+        2 -> "a couple!"
+        _ -> "too many to count!"
+
+greekLetter : String -> String
+greekLetter letter =
+    case letter of
+        "a" -> "alpha"
+        "b" -> "beta"
+        _ -> "I don't remember"
+```
+
+And since lists are dear to functional programmers, they can also be pattern matched on, with the same syntax that is used to build them, using the operator `::`.
+
+```elm
+head : List a -> Maybe a
+head list =
+    case list of
+        [] -> Nothing
+        x :: _ -> Just x
+```
+
+Finally, pattern matching even works recursively, enabling deep dives into complex and recursive types.
+
+```elm
+type Activity = Work | Play Game
+type Game = Boardgame String | VideoGame String
+
+pickActivity : Activity -> Bool
+pickActivity activity =
+    case activity of
+        -- The only thing we want is playing Catan
+        Play (Boardgame "Catan") -> True
+        _ -> False
+```
 
 ## Destructuring
 
+- Know how to use `as` in pattern matching.
 - Know how to destructure in case expressions.
 - Know how to destructure in function arguments.
 - Know how to destructure in assignments.
