@@ -54,6 +54,26 @@ As such, when useful, we tend to give them descriptive names.
 > Now you know!
 > The difference is that the first one is generic over any `msg` type, while the second is specific to your `Msg` type.
 
+## Type parameters in functions
+
+Since types can be generic, so can functions.
+Functions handling generic types can be writen, such as the `List.length` function that we mentioned at the beginning.
+
+```elm
+length : List a -> Int
+length list =
+    case list of
+        [] ->
+            0
+        _ :: restOfTheList ->
+            1 + length restOfTheList
+```
+
+Type parameters can appear both in the inputs and in the output of a function, and genericity enabled by type parameters is usually called **parametric polymorphism**.
+This is in contrast with ad hoc polymorphism also known as function overloading, where the same function name can be used on multiple implementation where the types differ.
+This also contrasts with subtype polymorphism, where types can be defined in a hierarchy, and functions defined on a type can also be called with arguments of its subtypes.
+In elm, the only available mechanism for genericity is parametric polymorphism.
+
 ## Enforcing compile-time constraints with phantom types
 
 In most cases, type parameters are introduced to enable genericity.
@@ -73,7 +93,7 @@ type Distance unit = Distance Float
 ```
 
 In the definition of `Distance` above, `unit` is a free type parameter, not bound to any data in the type.
-We can also call this technique phantom types.
+We can also call this technique **phantom types**.
 It is surprisingly useful when we want to enforce constraints at compile type.
 For example, we want to make sure that we only add distances of the same unit.
 
@@ -119,13 +139,6 @@ twoMeters = Distance.add Distance.meter Distance.meter
 -- This fails at compile time
 errDist = Distance.add Distance.meter Distance.foot
 ```
-
-## Type parameters in functions
-
-- as input
-- as output
-- as both input and output
-- parametric polymorphism VS ad hoc polymorphism VS subtyping polymorphism
 
 ## Higher order functions
 
