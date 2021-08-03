@@ -139,9 +139,3 @@ twoMeters = Distance.add Distance.meter Distance.meter
 -- This fails at compile time
 errDist = Distance.add Distance.meter Distance.foot
 ```
-
-## Higher order functions
-
-- basics of higher order functions: dependency injection.
-- passing functions in config.
-- common patterns accross container types (map, andThen, etc.)
