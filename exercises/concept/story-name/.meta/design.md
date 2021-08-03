@@ -9,17 +9,16 @@ The goal of this exercise is to teach students how to consume and make generic c
 - Understand what a type variable is.
 - Know how to define generic types.
 - Know how to define generic functions.
-- Introduce higher order functions.
+- Know how to use phantom types.
 
 ## Out of scope
 
 - Covariance and contravariance.
+- Higher order functions.
 
 ## Concepts
 
-The concepts this exercise unlock are:
-
-- `generics`: Understand what a type variable is; Know how to define generic types; Know how to define generic functions.
+- `generics`: Learn how to create and use Elm code that is generic.
 
 ## Prerequisites
 
