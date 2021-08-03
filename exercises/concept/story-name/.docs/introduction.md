@@ -1,6 +1,6 @@
 # Introduction
 
-Generics are a way of writing code that avoid duplications of code.
+Generics are a language feature that enable code reuse.
 For example, it should not matter what type a list holds in order to compute its length.
 That is why that function uses a generic type parameter `a` in its type signature.
 
@@ -8,7 +8,7 @@ That is why that function uses a generic type parameter `a` in its type signatur
 length : List a -> Int
 ```
 
-## Type parameters in types
+## Parameters in types
 
 When a type is generic over another type, we use a lowercase name for that other type, and call it a type parameter.
 Two very common examples are the `List` and `Maybe` types.
@@ -31,15 +31,15 @@ In that case, every independant type gets a different lowercase name.
 Being independant does not prevent them from becoming the same type, it just enables them to be different.
 
 ```elm
-type alias NamedPair a b =
+type alias Pair a b =
     { first : a
     , second : b
     }
 
-person : NamedPair String Int
+person : Pair String Int
 person = { first = "Jane", second = 18 }
 
-coordinates : NamedPair Int Int
+coordinates : Pair Int Int
 coordinates = { first = -3, second = 15 }
 ```
 
