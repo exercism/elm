@@ -15,7 +15,7 @@ Types for Tuples are created with parentheses and their element types are separa
 type alias IntStringTuple = (Int, String)
 ```
 
-### Creation
+## Creation
 
 Tuples are created with parentheses and their elements are separated by commas.
 
@@ -30,7 +30,7 @@ aTuple = Tuple.pair 123 "elements can be of differing types"
 --> (123, "elements can be of differing types")
 ```
 
-### Access
+## Access
 
 Tuples can be _destructured_ in bindings using tuple pattern matching.
 Destructuring can be done in let expressions, function declarations and case statements.
@@ -71,7 +71,7 @@ doSomethingWith: (Int, String) -> Bool
 doSomethingWith aTuple =
     let
         aNumber = Tuple.first aTuple
-        aString = Tuple.sceond aTuple
+        aString = Tuple.second aTuple
     in
     ...
 ```
