@@ -60,7 +60,7 @@
     {
       "title": "No runtime exception",
       "content": "Thanks to strict typing, Elm catches potential errors at compilation.",
-      "icon": "immutable"
+      "icon": "safe"
     },
     {
       "title": "JavaScript interop",
@@ -103,6 +103,11 @@
       "uuid": "100cbb44-6ecd-4717-86bd-6b51b6f890a2",
       "slug": "records",
       "name": "Records"
+    },
+    {
+      "uuid": "036f1e5a-dcdc-4625-abce-5aba7e60e0e7",
+      "slug": "tuples",
+      "name": "Tuples"
     }
   ],
   "exercises": {
@@ -175,6 +180,18 @@
         ],
         "prerequisites": [
           "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "d88d7e37-f52b-4999-b7df-bf0db09e7ac5",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "lists"
         ],
         "status": "beta"
       }
