@@ -17,19 +17,19 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Vintage Pirate Hat          | (7, E)   |
 
 | ------------------------------------- | -------- | --------- |
-| Seaside Cottages                      | ('C', 1) | Blue      |
-| Aqua Lagoon (Island of Mystery)       | ('F', 1) | Yellow    |
-| Deserted Docks                        | ('A', 2) | Blue      |
-| Spiky Rocks                           | ('D', 3) | Yellow    |
-| Abandoned Lighthouse                  | ('B', 4) | Blue      |
-| Hidden Spring (Island of Mystery)     | ('E', 4) | Yellow    |
-| Stormy Breakwater                     | ('B', 5) | Purple    |
-| Old Schooner                          | ('A', 6) | Purple    |
-| Tangled Seaweed Patch                 | ('D', 6) | Orange    |
-| Quiet Inlet (Island of Mystery)       | ('E', 7) | Orange    |
-| Windswept Hilltop (Island of Mystery) | ('F', 7) | Orange    |
-| Harbor Managers Office                | ('A', 8) | Purple    |
-| Foggy Seacave                         | ('C', 8) | Purple    |
+| Seaside Cottages                      | (C, 1) | Blue      |
+| Aqua Lagoon (Island of Mystery)       | (F, 1) | Yellow    |
+| Deserted Docks                        | (A, 2) | Blue      |
+| Spiky Rocks                           | (D, 3) | Yellow    |
+| Abandoned Lighthouse                  | (B, 4) | Blue      |
+| Hidden Spring (Island of Mystery)     | (E, 4) | Yellow    |
+| Stormy Breakwater                     | (B, 5) | Purple    |
+| Old Schooner                          | (A, 6) | Purple    |
+| Tangled Seaweed Patch                 | (D, 6) | Orange    |
+| Quiet Inlet (Island of Mystery)       | (E, 7) | Orange    |
+| Windswept Hilltop (Island of Mystery) | (F, 7) | Orange    |
+| Harbor Managers Office                | (A, 8) | Purple    |
+| Foggy Seacave                         | (C, 8) | Purple    |
 
 Players will travel around the map picking up treasures as they go, but the treasure locations and the place locations are formatted differently, to add an extra challenge.
 
