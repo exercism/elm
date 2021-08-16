@@ -103,6 +103,11 @@
       "uuid": "100cbb44-6ecd-4717-86bd-6b51b6f890a2",
       "slug": "records",
       "name": "Records"
+    },
+    {
+      "uuid": "036f1e5a-dcdc-4625-abce-5aba7e60e0e7",
+      "slug": "tuples",
+      "name": "Tuples"
     }
   ],
   "exercises": {
@@ -175,6 +180,18 @@
         ],
         "prerequisites": [
           "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "f68d3622-feb4-11eb-9a03-0242ac130003",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "lists"
         ],
         "status": "beta"
       }
