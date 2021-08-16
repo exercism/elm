@@ -1,3 +1,5 @@
+# Instructions
+
 Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of treasures with map locations, the other a list of place names with map locations.
 
 | Treasure                    | Location |
@@ -31,16 +33,14 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Harbor Managers Office                | (A, 8) | Purple    |
 | Foggy Seacave                         | (C, 8) | Purple    |
 
-Players will travel around the map picking up treasures as they go, but the treasure locations and the place locations are formatted differently, to add an extra challenge.
-
+Players will travel around the map picking up treasures as they go.
+Treasure and place locations are formatted differently, to add an extra challenge.
 There are also some special places, where certain treasures can be swapped for certain other ones, to add an extra twist to the game.
-
-Your job is to write some functions to help them with their game.
+Your job is to write functions to help them with their game.
 
 ## 1. Convert locations
 
 Implement the `placeLocationToTreasureLocation` function that takes a Place Location (such as ('C', 1)) and converts it to a Treasure Location (such as (1, 'C')).
-​
 
 ## 2. Compare Treasue and Place locations
 
