@@ -40,22 +40,41 @@ Your job is to write functions to help them with their game.
 
 ## 1. Convert locations
 
-Implement the `placeLocationToTreasureLocation` function that takes a Place Location (such as ('C', 1)) and converts it to a Treasure Location (such as (1, 'C')).
+Implement the `placeLocationToTreasureLocation` function that takes a Place Location (such as `('C', 1)`) and converts it to a Treasure Location (such as `(1, 'C')`).
 
-## 2. Compare Treasue and Place locations
+```elm
+placeLocationToTreasureLocation ('C', 1)
+--> (1,'C')
+```
 
-Implement the `treasureLocationMatchesPlaceLocation; function that takes a Place Location (such as ('C', 1)) and returns true if it matches a Treasure Location (such as (1, 'C')).
+## 2. Compare Treasure and Place locations
+
+Implement the `treasureLocationMatchesPlaceLocation` function that takes a `PlaceLocation` (such as `('C', 1)`) and returns true if it matches a `TreasureLocation` (such as `(1, 'C')`).
+
+```elm
+treasureLocationMatchesPlaceLocation ('C', 1) (1, 'C')
+--> true
+
+treasureLocationMatchesPlaceLocation ('C', 1) (2, 'C')
+--> false
+```
 
 ## 3. Count Treasure Locations
 
-todo
-Implement the `countPlaceTreasures` function, that takes a Place (such as ("Aqua Lagoon (Island of Mystery) ", ('F', 1))), and the list of Treasures, and returns the number of treasures that can be found there.
+Implement the `countPlaceTreasures` function, that takes a Place (such as `("Aqua Lagoon (Island of Mystery)", ('F', 1))`), and the list of Treasures, and returns the number of treasures that can be found there.
+
+```elm
+place = ("Aqua Lagoon (Island of Mystery)", ('F', 1))
+
+countPlaceTreasures place treasures =
+--> 2
+```
 
 ## 4. Special Places
 
-Implement the `specialCaseSwapPossible` function, which takes a Treasure (such as ("Amethyst Octopus", (1, 'F'))) and a Place (such as ("Seaside Cottages ", ('C', 1))), and returns true for the following combinations:
+Implement the `specialCaseSwapPossible` function, which takes a Treasure (such as `("Amethyst Octopus", (1, 'F'))`) and a Place (such as `("Seaside Cottages ", ('C', 1))`), and returns true for the following combinations:
 
-- The Brass Spyglass can be swapped for anything other treasure at the Abandoned Lighthouse
+- The Brass Spyglass can be swapped for any other treasure at the Abandoned Lighthouse
 - The Amethyst Octopus can be swapped for the Crystal Crab or the Glass Starfish at the Stormy Breakwater
 - The Vintage Pirate Hat can be swapped for the Model Ship in Large Bottle or the Antique Glass Fishnet Float at the Harbor Managers Office
 
