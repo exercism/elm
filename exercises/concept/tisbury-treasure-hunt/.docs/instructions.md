@@ -1,8 +1,5 @@
 Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of treasures with map locations, the other a list of place names with map locations.
 
-<table>
-<tr><td>
-
 | Treasure                    | Location |
 | --------------------------- | -------- |
 | Amethyst Octopus            | (1, F)   |
@@ -19,9 +16,6 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Silver Seahorse             | (4, E)   |
 | Vintage Pirate Hat          | (7, E)   |
 
-</td><td></td><td>
-
-| Place Name                            | Location | Quandrant |
 | ------------------------------------- | -------- | --------- |
 | Seaside Cottages                      | ('C', 1) | Blue      |
 | Aqua Lagoon (Island of Mystery)       | ('F', 1) | Yellow    |
@@ -36,9 +30,6 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Windswept Hilltop (Island of Mystery) | ('F', 7) | Orange    |
 | Harbor Managers Office                | ('A', 8) | Purple    |
 | Foggy Seacave                         | ('C', 8) | Purple    |
-
-</td></tr>
-</table>
 
 Players will travel around the map picking up treasures as they go, but the treasure locations and the place locations are formatted differently, to add an extra challenge.
 
