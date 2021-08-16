@@ -5,11 +5,11 @@
   },
   {
     "url": "https://elmprogramming.com/tuple.html",
-    "description": "an in depth introduction to tupes"
+    "description": "an in depth introduction to tuples"
   },
   {
     "url": "https://package.elm-lang.org/packages/elm/core/latest/Tuple",
-    "description": "the core/Tuple package, containing some of the source code for tuples"
+    "description": "detailed API doc of the Tuple module in elm/core package"
   },
   {
     "url": "https://www.elm.christmas/2020/7",

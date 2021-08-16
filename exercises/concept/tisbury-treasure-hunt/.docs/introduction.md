@@ -5,7 +5,7 @@ A common use is if you need to return more than one value from a function.
 A tuple's fields don't have names, they are accessed by means of destructuring or by position.
 
 You can read a [concise introduction to tuples][tuples-concise].
-There is also a [more in depth introduction][tuples-in-depth], and the [core/Tuple][tuple-core] package contains some of the source code and documentation.
+There is also a [more in depth introduction][tuples-in-depth], and the [API doc of the Tuple module][tuple-core] contains code examples and detailed documentation.
 
 ## Declaration
 
