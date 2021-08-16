@@ -18,6 +18,7 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Silver Seahorse             | (4, E)   |
 | Vintage Pirate Hat          | (7, E)   |
 
+| Place Name                            | Location | Quandrant |
 | ------------------------------------- | -------- | --------- |
 | Seaside Cottages                      | (C, 1) | Blue      |
 | Aqua Lagoon (Island of Mystery)       | (F, 1) | Yellow    |
