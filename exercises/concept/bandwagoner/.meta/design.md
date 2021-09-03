@@ -19,8 +19,8 @@
 
 ## Concepts
 
-- `records`: Learn how to use records in an Elm program
+- `records`
 
 ## Prerequisites
 
-- `basics-2`: Know the basics of Elm programming.
+- `basics-2`

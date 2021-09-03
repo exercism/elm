@@ -16,7 +16,7 @@
 
 ## Concepts
 
-- `basics-1`: Know the basic syntax of an Elm file.
+- `basics-1`
 
 ## Prequisites
 
