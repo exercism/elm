@@ -100,6 +100,11 @@
       "name": "Records"
     },
     {
+      "uuid": "7e55adb0-c813-4d31-a2e2-4381b38f0d87",
+      "slug": "custom-types",
+      "name": "Custom Types"
+    },
+    {
       "uuid": "036f1e5a-dcdc-4625-abce-5aba7e60e0e7",
       "slug": "tuples",
       "name": "Tuples"
@@ -165,6 +170,18 @@
         "uuid": "af1cc0cd-b9f8-46ef-b4bf-7a5a17b1c8d6",
         "concepts": [
           "records"
+        ],
+        "prerequisites": [
+          "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "valentines-day",
+        "name": "Valentines Day",
+        "uuid": "2ce85ab7-35a0-4566-803f-e60397a2391d",
+        "concepts": [
+          "custom-types"
         ],
         "prerequisites": [
           "basics-2"
