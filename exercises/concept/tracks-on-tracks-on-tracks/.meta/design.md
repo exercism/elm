@@ -20,8 +20,8 @@
 
 ## Concepts
 
-- `lists`: know of the existence of the `List` type; know how to define an empty and non-empty list; know how to add an element to a list; know some common list functions; know how to pattern match on lists.
+- `lists`
 
 ## Prerequisites
 
-- `basics-2`: Know the basic syntax of an Elm file.
+- `basics-2`

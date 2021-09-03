@@ -12,9 +12,9 @@ Introduce the student to tuples and how to work with them.
 
 ## Concepts
 
-- `tuples`: Understand tuples in Elm.
+- `tuples`
 
 ## Prerequisites
 
-- `basics-2`: Know the basic syntax of an Elm file.
-- `lists`: understand `List` type.
+- `basics-2`
+- `lists`
