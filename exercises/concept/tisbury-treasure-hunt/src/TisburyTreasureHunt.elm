@@ -1,7 +1,7 @@
 module TisburyTreasureHunt exposing (..)
 
 -- Consider defining a type alias for TreasureLocation,
--- Treasure, Placelocation and Place,
+-- Treasure, PlaceLocation and Place,
 -- and using them in the function type annotations
 
 
