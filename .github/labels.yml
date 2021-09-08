@@ -154,3 +154,11 @@
 - name: "wontfix"
   description: ""
   color: "ffffff"
+
+- name: "x:priority/high"
+  description: "Has a higher priority than other issues"
+  color: "8FDAF8"
+
+- name: "x:priority/low"
+  description: "Has a lower priority than other issues"
+  color: "8FDAF9"
