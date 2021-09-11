@@ -2,8 +2,9 @@
 
 ## Constants and functions
 
-A constant value is defined with `name = expression`,
-where in Elm, everything except definitions are expressions.
+Elm programs are composed of definitions and expressions.  Everything in Elm is either a definition or expression.
+
+A constant value is defined with `name = expression`.
 
 ```elm
 five = 5
@@ -54,7 +55,7 @@ https://elmprogramming.com/indentation.html
 
 Each file in Elm is a module, and must contain a `module` statement before all other code.
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm.
-Anything defined within a module is privatly scoped to it
+Anything defined within a module is privately scoped to it
 and cannot be accessed from outside this module, unless listed in `exposing`.
 
 ```elm
