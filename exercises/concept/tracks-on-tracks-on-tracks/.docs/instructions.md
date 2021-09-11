@@ -64,6 +64,6 @@ As such, you're really excited about a list of languages if:
 Implement the `excitingList` function to check if a list of languages is exciting:
 
 ```elm
-excitingList [ "Nim"; "Elm" ]
+excitingList [ "Nim", "Elm" ]
     --> True
 ```
