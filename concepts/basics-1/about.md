@@ -2,7 +2,8 @@
 
 ## Constants and functions
 
-Elm programs are composed of definitions and expressions.  Everything in Elm is either a definition or expression.
+Elm programs are composed of definitions and expressions.
+Everything in Elm is either a definition or an expression.
 
 A constant value is defined with `name = expression`.
 
