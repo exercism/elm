@@ -120,7 +120,7 @@ Now that the code and documentation are done, we are left with the few config fi
 
 Thank you for your contribution to exercism, you are awesome!
 
-[product-concept]: https://github.com/exercism/docs/blob/main/product/concept-exercises.md
+[product-concept]: https://github.com/exercism/docs/blob/main/building/product/concept-exercises.md
 [concept-exercise-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
 [concept-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
 [docs-repo]: https://github.com/exercism/docs
