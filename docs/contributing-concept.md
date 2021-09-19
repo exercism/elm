@@ -19,8 +19,10 @@ You can compare them with the graph of concepts we intend to implement represent
 
 <img src="https://mermaid.ink/svg/eyJjb2RlIjoiZmxvd2NoYXJ0IFRCO1xuYmFzaWNzLTEgLS0-IGJhc2ljcy0yO1xuYmFzaWNzLTIgLS0-IGJvb2xlYW5zO1xuYmFzaWNzLTIgLS0-IGxpc3RzO1xuYmFzaWNzLTIgLS0-IHJlY29yZHM7XG5iYXNpY3MtMiAtLT4gY3VzdG9tLXR5cGVzO1xubGlzdHMgLS0-IHR1cGxlcztcbnJlY29yZHMgLS0-IG1heWJlO1xuXG5iYXNpY3MtMiAtLT4gbGV0O1xuXG5saXN0cyAtLT4gZ2VuZXJpY3M7XG5yZWNvcmRzIC0tPiBnZW5lcmljcztcbm1heWJlIC0tPiBnZW5lcmljcztcblxudHVwbGVzIC0tPiBjb21wYXJpc29uO1xubGlzdHMgLS0-IGNvbXBhcmlzb247XG5cbmNvbXBhcmlzb24gLS0-IHNldDtcblxuY29tcGFyaXNvbiAtLT4gZGljdDtcbm1heWJlIC0tPiBkaWN0O1xuXG5saXN0cyAtLT4gYXJyYXk7XG5tYXliZSAtLT4gYXJyYXk7XG5cbm1heWJlIC0tPiByZXN1bHQ7XG5jdXN0b20tdHlwZXMgLS0-IHJlc3VsdDtcblxuYmFzaWNzLTIgLS0-IHBhcnRpYWwtYXBwbGljYXRpb247XG5cbnBhcnRpYWwtYXBwbGljYXRpb24gLS0-IGNvbXBvc2l0aW9uO1xuXG5jbGFzc0RlZiBkb25lIGZpbGw6IzZmNixzdHJva2U6IzMzMyxzdHJva2Utd2lkdGg6M3B4O1xuY2xhc3MgYmFzaWNzLTEsYmFzaWNzLTIsYm9vbGVhbnMsbGlzdHMscmVjb3JkcyxjdXN0b20tdHlwZXMsdHVwbGVzLG1heWJlIGRvbmU7XG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlLCJhdXRvU3luYyI6dHJ1ZSwidXBkYXRlRGlhZ3JhbSI6ZmFsc2V9"/>
 
-Identify a missing concept that you want to implement.
-Beware that the graph above is a moving target and may change as we find that prerequisites should differ.
+Already implemented concepts should appear with a green background and a stronger outline.
+Beware that the above graph is a moving target and may change as we find that prerequisites should differ.
+
+Concepts and concept exercises that have not been implemented yet should also be listed in the GitHub issues of this repo, with the label [`x:module/concept-exercise`](https://github.com/exercism/elm/issues?q=is%3Aissue+is%3Aopen+label%3Ax%3Amodule%2Fconcept-exercise).
 
 ## 2. Define the learning goals
 
