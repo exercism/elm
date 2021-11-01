@@ -216,6 +216,18 @@
           "records"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "go",
+        "name": "Go",
+        "uuid": "33c34af3-26fa-4e18-8bb3-8af688069c9e",
+        "concepts": [
+          "result"
+        ],
+        "prerequisites": [
+          "maybe"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
