@@ -68,4 +68,9 @@ tests =
                 applyRules vanillaGame identityRule addWhiteCapturedStone identityRule identityRule
                     |> Expect.equal
                         (vanillaGame |> addWhiteCapturedStone |> changePlayer)
+        , test "should discard changes from captureRule if subsequent rule fails" <|
+            \() ->
+                applyRules vanillaGame identityRule addWhiteCapturedStone identityRule (errRule koRule)
+                    |> Expect.equal
+                        { vanillaGame | error = koRule }
         ]
