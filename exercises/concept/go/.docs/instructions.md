@@ -29,7 +29,7 @@ There are 4 rules in the game:
 
 Write the content of the `applyRules` function, which takes an initial `Game` and a set of rules, and returns the new `Game` after the rules have been applied.
 
-`oneStonePerPointRule`, `libertyRule` and `koRule` rules all check for violations of the rules, and may return an error, and so have the return type of `Result String Game`. If any of these rules fail, the original game should be returned, but with the `error` field updated with the relevant error.
+`oneStonePerPointRule`, `libertyRule` and `koRule` all check for violations of the rules, and may return an error, and so have the return type of `Result String Game`. If any of these rules fail, the original game should be returned, but with the `error` field updated with the relevant error.
 
 `captureRule` does not check for violations and so cannot fail (although it can return a changed `Game`) and so has the return type of `Game`.
 
