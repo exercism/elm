@@ -30,7 +30,7 @@ describe list =
             "Singleton list with: hello"
 
         x :: xs ->
-            "Non-empty list with head: " ++ head
+            "Non-empty list with head: " ++ x
 
 describe []                   --> "Empty list"
 describe [ "hello" ]          --> "Singleton list with: hello"
