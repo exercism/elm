@@ -26,12 +26,12 @@
 
 About using Elm:
 
-- [Making Impossible States Impossible](https://youtu.be/IcgmSRJHu_8) *Richard Feldman*
-- [Make Data Structures](https://youtu.be/x1FU3e0sT1I) *Richard Feldman*
-- [The life of a file](https://youtu.be/XpDsk374LDE) *Evan Czaplicki*
+- [Making Impossible States Impossible](https://youtu.be/IcgmSRJHu_8) _Richard Feldman_
+- [Make Data Structures](https://youtu.be/x1FU3e0sT1I) _Richard Feldman_
+- [The life of a file](https://youtu.be/XpDsk374LDE) _Evan Czaplicki_
 
 About how Elm is developed, and why it is the way it is:
 
-- [Let's be mainstream! User focused design in Elm](https://youtu.be/oYk8CKH7OhE) ([transcript](http://www.elmbark.com/2016/03/16/mainstream-elm-user-focused-design)) *Evan Czaplicki*
-- [Code is the Easy Part](https://youtu.be/DSjbTC-hvqQ) *Evan Czaplicki*
-- [What is Success?](https://youtu.be/uGlzRt-FYto) *Evan Czaplicki*
+- [Let's be mainstream! User focused design in Elm](https://youtu.be/oYk8CKH7OhE)
+- [Code is the Easy Part](https://youtu.be/DSjbTC-hvqQ) _Evan Czaplicki_
+- [What is Success?](https://youtu.be/uGlzRt-FYto) _Evan Czaplicki_
