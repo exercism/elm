@@ -230,7 +230,8 @@
           "result"
         ],
         "prerequisites": [
-          "maybe"
+          "maybe",
+          "let"
         ],
         "status": "beta"
       },
