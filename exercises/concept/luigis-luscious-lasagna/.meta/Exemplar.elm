@@ -7,7 +7,7 @@ remainingTimeInMinutes layers minutesSinceStarting =
         expectedMinutesInOven =
             40
 
-        preparationTimeInMinutes layers =
+        preparationTimeInMinutes =
             2 * layers
     in
     preparationTimeInMinutes + expectedMinutesInOven - minutesSinceStarting
