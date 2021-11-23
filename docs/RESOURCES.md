@@ -32,6 +32,6 @@ About using Elm:
 
 About how Elm is developed, and why it is the way it is:
 
-- [Let's be mainstream! User focused design in Elm](https://youtu.be/oYk8CKH7OhE)
+- [Let's be mainstream! User focused design in Elm](https://youtu.be/oYk8CKH7OhE) _Evan Czaplicki_
 - [Code is the Easy Part](https://youtu.be/DSjbTC-hvqQ) _Evan Czaplicki_
 - [What is Success?](https://youtu.be/uGlzRt-FYto) _Evan Czaplicki_
