@@ -7,7 +7,7 @@ After some time spent following her best friend's trail, she finds the camp in w
 Having found the kidnappers, Annalyn considers which of the following actions she can engage in:
 
 - Fast attack: a fast attack can be made if the knight is sleeping, as it takes time for him to get his armor on, so he will be vulnerable.
-- Stealth attack: if Annalyn reaches the sleeping knight without being detected, she deals 12 damage with a stealth attack. Otherwise, she deals only 7 damage to the knight.
+- _Stealth attack_: if Annalyn reaches the sleeping knight without being detected, she deals 12 damage with a stealth attack. Otherwise, she deals only 7 damage to the knight.
 - _Spy_: the group can be spied upon if at least one of them is awake. Otherwise, spying is a waste of time.
 - _Signal prisoner_: the prisoner can be signalled using bird sounds if the prisoner is awake and the archer is sleeping, as archers are trained in bird signaling so they could intercept the message.
 - _Free prisoner_: Annalyn can try sneaking into the camp to free the prisoner.
