@@ -15,7 +15,7 @@
     ],
     "example": [
       ".meta/src/Bowling.example.elm",
-      ".meta/src/Bowling.example.elm"
+      ".meta/src/Bowling.example2.elm"
     ]
   },
   "source": "Inspired by Uncle Bob's Bowling Game Kata",
