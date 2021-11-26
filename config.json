@@ -773,6 +773,20 @@
           "lists",
           "recursion"
         ]
+      },
+      {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "7a770c35-ff28-4246-9ff4-9daf88bb7e13",
+        "practices": [ ],
+        "prerequisites": [ ],
+        "difficulty": 8,
+        "topics": [
+          "lists",
+          "recursion",
+          "result",
+          "pattern-matching"
+        ]
       }
     ]
   }
