@@ -2,12 +2,12 @@ module Tests exposing (tests)
 
 import Bowling exposing (score)
 import Expect
-import Test exposing (Test, describe, skip, test)
+import Test exposing (Test, describe, test)
 
 
 tests : Test
 tests =
-    describe "{exercise}"
+    describe "Bowling Score"
         [ test "should be able to score a game with all zeros" <|
             \_ ->
                 Expect.equal (Ok 0) <|
