@@ -1,14 +1,13 @@
 module Bowling exposing (score)
 
 
-score : List Int -> Result String Int
+score : List Int -> Maybe Int
 score rolls =
     convertToFrames rolls
         -- Maybe Frames
         |> Maybe.andThen validateFrames
         -- Maybe Frames
         |> Maybe.andThen (\frames -> Just (countPoints (Debug.log "frames" frames)))
-        |> Result.fromMaybe ""
 
 
 type alias Frames =
