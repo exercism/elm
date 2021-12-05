@@ -7,7 +7,7 @@ score rolls =
         -- Maybe Frames
         |> Maybe.andThen validateFrames
         -- Maybe Frames
-        |> Maybe.andThen (\frames -> Just (countPoints (Debug.log "frames" frames)))
+        |> Maybe.andThen (\frames -> Just (countPoints frames))
 
 
 type alias Frames =
