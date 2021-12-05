@@ -4,7 +4,8 @@ module Bowling exposing (Rolls, score)
 type alias Rolls =
     List Int
 
-{-| There are stronger guarantees we could make with the type system, such as defining a 
+
+{-| There are stronger guarantees we could make with the type system, such as defining a
 Game type that had 9 frames, and then a special case last frame
 -}
 type Frame
@@ -14,77 +15,86 @@ type Frame
     | ThreeBallFinalFrame Int Int Int
 
 
-score : Rolls -> Result String Int
+score : Rolls -> Maybe Int
 score rolls =
     validateRolls rolls
-        |> Result.andThen toFrames
-        |> Result.andThen validateFrames
-        |> Result.map scoreFrames
+        |> Maybe.andThen toFrames
+        |> Maybe.andThen validateFrames
+        |> Maybe.map scoreFrames
 
 
-validateRolls : Rolls -> Result String Rolls
+validateRolls : Rolls -> Maybe Rolls
 validateRolls rolls =
     if List.any (\roll -> roll < 0) rolls then
-        Err "Negative rolls are invalid"
+        Nothing
+        -- "Negative rolls are invalid"
 
     else if List.any (\roll -> roll > numberOfPins) rolls then
-        Err ("Rolls greater than " ++ String.fromInt numberOfPins ++ " are invalid")
+        Nothing
+        -- "Rolls greater than " ++ String.fromInt numberOfPins ++ " are invalid"
 
     else
-        Ok rolls
+        Just rolls
 
 
-validateFrames : List Frame -> Result String (List Frame)
+validateFrames : List Frame -> Maybe (List Frame)
 validateFrames frames =
     if List.length frames /= 10 then
-        Err "A game must be 10 frames long"
+        Nothing
+        -- "A game must be 10 frames long"
 
     else
-        Ok frames
+        Just frames
 
 
 {-| A solution using Parser is worth thinking about here, and would allow better error messages,
 displaying the point where the parsing failed, and the things that had been parsed up to that
 point
 -}
-toFrames : Rolls -> Result String (List Frame)
+toFrames : Rolls -> Maybe (List Frame)
 toFrames rolls =
     case rolls of
         [ a, b, c ] ->
             if isStrike a && not (isStrike b) && b + c > numberOfPins then
-                Err "Cannot score more then 10 with last two balls unless the first one is a strike"
+                Nothing
+                -- "Cannot score more then 10 with last two balls unless the first one is a strike"
 
             else if a + b >= numberOfPins then
-                Ok [ ThreeBallFinalFrame a b c ]
+                Just [ ThreeBallFinalFrame a b c ]
 
             else
-                Err "Can only have 3 rolls in the last frame if a strike or spare is scored with in the first two"
+                Nothing
 
+        -- "Can only have 3 rolls in the last frame if a strike or spare is scored with in the first two"
         -- It's a shame we have to hard code 10 here instead of using numberOfPins
         [ 10 ] ->
-            Err "If a strike is scored in the first two rolls of the last frame, 3 rolls are required"
+            Nothing
 
+        -- "If a strike is scored in the first two rolls of the last frame, 3 rolls are required"
         10 :: rest ->
-            Result.map ((::) Strike) (toFrames rest)
+            Maybe.map ((::) Strike) (toFrames rest)
 
         a :: b :: rest ->
             if isSpare a b && List.length rest == 0 then
-                Err "If a spare is scored in the first two rolls of the last frame, 3 rolls are required"
+                Nothing
+                -- "If a spare is scored in the first two rolls of the last frame, 3 rolls are required"
 
             else if isSpare a b then
-                Result.map ((::) (Spare a b)) (toFrames rest)
+                Maybe.map ((::) (Spare a b)) (toFrames rest)
 
             else if a + b > numberOfPins then
-                Err ("A frame cannot score more than " ++ String.fromInt numberOfPins)
+                Nothing
+                -- "A frame cannot score more than " ++ String.fromInt numberOfPins
 
             else
-                Result.map ((::) (Open a b)) (toFrames rest)
+                Maybe.map ((::) (Open a b)) (toFrames rest)
 
         [] ->
-            Ok []
+            Just []
 
         [ _ ] ->
-            Err "Invalid single roll"
+            -- "Invalid single roll"
+            Nothing
 
 
 scoreFrames : List Frame -> Int
