@@ -52,10 +52,7 @@ For a tenth frame of XXX (three strikes), the total value is 30.
 
 ## Requirements
 
-Write code to keep track of the score of a game of bowling. It should
-support two operations:
+Write code to keep track of the score of a game of bowling.
 
-- `roll(pins : int)` is called each time the player rolls a ball. The
-  argument is the number of pins knocked down.
-- `score() : int` is called only at the very end of the game. It
+- `score : List Int -> Maybe Int` is called only at the very end of the game. It
   returns the total score for that game.
