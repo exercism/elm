@@ -1,6 +1,6 @@
 # About
 
-The `Result` type is the solution in the Elm language for error reporting and an enabler for error recovery. It is somewhat similar to the `Maybe` type, but where Maybe can be returned by functions that may fail, it doesn't tell you anything about why it failed. Result includes this context about why something failed.
+The `Result` type is the solution in the Elm language to error reporting and error recovery. It is somewhat similar to the `Maybe` type, but where `Maybe`'s `Nothing` encodes some kind of failure, it doesn't tell you anything about why it failed. `Result` includes a context about why something failed.
 
 ## Definition and type variable
 
