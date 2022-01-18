@@ -67,7 +67,7 @@ This will prevent hundreds of bugs and makes compiler-guided refactoring a fearl
 
 ## Manipulating the content of a Result value
 
-There are various functions to work with Result types, which are usually preferable to pattern matching. `map` can be used to map the value, and `andThen` can be used to chain together functions that may fail.
+There are various functions to work with `Result` types, which are usually preferable to pattern matching. `Result.map` can be used to map the value, and `Result.andThen` can be used to chain together functions that may fail.
 
 Result.map is used to change the Ok value and is useful to chain functions together without having to worry about whether the Result contains an error or not. If the value is Ok, Result.map calls the chained function (`formatAge` below), but if there is an error, Result.map does nothing, and just returns the error.
 
