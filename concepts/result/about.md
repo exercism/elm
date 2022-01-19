@@ -12,6 +12,8 @@ type Result error value
   | Err error
 ```
 
+In a nutshell, this type encodes the result of an operation that can either succeed and return a `value` or fail and return an explanation for the failure (`error`).
+
 This is known as a "custom type" definition in Elm terminology.
 Custom types are introduced in details in another concept of this track but we won't need it to understand specifically `Result`.
 The `error` and `value` in `OK value` and `Error error` represent a type variable, meaning it can be any type, such as `Int`, `Bool` or `String`.
@@ -34,9 +36,6 @@ ageFromString input =
       else
         Ok age
 ```
-
-The vertical bar `|` in the type definition of `Result` means "OR".
-It indicates that it can either be `Ok` something OR be `Error` something.
 
 ## Reading the content of a Result value
 
