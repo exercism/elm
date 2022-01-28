@@ -15,7 +15,7 @@ expectedMinutesInOven
     --> 40
 ```
 
-Define the `preparationTimeInMinutes` function that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+Define the `preparationTimeInMinutes` constant that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
 
 ```elm
 preparationTimeInMinutes 3
