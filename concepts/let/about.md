@@ -14,7 +14,7 @@ The `let` expression is useful in a few situations:
 - For naming the results of intermediate expressions
 - Splitting an expression in to smaller bits if it is getting large
 
-You can do most things inside a `let` expression, including destructuring (more details on this in later exercises), however the following are not allowed:
+You can do most things inside a `let` expression, including destructuring, however the following are not allowed:
 
 - Custom Types
 - Type Alias'
