@@ -8,7 +8,7 @@ This is where `let` expressions come in. They have two parts, a `let` section wh
 
 In computing terms, `let` creates a scope that is local to the expression in `in`.
 
-The let expression is useful in a few situations:
+The `let` expression is useful in a few situations:
 
 - For simplifying expressions
 - For naming the results of intermediate expressions
