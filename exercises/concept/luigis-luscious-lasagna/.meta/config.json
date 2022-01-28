@@ -7,9 +7,6 @@
   "contributors": [
     "mpizenberg"
   ],
-  "forked_from": [
-    "elm/lucians-luscious-lasagna"
-  ],
   "files": {
     "solution": [
       "src/LuigisLusciousLasagna.elm"
