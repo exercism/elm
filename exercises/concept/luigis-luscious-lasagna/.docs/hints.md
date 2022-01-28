@@ -1,6 +1,6 @@
 # General
 
-- The let expressions is described in the [Elm lang documentation][let-elm-lang].
+- The `let` expressions are described in the [Elm lang documentation][let-elm-lang].
 - Whitespace is important
 - There can only be one expression in the `in` section
 
