@@ -1,6 +1,6 @@
 # Introduction
 
-The let expression is used to create a local scope, and is useful in a few situations:
+The `let` expression is used to create a local scope, and is useful in a few situations:
 
 - For simplifying expressions
 - For naming the results of intermediate expressions
