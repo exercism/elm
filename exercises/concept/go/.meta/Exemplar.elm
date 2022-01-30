@@ -1,4 +1,4 @@
-module Go exposing (..)
+module ApplyRules exposing (..)
 
 import Go exposing (..)
 
