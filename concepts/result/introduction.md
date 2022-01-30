@@ -13,3 +13,4 @@ type Result error value
 This is known as a "custom type" definition in Elm terminology.
 The `error` and `value` in `OK value` and `Error error` represent a type variable, meaning it can be any type, such as `Int`, `Bool` or `String`.
 As such, a `Result String Int` is a variable that is expected to contain an `Int`, and if there is an error this will be represented as a `String`.
+There is a [Result module](https://package.elm-lang.org/packages/elm/core/latest/Result) with lots of useful helper functions for result.
