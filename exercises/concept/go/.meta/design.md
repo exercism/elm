@@ -25,4 +25,5 @@ The goal of this exercise is to teach students about error handling enabled by t
 
 - `basics-2`
 - `records`
+- `customTypes`
 - `maybe`
