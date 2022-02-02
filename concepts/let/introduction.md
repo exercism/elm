@@ -14,3 +14,20 @@ let
 in
   cube a + cube b + cube c
 ```
+
+```elm
+beginWithPattern : Size -> Padding -> Pattern -> GameOfLife
+beginWithPattern minimumSize padding pattern =
+    let
+        size = calculateSize minimumSize padding pattern
+
+        center = Size.center size
+
+        centeredPattern = Pattern.centerAt center pattern
+
+        dimensions = { width = size, height = size }
+
+        deadCells = Matrix.create dimensions Dead
+    in
+    GameOfLife (bringPatternToLife deadCells centeredPattern)
+```

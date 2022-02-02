@@ -53,33 +53,23 @@ cylinderArea radius height =
 
 ## Splitting a large expression
 
-This code takes a list of results of games played between teams in a league, and converts it in to a league table.
+This code creates an initial pattern for the [Game of Life](https://playgameoflife.com/) (a common programming example exercise).
 
 It's not important to understand exactly how it works, but hopefully it is obvious that it would be very large if written as a single expression, without `let`.
 
 ```elm
-calculateLeagueTable : LeagueGames -> LeagueTable
-calculateLeagueTable leagueGames =
+beginWithPattern : Size -> Padding -> Pattern -> GameOfLife
+beginWithPattern minimumSize padding pattern =
     let
-        homeTeamNames =
-            List.map (\game -> game.homeTeamName) leagueGames.games
+        size = calculateSize minimumSize padding pattern
 
-        awayTeamNames =
-            List.map (\game -> game.awayTeamName) leagueGames.games
+        center = Size.center size
 
-        teamNames =
-            List.append homeTeamNames awayTeamNames |> unique
+        centeredPattern = Pattern.centerAt center pattern
 
-        unpositionedTeams =
-            List.map (unpositionedTeam leagueGames.games) teamNames
+        dimensions = { width = size, height = size }
 
-        sortedTeams =
-            List.sortWith (by .points DESC |> andThen .goalDifference DESC |> andThen .goalsFor DESC) unpositionedTeams
-
-        positionedTeams =
-            List.indexedMap positionedTeam sortedTeams
+        deadCells = Matrix.create dimensions Dead
     in
-    LeagueTable
-        leagueGames.leagueTitle
-        positionedTeams
+    GameOfLife (bringPatternToLife deadCells centeredPattern)
 ```
