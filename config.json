@@ -225,7 +225,10 @@
           "result"
         ],
         "prerequisites": [
-          "maybe"
+          "maybe",
+          "basics-2",
+          "records",
+          "custom-types"
         ],
         "status": "beta"
       }
