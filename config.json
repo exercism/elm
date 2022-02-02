@@ -113,6 +113,16 @@
       "uuid": "4a948be3-4c5e-407f-b29d-a7e7f00fee67",
       "slug": "maybe",
       "name": "Maybe"
+    },
+    {
+      "uuid": "c3023ebe-bdd1-4ab2-827d-c08aaef90b26",
+      "slug": "result",
+      "name": "Result"
+    },
+    {
+      "uuid": "e2d53c4c-c3f1-481d-afcb-1e17c9950311",
+      "slug": "let",
+      "name": "Let"
     }
   ],
   "exercises": {
@@ -209,6 +219,31 @@
         ],
         "prerequisites": [
           "records"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "go",
+        "name": "Go",
+        "uuid": "33c34af3-26fa-4e18-8bb3-8af688069c9e",
+        "concepts": [
+          "result"
+        ],
+        "prerequisites": [
+          "maybe",
+          "let"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "luigis-luscious-lasagna",
+        "name": "Luigi's luscious lasagna",
+        "uuid": "8b5b43a1-79ec-4f2f-a8ac-8aa2955a4674",
+        "concepts": [
+          "let"
+        ],
+        "prerequisites": [
+          "basics-2"
         ],
         "status": "beta"
       }

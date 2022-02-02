@@ -58,5 +58,5 @@ sayHello Nothing
 ```
 
 Everytime you use a `Maybe` value, the Elm compiler will check that your code handles all possibilities so you can never pattern match a `Maybe` and only handle the case where there is a `Just someValue`.
-This may seem anoying at first, but it is one of the greatest strengths of the Elm language.
+This may seem annoying at first, but it is one of the greatest strengths of the Elm language.
 This will prevent hundreds of bugs and makes compiler-guided refactoring a fearless and rewarding experience.

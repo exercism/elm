@@ -1,0 +1,15 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/error_handling/result.html",
+    "description": "Official guide about Result"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Result",
+    "description": "Documentation of the Result module in elm/core"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm-community/result-extra/latest/Result.Extra",
+    "description": "Community contributed esoteric extensions to Result (usually not required, but can be helpful in some situations)"
+  }
+  
+]

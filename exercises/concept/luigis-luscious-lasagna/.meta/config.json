@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn the Elm `let` expression by cooking Luigi's Luscious Lasagna",
+  "icon": "lasagna",
+  "authors": [
+    "ceddlyburge"
+  ],
+  "contributors": [
+    "mpizenberg"
+  ],
+  "files": {
+    "solution": [
+      "src/LuigisLusciousLasagna.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  }
+}

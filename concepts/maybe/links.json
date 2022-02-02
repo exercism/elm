@@ -6,5 +6,9 @@
   {
     "url": "https://package.elm-lang.org/packages/elm/core/latest/Maybe",
     "description": "Documentation of the Maybe module in elm/core"
+  },
+  {
+    "url": "https://thoughtbot.com/blog/problem-solving-with-maybe",
+    "description": "Rules for writing tidy code with Maybe"
   }
 ]
