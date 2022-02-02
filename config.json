@@ -118,6 +118,11 @@
       "uuid": "c3023ebe-bdd1-4ab2-827d-c08aaef90b26",
       "slug": "result",
       "name": "Result"
+    },
+    {
+      "uuid": "e2d53c4c-c3f1-481d-afcb-1e17c9950311",
+      "slug": "let",
+      "name": "Let"
     }
   ],
   "exercises": {
@@ -228,7 +233,20 @@
           "maybe",
           "basics-2",
           "records",
-          "custom-types"
+          "custom-types",
+          "let"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "luigis-luscious-lasagna",
+        "name": "Luigi's luscious lasagna",
+        "uuid": "8b5b43a1-79ec-4f2f-a8ac-8aa2955a4674",
+        "concepts": [
+          "let"
+        ],
+        "prerequisites": [
+          "basics-2"
         ],
         "status": "beta"
       }
@@ -792,6 +810,20 @@
         "topics": [
           "lists",
           "recursion"
+        ]
+      },
+      {
+        "slug": "bowling",
+        "name": "Bowling",
+        "uuid": "7a770c35-ff28-4246-9ff4-9daf88bb7e13",
+        "practices": [ ],
+        "prerequisites": [ ],
+        "difficulty": 8,
+        "topics": [
+          "lists",
+          "recursion",
+          "result",
+          "pattern-matching"
         ]
       }
     ]
