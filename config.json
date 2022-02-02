@@ -231,6 +231,9 @@
         ],
         "prerequisites": [
           "maybe",
+          "basics-2",
+          "records",
+          "custom-types",
           "let"
         ],
         "status": "beta"

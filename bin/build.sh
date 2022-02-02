@@ -41,8 +41,12 @@ cp template/elm.json build/
 for example_file in exercises/concept/**/.meta/*.elm
 do
   exercise_dir=$(dirname $(dirname $example_file))
-  exercise_name=$(basename $(ls $exercise_dir/src/*.elm) .elm)
+  # This code works if there is only one file in src, or if the first file
+  # returned by ls is the correct one (the one that Examplar.elm should replace)
+  exercise_name=$(basename $(ls $exercise_dir/src/*.elm | head -n 1) .elm)
+  echo $exercise_name
   # TODO: check that all exercise_name are unique
+  cp $exercise_dir/src/*.elm "build/src/"
   cp $example_file "build/src/$exercise_name.elm"
   # Copy tests files under a unique temporary directory and remove all "skip <| ..."
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"

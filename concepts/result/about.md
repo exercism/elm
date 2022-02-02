@@ -1,6 +1,6 @@
 # About
 
-The `Result` type is the solution in the Elm language for error reporting and an enabler for error recovery. It is somewhat similar to the `Maybe` type, but where Maybe can be returned by functions that may fail, it doesn't tell you anything about why it failed. Result includes this context about why something failed.
+The `Result` type is the solution in the Elm language to error reporting and error recovery. It is somewhat similar to the `Maybe` type, but where `Maybe`'s `Nothing` encodes some kind of failure, it doesn't tell you anything about _why_ it failed. `Result` includes a context about why something failed.
 
 ## Definition and type variable
 
@@ -11,6 +11,8 @@ type Result error value
   = Ok value
   | Err error
 ```
+
+In a nutshell, this type encodes the result of an operation that can either succeed and return a `value` or fail and return an explanation for the failure (`error`).
 
 This is known as a "custom type" definition in Elm terminology.
 Custom types are introduced in details in another concept of this track but we won't need it to understand specifically `Result`.
@@ -34,9 +36,6 @@ ageFromString input =
       else
         Ok age
 ```
-
-The vertical bar `|` in the type definition of `Result` means "OR".
-It indicates that it can either be `Ok` something OR be `Error` something.
 
 ## Reading the content of a Result value
 
@@ -67,7 +66,7 @@ This will prevent hundreds of bugs and makes compiler-guided refactoring a fearl
 
 ## Manipulating the content of a Result value
 
-There are various functions to work with Result types, which are usually preferable to pattern matching. `map` can be used to map the value, and `andThen` can be used to chain together functions that may fail.
+There are various functions to work with `Result` types, which are usually preferable to pattern matching. `Result.map` can be used to map the value, and `Result.andThen` can be used to chain together functions that may fail.
 
 Result.map is used to change the Ok value and is useful to chain functions together without having to worry about whether the Result contains an error or not. If the value is Ok, Result.map calls the chained function (`formatAge` below), but if there is an error, Result.map does nothing, and just returns the error.
 

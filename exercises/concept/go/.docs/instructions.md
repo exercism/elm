@@ -20,10 +20,10 @@ type alias Game =
 
 There are 4 rules in the game:
 
-- Each point can only have one stone (oneStonePerPointRule)
-- Opposition stones can be captured! (captureRule)
-- You can not place a stone where it would capture itself (libertyRule)
-- You can not use the same point twice (koRule)
+- Each point can only have one stone (`oneStonePerPointRule`)
+- Opposition stones can be captured! (`captureRule`)
+- You can not place a stone where it would capture itself (`libertyRule`)
+- You can not use the same point twice (`koRule`)
 
 ## 1. Apply the rules
 
