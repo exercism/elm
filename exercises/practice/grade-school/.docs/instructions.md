@@ -8,7 +8,7 @@ In the end, you should be able to:
 - Add a student's name to the roster for a grade
   - "Add Jim to grade 2."
   - "OK."
-- Get a list of all students enrolled in a grade
+- Get a list of all students enrolled in a grade, sorted alphabetically
   - "Which students are in grade 2?"
   - "We've only got Jim just now."
 - Get a sorted list of all students in all grades.  Grades should sort
