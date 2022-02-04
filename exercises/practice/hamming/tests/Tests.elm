@@ -45,8 +45,14 @@ tests =
                 \() -> Expect.equal (Ok 0) (distance "" "")
         , skip <|
             test "disallow first strand longer" <|
-                \() -> Expect.equal (Err "left and right strands must be of equal length") (distance "AATG" "AAA")
+                \() -> Expect.equal (Err "strands must be of equal length") (distance "AATG" "AAA")
         , skip <|
             test "disallow second strand longer" <|
-                \() -> Expect.equal (Err "left and right strands must be of equal length") (distance "ATA" "AGTG")
+                \() -> Expect.equal (Err "strands must be of equal length") (distance "ATA" "AGTG")
+        , skip <|
+            test "disallow left empty strand" <|
+                \() -> Expect.equal (Err "strands must be of equal length") (distance "" "G")
+        , skip <|
+            test "disallow right empty strand" <|
+                \() -> Expect.equal (Err "strands must be of equal length") (distance "G" "")
         ]
