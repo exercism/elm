@@ -59,4 +59,16 @@ tests =
             test "input digit 9 is correctly converted to output digit 9" <|
                 \_ ->
                     Expect.equal True (valid "091")
+        , skip <|
+            test "very long input is valid" <|
+                \_ ->
+                    Expect.equal True (valid "9999999999 9999999999 9999999999 9999999999")
+        , skip <|
+            test "valid luhn with an odd number of digits and non zero first digit" <|
+                \_ ->
+                    Expect.equal True (valid "109")
+        , skip <|
+            test "numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed" <|
+                \_ ->
+                    Expect.equal False (valid "59%59")
         ]
