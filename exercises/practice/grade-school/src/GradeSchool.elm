@@ -1,6 +1,6 @@
-module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
+module GradeSchool exposing (Grade, Result(..), School, Student, addStudent, allStudents, emptySchool, studentsInGrade)
 
-import Dict exposing (Dict)
+import Dict exposing (..)
 
 
 type alias Grade =
@@ -12,15 +12,20 @@ type alias Student =
 
 
 type alias School =
-    Dict Grade (List Student)
+    Dict Int (List Student)
 
 
-empty : School
-empty =
-    Dict.empty
+type Result
+    = Added
+    | Duplicate
 
 
-addStudent : Grade -> Student -> School -> School
+emptySchool : School
+emptySchool =
+    Debug.todo "Please implement this function"
+
+
+addStudent : Grade -> Student -> School -> ( Result, School )
 addStudent grade student school =
     Debug.todo "Please implement this function"
 
@@ -30,6 +35,6 @@ studentsInGrade grade school =
     Debug.todo "Please implement this function"
 
 
-allStudents : School -> List ( Grade, List Student )
+allStudents : School -> List Student
 allStudents school =
     Debug.todo "Please implement this function"

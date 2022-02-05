@@ -1,67 +1,166 @@
 module Tests exposing (tests)
 
 import Expect
-import GradeSchool exposing (addStudent, allStudents, studentsInGrade)
+import GradeSchool exposing (Grade, Result(..), School, Student, addStudent, allStudents, emptySchool, studentsInGrade)
 import Test exposing (..)
+
+
+buildSchoolwithStudents : List ( Student, Grade ) -> ( List Result, School )
+buildSchoolwithStudents students =
+    let
+        ( reversedResults, finalSchool ) =
+            List.foldl insert ( [], emptySchool ) students
+
+        insert ( student, grade ) ( results, school ) =
+            let
+                ( result, newSchool ) =
+                    addStudent grade student school
+            in
+            ( result :: results, newSchool )
+    in
+    ( List.reverse reversedResults, finalSchool )
 
 
 tests : Test
 tests =
     describe "GradeSchool"
-        [ test "add student" <|
+        [ test "Roster is empty when no student is added" <|
+            \() -> Expect.equal [] (allStudents emptySchool)
+        , test "Add a student" <|
             \() ->
-                Expect.equal [ "Aimee" ]
-                    (GradeSchool.empty
-                        |> addStudent 2 "Aimee"
-                        |> studentsInGrade 2
-                    )
-        , skip <|
-            test "add more students in same class" <|
-                \() ->
-                    Expect.equal [ "Blair", "James", "Paul" ]
-                        (GradeSchool.empty
-                            |> addStudent 2 "James"
-                            |> addStudent 2 "Blair"
-                            |> addStudent 2 "Paul"
-                            |> studentsInGrade 2
-                        )
-        , skip <|
-            test "add students to different grades" <|
-                \() ->
-                    Expect.equal [ [ "Chelsea" ], [ "Logan" ] ]
-                        (let
-                            school =
-                                GradeSchool.empty
-                                    |> addStudent 3 "Chelsea"
-                                    |> addStudent 7 "Logan"
-                         in
-                         [ studentsInGrade 3 school, studentsInGrade 7 school ]
-                        )
-        , skip <|
-            test "get students in a grade" <|
-                \() ->
-                    Expect.equal [ "Bradley", "Franklin" ]
-                        (GradeSchool.empty
-                            |> addStudent 5 "Franklin"
-                            |> addStudent 5 "Bradley"
-                            |> addStudent 1 "Jeff"
-                            |> studentsInGrade 5
-                        )
-        , skip <|
-            test "get all students in the school" <|
-                \() ->
-                    Expect.equal [ ( 1, [ "Anna", "Barb", "Charlie" ] ), ( 2, [ "Alex", "Peter", "Zoe" ] ), ( 3, [ "Jim" ] ) ]
-                        (GradeSchool.empty
-                            |> addStudent 2 "Peter"
-                            |> addStudent 1 "Anna"
-                            |> addStudent 1 "Barb"
-                            |> addStudent 2 "Zoe"
-                            |> addStudent 2 "Alex"
-                            |> addStudent 3 "Jim"
-                            |> addStudent 1 "Charlie"
-                            |> allStudents
-                        )
-        , skip <|
-            test "get students in a non-existent grade" <|
-                \() -> Expect.equal [] (studentsInGrade 1 GradeSchool.empty)
+                let
+                    ( result, _ ) =
+                        addStudent 2 "Aimee" emptySchool
+                in
+                Expect.equal Added result
+        , test "Student is added to the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Aimee", 2 ) ]
+                in
+                Expect.equal [ "Aimee" ] (allStudents school)
+        , test "Adding multiple students in the same grade in the roster" <|
+            \() ->
+                let
+                    ( results, _ ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "Paul", 2 ) ]
+                in
+                Expect.equal [ Added, Added, Added ] results
+        , test "Multiple students in the same grade are added to the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "Paul", 2 ) ]
+                in
+                Expect.equal [ "Blair", "James", "Paul" ] (allStudents school)
+        , test "Cannot add student to same grade in the roster more than once" <|
+            \() ->
+                let
+                    ( results, _ ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 2 ), ( "Paul", 2 ) ]
+                in
+                Expect.equal [ Added, Added, Duplicate, Added ] results
+        , test "Student not added to same grade in the roster more than once" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 2 ), ( "Paul", 2 ) ]
+                in
+                Expect.equal [ "Blair", "James", "Paul" ] (allStudents school)
+        , test "Adding students in multiple grades" <|
+            \() ->
+                let
+                    ( results, _ ) =
+                        buildSchoolwithStudents [ ( "Chelsea", 3 ), ( "Logan", 7 ) ]
+                in
+                Expect.equal [ Added, Added ] results
+        , test "Students in multiple grades are added to the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Chelsea", 3 ), ( "Logan", 7 ) ]
+                in
+                Expect.equal [ "Chelsea", "Logan" ] (allStudents school)
+        , test "Cannot add same student to multiple grades in the roster" <|
+            \() ->
+                let
+                    ( results, _ ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 3 ), ( "Paul", 3 ) ]
+                in
+                Expect.equal [ Added, Added, Duplicate, Added ] results
+        , test "Student not added to multiple grades in the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 3 ), ( "Paul", 3 ) ]
+                in
+                Expect.equal [ "Blair", "James", "Paul" ] (allStudents school)
+        , test "Students are sorted by grades in the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Jim", 3 ), ( "Peter", 2 ), ( "Anna", 1 ) ]
+                in
+                Expect.equal [ "Anna", "Peter", "Jim" ] (allStudents school)
+        , test "Students are sorted by name in the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Peter", 2 ), ( "Zoe", 2 ), ( "Alex", 2 ) ]
+                in
+                Expect.equal [ "Alex", "Peter", "Zoe" ] (allStudents school)
+        , test "Students are sorted by grades and then by name in the roster" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents
+                            [ ( "Peter", 2 )
+                            , ( "Anna", 1 )
+                            , ( "Barb", 1 )
+                            , ( "Zoe", 2 )
+                            , ( "Alex", 2 )
+                            , ( "Jim", 3 )
+                            , ( "Charlie", 1 )
+                            ]
+                in
+                Expect.equal [ "Anna", "Barb", "Charlie", "Alex", "Peter", "Zoe", "Jim" ] (allStudents school)
+        , test "Grade is empty if no students in the roster" <|
+            \() ->
+                Expect.equal [] (studentsInGrade 1 emptySchool)
+        , test "Grade is empty if no students in that grade" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Peter", 2 ), ( "Zoe", 2 ), ( "Alex", 2 ), ( "Jim", 3 ) ]
+                in
+                Expect.equal [] (studentsInGrade 1 school)
+        , test "Student not added to same grade more than once" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 2 ), ( "Paul", 2 ) ]
+                in
+                Expect.equal [ "Blair", "James", "Paul" ] (studentsInGrade 2 school)
+        , test "Student not added to multiple grades" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 3 ), ( "Paul", 3 ) ]
+                in
+                Expect.equal [ "Blair", "James" ] (studentsInGrade 2 school)
+        , test "Student not added to other grade for multiple grades" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Blair", 2 ), ( "James", 2 ), ( "James", 3 ), ( "Paul", 3 ) ]
+                in
+                Expect.equal [ "Paul" ] (studentsInGrade 3 school)
+        , test "Students are sorted by name in a grade" <|
+            \() ->
+                let
+                    ( _, school ) =
+                        buildSchoolwithStudents [ ( "Franklin", 5 ), ( "Bradley", 5 ), ( "Jeff", 1 ) ]
+                in
+                Expect.equal [ "Bradley", "Franklin" ] (studentsInGrade 5 school)
         ]

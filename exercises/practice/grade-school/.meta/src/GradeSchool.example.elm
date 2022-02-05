@@ -1,4 +1,4 @@
-module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
+module GradeSchool exposing (Grade, Result(..), School, Student, addStudent, allStudents, emptySchool, studentsInGrade)
 
 import Dict exposing (..)
 
@@ -15,14 +15,23 @@ type alias School =
     Dict Int (List Student)
 
 
-empty : School
-empty =
+type Result
+    = Added
+    | Duplicate
+
+
+emptySchool : School
+emptySchool =
     Dict.empty
 
 
-addStudent : Grade -> Student -> School -> School
+addStudent : Grade -> Student -> School -> ( Result, School )
 addStudent grade student school =
-    Dict.insert grade (List.sort (student :: studentsInGrade grade school)) school
+    if List.member student (allStudents school) then
+        ( Duplicate, school )
+
+    else
+        ( Added, Dict.insert grade (List.sort (student :: studentsInGrade grade school)) school )
 
 
 studentsInGrade : Grade -> School -> List Student
@@ -35,6 +44,8 @@ studentsInGrade grade school =
             []
 
 
-allStudents : School -> List ( Grade, List Student )
+allStudents : School -> List Student
 allStudents school =
-    Dict.toList school |> List.sortBy Tuple.first
+    Dict.toList school
+        |> List.map Tuple.second
+        |> List.concat
