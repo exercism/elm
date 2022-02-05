@@ -61,6 +61,14 @@ tests =
                 \_ ->
                     Expect.equal False (isPaired "[({]})")
         , skip <|
+            test "early unexpected brackets" <|
+                \_ ->
+                    Expect.equal False (isPaired ")()")
+        , skip <|
+            test "early mismatched brackets" <|
+                \_ ->
+                    Expect.equal False (isPaired "{)()")
+        , skip <|
             test "math expression" <|
                 \_ ->
                     Expect.equal True (isPaired "(((185 + 223.85) * 15) - 543)/2")
