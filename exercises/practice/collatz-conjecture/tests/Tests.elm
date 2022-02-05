@@ -30,9 +30,9 @@ tests =
         , skip <|
             test "zero is an error" <|
                 \() ->
-                    Expect.equal (Err "Only positive numbers are allowed") (collatz 0)
+                    Expect.equal (Err "Only positive integers are allowed") (collatz 0)
         , skip <|
             test "negative values is an error" <|
                 \() ->
-                    Expect.equal (Err "Only positive numbers are allowed") (collatz -15)
+                    Expect.equal (Err "Only positive integers are allowed") (collatz -15)
         ]
