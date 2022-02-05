@@ -25,8 +25,8 @@ tests =
         , skip <|
             test "detects multiple anagrams" <|
                 \() ->
-                    Expect.equal [ "stream", "maters" ]
-                        (detect "master" [ "stream", "pigeon", "maters" ])
+                    Expect.equal [ "lemons", "melons" ]
+                        (detect "solemn" [ "lemons", "cherry", "melons" ])
         , skip <|
             test "does not detect anagram subsets" <|
                 \() ->
