@@ -57,4 +57,9 @@ tests =
                 \() ->
                     Expect.equal True
                         (isPangram "Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.")
+        , skip <|
+            test "a-m and A-M are 26 different characters but not a pangram" <|
+                \() ->
+                    Expect.equal False
+                        (isPangram "abcdefghijklm ABCDEFGHIJKLM")
         ]
