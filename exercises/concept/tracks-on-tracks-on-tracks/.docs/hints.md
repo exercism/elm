@@ -28,4 +28,4 @@
 [combine]: https://elmprogramming.com/list.html#combining-lists
 [length]: https://package.elm-lang.org/packages/elm/core/latest/List#length
 [reverse]: https://package.elm-lang.org/packages/elm/core/latest/List#reverse
-[list-destructuring]: https://www.elm.christmas/2020/8
+[list-destructuring]: https://www.bekk.christmas/post/2020/8/peeking-inside-lists

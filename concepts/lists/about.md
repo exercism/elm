@@ -69,4 +69,4 @@ describe [ "hello", "world" ] --> "Non-empty list with head: hello"
 
 [lists]: https://elmprogramming.com/list.html
 [list-module]: https://package.elm-lang.org/packages/elm/core/latest/List
-[list-destructuring]: https://www.elm.christmas/2020/8
+[list-destructuring]: https://www.bekk.christmas/post/2020/8/peeking-inside-lists
