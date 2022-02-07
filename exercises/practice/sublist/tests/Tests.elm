@@ -20,6 +20,9 @@ tests =
             test "1 is not 2" <|
                 \() -> Expect.equal Unequal (sublist [ 1 ] [ 2 ])
         , skip <|
+            test "first list missing additional digits from second list" <|
+                \() -> Expect.equal Unequal (sublist [ 1, 2 ] [ 1, 22 ])
+        , skip <|
             test "compare larger equal lists" <|
                 \() -> Expect.equal Equal (sublist [ 1, 1, 1 ] [ 1, 1, 1 ])
         , skip <|

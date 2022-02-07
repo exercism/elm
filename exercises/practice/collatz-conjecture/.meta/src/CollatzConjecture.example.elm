@@ -4,7 +4,7 @@ module CollatzConjecture exposing (collatz)
 collatz : Int -> Result String Int
 collatz start =
     if start <= 0 then
-        Err "Only positive numbers are allowed"
+        Err "Only positive integers are allowed"
 
     else
         Ok (collatzHelper 0 start)
