@@ -43,6 +43,11 @@ tests =
                     Expect.equal "IX"
                         (toRoman 9)
         , skip <|
+            test "16" <|
+                \() ->
+                    Expect.equal "XVI"
+                        (toRoman 16)
+        , skip <|
             test "27" <|
                 \() ->
                     Expect.equal "XXVII"
@@ -57,6 +62,11 @@ tests =
                 \() ->
                     Expect.equal "LIX"
                         (toRoman 59)
+        , skip <|
+            test "66" <|
+                \() ->
+                    Expect.equal "LXVI"
+                        (toRoman 66)
         , skip <|
             test "93" <|
                 \() ->
@@ -73,6 +83,11 @@ tests =
                     Expect.equal "CLXIII"
                         (toRoman 163)
         , skip <|
+            test "166" <|
+                \() ->
+                    Expect.equal "CLXVI"
+                        (toRoman 166)
+        , skip <|
             test "402" <|
                 \() ->
                     Expect.equal "CDII"
@@ -83,6 +98,11 @@ tests =
                     Expect.equal "DLXXV"
                         (toRoman 575)
         , skip <|
+            test "666" <|
+                \() ->
+                    Expect.equal "DCLXVI"
+                        (toRoman 666)
+        , skip <|
             test "911" <|
                 \() ->
                     Expect.equal "CMXI"
@@ -92,6 +112,11 @@ tests =
                 \() ->
                     Expect.equal "MXXIV"
                         (toRoman 1024)
+        , skip <|
+            test "1666" <|
+                \() ->
+                    Expect.equal "MDCLXVI"
+                        (toRoman 1666)
         , skip <|
             test "3000" <|
                 \() ->
