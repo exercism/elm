@@ -1,10 +1,11 @@
 {
-  "blurb": "Score a bowling game",
+  "blurb": "Score a bowling game.",
   "authors": [
     "leojpod"
   ],
   "contributors": [
-    "ceddlyburge"
+    "ceddlyburge",
+    "jiegillet"
   ],
   "files": {
     "solution": [
@@ -19,6 +20,6 @@
       ".meta/src/Bowling.example.elm"
     ]
   },
-  "source": "Inspired by Uncle Bob's Bowling Game Kata",
+  "source": "The Bowling Game Kata at but UncleBob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
 }
