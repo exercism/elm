@@ -43,4 +43,8 @@ tests =
             test "duplicated character in the middle" <|
                 \() ->
                     Expect.equal False <| isIsogram "accentor"
+        , skip <|
+            test "word with duplicated character and with two hyphens" <|
+                \() ->
+                    Expect.equal False <| isIsogram "up-to-date"
         ]
