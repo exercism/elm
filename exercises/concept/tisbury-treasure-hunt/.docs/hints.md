@@ -10,5 +10,5 @@
 
 - [simplifying code with ad-hoc tuples][ad-hoc-tuples]
 
-[tuples]: [https://www.elm.christmas/2020/1]
-[ad-hoc-tuples]: https://www.elm.christmas/2020/7
+[tuples]: [https://www.bekk.christmas/post/2020/1/once-twice-three-times-a-value]
+[ad-hoc-tuples]: https://www.bekk.christmas/post/2020/7/simplify-your-code-with-ad-hoc-tuples

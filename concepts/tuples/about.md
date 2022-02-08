@@ -79,6 +79,6 @@ doSomethingWith aTuple =
     ...
 ```
 
-[tuples-concise]: https://www.elm.christmas/2020/1
+[tuples-concise]: https://www.bekk.christmas/post/2020/1/once-twice-three-times-a-value
 [tuples-in-depth]: https://elmprogramming.com/tuple.html
 [tuple-core]: https://package.elm-lang.org/packages/elm/core/latest/Tuple

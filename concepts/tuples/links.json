@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://www.elm.christmas/2020/1",
+    "url": "https://www.bekk.christmas/post/2020/1/once-twice-three-times-a-value",
     "description": "a concise introduction to tuples"
   },
   {
@@ -12,7 +12,7 @@
     "description": "detailed API doc of the Tuple module in elm/core package"
   },
   {
-    "url": "https://www.elm.christmas/2020/7",
+    "url": "https://www.bekk.christmas/post/2020/7/simplify-your-code-with-ad-hoc-tuples",
     "description": "simplifying code with ad-hoc tuples"
   }
 ]
