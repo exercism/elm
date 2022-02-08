@@ -47,5 +47,6 @@ studentsInGrade grade school =
 allStudents : School -> List Student
 allStudents school =
     Dict.toList school
+        -- Dict.toList returns the elements sorted by key
         |> List.map Tuple.second
         |> List.concat
