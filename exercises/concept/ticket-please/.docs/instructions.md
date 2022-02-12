@@ -31,13 +31,15 @@ Then, destructure the `createdBy` in a `let` binding so you can count the releva
 Use `List` functions to do the count and use destructuring in the function argument of an anonymous function to seperate the user/comment pair.
 
 ```elm
-Ticket
-    { status = Closed
-    , createdBy = ( User "Chiaki", 1 )
-    , assignedTo = Nothing
-    , comments = [ ( User "Chiaki", "Never mind, fixed it." ) ]
-    }
-    |> numberOfCreatorComments
+numberOfCreatorComments
+numberOfCreatorComments
+    (Ticket
+        { status = Closed
+        , createdBy = ( User "Chiaki", 1 )
+        , assignedTo = Nothing
+        , comments = [ ( User "Chiaki", "Never mind, fixed it." ) ]
+        }
+    )
 -- => 1
 ```
 
@@ -52,13 +54,14 @@ Use destructuring in the function argument to extract the record from the `Ticke
 Then, use a single `case` statement to check if the ticket is assigned to Alice, Bob, or Charlie using recursive pattern matching to extract their usernames and litteral pattern matching to match them. 
 
 ```elm
-Ticket
-    { status = InProgress
-    , createdBy = ( User "Bill", 2 )
-    , assignedTo = Just (User "Alice")
-    , comments = [ ( User "Bill", "What's an 'undefined'?" ) ]
-    }
-    |> assignedToDevTeam
+assignedToDevTeam
+    (Ticket
+        { status = InProgress
+        , createdBy = ( User "Bill", 2 )
+        , assignedTo = Just (User "Alice")
+        , comments = [ ( User "Bill", "What's an 'undefined'?" ) ]
+        }
+    )
 -- => True
 ```
 
@@ -74,13 +77,14 @@ Use destructuring in the function argument to extract the record from the `Ticke
 Use a single `case` statement to pattern match the status and return the appropriate ticket, created from modifying the original record you captured with the `as` keyword.
 
 ```elm
-Ticket
-    { status = New
-    , createdBy = ( User "Jesse", 3 )
-    , assignedTo = Just (User "Alice")
-    , comments = [ ( User "Jesse", "I've been waiting for 6 months!!" ) ]
-    }
-    |> assignTicketTo (User "Danny")
+assignTicketTo (User "Danny")
+    (Ticket
+        { status = New
+        , createdBy = ( User "Jesse", 3 )
+        , assignedTo = Just (User "Alice")
+        , comments = [ ( User "Jesse", "I've been waiting for 6 months!!" ) ]
+        }
+    )
 -- => Ticket
 --        { status = InProgress
 --        , createdBy = ( User "Jesse", 3 )
