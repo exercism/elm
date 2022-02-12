@@ -23,17 +23,13 @@
 
 ## 3. Detect tickets assigned to the Dev Team
 
-- You can destructure a custom type with a single variant `type Box = Box AB` directly in a function argument like so: `(Box ab)`.
-- You can pattern match the field `a` of a record `{a : A, b : B}` using: `{ a }`.
-- You can use both the above techniques at the same time for custom types that hold a record.
+- Like in Task 2, you can match relevant fields of a "boxed" record in the function argument.
 - You can use patten matching recursively to match a nested value like `Just (Box "42")`.
 - You can use the wildcard `_` to match anything in a `case` statement. 
 
 ## 4. Assign tickets to IT employees
 
-- You can destructure a custom type with a single variant `type Box = Box AB` directly in a function argument like so: `(Box ab)`.
-- You can pattern match the field `a` of a record `{a : A, b : B}` using: `{ a }`.
-- You can use both the above techniques at the same time for custom types that hold a record.
+- Like in Tasks 2 and 3, you can match relevant fields of a "boxed" record in the function argument.
 - Additionaly, you can use the `as` keyword to pattern match a field and also bind the whole record: `(Box ({ a } as ab))`.
 - You can pattern match the values of a custom type with the `case` statement.
 - Use the type contructor `Ticket` to return a ticket.
