@@ -33,6 +33,7 @@ The concepts this exercise unlock are:
 - `maybe`
 - `records`
 - `tuples`
+- `let`
 
 ## Analyzer
 
