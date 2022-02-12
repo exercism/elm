@@ -1,6 +1,6 @@
 # Introduction
 
-Pattern matching enables expressive branching code and destructuring brings elegant binding of values to variables.
+[Pattern matching][pattern-matching] enables expressive branching code and [destructuring][destructuring] brings elegant binding of values to variables.
 Both are extremely useful to master as elm programmers, and when used together, they greatly improve code readibility.
 
 ## Simple pattern matching
@@ -42,7 +42,7 @@ type Entity = Friend { name: String } | Stranger | Alien
 hello : Entity -> String
 hello entity =
     case entity of
-        -- here we don't care about the data holded by 'Friend'
+        -- here we don't care about the data held by 'Friend'
         Friend _ -> "Hi!"
         -- mandatory because pattern matching must be exhaustive,
         -- but for all other cases, we answer the same thing
@@ -98,7 +98,7 @@ pickActivity activity =
 
 Destructuring is very similar to pattern matching in the sense that it enables binding of variables to data inside types.
 The main difference is that we call that mechanism "destructuring" when there is only one shape possible, and we call it pattern matching for multiple shapes.
-Destructuring is often found in let bindings, in function arguments, and of course in case expressions, mixed with pattern matching.
+Destructuring is often found in `let` bindings, in function arguments, and of course in case expressions, mixed with pattern matching.
 
 ```elm
 pairSum : ( Int, Int ) -> Int
@@ -126,7 +126,7 @@ unboxMaybe maybeContainer =
 ```
 
 Destructuring can be used for single variant custom types, for tuples, and also for records, where it is very convenient.
-To destructure a record, one can use any number of its fields, one, two, ..., or all the fields.
+To [destructure a record][records-pattern-matching], one can use any number of its fields, one, two, ..., or all the fields.
 
 ```elm
 type alias Circle =
@@ -140,8 +140,8 @@ perimeter { radius } =
 ```
 
 Unfortunately, the elm syntax does not enable recursive destructuring of records.
-In the previous `Circle` example, there is no way to access the x and y positions of the circle center in one go.
-We must first access the `center` and then destructure it for its x and y positions.
+In the previous `Circle` example, there is no way to access the `x`` and `y positions of the circle center in one go.
+We must first access the `center` and then destructure it for its `x` and `y` positions.
 
 ```elm
 left : Circle -> Float
@@ -152,7 +152,7 @@ left { radius, center } =
 
 And we have one last tip!
 Sometimes we want easy access to both a thing as a whole and a part of it.
-This is where the `as` keyword can be useful.
+This is where the [`as` keyword][as-keyword] can be useful.
 It enables giving an alias name to a thing as a whole, while still being able to destructure its content.
 
 ```elm
@@ -167,3 +167,8 @@ smaller reduction ({ radius, center } as circle) =
     else
         circle
 ```
+
+[pattern-matching]: https://guide.elm-lang.org/types/pattern_matching.html
+[destructuring]: https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e
+[records-pattern-matching]: https://elm-lang.org/docs/records#pattern-matching
+[as-keyword]: https://github.com/izdi/elm-cheat-sheet#operators
