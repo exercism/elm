@@ -70,7 +70,19 @@ greekLetter letter =
         _ -> "I don't remember"
 ```
 
-And since lists are dear to functional programmers, they can also be pattern matched on, with the same syntax that is used to build them, using the operator `::`.
+For matching more than one value without nesting, a common Elm trick is to combine the values to match in [_ad hoc tuples_][ad-hoc-tuples] like so:
+
+```elm
+howManyGreekLetters : Int -> String -> String
+howManyGreekLetters count letter =
+    case ( count, letter ) of
+        ( 0, _ ) -> "none!"
+        ( 1, "a" ) -> "there is an alpha!"
+        ( 1, "b" ) -> "there is a beta!"
+        _ -> "at least two!"
+```
+
+And since lists are dear to functional programmers, [they can also be pattern matched on][pattern-match-lists], with the same syntax that is used to build them, using the operator `::`.
 
 ```elm
 head : List a -> Maybe a
@@ -172,3 +184,5 @@ smaller reduction ({ radius, center } as circle) =
 [destructuring]: https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e
 [records-pattern-matching]: https://elm-lang.org/docs/records#pattern-matching
 [as-keyword]: https://github.com/izdi/elm-cheat-sheet#operators
+[pattern-match-lists]: https://www.bekk.christmas/post/2020/8/peeking-inside-lists
+[ad-hoc-tuples]: https://www.bekk.christmas/post/2020/7/simplify-your-code-with-ad-hoc-tuples
