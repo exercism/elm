@@ -11,6 +11,9 @@
     "solution": [
       "src/TicketPlease.elm"
     ],
+    "editor": [
+      "src/Support.elm"
+    ],
     "test": [
       "tests/Tests.elm"
     ],

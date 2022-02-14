@@ -1,6 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
+import Support exposing (Status(..), Ticket(..), User(..))
 import Test exposing (Test, describe, test)
 import TicketPlease exposing (..)
 
