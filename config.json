@@ -123,6 +123,11 @@
       "uuid": "e2d53c4c-c3f1-481d-afcb-1e17c9950311",
       "slug": "let",
       "name": "Let"
+    },
+    {
+      "uuid": "1ad37090-da68-40c3-a099-a5043ed7eb47",
+      "slug": "pattern-matching",
+      "name": "Pattern Matching"
     }
   ],
   "exercises": {
@@ -234,6 +239,23 @@
           "basics-2",
           "records",
           "custom-types",
+          "let"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "ticket-please",
+        "name": "Ticket, Please!",
+        "uuid": "58f70123-5e59-4bac-b1e0-3b8504de360b",
+        "concepts": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "maybe",
+          "records",
+          "tuples",
+          "custom-types",
+          "lists",
           "let"
         ],
         "status": "beta"
@@ -816,8 +838,8 @@
         "slug": "bowling",
         "name": "Bowling",
         "uuid": "7a770c35-ff28-4246-9ff4-9daf88bb7e13",
-        "practices": [ ],
-        "prerequisites": [ ],
+        "practices": [],
+        "prerequisites": [],
         "difficulty": 8,
         "topics": [
           "lists",

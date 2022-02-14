@@ -1,6 +1,6 @@
-module ApplyRules exposing (..)
+module Go exposing (..)
 
-import Go exposing (..)
+import GoSupport exposing (..)
 
 
 applyRules : Game -> Rule -> NonValidatingRule -> Rule -> Rule -> Game

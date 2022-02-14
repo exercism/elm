@@ -1,17 +1,18 @@
 {
-  "blurb": "Learn usage of Result by applying the rules of the game of Go",
+  "blurb": "Learn about pattern matching by improving your ticketing system.",
   "authors": [
-    "ceddlyburge"
+    "mpizenberg",
+    "jiegillet"
   ],
   "contributors": [
-    "mpizenberg"
+    "ceddlyburge"
   ],
   "files": {
     "solution": [
-      "src/Go.elm"
+      "src/TicketPlease.elm"
     ],
     "editor": [
-      "src/GoSupport.elm"
+      "src/TicketPleaseSupport.elm"
     ],
     "test": [
       "tests/Tests.elm"

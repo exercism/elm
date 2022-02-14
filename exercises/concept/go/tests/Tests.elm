@@ -1,8 +1,8 @@
 module Tests exposing (..)
 
-import ApplyRules exposing (..)
 import Expect
 import Go exposing (..)
+import GoSupport exposing (..)
 import Test exposing (..)
 
 

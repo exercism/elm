@@ -43,7 +43,7 @@ do
   exercise_dir=$(dirname $(dirname $example_file))
   # This code works if there is only one file in src, or if the first file
   # returned by ls is the correct one (the one that Examplar.elm should replace)
-  exercise_name=$(basename $(ls $exercise_dir/src/*.elm | head -n 1) .elm)
+  exercise_name=$(basename $exercise_dir | sed -r 's/(^|-)([a-z])/\U\2/g')
   echo $exercise_name
   # TODO: check that all exercise_name are unique
   cp $exercise_dir/src/*.elm "build/src/"
