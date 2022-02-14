@@ -7,9 +7,17 @@
     "mpizenberg"
   ],
   "files": {
-    "solution": ["src/ApplyRules.elm"],
-    "editor": ["src/Go.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
+    "solution": [
+      "src/Go.elm"
+    ],
+    "editor": [
+      "src/GoSupport.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   }
 }

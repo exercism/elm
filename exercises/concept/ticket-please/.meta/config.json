@@ -12,7 +12,7 @@
       "src/TicketPlease.elm"
     ],
     "editor": [
-      "src/Support.elm"
+      "src/TicketPleaseSupport.elm"
     ],
     "test": [
       "tests/Tests.elm"
