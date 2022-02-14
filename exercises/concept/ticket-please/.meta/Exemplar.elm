@@ -33,9 +33,8 @@ numberOfCreatorComments (Ticket { createdBy, comments }) =
         ( creator, _ ) =
             createdBy
     in
-    comments
-        |> List.filter (\( user, _ ) -> user == creator)
-        |> List.length
+    List.length
+        (List.filter (\( user, _ ) -> user == creator) comments)
 
 
 assignedToDevTeam : Ticket -> Bool
