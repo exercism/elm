@@ -1,4 +1,4 @@
-module Support exposing (Status(..), Ticket(..), User(..))
+module TicketPleaseSupport exposing (Status(..), Ticket(..), User(..))
 
 
 type Ticket

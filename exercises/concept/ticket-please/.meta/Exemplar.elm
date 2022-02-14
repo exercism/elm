@@ -1,6 +1,6 @@
 module TicketPlease exposing (..)
 
-import Support exposing (Status(..), Ticket(..), User(..))
+import TicketPleaseSupport exposing (Status(..), Ticket(..), User(..))
 
 
 emptyComment : ( User, String ) -> Bool
