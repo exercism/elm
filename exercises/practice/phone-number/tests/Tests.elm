@@ -33,10 +33,10 @@ tests =
                 \() -> Expect.equal Nothing (getNumber "321234567890")
         , skip <|
             test "invalid with letters" <|
-                \() -> Expect.equal Nothing (getNumber "123-abc-7890")
+                \() -> Expect.equal Nothing (getNumber "523-abc-7890")
         , skip <|
             test "invalid with punctuations" <|
-                \() -> Expect.equal Nothing (getNumber "123-@:!-7890")
+                \() -> Expect.equal Nothing (getNumber "523-@:!-7890")
         , skip <|
             test "invalid if area code starts with 0" <|
                 \() -> Expect.equal Nothing (getNumber "(023) 456-7890")
