@@ -90,6 +90,7 @@ Inside that source file, you can now write all the functions described in the `i
 Once the exercise is implemented, update the `tests/Tests.elm` file contents to include relevant tests that naturally follow the order of the tasks in `instructions.md`.
 **Please refrain from using `Fuzz`** in the tests of concept exercises since it does not play well with the ability to debug the code with `Debug.log`.
 Instead, include a few corner cases and general cases unit tests.
+**Please refrain from using `let` expressions directly under `test` or `describe` function calls** in the tests of concept exercises since the [elm test runner does not yet support this](https://github.com/exercism/elm-test-runner/issues/30).
 
 Once both the exercise and the tests are done and working well, do the following things:
 
