@@ -16,7 +16,7 @@
     "concept_exercises": true,
     "test_runner": true,
     "representer": true,
-    "analyzer": false
+    "analyzer": true
   },
   "files": {
     "solution": [
