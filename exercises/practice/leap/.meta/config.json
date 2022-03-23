@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a year, report if it is a leap year.",
   "authors": [
     "tgecho"
   ],
@@ -19,6 +18,7 @@
       ".meta/src/Leap.example.elm"
     ]
   },
+  "blurb": "Given a year, report if it is a leap year.",
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"
 }

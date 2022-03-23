@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
   "authors": [
     "tuxagon"
   ],
@@ -18,6 +17,7 @@
       ".meta/src/Luhn.example.elm"
     ]
   },
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
   "source": "The Luhn Algorithm on Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"
 }

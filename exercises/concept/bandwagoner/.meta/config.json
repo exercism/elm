@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn usage of Records while keeping a history of basketball statistics",
   "authors": [
     "ceddlyburge"
   ],
@@ -16,5 +15,6 @@
     "exemplar": [
       ".meta/Exemplar.elm"
     ]
-  }
+  },
+  "blurb": "Learn usage of Records while keeping a history of basketball statistics"
 }

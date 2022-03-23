@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn usage of Result by applying the rules of the game of Go",
   "authors": [
     "ceddlyburge"
   ],
@@ -10,14 +9,15 @@
     "solution": [
       "src/Go.elm"
     ],
-    "editor": [
-      "src/GoSupport.elm"
-    ],
     "test": [
       "tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/GoSupport.elm"
     ]
-  }
+  },
+  "blurb": "Learn usage of Result by applying the rules of the game of Go"
 }
