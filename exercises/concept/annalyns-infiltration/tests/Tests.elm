@@ -2,13 +2,12 @@ module Tests exposing (tests)
 
 import AnnalynsInfiltration exposing (canFastAttack, canFreePrisoner, canSignalPrisoner, canSpy, stealthAttackDamage)
 import Expect
-import Fuzz
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "AnnalynsInfiltration"
+    [ describe "1"
         [ test "Cannot execute fast attack if knight is awake" <|
             \_ ->
                 let
@@ -25,7 +24,9 @@ tests =
                 in
                 canFastAttack knightIsAwake
                     |> Expect.equal True
-        , test "Cannot spy if everyone is sleeping" <|
+        ]
+    , describe "2"
+        [ test "Cannot spy if everyone is sleeping" <|
             \_ ->
                 let
                     knightIsAwake =
@@ -137,7 +138,9 @@ tests =
                 in
                 canSpy knightIsAwake archerIsAwake prisonerIsAwake
                     |> Expect.equal True
-        , test "Can signal prisoner if archer is sleeping and prisoner is awake" <|
+        ]
+    , describe "3"
+        [ test "Can signal prisoner if archer is sleeping and prisoner is awake" <|
             \_ ->
                 let
                     archerIsAwake =
@@ -181,7 +184,9 @@ tests =
                 in
                 canSignalPrisoner archerIsAwake prisonerIsAwake
                     |> Expect.equal False
-        , test "Cannot release prisoner if everyone is awake and pet dog is present" <|
+        ]
+    , describe "4"
+        [ test "Cannot release prisoner if everyone is awake and pet dog is present" <|
             \_ ->
                 let
                     knightIsAwake =
@@ -453,7 +458,9 @@ tests =
                 in
                 canFreePrisoner knightIsAwake archerIsAwake prisonerIsAwake petDogIsPresent
                     |> Expect.equal False
-        , test "Annalyn does 12 damage if undetected" <|
+        ]
+    , describe "5"
+        [ test "Annalyn does 12 damage if undetected" <|
             \_ ->
                 let
                     annalynIsDetected =
@@ -470,3 +477,5 @@ tests =
                 stealthAttackDamage annalynIsDetected
                     |> Expect.equal 7
         ]
+    ]
+        |> describe "AnnalynsInfiltration"
