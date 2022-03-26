@@ -7,7 +7,7 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "LuigisLusciousLasagna"
+    [ describe "1"
         [ test "For a 3-layers lasagna started 10 minutes ago, there are 36 minutes remaining" <|
             \_ ->
                 remainingTimeInMinutes 3 10
@@ -17,3 +17,5 @@ tests =
                 remainingTimeInMinutes 6 30
                     |> Expect.equal ((6 * 2) + 40 - 30)
         ]
+    ]
+        |> describe "LuigisLusciousLasagna"
