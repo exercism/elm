@@ -7,7 +7,7 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "BettysBikeShop"
+    [ describe "1"
         [ test "599 pence should be 5.99 pounds" <|
             \_ ->
                 penceToPounds 599
@@ -16,7 +16,9 @@ tests =
             \_ ->
                 penceToPounds 33
                     |> Expect.within (Absolute 0.001) 0.33
-        , test "5.99 pounds should be formatted as £5.99" <|
+        ]
+    , describe "2"
+        [ test "5.99 pounds should be formatted as £5.99" <|
             \_ ->
                 poundsToString 5.99
                     |> Expect.equal "£5.99"
@@ -25,3 +27,5 @@ tests =
                 poundsToString 0.33
                     |> Expect.equal "£0.33"
         ]
+    ]
+        |> describe "BettysBikeShop"
