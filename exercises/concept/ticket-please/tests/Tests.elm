@@ -18,7 +18,7 @@ newTicket =
 tests : Test
 tests =
     describe "TicketPlease "
-        [ describe "Task 1: TicketPlease.emptyComment"
+        [ describe "1"
             [ test "emptyComment should detect an empty comment" <|
                 \() ->
                     emptyComment ( User "Alice", "" )
@@ -41,7 +41,7 @@ tests =
                             , ( User "Bob", "hi!" )
                             ]
             ]
-        , describe "Task 2: TicketPlease.numberOfCreatorComments"
+        , describe "2"
             [ test "numberOfCreatorComments with no comment" <|
                 \() ->
                     Ticket { newTicket | createdBy = ( User "John", 1 ), comments = [] }
@@ -80,7 +80,7 @@ tests =
                         |> numberOfCreatorComments
                         |> Expect.equal 2
             ]
-        , describe "Task 3: TicketPlease.assignedToDevTeam"
+        , describe "3"
             [ test "assignedToDevTeam with no one assigned" <|
                 \() ->
                     Ticket { newTicket | assignedTo = Nothing }
@@ -107,7 +107,7 @@ tests =
                         |> assignedToDevTeam
                         |> Expect.true "Expected ticket assigned to Charlie from dev team"
             ]
-        , describe "Task 4: TicketPlease.assignTicketTo"
+        , describe "4"
             [ test "assign new, unassigned ticket to Roy" <|
                 \() ->
                     Ticket { newTicket | status = New, assignedTo = Nothing }
