@@ -7,7 +7,7 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "Bandwagoner"
+    [ describe "1"
         [ test "has Coach type alias with correct fields in correct order" <|
             \_ ->
                 Coach "Steve Kerr" True
@@ -29,7 +29,9 @@ tests =
                         { name = "Boston Celtics", coach = coach, stats = stats }
                 in
                 Expect.equal team (Team "Boston Celtics" coach stats)
-        , test "createTeam creates a Team structural type" <|
+        ]
+    , describe "2"
+        [ test "createTeam creates a Team structural type" <|
             \_ ->
                 let
                     coach =
@@ -42,7 +44,9 @@ tests =
                         createTeam "Boston Celtics" stats coach
                 in
                 Expect.equal team (Team "Boston Celtics" coach stats)
-        , test "can replace coach for a team" <|
+        ]
+    , describe "3"
+        [ test "can replace coach for a team" <|
             \_ ->
                 let
                     coach =
@@ -61,7 +65,9 @@ tests =
                         replaceCoach newCoach team
                 in
                 Expect.equal newTeam (Team "New York Knicks" newCoach stats)
-        , test "should root for teams that have more wins than losses" <|
+        ]
+    , describe "4"
+        [ test "should root for teams that have more wins than losses" <|
             \_ ->
                 Team "" (Coach "" True) (Stats 1 0)
                     |> rootForTeam
@@ -82,3 +88,5 @@ tests =
                     |> rootForTeam
                     |> Expect.equal True
         ]
+    ]
+        |> describe "Bandwagoner"
