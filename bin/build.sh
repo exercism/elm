@@ -41,10 +41,8 @@ cp template/elm.json build/
 for example_file in exercises/concept/**/.meta/*.elm
 do
   exercise_dir=$(dirname $(dirname $example_file))
-  # This code works if there is only one file in src, or if the first file
-  # returned by ls is the correct one (the one that Examplar.elm should replace)
+  # get kebab-case slug and transform it to PascalCase
   exercise_name=$(basename $exercise_dir | sed -r 's/(^|-)([a-z])/\U\2/g')
-  echo $exercise_name
   # TODO: check that all exercise_name are unique
   cp $exercise_dir/src/*.elm "build/src/"
   cp $example_file "build/src/$exercise_name.elm"
