@@ -43,7 +43,7 @@ addWhiteCapturedStone game =
 
 tests : Test
 tests =
-    describe "applyRules"
+    describe "1"
         [ test "should change the player if all rules pass" <|
             \() ->
                 applyRules vanillaGame identityRule identity identityRule identityRule
@@ -75,3 +75,4 @@ tests =
                     |> Expect.equal
                         { vanillaGame | error = koRule }
         ]
+|>     describe "applyRules"
