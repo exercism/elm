@@ -7,12 +7,14 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "LuciansLusciousLasagna"
+    [ describe "1"
         [ test "The expected amount of time in the oven is 40 minutes" <|
             \_ ->
                 expectedMinutesInOven
                     |> Expect.equal 40
-        , test "For 2 layers, the preparation time is 4 minutes" <|
+        ]
+    , describe "2"
+        [ test "For 2 layers, the preparation time is 4 minutes" <|
             \_ ->
                 preparationTimeInMinutes 2
                     |> Expect.equal 4
@@ -20,7 +22,9 @@ tests =
             \_ ->
                 preparationTimeInMinutes 5
                     |> Expect.equal 10
-        , test "For a 3-layers lasagna already in the oven for 10 minutes, you've spent 16 minutes cooking" <|
+        ]
+    , describe "3"
+        [ test "For a 3-layers lasagna already in the oven for 10 minutes, you've spent 16 minutes cooking" <|
             \_ ->
                 elapsedTimeInMinutes 3 10
                     |> Expect.equal 16
@@ -29,3 +33,5 @@ tests =
                 elapsedTimeInMinutes 6 30
                     |> Expect.equal 42
         ]
+    ]
+        |> describe "LuciansLusciousLasagna"
