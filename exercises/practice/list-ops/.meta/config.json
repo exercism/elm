@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement basic list operations.",
   "authors": [
     "jcshih"
   ],
@@ -18,5 +17,6 @@
     "example": [
       ".meta/src/ListOps.example.elm"
     ]
-  }
+  },
+  "blurb": "Implement basic list operations."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn about pattern matching by improving your ticketing system.",
   "authors": [
     "mpizenberg",
     "jiegillet"
@@ -11,14 +10,15 @@
     "solution": [
       "src/TicketPlease.elm"
     ],
-    "editor": [
-      "src/TicketPleaseSupport.elm"
-    ],
     "test": [
       "tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/TicketPleaseSupport.elm"
     ]
-  }
+  },
+  "blurb": "Learn about pattern matching by improving your ticketing system."
 }

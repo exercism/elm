@@ -1,17 +1,23 @@
 {
-  "blurb": "Learn usage of List while keeping track of programming languages to learn on Exercism",
   "authors": [
     "ceddlyburge"
   ],
   "contributors": [
     "mpizenberg"
   ],
+  "files": {
+    "solution": [
+      "src/TracksOnTracksOnTracks.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
   "forked_from": [
     "fsharp/tracks-on-tracks-on-tracks"
   ],
-  "files": {
-    "solution": ["src/TracksOnTracksOnTracks.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
-  }
+  "blurb": "Learn usage of List while keeping track of programming languages to learn on Exercism"
 }
