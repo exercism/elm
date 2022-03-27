@@ -2,7 +2,7 @@ module AtbashCipher exposing (decode, encode)
 
 import Char
 import Dict
-import Regex exposing (Regex)
+import Regex
 import String
 import Tuple
 

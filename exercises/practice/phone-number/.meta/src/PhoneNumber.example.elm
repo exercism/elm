@@ -1,9 +1,6 @@
 module PhoneNumber exposing (getNumber, prettyPrint)
 
-import List exposing (head, map)
-import Maybe exposing (andThen)
 import Regex exposing (Regex)
-import String exposing (concat, length, slice, startsWith)
 
 
 matchesFormat : Regex -> String -> Bool
@@ -37,7 +34,7 @@ getNumber phoneNumber =
                     matchedNumbers
 
         stripNumber =
-            concat << dropCountryCode << map .match << findAll numbers
+            String.concat << dropCountryCode << List.map .match << findAll numbers
 
         findAll xs =
             Regex.find xs
