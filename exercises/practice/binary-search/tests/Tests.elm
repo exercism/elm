@@ -3,7 +3,6 @@ module Tests exposing (tests)
 import Array
 import BinarySearch exposing (find)
 import Expect
-import Fuzz exposing (Fuzzer)
 import Test exposing (Test, describe, skip, test)
 
 

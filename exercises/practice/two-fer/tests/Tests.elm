@@ -1,7 +1,6 @@
 module Tests exposing (tests)
 
 import Expect
-import String
 import Test exposing (..)
 import TwoFer exposing (twoFer)
 

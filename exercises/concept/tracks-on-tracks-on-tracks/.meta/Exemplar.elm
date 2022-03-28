@@ -1,6 +1,6 @@
 module TracksOnTracksOnTracks exposing (..)
 
-import List as List
+import List
 
 
 newList : List a
