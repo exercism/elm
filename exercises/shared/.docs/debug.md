@@ -1,21 +1,21 @@
 # Debug
 
-When a test fails, a message is displayed describing what went wrong and for which input. You can also use the fact that the tests will report any log output. You can write to the log using [Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-
-There is a slight nuance in that log output for constants / functions without a parameter are essentially optimised out by the transpiler, and so are not captured.
-
-In this case the function has a parameter so everything works as expected
+You can use [Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log) to attach messages to failing tests, like so:
 
 ```elm
+preparationTimeInMinutes : Int -> Int
 preparationTimeInMinutes numberOfLayers = 
     Debug.log "preparationTimeInMinutes" 2 * numberOfLayers
 ```
 
-In this case the function doesn't have a parameter (and so is essentially a constant, as functions are pure), and the log output is not captured.
+On a failing test, the attached log will be `preparationTimeInMinutes: 2`.
+
+There is one caveat: top-level functions without parameters (constants) are evaluated only once before tests start running, therefore tests cannot capture their log messages. For example:
 
 ```elm
+expectedMinutesInOven : Int
 expectedMinutesInOven = 
-    Debug.log "expectedMinutesInOven" 40
-
+    Debug.log "expectedMinutesInOven" 2 * 20
 ```
 
+will not log anything during tests because the JavaScript variable associated to `expectedMinutesInOven` has already been evaluated to the value 40.
