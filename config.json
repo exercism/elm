@@ -847,20 +847,6 @@
           "result",
           "pattern-matching"
         ]
-      },
-      {
-        "slug": "complex-numbers",
-        "name": "Complex Numbers",
-        "uuid": "e982e16c-810c-477c-a478-7abf64e6132f",
-        "practices": [
-          "custom-types"
-        ],
-        "prerequisites": [
-          "basics-1",
-          "basics-2",
-          "custom-types"
-        ],
-        "difficulty": 4
       }
     ]
   }
