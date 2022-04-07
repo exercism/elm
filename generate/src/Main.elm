@@ -174,6 +174,12 @@ tests = describe "<exercise>" [
         |> removeFirstSkip
 
 
+{-| Prepend double dashes `--` to all comment lines extracted from the canonical data.
+
+-- PS: no need for both the `Maybe` and the `List`.
+-- The List is sufficient.
+
+-}
 printComments : Maybe (List String) -> String
 printComments maybeComments =
     case maybeComments of
@@ -186,12 +192,17 @@ printComments maybeComments =
                 |> String.join "\n"
 
 
+{-| Generate the test code of all functions to be tested.
+-}
 printTests : String -> Dict String ( Function, List String ) -> List Case -> String
 printTests exercise functions =
     List.map (printTest exercise functions)
         >> String.join "\n, "
 
 
+{-| Given one test case hierarchy (single test or group of subtests),
+generate the code for that test case.
+-}
 printTest : String -> Dict String ( Function, List String ) -> Case -> String
 printTest exercise functions testCase =
     let
@@ -226,6 +237,8 @@ printTest exercise functions testCase =
                 |> String.join "\n"
 
         Leaf { comments, reimplements, description, function, input, expected } ->
+            -- Maybe.map2 here isn't what you'd expect because if one of the two is missing,
+            -- then nothing is printed instead of printing the one provided.
             [ printComments (Maybe.map2 (::) (addReimplementsExplanation reimplements) comments)
             , "skip <|"
             , "test \"" ++ description ++ "\" <|"
@@ -236,6 +249,12 @@ printTest exercise functions testCase =
                 |> String.join "\n"
 
 
+{-| Generate the template for the solution file.
+
+The list of public functions is exposed, and for each one,
+a template type signature and first line is generated.
+
+-}
 writeSolutionFile : String -> CanonicalData -> String
 writeSolutionFile slug { cases } =
     let
@@ -255,6 +274,14 @@ module <exercise> exposing (<functionList>)
         |> String.replace "<functions>" (functions |> Dict.toList |> List.map printFunction |> String.join "\n")
 
 
+{-| Generate a template type signature and first line of the following shape,
+where the function name and argument names are extraced from canonical data.
+
+    name : todo -> Result String todo
+    name arg1 =
+        Debug.todo "..."
+
+-}
 printFunction : ( String, ( Function, List String ) ) -> String
 printFunction ( name, ( functionType, args ) ) =
     let
@@ -317,6 +344,8 @@ valueDecoder =
         ]
 
 
+{-| tod
+-}
 replaceReservedWord : String -> String
 replaceReservedWord word =
     let
