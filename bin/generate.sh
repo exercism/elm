@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Exit if anything fails.
+set -euo pipefail
+
 # If argument not provided, print usage and exit
 if [ -z "$1" ]; then
     echo "Usage: bin/generate.sh <exercise-slug>"
@@ -14,7 +17,7 @@ echo "Fetching latest version of configlet..."
 ./bin/fetch-configlet
 
 # Preparing config.json
-echo "Please adapt add the following in config.json before continuing: "
+echo "Please adapt and add the following in config.json before continuing: "
 UUID=$(bin/configlet uuid)
 jq -n --arg slug "$SLUG" --arg uuid "$UUID" \
     '{slug: $slug, name: $slug, uuid: $uuid, practices: [], prerequisites: [], difficulty: 5}'
