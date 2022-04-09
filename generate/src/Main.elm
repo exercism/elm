@@ -14,7 +14,7 @@ main =
     Platform.worker
         { init = init
         , subscriptions = \_ -> Sub.none
-        , update = \_ _ -> ((), Cmd.none)
+        , update = \_ _ -> ( (), Cmd.none )
         }
 
 
@@ -22,10 +22,8 @@ main =
 -- TYPES
 
 
-
-
 type alias CanonicalData =
-    { comments : Maybe (List String)
+    { comments : List String
     , description : String
     , cases : List Case
     }
@@ -37,7 +35,7 @@ type Case
 
 
 type alias Test =
-    { comments : Maybe (List String)
+    { comments : List String
     , reimplements : Maybe String
     , description : String
     , function : String
@@ -51,23 +49,25 @@ type Function
     | Result
 
 
-init : Value-> ( (), Cmd () )
+init : Value -> ( (), Cmd () )
 init value =
-  case Decode.decodeValue flagDecoder value of
-    Ok (slug, data) ->
-        let
-            tests =
-                                        writeTestFile slug data 
-            solution =
-                                    writeSolutionFile slug data
-        in 
-            ( (), stdout (encodeFiles slug tests solution) )
-    Err err -> let
-                        _ =
-                            Debug.log "Unsuccessful decoding" (Debug.toString err)
-                in
-                    ((), Cmd.none)
+    case Decode.decodeValue flagDecoder value of
+        Ok ( slug, data ) ->
+            let
+                tests =
+                    writeTestFile slug data
 
+                solution =
+                    writeSolutionFile slug data
+            in
+            ( (), stdout (encodeFiles slug tests solution) )
+
+        Err err ->
+            let
+                _ =
+                    Debug.log "Unsuccessful decoding" (Debug.toString err)
+            in
+            ( (), Cmd.none )
 
 
 
@@ -154,16 +154,9 @@ tests = describe "<exercise>" [
 -- The List is sufficient.
 
 -}
-printComments : Maybe (List String) -> String
-printComments maybeComments =
-    case maybeComments of
-        Nothing ->
-            ""
-
-        Just comments ->
-            comments
-                |> List.map ((++) "-- ")
-                |> String.join "\n"
+printComments : List String -> String
+printComments =
+    List.map ((++) "-- ") >> String.join "\n"
 
 
 {-| Generate the test code of all functions to be tested.
@@ -180,14 +173,17 @@ generate the code for that test case.
 printTest : String -> Dict String ( Function, List String ) -> Case -> String
 printTest exercise functions testCase =
     let
-        addReimplementsExplanation : Maybe String -> Maybe String
-        addReimplementsExplanation =
-            Maybe.map
-                (\uuid ->
-                    "This exercises reimplements another exercise with uuid "
+        addReimplementsExplanation : Maybe String -> List String
+        addReimplementsExplanation reimplements =
+            case reimplements of
+                Just uuid ->
+                    [ "This test reimplements another test with uuid "
                         ++ uuid
-                        ++ "\n-- Please identify that exercise and remove it."
-                )
+                        ++ "\n-- Please identify that test and remove it."
+                    ]
+
+                Nothing ->
+                    []
 
         expectedValue : String -> String -> String
         expectedValue function expected =
@@ -211,9 +207,7 @@ printTest exercise functions testCase =
                 |> String.join "\n"
 
         Leaf { comments, reimplements, description, function, input, expected } ->
-            -- Maybe.map2 here isn't what you'd expect because if one of the two is missing,
-            -- then nothing is printed instead of printing the one provided.
-            [ printComments (Maybe.map2 (::) (addReimplementsExplanation reimplements) comments)
+            [ printComments (addReimplementsExplanation reimplements ++ comments)
             , "skip <|"
             , "test \"" ++ description ++ "\" <|"
             , "\\() ->"
@@ -294,12 +288,13 @@ makeExamplePath slug =
 
 -- DECODERS, REQUESTS
 
-flagDecoder : Decoder (String, CanonicalData)
-flagDecoder = 
-  Decode.map2 Tuple.pair
+
+flagDecoder : Decoder ( String, CanonicalData )
+flagDecoder =
+    Decode.map2 Tuple.pair
         (Decode.field "slug" Decode.string)
         (Decode.field "data" canonicalDataDecoder)
-    
+
 
 valueDecoder : Decoder String
 valueDecoder =
@@ -339,12 +334,14 @@ replaceReservedWord word =
         word
 
 
-commentsDecoder : Decoder (Maybe (List String))
+commentsDecoder : Decoder (List String)
 commentsDecoder =
-    Decode.string
-        |> Decode.list
-        |> Decode.field "comments"
-        |> Decode.maybe
+    Decode.oneOf
+        [ Decode.string
+            |> Decode.list
+            |> Decode.field "comments"
+        , Decode.succeed []
+        ]
 
 
 canonicalDataDecoder : Decoder CanonicalData
@@ -376,8 +373,6 @@ testDecoder =
         (Decode.field "property" Decode.string)
         (Decode.field "input" (Decode.keyValuePairs valueDecoder))
         (Decode.field "expected" valueDecoder)
-
-
 
 
 encodeFiles : String -> String -> String -> Value
