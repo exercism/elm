@@ -71,8 +71,9 @@ function generateAllTestsCode(exercise, functions, { cases }) {
         functions,
         testCase
       );
-      const description = testCase.description;
-      generatedChunks.push(`describe "${description}" [ ${subtestsOutput} ]`);
+      generatedChunks.push(
+        `describe "${testCase.description}" [ ${subtestsOutput} ]`
+      );
     } else {
       generatedChunks.push(generateTestCode(exercise, functions, testCase));
     }
@@ -103,13 +104,10 @@ function generateTestCode(exercise, functions, testCase) {
     inputs += " " + JSON.stringify(value);
   }
 
-  let description = testCase.description;
-  let functionName = testCase.property;
-
   return `
-  test "${description}" <|
+  test "${testCase.description}" <|
     \\() ->
-      ${exercise}.${functionName} ${inputs}
+      ${exercise}.${testCase.property} ${inputs}
         |> Expect.equal (${expectedValue})`;
 }
 
