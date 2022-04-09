@@ -144,7 +144,7 @@ tests = describe "<exercise>" [
 """
         |> String.replace "<exercise>" exercise
         |> String.replace "<comments>" (printComments comments)
-        |> String.replace "<tests>" (printTests exercise functions cases)
+        |> String.replace "<tests>" (printTests slug functions cases)
         |> removeFirstSkip
 
 
@@ -162,8 +162,8 @@ printComments =
 {-| Generate the test code of all functions to be tested.
 -}
 printTests : String -> Dict String ( Function, List String ) -> List Case -> String
-printTests exercise functions =
-    List.map (printTest exercise functions)
+printTests slug functions =
+    List.map (printTest slug functions)
         >> String.join "\n, "
 
 
@@ -171,15 +171,15 @@ printTests exercise functions =
 generate the code for that test case.
 -}
 printTest : String -> Dict String ( Function, List String ) -> Case -> String
-printTest exercise functions testCase =
+printTest slug functions testCase =
     let
         addReimplementsExplanation : Maybe String -> List String
         addReimplementsExplanation reimplements =
             case reimplements of
                 Just uuid ->
-                    [ "This test reimplements another test with uuid "
-                        ++ uuid
-                        ++ "\n-- Please identify that test and remove it."
+                    [ "This test reimplements the test with uuid " ++ uuid
+                    , "Please identify that test and remove it. Link:"
+                    , "https://github.com/exercism/problem-specifications/blob/main/exercises/" ++ slug ++ "/canonical-data.json"
                     ]
 
                 Nothing ->
@@ -201,7 +201,7 @@ printTest exercise functions testCase =
         Nested { comments, description, cases } ->
             [ printComments comments
             , "describe \"" ++ description ++ "\" ["
-            , printTests exercise functions cases
+            , printTests slug functions cases
             , "]"
             ]
                 |> String.join "\n"
@@ -211,7 +211,7 @@ printTest exercise functions testCase =
             , "skip <|"
             , "test \"" ++ description ++ "\" <|"
             , "\\() ->"
-            , exercise ++ "." ++ function ++ " " ++ (input |> List.map Tuple.second |> String.join " ")
+            , kebabToPascal slug ++ "." ++ function ++ " " ++ (input |> List.map Tuple.second |> String.join " ")
             , "|> Expect.equal (" ++ expectedValue function expected ++ ")"
             ]
                 |> String.join "\n"
@@ -299,7 +299,7 @@ flagDecoder =
 valueDecoder : Decoder String
 valueDecoder =
     Decode.oneOf
-        [ Decode.string |> Decode.map (\string -> "\"" ++ string ++ "\"")
+        [ Decode.string |> Decode.map (\string -> "\"" ++ escape string ++ "\"")
         , Decode.int |> Decode.map String.fromInt
         , Decode.float |> Decode.map String.fromFloat
         , Decode.bool
@@ -319,7 +319,10 @@ valueDecoder =
         ]
 
 
-{-| tod
+{-| Replace reserved words.
+
+Input variables are printed in the stub file. If some of them coincide with Elm reserved words, they must be replaced or the file won't compile or get formatted.
+
 -}
 replaceReservedWord : String -> String
 replaceReservedWord word =
@@ -332,6 +335,14 @@ replaceReservedWord word =
 
     else
         word
+
+
+{-| Re-escape escaped characters before they are printed as a string.
+-}
+escape : String -> String
+escape string =
+    [ ( "\\", "\\\\" ), ( "\"", "\\\"" ), ( "\t", "\\t" ), ( "\n", "\\n" ) ]
+        |> List.foldl (\( from, to ) -> String.replace from to) string
 
 
 commentsDecoder : Decoder (List String)
