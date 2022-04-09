@@ -64,7 +64,7 @@ tests : Test
 tests = describe "${exercise}" [ ${allTestCode} ]
 `;
 
-  // console.log(testFile);
+  console.log(testFile);
 }
 
 // Generate the template code for one function
@@ -171,7 +171,9 @@ function jsonValueToElm(json) {
     case "string":
       return JSON.stringify(json);
     case "object":
-      if (json.constructor === Array) {
+      if (json == null) {
+        return "Nothing";
+      } else if (json.constructor === Array) {
         // Apply a recursive call to all elements of the array
         const arrayContent = json.map(jsonValueToElm).join(", ");
         return `[ ${arrayContent} ]`;
