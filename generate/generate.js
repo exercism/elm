@@ -158,7 +158,7 @@ function jsonValueToElm(json) {
         // Apply a recursive call to all attribute values,
         // and lowercase the object keys.
         const toElmKey = (key) =>
-          escapeKeywords(key[0].toLowerCase() + key.slice(1));
+          replaceReservedWord(key[0].toLowerCase() + key.slice(1));
         const recordContent = Object.entries(json)
           .map(([key, value]) => toElmKey(key) + " = " + jsonValueToElm(value))
           .join(", ");
@@ -169,10 +169,25 @@ function jsonValueToElm(json) {
   }
 }
 
-// Escape words that may be interpreted as Elm keywords.
-function escapeKeywords(str) {
-  // TODO
-  return str;
+// Replace words that may be interpreted as Elm keywords.
+const reservedWords = new Set([
+  "if",
+  "then",
+  "else",
+  "case",
+  "of",
+  "let",
+  "in",
+  "type",
+  "module",
+  "where",
+  "import",
+  "exposing",
+  "as",
+  "port",
+]);
+function replaceReservedWord(word) {
+  return reservedWords.has(word) ? word + "Key" : word;
 }
 
 // Find all functions in the "property" fields of test cases.
