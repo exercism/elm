@@ -23,18 +23,27 @@ https
     console.error(error.message);
   });
 
-const mainFileTemplate = `
-module <exercise> exposing (<functionList>)
-
-<functions>
-`;
-
 // Use the canonical data to generate the multiple files
 function generateFiles(slug, canonicalData) {
   const exercise = kebabToPascal(slug);
 
   let extractedFunctions = {};
   extractFunctions(canonicalData, extractedFunctions);
+
+  const functionList = Object.entries(extractedFunctions)
+    .map(([key, _]) => key)
+    .join(", ");
+
+  const allFunctionsCode = Object.entries(extractedFunctions)
+    .map(([key, value]) => generateFunctionCode(key, value))
+    .join("\n\n");
+
+  const mainFile = `
+module ${exercise} exposing (${functionList})
+
+${allFunctionsCode}
+`;
+  console.log(mainFile);
 
   const allTestCode = generateAllTestsCode(
     exercise,
@@ -55,7 +64,19 @@ tests : Test
 tests = describe "${exercise}" [ ${allTestCode} ]
 `;
 
-  console.log(testFile);
+  // console.log(testFile);
+}
+
+// Generate the template code for one function
+function generateFunctionCode(name, { args, canError }) {
+  const returnType = canError ? "Result String Todo" : "Todo";
+  const typeAnnotation = [...Array(args.length).fill("Todo"), returnType].join(
+    " -> "
+  );
+  return `
+${name} : ${typeAnnotation}
+${name} ${args.join(" ")} = Debug.todo "Please implement ${name}"
+`;
 }
 
 // Generates the test code that should replace `<tests>` in
@@ -196,7 +217,7 @@ function replaceReservedWord(word) {
 //
 // Update `functions` with function names as keys and `canError` boolean attribute such as:
 //
-// { f1: { canError: false }, f2: { canError: true } }
+// { f1: { args: [], canError: false }, f2: { args: ["arg1", "arg2"], canError: true } }
 function extractFunctions({ cases }, functions) {
   for (const testCase of cases) {
     // This is a group of sub tests.
@@ -206,7 +227,10 @@ function extractFunctions({ cases }, functions) {
     // Otherwise we found a test case, update the list of functions.
     else {
       if (!functions.hasOwnProperty(testCase.property)) {
-        functions[testCase.property] = { canError: false }; // default value
+        const fnArgs = Object.entries(testCase.input).map(([argName, _]) =>
+          replaceReservedWord(argName[0].toLowerCase() + argName.slice(1))
+        );
+        functions[testCase.property] = { args: fnArgs, canError: false }; // default value
       }
       if (testCase.expected.hasOwnProperty("error")) {
         functions[testCase.property].canError = true;
