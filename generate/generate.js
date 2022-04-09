@@ -36,13 +36,13 @@ function generateFiles(slug, canonicalData) {
   let extractedFunctions = {};
   extractFunctions(canonicalData, extractedFunctions);
 
-  const testsCode = generateAllTestsCode(
+  const allTestCode = generateAllTestsCode(
     exercise,
     extractedFunctions,
     canonicalData
   );
 
-  let testFile = `
+  const testFile = `
 module Tests exposing (tests)
 
 import ${exercise}
@@ -52,7 +52,7 @@ import Test exposing (Test, describe, skip, test)
 ${toElmComments(canonicalData.comments)}
 
 tests : Test
-tests = describe "${exercise}" [ ${testsCode} ]
+tests = describe "${exercise}" [ ${allTestCode} ]
 `;
 
   console.log(testFile);
