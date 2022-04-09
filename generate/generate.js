@@ -31,12 +31,12 @@ module <exercise> exposing (<functionList>)
 
 // Use the canonical data to generate the multiple files
 function generateFiles(slug, canonicalData) {
-  let exercise = kebabToPascal(slug);
+  const exercise = kebabToPascal(slug);
 
   let extractedFunctions = {};
   extractFunctions(canonicalData, extractedFunctions);
 
-  let testsCode = generateAllTestsCode(
+  const testsCode = generateAllTestsCode(
     exercise,
     extractedFunctions,
     canonicalData
@@ -48,6 +48,8 @@ module Tests exposing (tests)
 import ${exercise}
 import Expect
 import Test exposing (Test, describe, skip, test)
+
+${toElmComments(canonicalData.comments)}
 
 tests : Test
 tests = describe "${exercise}" [ ${testsCode} ]
@@ -69,7 +71,11 @@ function generateAllTestsCode(exercise, functions, { cases }) {
         testCase
       );
       generatedChunks.push(
-        `describe "${testCase.description}" [ ${subtestsOutput} ]`
+        `
+  ${toElmComments(testCase.comments)}
+
+  describe "${testCase.description}" [ ${subtestsOutput} ]
+  `
       );
     } else {
       generatedChunks.push(generateTestCode(exercise, functions, testCase));
@@ -102,10 +108,23 @@ function generateTestCode(exercise, functions, testCase) {
   }
 
   return `
+  ${toElmComments(testCase.comments)}
+
+  -- skip <|
   test "${testCase.description}" <|
     \\() ->
       ${exercise}.${testCase.property} ${inputs}
         |> Expect.equal (${expectedValue})`;
+}
+
+// Convert the list of strings composing the comment in the canonical data
+// into Elm comments by prepending -- to all lines.
+function toElmComments(dataComments) {
+  if (dataComments) {
+    return dataComments.map((line) => "  -- " + line).join("\n");
+  } else {
+    return "";
+  }
 }
 
 // Convert a JSON value into as close as possible Elm code string
