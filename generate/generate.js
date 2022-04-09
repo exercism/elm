@@ -32,18 +32,15 @@ module <exercise> exposing (<functionList>)
 // Use the canonical data to generate the multiple files
 function generateFiles(slug, canonicalData) {
   let exercise = kebabToPascal(slug);
-  console.log(exercise);
 
   let extractedFunctions = {};
   extractFunctions(canonicalData, extractedFunctions);
-  console.log(extractedFunctions);
 
   let testsCode = generateAllTestsCode(
     exercise,
     extractedFunctions,
     canonicalData
   );
-  console.log(testsCode);
 
   let testFile = `
 module Tests exposing (tests)
@@ -89,19 +86,19 @@ function generateTestCode(exercise, functions, testCase) {
   // If the function can error, adjust the expected value
   if (functions[testCase.property].canError) {
     if (expectedValue.hasOwnProperty("error")) {
-      expectedValue = "Err " + JSON.stringify(expectedValue.error);
+      expectedValue = "Err " + jsonValueToElm(expectedValue.error);
     } else {
-      expectedValue = "Ok " + JSON.stringify(expectedValue);
+      expectedValue = "Ok " + jsonValueToElm(expectedValue);
     }
     // Otherwise just convert it into a string
   } else {
-    expectedValue = JSON.stringify(expectedValue);
+    expectedValue = jsonValueToElm(expectedValue);
   }
 
   // Stringify the test case inputs
   let inputs = "";
   for (const [key, value] of Object.entries(testCase.input)) {
-    inputs += " " + JSON.stringify(value);
+    inputs += " " + jsonValueToElm(value);
   }
 
   return `
@@ -111,9 +108,39 @@ function generateTestCode(exercise, functions, testCase) {
         |> Expect.equal (${expectedValue})`;
 }
 
-// Return a string of the elm record
-function jsObjectToElmRecord(obj) {
+// Convert a JSON value into as close as possible Elm code string
+function jsonValueToElm(json) {
+  switch (typeof json) {
+    case "boolean":
+      return json ? "True" : "False";
+    case "number":
+      return JSON.stringify(json);
+    case "string":
+      return JSON.stringify(json);
+    case "object":
+      if (json.constructor === Array) {
+        // Apply a recursive call to all elements of the array
+        const arrayContent = json.map(jsonValueToElm).join(", ");
+        return `[ ${arrayContent} ]`;
+      } else {
+        // Apply a recursive call to all attribute values,
+        // and lowercase the object keys.
+        const toElmKey = (key) =>
+          escapeKeywords(key[0].toLowerCase() + key.slice(1));
+        const recordContent = Object.entries(json)
+          .map(([key, value]) => toElmKey(key) + " = " + jsonValueToElm(value))
+          .join(", ");
+        return `{ ${recordContent} }`;
+      }
+    default:
+      return JSON.stringify(json);
+  }
+}
+
+// Escape words that may be interpreted as Elm keywords.
+function escapeKeywords(str) {
   // TODO
+  return str;
 }
 
 // Find all functions in the "property" fields of test cases.
