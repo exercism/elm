@@ -1,33 +1,27 @@
 port module Main exposing (main)
 
 import Dict exposing (Dict)
-import Http
 import Json.Decode as Decode exposing (Decoder)
 import Json.Encode as Encode exposing (Value)
-import RemoteData exposing (RemoteData(..), WebData)
 import Set
 
 
 port stdout : Value -> Cmd msg
 
 
-main : Program String Model Msg
+main : Program Value () ()
 main =
     Platform.worker
         { init = init
         , subscriptions = \_ -> Sub.none
-        , update = update
+        , update = \_ _ -> ((), Cmd.none)
         }
 
 
 
--- MODEL
+-- TYPES
 
 
-type alias Model =
-    { slug : String
-    , canonicalData : WebData CanonicalData
-    }
 
 
 type alias CanonicalData =
@@ -57,43 +51,23 @@ type Function
     | Result
 
 
-init : String -> ( Model, Cmd Msg )
-init slug =
-    ( { slug = slug, canonicalData = NotAsked }, getCanonicalData slug )
-
-
-
--- UPDATE
-
-
-type Msg
-    = GotCanonicalData (WebData CanonicalData)
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg ({ slug } as model) =
-    case msg of
-        GotCanonicalData result ->
-            case result of
-                Success data ->
-                    let
-                        tests =
-                            writeTestFile slug data
-
-                        solution =
-                            writeSolutionFile slug data
-
-                        output =
-                            encodeFiles slug tests solution
-                    in
-                    ( { model | canonicalData = result }, stdout output )
-
-                _ ->
-                    let
+init : Value-> ( (), Cmd () )
+init value =
+  case Decode.decodeValue flagDecoder value of
+    Ok (slug, data) ->
+        let
+            tests =
+                                        writeTestFile slug data 
+            solution =
+                                    writeSolutionFile slug data
+        in 
+            ( (), stdout (encodeFiles slug tests solution) )
+    Err err -> let
                         _ =
-                            Debug.log "Unsuccessful request" (Debug.toString result)
-                    in
-                    ( model, Cmd.none )
+                            Debug.log "Unsuccessful decoding" (Debug.toString err)
+                in
+                    ((), Cmd.none)
+
 
 
 
@@ -320,6 +294,12 @@ makeExamplePath slug =
 
 -- DECODERS, REQUESTS
 
+flagDecoder : Decoder (String, CanonicalData)
+flagDecoder = 
+  Decode.map2 Tuple.pair
+        (Decode.field "slug" Decode.string)
+        (Decode.field "data" canonicalDataDecoder)
+    
 
 valueDecoder : Decoder String
 valueDecoder =
@@ -398,15 +378,6 @@ testDecoder =
         (Decode.field "expected" valueDecoder)
 
 
-getCanonicalData : String -> Cmd Msg
-getCanonicalData slug =
-    Http.get
-        { url =
-            "https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/"
-                ++ slug
-                ++ "/canonical-data.json"
-        , expect = Http.expectJson (RemoteData.fromResult >> GotCanonicalData) canonicalDataDecoder
-        }
 
 
 encodeFiles : String -> String -> String -> Value
