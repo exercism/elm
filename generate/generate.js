@@ -107,7 +107,20 @@ function generateTestCode(exercise, functions, testCase) {
     inputs += " " + jsonValueToElm(value);
   }
 
+  // Generate a re-implement message if this tests re-implements another one
+  let reimplements = [];
+  if (testCase.reimplements) {
+    reimplements = [
+      "This test reimplements the test with uuid " + testCase.reimplements,
+      "Please identify that test and remove it. Link:",
+      "https://github.com/exercism/problem-specifications/blob/main/exercises/" +
+        testCase.reimplements +
+        "/canonical-data.json",
+    ];
+  }
+
   return `
+  ${toElmComments(reimplements)}
   ${toElmComments(testCase.comments)}
 
   -- skip <|
