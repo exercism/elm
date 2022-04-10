@@ -42,7 +42,7 @@ cd ..
 
 # Create Elm files
 echo "Creating Elm files..."
-# mkdir ${exercise_dir}/tests ${exercise_dir}/src ${exercise_dir}/.meta/src
+mkdir -p ${exercise_dir}/tests ${exercise_dir}/src ${exercise_dir}/.meta/src
 curl https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/${SLUG}/canonical-data.json \
     | node generate/src/cli.js $SLUG
 elm-format --yes ${exercise_dir}/**/*.elm
