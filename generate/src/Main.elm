@@ -149,10 +149,6 @@ tests = describe "<exercise>" [
 
 
 {-| Prepend double dashes `--` to all comment lines extracted from the canonical data.
-
--- PS: no need for both the `Maybe` and the `List`.
--- The List is sufficient.
-
 -}
 printComments : List String -> String
 printComments =
@@ -315,18 +311,26 @@ valueDecoder =
         , Decode.list (Decode.lazy (\() -> valueDecoder)) |> Decode.map (\v -> "[" ++ String.join "," v ++ "]")
         , Decode.keyValuePairs (Decode.lazy (\() -> valueDecoder))
             |> Decode.map
-                (\kv -> "{" ++ String.join "," (List.map (\( k, v ) -> replaceReservedWord k ++ "=" ++ v) kv) ++ "}")
+                (\kv -> "{" ++ String.join "," (List.map (\( k, v ) -> cleanVariable k ++ "=" ++ v) kv) ++ "}")
         ]
 
 
-{-| Replace reserved words.
+{-| Uncapitalize and replace reserved words.
 
 Input variables are printed in the stub file. If some of them coincide with Elm reserved words, they must be replaced or the file won't compile or get formatted.
 
 -}
-replaceReservedWord : String -> String
-replaceReservedWord word =
+cleanVariable : String -> String
+cleanVariable string =
     let
+        word =
+            case String.uncons string of
+                Nothing ->
+                    ""
+
+                Just ( head, tail ) ->
+                    String.cons (Char.toLower head) tail
+
         words =
             Set.fromList [ "if", "then", "else", "case", "of", "let", "in", "type", "module", "where", "import", "exposing", "as", "port" ]
     in
@@ -381,8 +385,12 @@ testDecoder =
         commentsDecoder
         (Decode.maybe (Decode.field "reimplements" Decode.string))
         (Decode.field "description" Decode.string)
-        (Decode.field "property" Decode.string)
-        (Decode.field "input" (Decode.keyValuePairs valueDecoder))
+        (Decode.field "property" (Decode.string |> Decode.map cleanVariable))
+        (Decode.field "input"
+            (Decode.keyValuePairs valueDecoder
+                |> Decode.map (List.map (Tuple.mapFirst cleanVariable))
+            )
+        )
         (Decode.field "expected" valueDecoder)
 
 
