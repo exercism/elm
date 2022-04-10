@@ -135,7 +135,7 @@ function generateTestCode(exercise, functions, testCase) {
       "This test reimplements the test with uuid " + testCase.reimplements,
       "Please identify that test and remove it. Link:",
       "https://github.com/exercism/problem-specifications/blob/main/exercises/" +
-        testCase.reimplements +
+        slug +
         "/canonical-data.json",
     ];
   }
