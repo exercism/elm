@@ -44,9 +44,25 @@ type alias Test =
     }
 
 
-type Function
+type alias Function =
+    { arguments : List String
+    , resultType : ResultType
+    , order : Int
+    }
+
+
+type ResultType
     = Direct
     | Result
+
+
+maxResultType : ResultType -> ResultType -> ResultType
+maxResultType a b =
+    if a == Result || b == Result then
+        Result
+
+    else
+        Direct
 
 
 init : Value -> ( (), Cmd () )
@@ -89,10 +105,10 @@ kebabToPascal =
     String.split "-" >> List.map capitalize >> String.concat
 
 
-searchFunctions : List Case -> Dict String ( Function, List String )
+searchFunctions : List Case -> Dict String Function
 searchFunctions =
     let
-        searchFunction : Case -> Dict String ( Function, List String ) -> Dict String ( Function, List String )
+        searchFunction : Case -> Dict String Function -> Dict String Function
         searchFunction testCase functions =
             case testCase of
                 Nested { cases } ->
@@ -100,14 +116,22 @@ searchFunctions =
 
                 Leaf { function, expected, input } ->
                     let
-                        args =
-                            List.map Tuple.first input
-                    in
-                    if String.contains "{error=" expected then
-                        Dict.insert function ( Result, args ) functions
+                        resultType =
+                            if String.contains "{error=" expected then
+                                Result
 
-                    else
-                        Dict.update function (Maybe.withDefault ( Direct, args ) >> Just) functions
+                            else
+                                Direct
+
+                        update existingFunction =
+                            case existingFunction of
+                                Nothing ->
+                                    Just (Function (List.map Tuple.first input) resultType (Dict.size functions))
+
+                                Just f ->
+                                    Just { f | resultType = maxResultType f.resultType resultType }
+                    in
+                    Dict.update function update functions
     in
     List.foldl searchFunction Dict.empty
 
@@ -157,7 +181,7 @@ printComments =
 
 {-| Generate the test code of all functions to be tested.
 -}
-printTests : String -> Dict String ( Function, List String ) -> List Case -> String
+printTests : String -> Dict String Function -> List Case -> String
 printTests slug functions =
     List.map (printTest slug functions)
         >> String.join "\n, "
@@ -166,7 +190,7 @@ printTests slug functions =
 {-| Given one test case hierarchy (single test or group of subtests),
 generate the code for that test case.
 -}
-printTest : String -> Dict String ( Function, List String ) -> Case -> String
+printTest : String -> Dict String Function -> Case -> String
 printTest slug functions testCase =
     let
         addReimplementsExplanation : Maybe String -> List String
@@ -183,11 +207,11 @@ printTest slug functions testCase =
 
         expectedValue : String -> String -> String
         expectedValue function expected =
-            case ( Dict.get function functions, String.contains "{error=" expected ) of
-                ( Just ( Result, _ ), True ) ->
+            case ( Dict.get function functions |> Maybe.map .resultType, String.contains "{error=" expected ) of
+                ( Just Result, True ) ->
                     "Err " ++ String.slice 7 -1 expected
 
-                ( Just ( Result, _ ), False ) ->
+                ( Just Result, False ) ->
                     "Ok " ++ expected
 
                 _ ->
@@ -235,7 +259,13 @@ module <exercise> exposing (<functionList>)
 """
         |> String.replace "<exercise>" exercise
         |> String.replace "<functionList>" (functions |> Dict.keys |> String.join ", ")
-        |> String.replace "<functions>" (functions |> Dict.toList |> List.map printFunction |> String.join "\n")
+        |> String.replace "<functions>"
+            (functions
+                |> Dict.toList
+                |> List.sortBy (Tuple.second >> .order)
+                |> List.map printFunction
+                |> String.join "\n"
+            )
 
 
 {-| Generate a template type signature and first line of the following shape,
@@ -246,19 +276,19 @@ where the function name and argument names are extraced from canonical data.
         Debug.todo "..."
 
 -}
-printFunction : ( String, ( Function, List String ) ) -> String
-printFunction ( name, ( functionType, args ) ) =
+printFunction : ( String, Function ) -> String
+printFunction ( name, { arguments, resultType } ) =
     let
         finalType =
-            case functionType of
+            case resultType of
                 Direct ->
                     "todo"
 
                 Result ->
                     "Result String todo"
     in
-    [ name ++ " : " ++ String.join " -> " (List.map (always "todo") args) ++ " -> " ++ finalType
-    , String.join " " (name :: args) ++ " = Debug.todo \"Please implement " ++ name ++ "\""
+    [ name ++ " : " ++ String.join " -> " (List.map (always "todo") arguments) ++ " -> " ++ finalType
+    , String.join " " (name :: arguments) ++ " = Debug.todo \"Please implement " ++ name ++ "\""
     ]
         |> String.join "\n"
 
