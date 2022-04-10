@@ -144,14 +144,6 @@ writeTestFile slug { comments, cases } =
 
         functions =
             searchFunctions cases
-
-        removeFirstSkip file =
-            case String.indices "skip <|" file of
-                first :: _ ->
-                    String.left first file ++ String.dropLeft (first + String.length "skip <|") file
-
-                _ ->
-                    file
     in
     """
 module Tests exposing (tests)
@@ -169,7 +161,6 @@ tests = describe "<exercise>" [
         |> String.replace "<exercise>" exercise
         |> String.replace "<comments>" (printComments comments)
         |> String.replace "<tests>" (printTests slug functions cases)
-        |> removeFirstSkip
 
 
 {-| Prepend double dashes `--` to all comment lines extracted from the canonical data.
@@ -228,7 +219,7 @@ printTest slug functions testCase =
 
         Leaf { comments, reimplements, description, function, input, expected } ->
             [ printComments (addReimplementsExplanation reimplements ++ comments)
-            , "skip <|"
+            , "-- skip <|"
             , "test \"" ++ description ++ "\" <|"
             , "\\() ->"
             , kebabToPascal slug ++ "." ++ function ++ " " ++ (input |> List.map Tuple.second |> String.join " ")
