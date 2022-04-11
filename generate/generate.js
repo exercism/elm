@@ -2,72 +2,72 @@ const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
-// Get slug as argument
+// A list of reserved Elm keywords.
+const reservedWords = new Set([
+  "if",
+  "then",
+  "else",
+  "case",
+  "of",
+  "let",
+  "in",
+  "type",
+  "module",
+  "where",
+  "import",
+  "exposing",
+  "as",
+  "port",
+]);
+
+// Get slug as argument and canonical data from stdin (0)
 const slug = process.argv[2];
+const canonicalData = JSON.parse(fs.readFileSync(0, "utf-8"));
 
-// Download the canonical data
-let dataUrl = `https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/${slug}/canonical-data.json`;
-https
-  .get(dataUrl, (res) => {
-    let body = "";
-    res.on("data", (chunk) => (body += chunk));
-    res.on("end", () => {
-      try {
-        let canonicalData = JSON.parse(body);
-        generateFiles(slug, canonicalData);
-      } catch (error) {
-        console.error(error.message);
-      }
-    });
-  })
-  .on("error", (error) => {
-    console.error(error.message);
-  });
+// Convert "exercise-slug" into "ExerciseSlug"
+const exercise = kebabToPascal(slug);
 
-// Use the canonical data to generate the multiple files
-function generateFiles(slug, canonicalData) {
-  const exercise = kebabToPascal(slug);
+// Extract all functions from canonical data
+let extractedFunctions = {};
+extractFunctions(canonicalData, extractedFunctions);
 
-  let extractedFunctions = {};
-  extractFunctions(canonicalData, extractedFunctions);
+const functionList = Object.entries(extractedFunctions)
+  .map(([key, _]) => key)
+  .join(", ");
 
-  const functionList = Object.entries(extractedFunctions)
-    .map(([key, _]) => key)
-    .join(", ");
+const allFunctionsCode = Object.entries(extractedFunctions)
+  .map(([key, value]) => generateFunctionCode(key, value))
+  .join("\n\n");
 
-  const allFunctionsCode = Object.entries(extractedFunctions)
-    .map(([key, value]) => generateFunctionCode(key, value))
-    .join("\n\n");
-
-  const mainFile = `
+const mainFile = `
 module ${exercise} exposing (${functionList})
 
 ${allFunctionsCode}
 `;
 
-  // Writing the template for the main exercise file
-  const exerciseDir = path.join("exercises", "practice", slug);
-  const mainFilePath = path.join(exerciseDir, "src", exercise + ".elm");
-  console.log("Writing file", mainFilePath);
-  fs.writeFile(mainFilePath, mainFile, (err) => console.error(err));
+// Writing the template for the main exercise file
+const exerciseDir = path.join("exercises", "practice", slug);
+const mainFilePath = path.join(exerciseDir, "src", exercise + ".elm");
+console.log("Writing file", mainFilePath);
+fs.writeFileSync(mainFilePath, mainFile);
 
-  // Writing the template for the example file
-  const exampleFilePath = path.join(
-    exerciseDir,
-    ".meta",
-    "src",
-    exercise + "example.elm"
-  );
-  console.log("Writing file", exampleFilePath);
-  fs.writeFile(exampleFilePath, mainFile, (err) => console.error(err));
+// Writing the template for the example file
+const exampleFilePath = path.join(
+  exerciseDir,
+  ".meta",
+  "src",
+  exercise + ".example.elm"
+);
+console.log("Writing file", exampleFilePath);
+fs.writeFileSync(exampleFilePath, mainFile);
 
-  const allTestCode = generateAllTestsCode(
-    exercise,
-    extractedFunctions,
-    canonicalData
-  );
+const allTestCode = generateAllTestsCode(
+  exercise,
+  extractedFunctions,
+  canonicalData
+);
 
-  const testFile = `
+const testFile = `
 module Tests exposing (tests)
 
 import ${exercise}
@@ -80,11 +80,12 @@ tests : Test
 tests = describe "${exercise}" [ ${allTestCode} ]
 `;
 
-  // Writing the tests file
-  const testFilePath = path.join(exerciseDir, "tests", "Tests.elm");
-  console.log("Writing file", testFilePath);
-  fs.writeFile(testFilePath, testFile, (err) => console.error(err));
-}
+// Writing the tests file
+const testFilePath = path.join(exerciseDir, "tests", "Tests.elm");
+console.log("Writing file", testFilePath);
+fs.writeFileSync(testFilePath, testFile);
+
+// HELPER FUNCTIONS ##################################################
 
 // Generate the template code for one function
 function generateFunctionCode(name, { args, canError }) {
@@ -212,22 +213,6 @@ function jsonValueToElm(json) {
 }
 
 // Replace words that may be interpreted as Elm keywords.
-const reservedWords = new Set([
-  "if",
-  "then",
-  "else",
-  "case",
-  "of",
-  "let",
-  "in",
-  "type",
-  "module",
-  "where",
-  "import",
-  "exposing",
-  "as",
-  "port",
-]);
 function replaceReservedWord(word) {
   return reservedWords.has(word) ? word + "Key" : word;
 }
