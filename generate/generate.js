@@ -1,5 +1,6 @@
 const https = require("https");
 const fs = require("fs");
+const path = require("path");
 
 // Get slug as argument
 const slug = process.argv[2];
@@ -43,7 +44,22 @@ module ${exercise} exposing (${functionList})
 
 ${allFunctionsCode}
 `;
-  console.log(mainFile);
+
+  // Writing the template for the main exercise file
+  const exerciseDir = path.join("exercises", "practice", slug);
+  const mainFilePath = path.join(exerciseDir, "src", exercise + ".elm");
+  console.log("Writing file", mainFilePath);
+  fs.writeFile(mainFilePath, mainFile, (err) => console.error(err));
+
+  // Writing the template for the example file
+  const exampleFilePath = path.join(
+    exerciseDir,
+    ".meta",
+    "src",
+    exercise + "example.elm"
+  );
+  console.log("Writing file", exampleFilePath);
+  fs.writeFile(exampleFilePath, mainFile, (err) => console.error(err));
 
   const allTestCode = generateAllTestsCode(
     exercise,
@@ -64,7 +80,10 @@ tests : Test
 tests = describe "${exercise}" [ ${allTestCode} ]
 `;
 
-  console.log(testFile);
+  // Writing the tests file
+  const testFilePath = path.join(exerciseDir, "tests", "Tests.elm");
+  console.log("Writing file", testFilePath);
+  fs.writeFile(testFilePath, testFile, (err) => console.error(err));
 }
 
 // Generate the template code for one function
