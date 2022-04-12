@@ -25,16 +25,16 @@ main =
 type alias CanonicalData =
     { comments : List String
     , description : String
-    , cases : List Case
+    , cases : List TestCases
     }
 
 
-type Case
-    = Leaf Test
-    | Nested CanonicalData
+type TestCases
+    = SingleTest TestData
+    | TestGroup { comments : List String, description : String, cases : List TestCases }
 
 
-type alias Test =
+type alias TestData =
     { comments : List String
     , reimplements : Maybe String
     , description : String
@@ -91,16 +91,16 @@ kebabToPascal =
     String.split "-" >> List.map capitalize >> String.concat
 
 
-searchFunctions : List Case -> Dict String Function
+searchFunctions : List TestCases -> Dict String Function
 searchFunctions =
     let
-        searchFunction : Case -> Dict String Function -> Dict String Function
+        searchFunction : TestCases -> Dict String Function -> Dict String Function
         searchFunction testCase functions =
             case testCase of
-                Nested { cases } ->
+                TestGroup { cases } ->
                     List.foldl searchFunction functions cases
 
-                Leaf { function, expected, input } ->
+                SingleTest { function, expected, input } ->
                     let
                         canError =
                             case expected of
@@ -155,7 +155,7 @@ printComments =
 
 {-| Generate the test code of all functions to be tested.
 -}
-printTests : String -> Dict String Function -> List Case -> String
+printTests : String -> Dict String Function -> List TestCases -> String
 printTests slug functions =
     List.map (printTest slug functions)
         >> String.join "\n, "
@@ -164,7 +164,7 @@ printTests slug functions =
 {-| Given one test case hierarchy (single test or group of subtests),
 generate the code for that test case.
 -}
-printTest : String -> Dict String Function -> Case -> String
+printTest : String -> Dict String Function -> TestCases -> String
 printTest slug functions testCase =
     let
         addReimplementsExplanation : Maybe String -> List String
@@ -192,7 +192,7 @@ printTest slug functions testCase =
                     jsonValueToElmCode expected
     in
     case testCase of
-        Nested { comments, description, cases } ->
+        TestGroup { comments, description, cases } ->
             String.join "\n"
                 [ printComments comments
                 , "describe \"" ++ description ++ "\" ["
@@ -200,7 +200,7 @@ printTest slug functions testCase =
                 , "]"
                 ]
 
-        Leaf { comments, reimplements, description, function, input, expected } ->
+        SingleTest { comments, reimplements, description, function, input, expected } ->
             let
                 inputArguments =
                     List.map (jsonValueToElmCode << Tuple.second) input
@@ -413,21 +413,21 @@ canonicalDataDecoder =
         (Decode.field "cases" (Decode.list caseDecoder))
 
 
-caseDecoder : Decoder Case
+caseDecoder : Decoder TestCases
 caseDecoder =
     Decode.oneOf
-        [ Decode.map Leaf testDecoder
+        [ Decode.map SingleTest testDecoder
         , Decode.map3 CanonicalData
             commentsDecoder
             (Decode.field "description" Decode.string)
             (Decode.field "cases" (Decode.list (Decode.lazy (\() -> caseDecoder))))
-            |> Decode.map Nested
+            |> Decode.map TestGroup
         ]
 
 
-testDecoder : Decoder Test
+testDecoder : Decoder TestData
 testDecoder =
-    Decode.map6 Test
+    Decode.map6 TestData
         commentsDecoder
         (Decode.maybe (Decode.field "reimplements" Decode.string))
         (Decode.field "description" Decode.string)
