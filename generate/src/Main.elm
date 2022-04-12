@@ -105,15 +105,11 @@ searchFunctions =
                         canError =
                             String.contains "{error=" expected
 
-                        update existingFunction =
-                            case existingFunction of
-                                Nothing ->
-                                    Just (Function (List.map Tuple.first input) canError (Dict.size functions))
-
-                                Just f ->
-                                    Just { f | canError = f.canError || canError }
+                        currentFunction =
+                            Dict.get function functions
+                                |> Maybe.withDefault (Function (List.map Tuple.first input) canError (Dict.size functions))
                     in
-                    Dict.update function update functions
+                    Dict.insert function { currentFunction | canError = currentFunction.canError || canError } functions
     in
     List.foldl searchFunction Dict.empty
 
