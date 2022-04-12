@@ -248,17 +248,24 @@ where the function name and argument names are extraced from canonical data.
 printFunction : ( String, Function ) -> String
 printFunction ( name, { arguments, canError } ) =
     let
-        finalType =
+        returnType =
             if canError then
                 "Result String todo"
 
             else
                 "todo"
+
+        typeAnnotation =
+            (List.repeat (List.length arguments) "todo" ++ [ returnType ])
+                |> String.join " -> "
     in
-    [ name ++ " : " ++ String.join " -> " (List.map (always "todo") arguments) ++ " -> " ++ finalType
-    , String.join " " (name :: arguments) ++ " = Debug.todo \"Please implement " ++ name ++ "\""
-    ]
-        |> String.join "\n"
+    """
+<name> : <typeAnnotation>
+<name> <args> = Debug.todo "Please implement <name>"
+"""
+        |> String.replace "<name>" name
+        |> String.replace "<typeAnnotation>" typeAnnotation
+        |> String.replace "<args>" (String.join " " arguments)
 
 
 makeTestPath : String -> String
