@@ -39,8 +39,8 @@ type alias Test =
     , reimplements : Maybe String
     , description : String
     , function : String
-    , input : List ( String, String )
-    , expected : String
+    , input : List ( String, JsonValue )
+    , expected : JsonValue
     }
 
 
@@ -103,7 +103,12 @@ searchFunctions =
                 Leaf { function, expected, input } ->
                     let
                         canError =
-                            String.contains "{error=" expected
+                            case expected of
+                                JsonObject [ ( "error", _ ) ] ->
+                                    True
+
+                                _ ->
+                                    False
 
                         currentFunction =
                             Dict.get function functions
@@ -174,17 +179,17 @@ printTest slug functions testCase =
                 Nothing ->
                     []
 
-        expectedValue : String -> String -> String
+        expectedValue : String -> JsonValue -> String
         expectedValue function expected =
-            case ( Dict.get function functions |> Maybe.map .canError, String.contains "{error=" expected ) of
-                ( Just True, True ) ->
-                    "Err " ++ String.slice 7 -1 expected
+            case ( Dict.get function functions |> Maybe.map .canError, expected ) of
+                ( Just True, JsonObject [ ( "error", expectedError ) ] ) ->
+                    "Err " ++ jsonValueToElmCode expectedError
 
-                ( Just True, False ) ->
-                    "Ok " ++ expected
+                ( Just True, _ ) ->
+                    "Ok " ++ jsonValueToElmCode expected
 
                 _ ->
-                    expected
+                    jsonValueToElmCode expected
     in
     case testCase of
         Nested { comments, description, cases } ->
@@ -196,6 +201,11 @@ printTest slug functions testCase =
                 ]
 
         Leaf { comments, reimplements, description, function, input, expected } ->
+            let
+                inputArguments =
+                    List.map (jsonValueToElmCode << Tuple.second) input
+                        |> String.join " "
+            in
             """
 <comments>
 
@@ -208,7 +218,7 @@ test "<description>" <|
                 |> String.replace "<description>" description
                 |> String.replace "<exercise>" (kebabToPascal slug)
                 |> String.replace "<function>" function
-                |> String.replace "<inputs>" (input |> List.map Tuple.second |> String.join " ")
+                |> String.replace "<inputs>" inputArguments
                 |> String.replace "<expectedValue>" (expectedValue function expected)
 
 
@@ -271,7 +281,7 @@ printFunction ( name, { arguments, canError } ) =
 """
         |> String.replace "<name>" name
         |> String.replace "<typeAnnotation>" typeAnnotation
-        |> String.replace "<args>" (String.join " " arguments)
+        |> String.replace "<args>" (String.join " " (List.map cleanVariable arguments))
 
 
 makeTestPath : String -> List String
@@ -290,7 +300,66 @@ makeExamplePath slug =
 
 
 
--- DECODERS, REQUESTS
+-- DECODERS
+
+
+{-| Convert a JSON value to Elm code as close as possible.
+-}
+jsonValueToElmCode : JsonValue -> String
+jsonValueToElmCode json =
+    case json of
+        Null ->
+            "Null"
+
+        JsonBool True ->
+            "True"
+
+        JsonBool False ->
+            "False"
+
+        JsonInt integer ->
+            String.fromInt integer
+
+        JsonFloat float ->
+            String.fromFloat float
+
+        JsonString str ->
+            Encode.encode 0 (Encode.string str)
+
+        JsonList list ->
+            List.map jsonValueToElmCode list
+                |> (\encodedList -> "[ " ++ String.join ", " encodedList ++ " ]")
+
+        JsonObject obj ->
+            List.map (\( key, val ) -> cleanVariable key ++ " = " ++ jsonValueToElmCode val) obj
+                |> (\encodedList -> "{ " ++ String.join ", " encodedList ++ " }")
+
+
+{-| Generic type describing the different shapes a JSON value can take.
+-}
+type JsonValue
+    = Null
+    | JsonBool Bool
+    | JsonInt Int
+    | JsonFloat Float
+    | JsonString String
+    | JsonList (List JsonValue)
+    | JsonObject (List ( String, JsonValue ))
+
+
+{-| Decoder for a generic JSON value
+-}
+jsonValueDecoder : Decoder JsonValue
+jsonValueDecoder =
+    Decode.oneOf
+        [ Decode.null Null
+        , Decode.map JsonBool Decode.bool
+        , Decode.map JsonInt Decode.int
+        , Decode.map JsonFloat Decode.float
+        , Decode.map JsonString Decode.string
+        , Decode.map JsonList (Decode.list (Decode.lazy (\_ -> jsonValueDecoder)))
+        , Decode.map JsonObject (Decode.keyValuePairs (Decode.lazy (\_ -> jsonValueDecoder)))
+        ]
 
 
 flagDecoder : Decoder ( String, CanonicalData )
@@ -298,29 +367,6 @@ flagDecoder =
     Decode.map2 Tuple.pair
         (Decode.field "slug" Decode.string)
         (Decode.field "data" canonicalDataDecoder)
-
-
-valueDecoder : Decoder String
-valueDecoder =
-    Decode.oneOf
-        [ Decode.string |> Decode.map (\string -> "\"" ++ escape string ++ "\"")
-        , Decode.int |> Decode.map String.fromInt
-        , Decode.float |> Decode.map String.fromFloat
-        , Decode.bool
-            |> Decode.map
-                (\b ->
-                    if b then
-                        "True"
-
-                    else
-                        "False"
-                )
-        , Decode.null "Nothing"
-        , Decode.list (Decode.lazy (\() -> valueDecoder)) |> Decode.map (\v -> "[" ++ String.join "," v ++ "]")
-        , Decode.keyValuePairs (Decode.lazy (\() -> valueDecoder))
-            |> Decode.map
-                (\kv -> "{" ++ String.join "," (List.map (\( k, v ) -> cleanVariable k ++ "=" ++ v) kv) ++ "}")
-        ]
 
 
 {-| Uncapitalize and replace reserved words.
@@ -347,14 +393,6 @@ cleanVariable string =
 
     else
         word
-
-
-{-| Re-escape escaped characters before they are printed as a string.
--}
-escape : String -> String
-escape string =
-    [ ( "\\", "\\\\" ), ( "\"", "\\\"" ), ( "\t", "\\t" ), ( "\n", "\\n" ) ]
-        |> List.foldl (\( from, to ) -> String.replace from to) string
 
 
 commentsDecoder : Decoder (List String)
@@ -393,13 +431,9 @@ testDecoder =
         commentsDecoder
         (Decode.maybe (Decode.field "reimplements" Decode.string))
         (Decode.field "description" Decode.string)
-        (Decode.field "property" (Decode.string |> Decode.map cleanVariable))
-        (Decode.field "input"
-            (Decode.keyValuePairs valueDecoder
-                |> Decode.map (List.map (Tuple.mapFirst cleanVariable))
-            )
-        )
-        (Decode.field "expected" valueDecoder)
+        (Decode.field "property" Decode.string)
+        (Decode.field "input" (Decode.keyValuePairs jsonValueDecoder))
+        (Decode.field "expected" jsonValueDecoder)
 
 
 encodeFiles : String -> String -> String -> Value
