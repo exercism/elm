@@ -46,23 +46,9 @@ type alias Test =
 
 type alias Function =
     { arguments : List String
-    , resultType : ResultType
+    , canError : Bool
     , order : Int
     }
-
-
-type ResultType
-    = Direct
-    | Result
-
-
-maxResultType : ResultType -> ResultType -> ResultType
-maxResultType a b =
-    if a == Result || b == Result then
-        Result
-
-    else
-        Direct
 
 
 init : Value -> ( (), Cmd () )
@@ -116,20 +102,16 @@ searchFunctions =
 
                 Leaf { function, expected, input } ->
                     let
-                        resultType =
-                            if String.contains "{error=" expected then
-                                Result
-
-                            else
-                                Direct
+                        canError =
+                            String.contains "{error=" expected
 
                         update existingFunction =
                             case existingFunction of
                                 Nothing ->
-                                    Just (Function (List.map Tuple.first input) resultType (Dict.size functions))
+                                    Just (Function (List.map Tuple.first input) canError (Dict.size functions))
 
                                 Just f ->
-                                    Just { f | resultType = maxResultType f.resultType resultType }
+                                    Just { f | canError = f.canError || canError }
                     in
                     Dict.update function update functions
     in
@@ -198,11 +180,11 @@ printTest slug functions testCase =
 
         expectedValue : String -> String -> String
         expectedValue function expected =
-            case ( Dict.get function functions |> Maybe.map .resultType, String.contains "{error=" expected ) of
-                ( Just Result, True ) ->
+            case ( Dict.get function functions |> Maybe.map .canError, String.contains "{error=" expected ) of
+                ( Just True, True ) ->
                     "Err " ++ String.slice 7 -1 expected
 
-                ( Just Result, False ) ->
+                ( Just True, False ) ->
                     "Ok " ++ expected
 
                 _ ->
@@ -268,15 +250,14 @@ where the function name and argument names are extraced from canonical data.
 
 -}
 printFunction : ( String, Function ) -> String
-printFunction ( name, { arguments, resultType } ) =
+printFunction ( name, { arguments, canError } ) =
     let
         finalType =
-            case resultType of
-                Direct ->
-                    "todo"
+            if canError then
+                "Result String todo"
 
-                Result ->
-                    "Result String todo"
+            else
+                "todo"
     in
     [ name ++ " : " ++ String.join " -> " (List.map (always "todo") arguments) ++ " -> " ++ finalType
     , String.join " " (name :: arguments) ++ " = Debug.todo \"Please implement " ++ name ++ "\""
