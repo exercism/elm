@@ -268,22 +268,19 @@ printFunction ( name, { arguments, canError } ) =
         |> String.replace "<args>" (String.join " " arguments)
 
 
-makeTestPath : String -> String
+makeTestPath : String -> List String
 makeTestPath slug =
     [ "exercises", "practice", slug, "tests", "Tests.elm" ]
-        |> String.join "/"
 
 
-makeSolutionPath : String -> String
+makeSolutionPath : String -> List String
 makeSolutionPath slug =
     [ "exercises", "practice", slug, "src", kebabToPascal slug ++ ".elm" ]
-        |> String.join "/"
 
 
-makeExamplePath : String -> String
+makeExamplePath : String -> List String
 makeExamplePath slug =
     [ "exercises", "practice", slug, ".meta", "src", kebabToPascal slug ++ ".example.elm" ]
-        |> String.join "/"
 
 
 
@@ -408,6 +405,6 @@ encodeFiles slug testFile solutionFile =
         ]
 
 
-encodeFile : String -> String -> Value
+encodeFile : List String -> String -> Value
 encodeFile path file =
-    Encode.object [ ( "path", Encode.string path ), ( "file", Encode.string file ) ]
+    Encode.object [ ( "path", Encode.list Encode.string path ), ( "file", Encode.string file ) ]
