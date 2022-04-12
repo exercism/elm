@@ -220,21 +220,21 @@ writeSolutionFile slug { cases } =
 
         functions =
             searchFunctions cases
+
+        functionsCode =
+            Dict.toList functions
+                |> List.sortBy (Tuple.second >> .order)
+                |> List.map printFunction
+                |> String.join "\n"
     in
     """
 module <exercise> exposing (<functionList>)
 
-<functions>
+<functionsCode>
 """
         |> String.replace "<exercise>" exercise
         |> String.replace "<functionList>" (functions |> Dict.keys |> String.join ", ")
-        |> String.replace "<functions>"
-            (functions
-                |> Dict.toList
-                |> List.sortBy (Tuple.second >> .order)
-                |> List.map printFunction
-                |> String.join "\n"
-            )
+        |> String.replace "<functionsCode>" functionsCode
 
 
 {-| Generate a template type signature and first line of the following shape,
