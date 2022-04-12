@@ -188,22 +188,28 @@ printTest slug functions testCase =
     in
     case testCase of
         Nested { comments, description, cases } ->
-            [ printComments comments
-            , "describe \"" ++ description ++ "\" ["
-            , printTests slug functions cases
-            , "]"
-            ]
-                |> String.join "\n"
+            String.join "\n"
+                [ printComments comments
+                , "describe \"" ++ description ++ "\" ["
+                , printTests slug functions cases
+                , "]"
+                ]
 
         Leaf { comments, reimplements, description, function, input, expected } ->
-            [ printComments (addReimplementsExplanation reimplements ++ comments)
-            , "-- skip <|"
-            , "test \"" ++ description ++ "\" <|"
-            , "\\() ->"
-            , kebabToPascal slug ++ "." ++ function ++ " " ++ (input |> List.map Tuple.second |> String.join " ")
-            , "|> Expect.equal (" ++ expectedValue function expected ++ ")"
-            ]
-                |> String.join "\n"
+            """
+<comments>
+
+-- skip <|
+test "<description>" <|
+  \\() ->
+    <exercise>.<function> <inputs>
+      |> Expect.equal (<expectedValue>)"""
+                |> String.replace "<comments>" (printComments (addReimplementsExplanation reimplements ++ comments))
+                |> String.replace "<description>" description
+                |> String.replace "<exercise>" (kebabToPascal slug)
+                |> String.replace "<function>" function
+                |> String.replace "<inputs>" (input |> List.map Tuple.second |> String.join " ")
+                |> String.replace "<expectedValue>" (expectedValue function expected)
 
 
 {-| Generate the template for the solution file.
