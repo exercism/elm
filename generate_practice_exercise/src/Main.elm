@@ -45,7 +45,8 @@ type alias TestData =
 
 
 type alias Function =
-    { arguments : List String
+    { arguments : List ( String, String )
+    , returnType : String
     , canError : Bool
     , order : Int
     }
@@ -102,19 +103,27 @@ searchFunctions =
 
                 SingleTest { function, expected, input } ->
                     let
-                        canError =
+                        ( canError, returnType ) =
                             case expected of
                                 JsonObject [ ( "error", _ ) ] ->
-                                    True
+                                    ( True, "" )
 
-                                _ ->
-                                    False
+                                other ->
+                                    ( False, jsonValueToElmType other )
+
+                        args =
+                            List.map (Tuple.mapSecond jsonValueToElmType) input
 
                         currentFunction =
                             Dict.get function functions
-                                |> Maybe.withDefault (Function (List.map Tuple.first input) canError (Dict.size functions))
+                                |> Maybe.withDefault (Function args returnType canError (Dict.size functions))
                     in
-                    Dict.insert function { currentFunction | canError = currentFunction.canError || canError } functions
+                    Dict.insert function
+                        { currentFunction
+                            | canError = currentFunction.canError || canError
+                            , returnType = max currentFunction.returnType returnType
+                        }
+                        functions
     in
     List.foldl searchFunction Dict.empty
 
@@ -256,23 +265,23 @@ module <exercise> exposing (<functionList>)
 {-| Generate a template type signature and first line of the following shape,
 where the function name and argument names are extraced from canonical data.
 
-    name : todo -> Result String todo
+    name : String -> Result String String
     name arg1 =
         Debug.todo "..."
 
 -}
 printFunction : ( String, Function ) -> String
-printFunction ( name, { arguments, canError } ) =
+printFunction ( name, { arguments, returnType, canError } ) =
     let
-        returnType =
+        return =
             if canError then
-                "Result String todo"
+                "Result String " ++ returnType
 
             else
-                "todo"
+                returnType
 
         typeAnnotation =
-            (List.repeat (List.length arguments) "todo" ++ [ returnType ])
+            (List.map Tuple.second arguments ++ [ return ])
                 |> String.join " -> "
     in
     """
@@ -281,7 +290,7 @@ printFunction ( name, { arguments, canError } ) =
 """
         |> String.replace "<name>" name
         |> String.replace "<typeAnnotation>" typeAnnotation
-        |> String.replace "<args>" (String.join " " (List.map cleanVariable arguments))
+        |> String.replace "<args>" (String.join " " (List.map (Tuple.first >> cleanVariable) arguments))
 
 
 makeTestPath : String -> List String
@@ -301,6 +310,18 @@ makeExamplePath slug =
 
 
 -- DECODERS
+
+
+{-| Generic type describing the different shapes a JSON value can take.
+-}
+type JsonValue
+    = Null
+    | JsonBool Bool
+    | JsonInt Int
+    | JsonFloat Float
+    | JsonString String
+    | JsonList (List JsonValue)
+    | JsonObject (List ( String, JsonValue ))
 
 
 {-| Convert a JSON value to Elm code as close as possible.
@@ -335,16 +356,39 @@ jsonValueToElmCode json =
                 |> (\encodedList -> "{ " ++ String.join ", " encodedList ++ " }")
 
 
-{-| Generic type describing the different shapes a JSON value can take.
+{-| Convert a JSON value to an Elm type as close as possible.
 -}
-type JsonValue
-    = Null
-    | JsonBool Bool
-    | JsonInt Int
-    | JsonFloat Float
-    | JsonString String
-    | JsonList (List JsonValue)
-    | JsonObject (List ( String, JsonValue ))
+jsonValueToElmType : JsonValue -> String
+jsonValueToElmType json =
+    case json of
+        Null ->
+            "Never"
+
+        JsonBool _ ->
+            "Bool"
+
+        JsonInt _ ->
+            "Int"
+
+        JsonFloat _ ->
+            "Float"
+
+        JsonString _ ->
+            "String"
+
+        JsonList list ->
+            case list of
+                [] ->
+                    "List todo"
+
+                head :: _ ->
+                    "List (" ++ jsonValueToElmType head ++ ")"
+
+        JsonObject obj ->
+            case obj of
+                _ ->
+                    List.map (\( key, val ) -> cleanVariable key ++ " = " ++ jsonValueToElmType val) obj
+                        |> (\encodedList -> "{ " ++ String.join ", " encodedList ++ " }")
 
 
 {-| Decoder for a generic JSON value
