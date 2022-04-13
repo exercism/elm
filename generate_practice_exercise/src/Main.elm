@@ -45,7 +45,7 @@ type alias TestData =
 
 
 type alias Function =
-    { arguments : List ( String, String )
+    { arguments : List { argName : String, argType : String }
     , returnType : String
     , canError : Bool
     , order : Int
@@ -112,7 +112,7 @@ searchFunctions =
                                     ( False, jsonValueToElmType other )
 
                         args =
-                            List.map (Tuple.mapSecond jsonValueToElmType) input
+                            List.map (\( name, value ) -> { argName = name, argType = jsonValueToElmType value }) input
 
                         currentFunction =
                             Dict.get function functions
@@ -281,7 +281,7 @@ printFunction ( name, { arguments, returnType, canError } ) =
                 returnType
 
         typeAnnotation =
-            (List.map Tuple.second arguments ++ [ return ])
+            (List.map .argType arguments ++ [ return ])
                 |> String.join " -> "
     in
     """
@@ -290,7 +290,7 @@ printFunction ( name, { arguments, returnType, canError } ) =
 """
         |> String.replace "<name>" name
         |> String.replace "<typeAnnotation>" typeAnnotation
-        |> String.replace "<args>" (String.join " " (List.map (Tuple.first >> cleanVariable) arguments))
+        |> String.replace "<args>" (String.join " " (List.map (.argName >> cleanVariable) arguments))
 
 
 makeTestPath : String -> List String
@@ -362,7 +362,7 @@ jsonValueToElmType : JsonValue -> String
 jsonValueToElmType json =
     case json of
         Null ->
-            "Never"
+            "Maybe todo"
 
         JsonBool _ ->
             "Bool"
@@ -387,7 +387,7 @@ jsonValueToElmType json =
         JsonObject obj ->
             case obj of
                 _ ->
-                    List.map (\( key, val ) -> cleanVariable key ++ " = " ++ jsonValueToElmType val) obj
+                    List.map (\( key, val ) -> cleanVariable key ++ " : " ++ jsonValueToElmType val) obj
                         |> (\encodedList -> "{ " ++ String.join ", " encodedList ++ " }")
 
 
