@@ -36,7 +36,7 @@ cp template/elm.json $exercise_dir
 
 # Build generator
 echo "Building exercise generator..."
-cd generate
+cd generate_practice_exercise
 elm make --debug src/Main.elm --output=src/main.js
 cd ..
 
@@ -44,7 +44,7 @@ cd ..
 echo "Creating Elm files..."
 mkdir -p ${exercise_dir}/tests ${exercise_dir}/src ${exercise_dir}/.meta/src
 curl https://raw.githubusercontent.com/exercism/problem-specifications/main/exercises/${SLUG}/canonical-data.json \
-    | node generate/src/cli.js $SLUG
+    | node generate_practice_exercise/src/cli.js $SLUG
 elm-format --yes ${exercise_dir}/**/*.elm
 elm-format --yes ${exercise_dir}/.meta/src/*.elm
 
