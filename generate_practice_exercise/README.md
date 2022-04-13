@@ -5,10 +5,13 @@ This application is used for generating and pre-populating files for Exercism pr
 The list of available exercises [can be found on the `problem-specifications` repository](https://github.com/exercism/problem-specifications/tree/main/exercises).
 Please [check this link](https://exercism.org/docs/building/tracks/practice-exercises) for the full documentation on practice exercises. 
 
-The generator code is in this folder, you can run it with `./bin/generate_practice_exercise.sh <exercise-name>` from the root of the directory.
+The generator code is in this folder, you can run it with
+```bash
+./bin/generate_practice_exercise.sh <exercise-name>
+```
+from the root of the directory.
 
-Once you run the script, it will ask you to copy some content into `config.json` (you will review the content later).
-After you confirm that you have copied the content, the following files will be created:
+Once you run the script, `config.json` will be modified and the following files will be created:
 ```
 exercises/practice/<exercise-name>/
 ├── .docs
@@ -41,7 +44,7 @@ After you have implemented an example solution that passes all the tests, copy i
 The generator creates `tests/Tests.elm` from the values found in the `canonical-data.json` file in `problem-specifications`.
 
 The tests will need to be modified to match the API from `src/<ExerciseName>.elm`.
-The test names should be kept as they are, the test data will require transformation but should remain in some form, and comments can be deleted.
+The file structure and test names should be kept as they are, the test data will require transformation but should remain the same in substance, and comments can be deleted. Don't forget to un-comment every `skip <|` except on the first test.
 
 Please mind that tests that have been re-implemented need to be removed.
 
@@ -52,7 +55,6 @@ Once the test file is finalized, please run `./bin/configlet sync --update --tes
 There are two configuration files that you need to complete. 
 
 First, `config.json` on top of the repository. 
-The generator will ask you to add some content to it, but you will need to change the values after implementing the solution.
 Please change the following fields:
 - `name`: should be capitalized and spelled in proper English.
 - `practices`: should have the list of key concepts the exercise focuses on (one or two).

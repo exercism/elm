@@ -17,18 +17,12 @@ echo "Fetching latest version of configlet..."
 ./bin/fetch-configlet
 
 # Preparing config.json
-echo "Please adapt and add the following in config.json before continuing: "
+echo "Adding instructions and configuration files..."
 UUID=$(bin/configlet uuid)
-jq -n --arg slug "$SLUG" --arg uuid "$UUID" \
-    '{slug: $slug, name: $slug, uuid: $uuid, practices: [], prerequisites: [], difficulty: 5}'
-
-echo "Press 'y' to continue..."
-read -n 1 k <&1
-echo ""
-if [[ $k != 'y' && $k != 'Y' ]] ; then
-    echo "Exiting"
-    exit 0
-fi
+jq --arg slug "$SLUG" --arg uuid "$UUID" \
+    '.exercises.practice += [{slug: $slug, name: $slug, uuid: $uuid, practices: [], prerequisites: [], difficulty: 5}]' \
+    config.json > config.json.tmp
+mv config.json.tmp config.json
 
 # Create instructions and config files
 ./bin/configlet sync --update --yes --docs --filepaths --metadata --exercise "$SLUG"
@@ -36,9 +30,9 @@ cp template/elm.json $exercise_dir
 
 # Build generator
 echo "Building exercise generator..."
-cd generate_practice_exercise
+pushd generate_practice_exercise
 elm make --debug src/Main.elm --output=src/main.js
-cd ..
+popd
 
 # Create Elm files
 echo "Creating Elm files..."
