@@ -1,8 +1,6 @@
-module BettysBikeShop exposing (penceToPounds, poundsToString)
+module BettysBikeShop exposing (poundsToString)
 
 -- TODO: import the String module
--- TODO: define the type annotations for the functions
--- TODO: define body of functions
 
 
 penceToPounds pence =

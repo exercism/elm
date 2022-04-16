@@ -25,6 +25,7 @@
 This exercise could benefit from the following rules added to the the [analyzer][analyzer]:
 
 - Verify that functions have type annotations.
+- Verify that the `String` module is imported
 - Verify that the whitespace adheres to community defaults.
 
 [analyzer]: https://github.com/exercism/elm-analyzer

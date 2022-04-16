@@ -3,6 +3,9 @@
     "ceddlyburge",
     "mpizenberg"
   ],
+  "contributors": [
+    "jiegillet"
+  ],
   "files": {
     "solution": [
       "src/BettysBikeShop.elm"
