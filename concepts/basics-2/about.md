@@ -8,7 +8,7 @@ Each file in Elm is a module and must contain a `module` statement before all ot
 
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm, and module `Parser.Utils` needs to be in file Parser/Utils.elm.
 
-Anything defined within a module is privatly scoped to it and cannot be accessed from outside this module, unless listed in `exposing`.
+Anything defined within a module is privately scoped to it and cannot be accessed from outside this module, unless listed in `exposing`.
 
 ```elm
 -- Calculator.elm
