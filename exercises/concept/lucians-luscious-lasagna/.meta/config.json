@@ -1,12 +1,7 @@
 {
-  "blurb": "Learn the basics of Elm by cooking Lucian's Luscious Lasagna",
-  "icon": "lasagna",
   "authors": [
     "mpizenberg",
     "ceddlyburge"
-  ],
-  "forked_from": [
-    "fsharp/lucians-luscious-lasagna"
   ],
   "files": {
     "solution": [
@@ -18,5 +13,10 @@
     "exemplar": [
       ".meta/Exemplar.elm"
     ]
-  }
+  },
+  "forked_from": [
+    "fsharp/lucians-luscious-lasagna"
+  ],
+  "icon": "lasagna",
+  "blurb": "Learn the basics of Elm by cooking Lucian's Luscious Lasagna"
 }

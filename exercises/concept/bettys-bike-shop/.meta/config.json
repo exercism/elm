@@ -1,8 +1,7 @@
 {
-  "blurb": "Continue learning the basics of Elm by helping Betty to display her bikes prices",
   "authors": [
-      "ceddlyburge",
-      "mpizenberg"
+    "ceddlyburge",
+    "mpizenberg"
   ],
   "files": {
     "solution": [
@@ -14,5 +13,6 @@
     "exemplar": [
       ".meta/Exemplar.elm"
     ]
-  }
+  },
+  "blurb": "Continue learning the basics of Elm by helping Betty to display her bikes prices"
 }

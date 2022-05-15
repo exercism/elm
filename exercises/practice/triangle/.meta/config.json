@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "authors": [
     "tgecho"
   ],
@@ -22,6 +21,7 @@
       ".meta/src/Triangle.example.elm"
     ]
   },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
   "source": "The Ruby Koans triangle project, parts 1 & 2",
   "source_url": "http://rubykoans.com"
 }

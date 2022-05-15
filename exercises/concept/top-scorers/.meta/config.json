@@ -1,5 +1,4 @@
 {
-  "blurb": "Learn usage of Dict by keeping track of how many goals players have scored.",
   "authors": [
     "ceddlyburge"
   ],
@@ -11,14 +10,15 @@
     "solution": [
       "src/TopScorers.elm"
     ],
-    "editor": [
-      "src/TopScorersSupport.elm"
-    ],
     "test": [
       "tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/TopScorersSupport.elm"
     ]
-  }
+  },
+  "blurb": "Learn usage of Dict by keeping track of how many goals players have scored."
 }
