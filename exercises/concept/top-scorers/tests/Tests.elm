@@ -10,57 +10,73 @@ import TopScorersSupport exposing (..)
 tests : Test
 tests =
     describe "Top Scorers"
-        [ test "aggregateScores should count the number of occurences of a player name" <|
-            \() ->
-                aggregateScorers [ "Betty", "Cedd", "Betty" ]
-                    |> Expect.equal
+        [ describe
+            "1. Aggregate scorers"
+            [ test "aggregateScores should count the number of occurences of a player name" <|
+                \() ->
+                    aggregateScorers [ "Betty", "Cedd", "Betty" ]
+                        |> Expect.equal
+                            (Dict.fromList
+                                [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
+                            )
+            ]
+        , describe
+            "2. Remove insignificant players"
+            [ test "removeInsignificantPlayers should remove players that have scored less goals than the threshold" <|
+                \() ->
+                    removeInsignificantPlayers 2
                         (Dict.fromList
                             [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
                         )
-        , test "removeInsignificantPlayers should remove players that have scored less goals than the threshold" <|
-            \() ->
-                removeInsignificantPlayers 1
-                    (Dict.fromList
-                        [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
-                    )
-                    |> Expect.equal
+                        |> Expect.equal
+                            (Dict.fromList
+                                [ ( "Betty", 2 ) ]
+                            )
+            ]
+        , describe
+            "3. Reset player goal count"
+            [ test "resetPlayerGoalCount should set the goalCount to zero for the player" <|
+                \() ->
+                    resetPlayerGoalCount "Betty"
                         (Dict.fromList
-                            [ ( "Betty", 2 ) ]
+                            [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
                         )
-        , test "resetPlayerGoalCount should set the goalCount to zero for the player" <|
-            \() ->
-                resetPlayerGoalCount "Betty"
-                    (Dict.fromList
-                        [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
-                    )
-                    |> Expect.equal
+                        |> Expect.equal
+                            (Dict.fromList
+                                [ ( "Betty", 0 ), ( "Cedd", 1 ) ]
+                            )
+            ]
+        , describe
+            "4. Format the goal count for a single player"
+            [ test "formatPlayer should return the player name and the goal count" <|
+                \() ->
+                    formatPlayer "Betty" (Dict.singleton "Betty" 3)
+                        |> Expect.equal
+                            "Betty: 3"
+            ]
+        , describe "5. Format the goal count for all players"
+            [ test "formatPlayers should return the player name and the goal count, ordered by player name" <|
+                \() ->
+                    formatPlayers
                         (Dict.fromList
-                            [ ( "Betty", 0 ), ( "Cedd", 1 ) ]
+                            [ ( "Cedd", 1 ), ( "Betty", 2 ) ]
                         )
-        , test "formatPlayer should return the player name and the goal count" <|
-            \() ->
-                formatPlayer "Betty" (Dict.singleton "Betty" 3)
-                    |> Expect.equal
-                        "Betty: 3"
-        , test "formatPlayers should return the player name and the goal count, ordered by player name" <|
-            \() ->
-                formatPlayers
-                    (Dict.fromList
-                        [ ( "Cedd", 1 ), ( "Betty", 2 ) ]
-                    )
-                    |> Expect.equal
-                        "Betty: 2, Cedd: 1"
-        , test "combineGames should count goals in both games" <|
-            \() ->
-                combineGames
-                    (Dict.fromList
-                        [ ( "Cedd", 1 ), ( "Betty", 2 ) ]
-                    )
-                    (Dict.fromList
-                        [ ( "Betty", 2 ), ( "Luigi", 3 ) ]
-                    )
-                    |> Expect.equal
+                        |> Expect.equal
+                            "Betty: 2, Cedd: 1"
+            ]
+        , describe "6. Combine games"
+            [ test "combineGames should count goals in both games" <|
+                \() ->
+                    combineGames
                         (Dict.fromList
-                            [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
+                            [ ( "Cedd", 1 ), ( "Betty", 2 ) ]
                         )
+                        (Dict.fromList
+                            [ ( "Betty", 2 ), ( "Luigi", 3 ) ]
+                        )
+                        |> Expect.equal
+                            (Dict.fromList
+                                [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
+                            )
+            ]
         ]
