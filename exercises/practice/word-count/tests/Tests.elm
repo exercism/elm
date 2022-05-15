@@ -1,6 +1,6 @@
 module Tests exposing (tests)
 
-import Dict exposing (Dict)
+import Dict
 import Expect
 import Test exposing (..)
 import WordCount exposing (wordCount)

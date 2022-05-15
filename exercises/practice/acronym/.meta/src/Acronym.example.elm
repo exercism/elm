@@ -9,7 +9,7 @@ abbreviate phrase =
     phrase
         |> Regex.split dashOrSpace
         |> List.map firstLetter
-        |> String.join ""
+        |> String.concat
 
 
 firstLetter : String -> String

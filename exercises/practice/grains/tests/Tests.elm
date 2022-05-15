@@ -2,7 +2,6 @@ module Tests exposing (tests)
 
 import Expect
 import Grains exposing (square)
-import Json.Encode exposing (Value)
 import Test exposing (..)
 
 

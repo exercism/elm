@@ -1,7 +1,5 @@
 module RnaTranscription exposing (toRNA)
 
-import String
-
 
 createErrorMessage : Char -> String
 createErrorMessage invalidNucleotide =
@@ -16,7 +14,7 @@ toRNA dna =
         |> List.map toRNANucleotide
         |> resultExtraCombine
         |> Result.map (List.map String.fromChar)
-        |> Result.map (String.join "")
+        |> Result.map String.concat
         |> Result.mapError createErrorMessage
 
 

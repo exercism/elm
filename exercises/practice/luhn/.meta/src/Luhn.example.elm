@@ -1,7 +1,7 @@
 module Luhn exposing (valid)
 
 import Char exposing (isDigit)
-import Regex exposing (Regex)
+import Regex
 import String
 
 

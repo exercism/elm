@@ -43,35 +43,37 @@ addWhiteCapturedStone game =
 
 tests : Test
 tests =
-    describe "applyRules"
-        [ test "should change the player if all rules pass" <|
-            \() ->
-                applyRules vanillaGame identityRule identity identityRule identityRule
-                    |> Expect.equal
-                        (changePlayer vanillaGame)
-        , test "should retain the error and player if koRule fails" <|
-            \() ->
-                applyRules vanillaGame identityRule identity identityRule (errRule koRule)
-                    |> Expect.equal
-                        { vanillaGame | error = koRule }
-        , test "should retain the error and player if libertyRule fails" <|
-            \() ->
-                applyRules vanillaGame identityRule identity (errRule libertyRule) identityRule
-                    |> Expect.equal
-                        { vanillaGame | error = libertyRule }
-        , test "should retain the error and player if oneStonePerPointRule fails" <|
-            \() ->
-                applyRules vanillaGame (errRule oneStonePerPointRule) identity identityRule identityRule
-                    |> Expect.equal
-                        { vanillaGame | error = oneStonePerPointRule }
-        , test "should retain changes from captureRule and change player" <|
-            \() ->
-                applyRules vanillaGame identityRule addWhiteCapturedStone identityRule identityRule
-                    |> Expect.equal
-                        (vanillaGame |> addWhiteCapturedStone |> changePlayer)
-        , test "should discard changes from captureRule if subsequent rule fails" <|
-            \() ->
-                applyRules vanillaGame identityRule addWhiteCapturedStone identityRule (errRule koRule)
-                    |> Expect.equal
-                        { vanillaGame | error = koRule }
+    describe "Go"
+        [ describe "1"
+            [ test "should change the player if all rules pass" <|
+                \() ->
+                    applyRules vanillaGame identityRule identity identityRule identityRule
+                        |> Expect.equal
+                            (changePlayer vanillaGame)
+            , test "should retain the error and player if koRule fails" <|
+                \() ->
+                    applyRules vanillaGame identityRule identity identityRule (errRule koRule)
+                        |> Expect.equal
+                            { vanillaGame | error = koRule }
+            , test "should retain the error and player if libertyRule fails" <|
+                \() ->
+                    applyRules vanillaGame identityRule identity (errRule libertyRule) identityRule
+                        |> Expect.equal
+                            { vanillaGame | error = libertyRule }
+            , test "should retain the error and player if oneStonePerPointRule fails" <|
+                \() ->
+                    applyRules vanillaGame (errRule oneStonePerPointRule) identity identityRule identityRule
+                        |> Expect.equal
+                            { vanillaGame | error = oneStonePerPointRule }
+            , test "should retain changes from captureRule and change player" <|
+                \() ->
+                    applyRules vanillaGame identityRule addWhiteCapturedStone identityRule identityRule
+                        |> Expect.equal
+                            (vanillaGame |> addWhiteCapturedStone |> changePlayer)
+            , test "should discard changes from captureRule if subsequent rule fails" <|
+                \() ->
+                    applyRules vanillaGame identityRule addWhiteCapturedStone identityRule (errRule koRule)
+                        |> Expect.equal
+                            { vanillaGame | error = koRule }
+            ]
         ]

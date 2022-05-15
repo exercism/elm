@@ -1,7 +1,5 @@
 module Raindrops exposing (raindrops)
 
-import String
-
 
 raindrops : Int -> String
 raindrops number =
@@ -25,7 +23,7 @@ raindrops number =
             ]
 
         result =
-            String.join "" drops
+            String.concat drops
     in
     if result == "" then
         String.fromInt number

@@ -24,7 +24,7 @@ toList : Int -> List Allergy
 toList score =
     allergies
         |> List.indexedMap (\i n -> ( Bitwise.shiftLeftBy i 1, n ))
-        |> List.filter (\( s, n ) -> Bitwise.and s score > 0)
+        |> List.filter (\( s, _ ) -> Bitwise.and s score > 0)
         |> List.map Tuple.second
 
 

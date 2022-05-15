@@ -18,7 +18,7 @@ encode string =
     String.toList string
         |> List.foldr countChars []
         |> List.map stringifyCounts
-        |> String.join ""
+        |> String.concat
 
 
 countChars : a -> List ( number, a ) -> List ( number, a )
