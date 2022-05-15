@@ -20,7 +20,7 @@
 
 - `Dict.get`, `Maybe.map` and `Maybe.withDefault` are useful for this.
 
-## 4. Format the goal count for all players
+## 5. Format the goal count for all players
 
 - `Dict.toList`, `List.map` and `String.join` are useful for this.
 

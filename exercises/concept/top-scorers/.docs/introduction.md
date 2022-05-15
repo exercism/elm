@@ -17,13 +17,13 @@ empty = Dict.empty
 
 singleValue = Dict.singleton 5 "Value for key 5" --> Dict Int String
 
-twoValues = Dict.fromList [ (0, "Alice" ), (1, "Bob" ) ] --> Dict Int String
+twoValues = Dict.fromList [ ( 0, "Alice" ), ( 1, "Bob" ) ] --> Dict Int String
 ```
 
 Items can be retrieved using `get`.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 keyExists = Dict.get 0 --> Just "Alice"
 keyNotPresent = Dict.get 1 --> Nothing
 ```
@@ -31,21 +31,21 @@ keyNotPresent = Dict.get 1 --> Nothing
 Items can be added using `insert`.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 aliceAndBob = Dict.insert 1 "Bob" alice  --> ( 0, "Alice" ), ( 1, "Bob" )
 ```
 
 Items can be updated using `update`.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 aliceUpperCase = Dict.update 0 (Maybe.map toUpper)  --> ( 0, "ALICE" )
 ```
 
 Items can be removed using `remove`.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 empty = Dict.remove 0 --> Dict.empty
 ```
 

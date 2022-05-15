@@ -4,7 +4,7 @@ Your task is to take a list of scorers for a game, and count how many goals each
 
 `PlayerName` is a type alias for `String`, to make the code easier to read, and to distinguish this use of `String` from other uses of `String`.
 
-In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter`, `Dict.merge`, instead of lower level abstractions such as `Dict.get`, `Dict.remove`, although it does of course depend on the context.
+In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter` and `Dict.merge`, instead of lower level abstractions such as `Dict.get` and `Dict.remove`, although it does of course depend on the context.
 
 ## 1. Aggregate scorers
 
@@ -23,7 +23,7 @@ Implement the `removeInsignificantPlayers` function, to filter out any players t
 
 ```elm
 removeInsignificantPlayers 2 (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
---> (Dict.fromList [ ( "Betty", 2 ) ] )
+--> Dict.fromList [ ( "Betty", 2 ) ]
 ```
 
 ## 3. Reset player goal count
@@ -32,7 +32,7 @@ Implement the `resetPlayerGoalCount` function to reset the goals scored to zero 
 
 ```elm
 resetPlayerGoalCount "Cedd" (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
---> (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 0 ) ] )
+--> Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 0 ) ]
 ```
 
 ## 4. Format the goal count for a single player
@@ -61,5 +61,5 @@ Implement the `combineGames` function, counting the total number of goals each p
 combine Games
   (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
   (Dict.fromList [ ( "Betty", 2 ), ( "Luigi", 3 ) ] )
---> (Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ] )
+--> Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
 ```

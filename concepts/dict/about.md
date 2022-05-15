@@ -33,7 +33,7 @@ keyNotPresent = Dict.get 1 --> Nothing
 Items can be added using `insert`. If the key already exists it will be replaced.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 aliceAndBob = Dict.insert 1 "Bob" alice  --> ( 0, "Alice" ), ( 1, "Bob" )
 bob = Dict.insert 0 "Bob" alice  --> ( 0, "Bob" )
 ```
@@ -41,29 +41,29 @@ bob = Dict.insert 0 "Bob" alice  --> ( 0, "Bob" )
 Items can be updated using `update`. If the key doesn't exist the update function will be called with `Nothing`.
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 aliceUpperCase = Dict.update 0 (\maybeValue -> Maybe.map toUpper maybeValue)  --> ( 0, "ALICE" )
 ```
 
 You can also leverage partial application to simplify the update function
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 aliceUpperCase = Dict.update 0 (Maybe.map toUpper)  --> ( 0, "ALICE" )
 ```
 
 Items can be removed using `remove`. If the key doesn't exist, no change is made
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 stillAlice = Dict.remove 1 --> ( 0, "Alice" )
 empty = Dict.remove 0 --> Dict.empty
 ```
 
-Items can be converted to a list using `toList`. The list is ordered by the keys.,
+Items can be converted to a list using `toList`. The list is ordered by the keys.
 
 ```elm
-aliceAndBob = Dict.fromList [ (1, "Alice" ), (0, "Bob" ) ]
+aliceAndBob = Dict.fromList [ ( 1, "Alice" ), ( 0, "Bob" ) ]
 bobAndAlice = Dict.toList aliceAndBob
 --> ( 0, "Bob" ), ( 1, "Alice" )
 ```
@@ -71,12 +71,12 @@ bobAndAlice = Dict.toList aliceAndBob
 Dicts are manipulated by functions and operators defined in the [`Dict` module][dict-module].
 
 ```elm
-alice = Dict.fromList [ (0, "Alice" ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 Dict.member 0 alice --> True
 ```
 
-Any function/operator that appear to modify a dict (such as adding an element), will actually return a new dict.
-Performance is usually not an issue though, as the implementation of dicts prevents unnecessary allocations/copies.
+Any function/operator that appears to modify a dict (such as adding an element), will actually return a new dict.
+Performance is usually not an issue though, as the implementation prevents unnecessary allocations/copies.
 
 [dict]: https://riptutorial.com/elm/example/7088/dictionaries
 [dict-module]: https://package.elm-lang.org/packages/elm/core/latest/Dict
