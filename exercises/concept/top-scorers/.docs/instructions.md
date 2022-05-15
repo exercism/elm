@@ -4,6 +4,8 @@ Your task is to take a list of scorers for a game, and count how many goals each
 
 `PlayerName` is a type alias for `String`, to make the code easier to read, and to distinguish this use of `String` from other uses of `String`.
 
+In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter`, `Dict.merge`, instead of lower level abstractions such as `Dict.get`, `Dict.remove`, although it does of course depend on the context.
+
 ## 1. Aggregate scorers
 
 Implement the `aggregateScorers` function to count how many goals each player has scored.
@@ -13,15 +15,6 @@ You should also implement `updateGoalCountForPlayer`, and then use this in `aggr
 ```elm
 aggregateScorers [ "Betty", "Cedd", "Betty" ]
 --> Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
-```
-
-## 2. Remove insignificant players
-
-Implement the `removeInsignificantPlayers` function, to filter out any players that have scored less goals than the threshold.
-
-```elm
-removeInsignificantPlayers 2 (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
---> (Dict.fromList [ ( "Betty", 2 ) ] )
 ```
 
 ## 2. Remove insignificant players

@@ -5,11 +5,6 @@ import TopScorersSupport exposing (PlayerName)
 
 
 
--- should mostly be doing the higher level things, like map, and less often doing
--- the low level things, like get, delete
--- todo: mention this in the instructions
-
-
 updateGoalCountForPlayer : PlayerName -> Dict PlayerName Int -> Dict PlayerName Int
 updateGoalCountForPlayer playerName playerGoalCounts =
     let
