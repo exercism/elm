@@ -4,7 +4,6 @@ import Dict as Dict exposing (Dict)
 import TopScorersSupport exposing (PlayerName)
 
 
-
 updateGoalCountForPlayer : PlayerName -> Dict PlayerName Int -> Dict PlayerName Int
 updateGoalCountForPlayer playerName playerGoalCounts =
     let
