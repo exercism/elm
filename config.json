@@ -286,7 +286,7 @@
         ],
         "prerequisites": [
           "maybe",
-          "list"
+          "lists"
         ],
         "status": "beta"
       }
