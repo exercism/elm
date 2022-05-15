@@ -31,7 +31,7 @@ aggregateScorers playerNames =
 
 removeInsignificantPlayers : Int -> Dict PlayerName Int -> Dict PlayerName Int
 removeInsignificantPlayers goalThreshold playerGoalCounts =
-    Dict.filter (\_ goalCount -> goalCount > goalThreshold) playerGoalCounts
+    Dict.filter (\_ goalCount -> goalCount >= goalThreshold) playerGoalCounts
 
 
 resetPlayerGoalCount : PlayerName -> Dict PlayerName Int -> Dict PlayerName Int
