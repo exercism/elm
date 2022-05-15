@@ -34,7 +34,7 @@ aggregateScorers playerNames =
 removeInsignificantPlayers : Int -> Dict PlayerName Int -> Dict PlayerName Int
 removeInsignificantPlayers goalThreshold playerGoalCounts =
     -- Debug.todo "implement removeInsignificantPlayers function, to remove players who have scored less than the threshold number of goals"
-    Dict.filter (\_ goalCount -> goalCount < goalThreshold) playerGoalCounts
+    Dict.filter (\_ goalCount -> goalCount > goalThreshold) playerGoalCounts
 
 
 resetPlayerGoalCount : PlayerName -> Dict PlayerName Int -> Dict PlayerName Int
@@ -55,7 +55,6 @@ formatPlayers : Dict PlayerName Int -> String
 formatPlayers players =
     -- Debug.todo "implement formatPlayers function, for use on the Top Scorers page"
     Dict.toList players
-        |> List.reverse
         |> List.map (\( playerName, goalCount ) -> playerName ++ ": " ++ String.fromInt goalCount)
         |> String.join ", "
 
