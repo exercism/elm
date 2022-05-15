@@ -5,7 +5,7 @@ A [`Dict`][dict] in Elm is an immutable dictionary of zero or more key-value pai
 Type annotations for dicts can be defined as follows
 
 ```elm
-Dict String List --> a dict with String keys and List values
+Dict String (List Int) --> a dict with String keys and List Int values
 Dict Int String --> a dict with Int keys and String values
 ```
 
