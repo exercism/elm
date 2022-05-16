@@ -16,7 +16,7 @@ tests =
                         |> Expect.equal []
             ]
         , describe "2"
-            [ test "existingList should return Elm, Closure and Haskell" <|
+            [ test "existingList should return Elm, Clojure and Haskell" <|
                 \_ ->
                     existingList
                         |> Expect.equal [ "Elm", "Clojure", "Haskell" ]
