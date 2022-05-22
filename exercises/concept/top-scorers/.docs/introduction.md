@@ -41,7 +41,10 @@ Items can be updated using `update`.
 
 ```elm
 alice = Dict.fromList [ ( 0, "Alice" ) ]
-aliceUpperCase = Dict.update 0 (Maybe.map toUpper)  --> ( 0, "ALICE" )
+aliceUpperCase = Dict.update 0 (Maybe.map toUpper)  --> Dict.fromList [ ( 0, "ALICE" ) ]
+aliceNoCase = Dict.update 0 (\_ -> Nothing)  --> Dict.empty
+bobUpperCase = Dict.update 1 (\_ -> Just "BOB") --> Dict.fromList [ ( 0, "Alice" ), ( 1, "BOB" ) ]
+bobNoCase = Dict.update 1 (\_ -> Nothing) --> Dict.fromList [ ( 0, "Alice" ) ]
 ```
 
 Items can be removed using `remove`.
