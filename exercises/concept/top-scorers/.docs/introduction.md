@@ -9,7 +9,7 @@ Dict String (List Int) --> a dict with String keys and List Int values
 Dict Int String --> a dict with Int keys and String values
 ```
 
-Dicts can be defined as follows:
+Dicts can be created as follows:
 
 ```elm
 empty : Dict Int String
