@@ -2,14 +2,14 @@
 
 A [`Dict`][dict] in Elm is an immutable dictionary of zero or more key-value pairs.
 
-Type annotations for dicts can be defined as follows
+Type annotations for dicts are be written as follows
 
 ```elm
 Dict String (List Int) --> a dict with String keys and List Int values
 Dict Int String --> a dict with Int keys and String values
 ```
 
-Dicts can be defined as follows:
+Dicts can be created as follows:
 
 ```elm
 empty : Dict Int String
@@ -17,41 +17,75 @@ empty = Dict.empty
 
 singleValue = Dict.singleton 5 "Value for key 5" --> Dict Int String
 
-twoValues = Dict.fromList [ ( 0, "Alice" ), ( 1, "Bob" ) ] --> Dict Int String
+twoValues = Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ] --> Dict Int String
 ```
 
 Items can be retrieved using `get`.
+As a key may or may not be present in the dict, the result will be wrapped in a `Maybe`.
 
 ```elm
-alice = Dict.fromList [ ( 0, "Alice" ) ]
-keyExists = Dict.get 0 --> Just "Alice"
-keyNotPresent = Dict.get 1 --> Nothing
+alice = Dict.fromList [ ( "Alice", 0 ) ]
+keyExists = Dict.get 0 alice--> Just "Alice"
+keyNotPresent = Dict.get 1 alice --> Nothing
 ```
 
 Items can be added using `insert`.
+Items for keys that are already in the dict get replaced.
 
 ```elm
-alice = Dict.fromList [ ( 0, "Alice" ) ]
-aliceAndBob = Dict.insert 1 "Bob" alice  --> ( 0, "Alice" ), ( 1, "Bob" )
+alice = Dict.fromList [ ( "Alice", 0 ) ]
+aliceAndBob = Dict.insert 1 "Bob" alice  --> Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ]
 ```
 
 Items can be updated using `update`.
 
 ```elm
-alice = Dict.fromList [ ( 0, "Alice" ) ]
-aliceUpperCase = Dict.update 0 (Maybe.map toUpper)  --> ( 0, "ALICE" )
+alice = Dict.fromList [ ( "Alice", 0 ) ]
+aliceUpperCase = Dict.update 0 (Maybe.map toUpper) alice --> Dict.fromList [ ( "ALICE", 0 ) ]
 ```
 
 Items can be removed using `remove`.
 
 ```elm
-alice = Dict.fromList [ ( 0, "Alice" ) ]
-empty = Dict.remove 0 --> Dict.empty
+alice = Dict.fromList [ ( "Alice", 0 ) ]
+empty = Dict.remove 0 alice --> Dict.empty
+```
+
+Multiple items can be removed using `filter`.
+
+```elm
+aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 0 ) ]
+bob = Dict.filter (\playerName goalCount) -> playerName == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
+```
+
+Items can be transformed using `map`.
+
+```elm
+alice = Dict.fromList [ ( "Alice", 0 ) ]
+empty = Dict.map (\playerName goalCount -> goalCount + 1) --> Dict.fromList [ ( "Alice", 1 ) ]
+```
+
+Dicts can be combined / transformed using `merge`.
+
+```elm
+aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 1 ) ]
+bobAndCedd = Dict.fromList [ ( "Bob", 1 ), ( "Cedd", 1 ) ]
+empty = Dict.merge
+        -- when only in aliceAndBob
+        (\playerName goalCount mergedGoalCounts -> Dict.insert playerName goalCount mergedGoalCounts)
+        -- when in aliceAndBob and bobAndCedd
+        (\playerName aliceAndBobGoalCount bobAndCeddGoalCount mergedGoalCounts -> Dict.insert playerName (aliceAndBobGoalCount + bobAndCeddGoalCount) mergedGoalCounts)
+        -- when only in bobAndCedd
+        (\playerName goalCount mergedGoalCounts -> Dict.insert playerName goalCount mergedGoalCounts)
+        -- the two dicts to merge
+        aliceAndBob
+        bobAndCedd
+        -- the initial state of the merge
+        Dict.empty
+--> Dict.fromList [ ( "Alice", 1 ), ( "Bob", 2 ), ( "Cedd", 1 ) ]
 ```
 
 Dicts are manipulated by functions and operators defined in the [`Dict` module][dict-module].
-
-In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter` and `Dict.merge`, instead of lower level abstractions such as `Dict.get` and `Dict.remove`, although it does of course depend on the context.
 
 [dict]: https://riptutorial.com/elm/example/7088/dictionaries
 [dict-module]: https://package.elm-lang.org/packages/elm/core/latest/Dict
