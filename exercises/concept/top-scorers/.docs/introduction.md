@@ -21,6 +21,7 @@ twoValues = Dict.fromList [ ( 0, "Alice" ), ( 1, "Bob" ) ] --> Dict Int String
 ```
 
 Items can be retrieved using `get`.
+As a key may or may not be present in the dict, the result will be wrapped in a `Maybe`.
 
 ```elm
 alice = Dict.fromList [ ( 0, "Alice" ) ]
