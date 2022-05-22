@@ -20,7 +20,7 @@ removeInsignificantPlayers goalThreshold playerGoalCounts =
 
 resetPlayerGoalCount : PlayerName -> Dict PlayerName Int -> Dict PlayerName Int
 resetPlayerGoalCount playerName playerGoalCounts =
-    Debug.todo "implement resetPlayerGoalCount function, to remove players who have scored less than the threshold number of goals"
+    Debug.todo "implement resetPlayerGoalCount function, to reset the score of a player"
 
 
 formatPlayer : PlayerName -> Dict PlayerName Int -> String
