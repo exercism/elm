@@ -29,7 +29,8 @@ keyExists = Dict.get 0 --> Just "Alice"
 keyNotPresent = Dict.get 1 --> Nothing
 ```
 
-Items can be added using `insert`.
+Items can be added using `insert`. 
+Items for keys that are already in the dict get replaced.
 
 ```elm
 alice = Dict.fromList [ ( 0, "Alice" ) ]
