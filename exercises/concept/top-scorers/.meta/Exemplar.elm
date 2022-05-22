@@ -1,6 +1,6 @@
 module TopScorers exposing (..)
 
-import Dict as Dict exposing (Dict)
+import Dict exposing (Dict)
 import TopScorersSupport exposing (PlayerName)
 
 
