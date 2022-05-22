@@ -10,7 +10,7 @@ updateGoalCountForPlayer playerName playerGoalCounts =
 
 aggregateScorers : List PlayerName -> Dict PlayerName Int
 aggregateScorers playerNames =
-    Debug.todo "Use List.foldl and updateGoalCountForPlayer to convert the list in to a Dict"
+    Debug.todo "Use List.foldl and updateGoalCountForPlayer to convert the list into a Dict"
 
 
 removeInsignificantPlayers : Int -> Dict PlayerName Int -> Dict PlayerName Int
