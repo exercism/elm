@@ -4,13 +4,11 @@ Your task is to take a list of scorers for a game, and count how many goals each
 
 `PlayerName` is a type alias for `String`, to make the code easier to read, and to distinguish this use of `String` from other uses of `String`.
 
-In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter` and `Dict.merge`, instead of lower level abstractions such as `Dict.get` and `Dict.remove`, although it does of course depend on the context.
-
 ## 1. Aggregate scorers
 
-Implement the `aggregateScorers` function to count how many goals each player has scored.
-This function takes a `List PlayerName` (the names of the players that scored the goals, that can contain duplicate player names), and returns a `Dict PlayerName Int` containing all the players in the list along with how many goals they have scored.
-You should also implement `updateGoalCountForPlayer`, and then use this in `aggregateScorers`.
+First implement `updateGoalCountForPlayer` to initialise or increment the goal count for a player.
+Then implement the `aggregateScorers` function to count how many goals each player has scored, by using `updateGoalCountForPlayer`.
+This function takes a `List PlayerName`(the names of the players that scored the goals, that can contain duplicate player names), and returns a`Dict PlayerName Int` containing all the players in the list along with how many goals they have scored.
 
 ```elm
 aggregateScorers [ "Betty", "Cedd", "Betty" ]
@@ -37,7 +35,7 @@ resetPlayerGoalCount "Cedd" (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
 
 ## 4. Format the goal count for a single player
 
-Implement the `formatPlayer` function for formatting the goal count for a single player as a string
+Implement the `formatPlayer` function for formatting the goal count for a single player as a string. If the player does not exit in the dict, assume they have a zero goal count.
 
 ```elm
 formatPlayer "Betty" (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )

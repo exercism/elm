@@ -279,12 +279,13 @@
       },
       {
         "slug": "top-scorers",
-        "name": "Top scorers",
+        "name": "Top Scorers",
         "uuid": "67b35178-0a74-4265-84a7-276c018cc3a5",
         "concepts": [
           "dict"
         ],
         "prerequisites": [
+          "booleans",
           "maybe",
           "lists"
         ],

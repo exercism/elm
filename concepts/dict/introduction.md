@@ -51,5 +51,7 @@ empty = Dict.remove 0 --> Dict.empty
 
 Dicts are manipulated by functions and operators defined in the [`Dict` module][dict-module].
 
+In Elm, it is generally better to use higher level abstractions, such as `Dict.map`, `Dict.filter` and `Dict.merge`, instead of lower level abstractions such as `Dict.get` and `Dict.remove`, although it does of course depend on the context.
+
 [dict]: https://riptutorial.com/elm/example/7088/dictionaries
 [dict-module]: https://package.elm-lang.org/packages/elm/core/latest/Dict

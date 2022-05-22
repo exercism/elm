@@ -11,7 +11,7 @@ tests : Test
 tests =
     describe "Top Scorers"
         [ describe
-            "1. Aggregate scorers"
+            "1"
             [ test "aggregateScores should count the number of occurences of a player name" <|
                 \() ->
                     aggregateScorers [ "Betty", "Cedd", "Betty" ]
@@ -21,7 +21,7 @@ tests =
                             )
             ]
         , describe
-            "2. Remove insignificant players"
+            "2"
             [ test "removeInsignificantPlayers should remove players that have scored less goals than the threshold" <|
                 \() ->
                     removeInsignificantPlayers 2
@@ -34,7 +34,7 @@ tests =
                             )
             ]
         , describe
-            "3. Reset player goal count"
+            "3"
             [ test "resetPlayerGoalCount should set the goalCount to zero for the player" <|
                 \() ->
                     resetPlayerGoalCount "Betty"
@@ -47,14 +47,19 @@ tests =
                             )
             ]
         , describe
-            "4. Format the goal count for a single player"
+            "4"
             [ test "formatPlayer should return the player name and the goal count" <|
                 \() ->
                     formatPlayer "Betty" (Dict.singleton "Betty" 3)
                         |> Expect.equal
                             "Betty: 3"
+            , test "formatPlayer should return the player name and 0 if the player name is not in the dict" <|
+                \() ->
+                    formatPlayer "Betty" Dict.empty
+                        |> Expect.equal
+                            "Betty: 0"
             ]
-        , describe "5. Format the goal count for all players"
+        , describe "5"
             [ test "formatPlayers should return the player name and the goal count, ordered by player name" <|
                 \() ->
                     formatPlayers
@@ -64,7 +69,7 @@ tests =
                         |> Expect.equal
                             "Betty: 2, Cedd: 1"
             ]
-        , describe "6. Combine games"
+        , describe "6"
             [ test "combineGames should count goals in both games" <|
                 \() ->
                     combineGames
