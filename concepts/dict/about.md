@@ -2,7 +2,7 @@
 
 A [`Dict`][dict] in Elm is an immutable dictionary of zero or more key-value pairs.
 
-Type annotations for dicts are be written as follows
+Type annotations for dicts are written as follows
 
 ```elm
 Dict String (List Int) --> a dict with String keys and List Int values
