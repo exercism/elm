@@ -40,8 +40,8 @@ aliceAndBob = Dict.insert 1 "Bob" alice  --> Dict.fromList [ ( "Alice", 0 ), ( "
 Items can be updated using `update`.
 
 ```elm
-alice = Dict.fromList [ ( "Alice", 0 ) ]
-aliceUpperCase = Dict.update 0 (Maybe.map toUpper) alice --> Dict.fromList [ ( "ALICE", 0 ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
+aliceUpperCase = Dict.update 0 (Maybe.map String.toUpper) alice --> Dict.fromList [ ( 0, "ALICE" ) ]
 ```
 
 Items can be removed using `remove`.
