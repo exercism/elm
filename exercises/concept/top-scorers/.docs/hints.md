@@ -22,7 +22,7 @@
 
 ## 5. Format the goal count for all players
 
-- `Dict.toList`, `List.map` and `String.join` are useful for this.
+- `Dict.toList`, `List.map` and `String.join` are useful for this. `sort` is not required.
 
 ## 6. Combine games
 
