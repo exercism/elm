@@ -8,7 +8,7 @@ Your task is to take a list of scorers for a game, and count how many goals each
 
 First implement `updateGoalCountForPlayer` to initialise or increment the goal count for a player.
 Then implement the `aggregateScorers` function to count how many goals each player has scored, by using `updateGoalCountForPlayer`.
-This function takes a `List PlayerName`(the names of the players that scored the goals, that can contain duplicate player names), and returns a`Dict PlayerName Int` containing all the players in the list along with how many goals they have scored.
+This function takes a `List PlayerName` (the names of the players that scored the goals, that can contain duplicate player names), and returns a `Dict PlayerName Int` containing all the players in the list along with how many goals they have scored.
 
 ```elm
 aggregateScorers [ "Betty", "Cedd", "Betty" ]
