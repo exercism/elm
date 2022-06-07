@@ -27,3 +27,12 @@ The goal of this exercise is to teach students about the `Dict` type and what yo
 - `comparison`
 - `maybe`
 - `partial application`
+
+## Ananlyser
+
+- `filter` must be used in `removeInsignificantPlayers`
+- `insert` must be used in `resetPlayerCounts`
+- `sort` must not be used in `formatPlayers`
+- `updateGoalCountForPlayer` and `List.foldl` must be used in `aggregateScorers`
+- `Maybe.map` and `Maybe.withDefault` should be used in `formatPlayer`
+- `merge` must be used in `combineGames`
