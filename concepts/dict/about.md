@@ -34,7 +34,7 @@ Items for keys that are already in the dict get replaced.
 
 ```elm
 alice = Dict.fromList [ ( "Alice", 0 ) ]
-aliceAndBob = Dict.insert 1 "Bob" alice  --> Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ]
+aliceAndBob = Dict.insert "Bob" 1 alice  --> Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ]
 ```
 
 Items can be updated using `update`.
