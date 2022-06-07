@@ -25,7 +25,7 @@ As a key may or may not be present in the dict, the result will be wrapped in a 
 
 ```elm
 alice = Dict.fromList [ ( 0, "Alice" ) ]
-keyExists = Dict.get 0 alice--> Just "Alice"
+keyExists = Dict.get 0 alice --> Just "Alice"
 keyNotPresent = Dict.get 1 alice --> Nothing
 ```
 
