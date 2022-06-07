@@ -47,7 +47,7 @@ aliceUpperCase = Dict.update 0 (Maybe.map toUpper) alice --> Dict.fromList [ ( "
 Items can be removed using `remove`.
 
 ```elm
-alice = Dict.fromList [ ( "Alice", 0 ) ]
+alice = Dict.fromList [ ( 0, "Alice" ) ]
 empty = Dict.remove 0 alice --> Dict.empty
 ```
 
