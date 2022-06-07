@@ -17,7 +17,7 @@ empty = Dict.empty
 
 singleValue = Dict.singleton 5 "Value for key 5" --> Dict Int String
 
-twoValues = Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ] --> Dict Int String
+twoValues = Dict.fromList [ ( "Alice", 0 ), ( "Bob", 1 ) ] --> Dict String Int
 ```
 
 Items can be retrieved using `get`.
