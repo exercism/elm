@@ -70,19 +70,19 @@ Dicts can be combined / transformed using `merge`.
 ```elm
 aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 1 ) ]
 bobAndCedd = Dict.fromList [ ( "Bob", 1 ), ( "Cedd", 1 ) ]
-empty = Dict.merge
+firstDictCountsDouble = Dict.merge
         -- when only in aliceAndBob
-        (\playerName goalCount mergedGoalCounts -> Dict.insert playerName goalCount mergedGoalCounts)
+        (\name count mergedCounts -> Dict.insert name (2 * count) mergedCounts)
         -- when in aliceAndBob and bobAndCedd
-        (\playerName aliceAndBobGoalCount bobAndCeddGoalCount mergedGoalCounts -> Dict.insert playerName (aliceAndBobGoalCount + bobAndCeddGoalCount) mergedGoalCounts)
+        (\name aliceAndBobCount bobAndCeddCount mergedCounts -> Dict.insert name (2 * aliceAndBobCount + bobAndCeddCount) mergedCounts)
         -- when only in bobAndCedd
-        (\playerName goalCount mergedGoalCounts -> Dict.insert playerName goalCount mergedGoalCounts)
+        (\name count mergedCounts -> Dict.insert name count mergedCounts)
         -- the two dicts to merge
         aliceAndBob
         bobAndCedd
         -- the initial state of the merge
         Dict.empty
---> Dict.fromList [ ( "Alice", 1 ), ( "Bob", 2 ), ( "Cedd", 1 ) ]
+--> Dict.fromList [ ( "Alice", 2 ), ( "Bob", 3 ), ( "Cedd", 1 ) ]
 ```
 
 Dicts are manipulated by functions and operators defined in the [`Dict` module][dict-module].
