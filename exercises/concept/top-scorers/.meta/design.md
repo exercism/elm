@@ -28,7 +28,7 @@ The goal of this exercise is to teach students about the `Dict` type and what yo
 - `maybe`
 - `partial application`
 
-## Ananlyser
+## Analyzer
 
 - `filter` must be used in `removeInsignificantPlayers`
 - `insert` must be used in `resetPlayerCounts`
