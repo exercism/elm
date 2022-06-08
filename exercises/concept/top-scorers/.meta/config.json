@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "ceddlyburge"
+  ],
+  "contributors": [
+    "mpizenberg",
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/TopScorers.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/TopScorersSupport.elm"
+    ]
+  },
+  "blurb": "Learn usage of Dict by keeping track of how many goals players have scored."
+}

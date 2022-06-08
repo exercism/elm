@@ -128,6 +128,11 @@
       "uuid": "1ad37090-da68-40c3-a099-a5043ed7eb47",
       "slug": "pattern-matching",
       "name": "Pattern Matching"
+    },
+    {
+      "uuid": "b8ac1007-02dc-4dc4-bdc2-a9f3d7886134",
+      "slug": "dict",
+      "name": "Dict"
     }
   ],
   "exercises": {
@@ -269,6 +274,20 @@
         ],
         "prerequisites": [
           "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "top-scorers",
+        "name": "Top Scorers",
+        "uuid": "67b35178-0a74-4265-84a7-276c018cc3a5",
+        "concepts": [
+          "dict"
+        ],
+        "prerequisites": [
+          "booleans",
+          "maybe",
+          "lists"
         ],
         "status": "beta"
       }
