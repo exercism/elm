@@ -24,7 +24,7 @@ preparationTimeInMinutes 3
 
 ## 3. Calculate the elapsed time in minutes
 
-Define the `elapsedTimeInMinutes` function that takes two parameters: the first parameter is the number of layers in the lasagna, and the second parameter is the number of minutes the lasagna has been in the oven. The function should return how many minutes you've worked on cooking the lasagna, which is the sum of the preparation time in minutes, and the time in minutes the lasagna has spent in the oven at the moment.
+Define the `elapsedTimeInMinutes` function that takes two parameters: the first parameter is the number of layers in the lasagna, and the second parameter is the number of minutes the lasagna has been in the oven. The function should return how many minutes you've worked on cooking the lasagna, which is the sum of the preparation time in minutes and the time in minutes the lasagna has spent in the oven at the moment.
 
 ```elm
 elapsedTimeInMinutes 3 20
