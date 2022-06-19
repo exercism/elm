@@ -60,7 +60,7 @@ stillAlice = Dict.remove 1 --> ( 0, "Alice" )
 empty = Dict.remove 0 alice --> Dict.empty
 ```
 
-A list of key value pairs can be converted into a dict  with `fromList`.
+A list of key value pairs can be converted into a dict with `fromList`.
 
 ```elm
 alice = Dict.fromList [ ( 0, "Bob" ), ( 0, "Alice" ) ]
