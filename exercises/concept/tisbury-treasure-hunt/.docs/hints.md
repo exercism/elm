@@ -4,7 +4,7 @@
 
 ## 3. Count Treasure Locations
 
-- You can use `Tuple.second` with `List.filter` to get a list of all the second values from a list of tuples
+- You can use `Tuple.second` with `List.map` to get a list of all the second values from a list of tuples
 
 ## 4. Special Places
 
