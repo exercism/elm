@@ -11,34 +11,37 @@ type alias NucleotideCounts =
     }
 
 
-init : NucleotideCounts
-init =
-    { a = 0
-    , t = 0
-    , c = 0
-    , g = 0
-    }
-
-
-update : Char -> NucleotideCounts -> NucleotideCounts
+update : Char -> NucleotideCounts -> Result String NucleotideCounts
 update char counts =
     case char of
         'A' ->
-            { counts | a = counts.a + 1 }
+            Ok { counts | a = counts.a + 1 }
 
         'T' ->
-            { counts | t = counts.t + 1 }
+            Ok { counts | t = counts.t + 1 }
 
         'C' ->
-            { counts | c = counts.c + 1 }
+            Ok { counts | c = counts.c + 1 }
 
         'G' ->
-            { counts | g = counts.g + 1 }
+            Ok { counts | g = counts.g + 1 }
 
         _ ->
-            counts
+            Err "Invalid nucleotide in strand"
 
 
-nucleotideCounts : String -> NucleotideCounts
+nucleotideCounts : String -> Result String NucleotideCounts
 nucleotideCounts sequence =
-    String.foldl update init sequence
+    let
+        propagateErrorOrUpdate =
+            Result.andThen << update
+
+        init =
+            Ok
+                { a = 0
+                , t = 0
+                , c = 0
+                , g = 0
+                }
+    in
+    String.foldl propagateErrorOrUpdate init sequence

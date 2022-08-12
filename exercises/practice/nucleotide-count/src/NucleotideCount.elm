@@ -9,6 +9,6 @@ type alias NucleotideCounts =
     }
 
 
-nucleotideCounts : String -> NucleotideCounts
+nucleotideCounts : String -> Result String NucleotideCounts
 nucleotideCounts sequence =
     Debug.todo "Please implement this function"
