@@ -8,21 +8,23 @@ Your housemate is still busy at the office, and wants to know what time the lasa
 
 Create a function to work out what time the lasagna will be ready. To make the code simple and expressive you should use a `let` expression.
 
-Define the `expectedMinutesInOven` constant (in the `let` part of the `let` expression) to check how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Define the `remainingTimeInMinutes` function that takes two parameters and has a let expression as its body. The first parameter is the number of layers in the lasagna, and the second parameter is the number of minutes since you starting cooking.
+
+Define `expectedMinutesInOven` (in the `let` part of the `let` expression) to check how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
 
 ```elm
 expectedMinutesInOven
     --> 40
 ```
 
-Define the `preparationTimeInMinutes` constant (in the `let` part of the `let` expression) that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+Define `preparationTimeInMinutes` (in the `let` part of the `let` expression) that takes the number of layers in the lasagna as a parameter and returns how many minutes it takes to prepare the lasagna, assuming each layer takes 2 minutes to prepare.
 
 ```elm
 preparationTimeInMinutes 3
     --> 6
 ```
 
-Define the `remainingTimeInMinutes` function (in the `in` part of the `let` expression) that takes two parameters: the first parameter is the number of layers you added to the lasagna, and the second parameter is the number of minutes since you starting cooking. The function should return how many minutes are left until the lasagna is finished, which is the sum of the `preparationTimeInMinutes` and the `expectedMinutesInOven` minus the number of minutes since you starting cooking.
+Return how many minutes are left until the lasagna is finished (in the `in` part of the `let` expression), which is the sum of the `preparationTimeInMinutes` and the `expectedMinutesInOven` minus the number of minutes since you starting cooking.
 
 ```elm
 remainingTimeInMinutes 3 10
