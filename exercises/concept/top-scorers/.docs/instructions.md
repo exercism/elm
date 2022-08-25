@@ -58,6 +58,6 @@ Implement the `combineGames` function, counting the total number of goals each p
 ```elm
 combine Games
   (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
-  (Dict.fromList [ ( "Betty", 2 ), ( "Luigi", 3 ) ] )
---> Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
+  (Dict.fromList [ ( "Betty", 2 ), ( "Mario", 3 ) ] )
+--> Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Mario", 3 ) ]
 ```
