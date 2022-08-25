@@ -7,7 +7,7 @@
   ],
   "files": {
     "solution": [
-      "src/LuigisLusciousLasagna.elm"
+      "src/MariosMarvellousLasagna.elm"
     ],
     "test": [
       "tests/Tests.elm"
@@ -16,6 +16,6 @@
       ".meta/Exemplar.elm"
     ]
   },
-  "icon": "lasagna",
-  "blurb": "Learn the Elm `let` expression by cooking Luigi's Luscious Lasagna"
+  "icon": "lasagna-master",
+  "blurb": "Learn the Elm `let` expression by cooking Mario's Marvellous Lasagna"
 }

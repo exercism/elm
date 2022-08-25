@@ -1,4 +1,4 @@
-module LuigisLusciousLasagna exposing (remainingTimeInMinutes)
+module MariosMarvellousLasagna exposing (remainingTimeInMinutes)
 
 
 remainingTimeInMinutes : Int -> Int -> Int

@@ -1,13 +1,13 @@
 module Tests exposing (tests)
 
 import Expect
-import LuigisLusciousLasagna exposing (remainingTimeInMinutes)
+import MariosMarvellousLasagna exposing (remainingTimeInMinutes)
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "LuigisLusciousLasagna"
+    describe "MariosMarvellousLasagna"
         [ describe "1"
             [ test "For a 3-layers lasagna started 10 minutes ago, there are 36 minutes remaining" <|
                 \_ ->

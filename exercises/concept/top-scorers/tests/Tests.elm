@@ -77,11 +77,11 @@ tests =
                             [ ( "Cedd", 1 ), ( "Betty", 2 ) ]
                         )
                         (Dict.fromList
-                            [ ( "Betty", 2 ), ( "Luigi", 3 ) ]
+                            [ ( "Betty", 2 ), ( "Mario", 3 ) ]
                         )
                         |> Expect.equal
                             (Dict.fromList
-                                [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
+                                [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Mario", 3 ) ]
                             )
             ]
         ]
