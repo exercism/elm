@@ -122,4 +122,14 @@ tests =
                 \() ->
                     Expect.equal "MMM"
                         (toRoman 3000)
+        , skip <|
+            test "3001" <|
+                \() ->
+                    Expect.equal "MMMI"
+                        (toRoman 3001)
+        , skip <|
+            test "3999" <|
+                \() ->
+                    Expect.equal "MMMCMXCIX"
+                        (toRoman 3999)
         ]
