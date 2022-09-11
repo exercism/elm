@@ -195,6 +195,11 @@ tests =
                     \() ->
                         Complex.exp (Complex.fromPair ( logBase e 2, pi ))
                             |> approximatelyEqual (Complex.fromPair ( -2, 0 ))
+            , skip <|
+                test "Exponential resulting in a number with real and imaginary part" <|
+                    \() ->
+                        Complex.exp (Complex.fromPair ( logBase e 2 / 2, pi / 4 ))
+                            |> approximatelyEqual (Complex.fromPair ( 1, 1 ))
             ]
         , describe "Operations between real numbers and complex numbers"
             [ skip <|
