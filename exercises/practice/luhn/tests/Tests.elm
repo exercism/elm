@@ -36,6 +36,10 @@ tests =
                 \_ ->
                     Expect.equal False (valid "8273 1232 7352 0569")
         , skip <|
+            test "invalid long number with a remainder divisible by 5" <|
+                \_ ->
+                    Expect.equal False (valid "1 2345 6789 1234 5678 9013")
+        , skip <|
             test "valid strings with a non-digit included become invalid" <|
                 \_ ->
                     Expect.equal False (valid "055a 444 285")
