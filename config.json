@@ -880,6 +880,23 @@
           "custom-types"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "circular-buffer",
+        "uuid": "759b1e1d-d4ea-4407-9da9-2da916cb45ef",
+        "practices": [
+          "custom-types"
+        ],
+        "prerequisites": [
+          "booleans",
+          "lists",
+          "records",
+          "pattern-matching",
+          "custom-types",
+          "maybe"
+        ],
+        "difficulty": 6
       }
     ]
   }
