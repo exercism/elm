@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/SgfParsing.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/SgfParsing.example.elm"
+    ]
+  },
+  "blurb": "Parsing a Smart Game Format string."
+}
