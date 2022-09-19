@@ -883,7 +883,7 @@
       },
       {
         "slug": "sgf-parsing",
-        "name": "sgf-parsing",
+        "name": "SGF Parsing",
         "uuid": "86973113-b905-4582-9eac-46df97fab408",
         "practices": [],
         "prerequisites": [
@@ -894,6 +894,23 @@
           "dict"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
+        "uuid": "759b1e1d-d4ea-4407-9da9-2da916cb45ef",
+        "practices": [
+          "custom-types"
+        ],
+        "prerequisites": [
+          "booleans",
+          "lists",
+          "records",
+          "pattern-matching",
+          "custom-types",
+          "maybe"
+        ],
+        "difficulty": 6
       }
     ]
   }
