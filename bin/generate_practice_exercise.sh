@@ -5,7 +5,7 @@ set -euo pipefail
 
 # If argument not provided, print usage and exit
 if [ -z "$1" ]; then
-    echo "Usage: bin/generate.sh <exercise-slug>"
+    echo "Usage: bin/generate_practice_exercise.sh <exercise-slug>"
     exit 1
 fi
 
