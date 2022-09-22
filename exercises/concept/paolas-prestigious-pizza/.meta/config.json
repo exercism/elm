@@ -1,0 +1,12 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": "src/PaolasPrestigiousPizza.elm",
+    "test": "tests/Tests.elm",
+    "exemplar": ".meta/Exemplar.elm"
+  },
+  "blurb": "Learn the basics of parsing by reading the menu of Paola's Prestigious Pizza"
+}

@@ -10,7 +10,7 @@
     "highlightjs_language": "elm"
   },
   "test_runner": {
-    "average_run_time": 2.0
+    "average_run_time": 2
   },
   "status": {
     "concept_exercises": true,
@@ -133,6 +133,11 @@
       "uuid": "b8ac1007-02dc-4dc4-bdc2-a9f3d7886134",
       "slug": "dict",
       "name": "Dict"
+    },
+    {
+      "slug": "parsing",
+      "name": "Write name from slug",
+      "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1"
     }
   ],
   "exercises": {
@@ -289,6 +294,16 @@
           "maybe",
           "lists"
         ],
+        "status": "beta"
+      },
+      {
+        "slug": "paolas-prestigious-pizza",
+        "name": "Write name from slug",
+        "uuid": "9ecdb4fc-d175-4058-9167-948b2a88fa1b",
+        "concepts": [
+          "parsing"
+        ],
+        "prerequisites": [],
         "status": "beta"
       }
     ],
