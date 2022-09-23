@@ -4,53 +4,54 @@
 
 The goal of this exercise is to teach students how to use `elm/parser`, and to state that this is the idiomatic way of parsing in Elm.
 
-## ## Learning objectives
+## Learning objectives
 
 - Understand parser pipelines
 - Parsers: Parser, run
-- Building blocks: int, symbol
+- Building blocks: int, keyword, symbol, end
 - Pipelines: succeed, (|=), (|.), andThen, problem
 - Branches: oneOf, map 
 - Loops: sequence
 - Whitespace: spaces
-- Chompers: getChompedString, chompIf, chompWhile
+- Chompers: getChompedString, chompWhile
 
 ## Out of scope
 
-- Understand backtracking???
-- Understand tracking context???
-
-- Building blocks: number, variable, keyword, end
-- Pipelines: lazy, 
+- Understand backtracking
+- Understand tracking context
+- Parser.advanced
+- [Parsers with error recovery](https://discourse.elm-lang.org/t/parsers-with-error-recovery/6262)
+- Building blocks: number, variable
+- Pipelines: lazy
 - Branches: backtrackable, commit, token, 
 - Loops: loop
 - Whitespace: lineComment, multiComment
-- Chompers: chompUntil, chompUntilEndOr, mapChompedString
-- Errors
-- Indentation
-- Positions
-- Parser.advanced
+- Chompers: chompIf, chompUntil, chompUntilEndOr, mapChompedString
+- Errors, Indentation, Positions
 
 ## Concepts
 
-The concepts this exercise unlock are:
-
-- "Parse don't validate"
+- `parsing`: Learn the basics of parsing by processing the menu of Paola's Prestigious Pizza
 
 ## Prerequisites
 
 - `basics-1`
 - `basics-2`
 - `booleans`
-- `tuples`
 - `lists`
 - `records`
-- `custom-types`
-- `maybe`
 - `result`
 
 ## Analyzer
 
-Make sure that:
-
-- X is called with Y
+- [essential] `priceParser` should use `int` (instead of `number`?)
+- [essential] `vegetarianParser` should use `symbol` or `keyword` (both are ok)
+- [essential] `vegetarianParser` should use `Parser.oneOf`
+- [essential] `wordParser` should use `chompWhile` and `getChompedString`
+- [essential] `ingredientsParser` should use `oneIngredientParser`
+- [essential] `pizzaParser` should use `wordParser`, `vegetarianParser`, `ingredientsParser` and `priceParser`
+- [essential] `menuParser` should use `pizzaParser`
+- [essential] `oneIngredientParser` should use `chompWhile`, `getChompedString` and `andThen`
+- [actionable] `priceParser` should use `symbol` (more appropriate than `keyword` for €)
+- [informative] `sequence` should be used anywhere for the sake of learning (instead of `loop`?)
+- [informative] `map` should be used anywhere for the sake of learning (`vegetarianParser` is a good spot)

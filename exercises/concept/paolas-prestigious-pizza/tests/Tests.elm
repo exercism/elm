@@ -150,6 +150,10 @@ Hawaii: tomato, pineapple, ham - 9€
                                 , Pizza "Hawaii" False [ "tomato", "pineapple", "ham" ] 9
                                 ]
                             )
+            , test "must reach the end of the text" <|
+                \() ->
+                    Parser.run menuParser "Formaggio (v): tomato, emmental - 8€\n[END]"
+                        |> Expect.equal (Err [ { problem = Parser.ExpectingEnd, col = 1, row = 2 } ])
             ]
         , describe "7"
             [ test "parse multi-word ingredient" <|

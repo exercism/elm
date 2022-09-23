@@ -1,6 +1,14 @@
 [
   {
-    "url": "https://some.reference/url",
-    "description": "Reference description"
+    "url": "https://package.elm-lang.org/packages/elm/parser/latest/",
+    "description": "Elm parser library"
+  },
+  {
+    "url": "https://korban.net/posts/elm/2018-09-07-introduction-elm-parser/",
+    "description": "Introduction to the elm/parser package"
+  },
+  {
+    "url": "https://elm-radio.com/episode/elm-parser/",
+    "description": "Elm Radio podcast episode about elm/parser"
   }
 ]

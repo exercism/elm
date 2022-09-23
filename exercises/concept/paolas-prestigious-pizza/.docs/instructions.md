@@ -121,10 +121,14 @@ Parser.run pizzaParser "Regina: tomato, ham, mushrooms, cantal - 11€"
 Party time!
 
 Implement `menuParser` to parse a list of all pizzas separated by newline characters `'\n'` in the text file.
+Make sure that you got all the pizzas by running the parser until it reaches the end of the file.
 
 ```elm
 Parser.run menuParser "Regina: tomato, ham, mushrooms, cantal - 11€\nFormaggio (v): tomato, emmental - 8€"
-    --> Ok [Pizza "Regina" False ["tomato", "ham", "mushrooms", "cantal"] 11, Pizza "nFormaggio" True ["tomato", "emmental"] 8]
+    --> Ok [Pizza "Regina" False ["tomato", "ham", "mushrooms", "cantal"] 11, 
+    --      Pizza "Formaggio" True ["tomato", "emmental"] 8]
+Parser.run menuParser "Regina: tomato, ham, mushrooms, cantal - 11€\[END]"
+    --> Err [{ problem = ExpectingEnd, col = 1, row = 2 }]
 ```
 
 ## 7. Parse multi-word ingredient names

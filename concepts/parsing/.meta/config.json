@@ -1,5 +1,10 @@
 {
-  "blurb": "Learn how to do X",
-  "authors": [],
-  "contributors": []
+  "blurb": "Parsing is the process of transforming text into meaningful data",
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "mpizenberg",
+    "ceddlyburge"
+  ]
 }
