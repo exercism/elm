@@ -1,4 +1,6 @@
-# About
+# Introduction
+
+## Dict
 
 A [`Dict`][dict] in Elm is an immutable dictionary of zero or more key-value pairs.
 
