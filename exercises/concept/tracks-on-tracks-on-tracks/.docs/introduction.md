@@ -1,8 +1,8 @@
 # Introduction
 
-A `List` in Elm is an immutable collection of zero or more values of the same type.
-As lists are immutable, once a list has been constructed, its value can never change.
-Any functions/operators that appear to modify a list (such as adding an element), will actually return a new list.
+## Lists
+
+A [`List`][lists] in Elm is an immutable collection of zero or more values of the same type.
 
 Lists can be defined as follows:
 
@@ -19,9 +19,7 @@ twoToFour = [ 2, 3, 4 ]
 oneToFour = 1 :: twoToFour --> [ 1, 2, 3, 4 ]
 ```
 
-Elm list's have a _head_ (the first element) and a _tail_ (everything after the first element).
-The tail of a list is itself a list.
-Lists are either manipulated by functions and operators defined in the `List` module, or manually using pattern matching.
+Lists are manipulated by functions and operators defined in the [`List` module][list-module] or by [pattern matching](list-destructuring)
 
 ```elm
 describe : List String -> String
@@ -40,3 +38,7 @@ describe []                   --> "Empty list"
 describe [ "hello" ]          --> "Singleton list with: hello"
 describe [ "hello", "world" ] --> "Non-empty list with head: hello"
 ```
+
+[lists]: https://elmprogramming.com/list.html
+[list-module]: https://package.elm-lang.org/packages/elm/core/latest/List
+[list-destructuring]: https://www.bekk.christmas/post/2020/8/peeking-inside-lists
