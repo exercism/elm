@@ -45,6 +45,20 @@ ingredientsParser =
     sequenceParser "," oneIngredientParser
 
 
+oneIngredientParser : Parser String
+oneIngredientParser =
+    Parser.chompWhile (\c -> Char.isAlpha c || c == ' ')
+        |> Parser.getChompedString
+        |> Parser.andThen
+            (\str ->
+                if String.isEmpty str then
+                    Parser.problem "empty string"
+
+                else
+                    Parser.succeed (String.trim str)
+            )
+
+
 pizzaParser : Parser Pizza
 pizzaParser =
     Parser.succeed Pizza
@@ -64,20 +78,6 @@ pizzaParser =
 menuParser : Parser (List Pizza)
 menuParser =
     sequenceParser "" pizzaParser |. Parser.end
-
-
-oneIngredientParser : Parser String
-oneIngredientParser =
-    Parser.chompWhile (\c -> Char.isAlpha c || c == ' ')
-        |> Parser.getChompedString
-        |> Parser.andThen
-            (\str ->
-                if String.isEmpty str then
-                    Parser.problem "empty string"
-
-                else
-                    Parser.succeed (String.trim str)
-            )
 
 
 sequenceParser : String -> Parser a -> Parser (List a)
