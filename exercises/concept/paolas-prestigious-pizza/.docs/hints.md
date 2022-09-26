@@ -7,49 +7,49 @@
 
 ## 1. Parse pizza price
 
-- There is a [dedicated parser][int] for integers
-- More than one parser can handle €, [one of them][symbol] is most appropriate
-- There is a [function][(|.)] to parse two things but keep only one
+- The [`int` parser][int] is dedicated to parsing integers
+- More than one parser can handle €, but [`symbol`][symbol] is the most appropriate
+- The [`(|.)` operator][(|.)] can parse two things but keep only one
 
 ## 2. Parse vegetarian indicator
 
-- There is a [parser especially for][oneOf] for trying different possibilities
-- There is more than one way to parse a specific string, in this case [this one][keyword] or this one [that one][symbol] are appropriate
-- There is more than one way to return `True` if a parser succeeds, you can try [this one][succeed] or [that one][map]
+- The [`oneOf` parser][oneOf] can try different possibilities
+- There is more than one way to parse a specific string, in this case [`keyword`][keyword] or [`symbol`][symbol] are appropriate
+- There is more than one way to return `True` if a parser succeeds, you can try with [`succeed`][succeed] or with a [`map`][map]
 
 ## 3. Parse pizza and ingredient names
 
-- There are [functions][chompWhile] dedicated to parsing arbitrary characters
-- There is a [function][isAlpha] that can validate upper case and lower case ASCII characters 
+- The [`chompWhile` parser][chompWhile] is dedicated to parsing arbitrary characters
+- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters 
 
 ## 4. Parse a list of ingredients
 
-- There is a [function][sequence] dedicated to parsing lists of items
+- The [`sequence` parser][sequence] is dedicated to parsing lists of items
 - Use all the appropriate functions you defined so far
 
 ## 5. Parse full pizza
 
-- It is [quite simple][(|=)] to keep more than one thing in a pipeline
-- Use `Pizza` as a type constructor with a [handy function][succeed]
-- More than one parser can handle ":" and "-", [one of them][symbol] is most appropriate
-- There is a [handy function][spaces] to get rid of extra spaces
+- It is quite simple with the [`(|=)` operator][(|=)] to keep more than one thing in a pipeline
+- Use `Pizza` as a type constructor with [`succeed`][succeed]
+- More than one parser can handle ":" and "-", but [`symbol`][symbol] is the most appropriate
+- The [`spaces` parser][spaces] is handy to get rid of extra spaces
 - Use all the appropriate functions you defined so far
 
 ## 6. Parse full menu
 
-- There is a [function][sequence] dedicated to parsing lists of items
-- Remember that `Parser.spaces` consumes newline characters too, this might interfere with your separator
-- There is a [function][end] dedicated to checking you reached the end of a string
-- There is a [function][(|.)] to parse two things but keep only one
+- The [`sequence` parser][sequence] is dedicated to parsing lists of items
+- Remember that `spaces` consumes newline characters too, this might interfere with your separator
+- The [`end` parser][end] is dedicated to checking you reached the end of a string
+- The [`(|.)` operator][(|.)] can parse two things but keep only one
 - Use all the appropriate functions you defined so far
 
 ## 7. Parse multi-word ingredient names
 
-- There are [functions][chompWhile] dedicated to parsing arbitrary characters
-- There is a [function][isAlpha] that can validate upper case and lower case ASCII characters 
-- There is a [function][andThen] that can be used to inspect the contents of a parser
-- There is a [function][problem] that indicates that you reached a dead end
-- There is a [`String` function][trim] that can get rid of white spaces at the edges of a string
+- The [`chompWhile` parser][chompWhile] is dedicated to parsing arbitrary characters
+- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters 
+- The [`andThen` function][andThen] can be used to inspect the contents of a parser
+- The [`problem` function][problem] returns a parser that reached a dead end
+- The [`String.trim` function][trim] can get rid of white spaces at the edges of a string
 
 
 
