@@ -8,12 +8,12 @@
 ## 1. Parse pizza price
 
 - There is a [dedicated parser][int] for integers
-- More than one parsers can handle €, [one of them][symbol] is most appropriate
+- More than one parser can handle €, [one of them][symbol] is most appropriate
 - There is a [function][(|.)] to parse two things but keep only one
 
 ## 2. Parse vegetarian indicator
 
-- There is a [parser very appropriate][oneOf] for trying different possibilities
+- There is a [parser especially for][oneOf] for trying different possibilities
 - There is more than one way to parse a specific string, in this case [this one][keyword] or this one [that one][symbol] are appropriate
 - There is more than one way to return `True` if a parser succeeds, you can try [this one][succeed] or [that one][map]
 
@@ -31,7 +31,7 @@
 
 - It is [quite simple][(|=)] to keep more than one thing in a pipeline
 - Use `Pizza` as a type constructor with a [handy function][succeed]
-- More than one parsers can handle ":" and "-", [one of them][symbol] is most appropriate
+- More than one parser can handle ":" and "-", [one of them][symbol] is most appropriate
 - There is a [handy function][spaces] to get rid of extra spaces
 - Use all the appropriate functions you defined so far
 

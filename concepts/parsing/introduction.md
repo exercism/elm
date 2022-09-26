@@ -124,7 +124,7 @@ commandP =
         ]
 ```
 
-`Parser.oneOf` will try one parser parser, in the given order.
+`Parser.oneOf` will try one parser, in the given order.
 If a parser fails, the next one is tried, but if it succeeds, its result is returned without trying the remaining parsers.
 If all parsers fail, `Parser.oneOf` fails.
 
