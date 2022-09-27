@@ -40,8 +40,8 @@ tests =
         , describe "3"
             [ test "parse pizza name" <|
                 \() ->
-                    Parser.run wordParser "Caprese"
-                        |> Expect.equal (Ok "Caprese")
+                    Parser.run wordParser "CAPRESE"
+                        |> Expect.equal (Ok "caprese")
             , test "parse ingredient name" <|
                 \() ->
                     Parser.run wordParser "tuna"
@@ -49,7 +49,7 @@ tests =
             , test "non lowercase/uppercase ASCII are not included" <|
                 \() ->
                     Parser.run wordParser "Formaggio (v)"
-                        |> Expect.equal (Ok "Formaggio")
+                        |> Expect.equal (Ok "formaggio")
             , test "empty strings are valid words" <|
                 \() ->
                     Parser.run wordParser ""
@@ -81,15 +81,15 @@ tests =
             [ test "parse a vegetarian pizza" <|
                 \() ->
                     Parser.run pizzaParser "Formaggio (v): tomato, emmental - 8€"
-                        |> Expect.equal (Ok (Pizza "Formaggio" True [ "tomato", "emmental" ] 8))
+                        |> Expect.equal (Ok (Pizza "formaggio" True [ "tomato", "emmental" ] 8))
             , test "parse a non-vegetarian pizza" <|
                 \() ->
                     Parser.run pizzaParser "Regina: tomato, ham, mushrooms, cantal - 11€"
-                        |> Expect.equal (Ok (Pizza "Regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11))
+                        |> Expect.equal (Ok (Pizza "regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11))
             , test "parse a pizza with extra spaces" <|
                 \() ->
                     Parser.run pizzaParser "Regina  :     tomato   ,  ham ,     mushrooms,  cantal   -   11€   "
-                        |> Expect.equal (Ok (Pizza "Regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11))
+                        |> Expect.equal (Ok (Pizza "regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11))
             , test "fail if colon is missing" <|
                 \() ->
                     Parser.run pizzaParser "Regina tomato, ham, mushrooms, cantal - 11€"
@@ -107,15 +107,15 @@ tests =
             [ test "parse one pizza" <|
                 \() ->
                     Parser.run menuParser "Formaggio (v): tomato, emmental - 8€"
-                        |> Expect.equal (Ok [ Pizza "Formaggio" True [ "tomato", "emmental" ] 8 ])
+                        |> Expect.equal (Ok [ Pizza "formaggio" True [ "tomato", "emmental" ] 8 ])
             , test "parse two pizzas with no trailing newline" <|
                 \() ->
                     "Formaggio (v): tomato, emmental - 8€\nRegina: tomato, ham, mushrooms, cantal - 11€"
                         |> Parser.run menuParser
                         |> Expect.equal
                             (Ok
-                                [ Pizza "Formaggio" True [ "tomato", "emmental" ] 8
-                                , Pizza "Regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
+                                [ Pizza "formaggio" True [ "tomato", "emmental" ] 8
+                                , Pizza "regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
                                 ]
                             )
             , test "parse two pizzas with trailing newline" <|
@@ -126,8 +126,8 @@ Regina: tomato, ham, mushrooms, cantal - 11€
                         |> Parser.run menuParser
                         |> Expect.equal
                             (Ok
-                                [ Pizza "Formaggio" True [ "tomato", "emmental" ] 8
-                                , Pizza "Regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
+                                [ Pizza "formaggio" True [ "tomato", "emmental" ] 8
+                                , Pizza "regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
                                 ]
                             )
             , test "parse many pizzas" <|
@@ -142,12 +142,12 @@ Hawaii: tomato, pineapple, ham - 9€
                         |> Parser.run menuParser
                         |> Expect.equal
                             (Ok
-                                [ Pizza "Formaggio" True [ "tomato", "emmental" ] 8
-                                , Pizza "Regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
-                                , Pizza "Tonno" False [ "tomato", "tuna" ] 10
-                                , Pizza "Margherita" True [ "tomato", "mozzarella" ] 7
-                                , Pizza "Caprese" True [ "tomato", "spinach", "mozzarella" ] 8
-                                , Pizza "Hawaii" False [ "tomato", "pineapple", "ham" ] 9
+                                [ Pizza "formaggio" True [ "tomato", "emmental" ] 8
+                                , Pizza "regina" False [ "tomato", "ham", "mushrooms", "cantal" ] 11
+                                , Pizza "tonno" False [ "tomato", "tuna" ] 10
+                                , Pizza "margherita" True [ "tomato", "mozzarella" ] 7
+                                , Pizza "caprese" True [ "tomato", "spinach", "mozzarella" ] 8
+                                , Pizza "hawaii" False [ "tomato", "pineapple", "ham" ] 9
                                 ]
                             )
             , test "must reach the end of the text" <|
@@ -159,6 +159,10 @@ Hawaii: tomato, pineapple, ham - 9€
             [ test "parse multi-word ingredient" <|
                 \() ->
                     Parser.run oneIngredientParser "fresh fish"
+                        |> Expect.equal (Ok "fresh fish")
+            , test "parse and lowercase ingredient" <|
+                \() ->
+                    Parser.run oneIngredientParser "FrESh FiSh"
                         |> Expect.equal (Ok "fresh fish")
             , test "parse and trim ingredient" <|
                 \() ->
@@ -179,7 +183,7 @@ Hawaii: tomato, pineapple, ham - 9€
             , test "parse a pizza with no ingredients" <|
                 \() ->
                     Parser.run pizzaParser "Triste (v): - 1€"
-                        |> Expect.equal (Ok (Pizza "Triste" True [] 1))
+                        |> Expect.equal (Ok (Pizza "triste" True [] 1))
             , test "parse many pizzas" <|
                 \() ->
                     """Formaggio (v): tomato sauce, extra emmental - 8€
@@ -192,12 +196,12 @@ Hawaii: tomato sauce, pineapple, ham - 9€
                         |> Parser.run menuParser
                         |> Expect.equal
                             (Ok
-                                [ Pizza "Formaggio" True [ "tomato sauce", "extra emmental" ] 8
-                                , Pizza "Regina" False [ "tomato sauce", "ham", "dried mushrooms", "cantal" ] 11
-                                , Pizza "Tonno" False [ "tomato sauce", "tuna" ] 10
-                                , Pizza "Margherita" True [ "tomato sauce", "mozzarella" ] 7
-                                , Pizza "Caprese" True [ "tomato sauce", "spinach", "mozzarella" ] 8
-                                , Pizza "Hawaii" False [ "tomato sauce", "pineapple", "ham" ] 9
+                                [ Pizza "formaggio" True [ "tomato sauce", "extra emmental" ] 8
+                                , Pizza "regina" False [ "tomato sauce", "ham", "dried mushrooms", "cantal" ] 11
+                                , Pizza "tonno" False [ "tomato sauce", "tuna" ] 10
+                                , Pizza "margherita" True [ "tomato sauce", "mozzarella" ] 7
+                                , Pizza "caprese" True [ "tomato sauce", "spinach", "mozzarella" ] 8
+                                , Pizza "hawaii" False [ "tomato sauce", "pineapple", "ham" ] 9
                                 ]
                             )
             ]

@@ -47,11 +47,10 @@ The goal of this exercise is to teach students how to use `elm/parser`, and to s
 - [essential] `priceParser` should use `int` (instead of `number`?)
 - [essential] `vegetarianParser` should use `symbol` or `keyword` (both are ok)
 - [essential] `vegetarianParser` should use `Parser.oneOf`
-- [essential] `wordParser` should use `chompWhile` and `getChompedString`
+- [essential] `wordParser` should use `chompWhile`, `getChompedString`, and `map`
 - [essential] `ingredientsParser` should use `oneIngredientParser`
 - [essential] `pizzaParser` should use `wordParser`, `vegetarianParser`, `ingredientsParser` and `priceParser`
 - [essential] `menuParser` should use `pizzaParser`
 - [essential] `oneIngredientParser` should use `chompWhile`, `getChompedString` and `andThen`
 - [actionable] `priceParser` should use `symbol` (more appropriate than `keyword` for €)
 - [informative] `sequence` should be used anywhere for the sake of learning (instead of `loop`?)
-- [informative] `map` should be used anywhere for the sake of learning (`vegetarianParser` is a good spot)

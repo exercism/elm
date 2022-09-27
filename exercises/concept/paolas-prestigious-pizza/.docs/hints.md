@@ -15,12 +15,14 @@
 
 - The [`oneOf` parser][oneOf] can try different possibilities
 - There is more than one way to parse a specific string, in this case [`keyword`][keyword] or [`symbol`][symbol] are appropriate
-- There is more than one way to return `True` if a parser succeeds, you can try with [`succeed`][succeed] or with a [`map`][map]
+- There is more than one way to return `True` if a parser succeeds, a good one is using [`succeed`][succeed]
 
 ## 3. Parse pizza and ingredient names
 
 - The [`chompWhile` parser][chompWhile] is dedicated to parsing arbitrary characters
-- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters 
+- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters
+- The [`map` function][map] can be used to modify the contents of a parser
+- The [`String.toLower` function][toLower] can make a string lowercase
 
 ## 4. Parse a list of ingredients
 
@@ -46,9 +48,10 @@
 ## 7. Parse multi-word ingredient names
 
 - The [`chompWhile` parser][chompWhile] is dedicated to parsing arbitrary characters
-- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters 
+- The [`isAlpha` function][isAlpha] can validate upper case and lower case ASCII characters
 - The [`andThen` function][andThen] can be used to inspect the contents of a parser
 - The [`problem` function][problem] returns a parser that reached a dead end
+- The [`String.toLower` function][toLower] can make a string lowercase
 - The [`String.trim` function][trim] can get rid of white spaces at the edges of a string
 
 
@@ -69,4 +72,5 @@
 [andThen]: https://package.elm-lang.org/packages/elm/parser/latest/Parser#andThen
 [problem]: https://package.elm-lang.org/packages/elm/parser/latest/Parser#problem
 [trim]: https://package.elm-lang.org/packages/elm/core/1.0.5/String#trim
+[toLower]: https://package.elm-lang.org/packages/elm/core/1.0.5/String#toLower
 [isAlpha]: https://package.elm-lang.org/packages/elm/core/1.0.5/Char#isAlpha

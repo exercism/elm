@@ -65,10 +65,11 @@ Formaggio (v): tomato, emmental - 8€
 The ingredients and pizza names seem fairly straightforward: they are all single words made out of upper case and lower case ASCII characters.
 
 Implement `wordParser` to parse the names.
+While you are at it, make all the words lowercase for uniformity.
 
 ```elm
-Parser.run wordParser "Regina"
-    --> Ok "Regina"
+Parser.run wordParser "REGINA"
+    --> Ok "regina"
 Parser.run wordParser "tomato"
     --> Ok "tomato"
 Parser.run wordParser "(v)"
@@ -113,7 +114,7 @@ Implement `pizzaParser` to parse the full pizza.
 
 ```elm
 Parser.run pizzaParser "Regina: tomato, ham, mushrooms, cantal - 11€"
-    --> Ok (Pizza "Regina" False ["tomato", "ham", "mushrooms", "cantal"] 11)
+    --> Ok (Pizza "regina" False ["tomato", "ham", "mushrooms", "cantal"] 11)
 ```
 
 ## 6. Parse full menu
@@ -125,8 +126,8 @@ Make sure that you got all the pizzas by running the parser until it reaches the
 
 ```elm
 Parser.run menuParser "Regina: tomato, ham, mushrooms, cantal - 11€\nFormaggio (v): tomato, emmental - 8€"
-    --> Ok [Pizza "Regina" False ["tomato", "ham", "mushrooms", "cantal"] 11, 
-    --      Pizza "Formaggio" True ["tomato", "emmental"] 8]
+    --> Ok [Pizza "regina" False ["tomato", "ham", "mushrooms", "cantal"] 11,
+    --      Pizza "formaggio" True ["tomato", "emmental"] 8]
 Parser.run menuParser "Regina: tomato, ham, mushrooms, cantal - 11€\[END]"
     --> Err [{ problem = ExpectingEnd, col = 1, row = 2 }]
 ```
@@ -145,10 +146,10 @@ Hawaii: tomato sauce, fresh pineapple, ham - 9€
 
 Implement `oneIngredientParser` that will accept upper case and lower case ASCII characters or spaces `' '`.
 Also take the chance to avoid a small flaw that `wordParser` had by making sure that empty strings are not recognized as valid ingredients and instead emit `Problem "empty string"`.
-While you are at it, also make sure to trim whitespace characters on both sides of the ingredients.
+While you are at it, make sure to make the strings lowercase and also trim whitespace characters on both sides.
 
 ```elm
-Parser.run oneIngredientParser "tomato sauce"
+Parser.run oneIngredientParser "Tomato Sauce"
     --> Ok "tomato sauce"
 Parser.run oneIngredientParser "   tomato sauce     "
     --> Ok "tomato sauce"

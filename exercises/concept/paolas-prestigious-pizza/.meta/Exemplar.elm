@@ -29,7 +29,7 @@ priceParser =
 vegetarianParser : Parser Bool
 vegetarianParser =
     Parser.oneOf
-        [ Parser.map (always True) (Parser.symbol "(v)")
+        [ Parser.succeed True |. Parser.symbol "(v)"
         , Parser.succeed False
         ]
 
@@ -38,6 +38,7 @@ wordParser : Parser String
 wordParser =
     Parser.chompWhile Char.isAlpha
         |> Parser.getChompedString
+        |> Parser.map String.toLower
 
 
 ingredientsParser : Parser (List String)
@@ -55,7 +56,7 @@ oneIngredientParser =
                     Parser.problem "empty string"
 
                 else
-                    Parser.succeed (String.trim str)
+                    str |> String.trim |> String.toLower |> Parser.succeed
             )
 
 
