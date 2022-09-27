@@ -83,11 +83,8 @@ The [Concept][concept-documentation] and [Concept Exercise][concept-exercise-doc
 
 ## Elm icon
 
-We were unable to find copyright information about the Elm logo,
-nor information about who designed it.
-Presumably Evan Czaplicki, creator of the Elm language,
-also made the logo, and holds copyright.
-It may also fall within the public domain, since it is a geometric shape.
-We've adapted the official Elm logo by changing the colors, which we believe falls under "fair use".
+We were unable to find copyright information about the Elm logo.
+It is a [tangram](https://en.wikipedia.org/wiki/Tangram) in the square configuration, and when you hover over the "Playground" on the official webpage, it changes in to a figure (a solution of the tangram game).
+The origins of tangram are in the distant past and not well known, so we assume that there is no copyright infringement by using it.
 
 [config-json]: config.json
