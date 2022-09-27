@@ -1,4 +1,6 @@
-# About
+# Introduction
+
+## Parsing
 
 Parsing is the process of transforming text into meaningful data.
 Functions from the `String` package are limiting in that regard and regular expressions are difficult to use, so the idiomatic way in Elm to parse is with the `elm/parser` package.
@@ -36,7 +38,7 @@ versionP =
 
 `versionP` is built using a _parser pipeline_.
 The `(|.)` operator means "parse the string but throw away the result" and `(|=)` means "parse the string and keep the result".
-In this example, `Parser.keyword "HAI"` will consume a "HAI", but that result is ignored.
+In this example, `Parser.keyword "HAI"` will consume a "HAI", but that result is ignored. 
 `Parser.spaces` will consume any number of  ' ', '\n', and '\r' characters, but that will also be ignored.
 `Parser.int` will parse an integer, and the value of that integer (say 1) will be passed to the topmost `Parser.succeed Version` and the parser will succeed in returning the value `Version 1`.
 
@@ -83,9 +85,9 @@ In this case, we would like to normalize the package names, so we use `Parser.ma
 
 ```elm
 Parser.run importP "CAN HAS STDIO?"
-    --> Ok (Import "stdio")
+    --> Ok (Import "stdio") 
 Parser.run importP "CAN HAS StDiO?"
-    --> Ok (Import "stdio")
+    --> Ok (Import "stdio") 
 Parser.run importP "CAN HAS STDIO"
     -->  Err [{ problem = ExpectingSymbol "?", col = 14, row = 1 }]
 ```
@@ -132,7 +134,7 @@ If all parsers fail, `Parser.oneOf` fails.
 Parser.run commandP "HAI 2"
     --> Ok (Version 2)
 Parser.run commandP "CAN HAS STDIO?"
-    --> Ok (Import "stdio")
+    --> Ok (Import "stdio") 
 Parser.run commandP "VISIBLE \"HAI WORLD!\""
     --> Ok (Print "HAI WORLD!")
 Parser.run commandP "O NOES"
@@ -198,7 +200,7 @@ fullProgramP =
 Parser.run fullProgramP "HAI 2\nCAN HAS STDIO?\nKTHXBYE"
     --> Ok [Version 2, Import "stdio"]
 Parser.run fullProgramP "HAI 2\nCAN HAS STDIO?\nKTHXBYE\nBTW VISIBLE \"U SEE NOTHING\""
-    --> Err [{ problem = ExpectingEnd, col = 1, row = 4 }]
+    --> Err [{ problem = ExpectingEnd, col = 1, row = 4 }]    
 ```
 
 Finally, we sometimes need to make a decision to fail a parser depending on its parsed content.
