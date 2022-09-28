@@ -133,6 +133,11 @@
       "uuid": "b8ac1007-02dc-4dc4-bdc2-a9f3d7886134",
       "slug": "dict",
       "name": "Dict"
+    },
+    {
+      "slug": "parsing",
+      "name": "Parsing",
+      "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1"
     }
   ],
   "exercises": {
@@ -288,6 +293,23 @@
           "booleans",
           "maybe",
           "lists"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "paolas-prestigious-pizza",
+        "name": "Paola's Prestigious Pizza",
+        "uuid": "9ecdb4fc-d175-4058-9167-948b2a88fa1b",
+        "concepts": [
+          "parsing"
+        ],
+        "prerequisites": [
+          "basics-1",
+          "basics-2",
+          "booleans",
+          "lists",
+          "records",
+          "result"
         ],
         "status": "beta"
       }
@@ -738,12 +760,14 @@
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "7fcc7c1e-c8d4-4701-8be7-06ab6e039885",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 8,
-        "topics": [
+        "practices": [
           "parsing"
-        ]
+        ],
+        "prerequisites": [
+          "maybe",
+          "parsing"
+        ],
+        "difficulty": 8
       },
       {
         "slug": "difference-of-squares",
@@ -885,13 +909,16 @@
         "slug": "sgf-parsing",
         "name": "SGF Parsing",
         "uuid": "86973113-b905-4582-9eac-46df97fab408",
-        "practices": [],
+        "practices": [
+          "parsing"
+        ],
         "prerequisites": [
           "lists",
           "records",
           "custom-types",
           "result",
-          "dict"
+          "dict",
+          "parsing"
         ],
         "difficulty": 8
       },
