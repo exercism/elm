@@ -1,4 +1,31 @@
 #!/usr/bin/env bash
+# Fail if any check fails.
+set -e
+set -o pipefail
+
+# SANITY CHECKS
+
+for elm_json in exercises/*/*/elm.json
+do
+  cmp template/elm.json $elm_json
+done
+echo "All elm.json files are identical to template/elm.json"
+
+# Elm files with the same name would get overriden in tests below
+repeated=$(ls exercises/concept/*/src/*.elm | xargs -n 1 basename | sort | uniq --repeated)
+if [[ $repeated ]]; then
+    echo "There are files in concept exercises with identical names:"
+    echo $repeated
+    exit 1
+fi
+repeated=$(ls exercises/practice/*/src/*.elm | xargs -n 1 basename | sort | uniq --repeated)
+if [[ $repeated ]]; then
+    echo "There are files in practice exercises with identical names:"
+    echo $repeated
+    exit 1
+fi
+echo "All exercise Elm files have unique names"
+
 
 # FORMAT
 
@@ -27,10 +54,6 @@ else
   echo "Formatting looks good!"
 fi
 
-# Fail if any of the tests fails.
-set -e
-set -o pipefail
-
 # TEST (concept)
 
 echo "Testing concept exercises ..."
@@ -43,7 +66,6 @@ do
   exercise_dir=$(dirname $(dirname $example_file))
   # get kebab-case slug and transform it to PascalCase
   exercise_name=$(basename $exercise_dir | sed -r 's/(^|-)([a-z])/\U\2/g')
-  # TODO: check that all exercise_name are unique
   cp $exercise_dir/src/*.elm "build/src/"
   cp $example_file "build/src/$exercise_name.elm"
   # Copy tests files under a unique temporary directory and remove all "skip <| ..."
