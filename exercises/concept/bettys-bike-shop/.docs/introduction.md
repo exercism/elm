@@ -1,6 +1,8 @@
 # Introduction
 
-## Exporting functions
+## Basics 2
+
+### Exporting functions
 
 Exporting functions was covered in the first concept, here is a quick refresher.
 
@@ -32,7 +34,7 @@ add number1 number2 = number1 + number2
 
 https://elm-lang.org/docs/syntax#modules
 
-## Importing functions from other modules
+### Importing functions from other modules
 
 Accessing functions defined in other modules is done via imports.
 All functions within that module that were exposed by it are made accessible when importing that module.
@@ -58,7 +60,7 @@ import List exposing ( map, foldl )    -- map, foldl, List.concat
 
 https://elm-lang.org/docs/syntax#modules
 
-## Type annotations
+### Type annotations
 
 Type annotations are defined with `name : parameter types -> return type`, parameter types also being separated by `->`.
 
@@ -78,7 +80,7 @@ map charMapperFunction string =
 
 https://elm-lang.org/docs/syntax#type-annotations
 
-## Numbers
+### Numbers
 
 There are two types of numbers available in Elm, defined by the `Int` and `Float` types.
 `Int` corresponds to the set of positive and negative integers.
@@ -88,7 +90,7 @@ There exists functions to convert between the two, such that `toFloat` which con
 
 https://package.elm-lang.org/packages/elm/core/latest/Basics#Int
 
-## String operations
+### String operations
 
 To describe words and sentences in code, Elm has a native `String` type.
 String literals are written between double quotes such as `"Hello World!"`.
