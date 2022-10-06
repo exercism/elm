@@ -1,9 +1,17 @@
 {
-  "authors": ["ceddlyburge"],
+  "authors": [
+    "ceddlyburge"
+  ],
   "files": {
-    "solution": ["src/MonsterAttack.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
+    "solution": [
+      "src/MonsterAttack.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   },
   "icon": "dnd-character",
   "blurb": "Learn partial function application in Elm by attacking a monster"
