@@ -1,6 +1,9 @@
 module MonsterAttack exposing (attack)
 
-type alias Monster = String
+
+type alias Monster =
+    String
+
 
 attackWithSword : Int -> Monster -> Monster
 attackWithSword strength monster =
