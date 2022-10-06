@@ -1,4 +1,4 @@
-module MonsterAttack exposing (attack)
+module MonsterAttack exposing (..)
 
 
 type alias Monster =
