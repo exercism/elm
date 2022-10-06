@@ -61,5 +61,5 @@ There is also a [reverse pipe operator (<|)][reverse-pipe-operator]. Saying x <|
 
 [currying]: https://www.bekk.christmas/post/2020/9/hurry-curry!
 [partial-application]: https://www.bekk.christmas/post/2020/10/partial-application-of-functions!
-[forward-pipe-operator]: https://package.elm-lang.org/packages/elm/core/latest/Basics#|%3E
+[pipe-operator]: https://package.elm-lang.org/packages/elm/core/latest/Basics#|%3E
 [reverse-pipe-operator]: https://package.elm-lang.org/packages/elm/core/latest/Basics#%3C|

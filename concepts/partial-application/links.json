@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://www.bekk.christmas/post/2020/9/hurry-curry!",
+    "description": "Currying"
+  },
+  {
+    "url": "https://www.bekk.christmas/post/2020/10/partial-application-of-functions!",
+    "description": "Partial application"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#|%3E",
+    "description": "Pipe operator (|>)"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#%3C|",
+    "description": "Reverse pipe operator (<|)"
+  }
+]

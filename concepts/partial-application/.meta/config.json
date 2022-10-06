@@ -1,0 +1,5 @@
+{
+  "blurb": "Partial application is calling a function without passing all of it's arguments",
+  "authors": ["ceddlyburge"],
+  "contributors": ["jiegillet", "mpizenberg"]
+}
