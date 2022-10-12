@@ -375,7 +375,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "75859d00-8772-4471-97a7-d6fe432edc5e",
         "practices": [],
         "prerequisites": [],
@@ -671,7 +671,7 @@
       },
       {
         "slug": "pascals-triangle",
-        "name": "Pascals Triangle",
+        "name": "Pascal's Triangle",
         "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
         "practices": [],
         "prerequisites": [],
@@ -696,7 +696,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "1f39d315-324c-4e2f-bf48-ce8432836596",
         "practices": [],
         "prerequisites": [],
@@ -771,7 +771,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "646c7164-cfa4-42c3-9af5-2f672e6ec81e",
         "practices": [],
         "prerequisites": [],
@@ -794,7 +794,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "3af96d19-87d7-4d8b-aecb-f63122815501",
         "practices": [],
         "prerequisites": [],
@@ -832,7 +832,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
         "practices": [],
         "prerequisites": [],
