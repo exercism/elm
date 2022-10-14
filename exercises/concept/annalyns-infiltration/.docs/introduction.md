@@ -11,7 +11,7 @@ Booleans are also extremely useful to make branches in your code that only get e
 In Elm, this is done with an `if-then-else` expression, used as follows.
 
 ```elm
-if someCondition then
+if someCondition || (someOtherCondition && anotherCondition) then
     doSomething
 else
     doSomethingElse
