@@ -133,7 +133,7 @@ Beware of the difference between a pipe `|` in a type definition, which is an ex
 point2d = { x = 1, y = 2 }
 point3d = { x = 3, y = 4, z = 7 }
 
-a.x point2d --> 1
+.x point2d --> 1
 .x point3d --> 3
 
 length : { a | x : Float, y : Float } -> Float

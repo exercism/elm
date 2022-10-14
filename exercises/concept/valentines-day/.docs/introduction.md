@@ -1,5 +1,7 @@
 # Introduction
 
+## Custom Types
+
 [Custom Types][custom-types] in Elm represent a fixed number of named cases. Each value corresponds to exactly one of the named cases.
 
 A Custom Type is defined using the `type` keyword and requires very little syntax. They are one of the most important techniques in Elm programming, and are used to make the possible values in code exactly match the valid values in real life, which leaves no room for invalid data, and makes [impossible states impossible to represent in the code][impossible-states].
