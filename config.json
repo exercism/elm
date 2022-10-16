@@ -138,6 +138,11 @@
       "slug": "parsing",
       "name": "Parsing",
       "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1"
+    },
+    {
+      "slug": "comparison",
+      "name": "Comparison",
+      "uuid": "a5339d63-c63a-491b-996b-6666a2bdea99"
     }
   ],
   "exercises": {
@@ -312,6 +317,21 @@
           "result"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "blorkemon-cards",
+        "name": "Blorkemon Cards",
+        "uuid": "90660cf2-9247-41c0-8849-eee3e7118371",
+        "concepts": [
+          "comparison"
+        ],
+        "prerequisites": [
+          "booleans",
+          "tuples",
+          "lists",
+          "custom-types"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -402,8 +422,13 @@
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["dict"],
+        "prerequisites": [
+          "lists",
+          "comparison",
+          "tuple",
+          "maybe"
+        ],
         "difficulty": 2,
         "topics": [
           "maps",
@@ -475,8 +500,8 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "61ef49ef-1086-445b-aa0a-b99de263b728",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["boolean"],
         "difficulty": 3,
         "topics": [
           "filtering",
@@ -524,8 +549,8 @@
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "5845a108-d8b2-41dd-b371-cf9eff7a2230",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["lists"],
         "difficulty": 4,
         "topics": [
           "filtering",
@@ -648,8 +673,8 @@
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["maybe"],
         "difficulty": 3,
         "topics": [
           "algorithms",
