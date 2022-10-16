@@ -1,10 +1,21 @@
 {
-  "authors": [],
-  "contributors": [],
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "mpizenberg",
+    "ceddlyburge"
+  ],
   "files": {
-    "solution": "src/BlorkemonCards.elm",
-    "test": "tests/Tests.elm",
-    "exemplar": ".meta/Exemplar.elm"
+    "solution": [
+      "src/BlorkemonCards.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   },
-  "blurb": "Learn this by doing that"
+  "blurb": "Learn comparisons by playing a vintage trading card game"
 }

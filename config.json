@@ -426,7 +426,7 @@
         "prerequisites": [
           "lists",
           "comparison",
-          "tuple",
+          "tuples",
           "maybe"
         ],
         "difficulty": 2,
@@ -501,7 +501,7 @@
         "name": "Isogram",
         "uuid": "61ef49ef-1086-445b-aa0a-b99de263b728",
         "practices": ["comparison"],
-        "prerequisites": ["boolean"],
+        "prerequisites": ["booleans"],
         "difficulty": 3,
         "topics": [
           "filtering",
