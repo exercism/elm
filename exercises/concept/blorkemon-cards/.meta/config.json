@@ -1,0 +1,10 @@
+{
+  "authors": [],
+  "contributors": [],
+  "files": {
+    "solution": "src/BlorkemonCards.elm",
+    "test": "tests/Tests.elm",
+    "exemplar": ".meta/Exemplar.elm"
+  },
+  "blurb": "Learn this by doing that"
+}
