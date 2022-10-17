@@ -60,7 +60,7 @@ Shininess is not just for show, in a battle of evenly powered Xokemon™️, a `
 This is called the Shiny Power.
 
 Implement the `compareShinyPower` function, which codifies this property.
-The `Order` of two cards is determined by the `Power` levels is they are different, but if they are equal, a `Shiny` card will be greater.
+The `Order` of two cards is determined by the `Power` levels if they are different, but if they are equal, a `Shiny` card will be greater.
 
 ```elm
 compareShinyPower newthree scientuna

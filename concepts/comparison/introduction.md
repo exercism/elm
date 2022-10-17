@@ -63,7 +63,7 @@ List.sortBy String.length ["hi", "hello", "bye", "goodbye"]
     --> ["hi", "bye", "hello", "goodbye"]
 ```
 
-The function `compare` takes to `comparable` values and returns an `Order` (either less than `LT`, equal `EQ` or greater than `GT`).
+The function `compare` takes two `comparable` values and returns an `Order` (either less than `LT`, equal `EQ` or greater than `GT`).
 
 ```elm
 compare 1 2
