@@ -132,8 +132,8 @@
       "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1"
     },
     {
-      "slug": "partial-application",
-      "name": "Partial Application",
+      "slug": "partial-application-composition",
+      "name": "partial-application-composition",
       "uuid": "3fde0ff5-d603-4f40-a7e3-a4ea2707af90"
     }
   ],
@@ -193,7 +193,7 @@
         "name": "Tisbury Treasure Hunt",
         "uuid": "d88d7e37-f52b-4999-b7df-bf0db09e7ac5",
         "concepts": ["tuples"],
-        "prerequisites": ["lists"],
+        "prerequisites": ["lists", "partial-application-composition"],
         "status": "beta"
       },
       {
@@ -214,7 +214,8 @@
           "basics-2",
           "records",
           "custom-types",
-          "let"
+          "let",
+          "partial-application-composition"
         ],
         "status": "beta"
       },
@@ -246,7 +247,12 @@
         "name": "Top Scorers",
         "uuid": "67b35178-0a74-4265-84a7-276c018cc3a5",
         "concepts": ["dict"],
-        "prerequisites": ["booleans", "maybe", "lists"],
+        "prerequisites": [
+          "booleans",
+          "maybe",
+          "lists",
+          "partial-application-composition"
+        ],
         "status": "beta"
       },
       {
@@ -260,7 +266,8 @@
           "booleans",
           "lists",
           "records",
-          "result"
+          "result",
+          "partial-application-composition"
         ],
         "status": "beta"
       },
@@ -268,7 +275,7 @@
         "slug": "monster-attack",
         "name": "Monster Attack",
         "uuid": "c8abe3c6-44f8-49cd-b8e4-9951c77ddbd9",
-        "concepts": ["partial-application"],
+        "concepts": ["partial-application-composition"],
         "prerequisites": ["basics-1", "basics-2", "let"],
         "status": "beta"
       }

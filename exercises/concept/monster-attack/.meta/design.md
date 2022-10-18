@@ -13,7 +13,7 @@
 
 ## Concepts
 
-- partial-application
+- partial-application-composition
 
 ## Prerequisites
 

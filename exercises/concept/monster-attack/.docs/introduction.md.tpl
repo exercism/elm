@@ -1,3 +1,3 @@
 # Introduction
 
-%{concept: partial-application}
+%{concept: partial-application-composition}

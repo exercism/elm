@@ -14,5 +14,13 @@
   {
     "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#%3C|",
     "description": "Reverse pipe operator (<|)"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#%3E%3E",
+    "description": ">> operator"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#%3C%3C",
+    "description": "<< operator"
   }
 ]
