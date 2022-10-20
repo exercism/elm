@@ -73,7 +73,8 @@ List.sortBy String.length ["hi", "hello", "bye", "goodbye"]
     --> ["hi", "bye", "hello", "goodbye"]
 ```
 
-The function `compare` takes two `comparable` values and returns an `Order` (either less than `LT`, equal `EQ` or greater than `GT`).
+The function `compare` takes two `comparable` values and returns an `Order`.
+An `Order` is a type that checks in a in a single operation if a value is greater (`GT`), equal (`EQ`) or less (`LT`) than another.
 
 ```elm
 compare 1 2
@@ -86,7 +87,7 @@ compare [12] []
     --> GT
 ```
 
-Lists of values that can be compared can be sorted with `List.sortWith`:
+Comparison functions can be constructed for arbitrary types and be used, for example, to be sorted with `List.sortWith`:
 
 ```elm
 type Color = Red | Green | Blue
