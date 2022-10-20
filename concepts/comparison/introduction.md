@@ -63,7 +63,9 @@ Values of other types such as records or custom types cannot be compared directl
 
 Some built-in types require their content to be `comparable`, such as `Set` or `Dict` keys, since their structure relies on an internal ordering.
 
-Lists of `comparable` values can be sorted with `List.sort` and lists of values that can be mapped to comparable values can be sorted with `List.sortBy`:
+Lists of `comparable` values can be sorted with `List.sort` and lists of values that can be mapped to comparable values can be sorted with `List.sortBy`.
+If you need a hierarchical sort (sort by one property, and break ties with another), tuples or lists may also be used with `List.sortBy` since tuples and lists are sorted in lexicographic order.
+
 
 ```elm
 List.sort ["hi", "hello", "bye", "goodbye"]
@@ -71,6 +73,10 @@ List.sort ["hi", "hello", "bye", "goodbye"]
 
 List.sortBy String.length ["hi", "hello", "bye", "goodbye"]
     --> ["hi", "bye", "hello", "goodbye"]
+
+-- sort by length, then alphabetically
+List.sortBy (\str -> (String.length str, str)) ["hi", "mum", "hello", "sis", "bye", "dad"]
+    --> ["hi", "bye", "dad", "mum", "sis", "hello"]
 ```
 
 The function `compare` takes two `comparable` values and returns an `Order`.
