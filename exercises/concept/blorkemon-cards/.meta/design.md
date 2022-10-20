@@ -28,6 +28,7 @@ The concept this exercise unlocks is:
 - booleans
 - tuples
 - lists
+- custom types
 
 ## Analyzer
 
