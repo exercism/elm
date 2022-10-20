@@ -4,7 +4,7 @@
 
 Elm types can be checked for "being the same" with the equality operator `(==)`.
 The inequality operator is `(/=)` (*not* `!=` like in many languages).
-The equality operator works on tuples, records and custom types and uses structural equality to verify the values are definitively equal.
+The equality operator works on literals, tuples, records and custom types.
 
 ```elm
 1 == 2
@@ -16,8 +16,16 @@ The equality operator works on tuples, records and custom types and uses structu
 (1, 2) == (2, 1)
     --> False
 
-type alias MyRecord = { myInt : Int, myString : String }
-MyRecord (1 + 1) "hello world" == { myInt = 2, myString = String.join " " ["hello", "world"]}
+type alias MyRecord = { myInt : Int, myStrings : List String }
+a : MyRecord
+a = MyRecord (1 + 1) ["hello world"]
+
+type alias MyOtherRecord = { myInt : Int, myStrings : List String }
+myStrings =  (String.join " " ["hello", "world"]) :: []
+b : MyOtherRecord
+b = { myInt = 2, myStrings = myStrings}
+
+a == b
     --> True
 ```
 

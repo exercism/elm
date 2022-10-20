@@ -13,15 +13,24 @@ The inequality operator is `(/=)` (*not* `!=` like in many languages).
     --> True
 ```
 
-Both values being compared have to be of thew same type for the expression to compile.
-The equality operator works on tuples, records and custom types and uses structural equality to verify the values are definitively equal.
+Both values being compared have to be of thew same type.
+The equality operator works on literals, tuples, records and custom types.
+The operator checks for structural equality, which means that equal values have equal content and deep structure, regardless of type annotation or position in memory.
 
 ```elm
 (1, 2) == (2, 1)
     --> False
 
-type alias MyRecord = { myInt : Int, myString : String }
-MyRecord (1 + 1) "hello world" == { myInt = 2, myString = String.join " " ["hello", "world"]}
+type alias MyRecord = { myInt : Int, myStrings : List String }
+a : MyRecord
+a = MyRecord (1 + 1) ["hello world"]
+
+type alias MyOtherRecord = { myInt : Int, myStrings : List String }
+myStrings =  (String.join " " ["hello", "world"]) :: []
+b : MyOtherRecord
+b = { myInt = 2, myStrings = myStrings}
+
+a == b
     --> True
 ```
 
