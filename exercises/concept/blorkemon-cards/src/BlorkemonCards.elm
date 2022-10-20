@@ -1,5 +1,6 @@
 module BlorkemonCards exposing
-    ( compareShinyPower
+    ( Card
+    , compareShinyPower
     , expectedWinner
     , isMorePowerful
     , maxPower
@@ -8,20 +9,8 @@ module BlorkemonCards exposing
     )
 
 
-type alias Shiny =
-    Bool
-
-
-type alias Monster =
-    String
-
-
-type alias Power =
-    Int
-
-
 type alias Card =
-    ( Monster, Power, Shiny )
+    { monster : String, power : Int, shiny : Bool }
 
 
 isMorePowerful : Card -> Card -> Bool
@@ -29,7 +18,7 @@ isMorePowerful card1 card2 =
     Debug.todo "Please implement this function"
 
 
-maxPower : Card -> Card -> Power
+maxPower : Card -> Card -> Int
 maxPower card1 card2 =
     Debug.todo "Please implement this function"
 
@@ -49,6 +38,6 @@ compareShinyPower card1 card2 =
     Debug.todo "Please implement this function"
 
 
-expectedWinner : Card -> Card -> Monster
+expectedWinner : Card -> Card -> String
 expectedWinner card1 card2 =
     Debug.todo "Please implement this function"

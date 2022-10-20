@@ -1,5 +1,6 @@
 module BlorkemonCards exposing
-    ( compareShinyPower
+    ( Card
+    , compareShinyPower
     , expectedWinner
     , isMorePowerful
     , maxPower
@@ -8,69 +9,53 @@ module BlorkemonCards exposing
     )
 
 
-type alias Shiny =
-    Bool
-
-
-type alias Monster =
-    String
-
-
-type alias Power =
-    Int
-
-
 type alias Card =
-    ( Monster, Power, Shiny )
+    { monster : String, power : Int, shiny : Bool }
 
 
 isMorePowerful : Card -> Card -> Bool
-isMorePowerful ( _, power1, _ ) ( _, power2, _ ) =
-    power1 > power2
+isMorePowerful card1 card2 =
+    card1.power > card2.power
 
 
-maxPower : Card -> Card -> Power
-maxPower ( _, power1, _ ) ( _, power2, _ ) =
-    max power1 power2
+maxPower : Card -> Card -> Int
+maxPower card1 card2 =
+    max card1.power card2.power
 
 
 sortByMonsterName : List Card -> List Card
 sortByMonsterName =
-    let
-        getName ( name, _, _ ) =
-            name
-    in
-    List.sortBy getName
+    List.sortBy .monster
 
 
 sortByCoolness : List Card -> List Card
 sortByCoolness =
     let
-        coolness ( _, power, shiny ) =
+        coolness { power, shiny } =
             ( negate (shinyValue shiny), negate power )
     in
     List.sortBy coolness
 
 
 compareShinyPower : Card -> Card -> Order
-compareShinyPower ( _, power1, shiny1 ) ( _, power2, shiny2 ) =
-    compare ( power1, shinyValue shiny1 ) ( power2, shinyValue shiny2 )
+compareShinyPower card1 card2 =
+    compare ( card1.power, shinyValue card1.shiny ) ( card2.power, shinyValue card2.shiny )
 
 
-expectedWinner : Card -> Card -> Monster
-expectedWinner (( monster1, _, _ ) as card1) (( monster2, _, _ ) as card2) =
+expectedWinner : Card -> Card -> String
+expectedWinner card1 card2 =
     case compareShinyPower card1 card2 of
         EQ ->
             "too close to call"
 
         LT ->
-            monster2
+            card2.monster
 
         GT ->
-            monster1
+            card1.monster
 
 
-shinyValue : Shiny -> Int
+shinyValue : Bool -> Int
 shinyValue shiny =
     if shiny then
         1

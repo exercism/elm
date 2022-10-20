@@ -329,7 +329,8 @@
           "booleans",
           "tuples",
           "lists",
-          "custom-types"
+          "custom-types",
+          "records"
         ],
         "status": "beta"
       }

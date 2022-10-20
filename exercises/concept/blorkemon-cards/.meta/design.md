@@ -29,12 +29,13 @@ The concept this exercise unlocks is:
 - tuples
 - lists
 - custom types
+- records
 
 ## Analyzer
 
 Make sure that:
 
-- (essential) `sortByMonsterName` uses `List.sort`
-- (essential) `sortByCoolness` uses `List.sort`
+- (essential) `sortByMonsterName` uses `List.sortBy`
+- (essential) `sortByCoolness` uses `List.sortBy`
 - (essential) `expectedWinner` uses `compareShinyPower`
 - (essential) `expectedWinner` uses `case`
