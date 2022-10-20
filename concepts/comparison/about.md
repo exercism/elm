@@ -79,6 +79,9 @@ min (1, ['a', 'b']) (1, ['A', 'B'])
 
 Values of other types such as records or custom types cannot be compared directly.
 
+Some built-in types require their content to be `comparable`, such as `Set` or `Dict` keys, since their structure relies on an internal ordering.
+That implies that custom types may not be stored in a `Set`, although there are community [alternatives][sort-by]: [`AnySet`][any-set], [`AnyDict`][any-dict], [`Sort`][sort]...
+
 Lists of `comparable` values can be sorted with `List.sort` and lists of values that can be mapped to comparable values can be sorted with `List.sortBy`:
 
 ```elm
@@ -105,9 +108,6 @@ compare [12] []
 Lists of values that can be compared can be sorted with `List.sortWith`:
 
 ```elm
-List.sortWith compare ["hi", "hello", "bye", "goodbye"]
-    --> ["bye", "goodbye", "hello", "hi"]
-
 type Color = Red | Green | Blue
 
 compareColors : Color -> Color -> Order
@@ -129,3 +129,7 @@ List.sortWith compareColors [Blue, Red, Green, Green, Blue]
 [comparison-operators]: https://package.elm-lang.org/packages/elm/core/latest/Basics#(%3C)
 [unicode-codepoint]: https://en.wikipedia.org/wiki/Unicode#Architecture_and_terminology
 [lexicographic-order]: https://en.wikipedia.org/wiki/Lexicographic_order
+[sort-by]: https://github.com/ceddlyburge/elm-league-tables-from-google-sheets/blob/master/src/Calculations/SortBy.elm
+[any-set]: https://package.elm-lang.org/packages/turboMaCk/any-set/latest/
+[any-dict]: https://package.elm-lang.org/packages/turboMaCk/any-dict/latest/
+[sort]: https://package.elm-lang.org/packages/rtfeldman/elm-sorter-experiment/latest/Sort

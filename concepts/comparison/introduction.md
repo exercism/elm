@@ -61,6 +61,8 @@ min (1, "hello") (3, "bye")
 
 Values of other types such as records or custom types cannot be compared directly.
 
+Some built-in types require their content to be `comparable`, such as `Set` or `Dict` keys, since their structure relies on an internal ordering.
+
 Lists of `comparable` values can be sorted with `List.sort` and lists of values that can be mapped to comparable values can be sorted with `List.sortBy`:
 
 ```elm
@@ -87,9 +89,6 @@ compare [12] []
 Lists of values that can be compared can be sorted with `List.sortWith`:
 
 ```elm
-List.sortWith compare ["hi", "hello", "bye", "goodbye"]
-    --> ["bye", "goodbye", "hello", "hi"]
-
 type Color = Red | Green | Blue
 
 compareColors : Color -> Color -> Order
