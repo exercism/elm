@@ -25,7 +25,7 @@
 
 ## 5. Shiny Power
 
-- You could explicitly define an order or use the [`compare` function][compare] with specific value
+- You could explicitly define an order or use the [`compare` function][compare] with a specific value
 - You can use tuples for hierarchical sorts
 
 ## 6. Place your bets
