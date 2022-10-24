@@ -33,7 +33,7 @@ containsCedd "-Cedd-"
 
 ## Pipe operator (`|>`)
 
-Saying x |> f is exactly the same as f x. A concrete example is `"5" |> toInt` is the same as `toInt "5"`
+Saying `x |> f` is exactly the same as `f x`. A concrete example is `"5" |> String.toInt` is the same as `String.toInt "5"`
 
 This doesn't sound very useful, but it is called the [pipe operator][pipe-operator] because it lets you write “pipelined” code.
 
