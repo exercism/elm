@@ -53,7 +53,7 @@ The implementation should now be more elegant, as `attackWithSword2` and `attack
 
 Define `attack3`.
 
-This is the same as `attack2`, but should be implemented using function composition / the [>>][forward-composition] operator.
+This is the same as `attack2`, but should be implemented using function composition / the [`(>>)`][forward-composition] operator.
 
 This implementation should also be elegant, and smaller than `attack2`, although potentially harder to understand.
 
