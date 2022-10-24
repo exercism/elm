@@ -24,7 +24,7 @@ Partial application always applies the arguments in order.
 containsCedd = contains "Cedd"
 --> String -> Bool
 --> (partial application always applies the arguments in order, so "Cedd" becomes the first argument to contains
---> This is a function that takes a string, and returns True if that string contains cedd)
+--> This is a function that takes a string, and returns True if that string contains Cedd)
 
 containsCedd "-Cedd-"
 --> True
