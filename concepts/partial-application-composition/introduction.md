@@ -55,7 +55,7 @@ sanitize input =
     |> String.toInt
 ```
 
-This avoids the use of brackets, and shows the functions in the order that they are applied (first String.trim, then String.toInt), which aids readability.
+This avoids the use of brackets, and shows the functions in the order that they are applied (first `String.trim`, then `String.toInt`), which aids readability.
 
 There is also a [reverse pipe operator `(<|)`][reverse-pipe-operator].
 Saying `x <| f` is exactly the same as `f x`.
