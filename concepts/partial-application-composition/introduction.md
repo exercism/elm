@@ -63,7 +63,10 @@ This doesn't look very useful at first glance, and is definitely not used as muc
 
 ## Function composition / point free style
 
-The [>>][forward-composition] operator creates a new function by composing two compatible functions together. It does this by taking the output from the first function and using this as the first argument to the second function. The created function will have the same parameters as the first function, and will return whatever the second function returns. The first function must return a type that the second function accepts as a parameter.
+The [`(>>)`][forward-composition] operator creates a new function by composing two compatible functions together.
+It does this by taking the output from the first function and using this as the first argument to the second function.
+The created function will have the same parameters as the first function, and will return whatever the second function returns.
+The first function must return a type that the second function accepts as a parameter.
 
 A concrete example is `String.trim >> String.toInt`.
 `String.trim` takes a string as its only parameter, so this is what the created function takes.
