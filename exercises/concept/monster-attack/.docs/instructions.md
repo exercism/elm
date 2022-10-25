@@ -7,12 +7,12 @@ At one point they are ambushed by a monster which they attack.
 ## 1. Define attackWithSword1
 
 Define `attackWithSword1`.
-This should take a MonsterDamage (a String that describes the damage to the monster) and an Int that indicates how strong the attack is.
+This should take a `MonsterDamage` (a `String` that describes the damage to the monster) and an `Int` that indicates how strong the attack is.
 It should return the existing string, with "Attacked with sword of strength <strength>." appended to the end.
 
 ## 2. Define attackWithClaw1
 
-Define `attackWithClaw1`. This should take a MonsterDamage and an Int that indicates how strong the attack is.
+Define `attackWithClaw1`. This should take a `MonsterDamage` and an `Int` that indicates how strong the attack is.
 It should return the existing string, with "Attacked with claw of strength <strength>." appended to the end.
 
 ## 3. Define attack1
@@ -21,7 +21,7 @@ Annalyn attacks with a sword, and she has a strength of 5.
 
 Her loyal pet dog Kazak attacks with its claws, and has a strength of 1.
 
-Define `attack`. This should take a MonsterDamage and perform the following attacks, in the correct order:
+Define `attack1`. This should take a `MonsterDamage` and perform the following attacks, in the correct order:
 
 - Annalyn
 - Kazak
@@ -44,9 +44,9 @@ This is the same as `attackWithClaw2`, except the parameters are swapped.
 
 Define `attack2`.
 
-This is the same as `attack1`, but should use `attackWithSword2` and `attackWithClaw2`
+This is the same as `attack1`, but should use `attackWithSword2` and `attackWithClaw2`.
 
-Please implement the function using [Partial application][partial-application] and the [pipe operator(`|>`)][pipe-operator].
+Please implement the function using [Partial application][partial-application] and the [pipe operator `(|>)`][pipe-operator].
 The implementation should now be more elegant, as `attackWithSword2` and `attackWithClaw2` have `MonsterDamage` (the main data structure) as the last parameter, as is recommended.
 
 ## 7. Define attack3

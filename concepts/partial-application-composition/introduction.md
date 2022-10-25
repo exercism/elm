@@ -88,10 +88,10 @@ The advantage of this style is that the code is more concise, the disadvantage i
 It is worth remembering that all functions are curried in Elm, so `String.length >> max` compiles, and results in the following:
 
 - A function (1) that has a string parameter (the input to `String.length`)
-- `max` is a function that has two Int parameters, but function 1 passes a single Int to it (the return from `String.length`) so 'max' is partially applied.
+- `max` is a function that has two `Int` parameters, but function 1 passes a single `Int` to it (the return from `String.length`) so `max` is partially applied.
 - The return value of the partially applied `max` function, is another function (2) that takes an `Int`, and returns the largest of this `Int` and the partially applied `Int` from `String.length`
 - Hence function 1 (`String -> Int`) returns function 2 (`Int -> Int`)
-- So `((String.length >> max) "123") 2` returns `3`, because "123" has a length of 3, which is greater than the 2 from the Int argument.
+- So `((String.length >> max) "123") 2` returns `3`, because `"123"` has a length of 3, which is greater than the 2 from the `Int` argument.
 
 ## Function design
 
@@ -109,7 +109,8 @@ This makes it possible to write elegant pipelined code, such as below.
 ```elm
 trimAndUpperCase : List String -> List String
 trimAndUpperCase names =
-    List.map String.trim names
+    names
+    |> List.map String.trim
     |> List.map String.toUpper
 ```
 
