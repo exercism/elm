@@ -12,7 +12,8 @@ It should return the existing string, with "Attacked with sword of strength <str
 
 ## 2. Define attackWithClaw1
 
-Define `attackWithClaw1`. This should take a `MonsterDamage` and an `Int` that indicates how strong the attack is.
+Define `attackWithClaw1`.
+This should take a `MonsterDamage` and an `Int` that indicates how strong the attack is.
 It should return the existing string, with "Attacked with claw of strength <strength>." appended to the end.
 
 ## 3. Define attack1
