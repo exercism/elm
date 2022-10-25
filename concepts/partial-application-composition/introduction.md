@@ -69,7 +69,7 @@ The created function will take the same input (of type `a`) first function, and 
 
 A concrete example is `String.trim >> String.toInt`.
 `String.trim` takes a string as its only parameter, so this is what the created function takes.
-`String.toInt` returns an `Int`, so this is what the created function returns
+`String.toInt` returns a `Maybe Int`, so this is what the created function returns.
 `String.trim` returns a `String`, which `String.toInt` accepts as a parameter, so the example compiles.
 
 We can now rewrite our `sanitize` function as follows:
