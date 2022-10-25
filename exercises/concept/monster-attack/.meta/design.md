@@ -9,7 +9,7 @@
 
 ## Out of scope
 
-- Composition of partial functions is out of scope, left for another concept.
+- Nothing is explicitly out of scope.
 
 ## Concepts
 
@@ -23,7 +23,8 @@
 
 This exercise could benefit from the following rules added to the the [analyzer][analyzer]:
 
-- Verify that the pipeline operator is used in `attack`
-- Verify that attackWithClaw and attahWithSword are only used once each in `attack`
+- Verify that the pipeline operator is used in `attack2`
+- Verify that `attackWithClaw2` and `attackWithSword2` are only used once each in `attack2`
+- Verify that `attackWithClaw2` and `attackWithSword2` are only used once each in `attack3`
 
 [analyzer]: https://github.com/exercism/elm-analyzer
