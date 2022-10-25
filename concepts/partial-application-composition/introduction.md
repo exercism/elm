@@ -59,7 +59,7 @@ This avoids the use of brackets, and shows the functions in the order that they 
 
 There is also a [reverse pipe operator `(<|)`][reverse-pipe-operator].
 Saying `x <| f` is exactly the same as `f x`.
-This doesn't look very useful at first glance, and is definitely not used as much as the pipe operator, but it still helps to avoid brackets in some situations.
+This doesn't look very useful at first glance either, and is definitely not used as much as the pipe operator, but it helps to avoid brackets in some situations.
 
 ## Function composition / point free style
 
