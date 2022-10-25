@@ -135,6 +135,11 @@
       "slug": "partial-application-composition",
       "name": "partial-application-composition",
       "uuid": "3fde0ff5-d603-4f40-a7e3-a4ea2707af90"
+    },
+    {
+      "slug": "comparison",
+      "name": "Comparison",
+      "uuid": "a5339d63-c63a-491b-996b-6666a2bdea99"
     }
   ],
   "exercises": {
@@ -276,7 +281,20 @@
         "name": "Monster Attack",
         "uuid": "c8abe3c6-44f8-49cd-b8e4-9951c77ddbd9",
         "concepts": ["partial-application-composition"],
-        "prerequisites": ["basics-1", "basics-2", "let"],
+        "prerequisites": ["basics-1", "basics-2", "let"]
+      },
+      {
+        "slug": "blorkemon-cards",
+        "name": "Blorkemon Cards",
+        "uuid": "90660cf2-9247-41c0-8849-eee3e7118371",
+        "concepts": ["comparison"],
+        "prerequisites": [
+          "booleans",
+          "tuples",
+          "lists",
+          "custom-types",
+          "records"
+        ],
         "status": "beta"
       }
     ],
@@ -328,7 +346,7 @@
       },
       {
         "slug": "sum-of-multiples",
-        "name": "Sum Of Multiples",
+        "name": "Sum of Multiples",
         "uuid": "75859d00-8772-4471-97a7-d6fe432edc5e",
         "practices": [],
         "prerequisites": [],
@@ -348,8 +366,8 @@
         "slug": "grade-school",
         "name": "Grade School",
         "uuid": "c7749c5a-529e-4e46-8bdb-e33519f6d176",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["dict"],
+        "prerequisites": ["lists", "comparison", "tuples", "maybe"],
         "difficulty": 2,
         "topics": ["maps", "sorting"]
       },
@@ -402,8 +420,8 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "61ef49ef-1086-445b-aa0a-b99de263b728",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["booleans"],
         "difficulty": 3,
         "topics": ["filtering", "strings"]
       },
@@ -438,8 +456,8 @@
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "5845a108-d8b2-41dd-b371-cf9eff7a2230",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["lists"],
         "difficulty": 4,
         "topics": ["filtering", "strings"]
       },
@@ -528,8 +546,8 @@
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["comparison"],
+        "prerequisites": ["maybe"],
         "difficulty": 3,
         "topics": ["algorithms", "lists", "recursion"]
       },
@@ -544,7 +562,7 @@
       },
       {
         "slug": "pascals-triangle",
-        "name": "Pascals Triangle",
+        "name": "Pascal's Triangle",
         "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
         "practices": [],
         "prerequisites": [],
@@ -562,7 +580,7 @@
       },
       {
         "slug": "etl",
-        "name": "Etl",
+        "name": "ETL",
         "uuid": "1f39d315-324c-4e2f-bf48-ce8432836596",
         "practices": [],
         "prerequisites": [],
@@ -615,7 +633,7 @@
       },
       {
         "slug": "difference-of-squares",
-        "name": "Difference Of Squares",
+        "name": "Difference of Squares",
         "uuid": "646c7164-cfa4-42c3-9af5-2f672e6ec81e",
         "practices": [],
         "prerequisites": [],
@@ -633,7 +651,7 @@
       },
       {
         "slug": "rna-transcription",
-        "name": "Rna Transcription",
+        "name": "RNA Transcription",
         "uuid": "3af96d19-87d7-4d8b-aecb-f63122815501",
         "practices": [],
         "prerequisites": [],
@@ -660,7 +678,7 @@
       },
       {
         "slug": "run-length-encoding",
-        "name": "Run Length Encoding",
+        "name": "Run-Length Encoding",
         "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
         "practices": [],
         "prerequisites": [],

@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Basics#(%3C)",
+    "description": "Elm comparison operators"
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Lexicographic_order",
+    "description": "Elm compares values in lexicographic order"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/rtfeldman/elm-sorter-experiment/latest/Sort",
+    "description": "Explorations on sorting arbitrary types"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/turboMaCk/any-set/latest/",
+    "description": "Sets for non-comparable types"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/turboMaCk/any-dict/latest/",
+    "description": "Dict with non-comparable keys"
+  }
+]

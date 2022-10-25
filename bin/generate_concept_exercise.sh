@@ -70,9 +70,9 @@ printf "# Instructions\n\nStory goes here\n\n## 1. Task 1 title\n\nDefine the th
 ## .meta
 SOLUTION=$(ls ${exercise_dir}/src)
 jq -n --arg solution "src/${SOLUTION}" \
-    '{authors: [], contributors: [], files: {solution: $solution, test: "tests/Tests.elm", exemplar: ".meta/Exemplar.elm"}, blurb: "Learn this by doing that"}' \
+    '{authors: [], contributors: [], files: {solution: [$solution], test: ["tests/Tests.elm"], exemplar: [".meta/Exemplar.elm"]}, blurb: "Learn this by doing that"}' \
     > ${exercise_dir}/.meta/config.json
-printf "# Design\n\n## Goal\n\nThe Goal is to learn X\n\n## ## Learning objectives\n\n- Know what X is\n\n## Out of scope\n\n- This and that\n\n## Concepts\n\nThe concepts this exercise unlock are:\n\n- booleans\n\n## Prerequisites\n\n- booleans\n\n## Analyzer\n\nMake sure that:\n\n- X is called with Y" \
+printf "# Design\n\n## Goal\n\nThe Goal is to learn X\n\n## Learning objectives\n\n- Know what X is\n\n## Out of scope\n\n- This and that\n\n## Concepts\n\nThe concepts this exercise unlock are:\n\n- booleans\n\n## Prerequisites\n\n- booleans\n\n## Analyzer\n\nMake sure that:\n\n- X is called with Y" \
     > ${exercise_dir}/.meta/design.md
 
 # Done

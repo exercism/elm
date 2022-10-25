@@ -25,7 +25,7 @@ age = Just 29
 ```
 
 The vertical bar `|` in the type definition of `Maybe` means "OR".
-It indicates that it can either be `Nothing` OR be `Just` something.
+It indicates that a value of this type can either be `Nothing` OR be `Just` something of type `a`.
 So imagine that the name and age were not filled by that person, we would have the following.
 
 ```elm
@@ -57,6 +57,24 @@ sayHello Nothing
     --> "Hello, World!"
 ```
 
-Everytime you use a `Maybe` value, the Elm compiler will check that your code handles all possibilities so you can never pattern match a `Maybe` and only handle the case where there is a `Just someValue`.
+Every time you use a `Maybe` value, the Elm compiler will check that your code handles all possibilities so you can never pattern match a `Maybe` and only handle the case where there is a `Just someValue`.
 This may seem annoying at first, but it is one of the greatest strengths of the Elm language.
 This will prevent hundreds of bugs and makes compiler-guided refactoring a fearless and rewarding experience.
+
+## More functions to manipulate `Maybe`
+
+There are also a number of useful functions in the `Maybe` module to manipulate `Maybe` types.
+
+```elm
+sayHelloAgain : Maybe String -> String
+sayHelloAgain name = "Hello, " ++ Maybe.withDefault "World" name ++ "!"
+
+capitalizeName : Maybe String -> Maybe String
+capitalizeName name = Maybe.map String.toUpper name
+
+capitalizeName matthieu
+    --> Just "MATTHIEU"
+
+capitalizeName anon
+    --> Nothing
+```
