@@ -7,28 +7,33 @@ All functions in Elm are [curried][currying], which means that if you call a fun
 The result of doing this is called [partial-application][partial-application] (you are not passing all the arugments to the function, but are partially applying some of them).
 
 ```elm
-add2 = add 2
---> Int -> Int
+add: Int -> Int -> Int
+add a b = a + b
 
-eigth = add2 6
+add2: Int -> Int
+add2 = add 2
+
+eight: Int
+eight = add2 6
 --> 8
 ```
 
 Partial application always applies the arguments in order.
 
 ```elm
--- contains: String -> String -> Int
--- contains first second =
+contains: String -> String -> Bool
+contains first second =
 --> This function is in the standard library, and returns True if the second string contains the first one
 
+containsCedd: String -> Bool
 containsCedd = contains "Cedd"
---> String -> Bool
 --> (partial application always applies the arguments in order, so "Cedd" becomes the first argument to contains
 --> This is a function that takes a string, and returns True if that string contains Cedd)
 
-containsCedd "-Cedd-"
+ceddBurgeContainsCedd: Bool
+ceddBurgeContainsCedd = containsCedd "Cedd Burge"
 --> True
---> ("-Cedd-" ends up being the second argument to contains, and it does include "Cedd", the first argument)
+--> ("Cedd Burge" ends up being the second argument to contains, and it does include "Cedd", the first argument)
 ```
 
 ## Pipe operator (`|>`)
@@ -63,7 +68,7 @@ This doesn't look very useful at first glance either, and is definitely not used
 
 ## Function composition / point free style
 
-The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)` and creates a function of type `a -> c`  by composing two compatible functions of type `a -> b `and `b -> c`.
+The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)` and creates a function of type `a -> c` by composing two compatible functions of type `a -> b `and `b -> c`.
 It does this by taking the output (of type `b`) from the first function and using it as the first argument to the second function (which must be of the same type `b`).
 The created function will take the same input (of type `a`) first function, and will return whatever `c` the second function returns.
 
