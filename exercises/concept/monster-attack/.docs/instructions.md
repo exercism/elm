@@ -29,7 +29,8 @@ Define `attack1`. This should take a `MonsterDamage` and perform the following a
 - Kazak
 - Annalyn
 
-The implementation of this function will be a bit cumbersome, as `attackWithSword1` and `attackWithClaw1` do not have the main data structure (`MonsterDamage`) as the last parameter.
+The implementation of this function will be a bit cumbersome, as `attackWithSword1` and `attackWithClaw1` do not have the main data structure (`MonsterDamage`) as the last parameter (they are not doing it in the recommended way).
+It is not possible / advisable to use partial application in this initial case.
 
 ## 4. Define attackWithSword2
 

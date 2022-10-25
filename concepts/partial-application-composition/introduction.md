@@ -89,12 +89,13 @@ Note that we no longer use the `input` parameter that you can see the original e
 This way of creating functions that make no reference to their parameters is called "Point Free Style".
 The advantage of this style is that the code is more concise, the disadvantage is that it can be harder to understand, especially for beginners.
 
-It is worth remembering that all functions are curried in Elm, so `String.length >> max` compiles, and results in the following:
+It is worth remembering that all functions are curried in Elm, so `String.length >> max` compiles.
 
-- A function (1) that has a string parameter (the input to `String.length`)
-- `max` is a function that has two `Int` parameters, but function 1 passes a single `Int` to it (the return from `String.length`) so `max` is partially applied.
-- The return value of the partially applied `max` function, is another function (2) that takes an `Int`, and returns the largest of this `Int` and the partially applied `Int` from `String.length`
-- Hence function 1 (`String -> Int`) returns function 2 (`Int -> Int`)
+- The pipe operator has the type `(a -> b) -> (b -> c) -> (a -> c)`.
+- `String.length` has a type of `String -> Int`, which is the `(a -> b)` part, so `a` is `String` and `b` is - `Int`.
+- `max` has a type of `Int -> Int -> Int`, which is the `b -> c` part.
+- `b` is `Int`, so `max` is partially applied, so `c` is the result of this partial application (`Int -> Int`).
+- So the type of `String.length >> max` is `String -> (Int -> Int)`.
 - So `((String.length >> max) "123") 2` returns `3`, because `"123"` has a length of 3, which is greater than the 2 from the `Int` argument.
 
 ## Function design
