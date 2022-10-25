@@ -35,7 +35,7 @@ containsCedd "-Cedd-"
 
 Saying `x |> f` is exactly the same as `f x`. A concrete example is `"5" |> String.toInt` is the same as `String.toInt "5"`.
 
-This doesn't sound very useful, but it is called the [pipe operator][pipe-operator] because it lets you write “pipelined” code.
+This doesn't sound very useful at first, but it is called the [pipe operator][pipe-operator] because it lets you write “pipelined” code.
 
 For example, say we have a sanitize function for turning user input into integers:
 
