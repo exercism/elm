@@ -63,10 +63,9 @@ This doesn't look very useful at first glance either, and is definitely not used
 
 ## Function composition / point free style
 
-The [`(>>)`][forward-composition] operator creates a new function by composing two compatible functions together.
-It does this by taking the output from the first function and using this as the first argument to the second function.
-The created function will have the same parameters as the first function, and will return whatever the second function returns.
-The first function must return a type that the second function accepts as a parameter.
+The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)` and creates a function of type `a -> c`  by composing two compatible functions of type `a -> b `and `b -> c`.
+It does this by taking the output (of type `b`) from the first function and using it as the first argument to the second function (which must be of the same type `b`).
+The created function will take the same input (of type `a`) first function, and will return whatever `c` the second function returns.
 
 A concrete example is `String.trim >> String.toInt`.
 `String.trim` takes a string as its only parameter, so this is what the created function takes.
