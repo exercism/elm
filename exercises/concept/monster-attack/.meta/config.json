@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/MonsterAttack.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "icon": "dnd-character",
+  "blurb": "Learn partial application and function composition in Elm by attacking a monster"
+}
