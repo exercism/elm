@@ -60,6 +60,10 @@ tests =
                 \_ ->
                     Expect.equal False (isPaired "[({]})")
         , skip <|
+            test "paired and wrong nested brackets but innermost are correct" <|
+                \_ ->
+                    Expect.equal False (isPaired "[({}])")
+        , skip <|
             test "early unexpected brackets" <|
                 \_ ->
                     Expect.equal False (isPaired ")()")

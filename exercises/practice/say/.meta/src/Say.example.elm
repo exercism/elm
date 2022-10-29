@@ -19,7 +19,7 @@ say number =
 
     else if number < 100 then
         if modBy 10 number == 0 then
-            Ok (saySmall number)
+            Ok (sayTens number)
 
         else
             Ok (sayTens (number // 10 * 10) ++ "-" ++ saySmall (modBy 10 number))

@@ -59,6 +59,11 @@ tests =
                     Expect.equal [ ( "and", 1 ), ( "between", 1 ), ( "can't", 1 ), ( "joe", 1 ), ( "large", 2 ), ( "tell", 1 ) ]
                         (wordCount "Joe can't tell between 'large' and large." |> Dict.toList)
         , skip <|
+            test "quotation for word with apostrophe" <|
+                \() ->
+                    Expect.equal [ ( "can", 1 ), ( "can't", 2 ) ]
+                        (wordCount "can, can't, 'can't'" |> Dict.toList)
+        , skip <|
             test "substrings from the beginning" <|
                 \() ->
                     Expect.equal [ ( "a", 1 ), ( "and", 1 ), ( "app", 1 ), ( "apple", 1 ), ( "between", 1 ), ( "can't", 1 ), ( "joe", 1 ), ( "tell", 1 ) ]

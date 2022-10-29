@@ -28,12 +28,22 @@ tests =
                     Expect.equal (Ok "twenty-two")
                         (say 22)
         , skip <|
+            test "thirty" <|
+                \() ->
+                    Expect.equal (Ok "thirty")
+                        (say 30)
+        , skip <|
+            test "ninety-nine" <|
+                \() ->
+                    Expect.equal (Ok "ninety-nine")
+                        (say 99)
+        , skip <|
             test "one hundred" <|
                 \() ->
                     Expect.equal (Ok "one hundred")
                         (say 100)
         , skip <|
-            test "one hundred twenty" <|
+            test "one hundred and twenty" <|
                 \() ->
                     Expect.equal (Ok "one hundred and twenty")
                         (say 120)
@@ -43,12 +53,22 @@ tests =
                     Expect.equal (Ok "one hundred and twenty-three")
                         (say 123)
         , skip <|
+            test "two hundred" <|
+                \() ->
+                    Expect.equal (Ok "two hundred")
+                        (say 200)
+        , skip <|
+            test "nine hundred and ninety-nine" <|
+                \() ->
+                    Expect.equal (Ok "nine hundred and ninety-nine")
+                        (say 999)
+        , skip <|
             test "one thousand" <|
                 \() ->
                     Expect.equal (Ok "one thousand")
                         (say 1000)
         , skip <|
-            test "one thousand two hundred thirty-four" <|
+            test "one thousand two hundred and thirty-four" <|
                 \() ->
                     Expect.equal (Ok "one thousand two hundred and thirty-four")
                         (say 1234)
@@ -58,7 +78,7 @@ tests =
                     Expect.equal (Ok "one million")
                         (say 1000000)
         , skip <|
-            test "one million two" <|
+            test "one million and two" <|
                 \() ->
                     Expect.equal (Ok "one million and two")
                         (say 1000002)
