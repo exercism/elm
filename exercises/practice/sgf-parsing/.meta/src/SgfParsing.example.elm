@@ -125,16 +125,22 @@ escape =
                     ( True, string )
 
                 ( True, 'n' ) ->
-                    ( False, String.cons '\n' string )
+                    ( False, String.cons 'n' string )
+
+                ( True, '\n' ) ->
+                    ( False, string )
 
                 ( True, 't' ) ->
-                    ( False, String.cons '\t' string )
+                    ( False, String.cons 't' string )
 
                 ( True, ']' ) ->
                     ( False, String.cons ']' string )
 
                 ( True, '\\' ) ->
                     ( False, String.cons '\\' string )
+
+                ( _, '\t' ) ->
+                    ( False, String.cons ' ' string )
 
                 _ ->
                     ( False, String.cons char string )
