@@ -43,6 +43,11 @@ tests =
                     Expect.equal (Err "slice length cannot be greater than series length")
                         (slices 6 "12345")
         , skip <|
+            test "slice length is way too large" <|
+                \() ->
+                    Expect.equal (Err "slice length cannot be greater than series length")
+                        (slices 42 "12345")
+        , skip <|
             test "slice length cannot be zero" <|
                 \() ->
                     Expect.equal (Err "slice length cannot be zero")
