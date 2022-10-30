@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/CustomSet.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/CustomSet.example.elm"
+    ]
+  },
+  "blurb": "Create a custom set type."
+}
