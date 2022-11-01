@@ -28,7 +28,7 @@ addCard "Scientuna" (Set.fromList ["Newthree"])
 
 ## 3. Start trading
 
-Now that your friends are Blorkemon™️ crazy again, you can use is to grow your own collection by trading cards.
+Now that your friends are Blorkemon™️ crazy again, you can use this to grow your own collection by trading cards.
 
 Not every trade is worth doing, or can be done at all.
 You cannot trade a card you don't have, and you shouldn't trade a card for one that you already have. 
@@ -90,9 +90,9 @@ totalCards [Set.fromList ["Scientuna"], Set.fromList ["Newthree", "Scientuna"]]
 
 You nephew is coming to visit you soon, and you feel like impressing him.
 Kids like shiny things right?
-Blorkemon™️ card can be shiny!
+Blorkemon™️ cards can be shiny!
 
-Implement `splitShinyCards`, which takes a collection and returns a `Tuple` with two lists or sorted cards: one with all the cards that start with `"Shiny"` and one with the other cards. 
+Implement `splitShinyCards`, which takes a collection and returns a `Tuple` with two lists of sorted cards: one with all the cards that start with `"Shiny"` and one with the other cards. 
 
 ```elm
 splitShinyCards (Set.fromList ["Newthree", "Scientuna", "Shiny Scientuna"])
