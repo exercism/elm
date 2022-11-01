@@ -148,6 +148,11 @@
       "slug": "comparison",
       "name": "Comparison",
       "uuid": "a5339d63-c63a-491b-996b-6666a2bdea99"
+    },
+    {
+      "slug": "set",
+      "name": "Set",
+      "uuid": "cfa44843-b783-4366-a198-f0e99e632143"
     }
   ],
   "exercises": {
@@ -353,6 +358,21 @@
           "lists",
           "custom-types",
           "records"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "gotta-snatch-em-all",
+        "name": "Gotta Snatch'Em All",
+        "uuid": "a019f08f-b20e-4430-b01a-26b25a2bd0bb",
+        "concepts": [
+          "set"
+        ],
+        "prerequisites": [
+          "booleans",
+          "tuples",
+          "lists",
+          "comparison"
         ],
         "status": "beta"
       }
@@ -671,8 +691,13 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "767f6825-8736-4307-85c7-090a9a327fd9",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "set"
+        ],
+        "prerequisites": [
+          "comparison",
+          "booleans"
+        ],
         "difficulty": 3,
         "topics": []
       },
@@ -1005,7 +1030,9 @@
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "b1d59ef6-b076-4399-b559-6a3195fd09d8",
-        "practices": [],
+        "practices": [
+          "set"
+        ],
         "prerequisites": [
           "lists",
           "custom-types",

@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Set",
+    "description": "Set module"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/turboMaCk/any-set/latest/",
+    "description": "Sets for non-comparable types"
+  }
+]

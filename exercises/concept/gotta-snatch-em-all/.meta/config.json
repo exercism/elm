@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/GottaSnatchEmAll.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "blurb": "Learn to use sets by playing a vintage trading card game"
+}
