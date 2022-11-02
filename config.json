@@ -1042,6 +1042,25 @@
           "comparison"
         ],
         "difficulty": 6
+      },
+      {
+        "slug": "two-bucket",
+        "name": "Two Bucket",
+        "uuid": "bc4aa6f0-4b16-45b6-b7f6-48f57b8ddf84",
+        "practices": [
+          "set"
+        ],
+        "prerequisites": [
+          "tuples",
+          "booleans",
+          "lists",
+          "comparison",
+          "maybe",
+          "records",
+          "custom-types",
+          "pattern-matching"
+        ],
+        "difficulty": 7
       }
     ]
   }
