@@ -20,5 +20,6 @@
       "src/TicketPleaseSupport.elm"
     ]
   },
+  "icon": "sieve",
   "blurb": "Learn about pattern matching by improving your ticketing system."
 }

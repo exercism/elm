@@ -20,5 +20,6 @@
       "src/TopScorersSupport.elm"
     ]
   },
+  "icon": "football-match-reports",
   "blurb": "Learn usage of Dict by keeping track of how many goals players have scored."
 }

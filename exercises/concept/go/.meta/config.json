@@ -19,5 +19,6 @@
       "src/GoSupport.elm"
     ]
   },
+  "icon": "go-counting",
   "blurb": "Learn usage of Result by applying the rules of the game of Go"
 }
