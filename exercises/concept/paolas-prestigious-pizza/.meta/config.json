@@ -17,5 +17,6 @@
       ".meta/Exemplar.elm"
     ]
   },
+  "icon": "pizza-slices",
   "blurb": "Learn the basics of parsing by processing the menu of Paola's Prestigious Pizza"
 }
