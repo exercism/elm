@@ -158,4 +158,3 @@ description = "list when: -> no allergen score parts"
 
 [93c2df3e-4f55-4fed-8116-7513092819cd]
 description = "list when: -> no allergen score parts without highest valid score"
-include = false

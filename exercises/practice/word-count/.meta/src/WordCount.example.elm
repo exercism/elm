@@ -41,3 +41,4 @@ wordCount sentence =
                     dict
             )
             Dict.empty
+        |> Dict.remove ""
