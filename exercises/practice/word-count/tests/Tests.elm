@@ -51,8 +51,8 @@ tests =
         , skip <|
             test "with apostrophes" <|
                 \() ->
-                    Expect.equal [ ( "cry", 1 ), ( "don't", 2 ), ( "first", 1 ), ( "laugh", 1 ), ( "then", 1 ) ]
-                        (wordCount "First: don't laugh. Then: don't cry." |> Dict.toList)
+                    Expect.equal [ ( "cry", 1 ), ( "don't", 2 ), ( "first", 1 ), ( "getting", 1 ), ( "it", 1 ), ( "laugh", 1 ), ( "then", 1 ), ( "you're", 1 ) ]
+                        (wordCount "'First: don't laugh. Then: don't cry. You're getting it.'" |> Dict.toList)
         , skip <|
             test "with quotations" <|
                 \() ->

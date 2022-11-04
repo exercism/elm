@@ -71,7 +71,22 @@ tests =
             test "does not detect a word as its own anagram" <|
                 \() ->
                     Expect.equal []
+                        (detect "BANANA" [ "BANANA" ])
+        , skip <|
+            test "does not detect a word as its own anagram with small casing difference" <|
+                \() ->
+                    Expect.equal []
                         (detect "banana" [ "Banana" ])
+        , skip <|
+            test "does not detect a word as its own anagram with large casing difference" <|
+                \() ->
+                    Expect.equal []
+                        (detect "banana" [ "BANANA" ])
+        , skip <|
+            test "words other than themselves can be anagrams" <|
+                \() ->
+                    Expect.equal [ "Silent" ]
+                        (detect "LISTEN" [ "LISTEN", "Silent" ])
         , skip <|
             test "does not detect a anagram if the original word is repeated" <|
                 \() ->
@@ -98,12 +113,7 @@ tests =
                     Expect.equal []
                         (detect "ΑΒΓ" [ "ABΓ" ])
         , skip <|
-            test "capital word is not own anagram" <|
-                \() ->
-                    Expect.equal []
-                        (detect "BANANA" [ "Banana" ])
-        , skip <|
-            test "anagrams must use all letters exactly once (banana)" <|
+            test "anagrams must use all letters exactly once" <|
                 \() ->
                     Expect.equal []
                         (detect "patter" [ "tapper" ])
