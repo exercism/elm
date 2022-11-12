@@ -30,3 +30,20 @@ jobs:
 
       - name: Check that everything is alright
         run: bin/build.sh
+
+  elm-test-runner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout elm-test-runner
+        uses: actions/checkout@e2f20e631ae6d7dd3b768f56a5d2af784dd54791
+        with:
+          repository: exercism/elm-test-runner
+
+      - name: Checkout exercism/elm
+        uses: actions/checkout@e2f20e631ae6d7dd3b768f56a5d2af784dd54791
+        with:
+          path: elm_repo
+
+      - name: Run tests for all exercises
+        run: ./bin/run_all_exercises.sh elm_repo
