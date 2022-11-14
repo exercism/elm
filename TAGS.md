@@ -48,7 +48,7 @@ This document aims to provide reasoning why `config.json` contains the `"tags"` 
 - [ ] `used_for/cross_platform_development`: N/A
 - [ ] `used_for/embedded_systems`: N/A
 - [ ] `used_for/financial_systems`: N/A
-- [x] `used_for/frontends`: Elm only focus is frontend development.
+- [x] `used_for/frontends`: Elm's only focus is frontend development.
 - [ ] `used_for/games`: Possible if the game runs in the browser.
 - [ ] `used_for/guis`: N/A
 - [ ] `used_for/mobile`: Possible with Tauri.
