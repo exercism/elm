@@ -1,9 +1,19 @@
 {
-  "authors": ["ceddlyburge", "mpizenberg", "jiegillet"],
+  "authors": [
+    "ceddlyburge",
+    "mpizenberg",
+    "jiegillet"
+  ],
   "files": {
-    "solution": ["src/TreasureChest.elm"],
-    "test": ["tests/Tests.elm"],
-    "exemplar": [".meta/Exemplar.elm"]
+    "solution": [
+      "src/TreasureChest.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
   },
   "icon": "tisbury-treasure-hunt",
   "blurb": "Learn how to create and use Elm code that is generic by creating a Treasure Chest"
