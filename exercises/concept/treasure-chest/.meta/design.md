@@ -24,3 +24,9 @@ The goal of this exercise is to teach students how to consume and make generic c
 - `custom-types`: Learn how to use custom types in an Elm program.
 - `maybe`: Learn how to use optional values with the Maybe type.
 - `pattern-matching`: Pattern matching is a powerfull tool to identify and bind any kind of data.
+
+## Analyzer
+
+There are no rules that need adding to the [analyzer][analyzer] for this exercise.
+
+[analyzer]: https://github.com/exercism/elm-analyzer
