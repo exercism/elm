@@ -9,7 +9,7 @@
 ## 2. Define the getTreasure function
 
 - There is a [shorthand for destructuring single member custom types][single-member-custom-destructuring].
-- The Elm guide has a sectoin on [Maybe][maybe] if you need a refresher.
+- The Elm guide has a section on [Maybe][maybe] if you need a refresher.
 
 [custom-types][https://guide.elm-lang.org/types/custom_types.html]
 [single-member-custom-destructuring]: https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e?permalink_comment_id=1701264#gistcomment-1701264
