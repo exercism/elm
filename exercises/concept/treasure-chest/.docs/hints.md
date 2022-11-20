@@ -3,8 +3,8 @@
 ## 1. Define the TreasureChest generic custom type
 
 - The Elm guide has a section on [custom types][custom-types].
-- The TreasueChest custom type only has a single variant.
-- Idiomatically in Elm, when a custom type has a single variant, the variant and the type have the same name (in this case both would be called TreasureChest)
+- The `TreasureChest` custom type only has a single variant.
+- Idiomatically in Elm, when a custom type has a single variant, the variant and the type have the same name (in this case both would be called `TreasureChest`)
 
 ## 2. Define the getTreasure function
 
