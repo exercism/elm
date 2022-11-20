@@ -74,4 +74,4 @@ length list =
 Type parameters can appear both in the inputs and in the output of a function, and genericity enabled by type parameters is usually called **parametric polymorphism**.
 This is in contrast with ad hoc polymorphism also known as function overloading, where the same function name can be used on multiple implementation where the types differ.
 This also contrasts with subtype polymorphism, where types can be defined in a hierarchy, and functions defined on a type can also be called with arguments of its subtypes.
-In elm, the only available mechanism for genericity is parametric polymorphism.
+In Elm, the only available mechanism for genericity is parametric polymorphism.
