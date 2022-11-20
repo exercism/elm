@@ -14,8 +14,8 @@ The variant should also have an associate generic value, which will be used to s
 
 This function should take two parameters
 
-- a String (for the passwordAttempt)
-- a TreasureChest generic custom type
+- a `String` (for trying a password)
+- a `TreasureChest` generic custom type
 
 This function should check the provided passwordAttempt against the String in the TreasureChest.
 
