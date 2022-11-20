@@ -17,10 +17,10 @@ This function should take two parameters
 - a `String` (for trying a password)
 - a `TreasureChest` generic custom type
 
-This function should check the provided passwordAttempt against the String in the TreasureChest.
+This function should check the provided password attempt against the `String` in the `TreasureChest`.
 
-The function should return a `Maybe`
+The function should return a `Maybe`.
 
-If the passwords match then return `Just` with the generic value from the TreasureChest (the treasure!)
+If the passwords match then return `Just` with the generic value from the `TreasureChest` (the treasure!)
 
 If the passwords do not match then return `Nothing`.
