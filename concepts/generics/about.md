@@ -1,6 +1,6 @@
 # About
 
-# Introduction
+## Introduction
 
 Generics are a language feature that enable code reuse.
 For example, it should not matter what type a list holds in order to compute its length.
