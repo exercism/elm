@@ -29,8 +29,8 @@ someInt = Just 42
 ```
 
 A type can be generic over multiple other types, and thus have multiple type parameters.
-In that case, every independant type gets a different lowercase name.
-Being independant does not prevent them from becoming the same type, it just enables them to be different.
+In that case, every independent type gets a different lowercase name.
+Being independent does not prevent them from becoming the same type, it just enables them to be different.
 
 ```elm
 type alias Pair a b =
