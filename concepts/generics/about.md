@@ -50,7 +50,7 @@ The only constraint is that they must be lowercase names.
 As such, when useful, we tend to give them descriptive names.
 
 > This is why the `Html` package defines the `Html msg` type, with one type parameter named `msg`.
-> The elm architecture guides you towards creation of a custom type `Msg` describing all messages that your web page can trigger.
+> The Elm architecture guides you towards creation of a custom type `Msg` describing all messages that your web page can trigger.
 > As a result, your code will be building views of the type `Html Msg` where `Msg` is the concrete type that you defined.
 > Beginners are sometimes confused between errors mentioning `Html msg` (lowercase) and errors with `Html Msg`.
 > Now you know!
