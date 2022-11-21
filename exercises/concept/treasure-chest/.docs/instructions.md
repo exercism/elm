@@ -6,7 +6,7 @@ In this exercise you're going to write a generic (/ magical!) TreasureChest, to 
 
 Define a `TreasureChest` custom type with a single variant.
 
-The variant should have an associated String value, which will be used to store the password of the treasure chest
+The variant should have an associated `String` value, which will be used to store the password of the treasure chest.
 
 The variant should also have an associate generic value, which will be used to store the treasure. This value is generic so that the treasure can be anything.
 
