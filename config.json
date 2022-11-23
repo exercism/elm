@@ -1062,6 +1062,23 @@
           "pattern-matching"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "b4734ab6-cedc-46eb-9648-d59b90f2596e",
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "lists",
+          "tuples",
+          "booleans",
+          "maybe",
+          "custom-types",
+          "records"
+        ],
+        "difficulty": 8
       }
     ]
   }
