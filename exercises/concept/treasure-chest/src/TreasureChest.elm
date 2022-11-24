@@ -10,7 +10,7 @@ module TreasureChest exposing (..)
 
 
 type TreasureChest
-    = TreasureChest
+    = TODO
 
 
 {-| Two. define getTreasure, with a type annotation, with two parameters:
