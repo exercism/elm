@@ -769,9 +769,11 @@
         "name": "List Ops",
         "uuid": "114b5717-0d82-459e-90c4-f00d8b6beb5b",
         "practices": [
+          "lists",
           "generics"
         ],
         "prerequisites": [
+          "lists",
           "generics"
         ],
         "difficulty": 4,
@@ -981,9 +983,11 @@
         "name": "Sublist",
         "uuid": "8e1cb827-2fa9-46a4-ac50-7f8b3ba66809",
         "practices": [
+          "lists",
           "generics"
         ],
         "prerequisites": [
+          "lists",
           "generics"
         ],
         "difficulty": 7,
