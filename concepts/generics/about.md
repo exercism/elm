@@ -71,6 +71,19 @@ length list =
             1 + length restOfTheList
 ```
 
+Functions can also take other functions as parameters, which can also be generic
+These are called higher order functions.
+
+```elm
+map : (a -> b) -> List a -> List b
+map function list =
+    case list of
+        [] ->
+            []
+        head :: restOfTheList ->
+            function head :: map function restOfTheList
+```
+
 Type parameters can appear both in the inputs and in the output of a function, and genericity enabled by type parameters is usually called **parametric polymorphism**.
 This is in contrast with ad hoc polymorphism also known as function overloading, where the same function name can be used on multiple implementation where the types differ.
 This also contrasts with subtype polymorphism, where types can be defined in a hierarchy, and functions defined on a type can also be called with arguments of its subtypes.
