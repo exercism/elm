@@ -13,7 +13,7 @@ length : List a -> Int
 ## Parameters in types
 
 When a type is generic over another type, we use a lowercase name for that other type, and call it a type parameter.
-Two very common examples are the `List` and `Maybe` types.
+Common examples are the `List`, `Maybe` and `Result` custom types.
 
 ```elm
 -- Maybe is generic over the type a
@@ -33,16 +33,20 @@ In that case, every independent type gets a different lowercase name.
 Being independent does not prevent them from becoming the same type, it just enables them to be different.
 
 ```elm
-type alias Pair a b =
-    { first : a
-    , second : b
+-- Result is generic over the types error and value
+type Result error value
+    = Ok value
+    | Err error
+```
+
+Record type alias' can also have type parameters, although it is less common.
+
+```elm
+-- Event is generic over the type a
+type alias Event a =
+    { at : Time
+    , data : a 
     }
-
-person : Pair String Int
-person = { first = "Jane", second = 18 }
-
-coordinates : Pair Int Int
-coordinates = { first = -3, second = 15 }
 ```
 
 One important remark about names of type parameters, is that they can be multiple characters long.
@@ -59,29 +63,28 @@ As such, when useful, we tend to give them descriptive names.
 ## Type parameters in functions
 
 Since types can be generic, so can functions.
-Functions handling generic types can be writen, such as the `List.length` function that we mentioned at the beginning.
+Functions handling generic types can be writen, such as the `Maybe.withDefault`.
 
 ```elm
-length : List a -> Int
-length list =
-    case list of
-        [] ->
-            0
-        _ :: restOfTheList ->
-            1 + length restOfTheList
+withDefault : a -> Maybe a -> a
+withDefault default maybe =
+    case maybe of
+      Just value -> value
+      Nothing -> default
 ```
 
-Functions can also take other functions as parameters, which can also be generic
-These are called higher order functions.
+Functions can take other functions as parameters, and these can also be generic
+Functions that take other functions as parameters are called higher order functions.
 
 ```elm
-map : (a -> b) -> List a -> List b
-map function list =
-    case list of
-        [] ->
-            []
-        head :: restOfTheList ->
-            function head :: map function restOfTheList
+map : (a -> b) -> Maybe a -> Maybe b
+map function maybe =
+  case maybe of
+    Just value ->
+      Just (function value)
+
+    Nothing ->
+      Nothing
 ```
 
 Type parameters can appear both in the inputs and in the output of a function, and genericity enabled by type parameters is usually called **parametric polymorphism**.
