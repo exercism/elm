@@ -2,5 +2,10 @@
   {
     "url": "https://elmprogramming.com/type-system.html",
     "description": "Elm type system"
+  },
+  {
+    "url": "https://guide.elm-lang.org/types/custom_types.html",
+    "description": "Custom types in Elm"
   }
+
 ]
