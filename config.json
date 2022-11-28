@@ -154,6 +154,11 @@
       "slug": "set",
       "name": "Set",
       "uuid": "cfa44843-b783-4366-a198-f0e99e632143"
+    },
+    {
+      "slug": "generics",
+      "name": "Generics",
+      "uuid": "a967b004-e754-4664-8103-6a98be4d00e5"
     }
   ],
   "exercises": {
@@ -374,6 +379,20 @@
           "tuples",
           "lists",
           "comparison"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "treasure-chest",
+        "name": "Treasure Chest",
+        "uuid": "dbfbca75-01c6-487e-8bb7-22854453489e",
+        "concepts": [
+          "generics"
+        ],
+        "prerequisites": [
+          "custom-types",
+          "maybe",
+          "pattern-matching"
         ],
         "status": "beta"
       }
@@ -749,8 +768,14 @@
         "slug": "list-ops",
         "name": "List Ops",
         "uuid": "114b5717-0d82-459e-90c4-f00d8b6beb5b",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "lists",
+          "generics"
+        ],
+        "prerequisites": [
+          "lists",
+          "generics"
+        ],
         "difficulty": 4,
         "topics": [
           "lists",
@@ -957,8 +982,14 @@
         "slug": "sublist",
         "name": "Sublist",
         "uuid": "8e1cb827-2fa9-46a4-ac50-7f8b3ba66809",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "lists",
+          "generics"
+        ],
+        "prerequisites": [
+          "lists",
+          "generics"
+        ],
         "difficulty": 7,
         "topics": [
           "lists",
@@ -1015,7 +1046,8 @@
         "name": "Circular Buffer",
         "uuid": "759b1e1d-d4ea-4407-9da9-2da916cb45ef",
         "practices": [
-          "custom-types"
+          "custom-types",
+          "generics"
         ],
         "prerequisites": [
           "booleans",
@@ -1023,7 +1055,8 @@
           "records",
           "pattern-matching",
           "custom-types",
-          "maybe"
+          "maybe",
+          "generics"
         ],
         "difficulty": 6
       },
