@@ -39,7 +39,7 @@ type Result error value
     | Err error
 ```
 
-Record type alias' can also have type parameters, although it is less common.
+Record type aliases can also have type parameters, although it is less common.
 
 ```elm
 -- Event is generic over the type a
