@@ -30,8 +30,7 @@ If the passwords do not match then return `Nothing`.
 
 This (higher order) function should take two parameters
 
-- a multiplier function
-  - this function takes one generic parameter, and returns a list of the same generic type
+- a multiplier function that takes one generic parameter, and returns a list of the same generic type
 - a `TreasureChest` generic custom type, also with the same generic type
 
 This function should call the multiplier function with the treasure in the chest.
