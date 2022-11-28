@@ -28,6 +28,10 @@ someInt : Maybe Int
 someInt = Just 42
 ```
 
+One important remark about names of type parameters, is that they can be multiple characters long.
+The only constraint is that they must be lowercase names.
+As such, when useful, we tend to give them descriptive names.
+
 A type can be generic over multiple other types, and thus have multiple type parameters.
 In that case, every independent type gets a different lowercase name.
 Being independent does not prevent them from becoming the same type, it just enables them to be different.
@@ -48,10 +52,6 @@ type alias Event a =
     , data : a 
     }
 ```
-
-One important remark about names of type parameters, is that they can be multiple characters long.
-The only constraint is that they must be lowercase names.
-As such, when useful, we tend to give them descriptive names.
 
 > This is why the `Html` package defines the `Html msg` type, with one type parameter named `msg`.
 > The Elm architecture guides you towards creation of a custom type `Msg` describing all messages that your web page can trigger.
