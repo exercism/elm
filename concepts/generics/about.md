@@ -73,8 +73,7 @@ withDefault default maybe =
       Nothing -> default
 ```
 
-Functions can take other functions as parameters, and these can also be generic
-Functions that take other functions as parameters are called higher order functions.
+Functions that take other functions as parameters are called higher order functions, and these can also be generic.
 
 ```elm
 map : (a -> b) -> Maybe a -> Maybe b
