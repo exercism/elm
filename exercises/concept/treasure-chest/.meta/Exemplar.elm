@@ -12,3 +12,10 @@ getTreasure passwordAttempt (TreasureChest password treasure) =
 
     else
         Nothing
+
+
+multiplyTreasure : (a -> List a) -> TreasureChest a -> TreasureChest (List a)
+multiplyTreasure multiplier (TreasureChest password treasure) =
+    TreasureChest
+        password
+        (multiplier treasure)

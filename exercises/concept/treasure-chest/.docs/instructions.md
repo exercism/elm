@@ -25,3 +25,16 @@ The function should return a `Maybe`.
 If the passwords match then return `Just` with the generic value from the `TreasureChest` (the treasure!)
 
 If the passwords do not match then return `Nothing`.
+
+## 3. Define the multiplyTreasure function
+
+This (higher order) function should take two parameters
+
+- a multiplier function
+  - this function takes one generic parameter, and returns a list of the same generic type
+- a `TreasureChest` generic custom type, also with the same generic type
+
+This function should call the multiplier function with the treasure in the chest.
+
+The function should return a new TreasureChest, with the same password as the original, and with the multiplied treasure (the return)
+

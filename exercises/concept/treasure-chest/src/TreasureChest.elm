@@ -22,3 +22,15 @@ type TreasureChest
 
 getTreasure passwordAttempt =
     Debug.todo "Please implement getTreasure"
+
+
+
+-- Three. define multiplyTreasure, with a type annotation, with two parameters:
+--  - a multiplier (a function to multiply the treasure)
+--  - a TreasureChest custom type
+-- and returns:
+--  - a new TreasureChest custom type, with the multiplied treasure
+
+
+multiplyTreasure multiplier treasureChest =
+    Debug.todo "Please implement multiplyTreasure"

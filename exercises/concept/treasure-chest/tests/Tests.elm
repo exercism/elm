@@ -30,4 +30,11 @@ tests =
                         |> getTreasure "wrong-password"
                         |> Expect.equal Nothing
             ]
+        , describe "3"
+            [ test "The treasure is returned if the correct password is used" <|
+                \_ ->
+                    TreasureChest "password" "treasure"
+                        |> multiplyTreasure (List.repeat 2)
+                        |> Expect.equal (TreasureChest "password" (List.repeat 2 "treasure"))
+            ]
         ]
