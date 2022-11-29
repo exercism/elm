@@ -20,7 +20,7 @@ docker run \
     --network none \
     --mount type=bind,src=$(realpath $elm_repo_dir),dst=/opt/test-runner/elm_repo \
     --mount type=tmpfs,dst=/tmp \
-    --volume "${realpath $elm_repo_dir}/bin/run_all_exercises.sh:/opt/test-runner/bin/run_all_exercises.sh" \
+    --volume "$(realpath $elm_repo_dir)/bin/run_all_exercises.sh:/opt/test-runner/bin/run_all_exercises.sh" \
     --entrypoint /opt/test-runner/bin/run_all_exercises.sh \
     elm-test-runner \
     /opt/test-runner/elm_repo
