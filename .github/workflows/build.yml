@@ -46,4 +46,4 @@ jobs:
           path: elm_repo
 
       - name: Run tests for all exercises
-        run: ./bin/run-all-exercises-in-docker.sh elm_repo
+        run: elm_repo/bin/run-all-exercises-in-docker.sh elm_repo
