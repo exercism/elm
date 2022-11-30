@@ -19,5 +19,5 @@ docker run \
     --mount type=tmpfs,dst=/tmp \
     --volume "${PWD}/bin/run_all_exercises.sh:/opt/test-runner/bin/run_all_exercises.sh" \
     --entrypoint /opt/test-runner/bin/run_all_exercises.sh \
-    elm-test-runner \
+    exercism/elm-test-runner \
     /opt/test-runner/elm_repo
