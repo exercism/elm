@@ -159,6 +159,11 @@
       "slug": "generics",
       "name": "Generics",
       "uuid": "a967b004-e754-4664-8103-6a98be4d00e5"
+    },
+    {
+      "slug": "phantom-types",
+      "name": "Phantom Types",
+      "uuid": "84500f05-f03c-4de4-ab9e-dc2ba0bd1a65"
     }
   ],
   "exercises": {
