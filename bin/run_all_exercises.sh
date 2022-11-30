@@ -41,12 +41,14 @@ done
 # Run tests
 for exercise_dir in "$exercices"/*/*
 do
+  echo "Running tests for $exercise_dir"
   bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
   results=$(jq --raw-output '.status' "$exercise_dir/results.json")
   if [[ $results != "pass" ]]; then
     echo "$exercise_dir is not passing the tests"
     exit 1
   fi
+  echo "Pass"
 done
 
 echo "All exercises run in the elm-test-runner"
