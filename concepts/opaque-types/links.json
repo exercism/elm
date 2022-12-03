@@ -1,0 +1,28 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/types/custom_types.html",
+    "description": "Custom types in Elm"
+  },
+  {
+    "url": "https://www.bekk.christmas/post/2020/17/greater-type-safety-with-opaque-types!",
+    "description": "Simple introduction"
+  },
+  {
+    "url": "https://elm-radio.com/episode/intro-to-opaque-types/",
+    "description": "Podcast introduction"
+  },
+  {
+    "url": "https://incrementalelm.com/opaque-types-let-you-think-locally/",
+    "description": "Comparison with Typescript Branded Types"
+  },
+  {
+    "url": "https://8thlight.com/insights/types-of-types-in-elm",
+    "description": "Comparison with Java / OO"
+  },
+  {
+    "url": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+    "description": "Parse, don't validate"
+  }
+
+  
+]

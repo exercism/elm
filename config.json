@@ -159,6 +159,11 @@
       "slug": "generics",
       "name": "Generics",
       "uuid": "a967b004-e754-4664-8103-6a98be4d00e5"
+    },
+    {
+      "slug": "opaque-types",
+      "name": "Opaque Types",
+      "uuid": "35b389dd-16fe-405f-a3ce-c08673ee49ae"
     }
   ],
   "exercises": {
