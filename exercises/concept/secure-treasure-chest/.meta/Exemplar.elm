@@ -8,7 +8,8 @@ type SecureTreasureChest a
 createTreasure password treasure =
     if String.length password < 8 then
         Nothing
-    else 
+
+    else
         SecureTreasureChest password treasure
 
 
