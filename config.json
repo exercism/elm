@@ -400,6 +400,19 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "secure-treasure-chest",
+        "name": "Secure Treasure Chest",
+        "uuid": "cc1df093-2daa-4b16-81d0-a2a689f9f35c",
+        "concepts": [
+          "opaque-types"
+        ],
+        "prerequisites": [
+          "generics",
+          "maybe"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [

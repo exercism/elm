@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "ceddlyburge",
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/SecureTreasureChest.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "icon": "tisbury-treasure-hunt",
+  "blurb": "Learn how to create and use Opaque Types in Elm by creating a Treasure Chest"
+}
