@@ -41,7 +41,7 @@ tests =
                     createTreasure "password" "treasure"
                         |> Maybe.andThen (getTreasure "password")
                         |> Expect.equal (Just "treasure")
-            , test "Nothing is returned if the correct password is used" <|
+            , test "Nothing is returned if password does not match" <|
                 \_ ->
                     createTreasure "password" "treasure"
                         |> Maybe.andThen (getTreasure "wrong-password")

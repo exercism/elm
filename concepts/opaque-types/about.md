@@ -30,7 +30,7 @@ module Maybe exposing
   )
 ```
 
-To create an Opaque Type, you simple choose not to export *variants*.
+To create an Opaque Type, you simply choose not to export the *variants*.
 To do this for the `Maybe` type, you would use the following syntax:
 
 ```elm
@@ -41,16 +41,16 @@ module Maybe exposing
 ```
 
 When you do this, you almost always need to supply another way to create and get the *variants*, by exposing custom functions.
-These custom functions allow you to apply some logic when creating and getting the variants.
-This hides the internal implementation details of the module, and means that you change the implementation details as much as you want, as long as the exposed functions remain the same.
+These custom functions allow you to apply some logic when creating and getting the *variants*.
+This hides the internal implementation details of the module, and means that you can change the implementation details as much as you want, as long as the exposed functions remain the same.
 It also allows you to [uphold invariants][uphold-invariants] when creating and using the type. 
 
 ## Parse, don't validate
 
-Probably the most common usage of Opaque Types is to enforce validation, using the [Parse, dont validate][parse-dont-validate] pattern.
-In this pattern, you expose a function that takes an input with less structure / type safety than you want, such as a `String`, and then parse this in to a more structured type, such as `EmailAddress` either returning the type, or returning an error (usually `Maybe` or `Result`).
+Probably the most common use of Opaque Types is to enforce validation, using the [Parse, dont validate][parse-dont-validate] pattern.
+In this pattern, you expose a function that takes an input with less structure / type safety than you want, such as a `String`, and then parse this in to a more structured type, such as `EmailAddress`, either returning the type, or returning an error (usually `Maybe` or `Result`).
 
-For example, in the code below, it is only possible for external modules to create a `EmailAddress` type using the `parseEmailAddress`, so when you are working with the `EmailAddress` type, you are certain that it is valid.
+For example, in the code below, it is only possible for external modules to create a `EmailAddress` type using the `parseEmailAddress` function, so when you are working with the `EmailAddress` type, you are certain that it is valid.
 
 ```elm
 module EmailAddress exposing ( EmailAddress, parseEmailAddress, getEmailAddress )
@@ -60,15 +60,15 @@ module EmailAddress exposing ( EmailAddress, parseEmailAddress, getEmailAddress 
 type EmailAddress = 
   EmailAddress String
 
--- create the EmailAddress variant
+-- create an EmailAddress variant
 parseEmailAddress: String -> Maybe EmailAddress
 parseEmailAddress candidateEmailAddress =   
   if isValidEmailAddress then
-    EmailAddress candidateEmailAddress
+    Just (EmailAddress candidateEmailAddress)
   else
     Nothing
 
--- get the EmailAddress variant
+-- get an EmailAddress variant
 getEmailAddress: EmailAddress -> String
 getEmailAddress { emailAdress } =
   emailAdress

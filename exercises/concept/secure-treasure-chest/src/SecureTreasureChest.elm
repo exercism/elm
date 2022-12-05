@@ -1,7 +1,7 @@
 module SecureTreasureChest exposing (..)
 
 -- One. define a single variant generic SecureTreasureChest custom type with associated data:
---  - a String (for a password)
+--  - a String (for the password)
 --  - a generic (for the treasure)
 -- expose the type, but not the variant, which will make an Opaque Type
 

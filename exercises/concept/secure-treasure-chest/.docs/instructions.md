@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise you're going to write a generic (/ magical!) TreasureChest, to store some treasure.
+In this exercise you're going to write a generic (/ magical!) SecureTreasureChest, to store some treasure.
 Sharp eyed students will have noticed that the previous `TreasureChest` wasn't that secure!
 If you used the `getTreasure` function, then you had to supply the password, but you could still simply destructure the `TreasureChest` type to get the treasure, without having to know the password.
 Even worse, you could even retrieve the password in the same way!
