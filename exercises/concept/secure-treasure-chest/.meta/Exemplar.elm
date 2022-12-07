@@ -1,17 +1,26 @@
-module SecureTreasureChest exposing (SecureTreasureChest, createTreasure, getTreasure)
+module SecureTreasureChest exposing (Password, SecureTreasureChest, createPassword, createTreasure, getTreasure)
 
 
 type SecureTreasureChest a
     = SecureTreasureChest String a
 
 
-createTreasure : String -> a -> Maybe (SecureTreasureChest a)
-createTreasure password treasure =
-    if String.length password < 8 then
+type Password
+    = Password String
+
+
+createPassword : String -> Maybe Password
+createPassword passwordCandidate =
+    if String.length passwordCandidate < 8 then
         Nothing
 
     else
-        Just (SecureTreasureChest password treasure)
+        Just (Password passwordCandidate)
+
+
+createTreasure : a -> Password -> SecureTreasureChest a
+createTreasure treasure (Password password) =
+    SecureTreasureChest password treasure
 
 
 getTreasure : String -> SecureTreasureChest a -> Maybe a

@@ -5,7 +5,15 @@ type SecureTreasureChest treasure
     = SecureTreasureChest String treasure
 
 
-createTreasure password treasure =
+type Password
+    = TODO
+
+
+createPassword passwordCandidate =
+    Debug.todo "Please implement createPassword"
+
+
+createTreasure treasure password =
     Debug.todo "Please implement createTreasure"
 
 
