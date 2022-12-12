@@ -21,7 +21,7 @@ type Distance unit = Distance Float
 In the definition of `Distance` above, `unit` is a free type parameter, not bound to any data in the type.
 We can also call this type a **phantom type**.
 
-It is surprisingly useful when we want to enforce constraints at compile type.
+It is surprisingly useful when we want to enforce constraints at compile time.
 For example, we want to make sure that we only add distances of the same unit.
 
 ```elm
@@ -89,7 +89,7 @@ crazyStud : Distance { properties | unit: LegoBlock }
 crazyStud = Distance -13.37
 ```
 
-Note that all of these values are valid and will compile, we simply have an particular interest in `fourStuds`, because it is the only one that can be combined.
+Note that all of these values are valid and will compile, we simply have a particular interest in `fourStuds`, because it is the only one that can be combined.
 
 ```elm
 combineLegoBlocks
@@ -108,11 +108,11 @@ newLegoBlock dist = Distance dist
 roundDistance : Distance properties -> Distance { properties | nonFractional : () }
 roundDistance (Distance dist) = Distance (toFloat (round dist))
 
-absDistance : Distance properties -> Distance { properties | nonFractional : () }
+absDistance : Distance properties -> Distance { properties | nonNegative : () }
 absDistance (Distance dist) = Distance (abs dist)
 ```
 
-Note that `roundDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, respectively `nonFractional` and `nonFractional`.
+Note that `roundDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, respectively `nonFractional` and `nonNegative`.
 
 Let's look at some outcomes.
 

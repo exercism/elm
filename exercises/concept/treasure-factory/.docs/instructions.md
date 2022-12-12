@@ -26,7 +26,7 @@ Note that because `Chest` is using a phantom type, and should therefore be opaqu
 In this case, it is not even exposed at all.
 
 `secureChest` should take a `Chest` without specific conditions and return one wrapped in a `Maybe` that has the extra condition `securePassword : ()`.
-`makeTreasureChest` should take a `List` of `Chest` without specific conditions and return a `List` of `Chest` with the extra condition `uniqueTreasure : ()` added.
+`makeTreasureChest` should take a `List` of `Chest` without specific conditions and return a `List` of `Chest`, with the duplicates removed, and the extra condition `uniqueTreasure : ()` added.
 
 ~~~~exercism/note
 Elm tests have access to exposed functions, but not to type signatures, it is therefore impossible for tests to verify that you are using the right signatures.
@@ -38,7 +38,7 @@ Of course, the strongest indication that you have the right signatures is to suc
 Once you have chests ready, you need to pick out the secure ones.
 
 Implement `secureChest` that only return a `Just` variant for chests with a password of 12 or more characters.
-The `Chest` that fulfill that conditions should have an extra ``securePassword : ()` condition added to their phantom type.
+The `Chest` that fulfill that conditions should have an extra `securePassword : ()` condition added to their phantom type.
 
 ## 3. Select unique treasures
 
