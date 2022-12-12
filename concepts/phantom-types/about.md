@@ -71,7 +71,7 @@ Elm records are [extensible][extensible-records], which means they may contain m
 When used as phantom types, records are able to express complex constraints that can transform through functions.
 
 Let's add a new distance unit inside of the `Distance` module called `LegoBlock`.
-A `LegoBlock` distance is only useful to us if it has two properties: it is not fractional and it is not negative.
+Any `LegoBlock` distance is possible, but we are particularly interested in values that have two properties: being non-fractional and non-negative, as they refer to blocks that exist and are not broken, so we quantify these properties.
 
 ```elm
 type LegoBlock = LegoBlock
@@ -89,7 +89,9 @@ crazyStud : Distance { properties | unit: LegoBlock }
 crazyStud = Distance -13.37
 ```
 
-Note that all of these values are valid and will compile, we simply have a particular interest in `fourStuds`, because it is the only one that can be combined with the following function:
+`nonFractional` and `nonNegative` are the fields of a record that doesn't exist outside of types, so it's fitting to give them the type `()`, called the __unit type__, which holds no information beyond the fact that it is there.
+
+Note that all of these values are valid and will compile, we simply have a stronger interest in `fourStuds`, because it is the only one that can be combined with the following function:
 
 ```elm
 combineLegoBlocks
