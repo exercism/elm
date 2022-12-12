@@ -47,7 +47,17 @@ tests =
                         |> Expect.true "Chests with more than 8 characters should be secure"
             ]
         , describe "3"
-            [ test "chests with non-unique treasures are removed" <|
+            [ test "chests with identical treasures are never unique" <|
+                \() ->
+                    [ ( "short", 1 )
+                    , ( "small", 1 )
+                    , ( "super", 1 )
+                    , ( "?", 1 )
+                    ]
+                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
+                        |> TreasureFactory.uniqueTreasures
+                        |> Expect.equal []
+            , test "chests with non-unique treasures are removed" <|
                 \() ->
                     [ ( "short", 1 )
                     , ( "small", 2 )
@@ -58,39 +68,7 @@ tests =
                         |> TreasureFactory.uniqueTreasures
                         |> List.length
                         |> Expect.equal 1
-            , test "chests with identical treasures are never unique" <|
-                \() ->
-                    [ ( "short", 1 )
-                    , ( "small", 1 )
-                    , ( "super", 1 )
-                    , ( "?", 1 )
-                    ]
-                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
-                        |> TreasureFactory.uniqueTreasures
-                        |> Expect.equal []
-            , test "chests with different treasures and insecure passwords are kept" <|
-                \() ->
-                    [ ( "short", 1 )
-                    , ( "small", 2 )
-                    , ( "super", 3 )
-                    , ( "?", 4 )
-                    ]
-                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
-                        |> TreasureFactory.uniqueTreasures
-                        |> List.length
-                        |> Expect.equal 4
-            , test "chests with different treasures and secure passwords are kept" <|
-                \() ->
-                    [ ( "not short at all", 1 )
-                    , ( "nothing small about this", 2 )
-                    , ( "Supercalifragilisticexpialidocious", 3 )
-                    , ( "are we there yet?", 4 )
-                    ]
-                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
-                        |> TreasureFactory.uniqueTreasures
-                        |> List.length
-                        |> Expect.equal 4
-            , test "chests with different treasures but same passwords are kept" <|
+            , test "chests with different treasures are kept" <|
                 \() ->
                     [ ( "password", 1 )
                     , ( "password", 2 )
@@ -103,21 +81,7 @@ tests =
                         |> Expect.equal 4
             ]
         , describe "4"
-            [ test "number of treasure chests with different treasures matches number of secure passwords" <|
-                \() ->
-                    [ ( "short", 1 )
-                    , ( "small", 2 )
-                    , ( "little", 3 )
-                    , ( "quite adequate", 4 )
-                    , ( "Supercalifragilisticexpialidocious", 5 )
-                    ]
-                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
-                        |> List.filterMap TreasureFactory.secureChest
-                        |> TreasureFactory.uniqueTreasures
-                        |> List.map TreasureFactory.makeTreasureChest
-                        |> List.length
-                        |> Expect.equal 2
-            , test "treasures have the correct secure passwords" <|
+            [ test "treasures have the correct secure passwords" <|
                 \() ->
                     [ ( "short", 1 )
                     , ( "small", 2 )
@@ -132,21 +96,6 @@ tests =
                         |> List.map2 TreasureFactory.getTreasure
                             [ "quite adequate", "Supercalifragilisticexpialidocious" ]
                         |> Expect.equalLists [ Just 4, Just 5 ]
-            , test "number of treasure  with secure passwords chests matches number of unique treasures" <|
-                \() ->
-                    [ ( "not short at all", 1 )
-                    , ( "nothing small about this", 2 )
-                    , ( "only little in your head", 2 )
-                    , ( "quite adequate", 1 )
-                    , ( "Supercalifragilisticexpialidocious", 3 )
-                    , ( "are we there yet?", 4 )
-                    ]
-                        |> List.map (\( password, treasure ) -> TreasureFactory.makeChest password treasure)
-                        |> List.filterMap TreasureFactory.secureChest
-                        |> TreasureFactory.uniqueTreasures
-                        |> List.map TreasureFactory.makeTreasureChest
-                        |> List.length
-                        |> Expect.equal 2
             , test "treasures have the correct unique treasures" <|
                 \() ->
                     [ ( "not short at all", 1 )
