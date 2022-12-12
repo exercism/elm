@@ -89,7 +89,7 @@ crazyStud : Distance { properties | unit: LegoBlock }
 crazyStud = Distance -13.37
 ```
 
-Note that all of these values are valid and will compile, we simply have a particular interest in `fourStuds`, because it is the only one that can be combined.
+Note that all of these values are valid and will compile, we simply have a particular interest in `fourStuds`, because it is the only one that can be combined with the following function:
 
 ```elm
 combineLegoBlocks
@@ -105,14 +105,14 @@ Let's add some functions to let users create and refine `LegoBlock` distances.
 newLegoBlock : Float -> Distance { properties | unit: LegoBlock }
 newLegoBlock dist = Distance dist
 
-roundDistance : Distance properties -> Distance { properties | nonFractional : () }
-roundDistance (Distance dist) = Distance (toFloat (round dist))
+floorDistance : Distance properties -> Distance { properties | nonFractional : () }
+floorDistance (Distance dist) = Distance (toFloat (floor dist))
 
 absDistance : Distance properties -> Distance { properties | nonNegative : () }
 absDistance (Distance dist) = Distance (abs dist)
 ```
 
-Note that `roundDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, respectively `nonFractional` and `nonNegative`.
+Note that `floorDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, respectively `nonFractional` and `nonNegative`.
 
 Let's look at some outcomes.
 
@@ -126,7 +126,7 @@ distance1 = combineLegoBlocks fourStuds fourStuds
 distance2 = combineLegoBlocks fourStuds threeFiddyStud
 
 -- Compiles
-distance3 = combineLegoBlocks fourStuds (roundDistance threeFiddyStud)
+distance3 = combineLegoBlocks fourStuds (floorDistance threeFiddyStud)
 
 -- Does not compile
 distance4 = combineLegoBlocks fourStuds negativeStud
@@ -138,7 +138,14 @@ distance5 = combineLegoBlocks fourStuds (absDistance negativeStud)
 distance6 = combineLegoBlocks fourStuds crazyStud
 
 -- Compiles
-distance7 = combineLegoBlocks fourStuds (roundDistance (absDistance crazyStud))
+distance7 = combineLegoBlocks fourStuds (floorDistance (absDistance crazyStud))
+
+-- Compiles
+distance8 = combineLegoBlocks fourStuds (absDistance (floorDistance crazyStud))
 ```
+
+Note that `distance7` and `distance8` are different value, because the order of application of `floorDistance` and `absDistance` matters.
+The API doesn't make a decision on which application order is better, only that `combineLegoBlocks` receives proper values.
+This is the strength of this phantom type technique: providing flexible choices while maintaining guarantees.
 
 [extensible-records]: https://ckoster22.medium.com/advanced-types-in-elm-extensible-records-67e9d804030d
