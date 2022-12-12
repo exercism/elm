@@ -25,7 +25,7 @@ makeChest password treasure =
 
 secureChest : Chest treasure conditions -> Maybe (Chest treasure { conditions | securePassword : () })
 secureChest (Chest password treasure) =
-    if String.length password >= 12 then
+    if String.length password >= 8 then
         Just (Chest password treasure)
 
     else

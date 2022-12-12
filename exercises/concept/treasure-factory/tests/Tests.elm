@@ -31,24 +31,20 @@ tests =
                         |> Expect.true "Chests created with different treasures should not be the same"
             ]
         , describe "2"
-            [ test "chest with short passwords are insecure" <|
+            [ test "chest with passwords of less than 8 characters are insecure" <|
                 \() ->
                     TreasureFactory.secureChest (TreasureFactory.makeChest "12345" 1)
                         |> Expect.equal Nothing
-            , test "chest with passwords of 11 characters are insecure" <|
+            , test "chest with passwords of 8 characters are secure" <|
                 \() ->
-                    TreasureFactory.secureChest (TreasureFactory.makeChest "12345678901" 1)
-                        |> Expect.equal Nothing
-            , test "chest with passwords of 12 characters are secure" <|
-                \() ->
-                    TreasureFactory.secureChest (TreasureFactory.makeChest "123456789012" 1)
+                    TreasureFactory.secureChest (TreasureFactory.makeChest "12345678" 1)
                         /= Nothing
-                        |> Expect.true "Chests with 12 characters should be secure"
-            , test "chest with passwords of more than 12 characters are secure" <|
+                        |> Expect.true "Chests with 8 characters should be secure"
+            , test "chest with passwords of more than 8 characters are secure" <|
                 \() ->
                     TreasureFactory.secureChest (TreasureFactory.makeChest "123456789012345789" 1)
                         /= Nothing
-                        |> Expect.true "Chests with 12 characters should be secure"
+                        |> Expect.true "Chests with more than 8 characters should be secure"
             ]
         , describe "3"
             [ test "chests with non-unique treasures are removed" <|

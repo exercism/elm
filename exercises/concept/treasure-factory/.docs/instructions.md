@@ -4,7 +4,7 @@ You, the Master of Evil, take great pride in the quality of the `TreasureChest`s
 It's not easy to keep up the quality, your dungeon managers keep messing up treasure making, so you decide to provide an Elm API to bend them to your Will.
 
 There are two conditions on which you will not budge:
-1. a `TreasureChest` should be protected by a secure password of at least 12 characters
+1. a `TreasureChest` should be protected by a secure password of at least 8 characters
 2. in a specific dungeon, each `TreasureChest` should hold a unique treasure
 
 Your dungeon managers will come up with a list of password/treasure suggestions, and only suitable `TreasureChest`s will be created.
@@ -37,7 +37,7 @@ Of course, the strongest indication that you have the right signatures is to suc
 
 Once you have chests ready, you need to pick out the secure ones.
 
-Implement `secureChest` that only return a `Just` variant for chests with a password of 12 or more characters.
+Implement `secureChest` that only return a `Just` variant for chests with a password of 8 or more characters.
 The `Chest` that fulfill that conditions should have an extra `securePassword : ()` condition added to their phantom type.
 
 ## 3. Select unique treasures
