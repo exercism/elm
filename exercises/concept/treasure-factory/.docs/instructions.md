@@ -37,7 +37,7 @@ Of course, the strongest indication that you have the right signatures is to suc
 
 Once you have chests ready, you need to pick out the secure ones.
 
-Implement `secureChest` that only return a `Just` variant for chests with a password of 8 or more characters.
+Implement `secureChest` that only returns a `Just` variant for chests with a password of 8 or more characters.
 The `Chest` that fulfill that conditions should have an extra `securePassword : ()` condition added to their phantom type.
 
 ## 3. Select unique treasures
