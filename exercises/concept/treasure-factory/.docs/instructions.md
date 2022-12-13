@@ -9,10 +9,14 @@ There are two conditions on which you will not budge:
 
 Your dungeon managers will come up with a list of password/treasure suggestions, and only suitable `TreasureChest`s will be created.
 
-Should the treasures be unique from the initial list, or from a filtered list of chests with secure passwords?
-You don't mind that too much as long as your two conditions are met, you will expose the verification functions and it will be decided by the dungeon managers.
+With these criterion, there are two possible ways of creating secure chests from a list of suggestions: 
+1. remove the ones with insecure passwords, then remove the ones with duplicate treasures
+2. remove the ones with duplicate treasures, then remove the ones with insecure passwords
 
-This makes the phantom type technique a great choice for the API.
+Those two might not give the same results (for example for `[("strong_password", GoldStatue), ("1234", GoldStatue)]`), but you don't mind either way, so you want to let the dungeon managers decide.
+
+An API that leaves the users some choice, but still guarantees properties of the final result?
+Sounds like a perfect fit for the phantom type technique!
 
 ## 1. Provide a placeholder for treasure chests
 
