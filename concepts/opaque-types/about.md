@@ -15,8 +15,8 @@ The compiler also allows destructuring for these variants.
 
 ```elm
 type Maybe a
-    = Nothing --> Variant implies a `Nothing` function, with type: Maybe, and destructuring of 'Nothing'
-    | Just a  --> Variant implies a `Just` function, with type: a -> Maybe, and destructuring of 'Just'
+    = Nothing --> Variant implies a 'Nothing' function, with type 'Maybe a', and destructuring of 'Nothing'
+    | Just a  --> Variant implies a 'Just' function, with type 'a -> Maybe a', and destructuring of 'Just _'
 ```
 
 By default, all of this is internal to the file / module, and we use the `exposing` keyword to choose what to export.
