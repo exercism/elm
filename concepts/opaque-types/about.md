@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Opaque Types are an encapsulation technique in Elm. Some people also call this information hiding, or hiding implementation details.
+Opaque Types are an encapsulation technique in Elm.
+Some people also call this information hiding, or hiding implementation details.
 They are also commonly used to enforce validation, using the [Parse, dont validate][parse-dont-validate] pattern.
 For example, you could have a `EmailAddress` opaque type, that can only contain valid email addresses (as opposed to a `String`, which can contain anything).
 
