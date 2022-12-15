@@ -21,4 +21,5 @@ The goal of this exercise is to teach students how any why to make and use opaqu
 
 ## Analyzer
 
+- The Password variant must not be exposed
 - The SecureTreasureChest variant must not be exposed

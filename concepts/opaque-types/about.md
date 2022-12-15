@@ -22,7 +22,7 @@ type Maybe a
 By default, all of this is internal to the file / module, and we use the `exposing` keyword to choose what to export.
 The `Maybe` module exposes the `Maybe` type (so that other modules can use existing `Maybe` values), and also exposes the `Nothing` and `Just` variants (so that other modules can create and destructure `Maybe` values).
 It uses the following syntax to do this.
-The `Maybe(..)` part tells Elm to expose all the *variants*, as well as the custom type definition. You can also name the *variants* to expose (`Maybe(Just, Nothing)`), but this is less common.
+The `Maybe(..)` part tells Elm to expose all the *variants*, as well as the custom type definition.
 
 ```elm
 module Maybe exposing
@@ -64,17 +64,17 @@ type EmailAddress =
 -- create an EmailAddress variant
 parseEmailAddress: String -> Maybe EmailAddress
 parseEmailAddress candidateEmailAddress =   
-  if isValidEmailAddress then
+  if isValidEmailAddress candidateEmailAddress then
     Just (EmailAddress candidateEmailAddress)
   else
     Nothing
 
 -- get an EmailAddress variant
 getEmailAddress: EmailAddress -> String
-getEmailAddress { emailAdress } =
+getEmailAddress ( EmailAddress  emailAdress ) =
   emailAdress
 
--- isValidEmailAddress: String -> bool
+isValidEmailAddress: String -> bool
 -- ... 
 ```
 

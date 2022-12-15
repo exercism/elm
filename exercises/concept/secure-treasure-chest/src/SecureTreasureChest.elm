@@ -1,12 +1,12 @@
 module SecureTreasureChest exposing (..)
 
 
-type SecureTreasureChest treasure
-    = SecureTreasureChest String treasure
-
-
 type Password
     = TODO
+
+
+type SecureTreasureChest treasure
+    = SecureTreasureChest String treasure
 
 
 createPassword passwordCandidate =
