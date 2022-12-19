@@ -56,5 +56,5 @@ If the passwords do not match then return `Nothing`.
 Expose this function, so that other modules are able to get the treasure from a `SecureTreasureChest`, as long as they supply the correct password.
 
 
-[owasp-password-length][https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls]
-[elm-review][https://package.elm-lang.org/packages/jfmengels/elm-review/latest/]
+[owasp-password-length]: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls
+[elm-review]: https://package.elm-lang.org/packages/jfmengels/elm-review/latest/
