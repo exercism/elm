@@ -58,3 +58,4 @@ Expose this function, so that other modules are able to get the treasure from a 
 
 [owasp-password-length]: https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls
 [elm-review]: https://package.elm-lang.org/packages/jfmengels/elm-review/latest/
+[parse-dont-validate]: https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/
