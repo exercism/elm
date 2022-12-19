@@ -24,6 +24,6 @@
 - This is most easily done with an `if` expression
 - The Elm guide has a section on [Maybe][maybe] if you need a refresher.
 
-[custom-types][https://guide.elm-lang.org/types/custom_types.html]
-[single-member-custom-destructuring][https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e?permalink_comment_id=1701264#gistcomment-1701264]
-[maybe][https://guide.elm-lang.org/error_handling/maybe.html]
+[custom-types]: https://guide.elm-lang.org/types/custom_types.html
+[single-member-custom-destructuring]: https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e?permalink_comment_id=1701264#gistcomment-1701264
+[maybe]: https://guide.elm-lang.org/error_handling/maybe.html
