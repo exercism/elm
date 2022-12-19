@@ -8,13 +8,13 @@ At one point they are ambushed by a monster which they attack.
 
 Define `attackWithSword1`.
 This should take a `MonsterDamage` (a `String` that describes the damage to the monster) and an `Int` that indicates how strong the attack is.
-It should return the existing string, with "Attacked with sword of strength <strength>." appended to the end.
+It should return the existing string, with "Attacked with sword of strength {strength}." appended to the end.
 
 ## 2. Define attackWithClaw1
 
 Define `attackWithClaw1`.
 This should take a `MonsterDamage` and an `Int` that indicates how strong the attack is.
-It should return the existing string, with "Attacked with claw of strength <strength>." appended to the end.
+It should return the existing string, with "Attacked with claw of strength {strength}." appended to the end.
 
 ## 3. Define attack1
 
