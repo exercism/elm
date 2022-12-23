@@ -91,7 +91,7 @@ The advantage of this style is that the code is more concise, the disadvantage i
 
 It is worth remembering that all functions are curried in Elm, so `String.length >> max` compiles.
 
-- The pipe operator has the type `(a -> b) -> (b -> c) -> (a -> c)`.
+- The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)`.
 - `String.length` has a type of `String -> Int`, which is the `(a -> b)` part, so `a` is `String` and `b` is - `Int`.
 - `max` has a type of `Int -> Int -> Int`, which is the `b -> c` part.
 - `b` is `Int`, so `max` is partially applied, so `c` is the result of this partial application (`Int -> Int`).
