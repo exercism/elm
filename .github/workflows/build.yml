@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout PR
-        uses: actions/checkout@e2f20e631ae6d7dd3b768f56a5d2af784dd54791
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -36,7 +36,7 @@ jobs:
 
     steps:
       - name: Checkout exercism/elm
-        uses: actions/checkout@e2f20e631ae6d7dd3b768f56a5d2af784dd54791
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c
 
       - name: Run tests for all exercises
         run: bin/run-all-exercises-in-docker.sh
