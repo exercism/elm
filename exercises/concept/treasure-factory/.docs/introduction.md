@@ -1,4 +1,6 @@
-# About
+# Introduction
+
+## Phantom Types
 
 Elm types allow generic types, that generally add flexibility to an interface.
 For example, the type `Maybe a` can hold a value of any type.
@@ -10,7 +12,7 @@ type Maybe a = Nothing | Just a
 Note that on the example above, the type parameter `a` is used on both sides of the equal sign `=`.
 We say that `a` is bound to some data inside the type definition.
 
-## The phantom type technique
+### The phantom type technique
 
 In certain cases however, the type parameter only appears on the left side of the equation.
 
@@ -64,10 +66,9 @@ twoMeters = Distance.add Distance.meter Distance.meter
 errDist = Distance.add Distance.meter Distance.foot
 ```
 
-## Extensible records as phantom types
+### Extensible records as phantom types
 
 There is no restriction on which types can be phantom, and record types can be used as well.
-Elm records are [extensible][extensible-records], which means they may contain more fields than they declare.
 When used as phantom types, records are able to express complex constraints that can transform through functions.
 
 Let's add a new distance unit inside of the `Distance` module called `LegoBlock`.
@@ -155,5 +156,3 @@ distance8 = combineLegoBlocks fourStuds (ceilingDistance (absDistance crazyStud)
 
 In general, `floorDistance` and `ceilingDistance` provide different results, but the same guarantees.
 This is the strength of the phantom type technique: providing flexible choices to users while maintaining strong guarantees.
-
-[extensible-records]: https://ckoster22.medium.com/advanced-types-in-elm-extensible-records-67e9d804030d
