@@ -71,14 +71,20 @@ Elm records are [extensible][extensible-records], which means they may contain m
 When used as phantom types, records are able to express complex constraints that can transform through functions.
 
 Let's add a new distance unit inside of the `Distance` module called `LegoBlock`.
-Any `LegoBlock` distance is possible, but we are particularly interested in values that have two properties: being non-fractional and non-negative, as they refer to blocks that exist and are not broken, so we quantify these properties.
+Physical blocks, being regulated objects, always have two properties: they have non-fractional and non-negative distances.
 
 ```elm
 type LegoBlock = LegoBlock
 
 fourStuds : Distance { properties | unit: LegoBlock, nonFractional : (), nonNegative: () }
 fourStuds = Distance 4.0
+```
 
+`nonFractional` and `nonNegative` are the fields of a record that doesn't exist outside of a type argument, so it's fitting to give them the type `()`, called the __unit type__, which holds no information beyond the fact that it is there.
+
+Obtaining arbitrary `LegoBlock` distances is of course possible, for example after computing distance differences or ratios.
+
+```elm
 negativeStud : Distance { properties | unit: LegoBlock, nonFractional : () }
 negativeStud = Distance -1.0
 
@@ -89,9 +95,7 @@ crazyStud : Distance { properties | unit: LegoBlock }
 crazyStud = Distance -13.37
 ```
 
-`nonFractional` and `nonNegative` are the fields of a record that don't exist outside of types, so it's fitting to give them the type `()`, called the __unit type__, which holds no information beyond the fact that it is there.
-
-Note that all of these values are valid and will compile, we simply have a stronger interest in `fourStuds`, because it is the only one that can be combined with the following function:
+All the above values are valid and will compile, however we have a special interest in values like `fourStuds` that have both the `nonFractional` and `nonNegative` properties because they represent physical blocks that can be combined with
 
 ```elm
 combineLegoBlocks
@@ -110,11 +114,14 @@ newLegoBlock dist = Distance dist
 floorDistance : Distance properties -> Distance { properties | nonFractional : () }
 floorDistance (Distance dist) = Distance (toFloat (floor dist))
 
+ceilingDistance : Distance properties -> Distance { properties | nonFractional : () }
+ceilingDistance (Distance dist) = Distance (toFloat (ceiling dist))
+
 absDistance : Distance properties -> Distance { properties | nonNegative : () }
 absDistance (Distance dist) = Distance (abs dist)
 ```
 
-Note that `floorDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, respectively `nonFractional` and `nonNegative`.
+Note that `floorDistance`, `ceilingDistance` and `absDistance` can handle unit other than `LegoBlock`, and in general do not make any assumptions on the input properties, they merely guarantee that the output will have a specific property, `nonFractional` or `nonNegative`.
 
 Let's look at some outcomes.
 
@@ -143,11 +150,10 @@ distance6 = combineLegoBlocks fourStuds crazyStud
 distance7 = combineLegoBlocks fourStuds (floorDistance (absDistance crazyStud))
 
 -- Compiles
-distance8 = combineLegoBlocks fourStuds (absDistance (floorDistance crazyStud))
+distance8 = combineLegoBlocks fourStuds (ceilingDistance (absDistance crazyStud))
 ```
 
-Note that `distance7` and `distance8` are different value, because the order of application of `floorDistance` and `absDistance` matters.
-The API doesn't make a decision on which application order is better, only that `combineLegoBlocks` receives proper values.
-This is the strength of this phantom type technique: providing flexible choices while maintaining guarantees.
+In general, `floorDistance` and `ceilingDistance` provide different results, but the same guarantees.
+This is the strength of the phantom type technique: providing flexible choices to users while maintaining strong guarantees.
 
 [extensible-records]: https://ckoster22.medium.com/advanced-types-in-elm-extensible-records-67e9d804030d
