@@ -164,6 +164,11 @@
       "slug": "opaque-types",
       "name": "Opaque Types",
       "uuid": "35b389dd-16fe-405f-a3ce-c08673ee49ae"
+    },
+    {
+      "slug": "phantom-types",
+      "name": "Phantom Types",
+      "uuid": "84500f05-f03c-4de4-ab9e-dc2ba0bd1a65"
     }
   ],
   "exercises": {
@@ -411,6 +416,22 @@
         "prerequisites": [
           "generics",
           "maybe"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "treasure-factory",
+        "name": "Treasure Factory",
+        "uuid": "62f4044e-731c-4b06-b450-7bf447e81ff2",
+        "concepts": [
+          "phantom-types"
+        ],
+        "prerequisites": [
+          "lists",
+          "maybe",
+          "custom-types",
+          "generics",
+          "opaque-types"
         ],
         "status": "beta"
       }

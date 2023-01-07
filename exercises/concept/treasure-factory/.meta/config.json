@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/TreasureFactory.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "icon": "tisbury-treasure-hunt",
+  "blurb": "Learn the phantom types technique by creating treasure chests for your evil dungeons"
+}

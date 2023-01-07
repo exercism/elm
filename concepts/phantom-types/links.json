@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://ckoster22.medium.com/advanced-types-in-elm-phantom-types-808044c5946d",
+    "description": "Advanced Types in Elm - Phantom Types"
+  },
+  {
+    "url": "https://thoughtbot.com/blog/modeling-currency-in-elm-using-phantom-types",
+    "description": "Modeling Currency in Elm using Phantom Types"
+  },
+  {
+    "url": "https://elm-radio.com/episode/phantom-builder/",
+    "description": "Elm Radio - Phantom Builder Pattern"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=Trp3tmpMb-o",
+    "description": "The phantom builder pattern - Jeroen Engels"
+  }
+]
