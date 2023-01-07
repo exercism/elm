@@ -1192,6 +1192,17 @@
           "pattern-matching"
         ],
         "difficulty": 3
+      },
+      {
+        "slug": "dnd-character",
+        "name": "D&D Character",
+        "uuid": "c22b805f-36db-407c-92d1-39ba0e4fa041",
+        "practices": [],
+        "prerequisites": [
+          "lists",
+          "records"
+        ],
+        "difficulty": 5
       }
     ]
   }
