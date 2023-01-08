@@ -1,8 +1,10 @@
 module Tests exposing (tests)
 
+import Dict
 import DndCharacter exposing (Character)
 import Expect
 import Random exposing (Generator, Seed)
+import Set
 import Test exposing (Test, describe, skip, test)
 
 
@@ -110,25 +112,56 @@ tests =
                         |> List.all (\score -> 3 <= score && score <= 18)
                         |> Expect.equal True
         , skip <|
+            test "ability distribution is not uniform" <|
+                \() ->
+                    let
+                        count k rolls =
+                            List.length (List.filter ((==) k) rolls)
+                    in
+                    generateValuesFromSeed 1000 DndCharacter.ability (Random.initialSeed 42)
+                        |> Expect.all
+                            [ \rolls -> Expect.greaterThan (count 3 rolls) (count 4 rolls)
+                            , \rolls -> Expect.greaterThan (count 4 rolls) (count 5 rolls)
+                            , \rolls -> Expect.greaterThan (count 5 rolls) (count 6 rolls)
+                            , \rolls -> Expect.greaterThan (20 * count 4 rolls) (count 12 rolls)
+                            , \rolls -> Expect.lessThan (count 15 rolls) (count 16 rolls)
+                            , \rolls -> Expect.lessThan (count 16 rolls) (count 17 rolls)
+                            , \rolls -> Expect.lessThan (count 17 rolls) (count 18 rolls)
+                            ]
+        , skip <|
             test "random character is valid" <|
                 \() ->
                     let
                         validCharacter { strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints } =
-                            (strength >= 3)
-                                && (strength <= 18)
-                                && (dexterity >= 3)
-                                && (dexterity <= 18)
-                                && (constitution >= 3)
-                                && (constitution <= 18)
-                                && (intelligence >= 3)
-                                && (intelligence <= 18)
-                                && (wisdom >= 3)
-                                && (wisdom <= 18)
-                                && (charisma >= 3)
-                                && (charisma <= 18)
+                            ((3 <= strength) && (strength <= 18))
+                                && ((3 <= dexterity) && (dexterity <= 18))
+                                && ((3 <= constitution) && (constitution <= 18))
+                                && ((3 <= intelligence) && (intelligence <= 18))
+                                && ((3 <= wisdom) && (wisdom <= 18))
+                                && ((3 <= charisma) && (charisma <= 18))
                                 && (hitpoints == 10 + DndCharacter.modifier constitution)
                     in
                     generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
                         |> List.all validCharacter
+                        |> Expect.equal True
+        , skip <|
+            test "random characters are not all the same" <|
+                \() ->
+                    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+                        |> List.map .strength
+                        |> Set.fromList
+                        |> Set.size
+                        |> Expect.atLeast 10
+        , skip <|
+            test "random character has independent abilities" <|
+                \() ->
+                    let
+                        hasFourDifferentAbilities { strength, dexterity, constitution, intelligence, wisdom, charisma } =
+                            Set.fromList [ strength, dexterity, constitution, intelligence, wisdom, charisma ]
+                                |> Set.size
+                                |> (==) 4
+                    in
+                    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+                        |> List.any hasFourDifferentAbilities
                         |> Expect.equal True
         ]
