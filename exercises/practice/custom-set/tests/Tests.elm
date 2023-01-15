@@ -36,66 +36,78 @@ tests =
                 test "empty set is empty" <|
                     \() ->
                         CustomSet.isEmpty CustomSet.empty
-                            |> Expect.true "isEmpty empty should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "isEmpty empty should be True"
             , skip <|
                 test "sets with no elements are empty" <|
                     \() ->
                         CustomSet.isEmpty (CustomSet.fromList [])
-                            |> Expect.true "isEmpty (fromList []) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "isEmpty (fromList []) should be True"
             , skip <|
                 test "sets with elements are not empty" <|
                     \() ->
                         CustomSet.isEmpty (CustomSet.fromList [ 1 ])
-                            |> Expect.false "isEmpty (fromList [ 1 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "isEmpty (fromList [ 1 ]) should be False"
             ]
         , describe "Sets can report if they contain an element"
             [ skip <|
                 test "nothing is contained in an empty set" <|
                     \() ->
                         CustomSet.member 1 CustomSet.empty
-                            |> Expect.false "member 1 empty should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "member 1 empty should be False"
             , skip <|
                 test "when the element is in the set" <|
                     \() ->
                         CustomSet.member 1 (CustomSet.fromList [ 1, 2, 3 ])
-                            |> Expect.true "member 1 (fromList [ 1, 2, 3 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "member 1 (fromList [ 1, 2, 3 ]) should be True"
             , skip <|
                 test "when the element is not in the set" <|
                     \() ->
                         CustomSet.member 4 (CustomSet.fromList [ 1, 2, 3 ])
-                            |> Expect.false "member 4 (fromList [ 1, 2, 3 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "member 4 (fromList [ 1, 2, 3 ]) should be False"
             ]
         , describe "Sets with the same elements are equal"
             [ skip <|
                 test "empty sets are equal" <|
                     \() ->
                         CustomSet.equal CustomSet.empty CustomSet.empty
-                            |> Expect.true "equal empty empty should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "equal empty empty should be True"
             , skip <|
                 test "empty set is not equal to non-empty set" <|
                     \() ->
                         CustomSet.equal CustomSet.empty (CustomSet.fromList [ 1, 2, 3 ])
-                            |> Expect.false "equal empty (fromList [ 1, 2, 3 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "equal empty (fromList [ 1, 2, 3 ]) should be False"
             , skip <|
                 test "non-empty set is not equal to empty set" <|
                     \() ->
                         CustomSet.equal (CustomSet.fromList [ 1, 2, 3 ]) CustomSet.empty
-                            |> Expect.false "equal (fromList [ 1, 2, 3 ]) empty should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "equal (fromList [ 1, 2, 3 ]) empty should be False"
             , skip <|
                 test "sets with the same elements are equal" <|
                     \() ->
                         CustomSet.equal (CustomSet.fromList [ 1, 2 ]) (CustomSet.fromList [ 2, 1 ])
-                            |> Expect.true "equal (fromList [ 1, 2 ]) (fromList [ 2, 1 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "equal (fromList [ 1, 2 ]) (fromList [ 2, 1 ]) should be True"
             , skip <|
                 test "sets with different elements are not equal" <|
                     \() ->
                         CustomSet.equal (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 1, 2, 4 ])
-                            |> Expect.false "equal (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 4 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "equal (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 4 ]) should be False"
             , skip <|
                 test "set is not equal to larger set with same elements" <|
                     \() ->
                         CustomSet.equal (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 1, 2, 3, 4 ])
-                            |> Expect.false "equal (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 3, 4 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "equal (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 3, 4 ]) should be False"
             ]
         , describe "Union returns a set of all elements in either set"
             [ skip <|
@@ -199,58 +211,69 @@ tests =
                 test "empty set is a subset of another empty set" <|
                     \() ->
                         CustomSet.subset CustomSet.empty CustomSet.empty
-                            |> Expect.true "subset empty empty should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "subset empty empty should be True"
             , skip <|
                 test "empty set is a subset of non-empty set" <|
                     \() ->
                         CustomSet.subset CustomSet.empty (CustomSet.fromList [ 1 ])
-                            |> Expect.true "subset empty (fromList [ 1 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "subset empty (fromList [ 1 ]) should be True"
             , skip <|
                 test "non-empty set is not a subset of empty set" <|
                     \() ->
                         CustomSet.subset (CustomSet.fromList [ 1 ]) CustomSet.empty
-                            |> Expect.false "subset (fromList [ 1 ]) empty should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "subset (fromList [ 1 ]) empty should be False"
             , skip <|
                 test "set is a subset of set with exact same elements" <|
                     \() ->
                         CustomSet.subset (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 1, 2, 3 ])
-                            |> Expect.true "subset (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 3 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "subset (fromList [ 1, 2, 3 ]) (fromList [ 1, 2, 3 ]) should be True"
             , skip <|
                 test "set is a subset of larger set with same elements" <|
                     \() ->
                         CustomSet.subset (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 4, 1, 2, 3 ])
-                            |> Expect.true "subset (fromList [ 1, 2, 3 ]) (fromList [ 4, 1, 2, 3 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "subset (fromList [ 1, 2, 3 ]) (fromList [ 4, 1, 2, 3 ]) should be True"
             , skip <|
                 test "set is not a subset of set that does not contain its elements" <|
                     \() ->
                         CustomSet.subset (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 4, 1, 3 ])
-                            |> Expect.false "subset (fromList [ 1, 2, 3 ]) (fromList [ 4, 1, 3 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "subset (fromList [ 1, 2, 3 ]) (fromList [ 4, 1, 3 ]) should be False"
             ]
         , describe "Sets are disjoint if they share no elements"
             [ skip <|
                 test "the empty set is disjoint with itself" <|
                     \() ->
                         CustomSet.disjoint CustomSet.empty CustomSet.empty
-                            |> Expect.true "disjoint empty empty should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "disjoint empty empty should be True"
             , skip <|
                 test "empty set is disjoint with non-empty set" <|
                     \() ->
                         CustomSet.disjoint CustomSet.empty (CustomSet.fromList [ 1 ])
-                            |> Expect.true "disjoint empty (fromList [ 1 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "disjoint empty (fromList [ 1 ]) should be True"
             , skip <|
                 test "non-empty set is disjoint with empty set" <|
                     \() ->
                         CustomSet.disjoint (CustomSet.fromList [ 1 ]) CustomSet.empty
-                            |> Expect.true "disjoint (fromList [ 1 ]) empty should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "disjoint (fromList [ 1 ]) empty should be True"
             , skip <|
                 test "sets are not disjoint if they share an element" <|
                     \() ->
                         CustomSet.disjoint (CustomSet.fromList [ 1, 2 ]) (CustomSet.fromList [ 2, 3 ])
-                            |> Expect.false "disjoint (fromList [ 1, 2 ]) (fromList [ 2, 3 ]) should be False"
+                            |> Expect.equal False
+                            |> Expect.onFail "disjoint (fromList [ 1, 2 ]) (fromList [ 2, 3 ]) should be False"
             , skip <|
                 test "sets are disjoint if they share no elements" <|
                     \() ->
                         CustomSet.disjoint (CustomSet.fromList [ 1, 2 ]) (CustomSet.fromList [ 3, 4 ])
-                            |> Expect.true "disjoint (fromList [ 1, 2 ]) (fromList [ 3, 4 ]) should be True"
+                            |> Expect.equal True
+                            |> Expect.onFail "disjoint (fromList [ 1, 2 ]) (fromList [ 3, 4 ]) should be True"
             ]
         ]
