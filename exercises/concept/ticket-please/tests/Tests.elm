@@ -22,11 +22,13 @@ tests =
             [ test "emptyComment should detect an empty comment" <|
                 \() ->
                     emptyComment ( User "Alice", "" )
-                        |> Expect.true "Expected the comment to be empty"
+                        |> Expect.equal True
+                        |> Expect.onFail "Expected the comment to be empty"
             , test "emptyComment should detect an non-empty comment" <|
                 \() ->
                     emptyComment ( User "Alice", "hello" )
-                        |> Expect.false "Expected the comment to contain something"
+                        |> Expect.equal False
+                        |> Expect.onFail "Expected the comment to contain something"
             , test "emptyComment can be used in a filter" <|
                 \() ->
                     [ ( User "Alice", "hello" )
@@ -85,27 +87,32 @@ tests =
                 \() ->
                     Ticket { newTicket | assignedTo = Nothing }
                         |> assignedToDevTeam
-                        |> Expect.false "Expected unassigned ticket"
+                        |> Expect.equal False
+                        |> Expect.onFail "Expected unassigned ticket"
             , test "assignedToDevTeam with ticket assigned to non-dev team" <|
                 \() ->
                     Ticket { newTicket | assignedTo = Just (User "Roy") }
                         |> assignedToDevTeam
-                        |> Expect.false "Expected ticket not assigned to dev team"
+                        |> Expect.equal False
+                        |> Expect.onFail "Expected ticket not assigned to dev team"
             , test "assignedToDevTeam with ticket assigned to Alice from dev team" <|
                 \() ->
                     Ticket { newTicket | assignedTo = Just (User "Alice") }
                         |> assignedToDevTeam
-                        |> Expect.true "Expected ticket assigned to Alice from dev team"
+                        |> Expect.equal True
+                        |> Expect.onFail "Expected ticket assigned to Alice from dev team"
             , test "assignedToDevTeam with ticket assigned to Bob from dev team" <|
                 \() ->
                     Ticket { newTicket | assignedTo = Just (User "Bob") }
                         |> assignedToDevTeam
-                        |> Expect.true "Expected ticket assigned to Bob from dev team"
+                        |> Expect.equal True
+                        |> Expect.onFail "Expected ticket assigned to Bob from dev team"
             , test "assignedToDevTeam with ticket assigned to Charlie from dev team" <|
                 \() ->
                     Ticket { newTicket | assignedTo = Just (User "Charlie") }
                         |> assignedToDevTeam
-                        |> Expect.true "Expected ticket assigned to Charlie from dev team"
+                        |> Expect.equal True
+                        |> Expect.onFail "Expected ticket assigned to Charlie from dev team"
             ]
         , describe "4"
             [ test "assign new, unassigned ticket to Roy" <|
