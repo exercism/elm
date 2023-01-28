@@ -21,6 +21,16 @@ generateValuesFromSeed size generator seed =
         value :: generateValuesFromSeed (size - 1) generator nextSeed
 
 
+generate1000Abilities : List Int
+generate1000Abilities =
+    generateValuesFromSeed 1000 DndCharacter.ability (Random.initialSeed 42)
+
+
+generate1000Characters : List Character
+generate1000Characters =
+    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+
+
 tests : Test
 tests =
     describe "DndCharacter"
@@ -108,7 +118,7 @@ tests =
         , skip <|
             test "random ability is within range" <|
                 \() ->
-                    generateValuesFromSeed 1000 DndCharacter.ability (Random.initialSeed 42)
+                    generate1000Abilities
                         |> List.all (\score -> 3 <= score && score <= 18)
                         |> Expect.equal True
         , skip <|
@@ -118,7 +128,7 @@ tests =
                         count k rolls =
                             List.length (List.filter ((==) k) rolls)
                     in
-                    generateValuesFromSeed 1000 DndCharacter.ability (Random.initialSeed 42)
+                    generate1000Abilities
                         |> Expect.all
                             [ \rolls -> Expect.greaterThan (count 3 rolls) (count 4 rolls)
                             , \rolls -> Expect.greaterThan (count 4 rolls) (count 5 rolls)
@@ -141,13 +151,13 @@ tests =
                                 && ((3 <= charisma) && (charisma <= 18))
                                 && (hitpoints == 10 + DndCharacter.modifier constitution)
                     in
-                    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+                    generate1000Characters
                         |> List.all validCharacter
                         |> Expect.equal True
         , skip <|
             test "random characters are not all the same" <|
                 \() ->
-                    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+                    generate1000Characters
                         |> List.map .strength
                         |> Set.fromList
                         |> Set.size
@@ -161,7 +171,7 @@ tests =
                                 |> Set.size
                                 |> (==) 4
                     in
-                    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+                    generate1000Characters
                         |> List.any hasFourDifferentAbilities
                         |> Expect.equal True
         ]
