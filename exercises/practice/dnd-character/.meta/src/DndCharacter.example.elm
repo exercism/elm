@@ -38,19 +38,21 @@ character =
         |> apply ability
         |> apply ability
         |> apply ability
-        |> Random.andThen
-            (\hitpointsToCharacter ->
-                let
-                    dummyChar =
-                        hitpointsToCharacter 0
-
-                    hitpoints =
-                        10 + modifier dummyChar.constitution
-                in
-                Random.constant (hitpointsToCharacter hitpoints)
-            )
+        |> Random.andThen addHitpoints
 
 
 apply : Generator a -> Generator (a -> b) -> Generator b
 apply genA =
     Random.andThen (\aToB -> Random.map aToB genA)
+
+
+addHitpoints : (Int -> Character) -> Generator Character
+addHitpoints hitpointsToCharacter =
+    let
+        dummyChar =
+            hitpointsToCharacter 0
+
+        hitpoints =
+            10 + modifier dummyChar.constitution
+    in
+    Random.constant (hitpointsToCharacter hitpoints)
