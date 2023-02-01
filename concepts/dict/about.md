@@ -87,7 +87,7 @@ Items can be transformed using `map`.
 
 ```elm
 alice = Dict.fromList [ ( "Alice", 0 ) ]
-empty = Dict.map (\player count -> count + 1) --> Dict.fromList [ ( "Alice", 1 ) ]
+newAlice = Dict.map (\player count -> count + 1) alice --> Dict.fromList [ ( "Alice", 1 ) ]
 ```
 
 Dicts can be combined / transformed using `merge`.
