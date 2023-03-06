@@ -4,7 +4,7 @@
 
 All functions in Elm are [curried][currying], which means that if you call a function without passing all of the arguments, it returns a new function.
 
-The result of doing this is called [partial-application][partial-application] (you are not passing all the arugments to the function, but are partially applying some of them).
+The result of doing this is called [partial-application][partial-application] (you are not passing all the arguments to the function, but are partially applying some of them).
 
 ```elm
 add: Int -> Int -> Int
