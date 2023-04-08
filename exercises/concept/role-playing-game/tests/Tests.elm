@@ -33,7 +33,7 @@ tests =
             [ test "Casting a spell causes damage of double the mana" <|
                 \() ->
                     Expect.equal (castSpell 9 { name = Nothing, level = 10, health = 69, mana = Just 20 })
-                        ( { name = Nothing, level = 10, health = 69, mana = Just 2 }, 18 )
+                        ( { name = Nothing, level = 10, health = 69, mana = Just 11 }, 18 )
             , test "Attempting to cast a spell with insufficient mana does nothing" <|
                 \() ->
                     Expect.equal (castSpell 39 { name = Nothing, level = 10, health = 69, mana = Just 20 })
