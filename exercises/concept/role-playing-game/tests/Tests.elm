@@ -30,7 +30,7 @@ tests =
                         (Just { name = Nothing, level = 10, health = 100, mana = Just 100 })
             ]
         , describe "3"
-            [ test "Casting a spell spends double the mana" <|
+            [ test "Casting a spell causes damage of double the mana" <|
                 \() ->
                     Expect.equal (castSpell 9 { name = Nothing, level = 10, health = 69, mana = Just 20 })
                         ( { name = Nothing, level = 10, health = 69, mana = Just 2 }, 18 )
