@@ -19,7 +19,7 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 | Vintage Pirate Hat          | (7, E)   |
 
 | Place Name                            | Location | Quadrant |
-| ------------------------------------- | -------- | --------- |
+| ------------------------------------- | -------- | -------- |
 | Seaside Cottages                      | (C, 1) | Blue      |
 | Aqua Lagoon (Island of Mystery)       | (F, 1) | Yellow    |
 | Deserted Docks                        | (A, 2) | Blue      |
