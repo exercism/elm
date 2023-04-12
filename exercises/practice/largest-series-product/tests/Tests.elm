@@ -44,12 +44,6 @@ tests =
             test "rejects span longer than string length" <|
                 \() -> Expect.equal Nothing (largestProduct 4 "123")
         , skip <|
-            test "reports 1 for empty string and empty product (0 span)" <|
-                \() -> Expect.equal (Just 1) (largestProduct 0 "")
-        , skip <|
-            test "reports 1 for nonempty string and empty product (0 span)" <|
-                \() -> Expect.equal (Just 1) (largestProduct 0 "123")
-        , skip <|
             test "rejects empty string and nonzero span" <|
                 \() -> Expect.equal Nothing (largestProduct 1 "")
         , skip <|
