@@ -22,3 +22,7 @@ Each of the five houses is painted a different color, and their inhabitants are 
 
 Which of the residents drinks water?
 Who owns the zebra?
+
+It is useful to get a list of permutations in this exercise. You can write this yourself, or copy and paste code from the [List.Extra][list-extra] package. We don't make the List.Extra package available, as it is a bit complicated to do, and it changes frequently, which adds maintenance work.
+
+[list-extra]: https://package.elm-lang.org/packages/elm-community/list-extra/latest/List-Extra#permutations
