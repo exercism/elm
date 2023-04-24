@@ -49,10 +49,9 @@ We welcome contributions of all sorts and sizes,
 from reporting issues to submitting patches or implementing missing exercises.
 At the moment we would particularly like some help implementing new concept exercises, and beta testing.
 
-Things are currently in a state of flux with the upcoming v3 release of exercism, so if you would like to help, the best thing at the moment is probably to create an issue in this repository, and then one of us will get in touch with you and discuss what to do.
+If you would like to help, the best thing at the moment is probably to create an issue in this repository, and then one of us will get in touch with you and discuss what to do.
 
-If you are not familiar with git and GitHub,
-you can also have a look at [GitHub's getting started documentation][github-start].
+If you are not familiar with git and GitHub, you can also have a look at [GitHub's getting started documentation][github-start].
 
 [contributing]: https://github.com/exercism/problem-specifications/blob/master/CONTRIBUTING.md
 [github-start]: https://help.github.com/en/github/getting-started-with-github
@@ -80,6 +79,10 @@ The [Concept][concept-documentation] and [Concept Exercise][concept-exercise-doc
 
 [concept-documentation]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md
 [concept-exercise-documentation]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md
+
+### Elm Packages
+
+We have decided not to make any of the *.Extra packages available. They change quite regularly so would add maintenance work. Where one of these packages would make an exercise easier, we point this out in the instructions, so that students can copy and paste the code from the package, or can write it themselves if they want.
 
 ## Elm icon
 
