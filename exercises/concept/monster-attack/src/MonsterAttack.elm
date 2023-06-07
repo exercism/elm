@@ -36,5 +36,5 @@ attack2 monsterDamage =
 
 
 attack3 : MonsterDamage -> MonsterDamage
-attack3 =
+attack3 monsterDamage =
     Debug.todo "Implement attack3 function"
