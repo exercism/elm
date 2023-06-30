@@ -1,6 +1,6 @@
 # Instructions
 
-You have been given a new cooking book for your birthday, and you want to find out if the lasagna recipe in it is better than your current favourite cooking book. In this exercise you're going to write some code to help you cook a the lasagna from the new cooking book.
+You have been given a new cookbook for your birthday, and you want to find out if the lasagna recipe in it is better than your current favourite cookbook. In this exercise you're going to write some code to help you cook a the lasagna from the new cookbook.
 
 Your housemate is still busy at the office, and wants to know what time the lasagna will be ready, so that she can make sure she is back in time.
 
@@ -10,7 +10,7 @@ Create a function to work out what time the lasagna will be ready. To make the c
 
 Define the `remainingTimeInMinutes` function that takes two parameters and has a let expression as its body. The first parameter is the number of layers in the lasagna, and the second parameter is the number of minutes since you starting cooking.
 
-Define `expectedMinutesInOven` (in the `let` part of the `let` expression) to check how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Define `expectedMinutesInOven` (in the `let` part of the `let` expression) to check how many minutes the lasagna should be in the oven. According to the cookbook, the expected oven time in minutes is 40:
 
 ```elm
 expectedMinutesInOven
