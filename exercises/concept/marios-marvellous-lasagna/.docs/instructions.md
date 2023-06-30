@@ -1,6 +1,6 @@
 # Instructions
 
-You have been given a new cookbook for your birthday, and you want to find out if the lasagna recipe in it is better than your current favourite cookbook. In this exercise you're going to write some code to help you cook a the lasagna from the new cookbook.
+You have been given a new cookbook for your birthday, and you want to find out if the lasagna recipe in it is better than your current favourite cookbook. In this exercise you're going to write some code to help you cook the lasagna from the new cookbook.
 
 Your housemate is still busy at the office, and wants to know what time the lasagna will be ready, so that she can make sure she is back in time.
 
