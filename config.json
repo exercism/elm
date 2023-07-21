@@ -169,6 +169,11 @@
       "slug": "phantom-types",
       "name": "Phantom Types",
       "uuid": "84500f05-f03c-4de4-ab9e-dc2ba0bd1a65"
+    },
+    {
+      "slug": "array",
+      "name": "Arrays",
+      "uuid": "de4717c0-56e5-482f-bfc7-dc8cd1b6f2d0"
     }
   ],
   "exercises": {
