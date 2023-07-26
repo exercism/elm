@@ -1,7 +1,5 @@
 # Introduction
 
-## Lists
-
 A [`List`][lists] in Elm is an immutable collection of zero or more values of the same type.
 
 Lists can be defined as follows:

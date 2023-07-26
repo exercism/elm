@@ -1,12 +1,10 @@
 # Introduction
 
-## Partial application and function composition
-
-### Partial application
+## Partial application
 
 All functions in Elm are [curried][currying], which means that if you call a function without passing all of the arguments, it returns a new function.
 
-The result of doing this is called [partial-application][partial-application] (you are not passing all the arugments to the function, but are partially applying some of them).
+The result of doing this is called [partial-application][partial-application] (you are not passing all the arguments to the function, but are partially applying some of them).
 
 ```elm
 add: Int -> Int -> Int
@@ -38,7 +36,7 @@ ceddBurgeContainsCedd = containsCedd "Cedd Burge"
 --> ("Cedd Burge" ends up being the second argument to contains, and it does include "Cedd", the first argument)
 ```
 
-### Pipe operator (`|>`)
+## Pipe operator (`|>`)
 
 Saying `x |> f` is exactly the same as `f x`. A concrete example is `"5" |> String.toInt` is the same as `String.toInt "5"`.
 
@@ -65,10 +63,10 @@ sanitize input =
 This avoids the use of brackets, and shows the functions in the order that they are applied (first `String.trim`, then `String.toInt`), which aids readability.
 
 There is also a [reverse pipe operator `(<|)`][reverse-pipe-operator].
-Saying `x <| f` is exactly the same as `f x`.
+Saying `f <| x` is exactly the same as `f x`.
 This doesn't look very useful at first glance either, and is definitely not used as much as the pipe operator, but it helps to avoid brackets in some situations.
 
-### Function composition / point free style
+## Function composition / point free style
 
 The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)` and creates a function of type `a -> c` by composing two compatible functions of type `a -> b `and `b -> c`.
 It does this by taking the output (of type `b`) from the first function and using it as the first argument to the second function (which must be of the same type `b`).
@@ -93,14 +91,14 @@ The advantage of this style is that the code is more concise, the disadvantage i
 
 It is worth remembering that all functions are curried in Elm, so `String.length >> max` compiles.
 
-- The pipe operator has the type `(a -> b) -> (b -> c) -> (a -> c)`.
+- The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)`.
 - `String.length` has a type of `String -> Int`, which is the `(a -> b)` part, so `a` is `String` and `b` is - `Int`.
 - `max` has a type of `Int -> Int -> Int`, which is the `b -> c` part.
 - `b` is `Int`, so `max` is partially applied, so `c` is the result of this partial application (`Int -> Int`).
 - So the type of `String.length >> max` is `String -> (Int -> Int)`.
 - So `((String.length >> max) "123") 2` returns `3`, because `"123"` has a length of 3, which is greater than the 2 from the `Int` argument.
 
-### Function design
+## Function design
 
 To make it easy to write elegant code in Elm, you should make the main data structure the last parameter of functions.
 All the common functions in the standard library do this, such as `List.map` (type signature below).

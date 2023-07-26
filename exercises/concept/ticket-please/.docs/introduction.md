@@ -1,10 +1,8 @@
 # Introduction
 
-## Pattern Matching
-
 [Pattern matching][pattern-matching] enables expressive branching code and [destructuring][destructuring] brings elegant binding of values to variables.
 
-### Simple pattern matching
+## Simple pattern matching
 
 Pattern matching can bind values to variables, or discard them with the wildcard `_`, with the use of the `case` statement.
 
@@ -24,7 +22,7 @@ hello entity =
         _ -> "Hello stranger!"
 ```
 
-### Destructuring
+## Destructuring
 
 Destructuring can binds values in `let` bindings, function arguments, and of course in case expressions, whenever there is only one shape possible for the data.
 
@@ -82,6 +80,7 @@ smaller reduction ({ radius } as circle) =
     else
         circle
 ```
+
 
 [pattern-matching]: https://guide.elm-lang.org/types/pattern_matching.html
 [destructuring]: https://gist.github.com/yang-wei/4f563fbf81ff843e8b1e

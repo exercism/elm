@@ -1,7 +1,5 @@
 # Introduction
 
-## Let
-
 The `let` expression is used to create a local scope, and is useful in a few situations:
 
 - For simplifying expressions

@@ -1,11 +1,9 @@
 # Introduction
 
-## Records
-
 [Records][records] are data structures grouping together related information with labels.
 They are similar to objects in JavaScript or Java, or structs in C or Rust, but with some key distinctions.
 
-### Creating records
+## Creating records
 
 Records are [created][create] with curly brackets and their elements are separated by commas.
 
@@ -53,7 +51,7 @@ firefly : TvSeries
 firefly = TvSeries "Firefly" "Joss Whedon" 14
 ```
 
-### Accessing record fields
+## Accessing record fields
 
 The main way to [access a field value of a record instance][access] is to use the dot-notation such as `firefly.creator`.
 The Elm compiler also supports special accessor functions starting with a dot `.` such as `.creator` that will work on any record with a field of that name.
@@ -94,7 +92,7 @@ complicatedCopy show =
     }
 ```
 
-### Updating records
+## Updating records
 
 Records are immutable, as everything in Elm, so once a record is defined, its field values can never change.
 There is a [special syntax to create a copy of an existing record, but changing one or more fields][update].
@@ -113,7 +111,7 @@ updatedFirefly =
     { firefly | creator = "J Whedon", episodes = 15 }
 ```
 
-### Comparing records
+## Comparing records
 
 Elm uses [structural equality][equality], which means that two instances of the same record with identical values are equal.
 
@@ -125,7 +123,7 @@ firefly1 == firefly2
     --> True
 ```
 
-### Extensible records
+## Extensible records
 
 Elm also supports [structural typing][structural-typing] meaning that if a function requires a record with an x and y field, it will work with any record that has those fields such as 2D points, 3D points, spaceships, etc.
 Those record types have a pipe `|` in their definition, such as `{ a | x : Float, y : Float }` and are called "extensible records" in Elm terminology.

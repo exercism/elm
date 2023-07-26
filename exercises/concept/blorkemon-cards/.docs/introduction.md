@@ -1,8 +1,6 @@
 # Introduction
 
-## Comparison
-
-### Equality
+## Equality
 
 Elm types can be checked for "being the same" with the equality operator `(==)`.
 The inequality operator is `(/=)` (*not* `!=` like in many languages).
@@ -33,7 +31,7 @@ a == b
 
 Note that you *should never* compare functions, as this will make the program crash at runtime.
 
-### Comparisons
+## Comparisons
 
 The comparison operators `(<)`, `(<=)`, `(>)`, `(>=)` and functions `min`, `max`, `compare` work on `comparable` types.
 The `comparable` type is a special type that groups all built-in types that can be compared: numbers, characters, strings, lists of comparable things, and tuples of comparable things.

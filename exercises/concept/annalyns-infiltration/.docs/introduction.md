@@ -1,7 +1,5 @@
 # Introduction
 
-## Booleans
-
 The `Bool` type is one of the building blocks of the language.
 It aims at describing whether something is true or false, with the respective `True` and `False` values.
 
