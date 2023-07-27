@@ -809,7 +809,8 @@
         "name": "Binary Search",
         "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
         "practices": [
-          "comparison"
+          "comparison",
+          "array"
         ],
         "prerequisites": [
           "maybe"
@@ -917,7 +918,7 @@
         "slug": "say",
         "name": "Say",
         "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
-        "practices": [],
+        "practices": [ "array" ],
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
