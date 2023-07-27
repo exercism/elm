@@ -1,39 +1,30 @@
--- todo, make this a shell once tests are working
-
 
 module MagicianInTraining exposing (..)
 
-import Array exposing (Array)
+-- todo: import the Array module
 
-
-type alias Deck =
-    Array Int
-
-
-getCard : Int -> Deck -> Maybe Int
+getCard : Int -> Array Int -> Maybe Int
 getCard index deck =
-    Array.get index deck
+    Debug.todo "Implement getCard function"
 
 
-setCard : Int -> Int -> Deck -> Deck
+setCard : Int -> Int -> Array Int -> Array Int
 setCard index newCard deck =
-    Array.set index newCard deck
+    Debug.todo "Implement setCard function"
 
 
-addCard : Int -> Deck -> Deck
+
+addCard : Int -> Array Int -> Array Int
 addCard newCard deck =
-    Array.push newCard deck
+    Debug.todo "Implement addCard function"
 
 
-removeCard : Int -> Deck -> Deck
+
+removeCard : Int -> Array Int -> Array Int
 removeCard index deck =
-    -- Removing from an array is surprisingly complicated. The Array.Extra module has your back here.
-    Array.append
-        (Array.slice 0 index deck)
-        (Array.slice (index + 1) (Array.length deck) deck)
+    Debug.todo "Implement removeCard function"
 
 
-evenCardCount : Deck -> Int
+evenCardCount : Array Int -> Int
 evenCardCount deck =
-    Array.filter (\card -> modBy 2 card == 0) deck
-        |> Array.length
+    Debug.todo "Implement evenCardCount function"
