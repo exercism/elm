@@ -43,9 +43,11 @@ Implement the `removeCard` function that returns a deck with the card at positio
 ```elm
 removeCard 2 ( Array.fromList [ 3, 2, 6, 4, 8 ] )
     --> Array.fromList [ 3, 2, 4, 8 ]
+removeCard 2 ( Array.fromList [ 3, 2 ] )
+    --> Array.fromList [ 3, 2 ]
 ```
 
-## 9. Count the number of even cards in the deck
+## 5. Count the number of even cards in the deck
 
 Implement the `evenCardCount` function that counts the number of even cards in the deck.
 
