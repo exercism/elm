@@ -439,6 +439,19 @@
           "opaque-types"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "magician-in-training",
+        "name": "Magician in training",
+        "uuid": "db21adb6-d8ee-4d65-9fef-2d6603f4c073",
+        "concepts": [
+          "array"
+        ],
+        "prerequisites": [
+          "lists",
+          "maybe"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
