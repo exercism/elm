@@ -38,7 +38,8 @@ addCard 8 ( Array.fromList [ 5, 9, 7, 1 ] )
 
 ## 4. Remove a card from the deck
 
-Implement the `removeCard` function that returns a deck with the card at position `index` removed. If the given `index` is not a valid index in the deck, return the original deck.
+Implement the `removeCard` function that returns a deck with the card at position `index` removed.
+If the given `index` is not a valid index in the deck, return the original deck.
 
 ```elm
 removeCard 2 ( Array.fromList [ 3, 2, 6, 4, 8 ] )
