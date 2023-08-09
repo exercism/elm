@@ -1,6 +1,8 @@
 # Introduction
 
-## Introduction
+## Generics
+
+### Introduction
 
 Generics are a language feature that enable code reuse.
 For example, it should not matter what type a list holds in order to compute its length.
@@ -10,7 +12,7 @@ That is why the `length` function uses a generic type parameter `a` in its type 
 length : List a -> Int
 ```
 
-## Parameters in types
+### Parameters in types
 
 When a type is generic over another type, we use a lowercase name for that other type, and call it a type parameter.
 Common examples are the `List`, `Maybe` and `Result` custom types.
@@ -53,7 +55,7 @@ type alias Event a =
     }
 ```
 
-## Type parameters in functions
+### Type parameters in functions
 
 Since types can be generic, so can functions.
 Functions handling generic types can be writen, such as the `Maybe.withDefault`.
