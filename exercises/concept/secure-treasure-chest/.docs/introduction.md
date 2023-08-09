@@ -1,13 +1,15 @@
 # Introduction
 
-## Introduction
+## Opaque Types
+
+### Introduction
 
 Opaque Types are an encapsulation technique in Elm.
 Some people also call this information hiding, or hiding implementation details.
 They are also commonly used to enforce validation, using the [Parse, dont validate][parse-dont-validate] pattern.
 For example, you could have a `EmailAddress` opaque type, that can only contain valid email addresses (as opposed to a `String`, which can contain anything).
 
-## Creating an Opaque Type
+### Creating an Opaque Type
 
 [Custom types][custom-types] have one or more *variants*, and the compiler automatically generates a function to create each *variant*, using the *variant* name.
 These are the only way in which custom types can be created.
@@ -26,7 +28,7 @@ When you do this, you almost always need to supply another way to create and get
 These custom functions allow you to apply some logic when creating and getting the *variants*.
 This hides the internal implementation details of the module, and means that you can change the implementation details as much as you want, as long as the exposed functions remain the same.
 
-## Parse, don't validate
+### Parse, don't validate
 
 Probably the most common use of Opaque Types is to enforce validation, using the [Parse, dont validate][parse-dont-validate] pattern.
 In this pattern, you expose a function that takes an input with less structure / type safety than you want, such as a `String`, and then parse this in to a more structured type, such as `EmailAddress`, either returning the type, or returning an error (usually `Maybe` or `Result`).
