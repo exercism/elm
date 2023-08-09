@@ -1,5 +1,7 @@
 # Introduction
 
+## Maybe
+
 The `Maybe` type is the solution in the Elm language for optional values.
 It is thus present in type signatures of a wide number of core Elm functions and understanding it is crucial.
 The `Maybe` type is defined as follows:

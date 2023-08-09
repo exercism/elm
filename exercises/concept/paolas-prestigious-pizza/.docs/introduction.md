@@ -1,5 +1,7 @@
 # Introduction
 
+## Parsing
+
 Parsing is the process of transforming text into meaningful data.
 Functions from the `String` package are limiting in that regard and regular expressions are difficult to use, so the idiomatic way in Elm to parse is with the `elm/parser` package.
 

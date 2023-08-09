@@ -1,6 +1,8 @@
 # Introduction
 
-## Partial application
+## Partial application and function composition
+
+### Partial application
 
 All functions in Elm are [curried][currying], which means that if you call a function without passing all of the arguments, it returns a new function.
 
@@ -36,7 +38,7 @@ ceddBurgeContainsCedd = containsCedd "Cedd Burge"
 --> ("Cedd Burge" ends up being the second argument to contains, and it does include "Cedd", the first argument)
 ```
 
-## Pipe operator (`|>`)
+### Pipe operator (`|>`)
 
 Saying `x |> f` is exactly the same as `f x`. A concrete example is `"5" |> String.toInt` is the same as `String.toInt "5"`.
 
@@ -66,7 +68,7 @@ There is also a [reverse pipe operator `(<|)`][reverse-pipe-operator].
 Saying `f <| x` is exactly the same as `f x`.
 This doesn't look very useful at first glance either, and is definitely not used as much as the pipe operator, but it helps to avoid brackets in some situations.
 
-## Function composition / point free style
+### Function composition / point free style
 
 The [`(>>)`][forward-composition] operator has the type `(a -> b) -> (b -> c) -> (a -> c)` and creates a function of type `a -> c` by composing two compatible functions of type `a -> b `and `b -> c`.
 It does this by taking the output (of type `b`) from the first function and using it as the first argument to the second function (which must be of the same type `b`).
@@ -98,7 +100,7 @@ It is worth remembering that all functions are curried in Elm, so `String.length
 - So the type of `String.length >> max` is `String -> (Int -> Int)`.
 - So `((String.length >> max) "123") 2` returns `3`, because `"123"` has a length of 3, which is greater than the 2 from the `Int` argument.
 
-## Function design
+### Function design
 
 To make it easy to write elegant code in Elm, you should make the main data structure the last parameter of functions.
 All the common functions in the standard library do this, such as `List.map` (type signature below).

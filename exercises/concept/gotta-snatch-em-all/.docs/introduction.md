@@ -1,5 +1,7 @@
 # Introduction
 
+## Set
+
 A `Set a` is a sequence of unique values of type `a`.
 The values have to be of the `comparable` type (`Int`, `Float`, `Time`, `Char`, `String`, and tuples or lists of comparable types).
 
