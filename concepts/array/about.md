@@ -57,7 +57,7 @@ Array.get 0 sixSeven --> 6
 An element in an Array is set using `Array.set`:
 
 ```elm
-sixSeven = Array.fromList [ 6, 7 ]    
+sixSeven = Array.fromList [ 6, 7 ]
 Array.set 1 8 sixSeven --> Array.fromList [ 6, 8 ]
 ```
 
