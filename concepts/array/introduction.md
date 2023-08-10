@@ -31,7 +31,7 @@ oneToFour = Array.push 1 twoToFour --> Array.fromList [ 1, 2, 3, 4 ]
 An element in an Array is retrieved using `Array.get`:
 
 ```elm
-sixSeven = Array.fromList [ 6, 7 ]    
+sixSeven = Array.fromList [ 6, 7 ]
 Array.get 0 sixSeven --> 6
 ```
 
