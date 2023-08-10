@@ -43,7 +43,7 @@ Arrays are appended using `Array.append`:
 
 ```elm
 sixSeven = Array.fromList [ 6, 7 ]
-eightNine = Array.fromList [ 8, 9 ]           
+eightNine = Array.fromList [ 8, 9 ]
 Array.append sixSeven eightNine --> Array.fromList [ 6, 7, 8, 9 ]
 ```
 
