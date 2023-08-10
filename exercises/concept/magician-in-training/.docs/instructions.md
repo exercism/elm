@@ -32,7 +32,7 @@ setCard 6, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
 Implement the `addCard` function that returns a deck with the new card added.
 
 ```elm
-addCard 8 ( Array.fromList [ 5, 9, 7, 1 ] ) 
+addCard 8 ( Array.fromList [ 5, 9, 7, 1 ] )
     --> Array.fromList [ 5, 9, 7, 1, 8 ]
 ```
 
