@@ -21,9 +21,9 @@ Implement the `setCard` function that returns a deck with the card at position `
 If the `index` is not in the deck, return the original deck.
 
 ```elm
-setCard 2, 6, ( Array.fromList [ 1, 2, 4, 1 ] ) 
+setCard 2, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 6, 1 ]
-setCard 6, 6, ( Array.fromList [ 1, 2, 4, 1 ] ) 
+setCard 6, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 4, 1 ]
 ```
 
