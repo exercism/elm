@@ -50,7 +50,7 @@ Array.append sixSeven eightNine --> Array.fromList [ 6, 7, 8, 9 ]
 An element in an Array is retrieved using `Array.get`:
 
 ```elm
-sixSeven = Array.fromList [ 6, 7 ]    
+sixSeven = Array.fromList [ 6, 7 ]
 Array.get 0 sixSeven --> 6
 ```
 
