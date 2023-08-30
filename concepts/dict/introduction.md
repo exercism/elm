@@ -80,14 +80,14 @@ Multiple items can be removed using `filter`.
 
 ```elm
 aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 0 ) ]
-bob = Dict.filter (\name count) -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
+bob = Dict.filter (\name count -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
 ```
 
 Items can be transformed using `map`.
 
 ```elm
 alice = Dict.fromList [ ( "Alice", 0 ) ]
-empty = Dict.map (\player count -> count + 1) --> Dict.fromList [ ( "Alice", 1 ) ]
+empty = Dict.map (\player count -> count + 1) alice --> Dict.fromList [ ( "Alice", 1 ) ]
 ```
 
 Dicts can be combined / transformed using `merge`.

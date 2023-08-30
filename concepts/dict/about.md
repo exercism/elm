@@ -80,7 +80,7 @@ Multiple items can be removed using `filter`.
 
 ```elm
 aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 0 ) ]
-bob = Dict.filter (\name count) -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
+bob = Dict.filter (\name count -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
 ```
 
 Items can be transformed using `map`.
