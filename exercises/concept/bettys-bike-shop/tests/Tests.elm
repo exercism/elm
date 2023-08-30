@@ -16,11 +16,11 @@ tests =
         , describe "2"
             [ test "599 pence should be 5.99 pounds" <|
                 \_ ->
-                    penceToPounds 599
+                    penceToPounds (truncate 599)
                         |> Expect.within (Absolute 0.001) 5.99
             , test "33 pence should be 0.33 pounds" <|
                 \_ ->
-                    penceToPounds 33
+                    penceToPounds (truncate 33)
                         |> Expect.within (Absolute 0.001) 0.33
             ]
         , describe "3"
