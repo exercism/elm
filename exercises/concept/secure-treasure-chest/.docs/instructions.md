@@ -43,7 +43,7 @@ Expose this function, so that other modules are able to create instances of `Sec
 This function should take two parameters, and have a type definition.
 
 - a `String` (for the password)
-- a `TreasureChest` generic custom type
+- a `SecureTreasureChest` generic custom type
 
 This function should check the provided password attempt against the `Password` in the `SecureTreasureChest`.
 
