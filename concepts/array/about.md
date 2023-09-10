@@ -51,7 +51,7 @@ An element in an Array is retrieved using `Array.get`:
 
 ```elm
 sixSeven = Array.fromList [ 6, 7 ]
-Array.get 0 sixSeven --> 6
+Array.get 0 sixSeven --> Just 6
 ```
 
 An element in an Array is set using `Array.set`:
