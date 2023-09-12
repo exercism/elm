@@ -32,8 +32,8 @@ alwaysFalse _ =
 
 
 containsFive : List Int -> Bool
-containsFive l =
-    List.member 5 l
+containsFive =
+    List.member 5
 
 
 tests : Test
