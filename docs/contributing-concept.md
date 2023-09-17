@@ -108,6 +108,11 @@ In contrast, the `about.md` concept file contains the concept summary that a stu
 As such those are similar in contents than the `exercises/concept/<story-name>/.docs/introduction.md` file we have already written but not the same.
 I suggest to start from the exercise intro document and to simplify it to its essence for the concept file `introduction.md`.
 And for the `about.md` document, start with the exercise intro and complete it such that all relevant information regarding the concept are present in that page.
+`links.json` provides helpful links with additional information about a concept.
+These might be official docs, a great tutorial, etc.
+These links do not replace the more contextual links within a concept's about.md file, but provide a quick set of overarching reference points for a student.
+Links can also optionally have an icon_url field, which can be used to customize the icon shown when the link is displayed. If not specified, the icon defaults to the favicon.
+You can find available icons at [github.com/exercism/website-icons/tree/main/exercises][icons].
 
 ## 9. Complete the different config files
 
@@ -139,6 +144,7 @@ Thank you for your contribution to exercism, you are awesome!
 [concept-intro-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-introductionmd
 [concept-about-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-aboutmd
 [concept-links-spec]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-linksjson
+[icons]: https://github.com/exercism/website-icons/tree/main/exercises
 [concept-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concepts.md#file-metaconfigjson
 [exercise-config-json]: https://github.com/exercism/docs/blob/main/building/tracks/concept-exercises.md#file-metaconfigjson
 [track-config-json-concept]: https://github.com/exercism/docs/blob/main/building/tracks/config-json.md#concepts
