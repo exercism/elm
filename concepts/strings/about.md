@@ -55,26 +55,26 @@ append "butter" "fly"
 
 `concat : List String -> String` concatenates a list of strings into a single string.
 ```elm
-concat ["never","the","less"] 
+concat ["never", "the", "less"] 
     --> "nevertheless"
 ```
 
 `split : String -> String -> List String` splits a string into a list of strings at the given separator.
 ```elm
 split ";" "cat;dog;cow" 
-    --> ["cat","dog","cow"]
+    --> ["cat", "dog", "cow"]
 ```
 
 `join : String -> List String -> String` concatenates a list of strings together with a given separator.
 ```elm
-join "a" ["H","w","ii","n"] 
+join "a" ["H", "w", "ii", "n"] 
     --> "Hawaiian"
 ```
 
 `words : String -> List String` breaks a string into strings, splitting on chunks of whitespace.
 ```elm
 words "How are \t you? \n Good?" 
-    --> ["How","are","you?","Good?"]
+    --> ["How", "are", "you?", "Good?"]
 ```
 
 `lines : String -> List String` breaks a string into lines, splitting on newlines.
@@ -92,7 +92,7 @@ cons 'T' "he truth is out there"
 `uncons : String -> Maybe ( Char, String )` splits a non-empty string into its head and tail. This lets you pattern match on strings exactly as you would with lists. Empty strings return `Nothing`.
 ```elm
 uncons "abc" 
-    --> Just ('a',"bc")
+    --> Just ('a', "bc")
 ```
 
 ## Getting Substrings
@@ -154,7 +154,7 @@ endsWith "ory" "theory"
 `indexes : String -> String -> List Int` gets a list of all the starting indexes of a substring in another string.
 ```elm
 indexes "ss" "Mississippi"  
-    --> [2,5]
+    --> [2, 5]
 ```
 
 ## Converting Strings
@@ -193,8 +193,8 @@ fromFloat 3.9
 `toList : String -> List Char` and `fromList : List Char -> String` convert a string to and from a list of characters respectively.
 ```elm 
 toList "abc" 
-    --> ['a','b','c']
-fromList ['a','b','c'] 
+    --> ['a', 'b', 'c']
+fromList ['a', 'b', 'c'] 
     --> "abc"
 ```
 
