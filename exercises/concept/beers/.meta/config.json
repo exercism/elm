@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "pwadsworth"
+  ],
+  "files": {
+    "solution": [
+      "src/Beers.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "blurb": "Learn to use Strings while merrily singing with your fellow pirates."
+}

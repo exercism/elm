@@ -457,6 +457,20 @@
           "maybe"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "beers",
+        "name": "Beers",
+        "uuid": "dd8967c6-4be9-44e8-8710-435cb0997c49",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "lists",
+          "maybe",
+          "booleans"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
