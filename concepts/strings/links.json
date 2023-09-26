@@ -1,0 +1,10 @@
+[
+    {
+      "url": "https://elmprogramming.com/string.html",
+      "description": "Beginning Elm Strings Tutorial"
+    },
+    {
+      "url": "https://package.elm-lang.org/packages/elm/core/latest/String",
+      "description": "Elm's String documentation"
+    }
+]
