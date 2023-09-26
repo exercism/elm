@@ -83,7 +83,7 @@ lines "How are you?\nGood?"
     --> ["How are you?", "Good?"]
 ```
 
-`cons : Char -> String -> String` adds a character to the beginning of a string. Note the character is defined with single quotes "'". 
+`cons : Char -> String -> String` adds a character to the beginning of a string.
 ```elm
 cons 'T' "he truth is out there" 
     --> "The truth is out there"
@@ -95,6 +95,8 @@ Empty strings return `Nothing`.
 ```elm
 uncons "abc" 
     --> Just ('a', "bc")
+uncons ""
+    --> Nothing
 ```
 
 ## Getting Substrings
@@ -104,6 +106,8 @@ Negative indexes are taken starting from the end of the list.
 ```elm
 slice 0 6 "snakes on a plane!" 
     --> "snakes"
+slice 0 -7 "snakes on a plane!"
+    --> "snakes on a"
 ```
 
 `left : Int -> String -> String` and `right : Int -> String -> String` take n characters from the left or right side of the string respectively.
