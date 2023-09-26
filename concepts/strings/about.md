@@ -5,8 +5,8 @@ Strings can be thought of as lists of characters and most `List` functions have 
 
 ## Characters
 
-The `Char` type represents a single unicode character with single quotes e.g. 'a'. 
-The `Char` module provides predicate functions (`Char -> Bool`) to test qualities of a character: `isUpper`, `isLower`, `isAlpha`, and `isAlphaNum`
+The `Char` type represents a single unicode character with single quotes e.g. `'a'`. 
+The `Char` module provides predicate functions (`Char -> Bool`) to test qualities of a character: `isUpper`, `isLower`, `isAlpha`, and `isAlphaNum`.
 The module also provides functions to convert a character `toUpper`, `toLower`, `toLocaleUpper`, `toLocaleLower`, as well as to/from their numerical unicode value (`Int`) with `toCode` and `fromCode`.
 
 ## Strings
@@ -89,7 +89,9 @@ cons 'T' "he truth is out there"
     --> "The truth is out there"
 ```
 
-`uncons : String -> Maybe ( Char, String )` splits a non-empty string into its head and tail. This lets you pattern match on strings exactly as you would with lists. Empty strings return `Nothing`.
+`uncons : String -> Maybe ( Char, String )` splits a non-empty string into its head and tail.
+This lets you pattern match on strings exactly as you would with lists.
+Empty strings return `Nothing`.
 ```elm
 uncons "abc" 
     --> Just ('a', "bc")
@@ -100,7 +102,7 @@ uncons "abc"
 `slice : Int -> Int -> String -> String` takes a substring given a start and end index.
 Negative indexes are taken starting from the end of the list.
 ```elm
-slice  0  6 "snakes on a plane!" 
+slice 0 6 "snakes on a plane!" 
     --> "snakes"
 ```
 
@@ -206,7 +208,8 @@ fromChar 'a'
 
 ## Formatting Strings
 
-`toUpper : String -> String` and `toLower : String -> String` convert strings to all upper or all lower case respectively. Useful for case-insensitive comparisons.
+`toUpper : String -> String` and `toLower : String -> String` convert strings to all upper or all lower case respectively.
+Useful for case-insensitive comparisons.
 ```elm
 toUpper "skinner" 
     --> "SKINNER"
@@ -230,7 +233,8 @@ trim "  hats  \n"
 
 ## Higher-Order Functions
 
-`map : (Char -> Char) -> String -> String` transforms every character in a string with the given function. Note the function provided must be a mapping from and to `Char`.
+`map : (Char -> Char) -> String -> String` transforms every character in a string with the given function.
+Note the function provided must be a mapping from and to `Char`.
 ```elm
 map (\c -> if c == '/' then '.' else c) "a/b/c" 
     --> "a.b.c"
@@ -242,7 +246,9 @@ filter isDigit "R2-D2"
     --> "22"
 ```
 
-`foldl : (Char -> b -> b) -> b -> String -> b` reduces a string starting from the left. The function is applied with the first character as its first parameter and an initial value provided as its second parameter. The result of the function must be of the same type as the as the initial value provided and is applied to each character in sequence.
+`foldl : (Char -> b -> b) -> b -> String -> b` reduces a string starting from the left.
+The function is applied with the first character as its first parameter and an initial value provided as its second parameter.
+The result of the function must be of the same type as the as the initial value provided and is applied to each character in sequence.
 ```elm
 foldl (\c acc -> Char.toCode c + acc) 0 "the sum of my unicode is " 
     --> 2260

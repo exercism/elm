@@ -5,7 +5,7 @@ Strings can be thought of as lists of characters and most `List` functions have 
 
 ## Characters
 
-The `Char` type represents a single unicode character with single quotes e.g. 'a'. 
+The `Char` type represents a single unicode character with single quotes e.g. `'a'`. 
 The `Char` module provides predicate functions (`Char -> Bool`) to test qualities of a character: `isUpper`, `isLower`, `isAlpha`, and `isAlphaNum`
 The module also provides functions to convert a character `toUpper`, `toLower`, `toLocaleUpper`, `toLocaleLower`, as well as to/from their numerical unicode value (`Int`) with `toCode` and `fromCode`.
 
