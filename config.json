@@ -923,7 +923,9 @@
         "slug": "say",
         "name": "Say",
         "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
-        "practices": [ "array" ],
+        "practices": [
+          "array"
+        ],
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
@@ -1175,6 +1177,21 @@
           "records"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "753e3bca-78f1-4dc0-a0ce-b0f468c4b869",
+        "practices": [
+          "custom-types"
+        ],
+        "prerequisites": [
+          "lists",
+          "custom-types",
+          "comparison",
+          "pattern-matching"
+        ],
+        "difficulty": 3
       }
     ]
   }
