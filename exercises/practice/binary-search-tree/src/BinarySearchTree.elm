@@ -2,7 +2,7 @@ module BinarySearchTree exposing (BinaryTree(..), makeTree, sort)
 
 
 type BinaryTree
-    = Nil
+    = Empty
     | Tree BinaryTree Int BinaryTree
 
 

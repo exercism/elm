@@ -2,13 +2,13 @@ module BinarySearchTree exposing (BinaryTree(..), makeTree, sort)
 
 
 type BinaryTree
-    = Nil
+    = Empty
     | Tree BinaryTree Int BinaryTree
 
 
 makeTree : List Int -> BinaryTree
 makeTree =
-    List.foldl insert Nil
+    List.foldl insert Empty
 
 
 sort : List Int -> List Int
@@ -19,8 +19,8 @@ sort =
 insert : Int -> BinaryTree -> BinaryTree
 insert n tree =
     case tree of
-        Nil ->
-            Tree Nil n Nil
+        Empty ->
+            Tree Empty n Empty
 
         Tree left value right ->
             if n <= value then
@@ -33,7 +33,7 @@ insert n tree =
 toList : BinaryTree -> List Int
 toList tree =
     case tree of
-        Nil ->
+        Empty ->
             []
 
         Tree left value right ->
