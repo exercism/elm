@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import SquakyClean exposing (..)
+import SqueakyClean exposing (..)
 import Test exposing (Test, describe, skip, test)
 
 
