@@ -4,10 +4,10 @@
   ],
   "files": {
     "solution": [
-      "SqueakyClean.elm"
+      "src/SqueakyClean.elm"
     ],
     "test": [
-      "Tests.elm"
+      "tests/Tests.elm"
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
