@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "pwadsworth"
+  ],
+  "contributors": [
+    "jiegillet",
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/SqueakyClean.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "blurb": "Learn about characters and strings by cleaning strings."
+}

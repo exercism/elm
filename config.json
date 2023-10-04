@@ -457,6 +457,20 @@
           "maybe"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "squeaky-clean",
+        "name": "Squeaky Clean",
+        "uuid": "ca425c58-26ec-48d3-8e2d-a9d5fb8cb74e",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "lists",
+          "maybe",
+          "booleans"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
