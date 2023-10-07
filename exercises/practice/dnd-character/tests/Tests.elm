@@ -206,7 +206,7 @@ tests =
                         Expect.atLeast 2 (uniqueAbilities character)
             , skip <|
                 fuzzWith
-                    { runs = 100
+                    { runs = 1000
                     , distribution =
                         Test.expectDistribution
                             [ ( Test.Distribution.atLeast 40, "has low charisma", \char -> char.charisma <= 12 )
