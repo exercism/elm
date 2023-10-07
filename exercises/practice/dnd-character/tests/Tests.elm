@@ -1,40 +1,17 @@
 module Tests exposing (tests)
 
-import Dict
-import DndCharacter exposing (Character)
+import DndCharacter
 import Expect
-import Random exposing (Generator, Seed)
+import Fuzz
 import Set
-import Test exposing (Test, describe, skip, test)
-
-
-generateValuesFromSeed : Int -> Generator a -> Seed -> List a
-generateValuesFromSeed size generator seed =
-    if size <= 0 then
-        []
-
-    else
-        let
-            ( value, nextSeed ) =
-                Random.step generator seed
-        in
-        value :: generateValuesFromSeed (size - 1) generator nextSeed
-
-
-generate1000Abilities : List Int
-generate1000Abilities =
-    generateValuesFromSeed 1000 DndCharacter.ability (Random.initialSeed 42)
-
-
-generate1000Characters : List Character
-generate1000Characters =
-    generateValuesFromSeed 1000 DndCharacter.character (Random.initialSeed 42)
+import Test exposing (Test, describe, fuzzWith, skip, test)
+import Test.Distribution
 
 
 tests : Test
 tests =
     describe "DndCharacter"
-        [ describe "ability modifier"
+        [ describe "modifier"
             [ test "ability modifier for score 3 is -4" <|
                 \() ->
                     DndCharacter.modifier 3
@@ -115,63 +92,132 @@ tests =
                         DndCharacter.modifier 18
                             |> Expect.equal 4
             ]
-        , skip <|
-            test "random ability is within range" <|
-                \() ->
-                    generate1000Abilities
-                        |> List.all (\score -> 3 <= score && score <= 18)
-                        |> Expect.equal True
-        , skip <|
-            test "ability distribution is not uniform" <|
-                \() ->
-                    let
-                        count k rolls =
-                            List.length (List.filter ((==) k) rolls)
-                    in
-                    generate1000Abilities
-                        |> Expect.all
-                            [ \rolls -> Expect.greaterThan (count 3 rolls) (count 4 rolls)
-                            , \rolls -> Expect.greaterThan (count 4 rolls) (count 5 rolls)
-                            , \rolls -> Expect.greaterThan (count 5 rolls) (count 6 rolls)
-                            , \rolls -> Expect.greaterThan (20 * count 4 rolls) (count 12 rolls)
-                            , \rolls -> Expect.lessThan (count 15 rolls) (count 16 rolls)
-                            , \rolls -> Expect.lessThan (count 16 rolls) (count 17 rolls)
-                            , \rolls -> Expect.lessThan (count 17 rolls) (count 18 rolls)
+        , describe "ability"
+            [ skip <|
+                fuzzWith { runs = 1000, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.ability)
+                    "generated ability should be at least 3"
+                <|
+                    \ability -> Expect.atLeast 3 ability
+            , skip <|
+                fuzzWith { runs = 1000, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.ability)
+                    "generated ability should be at most 18"
+                <|
+                    \ability -> Expect.atMost 18 ability
+            , skip <|
+                fuzzWith
+                    { runs = 10000
+                    , distribution =
+                        Test.expectDistribution
+                            [ ( Test.Distribution.moreThanZero, "is 3", (==) 3 ) ]
+                    }
+                    (Fuzz.fromGenerator DndCharacter.ability)
+                    "generated ability should sometimes be 3"
+                <|
+                    \_ -> Expect.pass
+            , skip <|
+                fuzzWith
+                    { runs = 1000
+                    , distribution =
+                        Test.expectDistribution
+                            [ ( Test.Distribution.moreThanZero, "is 18", (==) 18 ) ]
+                    }
+                    (Fuzz.fromGenerator DndCharacter.ability)
+                    "generated ability should sometimes be 18"
+                <|
+                    \_ -> Expect.pass
+            , skip <|
+                fuzzWith
+                    { runs = 10000
+                    , distribution =
+                        Test.expectDistribution
+                            [ ( Test.Distribution.atLeast 10, "is 13", (==) 13 )
+                            , ( Test.Distribution.atLeast 85, "is not 13", (/=) 13 )
                             ]
-        , skip <|
-            test "random character is valid" <|
-                \() ->
-                    let
-                        validCharacter { strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints } =
-                            ((3 <= strength) && (strength <= 18))
-                                && ((3 <= dexterity) && (dexterity <= 18))
-                                && ((3 <= constitution) && (constitution <= 18))
-                                && ((3 <= intelligence) && (intelligence <= 18))
-                                && ((3 <= wisdom) && (wisdom <= 18))
-                                && ((3 <= charisma) && (charisma <= 18))
-                                && (hitpoints == 10 + DndCharacter.modifier constitution)
-                    in
-                    generate1000Characters
-                        |> List.all validCharacter
-                        |> Expect.equal True
-        , skip <|
-            test "random characters are not all the same" <|
-                \() ->
-                    generate1000Characters
-                        |> List.map .strength
-                        |> Set.fromList
-                        |> Set.size
-                        |> Expect.atLeast 10
-        , skip <|
-            test "random character has independent abilities" <|
-                \() ->
-                    let
-                        hasFourDifferentAbilities { strength, dexterity, constitution, intelligence, wisdom, charisma } =
-                            Set.fromList [ strength, dexterity, constitution, intelligence, wisdom, charisma ]
-                                |> Set.size
-                                |> (==) 4
-                    in
-                    generate1000Characters
-                        |> List.any hasFourDifferentAbilities
-                        |> Expect.equal True
+                    }
+                    (Fuzz.fromGenerator DndCharacter.ability)
+                    "13 has an approximate 13% chance of being picked"
+                <|
+                    \_ -> Expect.pass
+            ]
+        , describe "character"
+            [ skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character strength should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.strength
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character dexterity should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.dexterity
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character constitution should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.constitution
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character intelligence should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.intelligence
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character wisdom should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.wisdom
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character charisma should be within range"
+                <|
+                    \character ->
+                        Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.charisma
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character hitpoints should be 10 plus the constitution modifier"
+                <|
+                    \character ->
+                        Expect.equal character.hitpoints (10 + DndCharacter.modifier character.constitution)
+            , skip <|
+                fuzzWith { runs = 100, distribution = Test.noDistribution }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated character abilities are not all equal"
+                <|
+                    \character ->
+                        let
+                            uniqueAbilities { strength, dexterity, constitution, intelligence, wisdom, charisma } =
+                                [ strength, dexterity, constitution, intelligence, wisdom, charisma ]
+                                    |> Set.fromList
+                                    |> Set.size
+                        in
+                        Expect.atLeast 2 (uniqueAbilities character)
+            , skip <|
+                fuzzWith
+                    { runs = 100
+                    , distribution =
+                        Test.expectDistribution
+                            [ ( Test.Distribution.atLeast 40, "has low charisma", \char -> char.charisma <= 12 )
+                            , ( Test.Distribution.atLeast 40, "has high charisma", \char -> char.charisma > 12 )
+                            , ( Test.Distribution.atLeast 40, "has low strength", \char -> char.strength <= 12 )
+                            , ( Test.Distribution.atLeast 40, "has high strength", \char -> char.strength > 12 )
+                            ]
+                    }
+                    (Fuzz.fromGenerator DndCharacter.character)
+                    "generated characters are not all equal"
+                <|
+                    \_ -> Expect.pass
+            ]
         ]
