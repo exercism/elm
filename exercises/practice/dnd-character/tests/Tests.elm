@@ -4,7 +4,7 @@ import DndCharacter
 import Expect
 import Fuzz
 import Set
-import Test exposing (Test, describe, fuzzWith, skip, test)
+import Test exposing (Test, describe, fuzz, fuzzWith, skip, test)
 import Test.Distribution
 
 
@@ -143,57 +143,49 @@ tests =
             ]
         , describe "character"
             [ skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character strength should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.strength
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character dexterity should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.dexterity
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character constitution should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.constitution
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character intelligence should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.intelligence
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character wisdom should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.wisdom
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character charisma should be within range"
                 <|
                     \character ->
                         Expect.all [ Expect.atLeast 3, Expect.atMost 18 ] character.charisma
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character hitpoints should be 10 plus the constitution modifier"
                 <|
                     \character ->
                         Expect.equal character.hitpoints (10 + DndCharacter.modifier character.constitution)
             , skip <|
-                fuzzWith { runs = 100, distribution = Test.noDistribution }
-                    (Fuzz.fromGenerator DndCharacter.character)
+                fuzz (Fuzz.fromGenerator DndCharacter.character)
                     "generated character abilities are not all equal"
                 <|
                     \character ->
