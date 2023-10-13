@@ -7,7 +7,7 @@ Unlike `List` which is a [default-import][default import], the `Array` module mu
 Arrays can be defined as follows:
 
 ```elm
-import Array exposing Array
+import Array exposing (Array)
 
 empty : Array Char
 empty = Array.empty

@@ -18,7 +18,7 @@ Array Int --> an array of Int
 Arrays can be defined as follows:
 
 ```elm
-import Array exposing Array
+import Array exposing (Array)
 
 empty : Array Char
 empty = Array.empty
