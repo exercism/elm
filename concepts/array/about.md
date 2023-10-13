@@ -6,7 +6,7 @@ There is no literal syntax for arrays (like there is for list), so instead the A
 For example, an `Array` with "a", "b" and "c" in it is usually shown as `Array.fromList ["a", "b", "c"]`.
 You will see this on console output, in the debugger, and other places like that.
 
-Unlike `List` which is a [default-import][default import], the `Array` module must be explicity imported, using `import Array` or similar.
+Unlike `List` which is a [default-import][default-imports], the `Array` module must be explicity imported, using `import Array` or similar.
 
 Type annotations for lists can be defined as follows
 
