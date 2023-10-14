@@ -4,12 +4,12 @@
 
 An [`Array`][array] in Elm is a fast immutable collection of zero or more values of the same type.
 
-Unlike `List` which is a [default-import][default import], the `Array` module must be explicity imported, using `import Array` or similar.
+Unlike `List` which is a [default-import][default-imports], the `Array` module must be explicity imported, using `import Array` or similar.
 
 Arrays can be defined as follows:
 
 ```elm
-import Array exposing Array
+import Array exposing (Array)
 
 empty : Array Char
 empty = Array.empty
@@ -33,7 +33,7 @@ oneToFour = Array.push 1 twoToFour --> Array.fromList [ 1, 2, 3, 4 ]
 An element in an Array is retrieved using `Array.get`:
 
 ```elm
-sixSeven = Array.fromList [ 6, 7 ]    
+sixSeven = Array.fromList [ 6, 7 ]
 Array.get 0 sixSeven --> Just 6
 ```
 

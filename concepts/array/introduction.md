@@ -2,12 +2,12 @@
 
 An [`Array`][array] in Elm is a fast immutable collection of zero or more values of the same type.
 
-Unlike `List` which is a [default-import][default import], the `Array` module must be explicity imported, using `import Array` or similar.
+Unlike `List` which is a [default-import][default-imports], the `Array` module must be explicity imported, using `import Array` or similar.
 
 Arrays can be defined as follows:
 
 ```elm
-import Array exposing Array
+import Array exposing (Array)
 
 empty : Array Char
 empty = Array.empty
