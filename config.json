@@ -179,6 +179,11 @@
       "uuid": "563a82fc-bb43-4866-a3d2-fd35eee5efa5",
       "slug": "strings",
       "name": "Strings"
+    },
+    {
+      "slug": "random",
+      "name": "Random",
+      "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33"
     }
   ],
   "exercises": {
@@ -455,6 +460,22 @@
         "prerequisites": [
           "lists",
           "maybe"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "maze-maker",
+        "name": "Maze Maker",
+        "uuid": "ce133a47-bff5-47ad-b6b5-df60b1627ebc",
+        "concepts": [
+          "random"
+        ],
+        "prerequisites": [
+          "basics-1",
+          "basics-2",
+          "tuples",
+          "lists",
+          "custom-types"
         ],
         "status": "beta"
       }

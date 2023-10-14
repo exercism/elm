@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/MazeMaker.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/MazeMakerSupport.elm"
+    ]
+  },
+  "blurb": "Learn to generate random values in Elm"
+}
