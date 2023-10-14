@@ -4,10 +4,10 @@
 - [This tutorial][string-tutorial] is useful.
 - [Reference documentation][string-docs] for `String`.
 
-## 1. Replace any spaces encountered with underscores
+## 1. Replace spaces with underscores
 - `String` provides a [replace][replace] function.
 
-## 2. Replace control characters with the upper case string "CTRL"
+## 2. Replace control characters with the upper case string "[CTRL]"
 - You can separate strings into a list of strings with `String.split`
 - You can [concatenate][concat] or [append][append] multiple strings.
 
