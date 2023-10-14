@@ -16,7 +16,7 @@ clean1 "my   Id"
     --> "my___Id"
 ```
 
-## 2. Replace control characters with the upper case string "CTRL"
+## 2. Replace control characters with the upper case string "[CTRL]"
 
 Implement `clean2` to do everything the previous function does and replace common control characters (\n, \t, and \r ) with the string `"[CTRL]"`.
 
