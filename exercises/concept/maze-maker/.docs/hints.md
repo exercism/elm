@@ -25,7 +25,7 @@
 - Use the [`Random.weighted`][random-weighted] function for generating an uneven distribution of outcomes
 - Use the [`Random.lazy`][random-lazy] function for using a generator recursively
 - Read more about defining recursive data structures [here][bad-recursion]
-- If you end up defining a nested `Generator (Generator Maze)` generator, you can use the [`Random.andThen`][random-andThen] function to flatten it
+- If you end up defining a nested `Generator (Generator Maze)` generator, you can use [`Random.andThen`][random-andThen] together with the `identity` function to flatten it
 
 ## 5. We have to go deeper
 
