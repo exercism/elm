@@ -10,7 +10,7 @@ You decide to approach your next project with a random generation approach.
 
 Any good maze is mostly dead ends.
 
-Define the `deadend` generator so that it always generate the `DeadEnd` variant.
+Define the `deadend` generator so that it always generates the `DeadEnd` variant.
 
 ## 2. You can't catch flies with vinegar
 
