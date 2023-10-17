@@ -15,7 +15,7 @@ In that case, the Elm runtime may use `step` as well as outside, non-pure resour
 For the remaining of this module, we will focus on generators.
 Let us pretend, for the sake of showing examples, that we have defined with `initialSeed` and `step` a function `generate : Int -> Generator a -> List a` that generates a number of values from a generator.
 
-The `Random` module provides two basic generators for generating integers and floats within a specific range:
+The `Random` module provides two basic generators for creating integers and floats within a specific range:
 
 ```elm
 generate 5 (Random.int -5 5)
