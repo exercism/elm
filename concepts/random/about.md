@@ -6,14 +6,42 @@ Therefore a function with the type signature `rand : Int` can only be implemente
 So how do we generate random values in Elm?
 We split the problem in two: first, we describe the value that we want to generate with a `Random.Generator a`, then we generate a value.
 
-The first way to generate a value is to create a `Random.Seed` via `initialSeed : Int -> Seed` and then use `step : Generator a -> Seed -> ( a, Seed )`, which returns a value and a new seed.
-Note that both of these functions are pure, so calling them twice with the same arguments will produce the same values.
+The first way to generate a value is to create a `Random.Seed` via `initialSeed : Int -> Seed`.
+A `Seed` is an opaque type that contains an integer and knows how to transform that integer in a way that will appear random (called pseudorandom).
+Once you have a `Seed`, you can use it to generate a value with a `Generator a`.
+A `Generator a` is an opaque type that knows how to use the integer inside of a seed to create a pseudorandom value of type `a` as well as a new seed with an updated integer.
 
-The second way to generate a value is by using `generate : (a -> msg) -> Generator a -> Cmd msg`, but that can only be done inside an Elm application.
-In that case, the Elm runtime may use `step` as well as outside, non-pure resources to generate seeds.
+To generate a value, we can use `step : Generator a -> Seed -> ( a, Seed )`, which returns a value and a new seed that we can use to generate further values.
 
-For the remaining of this module, we will focus on generators.
-Let us pretend, for the sake of showing examples, that we have defined with `initialSeed` and `step` a function `generate : Int -> Generator a -> List a` that generates a number of values from a generator.
+Let's use these functions to extract `n` random values out of a generator:
+
+```elm
+generate : Int -> Generator a -> List a
+generate n generator = generateValuesFromSeed n generator (Random.initialSeed 42)
+
+generateValuesFromSeed : Int -> Generator a -> Seed -> List a
+generateValuesFromSeed n generator seed =
+    if n <= 0 then
+        []
+    else
+        let ( value, nextSeed ) = Random.step generator seed
+        in value :: generateValuesFromSeed (n - 1) generator nextSeed
+```
+
+Note that all of these functions are pure, so calling them twice with the same arguments will produce the same values.
+
+```elm
+generate 10 (Random.int 1 6)
+    --> [4, 5, 3, 3, 5, 1, 2, 4, 6, 6]
+
+generate 10 (Random.int 1 6)
+    --> [4, 5, 3, 3, 5, 1, 2, 4, 6, 6]
+```
+
+The second way to generate a value is by using `Random.generate : (a -> msg) -> Generator a -> Cmd msg`, but that can only be done inside an Elm application.
+In that case, the Elm runtime may use `step` as well as outside, non-pure resources to generate seeds, and calling the same function twice will give different results.
+
+For now on, we will focus on generators.
 
 The `Random` module provides two basic generators for creating integers and floats within a specific range:
 
@@ -73,11 +101,11 @@ We can also use `Random.map2` all the way to `Random.map5` to combine more gener
 
 ```elm
 position =
-  Random.map3
-    (\x y z -> Position x y z)
-    (Random.float -100 100)
-    (Random.float -100 100)
-    (Random.float -100 100)
+    Random.map3
+      (\x y z -> Position x y z)
+      (Random.float -100 100)
+      (Random.float -100 100)
+      (Random.float -100 100)
 
 generate 1 position
     --> [Position 33.788 -98.321 10.0845]

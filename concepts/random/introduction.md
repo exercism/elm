@@ -12,7 +12,8 @@ Note that both of these functions are pure, so calling them twice with the same 
 The second way to generate a value is by using `generate : (a -> msg) -> Generator a -> Cmd msg`, but that can only be done inside an Elm application.
 In that case, the Elm runtime may use `step` as well as outside, non-pure resources to generate seeds.
 
-For the remaining of this module, we will focus on generators.
+For now on, we will focus on generators.
+
 Let us pretend, for the sake of showing examples, that we have defined with `initialSeed` and `step` a function `generate : Int -> Generator a -> List a` that generates a number of values from a generator.
 
 The `Random` module provides two basic generators for generating integers and floats within a specific range:
@@ -73,11 +74,11 @@ We can also use `Random.map2` all the way to `Random.map5` to combine more gener
 
 ```elm
 position =
-  Random.map3
-    (\x y z -> Position x y z)
-    (Random.float -100 100)
-    (Random.float -100 100)
-    (Random.float -100 100)
+    Random.map3
+      (\x y z -> Position x y z)
+      (Random.float -100 100)
+      (Random.float -100 100)
+      (Random.float -100 100)
 
 generate 1 position
     --> [Position 33.788 -98.321 10.0845]
