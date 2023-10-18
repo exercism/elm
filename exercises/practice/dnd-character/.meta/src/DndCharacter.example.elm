@@ -38,7 +38,8 @@ character =
         |> apply ability
         |> apply ability
         |> apply ability
-        |> Random.andThen addHitpoints
+        |> apply (Random.constant 0)
+        |> Random.map fixHitpoints
 
 
 apply : Generator a -> Generator (a -> b) -> Generator b
@@ -46,13 +47,6 @@ apply genA =
     Random.andThen (\aToB -> Random.map aToB genA)
 
 
-addHitpoints : (Int -> Character) -> Generator Character
-addHitpoints hitpointsToCharacter =
-    let
-        dummyChar =
-            hitpointsToCharacter 0
-
-        hitpoints =
-            10 + modifier dummyChar.constitution
-    in
-    Random.constant (hitpointsToCharacter hitpoints)
+fixHitpoints : Character -> Character
+fixHitpoints ({ constitution } as zeroHpCharacter) =
+    { zeroHpCharacter | hitpoints = 10 + modifier constitution }
