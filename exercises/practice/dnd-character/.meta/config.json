@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/DndCharacter.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/DndCharacter.example.elm"
+    ]
+  },
+  "blurb": "Randomly generate Dungeons & Dragons characters.",
+  "source": "Simon Shine, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945"
+}
