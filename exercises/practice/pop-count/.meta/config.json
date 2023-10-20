@@ -2,6 +2,10 @@
   "authors": [
     "BNAndras"
   ],
+  "contributors": [
+    "ceddlyburge",
+    "jiegillet"
+  ],
   "files": {
     "solution": [
       "src/PopCount.elm"
