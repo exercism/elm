@@ -12,7 +12,7 @@ Note that both of these functions are pure, so calling them twice with the same 
 The second way to generate a value is by using `generate : (a -> msg) -> Generator a -> Cmd msg`, but that can only be done inside an Elm application.
 In that case, the Elm runtime may use `step` as well as outside, non-pure resources to generate seeds.
 
-For now on, we will focus on generators.
+From now on, we will focus on generators.
 
 Let us pretend, for the sake of showing examples, that we have defined with `initialSeed` and `step` a function `generate : Int -> Generator a -> List a` that generates a number of values from a generator.
 
@@ -26,7 +26,7 @@ generate 3 (Random.float 0 5)
     --> [1.61803, 3.14159, 2.71828]
 ```
 
-Those values can be combined into pairs or lists of values:
+Those values can be combined into tuples, or into lists of values:
 
 ```elm
 generate 2 (Random.list 3 (Random.int 0 3))
@@ -52,7 +52,7 @@ generate 5 (Random.uniform Red [Green, Blue])
     --> [Red, Blue, Blue, Green, Red]
 ```
 
-`Random.uniform` takes two arguments to guarantee that there is at least one value to pick from.
+`Random.uniform` takes two arguments (`Red` and `[Green, Blue]`) to guarantee that there is at least one value to pick from, since a single list could be empty.
 
 We can also tweak the probabilities using `Random.weighted`:
 

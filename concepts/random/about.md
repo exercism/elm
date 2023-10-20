@@ -53,7 +53,7 @@ generate 3 (Random.float 0 5)
     --> [1.61803, 3.14159, 2.71828]
 ```
 
-Those values can be combined into pairs or lists of values:
+Those values can be combined into tuples, or into lists of values:
 
 ```elm
 generate 2 (Random.list 3 (Random.int 0 3))
@@ -79,7 +79,7 @@ generate 5 (Random.uniform Red [Green, Blue])
     --> [Red, Blue, Blue, Green, Red]
 ```
 
-`Random.uniform` takes two arguments to guarantee that there is at least one value to pick from.
+`Random.uniform` takes two arguments (`Red` and `[Green, Blue]`) to guarantee that there is at least one value to pick from, since a single list could be empty.
 
 We can also tweak the probabilities using `Random.weighted`:
 
