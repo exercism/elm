@@ -148,8 +148,8 @@ peano =
         ]
         |> Random.andThen identity
 
-generate 3 peano
-    --> [Next(Next(Zero)), Zero, Next(Zero)]
+generate 12 peano
+    --> [Zero, Next(Next(Zero)), Zero, Next(Zero), Zero, Zero, Next(Zero), Zero, Zero, Next(Zero), Next(Next(Next(Zero)))]
 ```
 
 [xkcd-random]: https://xkcd.com/221/
