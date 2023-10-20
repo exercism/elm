@@ -41,7 +41,7 @@ generate 10 (Random.int 1 6)
 The second way to generate a value is by using `Random.generate : (a -> msg) -> Generator a -> Cmd msg`, but that can only be done inside an Elm application.
 In that case, the Elm runtime may use `step` as well as outside, non-pure resources to generate seeds, and calling the same function twice will give different results.
 
-For now on, we will focus on generators.
+From now on, we will focus on generators.
 
 The `Random` module provides two basic generators for creating integers and floats within a specific range:
 

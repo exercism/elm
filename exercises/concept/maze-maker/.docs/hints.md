@@ -29,7 +29,7 @@
 
 ## 5. We have to go deeper
 
-- Use the [`Random.uniform`][random-uniform] function for generating the dead ends or rooms in on depth `0`
+- Use the [`Random.uniform`][random-uniform] function for generating the dead ends or rooms at depth `0`
 - If you end up defining a nested `Generator (Generator Maze)` generator, you can use the [`Random.andThen`][random-andThen] function to flatten it
 - Use the [`Random.lazy`][random-lazy] function for using a generator recursively
 - Read more about defining recursive data structures [here][bad-recursion]

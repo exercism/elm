@@ -21,7 +21,7 @@ Students will be able to
 - Using `generate` (we can only mention because it returns a `Cmd msg`)
 - Generate values: `Seed`, `step`, `initialSeed` (only mentioned, not used)
 - `independentSeed`
-- `maxInt`, `minTint`
+- `maxInt`, `minInt`
 
 ## Concepts
 
