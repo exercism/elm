@@ -7,10 +7,10 @@ type BinaryTree
 
 
 makeTree : List Int -> BinaryTree
-makeTree =
+makeTree data =
     Debug.todo "Please implement makeTree"
 
 
 sort : List Int -> List Int
-sort =
+sort data =
     Debug.todo "Please implement sort"
