@@ -2,6 +2,10 @@
   "authors": [
     "jiegillet"
   ],
+  "contributors": [
+    "pwadsworth",
+    "ceddlyburge"
+  ],
   "files": {
     "solution": [
       "src/MazeMaker.elm"
