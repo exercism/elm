@@ -2,6 +2,12 @@
   "language": "Elm",
   "slug": "elm",
   "active": true,
+  "status": {
+    "concept_exercises": true,
+    "test_runner": true,
+    "representer": true,
+    "analyzer": true
+  },
   "blurb": "Elm is a friendly functional language for the Web",
   "version": 3,
   "online_editor": {
@@ -11,12 +17,6 @@
   },
   "test_runner": {
     "average_run_time": 2
-  },
-  "status": {
-    "concept_exercises": true,
-    "test_runner": true,
-    "representer": true,
-    "analyzer": true
   },
   "files": {
     "solution": [
@@ -32,162 +32,7 @@
       ".meta/Exemplar.elm"
     ]
   },
-  "tags": [
-    "paradigm/declarative",
-    "paradigm/functional",
-    "typing/static",
-    "typing/strong",
-    "execution_mode/compiled",
-    "platform/web",
-    "used_for/frontends",
-    "used_for/web_development"
-  ],
-  "key_features": [
-    {
-      "title": "For the Web",
-      "content": "Elm is for making Web applications.",
-      "icon": "web"
-    },
-    {
-      "title": "Delightful",
-      "content": "Elm aims at the most enjoyable developer experience possible.",
-      "icon": "fun"
-    },
-    {
-      "title": "Excellent performance",
-      "content": "Elm has tiny compilation times, small assets and a fast runtime.",
-      "icon": "fast"
-    },
-    {
-      "title": "No runtime exception",
-      "content": "Thanks to strict typing, Elm catches potential errors at compilation.",
-      "icon": "safe"
-    },
-    {
-      "title": "JavaScript interop",
-      "content": "Elm has a dedicated interop mechanism with JavaScript called ports.",
-      "icon": "interop"
-    },
-    {
-      "title": "Functional but simple",
-      "content": "Elm is a simple pure functional language, a good gateway for more advanced functional languages.",
-      "icon": "functional"
-    }
-  ],
-  "concepts": [
-    {
-      "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
-      "slug": "basics-1",
-      "name": "Basics 1"
-    },
-    {
-      "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
-      "slug": "basics-2",
-      "name": "Basics 2"
-    },
-    {
-      "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
-      "slug": "booleans",
-      "name": "Booleans"
-    },
-    {
-      "uuid": "33944880-b04c-4c36-9d30-e8859a39d3fa",
-      "slug": "lists",
-      "name": "Lists"
-    },
-    {
-      "uuid": "100cbb44-6ecd-4717-86bd-6b51b6f890a2",
-      "slug": "records",
-      "name": "Records"
-    },
-    {
-      "uuid": "7e55adb0-c813-4d31-a2e2-4381b38f0d87",
-      "slug": "custom-types",
-      "name": "Custom Types"
-    },
-    {
-      "uuid": "036f1e5a-dcdc-4625-abce-5aba7e60e0e7",
-      "slug": "tuples",
-      "name": "Tuples"
-    },
-    {
-      "uuid": "4a948be3-4c5e-407f-b29d-a7e7f00fee67",
-      "slug": "maybe",
-      "name": "Maybe"
-    },
-    {
-      "uuid": "c3023ebe-bdd1-4ab2-827d-c08aaef90b26",
-      "slug": "result",
-      "name": "Result"
-    },
-    {
-      "uuid": "e2d53c4c-c3f1-481d-afcb-1e17c9950311",
-      "slug": "let",
-      "name": "Let"
-    },
-    {
-      "uuid": "1ad37090-da68-40c3-a099-a5043ed7eb47",
-      "slug": "pattern-matching",
-      "name": "Pattern Matching"
-    },
-    {
-      "uuid": "b8ac1007-02dc-4dc4-bdc2-a9f3d7886134",
-      "slug": "dict",
-      "name": "Dict"
-    },
-    {
-      "slug": "parsing",
-      "name": "Parsing",
-      "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1"
-    },
-    {
-      "slug": "partial-application-composition",
-      "name": "Partial application and function composition",
-      "uuid": "3fde0ff5-d603-4f40-a7e3-a4ea2707af90"
-    },
-    {
-      "slug": "comparison",
-      "name": "Comparison",
-      "uuid": "a5339d63-c63a-491b-996b-6666a2bdea99"
-    },
-    {
-      "slug": "set",
-      "name": "Set",
-      "uuid": "cfa44843-b783-4366-a198-f0e99e632143"
-    },
-    {
-      "slug": "generics",
-      "name": "Generics",
-      "uuid": "a967b004-e754-4664-8103-6a98be4d00e5"
-    },
-    {
-      "slug": "opaque-types",
-      "name": "Opaque Types",
-      "uuid": "35b389dd-16fe-405f-a3ce-c08673ee49ae"
-    },
-    {
-      "slug": "phantom-types",
-      "name": "Phantom Types",
-      "uuid": "84500f05-f03c-4de4-ab9e-dc2ba0bd1a65"
-    },
-    {
-      "slug": "array",
-      "name": "Arrays",
-      "uuid": "de4717c0-56e5-482f-bfc7-dc8cd1b6f2d0"
-    },
-    {
-      "uuid": "563a82fc-bb43-4866-a3d2-fd35eee5efa5",
-      "slug": "strings",
-      "name": "Strings"
-    },
-    {
-      "slug": "random",
-      "name": "Random",
-      "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33"
-    }
-  ],
   "exercises": {
-    "foregone": [],
     "concept": [
       {
         "slug": "lucians-luscious-lasagna",
@@ -814,8 +659,7 @@
           "comparison",
           "booleans"
         ],
-        "difficulty": 3,
-        "topics": []
+        "difficulty": 3
       },
       {
         "slug": "pythagorean-triplet",
@@ -1242,5 +1086,159 @@
         "difficulty": 5
       }
     ]
-  }
+  },
+  "concepts": [
+    {
+      "uuid": "3e6e4a21-cc66-4c48-857b-90e1ca5298f9",
+      "slug": "basics-1",
+      "name": "Basics 1"
+    },
+    {
+      "uuid": "e850acd6-63f3-427e-a883-222e0bd89a59",
+      "slug": "basics-2",
+      "name": "Basics 2"
+    },
+    {
+      "uuid": "2f7f1b64-5ee5-4600-a81d-87a2c79815a5",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
+    {
+      "uuid": "33944880-b04c-4c36-9d30-e8859a39d3fa",
+      "slug": "lists",
+      "name": "Lists"
+    },
+    {
+      "uuid": "100cbb44-6ecd-4717-86bd-6b51b6f890a2",
+      "slug": "records",
+      "name": "Records"
+    },
+    {
+      "uuid": "7e55adb0-c813-4d31-a2e2-4381b38f0d87",
+      "slug": "custom-types",
+      "name": "Custom Types"
+    },
+    {
+      "uuid": "036f1e5a-dcdc-4625-abce-5aba7e60e0e7",
+      "slug": "tuples",
+      "name": "Tuples"
+    },
+    {
+      "uuid": "4a948be3-4c5e-407f-b29d-a7e7f00fee67",
+      "slug": "maybe",
+      "name": "Maybe"
+    },
+    {
+      "uuid": "c3023ebe-bdd1-4ab2-827d-c08aaef90b26",
+      "slug": "result",
+      "name": "Result"
+    },
+    {
+      "uuid": "e2d53c4c-c3f1-481d-afcb-1e17c9950311",
+      "slug": "let",
+      "name": "Let"
+    },
+    {
+      "uuid": "1ad37090-da68-40c3-a099-a5043ed7eb47",
+      "slug": "pattern-matching",
+      "name": "Pattern Matching"
+    },
+    {
+      "uuid": "b8ac1007-02dc-4dc4-bdc2-a9f3d7886134",
+      "slug": "dict",
+      "name": "Dict"
+    },
+    {
+      "uuid": "5842f21e-9fcf-4cf4-a710-19674ecb19c1",
+      "slug": "parsing",
+      "name": "Parsing"
+    },
+    {
+      "uuid": "3fde0ff5-d603-4f40-a7e3-a4ea2707af90",
+      "slug": "partial-application-composition",
+      "name": "Partial application and function composition"
+    },
+    {
+      "uuid": "a5339d63-c63a-491b-996b-6666a2bdea99",
+      "slug": "comparison",
+      "name": "Comparison"
+    },
+    {
+      "uuid": "cfa44843-b783-4366-a198-f0e99e632143",
+      "slug": "set",
+      "name": "Set"
+    },
+    {
+      "uuid": "a967b004-e754-4664-8103-6a98be4d00e5",
+      "slug": "generics",
+      "name": "Generics"
+    },
+    {
+      "uuid": "35b389dd-16fe-405f-a3ce-c08673ee49ae",
+      "slug": "opaque-types",
+      "name": "Opaque Types"
+    },
+    {
+      "uuid": "84500f05-f03c-4de4-ab9e-dc2ba0bd1a65",
+      "slug": "phantom-types",
+      "name": "Phantom Types"
+    },
+    {
+      "uuid": "de4717c0-56e5-482f-bfc7-dc8cd1b6f2d0",
+      "slug": "array",
+      "name": "Arrays"
+    },
+    {
+      "uuid": "563a82fc-bb43-4866-a3d2-fd35eee5efa5",
+      "slug": "strings",
+      "name": "Strings"
+    },
+    {
+      "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33",
+      "slug": "random",
+      "name": "Random"
+    }
+  ],
+  "key_features": [
+    {
+      "title": "For the Web",
+      "content": "Elm is for making Web applications.",
+      "icon": "web"
+    },
+    {
+      "title": "Delightful",
+      "content": "Elm aims at the most enjoyable developer experience possible.",
+      "icon": "fun"
+    },
+    {
+      "title": "Excellent performance",
+      "content": "Elm has tiny compilation times, small assets and a fast runtime.",
+      "icon": "fast"
+    },
+    {
+      "title": "No runtime exception",
+      "content": "Thanks to strict typing, Elm catches potential errors at compilation.",
+      "icon": "safe"
+    },
+    {
+      "title": "JavaScript interop",
+      "content": "Elm has a dedicated interop mechanism with JavaScript called ports.",
+      "icon": "interop"
+    },
+    {
+      "title": "Functional but simple",
+      "content": "Elm is a simple pure functional language, a good gateway for more advanced functional languages.",
+      "icon": "functional"
+    }
+  ],
+  "tags": [
+    "execution_mode/compiled",
+    "paradigm/declarative",
+    "paradigm/functional",
+    "platform/web",
+    "typing/static",
+    "typing/strong",
+    "used_for/frontends",
+    "used_for/web_development"
+  ]
 }
