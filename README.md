@@ -1,7 +1,7 @@
 # Exercism Elm Track
 
-![build status](https://github.com/exercism/elm/workflows/elm%20%2F%20master/badge.svg)
-![configlet](https://github.com/exercism/elm/workflows/configlet/badge.svg)
+[![elm / pr](https://github.com/exercism/elm/actions/workflows/build.yml/badge.svg)](https://github.com/exercism/elm/actions/workflows/build.yml)
+[![configlet](https://github.com/exercism/elm/actions/workflows/configlet.yml/badge.svg)](https://github.com/exercism/elm/actions/workflows/configlet.yml)
 
 This is the Elm track, one of the many tracks on [Exercism][web-exercism].
 It holds all the Elm _Concepts_, _Concept Exercises_ and _Practice Exercises_ that are currently implemented and available for students to complete.
