@@ -24,7 +24,7 @@ fromPair pair =
 
 
 fromReal : Float -> Complex
-fromReal real =
+fromReal float =
     Debug.todo "Please implement fromReal."
 
 

@@ -21,9 +21,9 @@ modifier score =
 
 ability : Generator Int
 ability =
-    Debug.todo "Please implement ability"
+    Random.lazy (\_ -> Debug.todo "Please implement ability")
 
 
 character : Generator Character
 character =
-    Debug.todo "Please implement character"
+    Random.lazy (\_ -> Debug.todo "Please implement character")
