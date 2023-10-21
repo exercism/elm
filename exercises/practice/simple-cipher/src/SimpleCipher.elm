@@ -1,6 +1,7 @@
 module SimpleCipher exposing (decode, encode, keyGen)
 
-import Random exposing(Generator)
+import Random exposing (Generator)
+
 
 encode : String -> String -> String
 encode key plaintext =
