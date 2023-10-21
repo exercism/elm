@@ -17,29 +17,29 @@ type Treasure
 
 deadend : Generator Maze
 deadend =
-    Debug.todo "Please implement deadend"
+    Random.lazy (\_ -> Debug.todo "Please implement deadend")
 
 
 treasure : Generator Treasure
 treasure =
-    Debug.todo "Please implement treasure"
+    Random.lazy (\_ -> Debug.todo "Please implement treasure")
 
 
 room : Generator Maze
 room =
-    Debug.todo "Please implement room"
+    Random.lazy (\_ -> Debug.todo "Please implement room")
 
 
 branch : Generator Maze -> Generator Maze
 branch mazeGenerator =
-    Debug.todo "Please implement branch"
+    Random.lazy (\_ -> Debug.todo "Please implement branch")
 
 
 maze : Generator Maze
 maze =
-    Debug.todo "Please implement maze"
+    Random.lazy (\_ -> Debug.todo "Please implement maze")
 
 
 mazeOfDepth : Int -> Generator Maze
 mazeOfDepth depth =
-    Debug.todo "Please implement mazeOfDepth"
+    Random.lazy (\_ -> Debug.todo "Please implement mazeOfDepth")
