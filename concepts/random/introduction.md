@@ -117,10 +117,30 @@ type Peano
 peano : Generator Peano
 peano =
     Random.uniform (Random.constant Zero)
-        [ Random.lazy (\_ -> peano) |> Random.map Next
+        [ Random.map Next (Random.lazy (\_ -> peano))
         ]
         |> Random.andThen identity
 
 generate 12 peano
     --> [Zero, Next(Next(Zero)), Zero, Next(Zero), Zero, Zero, Next(Zero), Zero, Zero, Next(Zero), Next(Next(Next(Zero)))]
 ```
+
+This example is a little heavy, so let's break it down.
+
+`Peano` is a type that represents positive integers: `Zero` is 0, `Next(Zero)` is 1, `Next(Next(Zero))` is 2, etc.
+We define `peano` to give us a random `Peano` number.
+
+First of all, note that `Random.lazy` doesn't add anything to the logic, it merely prevents the compiler from writing `peano` into `peano` indefinitely.
+
+We use `Random.uniform` to pick between zero (with 50% probability) and another `Peano` number plus one (with 50% probability).
+However, unlike with the previous example, `Random.uniform` is not picking from values (like `Zero`) but instead from generators (like `Random.constant Zero`) since we want to use `peano` itself.
+This means that `Random.uniform` will return a value of type `Generator (Generator Peano)`, which is not want we need.
+
+To "flatten" the generator, we pipe it into `Random.andThen : (a -> Generator b) -> Generator a -> Generator b`, where we want `b` to be `Peano`.
+Since `Generator a` is `Generator (Generator Peano)`, `a` must be `Generator Peano`, and the function `(a -> Generator b)` must be of type `(Generator Peano -> Generator Peano)`.
+We don't want to modify anything, so `identity` is the right choice.
+
+Finally, what kind of numbers will `peano` produce?
+We know that it will produce 0 50% of the time, or another iteration of itself plus one 50% of the time.
+That means the numbers will be 0 (50% of the time), 1 (25% of the time), 2 (12% of the time), 3 (6% of the time), etc.
+`peano` can produce arbitrary large numbers, but with exponentially decreasing probability.
