@@ -1,9 +1,25 @@
 module Tests exposing (tests)
 
 import Expect
-import Fuzz
+import Fuzz exposing (Fuzzer)
 import SimpleCipher
 import Test exposing (Test, describe, fuzz, fuzz2, skip, test)
+
+
+messageFuzzer : Fuzzer String
+messageFuzzer =
+    Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
+        |> Fuzz.map Char.fromCode
+        |> Fuzz.list
+        |> Fuzz.map String.fromList
+
+
+keyFuzzer : Fuzzer String
+keyFuzzer =
+    Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
+        |> Fuzz.map Char.fromCode
+        |> Fuzz.listOfLengthBetween 1 100
+        |> Fuzz.map String.fromList
 
 
 tests : Test
@@ -21,38 +37,14 @@ tests =
                         SimpleCipher.decode "abcdefghij" "abcdefghij"
                             |> Expect.equal "aaaaaaaaaa"
             , skip <|
-                fuzz2
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.list
-                        |> Fuzz.map String.fromList
-                    )
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.listOfLengthBetween 1 100
-                        |> Fuzz.map String.fromList
-                    )
-                    "encoding then decoding gives the original message"
-                <|
+                fuzz2 messageFuzzer keyFuzzer "encoding then decoding gives the original message" <|
                     \message key ->
                         message
                             |> SimpleCipher.encode key
                             |> SimpleCipher.decode key
                             |> Expect.equal message
             , skip <|
-                fuzz2
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.list
-                        |> Fuzz.map String.fromList
-                    )
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.listOfLengthBetween 1 100
-                        |> Fuzz.map String.fromList
-                    )
-                    "decoding then encoding gives the original message"
-                <|
+                fuzz2 messageFuzzer keyFuzzer "decoding then encoding gives the original message" <|
                     \message key ->
                         message
                             |> SimpleCipher.decode key
@@ -96,12 +88,7 @@ tests =
                         SimpleCipher.decode key (String.slice 0 10 key)
                             |> Expect.equal "aaaaaaaaaa"
             , skip <|
-                fuzz2
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.list
-                        |> Fuzz.map String.fromList
-                    )
+                fuzz2 messageFuzzer
                     (Fuzz.fromGenerator SimpleCipher.keyGen)
                     "encoding then decoding with a random key gives the original message"
                 <|
@@ -111,12 +98,7 @@ tests =
                             |> SimpleCipher.decode key
                             |> Expect.equal message
             , skip <|
-                fuzz2
-                    (Fuzz.intRange (Char.toCode 'a') (Char.toCode 'z')
-                        |> Fuzz.map Char.fromCode
-                        |> Fuzz.list
-                        |> Fuzz.map String.fromList
-                    )
+                fuzz2 messageFuzzer
                     (Fuzz.fromGenerator SimpleCipher.keyGen)
                     "decoding then encoding with a random key gives the original message"
                 <|
