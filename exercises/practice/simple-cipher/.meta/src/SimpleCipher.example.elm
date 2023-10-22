@@ -5,16 +5,16 @@ import Random exposing (Generator)
 
 encode : String -> String -> String
 encode =
-    encodeHelper (+)
+    transformWith (+)
 
 
 decode : String -> String -> String
 decode =
-    encodeHelper (-)
+    transformWith (-)
 
 
-encodeHelper : (Int -> Int -> Int) -> String -> String -> String
-encodeHelper operation key text =
+transformWith : (Int -> Int -> Int) -> String -> String -> String
+transformWith operation key text =
     let
         longKey =
             case String.length text // String.length key of
