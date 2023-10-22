@@ -3,23 +3,18 @@ module SimpleCipher exposing (decode, encode, keyGen)
 import Random exposing (Generator)
 
 
-type Direction
-    = Encode
-    | Decode
-
-
 encode : String -> String -> String
 encode =
-    transform Encode
+    encodeHelper (+)
 
 
 decode : String -> String -> String
 decode =
-    transform Decode
+    encodeHelper (-)
 
 
-transform : Direction -> String -> String -> String
-transform direction key text =
+encodeHelper : (Int -> Int -> Int) -> String -> String -> String
+encodeHelper operation key text =
     let
         longKey =
             case String.length text // String.length key of
@@ -36,12 +31,7 @@ transform direction key text =
             Char.fromCode (int + Char.toCode 'a')
 
         combine a b =
-            case direction of
-                Encode ->
-                    modBy 26 (toInt a + toInt b) |> toChar
-
-                Decode ->
-                    modBy 26 (toInt a - toInt b) |> toChar
+            operation (toInt a) (toInt b) |> modBy 26 |> toChar
     in
     List.map2 combine (String.toList text) (String.toList longKey)
         |> String.fromList
