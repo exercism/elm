@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/RestApi.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/RestApi.example.elm"
+    ]
+  },
+  "blurb": "Implement a RESTful API for tracking IOUs."
+}
