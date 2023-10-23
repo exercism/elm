@@ -2,6 +2,10 @@
   "authors": [
     "jiegillet"
   ],
+  "contributors": [
+    "ceddlyburge",
+    "mpizenberg"
+  ],
   "files": {
     "solution": [
       "src/DndCharacter.elm"

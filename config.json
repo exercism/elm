@@ -309,6 +309,21 @@
         "status": "beta"
       },
       {
+        "slug": "maze-maker",
+        "name": "Maze Maker",
+        "uuid": "ce133a47-bff5-47ad-b6b5-df60b1627ebc",
+        "concepts": [
+          "random"
+        ],
+        "prerequisites": [
+          "basics-1",
+          "basics-2",
+          "tuples",
+          "lists",
+          "custom-types"
+        ]
+      },
+      {
         "slug": "squeaky-clean",
         "name": "Squeaky Clean",
         "uuid": "ca425c58-26ec-48d3-8e2d-a9d5fb8cb74e",
@@ -1073,8 +1088,11 @@
         "slug": "dnd-character",
         "name": "D&D Character",
         "uuid": "c22b805f-36db-407c-92d1-39ba0e4fa041",
-        "practices": [],
+        "practices": [
+          "random"
+        ],
         "prerequisites": [
+          "random",
           "lists",
           "records"
         ],
@@ -1187,6 +1205,11 @@
       "uuid": "563a82fc-bb43-4866-a3d2-fd35eee5efa5",
       "slug": "strings",
       "name": "Strings"
+    },
+    {
+      "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33",
+      "slug": "random",
+      "name": "Random"
     }
   ],
   "key_features": [

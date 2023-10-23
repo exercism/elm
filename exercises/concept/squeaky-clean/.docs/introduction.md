@@ -1,15 +1,17 @@
 # Introduction
 
+## Strings
+
 Characters and Strings form the basis for text representation in Elm.
 Strings can be thought of as lists of characters and most `List` functions have their equivalent in the `String` module.
 
-## Characters
+### Characters
 
 The `Char` type represents a single unicode character with single quotes e.g. `'a'`. 
 The `Char` module provides predicate functions (`Char -> Bool`) to test qualities of a character: `isUpper`, `isLower`, `isAlpha`, and `isAlphaNum`
 The module also provides functions to convert a character `toUpper`, `toLower`, `toLocaleUpper`, `toLocaleLower`, as well as to/from their numerical unicode value (`Int`) with `toCode` and `fromCode`.
 
-## Strings
+### Strings
 
 The `String` type provides a built-in representation for efficient string manipulation and can represent any sequence of unicode characters e.g. "this is an Elm string."
 Multi-line strings are represented with triple double quotes and can have unescaped quotes and newlines.
@@ -21,7 +23,7 @@ are preserved.
 """
 ```
 
-## String Functions
+### String Functions
 
 The `String` module contains all the functions summarized on the table below.
 Some of the most commonly used functions include:
@@ -80,7 +82,7 @@ map (\c -> if c == '/' then '.' else c) "a/b/c"
     --> "a.b.c"
 ```
 
-## All String Functions:
+### All String Functions:
 | Manipulate | Substrings | Check       | Convert      | Higher Order |
 |------------|------------|-------------|--------------|--------------|
 | `reverse`  | `slice`    | `length`    | `toInt`      | `map`        | 

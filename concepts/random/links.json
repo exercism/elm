@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/random/latest/",
+    "description": "Random module documentation"
+  },
+  {
+    "url": "https://guide.elm-lang.org/effects/random",
+    "description": "Elm guide on the Random module"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm-community/random-extra/latest/",
+    "description": "random-extra package documentation"
+  },
+  {
+    "url": "https://elmprogramming.com/commands.html",
+    "description": "Beginning Elm: Commands"
+  }
+]
