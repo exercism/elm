@@ -1,7 +1,7 @@
-
 module MagicianInTraining exposing (..)
 
 -- todo: import the Array module
+
 
 getCard : Int -> Array Int -> Maybe Int
 getCard index deck =
@@ -13,11 +13,9 @@ setCard index newCard deck =
     Debug.todo "Implement setCard function"
 
 
-
 addCard : Int -> Array Int -> Array Int
 addCard newCard deck =
     Debug.todo "Implement addCard function"
-
 
 
 removeCard : Int -> Array Int -> Array Int

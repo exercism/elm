@@ -1097,6 +1097,20 @@
           "records"
         ],
         "difficulty": 5
+      },
+      {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "49a3d9b1-38bd-464b-9d8b-4c603d351f55",
+        "practices": [
+          "random"
+        ],
+        "prerequisites": [
+          "lists",
+          "strings",
+          "random"
+        ],
+        "difficulty": 4
       }
     ]
   },
