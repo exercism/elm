@@ -32,12 +32,12 @@ type PostPayload
 
 buildDatabase : String -> Result Error Database
 buildDatabase =
-    Decode.decodeString databaseD
+    Decode.decodeString databaseDecoder
 
 
 get : Database -> String -> Maybe String -> String
 get database url maybePayload =
-    case ( url, Maybe.map (Decode.decodeString getPayloadD) maybePayload ) of
+    case ( url, Maybe.map (Decode.decodeString getPayloadDecoder) maybePayload ) of
         ( "/users", Nothing ) ->
             Encode.encode 0 (encodeDatabase database)
 
@@ -53,7 +53,7 @@ get database url maybePayload =
 
 post : Database -> String -> String -> String
 post database url payload =
-    case ( url, Decode.decodeString postPayloadD payload ) of
+    case ( url, Decode.decodeString postPayloadDecoder payload ) of
         ( "/add", Ok (NewUser user) ) ->
             Encode.encode 0 (encodeUser user)
 
@@ -121,9 +121,9 @@ addIOU { lender, borrower, amount } database =
 -- DECODERS
 
 
-databaseD : Decoder Database
-databaseD =
-    userD
+databaseDecoder : Decoder Database
+databaseDecoder =
+    userDecoder
         |> Decode.list
         |> Decode.field "users"
         |> Decode.map
@@ -132,8 +132,8 @@ databaseD =
             )
 
 
-userD : Decoder User
-userD =
+userDecoder : Decoder User
+userDecoder =
     Decode.map4 User
         (Decode.field "name" Decode.string)
         (Decode.field "owes" (Decode.dict Decode.int))
@@ -141,24 +141,24 @@ userD =
         (Decode.field "balance" Decode.int)
 
 
-getPayloadD : Decoder (List Name)
-getPayloadD =
+getPayloadDecoder : Decoder (List Name)
+getPayloadDecoder =
     Decode.list Decode.string |> Decode.field "users"
 
 
-postPayloadD : Decoder PostPayload
-postPayloadD =
-    Decode.oneOf [ newUserD, newIOUD ]
+postPayloadDecoder : Decoder PostPayload
+postPayloadDecoder =
+    Decode.oneOf [ newUserDecoder, newIOUDecoder ]
 
 
-newUserD : Decoder PostPayload
-newUserD =
+newUserDecoder : Decoder PostPayload
+newUserDecoder =
     Decode.field "user" Decode.string
         |> Decode.map (\name -> NewUser (newUser name))
 
 
-newIOUD : Decoder PostPayload
-newIOUD =
+newIOUDecoder : Decoder PostPayload
+newIOUDecoder =
     Decode.map3 IOU
         (Decode.field "lender" Decode.string)
         (Decode.field "borrower" Decode.string)
