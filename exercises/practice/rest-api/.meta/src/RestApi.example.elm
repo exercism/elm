@@ -1,8 +1,12 @@
-module RestApi exposing (buildDatabase, get, post)
+module RestApi exposing (databaseFromJsonString, get, post)
 
 import Dict exposing (Dict)
 import Json.Decode as Decode exposing (Decoder, Error)
 import Json.Encode as Encode exposing (Value)
+
+
+type alias JsonString =
+    String
 
 
 type alias Name =
@@ -30,12 +34,12 @@ type PostPayload
     | NewIOU IOU
 
 
-buildDatabase : String -> Result Error Database
-buildDatabase =
+databaseFromJsonString : JsonString -> Result Error Database
+databaseFromJsonString =
     Decode.decodeString databaseDecoder
 
 
-get : Database -> String -> Maybe String -> String
+get : Database -> String -> Maybe JsonString -> JsonString
 get database url maybePayload =
     case ( url, Maybe.map (Decode.decodeString getPayloadDecoder) maybePayload ) of
         ( "/users", Nothing ) ->
@@ -51,7 +55,7 @@ get database url maybePayload =
             "error"
 
 
-post : Database -> String -> String -> String
+post : Database -> String -> JsonString -> JsonString
 post database url payload =
     case ( url, Decode.decodeString postPayloadDecoder payload ) of
         ( "/add", Ok (NewUser user) ) ->

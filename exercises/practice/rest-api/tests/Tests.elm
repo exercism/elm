@@ -13,7 +13,7 @@ tests =
             [ -- skip <|
               test "no users" <|
                 \() ->
-                    case RestApi.buildDatabase "{\"users\":[]}" of
+                    case RestApi.databaseFromJsonString "{\"users\":[]}" of
                         Err error ->
                             Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -23,7 +23,7 @@ tests =
             , skip <|
                 test "add user" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -33,7 +33,7 @@ tests =
             , skip <|
                 test "get single user" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{},\"balance\":0}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{},\"balance\":0}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -45,7 +45,7 @@ tests =
             [ skip <|
                 test "both users have 0 balance" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{},\"balance\":0}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{},\"balance\":0}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -56,7 +56,7 @@ tests =
                 test "borrower has negative balance" <|
                     \() ->
                         case
-                            RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{\"Chuck\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Chuck\",\"owes\":{},\"owed_by\":{\"Bob\":3},\"balance\":3}]}"
+                            RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{\"Chuck\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Chuck\",\"owes\":{},\"owed_by\":{\"Bob\":3},\"balance\":3}]}"
                         of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
@@ -67,7 +67,7 @@ tests =
             , skip <|
                 test "lender has negative balance" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{\"Chuck\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Chuck\",\"owes\":{},\"owed_by\":{\"Bob\":3},\"balance\":3}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{},\"owed_by\":{},\"balance\":0},{\"name\":\"Bob\",\"owes\":{\"Chuck\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Chuck\",\"owes\":{},\"owed_by\":{\"Bob\":3},\"balance\":3}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -77,7 +77,7 @@ tests =
             , skip <|
                 test "lender owes borrower" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -87,7 +87,7 @@ tests =
             , skip <|
                 test "lender owes borrower less than new loan" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
@@ -97,7 +97,7 @@ tests =
             , skip <|
                 test "lender owes borrower same as new loan" <|
                     \() ->
-                        case RestApi.buildDatabase "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
+                        case RestApi.databaseFromJsonString "{\"users\":[{\"name\":\"Adam\",\"owes\":{\"Bob\":3},\"owed_by\":{},\"balance\":-3},{\"name\":\"Bob\",\"owes\":{},\"owed_by\":{\"Adam\":3},\"balance\":3}]}" of
                             Err error ->
                                 Expect.fail ("== Database payload could not be parsed ==\n" ++ Decode.errorToString error)
 
