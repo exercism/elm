@@ -1111,6 +1111,21 @@
           "random"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "rest-api",
+        "name": "REST API",
+        "uuid": "98b75220-b8bb-488b-9339-a3972f040c21",
+        "practices": [],
+        "prerequisites": [
+          "lists",
+          "comparison",
+          "dict",
+          "records",
+          "maybe",
+          "result"
+        ],
+        "difficulty": 8
       }
     ]
   },
