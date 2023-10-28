@@ -19,7 +19,7 @@ tests =
               <|
                 \deadend -> deadend |> Expect.equal DeadEnd
             ]
-        , describe "task 2"
+        , describe "2"
             [ fuzzWith
                 { runs = 100
                 , distribution =
