@@ -30,6 +30,27 @@ do
   cp "$exercise_dir/$exemplar" "$exercise_dir/$solution"
 done
 
+# Run tests for concept exercises
+for exercise_dir in "$exercices"/concept/*
+do
+  echo "Running tests for concept exercise $exercise_dir"
+  bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
+
+  # Check that all tests have a task_id defined
+  all_have_task_id=$(jq '.tests | map(.task_id) | all' "$exercise_dir/results.json")
+  if [[ $all_have_task_id != "true" ]]; then
+    echo "At least one test in $exercise_dir is missing a task id (defined with 'describe \"1\"')"
+    exit 1
+  fi
+
+  results=$(jq --raw-output '.status' "$exercise_dir/results.json")
+  if [[ $results != "pass" ]]; then
+    echo "$exercise_dir is not passing the tests"
+    exit 1
+  fi
+  echo "Pass"
+done
+
 # Copy example files in solution
 for exercise_dir in "$exercices/practice"/*
 do
@@ -38,10 +59,10 @@ do
   cp "$exercise_dir/$example" "$exercise_dir/$solution"
 done
 
-# Run tests
-for exercise_dir in "$exercices"/*/*
+# Run tests for practice exercises
+for exercise_dir in "$exercices"/practice/*
 do
-  echo "Running tests for $exercise_dir"
+  echo "Running tests for practice exercise $exercise_dir"
   bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
   results=$(jq --raw-output '.status' "$exercise_dir/results.json")
   if [[ $results != "pass" ]]; then

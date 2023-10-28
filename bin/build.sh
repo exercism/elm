@@ -39,8 +39,10 @@ fi
 
 npx --no-install elm-format --yes --validate \
   exercises/concept/**/.meta/*.elm \
+  exercises/concept/**/src/*.elm \
   exercises/concept/**/tests/*.elm \
   exercises/practice/**/.meta/src/*.example.elm \
+  exercises/practice/**/src/*.elm \
   exercises/practice/**/tests/*.elm
 
 if [ $? -ne 0 ]; then
