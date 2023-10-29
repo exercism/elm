@@ -36,7 +36,6 @@ Edit the type signatures of `secureChest` and `uniqueTreasures` to add the const
 ~~~~exercism/note
 Elm tests have access to exposed functions, but not to type signatures, it is therefore impossible for tests to verify that you are using the right signatures.
 Of course, the strongest indication that you have the right signatures is to succeed in getting the module and tests to compile and run.
-We hope to use the analyser to check this in the future, but for now, no check is performed.
 ~~~~
 
 ## 2. Select secure chests
