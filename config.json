@@ -346,7 +346,9 @@
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "2c3902df-93e1-48d1-829d-4daa93a1f06f",
-        "practices": ["strings"],
+        "practices": [
+          "strings"
+        ],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -357,8 +359,12 @@
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "0118175a-761f-4d05-8857-fe93745f490f",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 1,
         "topics": [
           "strings"
@@ -368,8 +374,12 @@
         "slug": "bob",
         "name": "Bob",
         "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 1,
         "topics": [
           "conditionals",
@@ -461,8 +471,12 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "filtering",
@@ -474,8 +488,12 @@
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 3,
         "topics": [
           "records",
@@ -500,8 +518,12 @@
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "472c2e13-6608-4862-b884-a7e458e0bcdd",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "filtering",
@@ -512,8 +534,12 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "a70503ba-f1f3-4583-9226-c3ada98e9500",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "booleans",
@@ -554,8 +580,12 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
           "conditionals",
@@ -567,8 +597,12 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "851ddd78-13a0-4d8f-adda-41abde670687",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
           "strings",
@@ -800,8 +834,12 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "c9e00708-3d18-4a0b-a3de-cae4d979a981",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "maps",
@@ -812,8 +850,12 @@
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "9c9507a6-8187-4ce6-b0bc-b4765effb74c",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
           "maps",
@@ -942,8 +984,12 @@
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
-        "practices": ["strings"],
-        "prerequisites": ["strings"],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 5,
         "topics": [
           "algorithms",
