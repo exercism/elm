@@ -26,6 +26,7 @@ penceToPounds 106
 
 Since Betty's bikes are sold in pounds, prices should be displayed with the symbol "£".
 Your second task is thus to implement the `poundsToString` function, taking an amount of pounds as a `Float` and returning its price displayed as a `String` with the pound symbol prepended.
+The `String` module contains the `String.fromFloat` function that will be helpful for this.
 You should import the `String` module before using it.
 You should also define the type annotation for `poundsToString`.
 
