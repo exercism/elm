@@ -186,6 +186,7 @@
           "booleans",
           "maybe",
           "lists",
+          "strings",
           "partial-application-composition"
         ],
         "status": "beta"
@@ -204,6 +205,7 @@
           "lists",
           "records",
           "result",
+          "strings",
           "partial-application-composition"
         ],
         "status": "beta"
@@ -218,7 +220,8 @@
         "prerequisites": [
           "basics-1",
           "basics-2",
-          "let"
+          "let",
+          "strings"
         ]
       },
       {
@@ -345,32 +348,33 @@
         "uuid": "2c3902df-93e1-48d1-829d-4daa93a1f06f",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
-          "strings"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "two-fer",
         "name": "Two Fer",
         "uuid": "0118175a-761f-4d05-8857-fe93745f490f",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 1,
-        "topics": [
+        "practices": [
           "strings"
-        ]
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
       },
       {
         "slug": "bob",
         "name": "Bob",
         "uuid": "11ce2a73-3f43-4b14-b755-6c52dc71bdda",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 1,
         "topics": [
           "conditionals",
-          "strings",
           "text_formatting"
         ]
       },
@@ -458,8 +462,12 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "e3e73171-c3d1-49f7-9511-d1f4a08e7a69",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "filtering",
@@ -470,8 +478,12 @@
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "6b8f952e-94ea-4264-accf-cdb28b3b4529",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 3,
         "topics": [
           "records",
@@ -495,24 +507,30 @@
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "472c2e13-6608-4862-b884-a7e458e0bcdd",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
-          "filtering",
-          "strings"
+          "filtering"
         ]
       },
       {
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "a70503ba-f1f3-4583-9226-c3ada98e9500",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
-          "booleans",
-          "strings"
+          "booleans"
         ]
       },
       {
@@ -520,15 +538,16 @@
         "name": "Isogram",
         "uuid": "61ef49ef-1086-445b-aa0a-b99de263b728",
         "practices": [
-          "comparison"
+          "comparison",
+          "strings"
         ],
         "prerequisites": [
-          "booleans"
+          "booleans",
+          "strings"
         ],
         "difficulty": 3,
         "topics": [
-          "filtering",
-          "strings"
+          "filtering"
         ]
       },
       {
@@ -547,12 +566,15 @@
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
           "conditionals",
-          "strings",
           "text_formatting"
         ]
       },
@@ -560,11 +582,14 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "851ddd78-13a0-4d8f-adda-41abde670687",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
-          "strings",
           "transforming"
         ]
       },
@@ -573,15 +598,16 @@
         "name": "Anagram",
         "uuid": "5845a108-d8b2-41dd-b371-cf9eff7a2230",
         "practices": [
-          "comparison"
+          "comparison",
+          "strings"
         ],
         "prerequisites": [
-          "lists"
+          "lists",
+          "strings"
         ],
         "difficulty": 4,
         "topics": [
-          "filtering",
-          "strings"
+          "filtering"
         ]
       },
       {
@@ -593,7 +619,6 @@
         "difficulty": 4,
         "topics": [
           "lists",
-          "strings",
           "transforming"
         ]
       },
@@ -601,12 +626,19 @@
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "8322872b-e020-4a9e-9206-015c0fdacb62",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "dict",
+          "tuples",
+          "strings"
+        ],
+        "prerequisites": [
+          "dict",
+          "tuples",
+          "strings"
+        ],
         "difficulty": 5,
         "topics": [
           "algorithms",
-          "strings",
           "transforming"
         ]
       },
@@ -619,7 +651,6 @@
         "difficulty": 5,
         "topics": [
           "algorithms",
-          "strings",
           "transforming"
         ]
       },
@@ -651,13 +682,18 @@
         "slug": "largest-series-product",
         "name": "Largest Series Product",
         "uuid": "1902d726-5a62-475b-b7d3-7188a50e717f",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings",
+          "lists"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists"
+        ],
         "difficulty": 4,
         "topics": [
           "integers",
           "math",
-          "strings",
           "transforming"
         ]
       },
@@ -777,24 +813,30 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "c9e00708-3d18-4a0b-a3de-cae4d979a981",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
-          "maps",
-          "strings"
+          "maps"
         ]
       },
       {
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "9c9507a6-8187-4ce6-b0bc-b4765effb74c",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 4,
         "topics": [
           "maps",
-          "strings",
           "transforming"
         ]
       },
@@ -815,12 +857,15 @@
         "name": "Say",
         "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
         "practices": [
-          "array"
+          "array",
+          "strings"
         ],
-        "prerequisites": [],
+        "prerequisites": [
+          "array",
+          "strings"
+        ],
         "difficulty": 8,
         "topics": [
-          "strings",
           "text_formatting",
           "transforming"
         ]
@@ -865,11 +910,16 @@
         "slug": "rna-transcription",
         "name": "RNA Transcription",
         "uuid": "3af96d19-87d7-4d8b-aecb-f63122815501",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings",
+          "result"
+        ],
+        "prerequisites": [
+          "strings",
+          "result"
+        ],
         "difficulty": 1,
         "topics": [
-          "strings",
           "transforming"
         ]
       },
@@ -877,11 +927,16 @@
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "2a71bafa-87ac-4f36-ba45-a1b24dcca67a",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings",
+          "lists"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists"
+        ],
         "difficulty": 3,
         "topics": [
-          "strings",
           "integers",
           "lists",
           "algorithms",
@@ -903,8 +958,12 @@
         "slug": "run-length-encoding",
         "name": "Run-Length Encoding",
         "uuid": "0b2ac079-f7ed-4e90-a566-00c9fe0d5c88",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
         "difficulty": 5,
         "topics": [
           "algorithms",
@@ -926,8 +985,16 @@
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "5b2f0983-6feb-4329-aff2-d822274a9882",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "dict",
+          "lists",
+          "strings"
+        ],
+        "prerequisites": [
+          "dict",
+          "lists",
+          "strings"
+        ],
         "difficulty": 7,
         "topics": [
           "parsing",
@@ -1103,7 +1170,8 @@
         "name": "Simple Cipher",
         "uuid": "49a3d9b1-38bd-464b-9d8b-4c603d351f55",
         "practices": [
-          "random"
+          "random",
+          "strings"
         ],
         "prerequisites": [
           "lists",
