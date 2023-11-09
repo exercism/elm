@@ -7,7 +7,7 @@ on:
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
         run: bin/build.sh
 
   elm-test-runner:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout exercism/elm
