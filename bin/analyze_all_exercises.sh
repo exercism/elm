@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # This script is meant to run in exercism/elm-analyzer, pulled from the exercism/elm CI
 
