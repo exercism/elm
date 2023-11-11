@@ -60,5 +60,6 @@ unique element list =
         |> (==) 1
 
 
+makeTreasureChest : Chest treasure { conditions | securePassword : (), uniqueTreasure : () } -> TreasureChest treasure
 makeTreasureChest (Chest password treasure) =
     TreasureChest password treasure
