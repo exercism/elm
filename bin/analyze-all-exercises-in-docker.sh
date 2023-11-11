@@ -16,6 +16,6 @@ docker run \
     --mount type=bind,src=${PWD},dst=/opt/analyzer/elm_repo \
     --mount type=tmpfs,dst=/tmp \
     --volume "${PWD}/bin/analyze_all_exercises.sh:/opt/analyzer/bin/analyze_all_exercises.sh" \
-    --entrypoint /opt/analyzer/bin/run_all_exercises.sh \
+    --entrypoint /opt/analyzer/bin/analyze_all_exercises.sh \
     exercism/elm-analyzer \
     /opt/analyzer/elm_repo
