@@ -1,16 +1,9 @@
 module TwelveDays exposing (recite)
 
-import List exposing (map, range)
-import String exposing (concat)
-
 
 recite : Int -> Int -> List String
 recite start stop =
-    if withinSong start stop then
-        map lyric (range start stop)
-
-    else
-        Debug.todo "I would make up verses if I could...sorry about this"
+    List.map lyric (List.range start stop)
 
 
 lyric : Int -> String
@@ -26,12 +19,12 @@ lyric day =
             else
                 verseEnd day day
     in
-    concat [ beginning, ending, "." ]
+    String.concat [ beginning, ending, "." ]
 
 
 verseBegin : Int -> String
 verseBegin day =
-    concat
+    String.concat
         [ "On the "
         , dayStr day
         , " day of Christmas my true love gave to me: "
@@ -46,14 +39,14 @@ verseEnd day originalDay =
                 gift day
 
             else
-                concat [ ", ", gift day ]
+                String.concat [ ", ", gift day ]
     in
     case day of
         1 ->
-            concat [ ", and ", gift day ]
+            String.concat [ ", and ", gift day ]
 
         _ ->
-            concat [ dayGift, verseEnd (day - 1) originalDay ]
+            String.concat [ dayGift, verseEnd (day - 1) originalDay ]
 
 
 dayStr : Int -> String
@@ -92,11 +85,8 @@ dayStr day =
         11 ->
             "eleventh"
 
-        12 ->
-            "twelfth"
-
         _ ->
-            Debug.todo "Um, that's not a day I recognize...sorry"
+            "twelfth"
 
 
 gift : Int -> String
@@ -135,20 +125,5 @@ gift day =
         11 ->
             "eleven Pipers Piping"
 
-        12 ->
-            "twelve Drummers Drumming"
-
         _ ->
-            Debug.todo "I don't have a gift for you...sorry"
-
-
-withinSong : Int -> Int -> Bool
-withinSong start stop =
-    let
-        goodStart =
-            start >= 1 && start <= 12
-
-        goodStop =
-            stop >= 1 && start <= 12
-    in
-    start <= stop && goodStart && goodStop
+            "twelve Drummers Drumming"
