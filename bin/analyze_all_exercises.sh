@@ -47,7 +47,7 @@ do
   echo "Running analyzer on exercise $exercise_dir"
   bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
   results=$(jq --raw-output '.summary' "$exercise_dir/analysis.json")
-  if [[ $results != "No suggestions found." ]]; then
+  if [ ! "$results" = "No suggestions found." ]; then
     echo "$exercise_dir is not passing the tests:"
     jq '.' "$exercise_dir/analysis.json"
     exit_code=1
