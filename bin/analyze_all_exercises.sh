@@ -22,10 +22,10 @@ cp "$elm_repo/template/elm.json" "$build/"
 # Copying exercises in one directory
 for example_file in $exercises/concept/**/.meta/*.elm
 do
-  solution=$(jq --raw-output '.files.solution | .[0]' "$exercise_dir/.meta/config.json")
-  exercise_name=$(echo $solution | sed -r 's/.*\/([a-zA-Z]*)\.elm/\1/')
-  echo $exercise_name
   exercise_dir=$(dirname $(dirname $example_file))
+  solution=$(jq --raw-output '.files.solution | .[0]' "$exercise_dir/.meta/config.json")
+  exercise_name=$(echo $solution | sed -r 's/src\/([a-zA-Z]*)\.elm/\1/')
+  echo $exercise_name
   cp $exercise_dir/src/*.elm "$build/src/"
   cp $example_file "$build/src/$exercise_name.elm"
   cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "$build/tests/Tests$exercise_name.elm"
