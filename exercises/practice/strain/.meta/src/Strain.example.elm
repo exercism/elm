@@ -4,8 +4,8 @@ import List
 
 
 keep : (a -> Bool) -> List a -> List a
-keep predicate list =
-    List.foldr (consIf predicate) [] list
+keep =
+    List.filter
 
 
 discard : (a -> Bool) -> List a -> List a
