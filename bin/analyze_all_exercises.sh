@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # This script is meant to run in exercism/elm-analyzer, pulled from the exercism/elm CI
 
@@ -14,45 +14,36 @@ elm_repo=$1
 exercices=$(mktemp -d /tmp/exercices_XXXXXXXXXX)
 cp -r "$elm_repo/exercises/concept" "$elm_repo/exercises/practice" $exercices
 
-# Checking assumption that solution files are unique
-for config_file in "$exercices"/*/*/.meta/config.json
+build="$exercices/build"
+rm -rf $build
+mkdir -p "$build/src" "$build/tests"
+cp "$elm_repo/template/elm.json" "$build/"
+
+# Copying exercises in one directory
+for example_file in $exercices/concept/**/.meta/*.elm
 do
-  solution_length=$(jq '.files.solution | length' $config_file)
-  if [[ ! $solution_length -eq 1 ]]; then
-    echo "$config_file has more than one solution"
-    exit 1
-  fi
+  exercise_dir=$(dirname $(dirname $example_file))
+  # get kebab-case slug and transform it to PascalCase
+  exercise_name=$(basename $exercise_dir | sed -r 's/(^|-)([a-z])/\U\2/g')
+  cp $exercise_dir/src/*.elm "$build/src/"
+  cp $example_file "$build/src/$exercise_name.elm"
+  cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "$build/tests/Tests$exercise_name.elm"
 done
 
-# Copy exemplar files in solution
-for exercise_dir in "$exercices/concept"/*
+for example_file in $exercices/practice/**/.meta/src/*.example.elm
 do
-  solution=$(jq --raw-output '.files.solution | .[0]' "$exercise_dir/.meta/config.json")
-  exemplar=$(jq --raw-output '.files.exemplar | .[0]' "$exercise_dir/.meta/config.json")
-  cp "$exercise_dir/$exemplar" "$exercise_dir/$solution"
+  exercise_dir=$(dirname $(dirname $(dirname $example_file)))
+  exercise_name=$(basename $example_file .example.elm)
+  cp $example_file "$build/src/$exercise_name.elm"
+  cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "$build/tests/Tests$exercise_name.elm"
 done
 
-# Copy example files in solution
-for exercise_dir in "$exercices/practice"/*
-do
-  solution=$(jq --raw-output '.files.solution | .[0]' "$exercise_dir/.meta/config.json")
-  example=$(jq --raw-output '.files.example | .[0]' "$exercise_dir/.meta/config.json")
-  cp "$exercise_dir/$example" "$exercise_dir/$solution"
-done
-
-# Run analyzer for all exercises
-exit_code=0
-for exercise_dir in "$exercices"/*/*
-do
-  echo "Running analyzer on exercise $exercise_dir"
-  bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
-  results=$(jq --raw-output '.summary' "$exercise_dir/analysis.json")
-  if [ ! "$results" = "No suggestions found." ]; then
-    echo "$exercise_dir is not passing the tests:"
-    jq '.' "$exercise_dir/analysis.json"
-    exit_code=1
-  fi
-done
+echo "Running analyzer"
+bin/run.sh "ignored_slug" $build $build > /dev/null
+results=$(jq --raw-output '.summary' "$build/analysis.json")
+if [[ "$results" != "No suggestions found." ]]; then
+  jq '.' "$build/analysis.json"
+  exit 1
+fi
 
 echo "All exercises analyzed"
-exit ${exit_code}
