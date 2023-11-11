@@ -3,11 +3,11 @@ name: elm / pr
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   ci:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
@@ -32,7 +32,7 @@ jobs:
         run: bin/build.sh
 
   elm-test-runner:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout exercism/elm
@@ -40,3 +40,13 @@ jobs:
 
       - name: Run tests for all exercises
         run: bin/run-all-exercises-in-docker.sh
+
+  elm-analyzer:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout exercism/elm
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+
+      - name: Run tests for all exercises
+        run: bin/analyze-all-exercises-in-docker.sh
