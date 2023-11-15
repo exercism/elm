@@ -24,11 +24,17 @@ tests =
                 \() ->
                     SgfParsing.parse ";"
                         |> Expect.equal (Err "tree missing")
+
+        -- this test is structured a bit differently to avoid an elm-review NoUnused.CustomTypeConstructorArgs error
         , skip <|
             test "node without properties" <|
                 \() ->
-                    SgfParsing.parse "(;)"
-                        |> Expect.equal (Ok (Node { properties = Dict.empty, children = [] }))
+                    case SgfParsing.parse "(;)" of
+                        Ok (Node node) ->
+                            node |> Expect.equal { properties = Dict.empty, children = [] }
+
+                        _ ->
+                            Expect.fail "input didn't parse"
         , skip <|
             test "single node tree" <|
                 \() ->
