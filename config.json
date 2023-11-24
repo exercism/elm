@@ -421,10 +421,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
-        "topics": [
-          "recursion",
-          "transforming"
-        ]
+        "status": "deprecated"
       },
       {
         "slug": "grade-school",
