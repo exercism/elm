@@ -67,3 +67,9 @@ description = "random character is valid"
 description = "each ability is only calculated once"
 include = false
 comment = "This does not make sense for Elm's Random.Generator"
+
+[dca2b2ec-f729-4551-84b9-078876bb4808]
+description = "each ability is only calculated once"
+reimplements = "2ca77b9b-c099-46c3-a02c-0d0f68ffa0fe"
+include = false
+comment = "This does not make sense for Elm's Random.Generator"

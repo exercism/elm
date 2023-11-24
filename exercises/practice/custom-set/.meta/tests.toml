@@ -75,6 +75,9 @@ description = "Sets with the same elements are equal -> sets with different elem
 [06059caf-9bf4-425e-aaff-88966cb3ea14]
 description = "Sets with the same elements are equal -> set is not equal to larger set with same elements"
 
+[d4a1142f-09aa-4df9-8b83-4437dcf7ec24]
+description = "Sets with the same elements are equal -> set is equal to a set constructed from an array with duplicates"
+
 [8a677c3c-a658-4d39-bb88-5b5b1a9659f4]
 description = "Unique elements can be added to a set -> add to empty set"
 
