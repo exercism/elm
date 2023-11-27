@@ -18,7 +18,7 @@ tests =
                 \() -> Expect.equal (Just "2234567890") (getNumber "223 456   7890   ")
         , skip <|
             test "invalid when 9 digits" <|
-                \() -> Expect.equal Nothing (getNumber "223456789")
+                \() -> Expect.equal Nothing (getNumber "123456789")
         , skip <|
             test "invalid when 11 digits does not start with a 1" <|
                 \() -> Expect.equal Nothing (getNumber "22234567890")

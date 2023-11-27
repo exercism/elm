@@ -97,6 +97,12 @@ tests =
                             |> Expect.equal True
                             |> Expect.onFail "equal (fromList [ 1, 2 ]) (fromList [ 2, 1 ]) should be True"
             , skip <|
+                test "set is equal to a set constructed from an array with duplicates" <|
+                    \() ->
+                        CustomSet.equal (CustomSet.fromList [ 1 ]) (CustomSet.fromList [ 1, 1 ])
+                            |> Expect.equal True
+                            |> Expect.onFail "equal (fromList [ 1 ]) (fromList [ 1, 1 ]) should be True"
+            , skip <|
                 test "sets with different elements are not equal" <|
                     \() ->
                         CustomSet.equal (CustomSet.fromList [ 1, 2, 3 ]) (CustomSet.fromList [ 1, 2, 4 ])

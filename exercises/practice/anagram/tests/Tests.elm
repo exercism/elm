@@ -91,7 +91,7 @@ tests =
             test "does not detect a anagram if the original word is repeated" <|
                 \() ->
                     Expect.equal []
-                        (detect "go" [ "go Go GO" ])
+                        (detect "go" [ "goGoGO" ])
         , skip <|
             test "anagrams must use all letters exactly once (go)" <|
                 \() ->
