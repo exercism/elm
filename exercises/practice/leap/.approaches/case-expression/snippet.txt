@@ -1,0 +1,11 @@
+isLeapYear : Int -> Bool
+isLeapYear year =
+  let
+    isDivisibleByFour = (modBy 4 year) == 0
+    isDivisibleBy100 = (modBy 100 year) == 0
+    isDivisibleBy400 = (modBy 400 year) == 0
+  in
+    case (isDivisibleByFour, isDivisibleBy100, isDivisibleBy400) of
+      (True, _, True) -> True
+      (True, False, _) -> True
+      _ -> False

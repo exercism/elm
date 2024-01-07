@@ -1,0 +1,17 @@
+isLeapYear : Int -> Bool
+isLeapYear year =
+  let
+    divisbleBy number = 
+      modBy number year == 0 
+  in
+    if divisbleBy(400) then
+      return True
+    
+    else if divisbleBy(100) then
+      return False
+    
+    else if divisbleBy(4) then
+      return True
+    
+    else
+      return False
