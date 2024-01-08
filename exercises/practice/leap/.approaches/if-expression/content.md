@@ -4,7 +4,7 @@
 isLeapYear : Int -> Bool
 isLeapYear year =
   let
-    divisbleBy number = 
+    divisibleBy number = 
       modBy number year == 0 
   in
     if divisbleBy(400) then
