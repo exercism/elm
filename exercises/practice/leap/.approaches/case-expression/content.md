@@ -22,7 +22,7 @@ This is a [truth-table][truth-table] like approach, which can be easier to read 
 
 ## When to use a case expression?
 
-Using a case expression with a `Tuple` is idiomatic in Elm, but Tuple's have a maximum of 3 values, so can't be used for anything larger than this.
+Using a case expression with a `Tuple` is idiomatic in Elm, but tuples have a maximum of 3 values, so can't be used for anything larger than this.
 
 Strings and arrays can hold more values and can also be used with case expressions, which are useful in many circumstances.
 Using an array with a case expression and recursion is especially common.
