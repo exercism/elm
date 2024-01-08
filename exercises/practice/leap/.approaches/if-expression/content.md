@@ -1,4 +1,4 @@
-# If expresion
+# If expression
 
 ```elm
 isLeapYear : Int -> Bool
