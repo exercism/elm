@@ -1,7 +1,7 @@
 {
     "introduction": {
         "authors": [
-            "MatthijsBlom"
+            "ceddlyburge"
         ]
     },
     "approaches": [
@@ -11,25 +11,25 @@
             "title": "Logical expression",
             "blurb": "Use logical operators to combine several tests into one.",
             "authors": [
-                "MatthijsBlom"
+                "ceddlyburge"
             ]
         },
         {
             "uuid": "a6fbc4d9-911b-42cc-aa88-e015dd1f03b0",
-            "slug": "guards",
-            "title": "Guards",
-            "blurb": "Use a sequence of guards.",
+            "slug": "case-expression",
+            "title": "Case expression",
+            "blurb": "Use a case expression.",
             "authors": [
-                "MatthijsBlom"
+                "ceddlyburge"
             ]
         },
         {
             "uuid": "708be8e8-0a2e-437d-8b39-6df37326890f",
-            "slug": "conditional-expression",
-            "title": "Conditional expression",
-            "blurb": "Use a single conditional expression.",
+            "slug": "if-expression",
+            "title": "If expression",
+            "blurb": "Use an if expression.",
             "authors": [
-                "MatthijsBlom"
+                "ceddlyburge"
             ]
         }
     ]
