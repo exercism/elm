@@ -1,8 +1,8 @@
-if divisbleBy(400) then
-  return True
-else if divisbleBy(100) then
-  return False
-else if divisbleBy(4) then
-  return True
-else
-  return False
+if divisibleBy(400) then
+  True
+
+else if divisibleBy(100) then
+  False
+  
+else 
+  divisibleBy 4

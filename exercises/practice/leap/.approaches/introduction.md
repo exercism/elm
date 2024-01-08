@@ -10,7 +10,7 @@ However, they differ in the ways in which they combine these checks.
 isLeapYear : Int -> Bool
 isLeapYear year = 
   let
-    divisbleBy number = 
+    divisibleBy number = 
       modBy number year == 0 
   in
     divisibleBy 4 && (not (divisibleBy 100) || divisibleBy 400)
@@ -25,20 +25,17 @@ A logicial expression is the most concise approach.
 isLeapYear : Int -> Bool
 isLeapYear year =
   let
-    divisbleBy number = 
+    divisibleBy number = 
       modBy number year == 0 
   in
-    if divisbleBy(400) then
-      return True
-    
-    else if divisbleBy(100) then
-      return False
-    
-    else if divisbleBy(4) then
-      return True
-    
-    else
-      return False
+    if divisibleBy(400) then
+      True
+
+    else if divisibleBy(100) then
+      False
+      
+    else 
+      divisibleBy 4
 ```
 
 An if expression is not as concise, but is [easier to describe][describable-code].
@@ -65,7 +62,7 @@ This takes a [truth-table][truth-table] like approach, which can be easier to re
 
 ## Other approaches
 
-There are also more esoteric approaches, [such as this one using recursion, an array and a case expression][esoteric-approach], that are not idiomatic, but that can be interesting to look at, and probably come about by trying to solve the problem using some artificial constraints, as you would often do in a code kata.
+There are also more esoteric approaches, [such as this one using recursion, a list and a case expression][esoteric-approach], that are not idiomatic, but that can be interesting to look at, and probably come about by trying to solve the problem using some artificial constraints, as you would often do in a code kata.
 
 ## General guidance
 
@@ -98,7 +95,7 @@ All approaches listed here are valid choices unless marked otherwise.
   "Truth tables"
 [esoteric-approach]
   https://exercism.org/tracks/elm/exercises/leap/solutions/edgerunner
-  "An esoteric solution to leap, using recursion, an array and a case expression"
+  "An esoteric solution to leap, using recursion, a list and a case expression"
 [modby-function]
   https://package.elm-lang.org/packages/elm/core/latest/Basics#modBy
   "modBy function in Elm"

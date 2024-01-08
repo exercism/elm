@@ -7,18 +7,14 @@ isLeapYear year =
     divisibleBy number = 
       modBy number year == 0 
   in
-    if divisbleBy(400) then
-      return True
+    if divisibleBy 400 then
+      True
     
-    else if divisbleBy(100) then
-      return False
+    else if divisibleBy 100 then
+      False
     
-    else if divisbleBy(4) then
-      return True
-    
-    else
-      return False
-
+    else 
+      divisibleBy 4
 ```
 
 An [`if` expression][if-expression] (`if … then … else …`) is a compound expression that uses a test to determine which of two alternatives to evaluate to.
