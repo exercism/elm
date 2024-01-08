@@ -16,7 +16,7 @@ isLeapYear year =
 
 ## In this approach
 
-In this approach we use a [case expression][case-expression], and match on a [Tuple][tuple]
+In this approach we use a [`case` expression][case-expression], and match on a [`Tuple`][tuple]
 It turns out that, if we are careful to ask questions in the right order, we can always potentially attain certainty about the answer by asking one more question.
 This is a [truth-table][truth-table] like approach, which can be easier to read for complicated logic.
 
@@ -29,7 +29,9 @@ Strings and arrays can hold more values and can also be used with case statement
 [case-expression]:
   https://exercism.org/tracks/haskell/exercises/leap/approaches/conditional-expression
   "Approach: a conditional expression"
-
 [tuple]
   https://elmprogramming.com/tuple.html
   "Tuples in Elm"
+[truth-table]:
+  https://brilliant.org/wiki/truth-tables/
+  "Truth tables"

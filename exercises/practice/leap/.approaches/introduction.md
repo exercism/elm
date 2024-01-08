@@ -72,7 +72,7 @@ There are also more esoteric approaches, [such as this one using recursion, an a
 The key to determining whether a given year is a leap year is to know whether the year is evenly divisible by `4`, `100`, and `400`.
 For determining that, you can use the [`modBy` function][modby-function], which yields the remainder after division.
 
-You don't need to use a ['let' statement][let-statement] to define an `isDivisibleBy` function, although all the examples here do to aid readability.
+You don't need to use a ['let' expression][let-expression] to define an `isDivisibleBy` function, although all the examples here do to aid readability.
 
 ## Which approach to use?
 
@@ -97,10 +97,13 @@ Be sure to check out all of their individual pages though: they each have intere
   "Writing easily describable code"
 [truth-table]:
   https://brilliant.org/wiki/truth-tables/
-  "Writing easily describable code"
+  "Truth tables"
 [esoteric-approach]
   https://exercism.org/tracks/elm/exercises/leap/solutions/edgerunner
   "An esoteric solution to leap, using recursion, an array and a case statement"
 [modby-function]
   https://package.elm-lang.org/packages/elm/core/latest/Basics#modBy
   "modBy function in Elm"
+[let-expression]
+  https://elm-lang.org/docs/syntax#let-expressions
+  "let expressions in Elm"

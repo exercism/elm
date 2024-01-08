@@ -12,6 +12,8 @@ isLeapYear year =
 
 We can combine smaller logical statements into larger ones using the logical operators `&&` (and), `||` (or), and `not` (negation).
 
+A logicial expression is the most concise approach.
+
 ## Precedence
 
 In school they teach you that `2 + 3 * 4` is to be read as meaning `2 + (3 * 4)`.
