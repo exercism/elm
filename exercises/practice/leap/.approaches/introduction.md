@@ -28,10 +28,10 @@ isLeapYear year =
     divisibleBy number = 
       modBy number year == 0 
   in
-    if divisibleBy(400) then
+    if divisibleBy 400 then
       True
 
-    else if divisibleBy(100) then
+    else if divisibleBy 100 then
       False
       
     else 
