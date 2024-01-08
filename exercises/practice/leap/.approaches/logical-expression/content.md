@@ -10,7 +10,7 @@ isLeapYear year =
     divisibleBy 4 && (not (divisibleBy 100) || divisibleBy 400)
 ```
 
-We can combine smaller logical statements into larger ones using the logical operators `&&` (and), `||` (or), and `not` (negation).
+We can combine smaller logical expressions into larger ones using the logical operators `&&` (and), `||` (or), and `not` (negation).
 
 A logicial expression is the most concise approach.
 

@@ -41,7 +41,7 @@ isLeapYear year =
       return False
 ```
 
-An if statement is not as concise, but is [easier to describe][describable-code].
+An if expression is not as concise, but is [easier to describe][describable-code].
 [Read more about this approach][if-expression].
 
 ## Approach: a case expression
@@ -65,7 +65,7 @@ This takes a [truth-table][truth-table] like approach, which can be easier to re
 
 ## Other approaches
 
-There are also more esoteric approaches, [such as this one using recursion, an array and a case statement][esoteric-approach], that are not idiomatic, but that can be interesting to look at, and probably come about by trying to solve the problem using some artificial constraints, as you would often do in a code kata.
+There are also more esoteric approaches, [such as this one using recursion, an array and a case expression][esoteric-approach], that are not idiomatic, but that can be interesting to look at, and probably come about by trying to solve the problem using some artificial constraints, as you would often do in a code kata.
 
 ## General guidance
 
@@ -98,7 +98,7 @@ All approaches listed here are valid choices unless marked otherwise.
   "Truth tables"
 [esoteric-approach]
   https://exercism.org/tracks/elm/exercises/leap/solutions/edgerunner
-  "An esoteric solution to leap, using recursion, an array and a case statement"
+  "An esoteric solution to leap, using recursion, an array and a case expression"
 [modby-function]
   https://package.elm-lang.org/packages/elm/core/latest/Basics#modBy
   "modBy function in Elm"
