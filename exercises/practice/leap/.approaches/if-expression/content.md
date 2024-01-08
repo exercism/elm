@@ -21,7 +21,7 @@ isLeapYear year =
 
 ```
 
-An [`if` expression][if-expressions] (`if … then … else …`) is a compound expression that uses a test to determine which of two alternatives to evaluate to.
+An [`if` expression][if-expression] (`if … then … else …`) is a compound expression that uses a test to determine which of two alternatives to evaluate to.
 Many other languages feature a similar construct, often termed 'ternary operator'.
 
 ## In this approach

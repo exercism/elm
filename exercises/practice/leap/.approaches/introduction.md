@@ -80,18 +80,16 @@ Code exists primarily for humans to read and reason about.
 Therefore, in general, go with the approach that _makes the most sense_.
 
 All approaches listed here are valid choices unless marked otherwise.
-Be sure to check out all of their individual pages though: they each have interesting things to say!
 
 [logical-expression]:
-  https://exercism.org/tracks/elm/exercises/leap/approaches/conditional-expression
+  https://exercism.org/tracks/elm/exercises/leap/approaches/logical-expression
   "Approach: a conditional expression"
 [if-expression]:
-  https://exercism.org/tracks/elm/exercises/leap/approaches/if-statement
-  "Approach: an if statement"
+  https://exercism.org/tracks/elm/exercises/leap/approaches/if-expression
+  "Approach: an if expression"
 [case-expression]:
-  https://exercism.org/tracks/elm/exercises/leap/approaches/case-statement
-  "Approach: a case statement"
-
+  https://exercism.org/tracks/elm/exercises/leap/approaches/case-expression
+  "Approach: a case expression"
 [describable-code]:
   https://www.freecodecamp.org/news/writing-describable-code/
   "Writing easily describable code"
