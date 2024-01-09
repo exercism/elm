@@ -481,7 +481,7 @@
         "prerequisites": [
           "strings"
         ],
-        "difficulty": 2
+        "difficulty": 1
       },
       {
         "slug": "robot-simulator",
