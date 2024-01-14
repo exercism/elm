@@ -1,0 +1,36 @@
+{
+  "introduction": {
+    "authors": [
+      "ceddlyburge"
+    ]
+  },
+  "approaches": [
+    {
+      "uuid": "243cf336-7c0b-430b-a064-c976adea8d70",
+      "slug": "logical-expression",
+      "title": "Logical expression",
+      "blurb": "Use logical operators to combine several tests into one.",
+      "authors": [
+        "ceddlyburge"
+      ]
+    },
+    {
+      "uuid": "31ad676e-299b-4b7a-912c-3e4f68b5d873",
+      "slug": "case-expression",
+      "title": "Case expression",
+      "blurb": "Use a case expression.",
+      "authors": [
+        "ceddlyburge"
+      ]
+    },
+    {
+      "uuid": "9546e09d-9cde-4da1-b78a-0ef33d7d6db3",
+      "slug": "if-expression",
+      "title": "If expression",
+      "blurb": "Use an if expression.",
+      "authors": [
+        "ceddlyburge"
+      ]
+    }
+  ]
+}

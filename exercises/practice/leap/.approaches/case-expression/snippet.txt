@@ -1,0 +1,4 @@
+case (isDivisibleByFour, isDivisibleBy100, isDivisibleBy400) of
+  (True, _, True) -> True
+  (True, False, _) -> True
+  _ -> False
