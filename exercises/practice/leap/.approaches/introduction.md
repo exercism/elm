@@ -90,12 +90,12 @@ All approaches listed here are valid choices unless marked otherwise.
 [truth-table]:
   https://brilliant.org/wiki/truth-tables/
   "Truth tables"
-[esoteric-approach]
+[esoteric-approach]:
   https://exercism.org/tracks/elm/exercises/leap/solutions/edgerunner
   "An esoteric solution to leap, using recursion, a list and a case expression"
-[modby-function]
+[modby-function]:
   https://package.elm-lang.org/packages/elm/core/latest/Basics#modBy
   "modBy function in Elm"
-[let-expression]
+[let-expression]:
   https://elm-lang.org/docs/syntax#let-expressions
   "let expressions in Elm"
