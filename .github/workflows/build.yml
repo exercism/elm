@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install elm + tools and cache the ELM_HOME directory
-        uses: mpizenberg/elm-tooling-action@913c4c779e2dbf757453839a6df89917f71d7cf9
+        uses: mpizenberg/elm-tooling-action@809c844d494c95906eb8cafcfa0060b29193709d
         with:
           cache-key: elm-${{ matrix.node-version }}-${{ hashFiles('elm-tooling.json', 'template/elm.json') }}
           cache-restore-key: elm-${{ matrix.node-version }}
