@@ -1,4 +1,4 @@
-module PopCount exposing (eggCount)
+module EliudsEggs exposing (eggCount)
 
 
 eggCount : Int -> Int

@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
+import EliudsEggs exposing (eggCount)
 import Expect
-import PopCount exposing (eggCount)
 import Test exposing (Test, describe, skip, test)
 
 

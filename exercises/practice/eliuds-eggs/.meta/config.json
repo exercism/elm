@@ -8,13 +8,13 @@
   ],
   "files": {
     "solution": [
-      "src/PopCount.elm"
+      "src/EliudsEggs.elm"
     ],
     "test": [
       "tests/Tests.elm"
     ],
     "example": [
-      ".meta/src/PopCount.example.elm"
+      ".meta/src/EliudsEggs.example.elm"
     ]
   },
   "blurb": "Help Eliud count the number of eggs in her chicken coop by counting the number of 1 bits in a binary representation.",
