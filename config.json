@@ -1203,6 +1203,14 @@
           "result"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "protein-translation",
+        "name": "protein-translation",
+        "uuid": "c405e318-7101-4b4a-88b4-4099bbd2cd19",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
