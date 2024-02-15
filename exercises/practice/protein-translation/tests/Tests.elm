@@ -141,17 +141,17 @@ tests =
             test "Non-existing codon can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "AAA"
-                        |> Expect.equal (Err InvalidCodon)
+                        |> Expect.equal (Err "Invalid codon")
         , skip <|
             test "Unknown amino acids, not part of a codon, can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "XYZ"
-                        |> Expect.equal (Err InvalidCodon)
+                        |> Expect.equal (Err "Invalid codon")
         , skip <|
             test "Incomplete RNA sequence can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "AUGU"
-                        |> Expect.equal (Err InvalidCodon)
+                        |> Expect.equal (Err "Invalid codon")
         , skip <|
             test "Incomplete RNA sequence can translate if valid until a STOP codon" <|
                 \() ->
