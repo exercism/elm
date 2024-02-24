@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import ProteinTranslation
+import ProteinTranslation exposing (Error(..))
 import Test exposing (Test, describe, skip, test)
 
 
@@ -141,17 +141,17 @@ tests =
             test "Non-existing codon can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "AAA"
-                        |> Expect.equal (Err "Invalid codon")
+                        |> Expect.equal (Err InvalidCodon)
         , skip <|
             test "Unknown amino acids, not part of a codon, can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "XYZ"
-                        |> Expect.equal (Err "Invalid codon")
+                        |> Expect.equal (Err InvalidCodon)
         , skip <|
             test "Incomplete RNA sequence can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "AUGU"
-                        |> Expect.equal (Err "Invalid codon")
+                        |> Expect.equal (Err InvalidCodon)
         , skip <|
             test "Incomplete RNA sequence can translate if valid until a STOP codon" <|
                 \() ->

@@ -2,6 +2,9 @@
   "authors": [
     "BNAndras"
   ],
+  "contributors": [
+    "jiegillet"
+  ],
   "files": {
     "solution": [
       "src/ProteinTranslation.elm"

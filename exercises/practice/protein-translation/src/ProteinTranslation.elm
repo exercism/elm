@@ -1,6 +1,10 @@
-module ProteinTranslation exposing (proteins)
+module ProteinTranslation exposing (Error(..), proteins)
 
 
-proteins : String -> Result String List todo
+type Error
+    = InvalidCodon
+
+
+proteins : String -> Result Error (List String)
 proteins strand =
     Debug.todo "Please implement proteins"

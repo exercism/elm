@@ -1,22 +1,16 @@
-module ProteinTranslation exposing (proteins)
-
-import List
-import String
+module ProteinTranslation exposing (Error(..), proteins)
 
 
-proteins : String -> Result String (List String)
+type Error
+    = InvalidCodon
+
+
+proteins : String -> Result Error (List String)
 proteins strand =
-    case splitIntoCodons strand of
-        [ "" ] ->
-            Ok []
-
-        codons ->
-            case processCodons [] codons of
-                Ok results ->
-                    Ok (List.reverse results)
-
-                Err err ->
-                    Err err
+    strand
+        |> splitIntoCodons
+        |> processCodons []
+        |> Result.map List.reverse
 
 
 splitIntoCodons : String -> List String
@@ -28,10 +22,13 @@ splitIntoCodons strand =
         [ strand ]
 
 
-processCodons : List String -> List String -> Result String (List String)
+processCodons : List String -> List String -> Result Error (List String)
 processCodons acc codons =
     case codons of
         [] ->
+            Ok acc
+
+        [ "" ] ->
             Ok acc
 
         codon :: rest ->
@@ -46,7 +43,7 @@ processCodons acc codons =
                     Err err
 
 
-codonToProtein : String -> Result String String
+codonToProtein : String -> Result Error String
 codonToProtein codon =
     case codon of
         "AUG" ->
@@ -101,4 +98,4 @@ codonToProtein codon =
             Ok "STOP"
 
         _ ->
-            Err "Invalid codon"
+            Err InvalidCodon
