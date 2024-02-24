@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "BNAndras"
+  ],
+  "contributors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/ProteinTranslation.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/ProteinTranslation.example.elm"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}
