@@ -35,7 +35,7 @@
     {
       "uuid": "88e0c055-9ff3-4a36-84b9-320e9cf2de4a",
       "slug": "bitwise-and-type-alias",
-      "title": "Bitwise and type alias",
+      "title": "Bitwise, List and type alias",
       "blurb": "Use a type alias to represent the bit position of the allergy.",
       "authors": [
         "ceddlyburge"

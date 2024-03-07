@@ -1,4 +1,4 @@
-# Bitwise and List
+# Bitwise and Dict
 
 ```elm
 allergies : Dict Int Allergy

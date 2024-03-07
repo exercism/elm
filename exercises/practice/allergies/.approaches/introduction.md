@@ -1,9 +1,5 @@
 # Introduction
 
-todo: use bit position everywhere (not allergy score)
-todo: use same wording for embedding the domain concept everywhere.
-
-
 This exercise is a little contrived, and it doesn't explicity state it, but it is essentially about representing a list of `Allergy`, but using the 0/1 values at the bit positions of an `Int`, instead of using the standard `List` module.
 
 You could imagine that this could be required when interfacing with a legacy system, or to minimise memory usage in a highly constrained environment.

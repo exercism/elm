@@ -1,4 +1,4 @@
-# Bitwise and case expression
+# Bitwise, List and type alias
 
 ```elm
 type alias AllergyAndScore = {
