@@ -19,7 +19,7 @@ twoToFour = [ 2, 3, 4 ]
 oneToFour = 1 :: twoToFour --> [ 1, 2, 3, 4 ]
 ```
 
-Lists are manipulated by functions and operators defined in the [`List` module][list-module] or by [pattern matching](list-destructuring)
+Lists are manipulated by functions and operators defined in the [`List` module][list-module] or by [pattern matching][list-destructuring]
 
 ```elm
 describe : List String -> String
