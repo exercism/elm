@@ -2,7 +2,7 @@
 
 ## General
 
-- You will need to import the [Dict module](dict-module).
+- You will need to import the [Dict module][dict-module].
 
 ## 1. Aggregate scorers
 

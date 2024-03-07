@@ -10,7 +10,7 @@
 
 ## 3. Add a new language to a list
 
-- There are [various ways to combine lists](combine).
+- There are [various ways to combine lists][combine].
 
 ## 4. Count the languages in the list
 
