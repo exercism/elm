@@ -47,7 +47,7 @@ List.length [ 7, 8 ] --> 2
 Any function/operator that appear to modify a list (such as adding an element), will actually return a new list.
 Performance is usually not an issue though, as the implementation of lists prevents unnecessary allocations/copies.
 
-Lists can also be processed using [pattern matching](list-destructuring).
+Lists can also be processed using [pattern matching][list-destructuring].
 
 ```elm
 describe : List String -> String
