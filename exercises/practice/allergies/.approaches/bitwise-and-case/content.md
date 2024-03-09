@@ -65,18 +65,6 @@ This is potentially useful, and means that if there was ever a need for non sequ
 [list-filter-map]:
   https://package.elm-lang.org/packages/elm/core/latest/List#filterMap
   "List.filterMap documentation"
-[tuple-second]:
-  https://package.elm-lang.org/packages/elm/core/latest/Tuple#second
-  "Tuple.second documentation"
-[type-iterator-pattern]:
-  https://sporto.github.io/elm-patterns/basic/type-iterator.html
-  "The type iterator pattern"
-[elm-review]:
-  https://github.com/jfmengels/elm-review
-  "Elm Review"
-[elm-review-no-missing-type-constructor]:
-  https://package.elm-lang.org/packages/Arkham/elm-review-no-missing-type-constructor/latest/
-  "No Missing Type Constucture rule for Elm Review
 [bitwise-and-case-solution]:
   https://exercism.org/tracks/elm/exercises/allergies/solutions/ceddlyburge
   "Bitwise and List solution on exercism"
