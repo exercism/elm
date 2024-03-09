@@ -226,7 +226,7 @@ All approaches listed here are valid choices unless marked otherwise.
   "Elm Review"
 [elm-review-no-missing-type-constructor]:
   https://package.elm-lang.org/packages/Arkham/elm-review-no-missing-type-constructor/latest/
-  "No Missing Type Constucture rule for Elm Review
+  "No Missing Type Constructor rule for Elm Review
 [bitwise-and-case]:
   https://exercism.org/tracks/elm/exercises/allergies/approaches/bitwise-and-case
   "Approach: Bitwise and case expression"
