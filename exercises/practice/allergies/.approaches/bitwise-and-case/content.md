@@ -41,7 +41,7 @@ A hard coded list of all the possible allergy values is created.
 [`List.filterMap`][list-filter-map] is used to filter and map the list.
 It converts the allergy values to their matching `Allergy` or filters them out by returning `Nothing`.
 
-You can see [a sample Bitwise and case expression solution on exercism][bitwise-and-case-solution].
+You can see a variation of [a `Bitwise` and `case` expression solution on Exercism][bitwise-and-case-solution].
 
 ## When to use this approach?
 
