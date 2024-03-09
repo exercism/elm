@@ -1,3 +1,6 @@
+allergies : List Allergy
+allergies = [ Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]
+
 toList : Int -> List Allergy
 toList score =
   allergies
