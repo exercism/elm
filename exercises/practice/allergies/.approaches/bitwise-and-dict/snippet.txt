@@ -1,3 +1,7 @@
+allergies : Dict Int Allergy
+allergies = 
+  Dict.fromList [(1, Eggs), (2, Peanuts), (3, Shellfish), (4, Strawberries), (5, Tomatoes), (6, Chocolate), (7, Pollen), (8, Cats)]
+
 toList : Int -> List Allergy
 toList score =
   Dict.foldr (\key value list -> if Bitwise.and (2 ^ (key - 1)) score > 0 then (value :: list) else list) [] allergies
