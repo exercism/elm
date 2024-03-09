@@ -66,5 +66,5 @@ This is potentially useful, and means that if there was ever a need for non sequ
   https://package.elm-lang.org/packages/elm/core/latest/List#filterMap
   "List.filterMap documentation"
 [bitwise-and-case-solution]:
-  https://exercism.org/tracks/elm/exercises/allergies/solutions/ceddlyburge
+  https://exercism.org/tracks/elm/exercises/allergies/solutions/jiegillet
   "Bitwise and List solution on exercism"
