@@ -27,7 +27,7 @@ isAllergicTo allergy score =
 
 ## In this approach
 
-This approach implicitly uses the index of an item in a list to represent the bit position for the allergy score.
+This approach implicitly uses the index of an item in a list to represent the bit position (minus one) for the allergy score.
 
 [`List.indexedMap`][list-indexed-map] is used to map the list and provide the index of each item, it retains the `Allergy` and adds the bit mask in a tuple.
 [`List.filter`][list-filter] then filters out any `Allergy` in the list where the bit mask doesn't match the score using [`Bitwise.and`][bitwise-and].
