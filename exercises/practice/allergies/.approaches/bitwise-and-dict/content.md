@@ -35,8 +35,9 @@ You can see a variation of [a `Bitwise` and `Dict` solution on Exercism][bitwise
 
 This code is idiomatic in Elm and makes the domain concept of using bit positions in an `Int` to represent a list of `Allergy` a little more explicit.
 
-`isAllergicTo` is a slightly expensive operation, iterating the `allergies` list two times or O(2n).
-However this list is a known and very small length, so for this exercise we should not try to prematurely optimise. It is faster than the [Bitwise and List approach ][bitwise-and-list].
+`isAllergicTo` is a slightly expensive operation, iterating the `allergies` dict once to make a list, and that list is iterated to match the allergy.
+It is faster than the [Bitwise and List approach ][bitwise-and-list].
+However `allergies` is known and of very small size, so for this exercise we should not try to prematurely optimise.
 
 The compiler does not guarantee that the `allergies` dict contains all the `Allergy` types.
 You can use the [type iterator pattern][type-iterator-pattern] to fix this.
