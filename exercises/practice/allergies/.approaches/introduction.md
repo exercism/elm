@@ -53,7 +53,7 @@ You can use the [type iterator pattern][type-iterator-pattern] or use the [no mi
 
 ## Approach: Bitwise and Dict
 
-This approach uses the key of the Dict to represent the bit position for the allergy.
+This approach uses the key of the `Dict` to represent the bit position for the allergy.
 
 ```elm
 allergies : Dict Int Allergy
