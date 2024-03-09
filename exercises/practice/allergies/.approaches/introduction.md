@@ -172,7 +172,7 @@ There are also more esoteric approaches that don't use `Bitwise`, [such as this 
 ## Type iterator pattern
 
 In order to allow the compiler to guarantee that all the `Allergy` types are present in the list (or dict or similar), you can use the type iterator pattern, which involves recursion and a case expression.
-This is explained in  detail on the [elm patterns website][https://sporto.github.io/elm-patterns/basic/type-iterator.html], and you can see how the code would look for this example below.
+This is explained in  detail on the [elm patterns website][type-iterator-pattern], and you can see how the code would look for this example below.
 
 ```elm
 allAllergies : List Allergy
