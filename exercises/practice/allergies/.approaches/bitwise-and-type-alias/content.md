@@ -34,7 +34,8 @@ isAllergicTo allergy score =
 
 This approach uses a type alias to represent the bit position and the allergy.
 
-The approach is very similar to the [Bitwise and List approach][bitwise-and-list], but uses a type alias to make the bit position explicit. It could instead be based on the [Bitwise and Dict approach][bitwise-and-dict].
+The approach is very similar to the [Bitwise and List approach][bitwise-and-list], but uses a type alias to make the bit position explicit.
+It could also be based on the [Bitwise and Dict approach][bitwise-and-dict].
 
 ## When to use this approach?
 
