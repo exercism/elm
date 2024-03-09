@@ -116,7 +116,7 @@ toList score =
   |> List.filterMap ( \allergenInt -> intToAllergen (Bitwise.and score allergenInt))
 ```
 
-This approach is more lines of code, but they are all simple, and it is faster than the other solutions.
+This approach requires more lines of code, but they are all simple, and it is faster than the other solutions.
 
 It is better at embedding the domain concept of using the bit positions in an `Int` to represent a list of `Allergy`, using a bit mask instead of a bit position.
 
