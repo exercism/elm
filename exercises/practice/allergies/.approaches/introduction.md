@@ -15,7 +15,8 @@ isAllergicTo allergy score =
   toList score |> List.member allergy    
 ```
 
-To create a power of 2 from a number you can use `Bitwise.shiftLeftBy x 1` or `2 ^ x`. Using `^` is more idiomatic.
+To create a power of 2 from a number you can use `Bitwise.shiftLeftBy x 1` or `2 ^ x`.
+Using `^` is more idiomatic.
 
 ## Approach: Bitwise and List
 
