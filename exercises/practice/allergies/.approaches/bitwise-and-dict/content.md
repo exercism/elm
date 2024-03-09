@@ -16,7 +16,7 @@ allergies =
 
 toList : Int -> List Allergy
 toList score =
-  Dict.foldr (\key value list -> if Bitwise.and (2 ^ key) score >= 0 then (value :: list) else list) [] allergies
+  Dict.foldr (\key value list -> if Bitwise.and (2 ^ (key - 1)) score > 0 then (value :: list) else list) [] allergies
 
 isAllergicTo : Allergy -> Int -> Bool
 isAllergicTo allergy score =
