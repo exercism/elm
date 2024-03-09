@@ -54,7 +54,8 @@ The bit masks (1, 2, 4 ...) are duplicated once, which most people would say is 
 
 `toList` is fast, iterating the `allergies` just once, or O(n).
 You can add an inverse of the `intToAllergen` function and use it in `isAllergicTo`, which would make the function as fast as it can be (O(1)).
-However, this results in another duplication of the allergy values (1, 2, 4, ...). Optimising for speed usually means unoptimising something else.
+However, this results in another duplication of the allergy values (1, 2, 4, ...).
+Optimising for speed usually means unoptimising something else.
 
 The compiler does not guarantee that the `intToAllergen` function or the hard coded list of allergy values contains all the possible values.
 
