@@ -24,6 +24,10 @@ toList score =
     |> List.Map (\allergyAndScore -> ( 2 ^ allergyAndScore.bitPosition, allergyAndScore.allergy ))
     |> List.filter (\( s, _ ) -> Bitwise.and s score > 0)
     |> List.map Tuple.second
+
+isAllergicTo : Allergy -> Int -> Bool
+isAllergicTo allergy score =
+  toList score |> List.member allergy
 ```
 
 ## In this approach
