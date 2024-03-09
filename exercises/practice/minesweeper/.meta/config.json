@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/Minesweeper.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Minesweeper.example.elm"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
