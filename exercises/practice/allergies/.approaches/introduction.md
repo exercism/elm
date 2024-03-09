@@ -1,6 +1,6 @@
 # Introduction
 
-This exercise is a little contrived, and it doesn't explicity state it, but it is essentially about representing a list of `Allergy`, but using the 0/1 values at the bit positions of an `Int`, instead of using the standard `List` module.
+This exercise is a little contrived, and it doesn't explicitly state it, but it is essentially about representing a list of `Allergy`, but using the 0/1 values at the bit positions of an `Int`, instead of using the standard `List` module.
 
 You could imagine that this could be required when interfacing with a legacy system, or to minimise memory usage in a highly constrained environment.
 
