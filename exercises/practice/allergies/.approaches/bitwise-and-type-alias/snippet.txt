@@ -1,6 +1,6 @@
 toList : Int -> List Allergy
 toList score =
   allergiesAndScores
-    |> List.Map (\allergyAndScore -> ( 2 ^ allergyAndScore.bitPosition, allergyAndScore.allergy ))
+    |> List.map (\allergyAndScore -> ( 2 ^ (allergyAndScore.bitPosition - 1), allergyAndScore.allergy ))
     |> List.filter (\( s, _ ) -> Bitwise.and s score > 0)
     |> List.map Tuple.second
