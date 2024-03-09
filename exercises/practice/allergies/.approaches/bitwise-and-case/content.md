@@ -65,9 +65,6 @@ This is potentially useful, and means that if there was ever a need for non sequ
 [list-filter-map]:
   https://package.elm-lang.org/packages/elm/core/latest/List#filterMap
   "List.filterMap documentation"
-[bitwise-and]:
-  https://package.elm-lang.org/packages/elm/core/latest/Bitwise#and
-  "Bitwise.and documentation"
 [list-map]:
   https://package.elm-lang.org/packages/elm/core/latest/List#map
   "List.map documentation"
