@@ -46,7 +46,8 @@ Ideally the code should communicate its meaning to you.
 
 `toList` is a relatively expensive operation, iterating the `allergies` twice, or O(2n).
 We can't use [List.foldr][list-foldr] to avoid this, as it doesn't provide the list index, and there is no "indexedFoldr" function available from the core libraries.
-`isAllergicTo` is also a relatively expensive operation, iterating the `allergies` list three times or O(3n). However this list is a known and very small length, so for this exercise we should not try to prematurely optimise.
+`isAllergicTo` adds another iteration over the result of `toList`, making it more expensive.
+However the initial `allergies` list is known and of small length, so for this exercise we should not try to prematurely optimise.
 
 The compiler does not guarantee that the `allergies` list contains all the `Allergy` types.
 You can use the [type iterator pattern][type-iterator-pattern] or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
