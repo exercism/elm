@@ -26,7 +26,7 @@ intToAllergen x =
 toList : Int -> List Allergy
 toList score =
   [ 1, 2, 4, 8, 16, 32, 64, 128 ]
-  |> List.filterMap ( \allergenInt -> intToAllergen Bitwise.and score allergenInt)
+  |> List.filterMap ( \allergenInt -> intToAllergen (Bitwise.and score allergenInt))
 
 isAllergicTo : Allergy -> Int -> Bool
 isAllergicTo allergy score =
