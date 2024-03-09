@@ -45,7 +45,8 @@ You can see a variation of [a `Bitwise` and `case` expression solution on Exerci
 
 ## When to use this approach?
 
-This is not as concise as some other solutions, but the code is all very simple and easy to read. It is the fastest solution.
+This is not as concise as some other solutions, but the code is all very simple and easy to read.
+It is the fastest solution of the different approaches.
 
 This approach makes the domain concept of using bit positions in an `Int` to represent a list of `Allergy` a little more explicit, using the bit masks.
 
