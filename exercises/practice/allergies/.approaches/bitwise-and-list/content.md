@@ -37,7 +37,7 @@ You can see [the Bitwise and List solution on exercism][bitwise-and-list-solutio
 
 ## When to use this approach?
 
-This code is idiomatic in Elm and is probably the solution most Elm developers would naturally end up with first.
+This code is idiomatic in Elm and is probably the solution many Elm developers would naturally end up with first.
 It is also the example solution to the exercise and is concise.
 
 This approach does not embed the domain concept of using bit positions in an `Int` to represent a list of `Allergy`.
