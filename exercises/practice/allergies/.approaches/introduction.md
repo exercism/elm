@@ -196,6 +196,8 @@ allAllergies =
 ## General guidance
 
 The way to determine whether two integers share at leat one `1` bit is to use `Bitwise.and i1 i2 > 0`.
+Powers of two only have a single one `1` bit, for example `2 ^ 6` has its 7th bit set to `1`: `1000000`.
+This makes them really useful for checking if a number has a specific bit set to `1`.
 So if you want to see if the first bit is set for an integer you can use `Bitwise.and i 1 > 0`.
 If you want to see if the second bit is set for an integer you can use `Bitwise.and i 2 > 0`.
 If you want to see if the third bit is set for an integer you can use `Bitwise.and i 4 > 0`.
