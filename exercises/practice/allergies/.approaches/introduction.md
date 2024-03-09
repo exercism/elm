@@ -166,7 +166,8 @@ You can use the [type iterator pattern][type-iterator-pattern] to fix this.
 
 ## Other approaches
 
-There are also more esoteric approaches that don't use `Bitwise`, [such as this one using tuples and recursion][esoteric-approach]. `Bitwise` is the idiomatic way to do bit manipulation in Elm, but other solutions can still be interesting to look at.
+There are also more esoteric approaches that don't use `Bitwise`, [such as this one using tuples and recursion][esoteric-approach].
+`Bitwise` is the idiomatic way to do bit manipulation in Elm, but other solutions can still be interesting to look at.
 
 ## Type iterator pattern
 
