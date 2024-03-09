@@ -29,7 +29,7 @@ This approach explicitly uses the key of the Dict to represent the bit position 
 
 [`Dict.foldr`][dict-foldr] is used to create a list of `Allergy`, using [`Bitwise.and`][bitwise-and] to match the allergy value with the score.
 
-You can see [a sample Bitwise and Dict solution on exercism][bitwise-and-dict-solution].
+You can see a variation of [a `Bitwise` and `Dict` solution on Exercism][bitwise-and-dict-solution].
 
 ## When to use this approach?
 
