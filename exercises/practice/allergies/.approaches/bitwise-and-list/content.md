@@ -52,7 +52,7 @@ However the initial `allergies` list is known and of small length, so for this e
 The compiler does not guarantee that the `allergies` list contains all the `Allergy` types.
 You can use the [type iterator pattern][type-iterator-pattern] or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
 
-This approach guarantees all bit positions are valid (unless the number of allergies becomes too big).
+This approach guarantees all bit positions are valid, unless the number of allergies becomes too big, as Javascript (Elm's compilation target) bitwise operators only operate on 32 bit integers.
 
 This approach also guarantees that all bit positions are sequential.
 This is potentially useful, but means that if there was ever a need for non sequential bit positions, we would have to refactor.
