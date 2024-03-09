@@ -1,6 +1,6 @@
 # Introduction
 
-This exercise is a little contrived, and it doesn't explicitly state it, but it is essentially about representing a list of `Allergy`, but using the 0/1 values at the bit positions of an `Int`, instead of using the standard `List` module.
+This exercise is a little contrived, and it doesn't explicitly state it, but it is essentially about representing a list of `Allergy`, but using the 0/1 values at the bit positions of the allergy score (an `Int`), instead of using the standard `List` module.
 
 You could imagine that this could be required when interfacing with a legacy system, or to minimise memory usage in a highly constrained environment.
 
@@ -45,10 +45,10 @@ toList score =
 
 This is the example solution, and is concise.
 
-However, the code does not embed the domain concept of using the bit positions in an `Int` to represent a list of `Allergy`.
+However, the code does not fully embrace the domain concept of using the bit positions in the allergy score to represent a list of `Allergy`.
 
 Also the compiler does not guarantee that the `allergies` list contains all the `Allergy` types.
-You can use the [type iterator pattern][type-iterator-pattern] or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
+You can use the [type iterator pattern][type-iterator-pattern] (more details at the end of this page) or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
 [Read more about this approach][bitwise-and-list].
 
 ## Approach: Bitwise and Dict
@@ -71,10 +71,10 @@ allergies =
 
 toList : Int -> List Allergy
 toList score =
-  Dict.foldr (\key value list -> if Bitwise.and (2 ^ key) score >= 0 then (value :: list) else list) [] allergies
+  Dict.foldr (\key value list -> if Bitwise.and (2 ^ (key - 1)) score > 0 then (value :: list) else list) [] allergies
 ```
 
-This is also concise, and is better at embedding the domain concept of using the bit positions in an `Int` to represent a list of `Allergy` (the bit positions are now explicit).
+This is also concise, and is a little bit better at embracing the domain concept of using the bit positions in the allergy score to represent a list of `Allergy` (the bit positions are now explicit).
 
 It is probably more complex, and would take most people longer to write.
 
@@ -118,7 +118,7 @@ toList score =
 
 This approach requires more lines of code, but they are all simple, and it is faster than the other solutions.
 
-It is better at embedding the domain concept of using the bit positions in an `Int` to represent a list of `Allergy`, using a bit mask instead of a bit position.
+It is better at embracing the domain concept of using the bit positions in the allergy score to represent a list of `Allergy`, using a bit mask instead of a bit position.
 
 The bit masks (1, 2, 4 ...) are duplicated once, which most people would say is Ok (people commonly refactor code when it is duplicated 3 times or more).
 
@@ -156,7 +156,7 @@ toList score =
     |> List.map Tuple.second
 ```
 
-This approach at is the best at embedding the domain concept of using the bit positions in an `Int` to represent a list of `Allergy`.
+This approach is the best at embracing the domain concept of using the bit positions in the allergy score to represent a list of `Allergy`.
 You can also use a tuple instead of a type alias, but then you can't name the variables, so you lose some of this benefit.
 
 The compiler does not guarantee that the `allergies` list contains all the `Allergy` types.

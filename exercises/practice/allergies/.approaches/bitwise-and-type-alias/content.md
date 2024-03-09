@@ -21,7 +21,7 @@ allergiesAndScores =
 toList : Int -> List Allergy
 toList score =
   allergiesAndScores
-    |> List.Map (\allergyAndScore -> ( 2 ^ allergyAndScore.bitPosition, allergyAndScore.allergy ))
+    |> List.map (\{ bitPosition, allergy } -> ( 2 ^ (bitPosition- 1), allergy ))
     |> List.filter (\( s, _ ) -> Bitwise.and s score > 0)
     |> List.map Tuple.second
 
@@ -39,7 +39,7 @@ It could also be based on the [Bitwise and Dict approach][bitwise-and-dict].
 
 ## When to use this approach?
 
-This approach makes the domain concept of using bit positions in an `Int` to represent a list of `Allergy` more explicit, and is the best approach for this, but otherwise shares most of the same properties as the [Bitwise and List approach][bitwise-and-list] it is based on.
+This is the best approach for embracing the domain concept of using bit positions in the allergy score to represent a list of `Allergy`, but otherwise shares most of the same properties as the [Bitwise and List approach][bitwise-and-list] it is based on.
 
 The only difference is that the bit positions are hard coded and explicit.
 

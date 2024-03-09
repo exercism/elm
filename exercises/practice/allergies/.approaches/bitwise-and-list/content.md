@@ -37,15 +37,17 @@ You can see [the Bitwise and List solution on exercism][bitwise-and-list-solutio
 
 ## When to use this approach?
 
-This code is idiomatic in Elm and is probably the solution many Elm developers would naturally end up with first.
-It is also the example solution to the exercise and is concise.
+This code is idiomatic in Elm and is concise.
+It is probably the solution many Elm developers would naturally end up with first.
 
-This approach does not embed the domain concept of using bit positions in an `Int` to represent a list of `Allergy`.
+
+This approach does not fully embrace the domain concept of using bit positions in the allergy score to represent a list of `Allergy`.
 It is relatively easy to work out what the code is doing, but it is not as easy to guess why it is doing it, you have to look at the exercise instructions to understand.
 Ideally the code should communicate its meaning to you.
 
-`toList` is a relatively expensive operation, iterating the `allergies` twice, or O(2n).
-We can't use [List.foldr][list-foldr] to avoid this, as it doesn't provide the list index, and there is no "indexedFoldr" function available from the core libraries.
+`toList` is a relatively expensive operation, iterating the `allergies` three times, or O(3n).
+The first is to add the index, the second is to `filter` and the third is to `map`.
+We can't easily use [`List.foldr`][list-foldr] to avoid this, as it doesn't provide the list index, and there is no `indexedFoldr` function available from the core libraries. You could however use `(index, list)` for the accumulator in [`List.foldr`][list-foldr] to keep track of the index, at the expense of a little extra complexity.
 `isAllergicTo` adds another iteration over the result of `toList`, making it more expensive.
 However the initial `allergies` list is known and of small length, so for this exercise we should not try to prematurely optimise.
 
@@ -80,7 +82,7 @@ This is potentially useful, but means that if there was ever a need for non sequ
   "Elm Review"
 [elm-review-no-missing-type-constructor]:
   https://package.elm-lang.org/packages/Arkham/elm-review-no-missing-type-constructor/latest/
-  "No Missing Type Constucture rule for Elm Review
+  "No Missing Type Constuctor rule for Elm Review
 [bitwise-and-list-solution]:
   https://exercism.org/tracks/elm/exercises/allergies/solutions/ceddlyburge
   "Bitwise and List solution on exercism"

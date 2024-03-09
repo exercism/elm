@@ -1,6 +1,8 @@
 # Bitwise and Dict
 
 ```elm
+import Dict exposing (Dict)
+
 allergies : Dict Int Allergy
 allergies = 
   Dict.fromList 
@@ -33,7 +35,7 @@ You can see a variation of [a `Bitwise` and `Dict` solution on Exercism][bitwise
 
 ## When to use this approach?
 
-This code is idiomatic in Elm and makes the domain concept of using bit positions in an `Int` to represent a list of `Allergy` a little more explicit.
+This code is idiomatic in Elm and is better at embracing the concept of using bit positions in the allergy score to represent a list of `Allergy`.
 
 `isAllergicTo` is a slightly expensive operation, iterating the `allergies` dict once to make a list, and that list is iterated to match the allergy.
 It is faster than the [Bitwise and List approach ][bitwise-and-list].
