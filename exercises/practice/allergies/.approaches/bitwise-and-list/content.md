@@ -41,7 +41,8 @@ This code is idiomatic in Elm and is probably the solution many Elm developers w
 It is also the example solution to the exercise and is concise.
 
 This approach does not embed the domain concept of using bit positions in an `Int` to represent a list of `Allergy`.
-It is relatively easy to work out what the code is doing, but it is not possible to understand why, you also have to look at the exercise instructions to know this, when ideally the code should communicate it to you.
+It is relatively easy to work out what the code is doing, but it is not as easy to guess why it is doing it, you have to look at the exercise instructions to understand.
+Ideally the code should communicate its meaning to you.
 
 `toList` is a relatively expensive operation, iterating the `allergies` twice, or O(2n).
 We can't use [List.foldr][list-foldr] to avoid this, as it doesn't provide the list index, and there is no "indexedFoldr" function available from the core libraries.
