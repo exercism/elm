@@ -1205,6 +1205,23 @@
         "difficulty": 8
       },
       {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "c4e75eb8-6e26-4582-95b6-7ea3205ede6e",
+        "practices": [
+          "dict"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "pattern-matching",
+          "custom-types",
+          "maybe",
+          "dict"
+        ],
+        "difficulty": 5
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "c405e318-7101-4b4a-88b4-4099bbd2cd19",
