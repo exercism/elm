@@ -47,7 +47,8 @@ Ideally the code should communicate its meaning to you.
 
 `toList` is a relatively expensive operation, iterating the `allergies` three times, or O(3n).
 The first is to add the index, the second is to `filter` and the third is to `map`.
-We can't easily use [`List.foldr`][list-foldr] to avoid this, as it doesn't provide the list index, and there is no `indexedFoldr` function available from the core libraries. You could however use `(index, list)` for the accumulator in [`List.foldr`][list-foldr] to keep track of the index, at the expense of a little extra complexity.
+We can't easily use [`List.foldr`][list-foldr] to avoid this, as it doesn't provide the list index, and there is no `indexedFoldr` function available from the core libraries.
+You could however use `(index, list)` for the accumulator in [`List.foldr`][list-foldr] to keep track of the index, at the expense of a little extra complexity.
 `isAllergicTo` adds another iteration over the result of `toList`, making it more expensive.
 However the initial `allergies` list is known and of small length, so for this exercise we should not try to prematurely optimise.
 

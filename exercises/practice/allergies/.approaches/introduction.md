@@ -43,12 +43,13 @@ toList score =
     |> List.map Tuple.second
 ```
 
-This is the example solution, and is concise.
+This code is idiomatic in Elm and is concise.
 
 However, the code does not fully embrace the domain concept of using the bit positions in the allergy score to represent a list of `Allergy`.
 
 Also the compiler does not guarantee that the `allergies` list contains all the `Allergy` types.
 You can use the [type iterator pattern][type-iterator-pattern] (more details at the end of this page) or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
+
 [Read more about this approach][bitwise-and-list].
 
 ## Approach: Bitwise and Dict
@@ -188,7 +189,7 @@ allAllergies =
         Just Tomatoes -> Chocolate :: list |> next
         Just Chocolate -> Pollen :: list |> next
         Just Pollen -> Cats :: list |> next
-        Just Cats -> list
+        Just Cats -> List.reverse list
   in
   next []
 ```
