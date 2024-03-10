@@ -45,7 +45,7 @@ toList score =
 
 This code is idiomatic in Elm and is concise.
 
-However, the code does not fully embrace the domain concept of using the bit positions in the allergy score to represent a list of `Allergy`.
+However, the code does not fully [embrace the domain concept][embed-domain-concepts] of using the bit positions in the allergy score to represent a list of `Allergy`.
 
 Also the compiler does not guarantee that the `allergies` list contains all the `Allergy` types.
 You can use the [type iterator pattern][type-iterator-pattern] (more details at the end of this page) or use the [no missing type constructor][elm-review-no-missing-type-constructor] rule in [Elm Review][elm-review] to fix this.
@@ -211,7 +211,7 @@ Therefore, in general, go with the approach that _makes the most sense_.
 
 All approaches listed here are valid choices unless marked otherwise.
 
-[bitwise-and]:
+[bitwise]:
   https://package.elm-lang.org/packages/elm/core/latest/Bitwise
   "Bitwise documentation"
 [bitwise-and-list]:
@@ -231,7 +231,7 @@ All approaches listed here are valid choices unless marked otherwise.
   "Elm Review"
 [elm-review-no-missing-type-constructor]:
   https://package.elm-lang.org/packages/Arkham/elm-review-no-missing-type-constructor/latest/
-  "No Missing Type Constructor rule for Elm Review
+  "No Missing Type Constructor rule for Elm Review"
 [bitwise-and-case]:
   https://exercism.org/tracks/elm/exercises/allergies/approaches/bitwise-and-case
   "Approach: Bitwise and case expression"
