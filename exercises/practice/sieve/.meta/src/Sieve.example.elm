@@ -33,7 +33,7 @@ runSieve maybePrime sieve =
 
         Just prime ->
             let
-                removeMultiples : Int -> Array Bool -> Array Bool
+                removeMultiples : Int -> (Array Bool -> Array Bool)
                 removeMultiples multiple =
                     if multiple > Array.length sieve then
                         identity
