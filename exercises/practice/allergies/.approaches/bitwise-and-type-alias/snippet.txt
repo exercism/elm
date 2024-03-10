@@ -1,0 +1,8 @@
+allergiesAndScores = [AllergyAndScore Eggs 1, AllergyAndScore Peanuts 2, AllergyAndScore Shellfish 3, AllergyAndScore Strawberries 4, AllergyAndScore Tomatoes 5, AllergyAndScore Chocolate 6, AllergyAndScore Pollen 7, AllergyAndScore Cats 8]
+
+toList : Int -> List Allergy
+toList score =
+  allergiesAndScores
+    |> List.map (\{ bitPosition, allergy } -> ( 2 ^ (bitPosition - 1), allergy ))
+    |> List.filter (\( s, _ ) -> Bitwise.and s score > 0)
+    |> List.map Tuple.second

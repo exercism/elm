@@ -1,0 +1,8 @@
+allergies = [ Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats]
+
+toList : Int -> List Allergy
+toList score =
+  allergies
+    |> List.indexedMap (\i allergy -> ( 2 ^ i, allergy ))
+    |> List.filter (\( allergyScore, _ ) -> Bitwise.and allergyScore score > 0)
+    |> List.map Tuple.second
