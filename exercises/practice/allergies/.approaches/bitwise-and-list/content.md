@@ -83,7 +83,7 @@ This is potentially useful, but means that if there was ever a need for non sequ
   "Elm Review"
 [elm-review-no-missing-type-constructor]:
   https://package.elm-lang.org/packages/Arkham/elm-review-no-missing-type-constructor/latest/
-  "No Missing Type Constuctor rule for Elm Review
+  "No Missing Type Constuctor rule for Elm Review"
 [bitwise-and-list-solution]:
   https://exercism.org/tracks/elm/exercises/allergies/solutions/ceddlyburge
   "Bitwise and List solution on exercism"
