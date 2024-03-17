@@ -8,13 +8,13 @@ import TisburyTreasureHunt exposing (..)
 tests : Test
 tests =
     describe "TisburyTreasureHunt"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "placeLocationToTreasureLocation should convert PlaceLocation to TreasureLocation" <|
                 \_ ->
                     placeLocationToTreasureLocation ( 'C', 1 )
                         |> Expect.equal ( 1, 'C' )
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "1,F is not at Seaside Cottages" <|
                 \_ ->
                     treasureLocationMatchesPlaceLocation ( 'C', 1 ) ( 1, 'F' )
@@ -24,7 +24,7 @@ tests =
                     treasureLocationMatchesPlaceLocation ( 'F', 1 ) ( 1, 'F' )
                         |> Expect.equal True
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "places should know how many treasures are available" <|
                 \_ ->
                     countPlaceTreasures
@@ -34,7 +34,7 @@ tests =
                         ]
                         |> Expect.equal 2
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "can swap Amethyst Octopus for Crystal Crab at Stormy Breakwater" <|
                 \_ ->
                     specialCaseSwapPossible

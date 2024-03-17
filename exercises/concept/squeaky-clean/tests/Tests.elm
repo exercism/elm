@@ -8,7 +8,7 @@ import Test exposing (Test, describe, test)
 tests : Test
 tests =
     describe "Squeaky Clean"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "Empty String" <|
                 \_ ->
                     clean1 ""
@@ -26,7 +26,7 @@ tests =
                     clean1 "my   Id"
                         |> Expect.equal "my___Id"
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "Empty String" <|
                 \_ ->
                     clean2 ""
@@ -52,7 +52,7 @@ tests =
                     clean2 "Line one.\u{000D}Line two.\u{000D}"
                         |> Expect.equal "Line_one.[CTRL]Line_two.[CTRL]"
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "Empty String" <|
                 \_ ->
                     clean3 ""
@@ -82,7 +82,7 @@ tests =
                     clean3 "à-ḃç"
                         |> Expect.equal "àḂç"
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "Empty String" <|
                 \_ ->
                     clean4 ""
@@ -116,7 +116,7 @@ tests =
                     clean4 "1My2Finder3"
                         |> Expect.equal "MyFinder"
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "Empty String" <|
                 \_ ->
                     clean ""

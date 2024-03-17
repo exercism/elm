@@ -9,7 +9,7 @@ import Test exposing (Test, describe, test)
 tests : Test
 tests =
     describe "GottaSnatchEmAll"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "newCollection creates a singleton" <|
                 \() ->
                     GottaSnatchEmAll.newCollection "Bleakachu"
@@ -19,7 +19,7 @@ tests =
                     GottaSnatchEmAll.newCollection "Shiny Bleakachu"
                         |> Expect.equalSets (Set.singleton "Shiny Bleakachu")
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "addCard to an empty collection" <|
                 \() ->
                     GottaSnatchEmAll.addCard "Veevee" Set.empty
@@ -37,7 +37,7 @@ tests =
                     GottaSnatchEmAll.addCard "Veevee" (Set.fromList [ "Bleakachu", "Veevee" ])
                         |> Expect.equal ( True, Set.fromList [ "Bleakachu", "Veevee" ] )
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "tradeCard to an empty collection" <|
                 \() ->
                     GottaSnatchEmAll.tradeCard "Charilord" "Gyros" Set.empty
@@ -63,7 +63,7 @@ tests =
                     GottaSnatchEmAll.tradeCard "Charilord" "Gyros" (Set.fromList [ "Charilord", "Bleakachu", "Veevee" ])
                         |> Expect.equal ( True, Set.fromList [ "Gyros", "Bleakachu", "Veevee" ] )
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "removeDuplicates of an empty list" <|
                 \() ->
                     GottaSnatchEmAll.removeDuplicates []
@@ -81,7 +81,7 @@ tests =
                     GottaSnatchEmAll.removeDuplicates [ "Quarterpie", "Wigglycream", "Cooltentbrov", "Mayofried", "Wigglycream", "Cooltentbrov", "Cooltentbrov" ]
                         |> Expect.equalLists [ "Cooltentbrov", "Mayofried", "Quarterpie", "Wigglycream" ]
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "extraCards of empty collections" <|
                 \() ->
                     GottaSnatchEmAll.extraCards Set.empty Set.empty
@@ -113,7 +113,7 @@ tests =
                         (Set.fromList [ "Shazam", "Cooltentbro", "Wigglycream" ])
                         |> Expect.equal 1
             ]
-        , describe "6"
+        , describe "Task 6"
             [ test "boringCards of no collection" <|
                 \() ->
                     GottaSnatchEmAll.boringCards []
@@ -150,7 +150,7 @@ tests =
                         ]
                         |> Expect.equalLists [ "Gyros", "Veevee" ]
             ]
-        , describe "7"
+        , describe "Task 7"
             [ test "totalCards of no collection" <|
                 \() ->
                     GottaSnatchEmAll.totalCards []
@@ -189,7 +189,7 @@ tests =
                         ]
                         |> Expect.equal 6
             ]
-        , describe "8"
+        , describe "Task 8"
             [ test "splitShinyCards of empty collection" <|
                 \() ->
                     GottaSnatchEmAll.splitShinyCards Set.empty

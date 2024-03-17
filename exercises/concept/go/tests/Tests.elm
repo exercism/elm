@@ -44,7 +44,7 @@ addWhiteCapturedStone game =
 tests : Test
 tests =
     describe "Go"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "should change the player if all rules pass" <|
                 \() ->
                     applyRules vanillaGame identityRule identity identityRule identityRule

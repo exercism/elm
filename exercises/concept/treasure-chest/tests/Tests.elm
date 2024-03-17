@@ -8,7 +8,7 @@ import TreasureChest exposing (..)
 tests : Test
 tests =
     describe "TreasureChest"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "Treasure can be a string" <|
                 \_ ->
                     TreasureChest "password" "treasure"
@@ -18,7 +18,7 @@ tests =
                     TreasureChest "password" 5
                         |> Expect.equal (TreasureChest "password" 5)
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "The treasure is returned if the correct password is used" <|
                 \_ ->
                     TreasureChest "password" "treasure"
@@ -30,7 +30,7 @@ tests =
                         |> getTreasure "wrong-password"
                         |> Expect.equal Nothing
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "The multiplied treasure is returned" <|
                 \_ ->
                     TreasureChest "password" "treasure"

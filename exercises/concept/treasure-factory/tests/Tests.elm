@@ -8,7 +8,7 @@ import TreasureFactory
 tests : Test
 tests =
     describe "TreasureFactory"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "module compiles" <|
                 \() -> Expect.pass
             , test "makeChest returns a value" <|
@@ -32,7 +32,7 @@ tests =
                         |> Expect.equal True
                         |> Expect.onFail "Chests created with different treasures should not be the same"
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "chest with passwords of less than 8 characters are insecure" <|
                 \() ->
                     TreasureFactory.secureChest (TreasureFactory.makeChest "12345" 1)
@@ -50,7 +50,7 @@ tests =
                         |> Expect.equal True
                         |> Expect.onFail "Chests with more than 8 characters should be secure"
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "chests with identical treasures are never unique" <|
                 \() ->
                     [ ( "short", 1 )
@@ -84,7 +84,7 @@ tests =
                         |> List.length
                         |> Expect.equal 4
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "treasures have the correct secure passwords" <|
                 \() ->
                     [ ( "short", 1 )

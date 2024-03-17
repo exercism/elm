@@ -8,7 +8,7 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "RolePlayingGame"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "Introducing someone with their name" <|
                 \() ->
                     Expect.equal (introduce { name = Just "Gandalf", level = 1, health = 42, mana = Nothing }) "Gandalf"
@@ -16,7 +16,7 @@ tests =
                 \() ->
                     Expect.equal (introduce { name = Nothing, level = 1, health = 42, mana = Nothing }) "Mighty Magician"
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "Attempting to revive a player that is alive should return Nothing" <|
                 \() ->
                     Expect.equal (revive { name = Nothing, level = 12, health = 42, mana = Just 7 }) Nothing
@@ -29,7 +29,7 @@ tests =
                     Expect.equal (revive { name = Nothing, level = 10, health = 0, mana = Just 14 })
                         (Just { name = Nothing, level = 10, health = 100, mana = Just 100 })
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "Casting a spell causes damage of double the mana" <|
                 \() ->
                     Expect.equal (castSpell 9 { name = Nothing, level = 10, health = 69, mana = Just 20 })

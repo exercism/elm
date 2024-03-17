@@ -8,13 +8,13 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "LuciansLusciousLasagna"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "The expected amount of time in the oven is 40 minutes" <|
                 \_ ->
                     expectedMinutesInOven
                         |> Expect.equal 40
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "For 2 layers, the preparation time is 4 minutes" <|
                 \_ ->
                     preparationTimeInMinutes 2
@@ -24,7 +24,7 @@ tests =
                     preparationTimeInMinutes 5
                         |> Expect.equal 10
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "For a 3-layers lasagna already in the oven for 10 minutes, you've spent 16 minutes cooking" <|
                 \_ ->
                     elapsedTimeInMinutes 3 10

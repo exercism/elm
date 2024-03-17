@@ -8,7 +8,7 @@ import Test exposing (Test, describe, test)
 tests : Test
 tests =
     describe "BlorkemonCards"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "First is more powerful" <|
                 \() ->
                     isMorePowerful (Card "Bleakachu" 60 False) (Card "Veevee" 40 True)
@@ -22,7 +22,7 @@ tests =
                     isMorePowerful (Card "Bleakachu" 55 False) (Card "Veevee" 55 False)
                         |> Expect.equal False
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "First is more powerful" <|
                 \() ->
                     maxPower (Card "Charilord" 60 True) (Card "Gyros" 40 True)
@@ -36,7 +36,7 @@ tests =
                     maxPower (Card "Charilord" 55 False) (Card "Gyros" 55 False)
                         |> Expect.equal 55
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "A bunch of monsters" <|
                 \() ->
                     sortByMonsterName
@@ -56,7 +56,7 @@ tests =
                             , Card "Wigglycream" 44 True
                             ]
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "A bunch of monsters" <|
                 \() ->
                     sortByCoolness
@@ -74,7 +74,7 @@ tests =
                             , Card "Mayofried" 25 False
                             ]
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "First is more powerful" <|
                 \() ->
                     compareShinyPower (Card "Blasturtle" 60 True) (Card "Hitmonchuck" 40 True)
@@ -116,7 +116,7 @@ tests =
                             , Card "Mayofried" 55 False
                             ]
             ]
-        , describe "6"
+        , describe "Task 6"
             [ test "First is more powerful" <|
                 \() ->
                     expectedWinner (Card "Phiswan" 60 True) (Card "Zumbat" 40 True)

@@ -9,7 +9,7 @@ import Test exposing (Test, describe, test)
 tests : Test
 tests =
     describe "PaolasPrestigiousPizza"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "parse small price" <|
                 \() ->
                     Parser.run priceParser "5€"
@@ -23,7 +23,7 @@ tests =
                     Parser.run priceParser "5"
                         |> Expect.err
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "parse vegetarian indicator" <|
                 \() ->
                     Parser.run vegetarianParser "(v)"
@@ -37,7 +37,7 @@ tests =
                     Parser.run vegetarianParser "( v )"
                         |> Expect.equal (Ok False)
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "parse pizza name" <|
                 \() ->
                     Parser.run wordParser "CAPRESE"
@@ -55,7 +55,7 @@ tests =
                     Parser.run wordParser ""
                         |> Expect.equal (Ok "")
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "parse one ingredient" <|
                 \() ->
                     Parser.run ingredientsParser "spinach"
@@ -77,7 +77,7 @@ tests =
                     Parser.run ingredientsParser "spinach(fresh from the garden)"
                         |> Expect.equal (Ok [ "spinach" ])
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "parse a vegetarian pizza" <|
                 \() ->
                     Parser.run pizzaParser "Formaggio (v): tomato, emmental - 8€"
@@ -103,7 +103,7 @@ tests =
                     Parser.run pizzaParser "Regina: tomato, ham, mushrooms, cantal -"
                         |> Expect.err
             ]
-        , describe "6"
+        , describe "Task 6"
             [ test "parse one pizza" <|
                 \() ->
                     Parser.run menuParser "Formaggio (v): tomato, emmental - 8€"
@@ -155,7 +155,7 @@ Hawaii: tomato, pineapple, ham - 9€
                     Parser.run menuParser "Formaggio (v): tomato, emmental - 8€\n[END]"
                         |> Expect.equal (Err [ { problem = Parser.ExpectingEnd, col = 1, row = 2 } ])
             ]
-        , describe "7"
+        , describe "Task 7"
             [ test "parse multi-word ingredient" <|
                 \() ->
                     Parser.run oneIngredientParser "fresh fish"
