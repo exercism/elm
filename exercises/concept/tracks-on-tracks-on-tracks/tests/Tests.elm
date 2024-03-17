@@ -9,13 +9,13 @@ import TracksOnTracksOnTracks exposing (..)
 tests : Test
 tests =
     describe "TracksOnTracksOnTracks"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "newList should return an empty list" <|
                 \_ ->
                     newList
                         |> Expect.equal []
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "existingList should return Elm, Clojure and Haskell" <|
                 \_ ->
                     existingList
@@ -31,13 +31,13 @@ tests =
                         |> addLanguage "Common Lisp"
                         |> Expect.equal [ "Common Lisp", "Elm", "Clojure", "Haskell" ]
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "addLanguage adds language to custom list" <|
                 \_ ->
                     addLanguage "Racket" [ "Scheme" ]
                         |> Expect.equal [ "Racket", "Scheme" ]
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "Count languages on new list" <|
                 \_ ->
                     newList
@@ -53,7 +53,7 @@ tests =
                     countLanguages [ "Python", "JavaScript" ]
                         |> Expect.equal 2
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "Reverse order of new list" <|
                 \_ ->
                     newList
@@ -69,7 +69,7 @@ tests =
                     reverseList [ "Kotlin", "Java", "Scala", "Clojure" ]
                         |> Expect.equal [ "Clojure", "Scala", "Java", "Kotlin" ]
             ]
-        , describe "6"
+        , describe "Task 6"
             [ test "Empty list is not exciting" <|
                 \_ ->
                     excitingList []

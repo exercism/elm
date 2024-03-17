@@ -10,8 +10,7 @@ import TopScorersSupport exposing (..)
 tests : Test
 tests =
     describe "Top Scorers"
-        [ describe
-            "1"
+        [ describe "Task 1"
             [ test "aggregateScores should count the number of occurences of a player name" <|
                 \() ->
                     aggregateScorers [ "Betty", "Cedd", "Betty" ]
@@ -20,8 +19,7 @@ tests =
                                 [ ( "Betty", 2 ), ( "Cedd", 1 ) ]
                             )
             ]
-        , describe
-            "2"
+        , describe "Task 2"
             [ test "removeInsignificantPlayers should remove players that have scored less goals than the threshold" <|
                 \() ->
                     removeInsignificantPlayers 2
@@ -33,8 +31,7 @@ tests =
                                 [ ( "Betty", 2 ) ]
                             )
             ]
-        , describe
-            "3"
+        , describe "Task 3"
             [ test "resetPlayerGoalCount should set the goalCount to zero for the player" <|
                 \() ->
                     resetPlayerGoalCount "Betty"
@@ -46,8 +43,7 @@ tests =
                                 [ ( "Betty", 0 ), ( "Cedd", 1 ) ]
                             )
             ]
-        , describe
-            "4"
+        , describe "Task 4"
             [ test "formatPlayer should return the player name and the goal count" <|
                 \() ->
                     formatPlayer "Betty" (Dict.singleton "Betty" 3)
@@ -59,7 +55,7 @@ tests =
                         |> Expect.equal
                             "Betty: 0"
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "formatPlayers should return the player name and the goal count, ordered by player name" <|
                 \() ->
                     formatPlayers
@@ -69,7 +65,7 @@ tests =
                         |> Expect.equal
                             "Betty: 2, Cedd: 1"
             ]
-        , describe "6"
+        , describe "Task 6"
             [ test "combineGames should count goals in both games" <|
                 \() ->
                     combineGames

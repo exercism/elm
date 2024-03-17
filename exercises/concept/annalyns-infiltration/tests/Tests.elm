@@ -8,7 +8,7 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "AnnalynsInfiltration"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "Cannot execute fast attack if knight is awake" <|
                 \_ ->
                     let
@@ -26,7 +26,7 @@ tests =
                     canFastAttack knightIsAwake
                         |> Expect.equal True
             ]
-        , describe "2"
+        , describe "Task 2"
             [ test "Cannot spy if everyone is sleeping" <|
                 \_ ->
                     let
@@ -140,7 +140,7 @@ tests =
                     canSpy knightIsAwake archerIsAwake prisonerIsAwake
                         |> Expect.equal True
             ]
-        , describe "3"
+        , describe "Task 3"
             [ test "Can signal prisoner if archer is sleeping and prisoner is awake" <|
                 \_ ->
                     let
@@ -186,7 +186,7 @@ tests =
                     canSignalPrisoner archerIsAwake prisonerIsAwake
                         |> Expect.equal False
             ]
-        , describe "4"
+        , describe "Task 4"
             [ test "Cannot release prisoner if everyone is awake and pet dog is present" <|
                 \_ ->
                     let
@@ -460,7 +460,7 @@ tests =
                     canFreePrisoner knightIsAwake archerIsAwake prisonerIsAwake petDogIsPresent
                         |> Expect.equal False
             ]
-        , describe "5"
+        , describe "Task 5"
             [ test "Annalyn does 12 damage if undetected" <|
                 \_ ->
                     let

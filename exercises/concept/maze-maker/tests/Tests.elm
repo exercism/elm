@@ -13,13 +13,13 @@ import Test.Distribution
 tests : Test
 tests =
     describe "MazeMaker"
-        [ describe "1"
+        [ describe "Task 1"
             [ fuzz (Fuzz.fromGenerator MazeMaker.deadend)
                 "deadend always generates a Deadend"
               <|
                 \deadend -> deadend |> Expect.equal DeadEnd
             ]
-        , describe "2"
+        , describe "Task 2"
             [ fuzzWith
                 { runs = 100
                 , distribution =
@@ -47,7 +47,7 @@ tests =
               <|
                 \_ -> Expect.pass
             ]
-        , describe "3"
+        , describe "Task 3"
             [ fuzz
                 (Fuzz.fromGenerator (MazeMaker.branch MazeMaker.deadend))
                 "branch generates a Branch variant"
@@ -99,7 +99,7 @@ tests =
               <|
                 \_ -> Expect.pass
             ]
-        , describe "4"
+        , describe "Task 4"
             [ fuzzWith
                 { runs = 100
                 , distribution =
@@ -128,7 +128,7 @@ tests =
               <|
                 \_ -> Expect.pass
             ]
-        , describe "5"
+        , describe "Task 5"
             [ fuzz (Fuzz.fromGenerator (MazeMaker.mazeOfDepth 0))
                 "mazeOfDepth 0 generates a maze of depth 0"
               <|

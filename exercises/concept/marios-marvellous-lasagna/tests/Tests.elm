@@ -8,7 +8,7 @@ import Test exposing (..)
 tests : Test
 tests =
     describe "MariosMarvellousLasagna"
-        [ describe "1"
+        [ describe "Task 1"
             [ test "For a 3-layers lasagna started 10 minutes ago, there are 36 minutes remaining" <|
                 \_ ->
                     remainingTimeInMinutes 3 10

@@ -8,7 +8,7 @@ import ValentinesDay exposing (..)
 tests : Test
 tests =
     describe "ValentinesDay"
-        [ describe "5"
+        [ describe "Task 5"
             [ test "board game rated no" <|
                 \_ ->
                     rateActivity BoardGame
