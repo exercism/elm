@@ -1,231 +1,229 @@
 module Tests exposing (tests)
 
-import Allergies exposing (Allergy)
+import Allergies exposing (Allergy(..))
 import Expect
 import Test exposing (Test, describe, skip, test)
 
 
 tests : Test
 tests =
-    -- Given a number and a substance, indicate whether Tom is allergic to that substance.
     describe "Allergies"
         [ describe "testing for eggs allergy"
             [ test "not allergic to anything" <|
                 \() ->
-                    Allergies.isAllergicTo Allergies.Eggs 0
+                    Allergies.isAllergicTo Eggs 0
                         |> Expect.equal False
             , skip <|
                 test "allergic only to eggs" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Eggs 1
+                        Allergies.isAllergicTo Eggs 1
                             |> Expect.equal True
             , skip <|
                 test "allergic to eggs and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Eggs 3
+                        Allergies.isAllergicTo Eggs 3
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not eggs" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Eggs 2
+                        Allergies.isAllergicTo Eggs 2
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Eggs 255
+                        Allergies.isAllergicTo Eggs 255
                             |> Expect.equal True
             ]
         , describe "testing for peanuts allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Peanuts 0
+                        Allergies.isAllergicTo Peanuts 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to peanuts" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Peanuts 2
+                        Allergies.isAllergicTo Peanuts 2
                             |> Expect.equal True
             , skip <|
                 test "allergic to peanuts and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Peanuts 7
+                        Allergies.isAllergicTo Peanuts 7
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not peanuts" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Peanuts 5
+                        Allergies.isAllergicTo Peanuts 5
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Peanuts 255
+                        Allergies.isAllergicTo Peanuts 255
                             |> Expect.equal True
             ]
         , describe "testing for shellfish allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Shellfish 0
+                        Allergies.isAllergicTo Shellfish 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to shellfish" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Shellfish 4
+                        Allergies.isAllergicTo Shellfish 4
                             |> Expect.equal True
             , skip <|
                 test "allergic to shellfish and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Shellfish 14
+                        Allergies.isAllergicTo Shellfish 14
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not shellfish" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Shellfish 10
+                        Allergies.isAllergicTo Shellfish 10
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Shellfish 255
+                        Allergies.isAllergicTo Shellfish 255
                             |> Expect.equal True
             ]
         , describe "testing for strawberries allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Strawberries 0
+                        Allergies.isAllergicTo Strawberries 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to strawberries" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Strawberries 8
+                        Allergies.isAllergicTo Strawberries 8
                             |> Expect.equal True
             , skip <|
                 test "allergic to strawberries and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Strawberries 28
+                        Allergies.isAllergicTo Strawberries 28
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not strawberries" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Strawberries 20
+                        Allergies.isAllergicTo Strawberries 20
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Strawberries 255
+                        Allergies.isAllergicTo Strawberries 255
                             |> Expect.equal True
             ]
         , describe "testing for tomatoes allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Tomatoes 0
+                        Allergies.isAllergicTo Tomatoes 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to tomatoes" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Tomatoes 16
+                        Allergies.isAllergicTo Tomatoes 16
                             |> Expect.equal True
             , skip <|
                 test "allergic to tomatoes and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Tomatoes 56
+                        Allergies.isAllergicTo Tomatoes 56
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not tomatoes" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Tomatoes 40
+                        Allergies.isAllergicTo Tomatoes 40
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Tomatoes 255
+                        Allergies.isAllergicTo Tomatoes 255
                             |> Expect.equal True
             ]
         , describe "testing for chocolate allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Chocolate 0
+                        Allergies.isAllergicTo Chocolate 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to chocolate" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Chocolate 32
+                        Allergies.isAllergicTo Chocolate 32
                             |> Expect.equal True
             , skip <|
                 test "allergic to chocolate and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Chocolate 112
+                        Allergies.isAllergicTo Chocolate 112
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not chocolate" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Chocolate 80
+                        Allergies.isAllergicTo Chocolate 80
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Chocolate 255
+                        Allergies.isAllergicTo Chocolate 255
                             |> Expect.equal True
             ]
         , describe "testing for pollen allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Pollen 0
+                        Allergies.isAllergicTo Pollen 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to pollen" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Pollen 64
+                        Allergies.isAllergicTo Pollen 64
                             |> Expect.equal True
             , skip <|
                 test "allergic to pollen and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Pollen 224
+                        Allergies.isAllergicTo Pollen 224
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not pollen" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Pollen 160
+                        Allergies.isAllergicTo Pollen 160
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Pollen 255
+                        Allergies.isAllergicTo Pollen 255
                             |> Expect.equal True
             ]
         , describe "testing for cats allergy"
             [ skip <|
                 test "not allergic to anything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Cats 0
+                        Allergies.isAllergicTo Cats 0
                             |> Expect.equal False
             , skip <|
                 test "allergic only to cats" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Cats 128
+                        Allergies.isAllergicTo Cats 128
                             |> Expect.equal True
             , skip <|
                 test "allergic to cats and something else" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Cats 192
+                        Allergies.isAllergicTo Cats 192
                             |> Expect.equal True
             , skip <|
                 test "allergic to something, but not cats" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Cats 64
+                        Allergies.isAllergicTo Cats 64
                             |> Expect.equal False
             , skip <|
                 test "allergic to everything" <|
                     \() ->
-                        Allergies.isAllergicTo Allergies.Cats 255
+                        Allergies.isAllergicTo Cats 255
                             |> Expect.equal True
             ]
-        , -- Given a number, list all things Tom is allergic to
-          describe "list when:"
+        , describe "list when:"
             [ skip <|
                 test "no allergies" <|
                     \() ->
@@ -235,51 +233,51 @@ tests =
                 test "just eggs" <|
                     \() ->
                         Allergies.toList 1
-                            |> Expect.equal [ Allergies.Eggs ]
+                            |> Expect.equal [ Eggs ]
             , skip <|
                 test "just peanuts" <|
                     \() ->
                         Allergies.toList 2
-                            |> Expect.equal [ Allergies.Peanuts ]
+                            |> Expect.equal [ Peanuts ]
             , skip <|
                 test "just strawberries" <|
                     \() ->
                         Allergies.toList 8
-                            |> Expect.equal [ Allergies.Strawberries ]
+                            |> Expect.equal [ Strawberries ]
             , skip <|
                 test "eggs and peanuts" <|
                     \() ->
                         Allergies.toList 3
                             |> allergySort
-                            |> Expect.equal (allergySort [ Allergies.Eggs, Allergies.Peanuts ])
+                            |> Expect.equal (allergySort [ Eggs, Peanuts ])
             , skip <|
                 test "more than eggs but not peanuts" <|
                     \() ->
                         Allergies.toList 5
                             |> allergySort
-                            |> Expect.equal (allergySort [ Allergies.Eggs, Allergies.Shellfish ])
+                            |> Expect.equal (allergySort [ Eggs, Shellfish ])
             , skip <|
                 test "lots of stuff" <|
                     \() ->
                         Allergies.toList 248
                             |> allergySort
-                            |> Expect.equal (allergySort [ Allergies.Strawberries, Allergies.Tomatoes, Allergies.Chocolate, Allergies.Pollen, Allergies.Cats ])
+                            |> Expect.equal (allergySort [ Strawberries, Tomatoes, Chocolate, Pollen, Cats ])
             , skip <|
                 test "everything" <|
                     \() ->
                         Allergies.toList 255
                             |> allergySort
-                            |> Expect.equal (allergySort [ Allergies.Eggs, Allergies.Peanuts, Allergies.Shellfish, Allergies.Strawberries, Allergies.Tomatoes, Allergies.Chocolate, Allergies.Pollen, Allergies.Cats ])
+                            |> Expect.equal (allergySort [ Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats ])
             , skip <|
                 test "no allergen score parts" <|
                     \() ->
                         Allergies.toList 509
-                            |> Expect.equal [ Allergies.Eggs, Allergies.Shellfish, Allergies.Strawberries, Allergies.Tomatoes, Allergies.Chocolate, Allergies.Pollen, Allergies.Cats ]
+                            |> Expect.equal [ Eggs, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats ]
             , skip <|
                 test "no allergen score parts without highest valid score" <|
                     \() ->
                         Allergies.toList 257
-                            |> Expect.equal [ Allergies.Eggs ]
+                            |> Expect.equal [ Eggs ]
             ]
         ]
 
@@ -289,28 +287,28 @@ allergySort =
     let
         allergyOrder allergy =
             case allergy of
-                Allergies.Eggs ->
+                Eggs ->
                     1
 
-                Allergies.Peanuts ->
+                Peanuts ->
                     2
 
-                Allergies.Shellfish ->
+                Shellfish ->
                     3
 
-                Allergies.Strawberries ->
+                Strawberries ->
                     4
 
-                Allergies.Tomatoes ->
+                Tomatoes ->
                     5
 
-                Allergies.Chocolate ->
+                Chocolate ->
                     6
 
-                Allergies.Pollen ->
+                Pollen ->
                     7
 
-                Allergies.Cats ->
+                Cats ->
                     8
     in
     List.sortBy allergyOrder
