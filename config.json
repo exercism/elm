@@ -1239,8 +1239,14 @@
         "slug": "sieve",
         "name": "sieve",
         "uuid": "d95a08ac-fe7a-4cd5-8c87-d6ac4a9fc90f",
-        "practices": ["lists"],
-        "prerequisites": ["lists", "pattern-matching", "array"],
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "lists",
+          "pattern-matching",
+          "array"
+        ],
         "difficulty": 5
       }
     ]
