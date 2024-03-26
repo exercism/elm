@@ -20,7 +20,7 @@ makeCandidates limit =
 extractPrimes : Array Bool -> List Int
 extractPrimes candidates =
     Array.indexedMap (\idx val -> ( idx, val )) candidates
-        |> Array.filter (\( idx, isPrime ) -> isPrime)
+        |> Array.filter (\( _, isPrime ) -> isPrime)
         |> Array.map Tuple.first
         |> Array.toList
 
