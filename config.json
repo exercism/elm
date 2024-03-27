@@ -1234,6 +1234,22 @@
           "result"
         ],
         "difficulty": 5
+      },
+      {
+        "slug": "sieve",
+        "name": "Sieve",
+        "uuid": "60804d7f-8eb3-46e0-8337-45b7426456b0",
+        "practices": [
+          "array"
+        ],
+        "prerequisites": [
+          "booleans",
+          "maybe",
+          "pattern-matching",
+          "array",
+          "lists"
+        ],
+        "difficulty": 6
       }
     ]
   },

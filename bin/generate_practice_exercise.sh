@@ -20,7 +20,7 @@ echo "Fetching latest version of configlet..."
 echo "Adding instructions and configuration files..."
 UUID=$(bin/configlet uuid)
 jq --arg slug "$SLUG" --arg uuid "$UUID" \
-    '.exercises.practice += [{slug: $slug, name: $slug, uuid: $uuid, practices: [], prerequisites: [], difficulty: 5}]' \
+    '.exercises.practice += [{slug: $slug, name: "TODO", uuid: $uuid, practices: [], prerequisites: [], difficulty: 5}]' \
     config.json > config.json.tmp
 mv config.json.tmp config.json
 
