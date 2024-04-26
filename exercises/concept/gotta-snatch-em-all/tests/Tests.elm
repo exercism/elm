@@ -157,6 +157,10 @@ tests =
                         |> Expect.equal 0
             , test "totalCards of empty collections" <|
                 \() ->
+                    GottaSnatchEmAll.totalCards [ Set.fromList [ "Shazam", "Wigglycream" ] ]
+                        |> Expect.equal 2
+            , test "totalCards of empty collections" <|
+                \() ->
                     GottaSnatchEmAll.totalCards [ Set.empty, Set.empty ]
                         |> Expect.equal 0
             , test "totalCards of singleton and empty collection" <|
