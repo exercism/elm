@@ -211,6 +211,12 @@ tests =
                             |> CustomSet.toList
                             |> List.sort
                             |> Expect.equalLists [ 1, 3 ]
+            , skip <|
+                test "difference removes all duplicates in the first set" <|
+                    \() ->
+                        CustomSet.diff (CustomSet.fromList [ 1, 1 ]) (CustomSet.fromList [ 1 ])
+                            |> CustomSet.toList
+                            |> Expect.equalLists []
             ]
         , describe "A set is a subset if all of its elements are contained in the other set"
             [ skip <|
