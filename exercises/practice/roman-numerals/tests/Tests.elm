@@ -128,6 +128,11 @@ tests =
                     Expect.equal "MMMI"
                         (toRoman 3001)
         , skip <|
+            test "3888" <|
+                \() ->
+                    Expect.equal "MMMDCCCLXXXVIII"
+                        (toRoman 3888)
+        , skip <|
             test "3999" <|
                 \() ->
                     Expect.equal "MMMCMXCIX"

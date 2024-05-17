@@ -103,10 +103,10 @@ tests =
                     Expect.equal []
                         (detect "mass" [ "last" ])
         , skip <|
-            test "detects unicode anagrams" <|
+            test "handles case of greek letters" <|
                 \() ->
                     Expect.equal [ "ΒΓΑ", "γβα" ]
-                        (detect "ΑΒΓ" [ "ΒΓΑ", "ΒΓΔ", "γβα" ])
+                        (detect "ΑΒΓ" [ "ΒΓΑ", "ΒΓΔ", "γβα", "αβγ" ])
         , skip <|
             test "eliminates misleading unicode anagrams" <|
                 \() ->
@@ -117,4 +117,9 @@ tests =
                 \() ->
                     Expect.equal []
                         (detect "patter" [ "tapper" ])
+        , skip <|
+            test "different characters may have the same bytes" <|
+                \() ->
+                    Expect.equal []
+                        (detect "a⬂" [ "€a" ])
         ]

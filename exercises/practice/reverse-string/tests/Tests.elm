@@ -25,4 +25,10 @@ tests =
         , skip <|
             test "an even-sized word" <|
                 \() -> Expect.equal "reward" (reverse "drawer")
+        , skip <|
+            test "wide characters" <|
+                \() -> Expect.equal "猫子" (reverse "子猫")
+        , skip <|
+            test "grapheme cluster with pre-combined form" <|
+                \() -> Expect.equal "dnatsnehctsrüW" (reverse "Würstchenstand")
         ]
