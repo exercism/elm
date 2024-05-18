@@ -1250,6 +1250,20 @@
           "lists"
         ],
         "difficulty": 6
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "9d13f727-c738-4be7-bc5a-94a804ba0d75",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "pattern-matching",
+          "tuples",
+          "booleans"
+        ],
+        "difficulty": 5
       }
     ]
   },
