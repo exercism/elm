@@ -1,0 +1,16 @@
+{
+  "authors": [],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "src/GithupApi.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "blurb": "Learn this by doing that"
+}
