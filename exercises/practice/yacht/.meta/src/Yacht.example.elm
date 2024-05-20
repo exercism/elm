@@ -1,5 +1,7 @@
 module Yacht exposing (Category(..), score)
 
+import Dict
+
 
 type Category
     = Ones
@@ -16,15 +18,9 @@ type Category
     | Yacht
 
 
-type alias DiceGroup =
-    { dice : Int
-    , count : Int
-    }
-
-
 score : List Int -> Category -> Int
 score dice category =
-    case ( category, groupDice dice ) of
+    case ( category, countDice dice ) of
         ( Ones, _ ) ->
             countDice 1 dice
 
@@ -43,36 +39,20 @@ score dice category =
         ( Sixes, _ ) ->
             6 * countDice 6 dice
 
-        ( FullHouse, [ three, two ] ) ->
-            if three.count == 3 && two.count == 2 then
-                3 * three.dice + 2 * two.dice
+        ( FullHouse, [ ( two, 2 ), ( three, 3 ) ] ) ->
+            3 * three + 2 * two
 
-            else
-                0
+        ( FourOfAKind, [ _, ( four, 4 ) ] ) ->
+            4 * four
 
-        ( FourOfAKind, [ four, _ ] ) ->
-            if four.count == 4 then
-                4 * four.dice
+        ( FourOfAKind, [ ( five, 5 ) ] ) ->
+            4 * five
 
-            else
-                0
+        ( LittleStraight, [ _, _, _, _, ( 5, 1 ) ] ) ->
+            30
 
-        ( FourOfAKind, [ five ] ) ->
-            4 * five.dice
-
-        ( LittleStraight, [ largest, _, _, _, _ ] ) ->
-            if largest.dice == 5 then
-                30
-
-            else
-                0
-
-        ( BigStraight, [ _, _, _, _, smallest ] ) ->
-            if smallest.dice == 2 then
-                30
-
-            else
-                0
+        ( BigStraight, [ ( 2, 1 ), _, _, _, _ ] ) ->
+            30
 
         ( Choice, _ ) ->
             List.sum dice
@@ -89,24 +69,18 @@ countDice number =
     List.filter ((==) number) >> List.length
 
 
-groupDice : List Int -> List DiceGroup
-groupDice diceList =
+countDice : List Int -> List ( Int, Int )
+countDice diceList =
     let
-        groupByValue numbers groups =
-            case ( numbers, groups ) of
-                ( [], _ ) ->
-                    groups
+        group currentCount =
+            case currentCount of
+                Nothing ->
+                    Just 1
 
-                ( number :: rest, [] ) ->
-                    groupByValue rest [ { dice = number, count = 1 } ]
-
-                ( number :: rest, ({ dice, count } as group) :: otherGroups ) ->
-                    if number == dice then
-                        groupByValue rest ({ group | count = count + 1 } :: otherGroups)
-
-                    else
-                        groupByValue rest ({ dice = number, count = 1 } :: groups)
+                Just n ->
+                    Just (n + 1)
     in
-    groupByValue (List.sort diceList) []
-        -- important for straights: groups with equal count are ordered in descending dice value
-        |> List.sortBy (.count >> negate)
+    diceList
+        |> List.foldr (\dice -> Dict.update dice group) Dict.empty
+        |> Dict.toList
+        |> List.sortBy Tuple.second
