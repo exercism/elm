@@ -95,25 +95,25 @@ tests =
                         |> Expect.err
             ]
         , describe "4"
-            [ test "decodepullRequestReviewId for JSON with an id" <|
+            [ test "decodePullRequestReviewId for JSON with an id" <|
                 \() ->
                     """{"pull_request_review_id": 11}"""
-                        |> Decode.decodeString GithupApi.decodepullRequestReviewId
+                        |> Decode.decodeString GithupApi.decodePullRequestReviewId
                         |> Expect.equal (Ok (Just 11))
-            , test "decodepullRequestReviewId for JSON with a null" <|
+            , test "decodePullRequestReviewId for JSON with a null" <|
                 \() ->
                     """{"pull_request_review_id": null}"""
-                        |> Decode.decodeString GithupApi.decodepullRequestReviewId
+                        |> Decode.decodeString GithupApi.decodePullRequestReviewId
                         |> Expect.equal (Ok Nothing)
-            , test "decodepullRequestReviewId for JSON with an unexpected value" <|
+            , test "decodePullRequestReviewId for JSON with an unexpected value" <|
                 \() ->
                     """{"pull_request_review_id": "154A564BF"}"""
-                        |> Decode.decodeString GithupApi.decodepullRequestReviewId
+                        |> Decode.decodeString GithupApi.decodePullRequestReviewId
                         |> Expect.err
-            , test "decodepullRequestReviewId for JSON with missing field" <|
+            , test "decodePullRequestReviewId for JSON with missing field" <|
                 \() ->
                     """{"id": "10"}"""
-                        |> Decode.decodeString GithupApi.decodepullRequestReviewId
+                        |> Decode.decodeString GithupApi.decodePullRequestReviewId
                         |> Expect.err
             ]
         , describe "5"
@@ -155,7 +155,7 @@ tests =
                         "html": {
                           "href": "https://githup.com/octodog/Hello-World/pull/1#discussion-diff-1"
                         },
-                        "pull_request": {
+                        "some_never_seen_before_key": {
                           "href": "https://api.githup.com/repos/octodog/Hello-World/pulls/1"
                         }
                       }
@@ -167,7 +167,7 @@ tests =
                                 (Dict.fromList
                                     [ ( "self", "https://api.githup.com/repos/octodog/Hello-World/pulls/comments/1" )
                                     , ( "html", "https://githup.com/octodog/Hello-World/pull/1#discussion-diff-1" )
-                                    , ( "pull_request", "https://api.githup.com/repos/octodog/Hello-World/pulls/1" )
+                                    , ( "some_never_seen_before_key", "https://api.githup.com/repos/octodog/Hello-World/pulls/1" )
                                     ]
                                 )
                             )

@@ -44,9 +44,9 @@ decodeUser =
     Decode.fail "Please implement decodeUser"
 
 
-decodepullRequestReviewId : Decoder (Maybe Int)
-decodepullRequestReviewId =
-    Decode.fail "Please implement decodepullRequestReviewId"
+decodePullRequestReviewId : Decoder (Maybe Int)
+decodePullRequestReviewId =
+    Decode.fail "Please implement decodePullRequestReviewId"
 
 
 decodeSide : Decoder Side

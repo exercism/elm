@@ -52,8 +52,8 @@ decodeUser =
         (Decode.field "site_admin" Decode.bool)
 
 
-decodepullRequestReviewId : Decoder (Maybe Int)
-decodepullRequestReviewId =
+decodePullRequestReviewId : Decoder (Maybe Int)
+decodePullRequestReviewId =
     Decode.field "pull_request_review_id" (Decode.nullable Decode.int)
 
 
@@ -85,7 +85,7 @@ decodeComment : Decoder Comment
 decodeComment =
     Decode.map6 Comment
         decodeId
-        decodepullRequestReviewId
+        decodePullRequestReviewId
         (Decode.field "user" decodeUser)
         (Decode.field "body" Decode.string)
         decodeSide

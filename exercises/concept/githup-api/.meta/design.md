@@ -22,7 +22,7 @@ Students should be able to
 
 - encoder aliases (`array`, `set`)
 - more niche decoders (`array`, `keyValuePairs`, `oneOrMore`, `index`, `at`, `value`)
-- dealing with `Error`
+- dealing with `Error` specifics
 - decoding recursive structures (`lazy`, a quick mention is fine)
 
 ## Concepts
@@ -35,11 +35,17 @@ The concept this exercise unlocks is:
 
 - strings
 - lists
+- tuples
 - dict
 - records
 - maybe
 - custom-types
+- pattern matching
 
 ## Analyzer
 
-- ?
+Make sure that
+
+- `decodeUser` uses `decodeId` and `decodeName`
+- `decodeComment` uses `decodeId`, `decodePullRequestReviewId`, `decodeUser`, `decodeSide`, `decodeLinks`
+- `decodeComments` uses `decodeComment`

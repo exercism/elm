@@ -1,6 +1,10 @@
 {
-  "authors": [],
-  "contributors": [],
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "ceddlyburge"
+  ],
   "files": {
     "solution": [
       "src/GithupApi.elm"
@@ -12,5 +16,5 @@
       ".meta/Exemplar.elm"
     ]
   },
-  "blurb": "Learn this by doing that"
+  "blurb": "Learn to decode and encode JSON values with Elm"
 }
