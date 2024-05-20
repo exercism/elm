@@ -20,7 +20,7 @@ type Category
 
 score : List Int -> Category -> Int
 score dice category =
-    case ( category, countDice dice ) of
+    case ( category, group dice ) of
         ( Ones, _ ) ->
             countDice 1 dice
 
@@ -67,8 +67,10 @@ score dice category =
 countDice : Int -> List Int -> Int
 countDice number =
     List.filter ((==) number) >> List.length
-countDice : List Int -> List ( Int, Int )
-countDice diceList =
+
+
+group : List Int -> List ( Int, Int )
+group diceList =
     let
         count currentCount =
             case currentCount of
