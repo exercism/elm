@@ -67,12 +67,10 @@ score dice category =
 countDice : Int -> List Int -> Int
 countDice number =
     List.filter ((==) number) >> List.length
-
-
 countDice : List Int -> List ( Int, Int )
 countDice diceList =
     let
-        group currentCount =
+        count currentCount =
             case currentCount of
                 Nothing ->
                     Just 1
@@ -81,6 +79,6 @@ countDice diceList =
                     Just (n + 1)
     in
     diceList
-        |> List.foldr (\dice -> Dict.update dice group) Dict.empty
+        |> List.foldr (\dice -> Dict.update dice count) Dict.empty
         |> Dict.toList
         |> List.sortBy Tuple.second
