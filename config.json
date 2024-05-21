@@ -1236,6 +1236,22 @@
         "difficulty": 5
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "394ef7c1-e4b3-484f-a1a3-754870335423",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "pattern-matching",
+          "lists",
+          "custom-types",
+          "comparison",
+          "booleans"
+        ],
+        "difficulty": 5
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "60804d7f-8eb3-46e0-8337-45b7426456b0",
