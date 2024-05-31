@@ -1252,6 +1252,20 @@
         "difficulty": 5
       },
       {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "6c7a96ec-0bfb-4284-bd9f-2aa6989c3bb5",
+        "practices": [],
+        "prerequisites": [
+          "custom-types",
+          "pattern-matching",
+          "maybe",
+          "lists",
+          "booleans"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "60804d7f-8eb3-46e0-8337-45b7426456b0",
