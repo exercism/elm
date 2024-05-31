@@ -1280,6 +1280,22 @@
           "booleans"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "e44952ec-185a-4c8e-9404-fb7b365e3961",
+        "practices": [],
+        "prerequisites": [
+          "lists",
+          "comparison",
+          "dict",
+          "let",
+          "pattern-matching",
+          "tuples",
+          "custom-types"
+        ],
+        "difficulty": 6
       }
     ]
   },
