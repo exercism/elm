@@ -1310,6 +1310,18 @@
           "custom-types"
         ],
         "difficulty": 6
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "9bf186d3-e904-42f2-a705-dffbe98adb08",
+        "practices": [],
+        "prerequisites": [
+          "comparison",
+          "lists",
+          "records"
+        ],
+        "difficulty": 6
       }
     ]
   },
