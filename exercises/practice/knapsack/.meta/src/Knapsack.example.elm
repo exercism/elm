@@ -44,8 +44,8 @@ nextRow item lastRow =
 
             else
                 case valueAt lastRow requiredCapacity of
-                    Just existingValue ->
-                        max (existingValue + item.value) existingValue
+                    Just valueBeforeItem ->
+                        max (valueBeforeItem + item.value) value
 
                     Nothing ->
                         value
