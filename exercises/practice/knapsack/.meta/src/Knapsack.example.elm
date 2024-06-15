@@ -17,46 +17,38 @@ last list =
     List.foldl (\x _ -> x) 0 list
 
 
-valueAt : List a -> Int -> Result String a
+valueAt : List a -> Int -> Maybe a
 valueAt list index =
     case list of
         [] ->
-            Err "Index out of bounds"
+            Nothing
 
-        n :: rem ->
-            if index == 0 then
-                Ok n
+        next :: remaining ->
+            if index <= 0 then
+                Just next
 
             else
-                valueAt rem (index - 1)
+                valueAt remaining (index - 1)
 
 
 nextRow : Item -> List Int -> List Int
 nextRow item lastRow =
     List.indexedMap
-        (\cap val ->
+        (\availableCapacity value ->
             let
-                req =
-                    cap - item.weight
+                requiredCapacity =
+                    availableCapacity - item.weight
             in
-            if req < 0 then
-                val
+            if requiredCapacity < 0 then
+                value
 
             else
-                case valueAt lastRow req of
-                    Ok v ->
-                        let
-                            withItem =
-                                v + item.value
-                        in
-                        if withItem > val then
-                            withItem
+                case valueAt lastRow requiredCapacity of
+                    Just existingValue ->
+                        max (existingValue + item.value) existingValue
 
-                        else
-                            val
-
-                    Err _ ->
-                        val
+                    Nothing ->
+                        value
         )
         lastRow
 
@@ -67,5 +59,5 @@ doMaximumValue items lastRow =
         [] ->
             last lastRow
 
-        n :: rest ->
-            doMaximumValue rest (nextRow n lastRow)
+        next :: rest ->
+            doMaximumValue rest (nextRow next lastRow)
