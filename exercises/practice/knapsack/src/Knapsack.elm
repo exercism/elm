@@ -9,4 +9,4 @@ type alias Item =
 
 maximumValue : Int -> List Item -> Int
 maximumValue capacity items =
-    Debug.todo "Please implement this function"
+    Debug.todo "Please implement maximumValue"
