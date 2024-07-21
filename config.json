@@ -1296,6 +1296,21 @@
         "difficulty": 4
       },
       {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "3dc4b700-6ce6-4ae7-94e2-1b37290b8235",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "strings",
+          "booleans",
+          "comparison",
+          "pattern-matching"
+        ],
+        "difficulty": 7
+      },
+      {
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "e44952ec-185a-4c8e-9404-fb7b365e3961",
