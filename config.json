@@ -1322,6 +1322,21 @@
           "records"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "ca24f48c-c38a-4ffa-97de-37f12d6c0e0b",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "pattern-matching",
+          "custom-types"
+        ],
+        "difficulty": 4
       }
     ]
   },
