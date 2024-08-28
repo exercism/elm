@@ -138,11 +138,6 @@ tests =
                     ProteinTranslation.proteins "UGGUGUUAUUAAUGGUUU"
                         |> Expect.equal (Ok [ "Tryptophan", "Cysteine", "Tyrosine" ])
         , skip <|
-            test "Non-existing codon can't translate" <|
-                \() ->
-                    ProteinTranslation.proteins "AAA"
-                        |> Expect.equal (Err InvalidCodon)
-        , skip <|
             test "Unknown amino acids, not part of a codon, can't translate" <|
                 \() ->
                     ProteinTranslation.proteins "XYZ"
@@ -157,4 +152,9 @@ tests =
                 \() ->
                     ProteinTranslation.proteins "UUCUUCUAAUGGU"
                         |> Expect.equal (Ok [ "Phenylalanine", "Phenylalanine" ])
+        , skip <|
+            test "Sequence of two non-STOP codons does not translate to a STOP codon" <|
+                \() ->
+                    ProteinTranslation.proteins "AUGAUG"
+                        |> Expect.equal (Ok [ "Methionine", "Methionine" ])
         ]
