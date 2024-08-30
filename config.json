@@ -1352,6 +1352,18 @@
           "custom-types"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "dd371b3e-666c-4015-a618-df53ad94014d",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "comparison",
+          "lists"
+        ],
+        "difficulty": 3
       }
     ]
   },
