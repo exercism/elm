@@ -19,7 +19,7 @@ open maybeAccount =
         Nothing ->
             Ok (BankAccount { accountBalance = 0, opened = True })
 
-        Just (BankAccount { accountBalance, opened }) ->
+        Just (BankAccount { opened }) ->
             if opened then
                 Err AccountAlreadyOpen
 
