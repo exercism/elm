@@ -17,7 +17,7 @@ newCollection "Newthree"
 
 ## 2. Grow the collection
 
-Once you have a collection, it takes a life of its owm and must grow.
+Once you have a collection, it takes a life of its own and must grow.
 
 Implement `addCard`, which takes a `Card` and a collection, and returns a `Tuple` with two values: a `Bool` that indicates if the `Card` was already in the collection, and the collection with the card added.
 
