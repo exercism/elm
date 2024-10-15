@@ -20,7 +20,7 @@ Sounds like a perfect fit for the phantom type technique!
 
 ## 1. Provide a placeholder for treasure chests
 
-The `treasureChest` type and its companion `getTreasure` are already given, but you need to come up with a type for a chest suggestion.
+The `TreasureChest` type and its companion `getTreasure` are already given, but you need to come up with a type for a chest suggestion.
 
 Implement the `Chest` type, implement `makeChest` and fix the type signatures of `secureChest` and `uniqueTreasures`.
 The type signatures of `makeChest` and `makeTreasureChest` are already provided as part of the requirements, do not modify them.
