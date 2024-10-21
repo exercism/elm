@@ -49,5 +49,5 @@ Your `maze` is nice, but it has some issues:
 3. While deep mazes can be generated, they are not very likely: a maze of depth of 3 has an approximate 3% chance of being generated, a maze of depth 10 a 0.2% chance (the depth of a maze is calculated with `MazeMakerSupport.mazeDepth`)
 
 Define the `mazeOfDepth n` generator so that it generates a maze of depth `n`.
-Only the deepest level `0` should contain dead ends or treasure rooms (with equal probability), all other levels should be a branch containing mazes of depth `n - 1` generated recursively with `mazeOfDepth`.
+Only the deepest level `0` should contain dead ends or treasure rooms (with equal probability), all other levels should be a branch containing mazes of depth `n-1` generated recursively with `mazeOfDepth`.
 Make sure to use `deadend`, `room` and `branch` in the generator.
