@@ -9,9 +9,9 @@ To make things a bit easier she only uses the cards 1 to 10.
 Implement the `getCard` function  that returns the card at position `index` from the given deck. If the index is not in the deck, return Nothing.
 
 ```elm
-getCard 2, ( Array.fromList [ 1, 2, 4, 1 ] )
+getCard 2 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Just 4
-getCard 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+getCard 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Nothing
 ```
 
@@ -21,9 +21,9 @@ Implement the `setCard` function that returns a deck with the card at position `
 If the `index` is not in the deck, return the original deck.
 
 ```elm
-setCard 2, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+setCard 2 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 6, 1 ]
-setCard 6, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+setCard 6 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 4, 1 ]
 ```
 
