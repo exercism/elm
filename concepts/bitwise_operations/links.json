@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/core/latest/Bitwise",
+    "description": "Bitwise module"
+  },
+  {
+    "url": "https://guide.elm-lang.org/appendix/types_as_bits",
+    "description": "Documentation on how Elm represents types as bits"
+  }
+]
