@@ -1512,7 +1512,13 @@
       "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33",
       "slug": "random",
       "name": "Random"
+    },
+    {
+      "uuid": "8737961b-c96f-4313-8737-6b88034c66d8",
+      "slug": "bitwise-operations",
+      "name": "Bitwise Operations"
     }
+    
   ],
   "key_features": [
     {
