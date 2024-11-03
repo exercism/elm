@@ -14,6 +14,7 @@ For example, the integer `5` is represented in binary as `0000000000000000000000
 Elm provides several bitwise operators in its [Bitwise module](https://package.elm-lang.org/packages/elm/core/latest/Bitwise)
 
 ## Basic operations
+Modifying individual bits of a number is  called _masking_. A _mask_ is a number where specific bits have been set in a particular way to manipulate another number using bitwise operators such as `and`, `or`, and `xor`.
 
 ### and
 `and` combines two numbers by keeping only the bits that are `1` in both. For example:
@@ -24,7 +25,7 @@ Bitwise.and 21 13 --> 5
 --  13 = 01101
 -- and = 00101 = 5
 ```
- This is useful for checking to see if an individual bit is set. For example, to check if the 4th bit of a number is set to `1`, `and` it with `01000` (`8` in decimal) and see if the result is non-zero:
+ This is useful for checking to see if an individual bit is set. For example, to check if the 4th bit of a number is set to `1`, `and` it with a mask of `01000` (`8` in decimal) and see if the result is non-zero:
 
  ```elm
  Bitwise.and 13 8 --> 8
@@ -37,6 +38,7 @@ Bitwise.and 21 13 --> 5
  --  8  = 01000
  -- and = 00000 = 0
  ```
+ 
 
 ### or
 `or` combines two numbers by setting each bit to `1` if it is `1` in either or both numbers.
@@ -47,7 +49,7 @@ Bitwise.or 21 13 --> 29
 -- 13 = 01101
 -- or = 11101 = 29
 ```
-This is useful for setting a specific bit to `1`. For example, to set the 2nd bit in `10101`:
+This is useful for setting a specific bit to `1`. For example, to set the 2nd bit in `10101`, `or` it with the mask `00010`:
 
 ```elm
 Bitwise.or 21 2 --> 23
