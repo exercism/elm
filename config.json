@@ -510,11 +510,10 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
-        "practices": [],
-        "prerequisites": [],
+        "practices": ["bitwise-operations"],
+        "prerequisites": ["bitwise-operations"],
         "difficulty": 4,
         "topics": [
-          "bitwise_operations",
           "enumerations",
           "filtering"
         ]
