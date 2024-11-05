@@ -2,7 +2,7 @@
 
 Your friend has just sent you a message with an important secret.
 Not wanting to make it easy for others to read it, the message was encrypted by performing a series of bit manipulations.
-You will need to write the methods to help decrypt the message.
+You will need to write the functions to help decrypt the message.
 
 ## 1. Shift back the bits
 
@@ -24,7 +24,7 @@ A bit from value should be set to 1 where the bit in the mask is also `1`.
 All other bits should be kept unchanged.
 
 ```elm
-setBits 66 212 --> 64 
+setBits 66 212 --> 64
 ```
 
 ## 3. Flip specific bits
