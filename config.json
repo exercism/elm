@@ -345,8 +345,7 @@
         "name": "secrets",
         "uuid": "89a899b1-8cb2-4099-98c9-468723728a28",
         "concepts": ["bitwise-operations"],
-        "prerequisites": ["basics-1", "basics-2"],
-        "status": "wip"
+        "prerequisites": ["basics-1", "basics-2"]
       }
     ],
     "practice": [
