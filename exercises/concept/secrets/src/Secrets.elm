@@ -1,4 +1,4 @@
-module Secrets exposing (..)
+module Secrets exposing (clearBits, flipBits, setBits, shiftBack)
 
 
 shiftBack amount value =

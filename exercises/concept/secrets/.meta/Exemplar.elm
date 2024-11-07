@@ -1,6 +1,6 @@
-module Secrets exposing (..)
+module Secrets exposing (clearBits, flipBits, setBits, shiftBack)
 
-import Bitwise exposing (..)
+import Bitwise
 
 
 shiftBack amount value =
@@ -17,5 +17,5 @@ flipBits mask value =
 
 clearBits mask value =
     mask
-    |> Bitwise.complement
-    |> Bitwise.and value
+        |> Bitwise.complement
+        |> Bitwise.and value
