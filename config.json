@@ -342,10 +342,15 @@
       },
       {
         "slug": "secrets",
-        "name": "secrets",
+        "name": "Secrets",
         "uuid": "89a899b1-8cb2-4099-98c9-468723728a28",
-        "concepts": ["bitwise-operations"],
-        "prerequisites": ["basics-1", "basics-2"]
+        "concepts": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "basics-1",
+          "basics-2"
+        ]
       }
     ],
     "practice": [
@@ -510,8 +515,12 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
-        "practices": ["bitwise-operations"],
-        "prerequisites": ["bitwise-operations"],
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations"
+        ],
         "difficulty": 4,
         "topics": [
           "enumerations",
@@ -1261,8 +1270,11 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "6c7a96ec-0bfb-4284-bd9f-2aa6989c3bb5",
-        "practices": [],
+        "practices": [
+          "bitwise-operations"
+        ],
         "prerequisites": [
+          "bitwise-operations",
           "custom-types",
           "pattern-matching",
           "maybe",
@@ -1517,7 +1529,6 @@
       "slug": "bitwise-operations",
       "name": "Bitwise Operations"
     }
-    
   ],
   "key_features": [
     {
