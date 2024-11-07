@@ -1,4 +1,4 @@
-# About Bitwise Operations
+# Introduction
 
 Bitwise operations allow us to manipulate individual digits within binary numbers. These operations are fundamental in computing, providing an efficient way to perform low-level tasks, such as controlling specific bits in memory, optimizing mathematical calculations, encryption, communications, and encoding/decoding data.
 
