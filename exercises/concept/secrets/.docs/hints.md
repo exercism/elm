@@ -1,5 +1,7 @@
 # Hints
 
+- The documentation for the `Bitwise` package can be found [here](https://package.elm-lang.org/packages/elm/core/latest/Bitwise)
+
 ## 1. Shift back the bits
 
 - There are two functions for shifting bits to the right, but only one will always insert a 0.
