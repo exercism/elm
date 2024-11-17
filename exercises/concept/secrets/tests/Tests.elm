@@ -48,4 +48,14 @@ tests =
                     Secrets.clearBits 240 90
                         |> Expect.equal 10
             ]
+        , describe "5"
+            [ test "Decrypt 12345" <|
+                \_ ->
+                    Secrets.decrypt 12345
+                        |> Expect.equal 384
+            , test "Decrypt 123456789" <|
+                \_ ->
+                    Secrets.decrypt 123456789
+                        |> Expect.equal 3857984
+            ]
         ]

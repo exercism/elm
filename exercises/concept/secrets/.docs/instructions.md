@@ -43,7 +43,7 @@ flipBits 23 157 --> 138
 
 ## 4. Clear specific bits
 
-Lastly, there are also certain bits that always decrypt to 0.
+There are also certain bits that always decrypt to 0.
 
 Implement the `clearBits` functions that takes a mask and a value.
 The bits in the `value` should be set to 0 where the bit in the mask is 1.
@@ -51,4 +51,18 @@ All other bits should be kept unchanged.
 
 ```elm
 clearBits 2 15 --> 13
+```
+
+## 5. Decrypt a message
+
+Now that you have all the functions you need, you can decode your friend's message.
+Implement the `decrypt` function that performs the following operations:
+
+1. Set the bits from the year your friend was born (1996)
+2. Flip the result with the year that you first met (2009)
+3. Shift the bits back by the number of classes you take together (5)
+4. Clear the first and fifth bit.
+
+```elm
+decrypt 380182 -->
 ```

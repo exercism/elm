@@ -1,4 +1,4 @@
-module Secrets exposing (clearBits, flipBits, setBits, shiftBack)
+module Secrets exposing (clearBits, decrypt, flipBits, setBits, shiftBack)
 
 
 shiftBack amount value =
@@ -15,3 +15,7 @@ flipBits mask value =
 
 clearBits mask value =
     Debug.todo "Please implement clearBits"
+
+
+decrypt secret =
+    Debug.todo "Please implement decrypt"
