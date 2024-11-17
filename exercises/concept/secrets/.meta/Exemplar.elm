@@ -1,4 +1,4 @@
-module Secrets exposing (clearBits, flipBits, setBits, shiftBack, decrypt)
+module Secrets exposing (clearBits, decrypt, flipBits, setBits, shiftBack)
 
 import Bitwise
 
@@ -21,9 +21,9 @@ clearBits mask value =
         |> Bitwise.and value
 
 
-decrypt secret = 
+decrypt secret =
     secret
-    |> setBits 1996
-    |> flipBits 2009
-    |> shiftBack 5
-    |> clearBits 17
+        |> setBits 1996
+        |> flipBits 2009
+        |> shiftBack 5
+        |> clearBits 17
