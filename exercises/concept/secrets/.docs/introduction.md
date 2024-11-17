@@ -1,3 +1,0 @@
-# About Bitwise Operations
-
-
