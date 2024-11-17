@@ -1,6 +1,6 @@
 # Hints
 
-- The documentation for the `Bitwise` package can be found [here][bitewise-docs]
+- The documentation for the `Bitwise` package can be found [here][bitwise-docs].
 
 ## 1. Shift back the bits
 
