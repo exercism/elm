@@ -6,12 +6,12 @@ Bitwise operations allow us to manipulate individual digits within binary number
 
 Elm provides several bitwise operators in its [Bitwise module](https://package.elm-lang.org/packages/elm/core/latest/Bitwise)
 
-## Basic operations
+### Basic operations
 
 Modifying individual bits of a number is called _masking_.
 A _mask_ is a number where specific bits have been set in a particular way to manipulate another number using bitwise operators such as `and`, `or`, and `xor`.
 
-### and
+#### and
 
 `and` combines two numbers by keeping only the bits that are `1` in both.
 This is useful for checking to see if an individual bit is set.
@@ -48,7 +48,7 @@ Bitwise.xor 21 4 --> 17
 --   4 = 00100
 -- xor = 10001 = 17
 
-### Complement
+#### Complement
 
 `complement` inverts each bit of a number (`0` becomes `1`, `1` becomes `0`).
 
@@ -61,7 +61,7 @@ Bitwise.complement 21 --> -22
 -- complement = 11111111111111111111111111101010 = -22
 ````
 
-## Bit shifting
+### Bit shifting
 
 The following operators move bits left or right by a specified number of positions, effectively multiplying or dividing by powers of 2.
 

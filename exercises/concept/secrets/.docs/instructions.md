@@ -20,7 +20,7 @@ shiftBack 2 42 --> 10
 Next, there are some bits that need to be set to `1`.
 
 Implement the `setBits` function that takes a mask and value and returns the result of setting the bits in value to `1`.
-A bit from value should be set to 1 where the bit in the mask is also `1`.
+A bit from value should be set to `1` where the bit in the mask is also `1`.
 All other bits should be kept unchanged.
 
 ```elm
@@ -45,7 +45,7 @@ flipBits 23 157 --> 138
 
 There are also certain bits that always decrypt to 0.
 
-Implement the `clearBits` functions that takes a mask and a value.
+Implement the `clearBits` function that takes a mask and a value.
 The bits in the `value` should be set to 0 where the bit in the mask is 1.
 All other bits should be kept unchanged.
 
@@ -64,5 +64,5 @@ Implement the `decrypt` function that performs the following operations:
 4. Clear the first and fifth bit.
 
 ```elm
-decrypt 380182 -->
+decrypt 380182 --> 11840
 ```
