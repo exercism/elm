@@ -8,6 +8,9 @@ As such, it is no surprise that is holds a special place in the Elm language.
 Elm provides the core modules [`Json.Decode`][decode] and [`Json.Encode`][encode] to parse and write JSON data.
 JSON Decoders are a way to _declare_ what type of data is expected and which data structure the data should map to.
 
+When coming from dynamically typed languages, decoders often seem cumbersome, or too rigid on first glance.
+While they are certainly verbose, at least in Elm, they are a valuable tool to explicitly describe programs' expectations on incoming data, and are [no less expressive than dynamic types][dynamic-types-not-more-open].
+
 Let's import some aliases and types from the modules:
 
 ```elm
@@ -436,6 +439,7 @@ Other frequently used packages include [`Json.Decode.Pipeline`][pipeline], which
 [json]: https://www.json.org/json-en.html
 [decode]: https://package.elm-lang.org/packages/elm/json/latest/Json-Decode
 [encode]: https://package.elm-lang.org/packages/elm/json/latest/Json-Encode
+[dynamic-types-not-more-open]: https://lexi-lambda.github.io/blog/2020/01/19/no-dynamic-type-systems-are-not-inherently-more-open/
 [geojson]: https://geojson.org/
 [pipeline]: https://package.elm-lang.org/packages/NoRedInk/elm-json-decode-pipeline/latest/Json.Decode.Pipeline
 [extra]: https://package.elm-lang.org/packages/elm-community/json-extra/latest/Json.Decode.Extra
