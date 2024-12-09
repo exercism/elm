@@ -1256,6 +1256,36 @@
         "difficulty": 5
       },
       {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "394ef7c1-e4b3-484f-a1a3-754870335423",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "pattern-matching",
+          "lists",
+          "custom-types",
+          "comparison",
+          "booleans"
+        ],
+        "difficulty": 5
+      },
+      {
+        "slug": "secret-handshake",
+        "name": "Secret Handshake",
+        "uuid": "6c7a96ec-0bfb-4284-bd9f-2aa6989c3bb5",
+        "practices": [],
+        "prerequisites": [
+          "custom-types",
+          "pattern-matching",
+          "maybe",
+          "lists",
+          "booleans"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "60804d7f-8eb3-46e0-8337-45b7426456b0",
@@ -1270,6 +1300,118 @@
           "lists"
         ],
         "difficulty": 6
+      },
+      {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "9d13f727-c738-4be7-bc5a-94a804ba0d75",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "pattern-matching",
+          "tuples",
+          "booleans"
+        ],
+        "difficulty": 4
+      },
+      {
+        "slug": "meetup",
+        "name": "Meetup",
+        "uuid": "3dc4b700-6ce6-4ae7-94e2-1b37290b8235",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "strings",
+          "booleans",
+          "comparison",
+          "pattern-matching"
+        ],
+        "difficulty": 7
+      },
+      {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "0c2a3fce-231a-43db-98df-84fcc74c3c97",
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "let"
+        ],
+        "difficulty": 4
+      },
+      {
+        "slug": "spiral-matrix",
+        "name": "Spiral Matrix",
+        "uuid": "e44952ec-185a-4c8e-9404-fb7b365e3961",
+        "practices": [],
+        "prerequisites": [
+          "lists",
+          "comparison",
+          "dict",
+          "let",
+          "pattern-matching",
+          "tuples",
+          "custom-types"
+        ],
+        "difficulty": 6
+      },
+      {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "40e735ba-0bc7-436e-9c5f-5a8abdf8c436",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "tuples",
+          "pattern-matching",
+          "let"
+        ],
+        "difficulty": 4
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "9bf186d3-e904-42f2-a705-dffbe98adb08",
+        "practices": [],
+        "prerequisites": [
+          "comparison",
+          "lists",
+          "records"
+        ],
+        "difficulty": 7
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "ca24f48c-c38a-4ffa-97de-37f12d6c0e0b",
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "pattern-matching",
+          "custom-types"
+        ],
+        "difficulty": 4
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "dd371b3e-666c-4015-a618-df53ad94014d",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "comparison",
+          "lists"
+        ],
+        "difficulty": 3
       }
     ]
   },
