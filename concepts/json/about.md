@@ -23,14 +23,12 @@ There is no way of inspecting the raw JSON data when defining the decoder, which
 
 ## Basic data type decoders
 
-JSON has a small number of data types:
+JSON has a small number of core data types:
 
 - String: encoded with double quotes `"hello world"`
 - Boolean: either `true` or `false`
 - Number: such as `34` or `0.12`
 - Null: the absence of data `null`
-- Array: a collection of other data types `[0, null, "none", []]`
-- Object: a collection of key-value pairs `{"id": 1, "is_admin": false, "more_info": {}}`
 
 Each of these is associated with a `Decode` function:
 
@@ -56,6 +54,22 @@ Decode.decodeString Decode.float """3.14"""
 Decode.decodeString (Decode.null AnyValue) """null"""
     --> Ok AnyValue
 
+Decode.decodeString (Decode.null AnyValue) """true"""
+    --> Err ...
+```
+
+Note that `Decode.null` lets you decide how to model a `null` in your program by requiring an arbitrary value as argument (maybe `()`, `Nothing`, or anything appropriate to your program).
+
+## Combining decoders
+
+JSON also defines two data structures to collect core data types:
+
+- Array: a collection of other data types `[0, null, "none", []]`
+- Object: a collection of key-value pairs `{"id": 1, "is_admin": false, "more_info": {}}`
+
+`Decode` also offers functions to decode these:
+
+```elm
 Decode.decodeString (Decode.list Decode.int) """[1, 2, 3]"""
     --> Ok [1, 2, 3]
 
@@ -69,8 +83,11 @@ Decode.decodeString (Decode.dict Decode.int) """{ "key1": 17, "key2": "seventy-o
     --> Err ...
 ```
 
-Note that `Decode.list : Decoder a -> Decoder (List a)` and `Decode.dict : Decoder a -> Decoder (Dict String a)` each expect a decoder as argument, which is expected to decode every single element elements of the data structure.
-This is a common pattern: when combining decoders, if any part fails, the whole combination fails.
+These functions `Decode.list : Decoder a -> Decoder (List a)` and `Decode.dict : Decoder a -> Decoder (Dict String a)` each expect a decoder as argument, which is expected to decode every single element elements of the data structure.
+If the argument decoder fails to decode any element of an array or object value, the whole decoder fails, which is a common pattern.
+
+Combining simple decoders into more complex ones is the core idea of the technique.
+We will introduce several more functions that can be used to build arbitrarily complex real-world data decoders through means of an example.
 
 ## GeoJSON
 
