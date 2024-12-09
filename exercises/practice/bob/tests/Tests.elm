@@ -127,8 +127,8 @@ tests =
             test "on multiple line questions" <|
                 \() ->
                     Expect.equal
-                        "Whatever."
-                        (Bob.hey "\nDoes this cryogenic chamber make me look fat?\nno")
+                        "Sure."
+                        (Bob.hey "\nDoes this cryogenic chamber make\n me look fat?")
         , skip <|
             test "ending with whitespace" <|
                 \() ->

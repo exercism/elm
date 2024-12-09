@@ -61,6 +61,11 @@ tests =
                     \() ->
                         PigLatin.translate "qat"
                             |> Expect.equal "atqay"
+            , skip <|
+                test "word beginning with consonant and vowel containing qu" <|
+                    \() ->
+                        PigLatin.translate "liquid"
+                            |> Expect.equal "iquidlay"
             ]
         , describe "some letter clusters are treated like a single consonant"
             [ skip <|
