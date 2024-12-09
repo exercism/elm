@@ -32,28 +32,28 @@ JSON has a small number of data types:
 Each of these is associated with a `Decode` function:
 
 ```elm
-Decode.decodeString Decode.string "\"hello\""
+Decode.decodeString Decode.string """\"hello\""""
     --> Ok "hello"
 
-Decode.decodeString Decode.string "null"
+Decode.decodeString Decode.string """null"""
     --> Err ...
 
-Decode.decodeString Decode.bool "true"
+Decode.decodeString Decode.bool """true"""
     --> Ok True
 
-Decode.decodeString Decode.bool "0"
+Decode.decodeString Decode.bool """0"""
     --> Err ...
 
-Decode.decodeString Decode.int "12"
+Decode.decodeString Decode.int """12"""
     --> Ok 12
 
-Decode.decodeString Decode.float "3.14"
+Decode.decodeString Decode.float """3.14"""
     --> Ok 3.14
 
-Decode.decodeString (Decode.null AnyValue) "null"
+Decode.decodeString (Decode.null AnyValue) """null"""
     --> Ok AnyValue
 
-Decode.decodeString (Decode.list Decode.int) "[1, 2, 3]"
+Decode.decodeString (Decode.list Decode.int) """[1, 2, 3]"""
     --> Ok [1, 2, 3]
 
 Decode.decodeString (Decode.list Decode.int) """[1, 2, 3, "not an int"]"""
