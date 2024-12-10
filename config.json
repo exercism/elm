@@ -1311,6 +1311,20 @@
         "difficulty": 7
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "0c2a3fce-231a-43db-98df-84fcc74c3c97",
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "let"
+        ],
+        "difficulty": 4
+      },
+      {
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "e44952ec-185a-4c8e-9404-fb7b365e3961",
@@ -1325,6 +1339,20 @@
           "custom-types"
         ],
         "difficulty": 6
+      },
+      {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "40e735ba-0bc7-436e-9c5f-5a8abdf8c436",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "lists",
+          "tuples",
+          "pattern-matching",
+          "let"
+        ],
+        "difficulty": 4
       },
       {
         "slug": "knapsack",
@@ -1370,6 +1398,18 @@
           "custom-types"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "rotational-cipher",
+        "name": "Rotational Cipher",
+        "uuid": "dd371b3e-666c-4015-a618-df53ad94014d",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "comparison",
+          "lists"
+        ],
+        "difficulty": 3
       }
     ]
   },
