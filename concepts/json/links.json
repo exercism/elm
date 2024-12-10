@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://package.elm-lang.org/packages/elm/json/latest/",
+    "description": "Core package for decoding and encoding JSON data"
+  },
+  {
+    "url": "https://guide.elm-lang.org/effects/json",
+    "description": "Official guide on the JSON package"
+  },
+  {
+    "url": "https://elmprogramming.com/decoding-json-part-1.html",
+    "description": "Beginning Elm introduction on JSON handling"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm-community/json-extra/latest/Json-Encode-Extra",
+    "description": "Community extra functions"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/NoRedInk/elm-json-decode-pipeline/latest/Json.Decode.Pipeline",
+    "description": "Alternate decoder flow for complex JSON"
+  }
+]
