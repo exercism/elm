@@ -1367,24 +1367,6 @@
         "difficulty": 7
       },
       {
-        "slug": "bank-account",
-        "name": "Bank Account",
-        "uuid": "912adb37-a836-4169-b893-f3cfeb2b8579",
-        "practices": [
-          "opaque-types"
-        ],
-        "prerequisites": [
-          "opaque-types",
-          "result",
-          "custom-types",
-          "pattern-matching",
-          "maybe",
-          "tuples",
-          "comparison"
-        ],
-        "difficulty": 5
-      },
-      {
         "slug": "kindergarten-garden",
         "name": "Kindergarten Garden",
         "uuid": "ca24f48c-c38a-4ffa-97de-37f12d6c0e0b",
@@ -1411,6 +1393,10 @@
         ],
         "difficulty": 3
       }
+    ],
+    "foregone": [
+      "bank-account",
+      "parallel-letter-frequency"
     ]
   },
   "concepts": [
