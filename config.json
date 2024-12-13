@@ -1527,9 +1527,9 @@
       "name": "Random"
     },
     {
+      "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56",
       "slug": "json",
-      "name": "JSON",
-      "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56"
+      "name": "JSON"
     }
   ],
   "key_features": [
