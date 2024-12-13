@@ -1,6 +1,6 @@
 # Introduction
 
-## Partial application and function composition
+## Partial Application and Function Composition
 
 ### Partial application
 
