@@ -2,6 +2,8 @@
 
 ## JSON
 
+### JSON
+
 JSON (JavaScript Object Notation) is a human readable data and file format commonly used to exchange data, in particular for web applications.
 As such, it is no surprise that is holds a special place in the Elm language.
 
@@ -18,7 +20,7 @@ import Json.Encode as Encode exposing (Value)
 Using `Decode.decodeString : Decoder a -> String -> Result Error a` with a decoder and a JSON string will either succeed if the string confirms to the decoder specifications, or fail otherwise.
 There is no way of inspecting the raw JSON data when defining the decoder, which could feel unusual coming from imperative languages.
 
-## Basic data type decoders
+### Basic data type decoders
 
 JSON has a small number of core data types:
 
@@ -57,7 +59,7 @@ Decode.decodeString (Decode.null AnyValue) """true"""
 
 Note that `Decode.null` lets you decide how to model a `null` in your program by requiring an arbitrary value as argument (maybe `()`, `Nothing`, or anything appropriate to your program).
 
-## Combining decoders
+### Combining decoders
 
 JSON also defines two data structures to collect core data types:
 
@@ -86,12 +88,12 @@ If the argument decoder fails to decode any element of an array or object value,
 Combining simple decoders into more complex ones is the core idea of the technique.
 We will introduce several more functions that can be used to build arbitrarily complex real-world data decoders through means of an example.
 
-## GeoJSON
+### GeoJSON
 
 For practicing combining basic decoders to parse complex JSON data, let's build decoders for parsing (a subset of) GeoJSON data.
 GeoJSON is a specialized JSON-based data format used to represent geographic features, such as locations, paths or regions, specified with 2D or 3D geographic coordinates, along with other properties.
 
-### Geometry Object
+#### Geometry Object
 
 A GeoJSON Geometry Object is an object that contains a `type` field with a string value (there are 7 possible type values) and a `coordinates` field with geographic coordinates (collected in a structure that depends on the type).
 For example,
@@ -170,7 +172,7 @@ Decode.decodeString decodeGeometry """{"type": "LineString", "coordinates": [127
     --> Err ...
 ```
 
-### Feature Object
+#### Feature Object
 
 A GeoJSON Feature Object represents something spatially bounded: it has a `type` field with the `"Feature"` value, a `geometry` field with a Geometry Object or a `null`, a `properties` field with an arbitrary JSON Object or a `null`, and an optional `id` field with a JSON string or number value.
 
@@ -342,7 +344,7 @@ Decode.decodeString decodeFeature """{"type": "Feature", "geometry": null, "prop
     --> Ok { geometry = Just (Point [127.831,26.461]), id = Just "0157", properties = Just (Dict.fromList [("country",<internals>)]) }
 ```
 
-## JSON Encoders
+### JSON Encoders
 
 Encoders allow to write valid JSON from Elm values using the `Encode.encode : Int -> Value -> String` function.
 The first argument specifies the amount of indentation in the final result, and the second argument is the JSON value to write.
