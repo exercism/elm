@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/Main.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "icon": "",
+  "blurb": "Learn the basics of Elm web applications by alphabetising a string"
+}
