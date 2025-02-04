@@ -1,11 +1,12 @@
 module Tests exposing (tests)
 
 import Expect
-import ArlosAlphabetiser exposing (main, init, update, view, Msg(..))
+import Main exposing (Msg(..), init, main, update, view)
 import Test exposing (..)
+import Test.Html.Event as Event
 import Test.Html.Query as Query
 import Test.Html.Selector exposing (tag, text)
-import Test.Html.Event as Event
+
 
 tests : Test
 tests =
@@ -19,7 +20,7 @@ tests =
         , describe "2"
             [ test "update should change the model content" <|
                 \_ ->
-                    update (Change "new content" ) { content = "" }
+                    update (Change "new content") { content = "" }
                         |> Expect.equal { content = "new content" }
             ]
         , describe "3"
@@ -40,7 +41,7 @@ tests =
             [ test "main should create the sandbox" <|
                 \_ ->
                     -- This is a bit of a hack, and doesn't test the update function is passed,
-                    -- but elm make requires us to return something it understands, and an 
+                    -- but elm make requires us to return something it understands, and an
                     -- Html Msg is the only such thing we can feasibly create.
                     main
                         |> Expect.equal (view init)
