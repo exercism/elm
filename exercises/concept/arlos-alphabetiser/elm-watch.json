@@ -1,0 +1,11 @@
+{
+    "serve": ".",
+    "targets": {
+        "Arlos Alphabitiser": {
+            "inputs": [
+                "src/Main.elm"
+            ],
+            "output": "build/main.js"
+        }
+    }
+}
