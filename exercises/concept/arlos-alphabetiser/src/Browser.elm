@@ -2,6 +2,7 @@ module Browser exposing (sandbox)
 
 import Html exposing (Html)
 
+
 type alias Sandbox msg model =
     { init : model
     , update : msg -> model -> model
@@ -9,5 +10,8 @@ type alias Sandbox msg model =
     }
 
 
-sandbox : Sandbox msg model -> Html msg --Sandbox msg model
-sandbox { init, view } = view init
+sandbox :
+    Sandbox msg model
+    -> Html msg --Sandbox msg model
+sandbox { init, view } =
+    view init

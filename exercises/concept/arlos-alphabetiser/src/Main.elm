@@ -17,8 +17,8 @@ import Html.Events exposing (onInput)
 -- you can additionally run it locally:
 -- - `rm src/Browser.elm` (delete a fake file that we need for the online editor),
 -- - `elm install elm/browser` (install the real version of the fake)
--- - `elm make src/Main.elm` (compile the code and make an index.html file)
--- - Then view index.html in a browser
+-- - `npx elm-watch@beta hot` (compile the code, hot reload and serve)
+-- - Then go to the url in the output to view the application (localhost://53529 or similar)
 
 
 main =
