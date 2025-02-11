@@ -33,7 +33,6 @@ The concept this exercise unlocks is:
 - custom-types
 - pattern-matching
 - lists
-- maybe partial-application (The [Elm Guide forms section](https://guide.elm-lang.org/architecture/forms) uses this)
 
 ## Analyzer
 
