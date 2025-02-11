@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/architecture/",
+    "description": "The Elm Architecture"
+  },
+  {
+    "url": "https://guide.elm-lang.org/architecture/buttons",
+    "description": "Buttons example (using Browser.sandbox)"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/browser/latest/",
+    "description": "Browser package"
+  }
+]
