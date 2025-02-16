@@ -29,9 +29,14 @@ update msg model =
 ```
 
 `view` is a function that returns html to show to the user in the browser. It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
+Each html element (for example `<div>`) has a corresponding Elm function (`div`), in the `Html` package.
+Each of these functions takes two array parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
+There is also a `text` function that represents Html string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
+
 It can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the update function and generate updated Html.
 In the code below this happens with `onInput TextChanged`.
 `onInput` expects to be passed a function (`String -> Msg`) which it will use to create the `Msg`. Different events expect different functions depending on what information they can provide, so for example `onCheck` (for checkboxes) expects `Bool -> Msg` and `onClick` just expects a `Msg`.
+
 The Elm language is pure and functional and no mutation is possible, so the Elm runtime handles all the things that change.
 You can see all of the different [Html Elements][html-elements], [Element Attributes][element-attributes] and [Html Events][html-events] on the Elm package registry.
 
