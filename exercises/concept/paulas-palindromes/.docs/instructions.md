@@ -30,11 +30,11 @@ Inside this root element, there should be an `input` element (the Text Box),and 
 
 ## 5. Write the init function
 
-The `init` function should return a sensible initial `Model` value .
+The `init` function should return a sensible initial `Model` value.
 
 ## 6. Write the main function
 
-The `main` function should call [`Browser.sandbox`][browser-sandbox], passing aa record parameter with the `init`, `update` and `view` functions.
+The `main` function should call [`Browser.sandbox`][browser-sandbox], passing a record parameter with the `init`, `update` and `view` functions.
 
 [palindrome-crossword-clues]: https://www.theguardian.com/crosswords/crossword-blog/2012/nov/01/cryptic-crosswords-beginners-palindromes
 [browser-sandbox]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox

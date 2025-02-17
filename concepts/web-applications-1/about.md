@@ -16,6 +16,7 @@ type alias Model =
 
 `update` is a function that gets called with a `Msg` when there's a change (like the user clicking a button).
 It takes the current `Model` and the `Msg`, and returns a new `Model`.
+The `Msg` can be any type, but in any useful application it is always a [custom type][custom-type].
 
 ```elm
 type Msg
@@ -78,6 +79,7 @@ init =
 ```
 
 [record]: https://elm-lang.org/docs/records
+[custom-type]: https://guide.elm-lang.org/types/custom_types.html
 [elm-guide-text-fields]: https://guide.elm-lang.org/architecture/text_fields
 [html-elements]: https://package.elm-lang.org/packages/elm/html/latest/Html
 [element-attributes]: https://package.elm-lang.org/packages/elm/html/latest/Html-Attributes
