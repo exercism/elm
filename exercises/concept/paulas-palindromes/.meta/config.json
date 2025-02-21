@@ -14,5 +14,5 @@
     ]
   },
   "icon": "",
-  "blurb": "Learn the basics of Elm web applications by alphabetising a string"
+  "blurb": "Learn the basics of Elm web applications by checking if a string is a palindrome"
 }

@@ -14,7 +14,8 @@ The text will update whenever the text in the Text Box changes.
 
 The application `Model` needs the string to check.
 
-The application needs a `Msg` to indicate that the text in the Text Box has changed. The variant for this should be called `Change`
+The application needs a `Msg` to indicate that the text in the Text Box has changed.
+The variant for this should be called `Change`
 
 ## 2. Write the update function
 

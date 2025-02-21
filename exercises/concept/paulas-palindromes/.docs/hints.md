@@ -17,22 +17,22 @@
 ## 2. Write the update function
 
 - In any useful application the update function will use a `case` statement to pattern match on the `Msg` parameter.
-- IN each branch of the case statement it will extract information it needs from the `Msg` parameter and return an updated `Model`
+- In each branch of the case statement it will extract information it needs from the `Msg` parameter and return an updated `Model`
 - The `Model` should be a record, and [record update syntax][record-update-syntax] is normally used.
 
 ## 3. Write the view function
 
 - The `view` function should probably return a `div` for the root element
-- The first child should be an `input`, with a `value` attribute for the current text, and an `nInput` attribute / event with the relevant variant of the `Msg`.
-- The second child should probably be another `div` with a `text`child stating whether the text is a palindrome or not.
+- The first child should be an `input`, with a `value` attribute for the current text, and an `onInput` attribute / event with the relevant variant of the `Msg`.
+- The second child should probably be another `div` with a `text` child stating whether the text is a palindrome or not.
 
 ## 4. Write the init function
 
-- This should simply return a `Model` with sensible default values (probably an empty string).
+- This should simply return a `Model` with sensible a default value (the tests require an empty string).
 
 ## 5. Write the main function
 
-- The main function should just called [`Browser.sandbox`][browser-sandbox]
+- The main function should just call [`Browser.sandbox`][browser-sandbox]
 - `Browser.sandbox` requires a [record][record] argument with the `init`, `update` and `view` functions.
 
 [elm-guide]: https://guide.elm-lang.org/architecture/text_fields

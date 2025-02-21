@@ -6,7 +6,8 @@ The core idea is that your code is built around a `Model` of your application st
 
 The `Model` contains the application’s state - all the data that the application needs.
 It can be any type, but in any useful application it is always a [record][record].
-If you imagine a simple application with a text box, and text showing the reverse of that text, the model would look like below.You can also see this example on the [Elm Guide][elm-guide-text-fields]
+If you imagine a simple application with a text box, and text showing the reverse of that text, the model would look like below.
+You can also see this example on the [Elm Guide][elm-guide-text-fields].
 
 ```elm
 type alias Model =
@@ -29,7 +30,8 @@ update msg model =
       { model | text = newText }
 ```
 
-`view` is a function that returns html to show to the user in the browser. It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
+`view` is a function that returns html to show to the user in the browser.
+It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
 Each html element (for example `<div>`) has a corresponding Elm function (`div`), in the `Html` package.
 Each of these functions takes two array parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
 There is also a `text` function that represents Html string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
