@@ -1,4 +1,4 @@
-module Main exposing (Msg(..), init, main, update, view)
+module Main exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
@@ -7,7 +7,6 @@ import Html.Events exposing (onInput)
 
 
 
--- MAIN
 -- When you have finished this exercise, this file will be an Elm program.
 --
 -- You can copy this file to Ellie (an online Elm sandbox - https://ellie-app.com/)
@@ -21,46 +20,35 @@ import Html.Events exposing (onInput)
 -- - Then go to the url in the output to view the application (localhost://53529 or similar)
 
 
+-- MAIN
+
+main: Html msg
 main =
-    Browser.sandbox { init = init, update = update, view = view }
+    Debug.todo "Implement main function"
 
 
 
 -- MODEL
 
-
-type alias Model =
-    { content : String
-    }
+-- define the Model type
 
 
-init : Model
 init =
-    { content = "" }
+    Debug.todo "Implement init function"
 
 
 
 -- UPDATE
 
 
-type Msg
-    = Change String
+-- define the Msg type, with a `Change` variant
 
-
-update : Msg -> Model -> Model
 update msg model =
-    case msg of
-        Change newContent ->
-            { model | content = newContent }
-
+    Debug.todo "Implement update function"
 
 
 -- VIEW
 
 
-view : Model -> Html Msg
 view model =
-    div []
-        [ input [ placeholder "Text to alphabetise", value model.content, onInput Change ] []
-        , div [] [ text (model.content |> String.toLower |> String.toList |> List.sort |> String.fromList) ]
-        ]
+    Debug.todo "Implement view function"

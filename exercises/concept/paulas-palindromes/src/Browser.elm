@@ -10,8 +10,6 @@ type alias Sandbox msg model =
     }
 
 
-sandbox :
-    Sandbox msg model
-    -> Html msg --Sandbox msg model
+sandbox : Sandbox msg model -> Html msg
 sandbox { init, view } =
     view init

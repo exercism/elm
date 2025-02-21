@@ -46,10 +46,17 @@ update msg model =
 
 -- VIEW
 
+isPalindrome : String -> String
+isPalindrome content =
+    if content == (content |> String.toLower |> String.reverse)  then
+        "This is a palindrome"
+    else
+        "Not a palindrome"
+
 
 view : Model -> Html Msg
 view model =
     div []
-        [ input [ placeholder "Text to alphabetise", value model.content, onInput Change ] []
-        , div [] [ text (model.content |> String.toLower |> String.toList |> List.sort |> String.fromList) ]
+        [ input [ placeholder "Text to check for a palindrome", value model.content, onInput Change ] []
+        , div [] [ text (isPalindrome model.content) ]
         ]

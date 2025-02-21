@@ -4,35 +4,33 @@
 
 - Check out the [Elm Guide][elm-guide], which has a nice worked example that is similar.
 
-## 1. Define the Model type for the application
+## 1. Define the Model and Msg types for the application
 
 - The `Model` contains the application's state - all the data that the application needs.
 - This application just needs a string to store the text in the Text Box.
 - It can be any type, but in any useful application it is always a [record][record].
 
-## 2. Define the Msg type for the application
-
 - The `Msg` type is a defines the messages that are passed to the `update` function, to trigger specific changes in the model.
 - This application only needs one change to the model - updating the model when the text in the Text Box changes.
 - It can be any type, but in any useful application it is always a [custom type][custom-type].
 
-## 3. Write the update function
+## 2. Write the update function
 
 - In any useful application the update function will use a `case` statement to pattern match on the `Msg` parameter.
 - IN each branch of the case statement it will extract information it needs from the `Msg` parameter and return an updated `Model`
 - The `Model` should be a record, and [record update syntax][record-update-syntax] is normally used.
 
-## 4. Write the view function
+## 3. Write the view function
 
 - The `view` function should probably return a `div` for the root element
 - The first child should be an `input`, with a `value` attribute for the current text, and an `nInput` attribute / event with the relevant variant of the `Msg`.
 - The second child should probably be another `div` with a `text`child stating whether the text is a palindrome or not.
 
-## 5. Write the init function
+## 4. Write the init function
 
 - This should simply return a `Model` with sensible default values (probably an empty string).
 
-## 6. Write the main function
+## 5. Write the main function
 
 - The main function should just called [`Browser.sandbox`][browser-sandbox]
 - `Browser.sandbox` requires a [record][record] argument with the `init`, `update` and `view` functions.
