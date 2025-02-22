@@ -211,6 +211,21 @@
         "status": "beta"
       },
       {
+        "slug": "paulas-palindromes",
+        "name": "Paula's Palindromes",
+        "uuid": "31f9b8d8-701d-4124-8ca1-726f5969661c",
+        "concepts": [
+          "web-applications-1"
+        ],
+        "prerequisites": [
+          "records",
+          "custom-types",
+          "pattern-matching",
+          "lists"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "monster-attack",
         "name": "Monster Attack",
         "uuid": "c8abe3c6-44f8-49cd-b8e4-9951c77ddbd9",
