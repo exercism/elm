@@ -1520,6 +1520,11 @@
       "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33",
       "slug": "random",
       "name": "Random"
+    },
+    {
+      "uuid": "d3864c81-b7e4-4b42-87d1-aac069ecb839",
+      "slug": "web-applications-1",
+      "name": "Web Applications"
     }
   ],
   "key_features": [

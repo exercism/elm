@@ -13,6 +13,6 @@
       ".meta/Exemplar.elm"
     ]
   },
-  "icon": "",
+  "icon": "pizza-slices",
   "blurb": "Learn the basics of Elm web applications by checking if a string is a palindrome"
 }
