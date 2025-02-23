@@ -15,7 +15,7 @@ tests =
             [ test "Model is exposed" <|
                 \_ ->
                     let
-                        identity : Model -> Model
+                        identity : Main.Model -> Main.Model
                         identity model =
                             model
                     in
@@ -23,7 +23,7 @@ tests =
             , test "Msg is exposed" <|
                 \_ ->
                     let
-                        identity : Msg -> msg
+                        identity : Msg -> Msg
                         identity msg =
                             msg
                     in
@@ -32,7 +32,7 @@ tests =
         , describe "2"
             [ test "update should change the model content" <|
                 \_ ->
-                    update (Msg.Change "new content") { content = "" }
+                    update (Main.Change "new content") { content = "" }
                         |> Expect.equal { content = "new content" }
             ]
         , describe "3"
@@ -52,7 +52,7 @@ tests =
                         |> Query.fromHtml
                         |> Query.find [ tag "input" ]
                         |> Event.simulate (Event.input "cat")
-                        |> Event.expect (Msg.Change "cat")
+                        |> Event.expect (Main.Change "cat")
             ]
         , describe "4"
             [ test "init should return a model empty content" <|
