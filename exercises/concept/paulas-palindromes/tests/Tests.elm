@@ -32,7 +32,7 @@ tests =
         , describe "2"
             [ test "update should change the model content" <|
                 \_ ->
-                    update (Change "new content") { content = "" }
+                    update (Msg.Change "new content") { content = "" }
                         |> Expect.equal { content = "new content" }
             ]
         , describe "3"
@@ -52,7 +52,7 @@ tests =
                         |> Query.fromHtml
                         |> Query.find [ tag "input" ]
                         |> Event.simulate (Event.input "cat")
-                        |> Event.expect (Change "cat")
+                        |> Event.expect (Msg.Change "cat")
             ]
         , describe "4"
             [ test "init should return a model empty content" <|
