@@ -18,18 +18,16 @@ import Html.Events exposing (onInput)
 -- - `elm install elm/browser` (install the real version of the fake)
 -- - `npx elm-watch@beta hot` (compile the code, hot reload and serve)
 -- - Then go to the url in the output to view the application (localhost://53529 or similar)
-
-
 -- MAIN
 
-main: Html msg
+
+main : Html msg
 main =
     Debug.todo "Implement main function"
 
 
 
 -- MODEL
-
 -- define the Model type
 
 
@@ -39,12 +37,12 @@ init =
 
 
 -- UPDATE
-
-
 -- define the Msg type, with a `Change` variant
+
 
 update msg model =
     Debug.todo "Implement update function"
+
 
 
 -- VIEW

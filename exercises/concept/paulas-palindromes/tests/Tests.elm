@@ -12,15 +12,15 @@ tests : Test
 tests =
     describe "Paulas Palindromes"
         [ describe "1"
-            [test "Model is exposed" <|
+            [ test "Model is exposed" <|
                 \_ ->
                     let
                         identity : Model -> Model
                         identity model =
                             model
                     in
-                    Expect.pass,
-            test "Msg is exposed" <|
+                    Expect.pass
+            , test "Msg is exposed" <|
                 \_ ->
                     let
                         identity : Msg -> msg
@@ -45,7 +45,7 @@ tests =
                 \_ ->
                     view { content = "wrapcat" }
                         |> Query.fromHtml
-                        |> Query.has [ text "Not a palindrome" ]                        
+                        |> Query.has [ text "Not a palindrome" ]
             , test "view should create Msg.Change onChange" <|
                 \_ ->
                     view { content = "" }

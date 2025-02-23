@@ -46,10 +46,12 @@ update msg model =
 
 -- VIEW
 
+
 isPalindrome : String -> String
 isPalindrome content =
-    if content == (content |> String.toLower |> String.reverse)  then
+    if content == (content |> String.toLower |> String.reverse) then
         "This is a palindrome"
+
     else
         "Not a palindrome"
 
