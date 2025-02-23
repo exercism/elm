@@ -354,6 +354,26 @@
           "booleans"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "githup-api",
+        "name": "GitHup API",
+        "uuid": "5f9a418e-3e76-48fc-a1c0-e5f09502d579",
+        "concepts": [
+          "json"
+        ],
+        "prerequisites": [
+          "booleans",
+          "strings",
+          "tuples",
+          "lists",
+          "dict",
+          "records",
+          "maybe",
+          "custom-types",
+          "pattern-matching"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1408,6 +1428,10 @@
         ],
         "difficulty": 3
       }
+    ],
+    "foregone": [
+      "bank-account",
+      "parallel-letter-frequency"
     ]
   },
   "concepts": [
@@ -1525,6 +1549,11 @@
       "uuid": "d3864c81-b7e4-4b42-87d1-aac069ecb839",
       "slug": "web-applications-1",
       "name": "Web Applications"
+    },
+    {
+      "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56",
+      "slug": "json",
+      "name": "JSON"
     }
   ],
   "key_features": [
