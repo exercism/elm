@@ -63,15 +63,18 @@ rm -rf build
 mkdir -p build/src build/tests
 cp template/elm.json build/
 
-for example_file in exercises/concept/**/.meta/*.elm
+for exemplar_file in exercises/concept/**/.meta/*.elm
 do
-  exercise_dir=$(dirname $(dirname $example_file))
-  # get kebab-case slug and transform it to PascalCase
-  exercise_name=$(basename $exercise_dir | sed -r 's/(^|-)([a-z])/\U\2/g')
+  exercise_dir=$(dirname $(dirname $exemplar_file))
+  # solution_file is src/ValentinesDay.elm or similar from config.json
+  solution_file=$(jq --raw-output '.files.solution_file | .[0]' "$exercise_dir/.meta/config.json")
+  # solution_file_stub is ValentinesDay or similar
+  solution_file_stub=$(echo $solution_file | sed -r 's/src\/([a-zA-Z]*)\.elm/\1/')
+  
   cp $exercise_dir/src/*.elm "build/src/"
-  cp $example_file "build/src/$exercise_name.elm"
+  cp $exemplar_file "build/src/$solution_file_stub.elm"
   # Copy tests files under a unique temporary directory and remove all "skip <| ..."
-  cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$exercise_name/" | sed 's/skip <|//g' > "build/tests/Tests$exercise_name.elm"
+  cat "$exercise_dir/tests/Tests.elm" | sed "s/module Tests/module Tests$solution_file_stub/" | sed 's/skip <|//g' > "build/tests/Tests$solution_file_stub.elm"
 done
 
 cd build && npx --no-install elm-test-rs --fuzz 10
