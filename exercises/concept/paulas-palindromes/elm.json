@@ -19,7 +19,8 @@
     "test-dependencies": {
         "direct": {
             "elm-explorations/test": "2.1.0",
-            "rtfeldman/elm-iso8601-date-strings": "1.1.4"
+            "rtfeldman/elm-iso8601-date-strings": "1.1.4",
+            "elm/html": "1.0.0"
         },
         "indirect": {
             "elm/bytes": "1.0.8",
