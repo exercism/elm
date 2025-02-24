@@ -65,11 +65,11 @@ cp template/elm.json build/
 
 for exemplar_file in exercises/concept/**/.meta/*.elm
 do
-  exercise_dir=$(dirname $(dirname $exemplar_file))
+  exercise_dir=$(dirname $(dirname ${exemplar_file}))
   # solution_file is src/ValentinesDay.elm or similar from config.json
-  solution_file=$(jq --raw-output '.files.solution_file | .[0]' "$exercise_dir/.meta/config.json")
+  solution_file=$(jq --raw-output '.files.solution | .[0]' "${exercise_dir}/.meta/config.json")
   # solution_file_stub is ValentinesDay or similar
-  solution_file_stub=$(echo $solution_file | sed -r 's/src\/([a-zA-Z]*)\.elm/\1/')
+  solution_file_stub=$(echo ${solution_file} | sed -r 's/src\/([a-zA-Z]*)\.elm/\1/')
   
   cp $exercise_dir/src/*.elm "build/src/"
   cp $exemplar_file "build/src/$solution_file_stub.elm"
