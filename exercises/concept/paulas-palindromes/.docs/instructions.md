@@ -7,8 +7,8 @@ She asks you write her a very simple website that will check whether a string is
 
 You decide to do this using an Elm [sandbox][browser-sandox] application.
 
-The application will have a Text Box, that Paula can type her guess into, and text stating whether or not the text in the box is a palindrome or not.
-The text will update whenever the text in the Text Box changes.
+The application will have a text box, that Paula can type her guess into, and text stating whether or not the text in the box is a palindrome.
+The text will update whenever the text in the text box changes.
 
 ## 1. Define the Model and Msg types for the application
 

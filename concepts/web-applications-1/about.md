@@ -16,8 +16,8 @@ type alias Model =
 ```
 
 `update` is a function that gets called with a `Msg` when there's a change (like the user clicking a button).
-It takes the current `Model` and the `Msg`, and returns a new `Model`.
-The `Msg` can be any type, but in any useful application it is always a [custom type][custom-type].
+It takes the `Msg` and the current `Model`, and returns a new `Model`.
+The `Msg` can be any type, but it is usually a [custom type][custom-type].
 
 ```elm
 type Msg
@@ -30,33 +30,34 @@ update msg model =
       { model | text = newText }
 ```
 
-`view` is a function that returns html to show to the user in the browser.
+`view` is a function that returns HTML to show to the user in the browser.
 It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
-Each html element (for example `<div>`) has a corresponding Elm function (`div`), in the `Html` package.
+Each html element (for example `<div>`) has a corresponding Elm function (`Html.div`), in the `Html` package.
 Each of these functions takes two array parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
 There is also a `text` function that represents Html string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
 
-It can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the update function and generate updated Html.
+It can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the `update` function, modify the `Model` and generate updated Html.
 In the code below this happens with `onInput TextChanged`.
-`onInput` expects to be passed a function (`String -> Msg`) which it will use to create the `Msg`. Different events expect different functions depending on what information they can provide, so for example `onCheck` (for checkboxes) expects `Bool -> Msg` and `onClick` just expects a `Msg`.
+`Html.Events.onInput` expects to be passed a function (`String -> Msg`) which it will use to create the `Msg`.
+Different events expect different functions depending on what information they can provide, so for example `Html.Events.onCheck` (for checkboxes) expects `Bool -> Msg` and `Html.Events.onClick` just expects a `Msg`.
 
-The Elm language is pure and functional and no mutation is possible, so the Elm runtime handles all the things that change.
+The Elm language is pure and functional and no mutation is possible, so the Elm Runtime handles all the things that change.
 You can see all of the different [Html Elements][html-elements], [Element Attributes][element-attributes] and [Html Events][html-events] on the Elm package registry.
 
 ```elm
 view : Model -> Html Msg
 view model =
-  div []
-    [ input [ placeholder "Text to reverse", value model.text, onInput TextChanged ] []
-    , div [] [ text (String.reverse model.text) ]
+  Html.div []
+    [ Html.input [ Html.Attributes.placeholder "Text to reverse", Html.Attributes.value model.text, Html.Events.onInput TextChanged ] []
+    , Html.div [] [ Html.text (String.reverse model.text) ]
     ]
 ```
 
 There are 4 "levels" of web application you can write in Elm, that get progressively more powerful and more complicated (although Elm remains a delightfully simple language and ecosystem).
-These are all defined in the [Browser package][browser-package]
+These are all defined in the [Browser package][browser-package]:
 
 - [sandbox][browser-sandbox] — react to user input, like buttons and checkboxes
-- [element][browser-element] — talk to the outside world, like HTTP and JS interop
+- [element][browser-element] — talk to the outside world, using HTTP and JavaScript interop
 - [document][browser-document] — control the `<title>` and `<body>` of a web page
 - [application][browser-application] — create full single-page appliations that handle routing / url changes
 
