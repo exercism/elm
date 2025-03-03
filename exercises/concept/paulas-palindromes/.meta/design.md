@@ -25,7 +25,7 @@ Students should be able to
 
 The concept this exercise unlocks is:
 
-- `web-applications-1`
+- `web-applications-sandbox`
 
 ## Prerequisites
 

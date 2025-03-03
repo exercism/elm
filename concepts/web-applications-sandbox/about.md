@@ -1,11 +1,14 @@
 # About
 
+Elm is a delighful language for building reliable web applications.
+It has friendly error messages, great performance, small assets, and no runtime exceptions.
+
 Probably the most famous and widely copied part of Elm is The Elm Architecture, which is a simple pattern for architecting web applications, and is how all Elm web applications are written.
 
 The core idea is that your code is built around a `Model` of your application state, a way to `update` your model, and a way to `view` your model.
 
 The `Model` contains the application’s state - all the data that the application needs.
-It can be any type, but in any useful application it is always a [record][record].
+It can be any type, but in any useful application it is usually a [record][record].
 If you imagine a simple application with a text box, and text showing the reverse of that text, the model would look like below.
 You can also see this example on the [Elm Guide][elm-guide-text-fields].
 
@@ -30,19 +33,17 @@ update msg model =
       { model | text = newText }
 ```
 
+As with all custom types, the variants of the `Msg` can include as much arbitrary information as they need.
+In the example above the `TextChanged` variant includes a `String`.
+
 `view` is a function that returns HTML to show to the user in the browser.
 It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
 Each html element (for example `<div>`) has a corresponding Elm function (`Html.div`), in the `Html` package.
 Each of these functions takes two array parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
 There is also a `text` function that represents Html string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
 
-It can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the `update` function, modify the `Model` and generate updated Html.
-In the code below this happens with `onInput TextChanged`.
-`Html.Events.onInput` expects to be passed a function (`String -> Msg`) which it will use to create the `Msg`.
-Different events expect different functions depending on what information they can provide, so for example `Html.Events.onCheck` (for checkboxes) expects `Bool -> Msg` and `Html.Events.onClick` just expects a `Msg`.
-
-The Elm language is pure and functional and no mutation is possible, so the Elm Runtime handles all the things that change.
-You can see all of the different [Html Elements][html-elements], [Element Attributes][element-attributes] and [Html Events][html-events] on the Elm package registry.
+The `view` function can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the `update` function, modify the `Model` and generate updated Html.
+In the code below this happens with `Html.Events.onInput TextChanged`.
 
 ```elm
 view : Model -> Html Msg
@@ -53,6 +54,12 @@ view model =
     ]
 ```
 
+`Html.Events.onInput` expects to be passed a function (`String -> Msg`) which it will use to create the `Msg`.
+Different events expect different functions depending on what information they can provide, so for example `Html.Events.onCheck` (for checkboxes) expects `Bool -> Msg` and `Html.Events.onClick` just expects a `Msg`.
+
+The Elm language is pure and functional and no mutation is possible, so the Elm Runtime handles all the things that change.
+You can see all of the different [Html Elements][html-elements], [Element Attributes][element-attributes] and [Html Events][html-events] on the Elm package registry.
+
 There are 4 "levels" of web application you can write in Elm, that get progressively more powerful and more complicated (although Elm remains a delightfully simple language and ecosystem).
 These are all defined in the [Browser package][browser-package]:
 
@@ -62,13 +69,12 @@ These are all defined in the [Browser package][browser-package]:
 - [application][browser-application] — create full single-page appliations that handle routing / url changes
 
 This concept uses the [sandbox][browser-sandbox], as it is the simplest (and because it is a sandbox, it is relatively easy to work with the Exercism online editor).
-By convention the entry module for an Elm program must be called `Main`, and the function that creates the application must be called `main`,  as below.
-We have already seen the `update` and `view` functions, and the [sandbox][browser-sandbox] additionally requires an `init` function, to return the initial state of the `Model`.
+The entry module for an Elm program must be called `Main`, and the function that creates the application must be called `main`,  as below.
 
 ```elm
 import Browser
 import Html exposing (Html, Attribute, div, input, text)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (placeholder, value)
 import Html.Events exposing (onInput)
 
 main =
@@ -80,6 +86,8 @@ init =
 
 -- Add Model, Msg, update and view here
 ```
+
+We have already seen the `update` and `view` functions, and the [sandbox][browser-sandbox] additionally requires an `init` function, to return the initial state of the `Model`.
 
 [record]: https://elm-lang.org/docs/records
 [custom-type]: https://guide.elm-lang.org/types/custom_types.html

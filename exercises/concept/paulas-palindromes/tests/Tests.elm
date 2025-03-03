@@ -36,7 +36,13 @@ tests =
                         |> Expect.equal { content = "new content" }
             ]
         , describe "3"
-            [ test "view should identify content as a palindrome" <|
+            [ test "view should show content in the input" <|
+                \_ ->
+                    view { content = "anything" }
+                        |> Query.fromHtml
+                        |> Query.has [ text "anything" ]
+
+            , test "view should identify content as a palindrome" <|
                 \_ ->
                     view { content = "tacocat" }
                         |> Query.fromHtml

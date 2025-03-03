@@ -1,7 +1,7 @@
 {
     "serve": ".",
     "targets": {
-        "Arlos Alphabitiser": {
+        "Paulas Palindromes": {
             "inputs": [
                 "src/Main.elm"
             ],

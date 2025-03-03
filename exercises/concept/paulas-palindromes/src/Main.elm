@@ -21,7 +21,6 @@ import Html.Events exposing (onInput)
 -- MAIN
 
 
-main : Html msg
 main =
     Debug.todo "Implement main function"
 

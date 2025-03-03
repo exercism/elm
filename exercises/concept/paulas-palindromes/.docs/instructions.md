@@ -12,7 +12,7 @@ The text will update whenever the text in the text box changes.
 
 ## 1. Define the Model and Msg types for the application
 
-The application `Model` needs the string to check.
+The application `Model` needs the string to check, please call this `content`, which is what the tests are expecting.
 
 The application needs a `Msg` to indicate that the text in the Text Box has changed.
 The variant for this should be called `Change`
