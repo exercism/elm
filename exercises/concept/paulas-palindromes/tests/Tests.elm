@@ -41,7 +41,6 @@ tests =
                     view { content = "anything" }
                         |> Query.fromHtml
                         |> Query.has [ text "anything" ]
-
             , test "view should identify content as a palindrome" <|
                 \_ ->
                     view { content = "tacocat" }

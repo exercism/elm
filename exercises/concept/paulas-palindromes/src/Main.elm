@@ -22,12 +22,13 @@ import Html.Events exposing (onInput)
 
 
 main =
-    Debug.todo "Implement main function"
+    -- TODO: replace this stub implementation of `main`
+    text ""
 
 
 
 -- MODEL
--- define the Model type
+-- define the Model type, with a `content` field to store the String
 
 
 init =
@@ -40,7 +41,8 @@ init =
 
 
 update msg model =
-    Debug.todo "Implement update function"
+    -- TODO: replace this stub implementation of `update`
+    model
 
 
 
@@ -48,4 +50,5 @@ update msg model =
 
 
 view model =
-    Debug.todo "Implement view function"
+    -- TODO: replace this stub implementation of `view`
+    text ""

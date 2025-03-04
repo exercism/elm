@@ -7,12 +7,14 @@
 ## 1. Define the Model and Msg types for the application
 
 - The `Model` contains the application's state - all the data that the application needs.
-- This application just needs a string to store the text in the Text Box.
-- It can be any type, but in any useful application it is always a [record][record].
+- This application just needs a string to store the text in the Text Box (the tests require it to be called `content`).
+- It can be any type, but in any useful application it is usually a [record][record].
 
 - The `Msg` type is a defines the messages that are passed to the `update` function, to trigger specific changes in the model.
 - This application only needs one change to the model - updating the model when the text in the Text Box changes.
-- It can be any type, but in any useful application it is always a [custom type][custom-type].
+- It can be any type, but in any useful application it is usually a [custom type][custom-type].
+
+- The `init` function should simply return a `Model` with sensible a default value (the tests require an empty string).
 
 ## 2. Write the update function
 
@@ -26,11 +28,7 @@
 - The first child should be an `input`, with a `value` attribute for the current text, and an `onInput` attribute / event with the relevant variant of the `Msg`.
 - The second child should probably be another `div` with a `text` child stating whether the text is a palindrome or not.
 
-## 4. Write the init function
-
-- This should simply return a `Model` with sensible a default value (the tests require an empty string).
-
-## 5. Write the main function
+## 4. Write the main function
 
 - The main function should just call [`Browser.sandbox`][browser-sandbox]
 - `Browser.sandbox` requires a [record][record] argument with the `init`, `update` and `view` functions.

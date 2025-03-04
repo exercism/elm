@@ -10,12 +10,14 @@ You decide to do this using an Elm [sandbox][browser-sandox] application.
 The application will have a text box, that Paula can type her guess into, and text stating whether or not the text in the box is a palindrome.
 The text will update whenever the text in the text box changes.
 
-## 1. Define the Model and Msg types for the application
+## 1. Define the Model and Msg types for the application, and write the init function
 
-The application `Model` needs the string to check, please call this `content`, which is what the tests are expecting.
+The application `Model` needs the string to check, this field should be called `content`.
 
 The application needs a `Msg` to indicate that the text in the Text Box has changed.
 The variant for this should be called `Change`
+
+The `init` function should return a initial `Model` value with an empty `content` field.
 
 ## 2. Write the update function
 
@@ -29,11 +31,7 @@ Inside this root element, there should be an `input` element (the Text Box), and
 
 The text should be "This is a palindrome" or "Not a palindrome".
 
-## 4. Write the init function
-
-The `init` function should return a sensible initial `Model` value.
-
-## 5. Write the main function
+## 4. Write the main function
 
 The `main` function should call [`Browser.sandbox`][browser-sandbox], passing a record parameter with the `init`, `update` and `view` functions.
 
