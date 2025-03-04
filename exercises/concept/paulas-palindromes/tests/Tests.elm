@@ -5,8 +5,8 @@ import Main exposing (..)
 import Test exposing (..)
 import Test.Html.Event as Event
 import Test.Html.Query as Query
-import Test.Html.Selector exposing (tag, text)
-
+import Test.Html.Selector exposing (tag, text, attribute)
+import Html.Attributes exposing (value)
 
 tests : Test
 tests =
@@ -40,7 +40,8 @@ tests =
                 \_ ->
                     view { content = "anything" }
                         |> Query.fromHtml
-                        |> Query.has [ text "anything" ]
+                        |> Query.find [ tag "input" ]
+                        |> Query.has [ attribute (value "anything") ]
             , test "view should identify content as a palindrome" <|
                 \_ ->
                     view { content = "tacocat" }
