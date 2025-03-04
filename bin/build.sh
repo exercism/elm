@@ -7,7 +7,7 @@ set -o pipefail
 
 for elm_json in exercises/*/*/elm.json
 do
-  cmp template/elm.json $elm_json
+  cmp $elm_json template/elm.json
 done
 echo "All elm.json files are identical to template/elm.json"
 
