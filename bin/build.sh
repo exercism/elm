@@ -5,9 +5,10 @@ set -o pipefail
 
 # SANITY CHECKS
 
+echo "Checking that all elm.json files are identical to template/elm.json"
 for elm_json in exercises/*/*/elm.json
 do
-  cmp $elm_json template/elm.json
+  diff -w $elm_json template/elm.json
 done
 echo "All elm.json files are identical to template/elm.json"
 
