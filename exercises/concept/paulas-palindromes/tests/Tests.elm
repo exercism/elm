@@ -1,12 +1,13 @@
 module Tests exposing (tests)
 
 import Expect
+import Html.Attributes exposing (value)
 import Main exposing (..)
 import Test exposing (..)
 import Test.Html.Event as Event
 import Test.Html.Query as Query
-import Test.Html.Selector exposing (tag, text, attribute)
-import Html.Attributes exposing (value)
+import Test.Html.Selector exposing (attribute, tag, text)
+
 
 tests : Test
 tests =
