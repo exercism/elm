@@ -34,7 +34,7 @@ done
 for exercise_dir in "$exercices"/concept/*
 do
   echo "Running tests for concept exercise $exercise_dir"
-  bin/run.sh "ignored_slug" $exercise_dir $exercise_dir > /dev/null
+  bin/run.sh "ignored_slug" $exercise_dir $exercise_dir
 
   # Check that all tests have a task_id defined
   all_have_task_id=$(jq '.tests | map(.task_id) | all' "$exercise_dir/results.json")
