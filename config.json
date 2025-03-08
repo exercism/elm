@@ -348,7 +348,6 @@
           "json"
         ],
         "prerequisites": [
-          "json",
           "booleans",
           "strings",
           "tuples",
