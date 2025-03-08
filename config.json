@@ -1412,6 +1412,20 @@
           "lists"
         ],
         "difficulty": 3
+      },
+      {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "d0438147-3983-47bf-a4db-27fb0f5ae90e",
+        "practices": [],
+        "prerequisites": [
+          "strings",
+          "records",
+          "custom-types",
+          "pattern-matching",
+          "comparison"
+        ],
+        "difficulty": 7
       }
     ],
     "foregone": [
