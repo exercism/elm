@@ -11,6 +11,9 @@
     ],
     "exemplar": [
       ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/Browser.elm"
     ]
   },
   "icon": "palindrome-products",

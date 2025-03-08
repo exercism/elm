@@ -33,7 +33,8 @@ The concept this exercise unlocks is:
 - custom-types
 - pattern-matching
 - lists
+- strings
 
 ## Analyzer
 
-TBD depending on the exercise
+No analyzer requirements

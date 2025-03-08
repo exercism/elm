@@ -13,22 +13,10 @@ tests : Test
 tests =
     describe "Paulas Palindromes"
         [ describe "1"
-            [ test "Model is exposed" <|
+            [ test "init should return a model empty content" <|
                 \_ ->
-                    let
-                        identity : Main.Model -> Main.Model
-                        identity model =
-                            model
-                    in
-                    Expect.pass
-            , test "Msg is exposed" <|
-                \_ ->
-                    let
-                        identity : Msg -> Msg
-                        identity msg =
-                            msg
-                    in
-                    Expect.pass
+                    init
+                        |> Expect.equal { content = "" }
             ]
         , describe "2"
             [ test "update should change the model content" <|
@@ -62,12 +50,6 @@ tests =
                         |> Event.expect (Main.Change "cat")
             ]
         , describe "4"
-            [ test "init should return a model empty content" <|
-                \_ ->
-                    init
-                        |> Expect.equal { content = "" }
-            ]
-        , describe "5"
             [ test "main should create the sandbox" <|
                 \_ ->
                     -- This is a bit of a hack, and doesn't test the update function is passed,

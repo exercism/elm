@@ -2,7 +2,7 @@ module Main exposing (..)
 
 import Browser
 import Html exposing (Html, div, input, text)
-import Html.Attributes exposing (placeholder, value)
+import Html.Attributes exposing (value)
 import Html.Events exposing (onInput)
 
 
@@ -27,7 +27,10 @@ main =
 
 
 -- MODEL
-type Model = TODO
+
+
+type Model
+    = TODO
 
 
 init =
@@ -36,7 +39,10 @@ init =
 
 
 -- UPDATE
-type Msg = TODO
+
+
+type Msg
+    = TODO
 
 
 update msg model =

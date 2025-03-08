@@ -4,15 +4,15 @@
 
 - Check out the [Elm Guide][elm-guide], which has a nice worked example that is similar.
 
-## 1. Define the Model and Msg types for the application
+## 1. Define the Model and Msg types for the application, and write the init function
 
 - The `Model` contains the application's state - all the data that the application needs.
+- It should be a [record][record].
 - This application just needs a `String` to store the text in the text box (the tests require it to be called `content`).
-- It should be a record][record].
 
 - The `Msg` type defines the messages that are passed to the `update` function, to trigger specific changes in the model.
+- It should be a [custom type][custom-type].
 - This application only needs one change to the model - updating the model when the text in the text box changes.
-- It can be any type, but in any useful application it is usually a [custom type][custom-type].
 
 - The `init` function should simply return a `Model` with sensible a default value (the tests require an empty string).
 

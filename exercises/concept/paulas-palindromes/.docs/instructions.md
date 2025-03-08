@@ -35,6 +35,8 @@ The text should be "This is a palindrome" or "Not a palindrome".
 ## 4. Write the main function
 
 The `main` function should call [`Browser.sandbox`][browser-sandbox], passing a record parameter with the `init`, `update` and `view` functions.
+To make the exercise work on the Exercism online editor, we use a fake `Browser.sandbox` with the code.
+This makes no difference to the code that you write to solve this exercise.
 
 [palindrome-crossword-clues]: https://www.theguardian.com/crosswords/crossword-blog/2012/nov/01/cryptic-crosswords-beginners-palindromes
 [browser-sandbox]: https://package.elm-lang.org/packages/elm/browser/latest/Browser#sandbox
