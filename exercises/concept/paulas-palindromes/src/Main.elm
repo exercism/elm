@@ -22,13 +22,12 @@ import Html.Events exposing (onInput)
 
 
 main =
-    -- TODO: replace this stub implementation of `main`
-    text ""
+    text "TODO: please implement main"
 
 
 
 -- MODEL
--- define the Model type, with a `content` field to store the String
+type Model = TODO
 
 
 init =
@@ -37,7 +36,7 @@ init =
 
 
 -- UPDATE
--- define the Msg type, with a `Change` variant
+type Msg = TODO
 
 
 update msg model =
@@ -50,5 +49,4 @@ update msg model =
 
 
 view model =
-    -- TODO: replace this stub implementation of `view`
-    text ""
+    text "TODO: please implement view"

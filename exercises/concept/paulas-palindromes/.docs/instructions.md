@@ -10,7 +10,7 @@ You decide to do this using an Elm [sandbox][browser-sandox] application.
 The application will have a text box, that Paula can type her guess into, and text stating whether or not the text in the box is a palindrome.
 The text will update whenever the text in the text box changes.
 
-## 1. Define the Model and Msg types for the application, and write the init function
+## 1. Define the `Model` and `Msg` types for the application, and write the `init` function
 
 The application `Model` needs the string to check, this field should be called `content`.
 
@@ -21,7 +21,8 @@ The `init` function should return a initial `Model` value with an empty `content
 
 ## 2. Write the update function
 
-The update function should take a `Msg` and a `Model` parameter, and return a new `Model`.
+The `update` function should take a `Msg` and a `Model` parameter, and return a new `Model`.
+The `Msg` will carry some text typed by the user, and the new `Model` should include that text.
 
 ## 3. Write the view function
 

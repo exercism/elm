@@ -1,9 +1,9 @@
 # About
 
-Elm is a delighful language for building reliable web applications.
+Elm is a delightful language for building reliable web applications.
 It has friendly error messages, great performance, small assets, and no runtime exceptions.
 
-Probably the most famous and widely copied part of Elm is The Elm Architecture, which is a simple pattern for architecting web applications, and is how all Elm web applications are written.
+Probably the most famous and widely copied part of Elm is The Elm Architecture, which is a simple pattern for structuring web applications, and is how all Elm web applications are written.
 
 The core idea is that your code is built around a `Model` of your application state, a way to `update` your model, and a way to `view` your model.
 
@@ -37,19 +37,24 @@ As with all custom types, the variants of the `Msg` can include as much arbitrar
 In the example above the `TextChanged` variant includes a `String`.
 
 `view` is a function that returns HTML to show to the user in the browser.
-It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent Html).
-Each html element (for example `<div>`) has a corresponding Elm function (`Html.div`), in the `Html` package.
-Each of these functions takes two array parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
-There is also a `text` function that represents Html string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
+It takes the current `Model` and returns an `Html Msg` (the type that Elm uses to represent HTML).
+Each HTML element (for example `<div>`) has a corresponding Elm function (`Html.div`), in the `Html` package.
+Each of these functions takes two parameters, the first is a list of attributes (from the `Html.Attributes` and `Html.Events` packages), and the second is a list of child elements (functions from the `Html` package).
+There is also a `text` function that represents HTML string content, which just takes a string parameter, but is otherwise used in the same way as all the other functions / elements in the `Html` package.
 
-The `view` function can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the `update` function, modify the `Model` and generate updated Html.
+The `view` function can specify that certain events, like clicking a button or editing text in a text box, result in a `Msg` being created, which the Elm Runtime will use to call the `update` function, modify the `Model` and generate updated HTML.
 In the code below this happens with `Html.Events.onInput TextChanged`.
 
 ```elm
 view : Model -> Html Msg
 view model =
   Html.div []
-    [ Html.input [ Html.Attributes.placeholder "Text to reverse", Html.Attributes.value model.text, Html.Events.onInput TextChanged ] []
+    [ Html.input
+      [ Html.Attributes.placeholder "Text to reverse"
+      , Html.Attributes.value model.text
+      , Html.Events.onInput TextChanged
+      ]
+      []
     , Html.div [] [ Html.text (String.reverse model.text) ]
     ]
 ```
@@ -58,7 +63,7 @@ view model =
 Different events expect different functions depending on what information they can provide, so for example `Html.Events.onCheck` (for checkboxes) expects `Bool -> Msg` and `Html.Events.onClick` just expects a `Msg`.
 
 The Elm language is pure and functional and no mutation is possible, so the Elm Runtime handles all the things that change.
-You can see all of the different [Html Elements][html-elements], [Element Attributes][element-attributes] and [Html Events][html-events] on the Elm package registry.
+You can see all of the different [HTML Elements][html-elements], [Element Attributes][element-attributes] and [HTML Events][html-events] on the Elm package registry.
 
 There are 4 "levels" of web application you can write in Elm, that get progressively more powerful and more complicated (although Elm remains a delightfully simple language and ecosystem).
 These are all defined in the [Browser package][browser-package]:
