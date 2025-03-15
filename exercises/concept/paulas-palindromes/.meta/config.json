@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "ceddlyburge"
+  ],
+  "files": {
+    "solution": [
+      "src/Main.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ],
+    "editor": [
+      "src/Browser.elm"
+    ]
+  },
+  "icon": "palindrome-products",
+  "blurb": "Learn the basics of Elm web applications by checking if a string is a palindrome"
+}
