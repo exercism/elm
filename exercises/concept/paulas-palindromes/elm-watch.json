@@ -1,0 +1,11 @@
+{
+    "serve": ".",
+    "targets": {
+        "Paulas Palindromes": {
+            "inputs": [
+                "src/Main.elm"
+            ],
+            "output": "build/main.js"
+        }
+    }
+}
