@@ -2,8 +2,6 @@
 
 Bitwise operations allow us to manipulate individual digits within binary numbers.
 
-## Bitwise operations
-
 Elm provides several bitwise operators in its [Bitwise module](https://package.elm-lang.org/packages/elm/core/latest/Bitwise)
 
 ## Basic operations
@@ -17,12 +15,12 @@ A _mask_ is a number where specific bits have been set in a particular way to ma
 This is useful for checking to see if an individual bit is set.
 For example, to check if the 4th bit of a number is set to `1`, `and` it with a mask of `01000` (`8` in decimal) and see if the result is non-zero:
 
-````elm
+```elm
 Bitwise.and 13 8 --> 8
 --  13 = 01101
 --   8 = 01000
 -- and = 01000 = 8
-
+```
 
 ### or
 
@@ -35,18 +33,19 @@ Bitwise.or 21 2 --> 23
 -- 21 = 10101
 --  2 = 00010
 -- or = 10111 = 23
-````
+```
 
 ### Exclusive-or (xor)
 
 `xor` combines two numbers by setting each bit to `1` if it is `1` in one number but `0` in the other.
 This is useful for flipping a bit to its opposite value:
 
-````elm
-Bitwise.xor 21 4 --> 17
---  21 = 10101
---   4 = 00100
+```elm
+Bitwise.xor 20 5 --> 17
+--  20 = 10100
+--   5 = 00101
 -- xor = 10001 = 17
+```
 
 ### Complement
 
@@ -59,9 +58,9 @@ This is because negative numbers in binary are represented with `1` in the left-
 Bitwise.complement 21 --> -22
 --         21 = 00000000000000000000000000010101
 -- complement = 11111111111111111111111111101010 = -22
-````
+```
 
-## Bit shifting
+### Bit shifting
 
 The following operators move bits left or right by a specified number of positions, effectively multiplying or dividing by powers of 2.
 
@@ -90,15 +89,15 @@ Note that this function duplicates whatever value is in the leftmost bit.
 So, negative numbers will stay negative:
 
 ```elm
-Bitwise.shiftRightBy 3 -21 --> -6
---  -21 = 111...10101
--- shiftRightBy 3 = 111...11101 = -6
+Bitwise.shiftRightBy 3 -21 --> -3
+--  -21 = 111...101011
+-- shiftRightBy 3 = 111...11101 = -3
 ```
 
 If you want to shift right and fill in with zeros, use `shiftRightZfBy`:
 
 ```elm
-Bitwise.shiftRightZfBy 3 -21 --> 1073741818
---  -21 = 111...10101
--- shiftRightZfBy 3 = 00111...11101 = 1073741818
+Bitwise.shiftRightZfBy 3 -21 --> 536870909
+--  -21 = 111...101011
+-- shiftRightZfBy 3 = 00111...11101 = 536870909
 ```

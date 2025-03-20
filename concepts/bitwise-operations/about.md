@@ -15,16 +15,16 @@ Negative Range: -2<sup>31</sup> to -1 (or -2,147,483,648 to -1).
 
 For example, the integer `5` is represented in binary as `00000000000000000000000000000101`, although usually we ignore the leading zeros and just say `101`.
 
-### Bitwise operations
+### Bitwise
 
 Elm provides several bitwise operators in its [Bitwise module](https://package.elm-lang.org/packages/elm/core/latest/Bitwise)
 
-### Basic operations
+## Basic operations
 
 Modifying individual bits of a number is called _masking_.
 A _mask_ is a number where specific bits have been set in a particular way to manipulate another number using bitwise operators such as `and`, `or`, and `xor`.
 
-#### and
+### and
 
 `and` combines two numbers by keeping only the bits that are `1` in both.
 This is useful for checking to see if an individual bit is set.
@@ -37,7 +37,7 @@ Bitwise.and 13 8 --> 8
 -- and = 01000 = 8
 ```
 
-#### or
+### or
 
 `or` combines two numbers by setting each bit to `1` if it is `1` in either or both numbers.
 This is useful for setting a specific bit to `1`.
@@ -50,7 +50,7 @@ Bitwise.or 21 2 --> 23
 -- or = 10111 = 23
 ```
 
-#### Exclusive-or (xor)
+### Exclusive-or (xor)
 
 `xor` combines two numbers by setting each bit to `1` if it is `1` in one number but `0` in the other.
 This is useful for flipping a bit to its opposite value:
@@ -62,7 +62,7 @@ Bitwise.xor 20 5 --> 17
 -- xor = 10001 = 17
 ```
 
-#### Complement
+### Complement
 
 `complement` inverts each bit of a number (`0` becomes `1`, `1` becomes `0`).
 
