@@ -103,15 +103,15 @@ Note that this function duplicates whatever value is in the leftmost bit.
 So, negative numbers will stay negative:
 
 ```elm
-Bitwise.shiftRightBy 3 -21 --> -6
---  -21 = 111...10101
--- shiftRightBy 3 = 111...11101 = -6
+Bitwise.shiftRightBy 3 -21 --> -3
+--  -21 = 111...101011
+-- shiftRightBy 3 = 111...11101 = -3
 ```
 
 If you want to shift right and fill in with zeros, use `shiftRightZfBy`:
 
 ```elm
-Bitwise.shiftRightZfBy 3 -21 --> 1073741818
---  -21 = 111...10101
--- shiftRightZfBy 3 = 00111...11101 = 1073741818
+Bitwise.shiftRightZfBy 3 -21 --> 536870909
+--  -21 = 111...101011
+-- shiftRightZfBy 3 = 00111...11101 = 536870909
 ```
