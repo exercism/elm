@@ -211,6 +211,22 @@
         "status": "beta"
       },
       {
+        "slug": "paulas-palindromes",
+        "name": "Paula's Palindromes",
+        "uuid": "31f9b8d8-701d-4124-8ca1-726f5969661c",
+        "concepts": [
+          "web-applications-sandbox"
+        ],
+        "prerequisites": [
+          "records",
+          "custom-types",
+          "pattern-matching",
+          "lists",
+          "strings"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "monster-attack",
         "name": "Monster Attack",
         "uuid": "c8abe3c6-44f8-49cd-b8e4-9951c77ddbd9",
@@ -350,7 +366,28 @@
         "prerequisites": [
           "basics-1",
           "basics-2"
-        ]
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "githup-api",
+        "name": "GitHup API",
+        "uuid": "5f9a418e-3e76-48fc-a1c0-e5f09502d579",
+        "concepts": [
+          "json"
+        ],
+        "prerequisites": [
+          "booleans",
+          "strings",
+          "tuples",
+          "lists",
+          "dict",
+          "records",
+          "maybe",
+          "custom-types",
+          "pattern-matching"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1411,6 +1448,10 @@
         ],
         "difficulty": 3
       }
+    ],
+    "foregone": [
+      "bank-account",
+      "parallel-letter-frequency"
     ]
   },
   "concepts": [
@@ -1525,9 +1566,20 @@
       "name": "Random"
     },
     {
+<<<<<<< HEAD
       "uuid": "8737961b-c96f-4313-8737-6b88034c66d8",
       "slug": "bitwise-operations",
       "name": "Bitwise Operations"
+=======
+      "uuid": "d3864c81-b7e4-4b42-87d1-aac069ecb839",
+      "slug": "web-applications-sandbox",
+      "name": "Web Applications"
+    },
+    {
+      "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56",
+      "slug": "json",
+      "name": "JSON"
+>>>>>>> main
     }
   ],
   "key_features": [

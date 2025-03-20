@@ -13,7 +13,7 @@ For up-to-date installation instructions head to
 
 The tool used to run the tests from the command line is called elm-test.
 Currently elm-test requires Node.js and npm, so if you haven't already
-please [install first Node.js and npm][npm-insall].
+please [install first Node.js and npm][npm-install].
 Once you have npm installed, you can install elm-test with:
 
 ```shell

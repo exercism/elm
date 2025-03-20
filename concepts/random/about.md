@@ -84,7 +84,7 @@ generate 5 (Random.uniform Red [Green, Blue])
 We can also tweak the probabilities using `Random.weighted`:
 
 ```elm
-generate 5 (Random.weighted (Red, 80) [(Green, 15), (Blue, 5)])
+generate 5 (Random.weighted (80, Red) [(15, Green), (5, Blue)])
     --> [Red, Red, Green, Red, Red]
 ```
 
