@@ -357,6 +357,19 @@
         "status": "beta"
       },
       {
+        "slug": "secrets",
+        "name": "Secrets",
+        "uuid": "89a899b1-8cb2-4099-98c9-468723728a28",
+        "concepts": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "basics-1",
+          "basics-2"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "githup-api",
         "name": "GitHup API",
         "uuid": "5f9a418e-3e76-48fc-a1c0-e5f09502d579",
@@ -539,11 +552,14 @@
         "slug": "allergies",
         "name": "Allergies",
         "uuid": "29b5a28a-417a-4cee-ba6f-9dd942ceffaa",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations"
+        ],
         "difficulty": 4,
         "topics": [
-          "bitwise_operations",
           "enumerations",
           "filtering"
         ]
@@ -1291,8 +1307,11 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "6c7a96ec-0bfb-4284-bd9f-2aa6989c3bb5",
-        "practices": [],
+        "practices": [
+          "bitwise-operations"
+        ],
         "prerequisites": [
+          "bitwise-operations",
           "custom-types",
           "pattern-matching",
           "maybe",
@@ -1545,6 +1564,11 @@
       "uuid": "357ffb6e-5a73-49b6-8b69-98ecd3c74c33",
       "slug": "random",
       "name": "Random"
+    },
+    {
+      "uuid": "8737961b-c96f-4313-8737-6b88034c66d8",
+      "slug": "bitwise-operations",
+      "name": "Bitwise Operations"
     },
     {
       "uuid": "d3864c81-b7e4-4b42-87d1-aac069ecb839",
