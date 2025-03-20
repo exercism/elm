@@ -37,7 +37,7 @@ Bitwise.and 13 8 --> 8
 -- and = 01000 = 8
 
 
-### or
+#### or
 
 `or` combines two numbers by setting each bit to `1` if it is `1` in either or both numbers.
 This is useful for setting a specific bit to `1`.
@@ -50,7 +50,7 @@ Bitwise.or 21 2 --> 23
 -- or = 10111 = 23
 ````
 
-### Exclusive-or (xor)
+#### Exclusive-or (xor)
 
 `xor` combines two numbers by setting each bit to `1` if it is `1` in one number but `0` in the other.
 This is useful for flipping a bit to its opposite value:
