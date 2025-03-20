@@ -9,7 +9,7 @@ You will need to write the functions to help decrypt the message.
 The first step in decrypting the message is to undo the shifting from the encryption process by shifting the bits back to the right.
 There will be further steps in the decryption process that assume `0`s are inserted from the left hand side.
 
-Implement the `shiftBack` function that takes a number of places to shift by and a value and peforms the shift.
+Implement the `shiftBack` function that takes a number of places to shift by and a value and performs the shift.
 
 ```elm
 shiftBack 2 42 --> 10
@@ -66,3 +66,5 @@ Implement the `decrypt` function that performs the following operations:
 ```elm
 decrypt 380182 --> 11840
 ```
+
+Please implement `decrypt` with all the functions you implemented in the previous tasks.
