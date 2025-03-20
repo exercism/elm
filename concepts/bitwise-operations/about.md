@@ -56,9 +56,9 @@ Bitwise.or 21 2 --> 23
 This is useful for flipping a bit to its opposite value:
 
 ````elm
-Bitwise.xor 21 4 --> 17
---  21 = 10101
---   4 = 00100
+Bitwise.xor 20 5 --> 17
+--  20 = 10100
+--   5 = 00101
 -- xor = 10001 = 17
 
 #### Complement
