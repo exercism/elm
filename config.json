@@ -451,6 +451,19 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-duo",
+        "name": "TODO",
+        "uuid": "a6b5f8e0-96a5-4da1-97ad-033a2a4b115b",
+        "practices": [
+          "lists"
+        ],
+        "prerequisites": [
+          "lists",
+          "basics-2"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
