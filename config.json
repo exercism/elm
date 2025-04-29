@@ -626,6 +626,14 @@
         "difficulty": 3
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
+        "uuid": "8960514f-17af-4009-b334-d6bfc4722c80",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "twelve-days",
         "name": "Twelve Days",
         "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
