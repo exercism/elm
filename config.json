@@ -455,11 +455,14 @@
         "name": "Resistor Color Duo",
         "uuid": "a6b5f8e0-96a5-4da1-97ad-033a2a4b115b",
         "practices": [
-          "lists"
+          "lists",
+          "pattern-matching"
         ],
         "prerequisites": [
           "lists",
-          "basics-2"
+          "basics-2",
+          "custom-types",
+          "pattern-matching"
         ],
         "difficulty": 2
       },
