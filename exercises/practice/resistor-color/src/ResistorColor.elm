@@ -1,11 +1,11 @@
-module ResistorColor exposing (colorCode, colors)
+module ResistorColor exposing (Color(..), colorCode, colors)
 
 
-colorCode : String -> Int
+colorCode : Color -> Int
 colorCode color =
     Debug.todo "Please implement colorCode"
 
 
-colors : List String
+colors : List Color
 colors =
     Debug.todo "Please implement colors"

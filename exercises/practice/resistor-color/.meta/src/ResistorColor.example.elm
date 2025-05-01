@@ -1,25 +1,63 @@
-module ResistorColor exposing (colorCode, colors)
+module ResistorColor exposing (Color(..), colorCode, colors)
 
 
-colorCode : String -> Int
+type Color
+    = Black
+    | Brown
+    | Red
+    | Orange
+    | Yellow
+    | Green
+    | Blue
+    | Violet
+    | Grey
+    | White
+
+
+colorCode : Color -> Int
 colorCode color =
-    findIndex color colors 0
+    case color of
+        Black ->
+            0
+
+        Brown ->
+            1
+
+        Red ->
+            2
+
+        Orange ->
+            3
+
+        Yellow ->
+            4
+
+        Green ->
+            5
+
+        Blue ->
+            6
+
+        Violet ->
+            7
+
+        Grey ->
+            8
+
+        White ->
+            9
 
 
-colors : List String
+colors : List Color
 colors =
-    [ "black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white" ]
-
-
-findIndex : a -> List a -> Int -> Int
-findIndex needle haystack acc =
-    case haystack of
-        [] ->
-            -1
-
-        x :: xs ->
-            if x == needle then
-                acc
-
-            else
-                findIndex needle xs (acc + 1)
+    [ Black
+    , Brown
+    , Red
+    , Orange
+    , Yellow
+    , Green
+    , Blue
+    , Violet
+    , Grey
+    , White
+    ]
