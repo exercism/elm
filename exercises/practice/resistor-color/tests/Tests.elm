@@ -1,7 +1,7 @@
 module Tests exposing (tests)
 
 import Expect
-import ResistorColor
+import ResistorColor exposing (Color(..), colorCode, colors)
 import Test exposing (Test, describe, skip, test)
 
 
@@ -11,22 +11,22 @@ tests =
         [ describe "Color codes"
             [ test "Black" <|
                 \() ->
-                    ResistorColor.colorCode "black"
+                    ResistorColor.colorCode Black
                         |> Expect.equal 0
             , skip <|
                 test "White" <|
                     \() ->
-                        ResistorColor.colorCode "white"
+                        ResistorColor.colorCode White
                             |> Expect.equal 9
             , skip <|
                 test "Orange" <|
                     \() ->
-                        ResistorColor.colorCode "orange"
+                        ResistorColor.colorCode Orange
                             |> Expect.equal 3
             ]
         , skip <|
             test "Colors" <|
                 \() ->
                     ResistorColor.colors
-                        |> Expect.equal [ "black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white" ]
+                        |> Expect.equal [ Black, Brown, Red, Orange, Yellow, Green, Blue, Violet, Grey, White ]
         ]
