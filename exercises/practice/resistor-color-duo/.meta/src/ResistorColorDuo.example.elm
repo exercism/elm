@@ -1,7 +1,20 @@
-module ResistorColorDuo exposing (value)
+module ResistorColorDuo exposing (Color(..), value)
 
 
-value : List String -> Int
+type Color
+    = Black
+    | Brown
+    | Red
+    | Orange
+    | Yellow
+    | Green
+    | Blue
+    | Violet
+    | Grey
+    | White
+
+
+value : List Color -> Int
 value colors =
     case colors of
         first :: second :: _ ->
@@ -11,23 +24,35 @@ value colors =
             -1
 
 
-colorCode : String -> Int
+colorCode : Color -> Int
 colorCode color =
-    let
-        position =
-            bands
-                |> List.indexedMap (\i x -> ( i, x ))
-                |> List.filter (\( _, elem ) -> elem == color)
-                |> List.head
-    in
-    case position of
-        Just ( i, _ ) ->
-            i
+    case color of
+        Black ->
+            0
 
-        Nothing ->
-            -1
+        Brown ->
+            1
 
+        Red ->
+            2
 
-bands : List String
-bands =
-    [ "black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white" ]
+        Orange ->
+            3
+
+        Yellow ->
+            4
+
+        Green ->
+            5
+
+        Blue ->
+            6
+
+        Violet ->
+            7
+
+        Grey ->
+            8
+
+        White ->
+            9

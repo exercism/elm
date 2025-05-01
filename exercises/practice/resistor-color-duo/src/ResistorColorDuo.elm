@@ -1,6 +1,6 @@
-module ResistorColorDuo exposing (value)
+module ResistorColorDuo exposing (Color(..), value)
 
 
-value : List String -> Int
+value : List Color -> Int
 value colors =
     Debug.todo "Please implement value"
