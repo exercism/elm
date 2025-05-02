@@ -433,7 +433,8 @@
           "let"
         ],
         "prerequisites": [
-          "comparison"
+          "comparison",
+          "let"
         ],
         "difficulty": 2
       },

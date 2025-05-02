@@ -5,10 +5,6 @@ import Expect
 import Test exposing (Test, describe, skip, test)
 
 
-
--- Return the correct amount earned by a dart's landing position.
-
-
 tests : Test
 tests =
     describe "Darts"
