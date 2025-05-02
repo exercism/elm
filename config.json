@@ -470,6 +470,22 @@
         "difficulty": 2
       },
       {
+        "slug": "resistor-color-trio",
+        "name": "Resistor Color Trio",
+        "uuid": "761f7552-c192-4d46-a21c-fa30c4788307",
+        "practices": [
+          "lists",
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "lists",
+          "basics-2",
+          "custom-types",
+          "pattern-matching"
+        ],
+        "difficulty": 2
+      },
+      {
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "2ce5bcba-c708-4da0-ae11-4654b3e0d0a5",
