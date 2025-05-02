@@ -629,8 +629,13 @@
         "slug": "square-root",
         "name": "Square Root",
         "uuid": "8960514f-17af-4009-b334-d6bfc4722c80",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "pattern-matching"
+        ],
+        "prerequisites": [
+          "basics-2",
+          "pattern-matching"
+        ],
         "difficulty": 2
       },
       {

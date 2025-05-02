@@ -20,8 +20,10 @@ squareRoot radicand =
 
                     else
                         improveGuess nextGuess
+
+                initialGuess =
+                    toFloat radicand / 2
             in
-            toFloat radicand
-                / 2
+            initialGuess
                 |> improveGuess
-                |> floor
+                |> round
