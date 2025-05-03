@@ -17,40 +17,45 @@ type Color
 label : List Color -> String
 label colors =
     let
-        raw =
-            colors |> rawValue |> toFloat
-
-        ( value, unit ) =
-            if raw >= 1.0e9 then
-                ( raw / 1.0e9, "gigaohms" )
-
-            else if raw >= 1.0e6 then
-                ( raw / 1.0e6, "megaohms" )
-
-            else if raw >= 1.0e3 then
-                ( raw / 1.0e3, "kiloohms" )
-
-            else
-                ( raw, "ohms" )
+        ( magnitude, unit ) =
+            colors |> totalResistance |> formatted
     in
-    String.fromInt (round value) ++ " " ++ unit
+    String.fromInt magnitude ++ " " ++ unit
 
 
-rawValue : List Color -> Int
-rawValue colors =
+formatted : Int -> ( Int, String )
+formatted resistance =
+    if resistance < 1000 then
+        ( resistance, "ohms" )
+
+    else if resistance < 1000000 then
+        ( resistance // 1000, "kiloohms" )
+
+    else if resistance < 1000000000 then
+        ( resistance // 1000000, "megaohms" )
+
+    else
+        ( resistance // 1000000000, "gigaohms" )
+
+
+totalResistance : List Color -> Int
+totalResistance colors =
     case colors of
         first :: second :: third :: _ ->
-            (colorCode first * 10 + colorCode second) * 10 ^ colorCode third
+            (bandValue first * 10 + bandValue second) * 10 ^ bandValue third
 
         first :: second :: [] ->
-            colorCode first * 10 + colorCode second
+            bandValue first * 10 + bandValue second
+
+        first :: [] ->
+            bandValue first
 
         _ ->
             -1
 
 
-colorCode : Color -> Int
-colorCode color =
+bandValue : Color -> Int
+bandValue color =
     case color of
         Black ->
             0
