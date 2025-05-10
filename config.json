@@ -1045,16 +1045,14 @@
         "name": "Gigasecond",
         "uuid": "5ddfed31-b787-48f9-b3bf-4a8d157d1c3d",
         "practices": [
-          "basics-1"
+          "time"
         ],
         "prerequisites": [
           "basics-1",
-          "basics-2"
+          "basics-2",
+          "time"
         ],
-        "difficulty": 1,
-        "topics": [
-          "dates"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "rna-transcription",
@@ -1548,8 +1546,11 @@
         "slug": "swift-scheduling",
         "name": "Swift Scheduling",
         "uuid": "d0438147-3983-47bf-a4db-27fb0f5ae90e",
-        "practices": [],
+        "practices": [
+          "time"
+        ],
         "prerequisites": [
+          "time",
           "strings",
           "records",
           "custom-types",
