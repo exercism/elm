@@ -391,12 +391,16 @@
       },
       {
         "slug": "kurokos-clock",
-        "name": "Write name from slug",
+        "name": "Kuroko's Clock",
         "uuid": "5fd8037b-df05-4e14-90e1-70f52487d14c",
         "concepts": [
           "time"
         ],
-        "prerequisites": [],
+        "prerequisites": [
+          "strings",
+          "custom-types",
+          "pattern-matching"
+        ],
         "status": "beta"
       }
     ],
