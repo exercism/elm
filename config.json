@@ -388,6 +388,16 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "kurokos-clock",
+        "name": "Write name from slug",
+        "uuid": "5fd8037b-df05-4e14-90e1-70f52487d14c",
+        "concepts": [
+          "time"
+        ],
+        "prerequisites": [],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1675,6 +1685,11 @@
       "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56",
       "slug": "json",
       "name": "JSON"
+    },
+    {
+      "slug": "time",
+      "name": "Time",
+      "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566"
     }
   ],
   "key_features": [
