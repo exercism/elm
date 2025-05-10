@@ -19,7 +19,7 @@ millisToPosix : Int -> Posix
 ## Time Zones
 
 In our day-to-day lives, we humans usually don't read `Posix` and instead prefer local time, which depends on our location on Earth, and local daylight-saving rules.
-In Elm, this information is encoded in the opaque type `Zone`, usually provided by a browser.
+In Elm, this information is encoded in the opaque type `Zone`, usually provided by the browser.
 
 There is a special `Zone` that is always accessible:
 

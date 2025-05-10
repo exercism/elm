@@ -4,7 +4,7 @@ Your Japanese friend Kuroko is a streamer with an international appeal.
 Kuroko's streaming schedule is pretty intricate, each stream seemingly starts at a different time every day.
 
 He asks for your help in building a small application that will display his schedule in his viewers' local time zones: Kuroko's Clock.
-He has an additional requirement: the app should be able to display the time two different languages: Japanese and US English.
+He has an additional requirement: the app should be able to display the time in two different languages: Japanese and US English.
 
 ## 1. It's a date
 
