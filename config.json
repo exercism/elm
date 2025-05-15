@@ -1692,9 +1692,9 @@
       "name": "JSON"
     },
     {
+      "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566",
       "slug": "time",
-      "name": "Time",
-      "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566"
+      "name": "Time"
     }
   ],
   "key_features": [

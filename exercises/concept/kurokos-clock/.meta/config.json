@@ -2,7 +2,6 @@
   "authors": [
     "jiegillet"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "src/KurokosClock.elm"

@@ -22,7 +22,7 @@ echo "Fetching latest version of configlet..."
 echo "Adding configuration files..."
 UUID=$(bin/configlet uuid)
 jq --arg slug "$CONCEPT_SLUG" --arg uuid "$UUID" \
-    '.concepts += [{slug: $slug, name: "Write name from slug", uuid: $uuid }]' \
+    '.concepts += [{uuid: $uuid, slug: $slug, name: "Write name from slug" }]' \
     config.json > config.json.tmp
 mv config.json.tmp config.json
 
