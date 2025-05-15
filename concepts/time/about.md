@@ -1,7 +1,7 @@
 # About
 
 The `Time` module is used to display human-readable dates / times.
-While it's technically possibly to manipulate times with `Time`, there are Elm community packages that are far more suited to the task.
+While it's technically possibly to manipulate times with `Time`, there are Elm community packages that are far more suited to the task, such as [`justinmimbs/date`][date] or [`CoderDennis/elm-time-format`][elm-time-format].
 
 ## Posix
 
@@ -51,3 +51,6 @@ type Weekday = Mon | Tue | Wed | Thu | Fri | Sat | Sun
 ```
 
 It is left to users to convert these custom types to human-readable values.
+
+[date]: https://package.elm-lang.org/packages/justinmimbs/date/latest
+[elm-time-format]: https://package.elm-lang.org/packages/CoderDennis/elm-time-format/latest
