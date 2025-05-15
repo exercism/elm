@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://guide.elm-lang.org/effects/time",
+    "description": "Official guide about using time in an Elm application"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/elm/time/latest/",
+    "description": "Documentation of the Time module"
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/justinmimbs/date/latest/",
+    "description": "Community package for working with dates without times or zones."
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/waratuman/time-extra/latest/",
+    "description": "Community package for manipulating Posix types."
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/CoderDennis/elm-time-format/latest/",
+    "description": "Community package for formatting dates and times with support for internationalization."
+  },
+  {
+    "url": "https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/",
+    "description": "Community package for parsing and rendering ISO-8601 date strings."
+  }
+]

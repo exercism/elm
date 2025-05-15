@@ -388,6 +388,20 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "kurokos-clock",
+        "name": "Kuroko's Clock",
+        "uuid": "5fd8037b-df05-4e14-90e1-70f52487d14c",
+        "concepts": [
+          "time"
+        ],
+        "prerequisites": [
+          "strings",
+          "custom-types",
+          "pattern-matching"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1031,16 +1045,14 @@
         "name": "Gigasecond",
         "uuid": "5ddfed31-b787-48f9-b3bf-4a8d157d1c3d",
         "practices": [
-          "basics-1"
+          "time"
         ],
         "prerequisites": [
           "basics-1",
-          "basics-2"
+          "basics-2",
+          "time"
         ],
-        "difficulty": 1,
-        "topics": [
-          "dates"
-        ]
+        "difficulty": 1
       },
       {
         "slug": "rna-transcription",
@@ -1534,8 +1546,11 @@
         "slug": "swift-scheduling",
         "name": "Swift Scheduling",
         "uuid": "d0438147-3983-47bf-a4db-27fb0f5ae90e",
-        "practices": [],
+        "practices": [
+          "time"
+        ],
         "prerequisites": [
+          "time",
           "strings",
           "records",
           "custom-types",
@@ -1675,6 +1690,11 @@
       "uuid": "afb8dec3-c776-4f46-a6ee-77d30963cf56",
       "slug": "json",
       "name": "JSON"
+    },
+    {
+      "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566",
+      "slug": "time",
+      "name": "Time"
     }
   ],
   "key_features": [
