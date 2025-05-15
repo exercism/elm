@@ -10,7 +10,9 @@ He has an additional requirement: the app should be able to display the time in 
 
 Define a function `showLocalDate : Locale -> Int -> Month -> Int -> String` which will display a (valid) local date.
 
-In the `US` locale, the format will be `M/D/Y`, while in the `JP` locale it will be `Y年M月D日`.
+In the `US` locale, the format will be `Month/Day/Year` without leading zeroes.
+
+In the `JP` locale, the format will be `Year年Month月Day日`, also without leading zeroes.
 
 ```elm
 showLocalDate US 2025 May 1
