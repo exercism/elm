@@ -1,6 +1,6 @@
 # About
 
-The `Time` module is used to display human-readable times.
+The `Time` module is used to display human-readable dates / times.
 While it's technically possibly to manipulate times with `Time`, there are Elm community packages that are far more suited to the task.
 
 ## Posix

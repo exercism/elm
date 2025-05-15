@@ -3,7 +3,7 @@
 ## General
 
 - Check out the [`elm/time` documentation][elm-time] for working with dates and times
-- The introduction introduces most of the necessary concepts to solve the exercise
+- The introduction showcases most of the necessary concepts to solve the exercise
 
 ## 1. It's a date
 
