@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "src/BirdCount.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "forked_from": [
+    "csharp/bird-watcher"
+  ],
+  "icon": "bird-watcher",
+  "blurb": "Learn about recursion by keeping track of how many birds visit your garden each day."
+}

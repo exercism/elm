@@ -402,6 +402,20 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "bird-count",
+        "name": "Bird Count",
+        "uuid": "8200e967-8183-4468-a0fc-5f58a38c25cb",
+        "concepts": [
+          "recursion"
+        ],
+        "prerequisites": [
+          "maybe",
+          "lists",
+          "pattern-matching"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -1713,6 +1727,11 @@
       "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566",
       "slug": "time",
       "name": "Time"
+    },
+    {
+      "uuid": "651a2eba-41d2-4b80-a861-7291536cad5c",
+      "slug": "recursion",
+      "name": "Recursion"
     }
   ],
   "key_features": [
