@@ -1733,6 +1733,11 @@
       "uuid": "651a2eba-41d2-4b80-a861-7291536cad5c",
       "slug": "recursion",
       "name": "Recursion"
+    },
+    {
+      "uuid": "edf8ab39-7e08-4dec-ae86-f1a14112e022",
+      "slug": "tail-call-recursion",
+      "name": "Tail Call Recursion"
     }
   ],
   "key_features": [
