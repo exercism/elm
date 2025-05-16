@@ -5,12 +5,6 @@ import SplitSecondStopwatch exposing (State(..), Stopwatch)
 import Test exposing (Test, describe, skip, test)
 
 
-type Output
-    = CurrentLap String
-    | PreviousLaps (List String)
-    | Total String
-
-
 tests : Test
 tests =
     describe "SplitSecondStopwatch"
@@ -337,37 +331,37 @@ tests =
                     in
                     [ stopwatch1
                         |> Result.map SplitSecondStopwatch.currentLap
-                        |> Result.map CurrentLap
+                        |> Result.map (\lap -> "currentLap: " ++ lap)
                     , stopwatch2
                         |> Result.map SplitSecondStopwatch.previousLaps
-                        |> Result.map PreviousLaps
+                        |> Result.map (\laps -> "previousLaps: " ++ String.join ", " laps)
                     , stopwatch3
                         |> Result.map SplitSecondStopwatch.currentLap
-                        |> Result.map CurrentLap
+                        |> Result.map (\lap -> "currentLap: " ++ lap)
                     , stopwatch3
                         |> Result.map SplitSecondStopwatch.total
-                        |> Result.map Total
+                        |> Result.map (\total -> "total: " ++ total)
                     , stopwatch4
                         |> Result.map SplitSecondStopwatch.previousLaps
-                        |> Result.map PreviousLaps
+                        |> Result.map (\laps -> "previousLaps: " ++ String.join ", " laps)
                     , stopwatch5
                         |> Result.map SplitSecondStopwatch.currentLap
-                        |> Result.map CurrentLap
+                        |> Result.map (\lap -> "currentLap: " ++ lap)
                     , stopwatch5
                         |> Result.map SplitSecondStopwatch.total
-                        |> Result.map Total
+                        |> Result.map (\total -> "total: " ++ total)
                     , stopwatch6
                         |> Result.map SplitSecondStopwatch.previousLaps
-                        |> Result.map PreviousLaps
+                        |> Result.map (\laps -> "previousLaps: " ++ String.join ", " laps)
                     ]
                         |> Expect.equalLists
-                            [ Ok (CurrentLap "01:23:45")
-                            , Ok (PreviousLaps [ "01:23:45" ])
-                            , Ok (CurrentLap "04:01:40")
-                            , Ok (Total "05:25:25")
-                            , Ok (PreviousLaps [ "01:23:45", "04:01:40" ])
-                            , Ok (CurrentLap "08:43:05")
-                            , Ok (Total "14:08:30")
-                            , Ok (PreviousLaps [ "01:23:45", "04:01:40", "08:43:05" ])
+                            [ Ok "currentLap: 01:23:45"
+                            , Ok "previousLaps: 01:23:45"
+                            , Ok "currentLap: 04:01:40"
+                            , Ok "total: 05:25:25"
+                            , Ok "previousLaps: 01:23:45, 04:01:40"
+                            , Ok "currentLap: 08:43:05"
+                            , Ok "total: 14:08:30"
+                            , Ok "previousLaps: 01:23:45, 04:01:40, 08:43:05"
                             ]
         ]
