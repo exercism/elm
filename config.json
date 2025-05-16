@@ -1558,6 +1558,24 @@
           "comparison"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "split-second-stopwatch",
+        "name": "Split-Second Stopwatch",
+        "uuid": "0945769a-6e67-409d-9f11-102112fb8be9",
+        "practices": [
+          "opaque-types"
+        ],
+        "prerequisites": [
+          "opaque-types",
+          "custom-types",
+          "pattern-matching",
+          "strings",
+          "lists",
+          "result",
+          "records"
+        ],
+        "difficulty": 4
       }
     ],
     "foregone": [
