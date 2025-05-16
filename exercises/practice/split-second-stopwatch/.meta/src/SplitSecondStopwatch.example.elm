@@ -22,84 +22,84 @@ type State
 
 type Stopwatch
     = Stopwatch
-        { state_ : State
-        , currentLap_ : Int
-        , previousLaps_ : List Int
+        { aState : State
+        , aCurrentLap : Int
+        , aPreviousLaps : List Int
         }
 
 
 new : Stopwatch
 new =
-    Stopwatch { state_ = Ready, currentLap_ = 0, previousLaps_ = [] }
+    Stopwatch { aState = Ready, aCurrentLap = 0, aPreviousLaps = [] }
 
 
 state : Stopwatch -> State
-state (Stopwatch { state_ }) =
-    state_
+state (Stopwatch { aState }) =
+    aState
 
 
 currentLap : Stopwatch -> String
-currentLap (Stopwatch { currentLap_ }) =
-    formatTime currentLap_
+currentLap (Stopwatch { aCurrentLap }) =
+    formatTime aCurrentLap
 
 
 previousLaps : Stopwatch -> List String
-previousLaps (Stopwatch { previousLaps_ }) =
-    previousLaps_
+previousLaps (Stopwatch { aPreviousLaps }) =
+    aPreviousLaps
         |> List.reverse
         |> List.map formatTime
 
 
 advanceTime : String -> Stopwatch -> Stopwatch
-advanceTime time (Stopwatch ({ state_, currentLap_ } as stopwatch)) =
-    case state_ of
+advanceTime time (Stopwatch ({ aState, aCurrentLap } as stopwatch)) =
+    case aState of
         Running ->
-            Stopwatch { stopwatch | currentLap_ = currentLap_ + parseTime time }
+            Stopwatch { stopwatch | aCurrentLap = aCurrentLap + parseTime time }
 
         _ ->
             Stopwatch stopwatch
 
 
 total : Stopwatch -> String
-total (Stopwatch { currentLap_, previousLaps_ }) =
-    (currentLap_ :: previousLaps_)
+total (Stopwatch { aCurrentLap, aPreviousLaps }) =
+    (aCurrentLap :: aPreviousLaps)
         |> List.sum
         |> formatTime
 
 
 start : Stopwatch -> Result String Stopwatch
-start (Stopwatch ({ state_ } as stopwatch)) =
-    case state_ of
+start (Stopwatch ({ aState } as stopwatch)) =
+    case aState of
         Running ->
             Err "cannot start an already running stopwatch"
 
         _ ->
-            Ok (Stopwatch { stopwatch | state_ = Running })
+            Ok (Stopwatch { stopwatch | aState = Running })
 
 
 stop : Stopwatch -> Result String Stopwatch
-stop (Stopwatch ({ state_ } as stopwatch)) =
-    case state_ of
+stop (Stopwatch ({ aState } as stopwatch)) =
+    case aState of
         Running ->
-            Ok (Stopwatch { stopwatch | state_ = Stopped })
+            Ok (Stopwatch { stopwatch | aState = Stopped })
 
         _ ->
             Err "cannot stop a stopwatch that is not running"
 
 
 lap : Stopwatch -> Result String Stopwatch
-lap (Stopwatch ({ state_, currentLap_, previousLaps_ } as stopwatch)) =
-    case state_ of
+lap (Stopwatch ({ aState, aCurrentLap, aPreviousLaps } as stopwatch)) =
+    case aState of
         Running ->
-            Ok (Stopwatch { stopwatch | currentLap_ = 0, previousLaps_ = currentLap_ :: previousLaps_ })
+            Ok (Stopwatch { stopwatch | aCurrentLap = 0, aPreviousLaps = aCurrentLap :: aPreviousLaps })
 
         _ ->
             Err "cannot lap a stopwatch that is not running"
 
 
 reset : Stopwatch -> Result String Stopwatch
-reset (Stopwatch { state_ }) =
-    case state_ of
+reset (Stopwatch { aState }) =
+    case aState of
         Stopped ->
             Ok new
 
