@@ -11,15 +11,11 @@ nextRow row =
 rows : Int -> List (List Int)
 rows n =
     let
-        loop i row =
-            if i == n then
-                []
+        loop i row rowsSoFar =
+            if i >= n then
+                List.reverse rowsSoFar
 
             else
-                row :: loop (i + 1) (nextRow row)
+                loop (i + 1) (nextRow row) (row :: rowsSoFar)
     in
-    if n < 0 then
-        []
-
-    else
-        loop 0 [ 1 ]
+    loop 0 [ 1 ] []

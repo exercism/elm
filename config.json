@@ -895,9 +895,11 @@
         "name": "Collatz Conjecture",
         "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
         "practices": [
-          "result"
+          "tail-call-recursion"
         ],
         "prerequisites": [
+          "recursion",
+          "tail-call-recursion",
           "result",
           "booleans"
         ],
@@ -908,11 +910,12 @@
         "name": "Binary Search",
         "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
         "practices": [
-          "comparison",
+          "tail-call-recursion",
           "array"
         ],
         "prerequisites": [
           "comparison",
+          "tail-call-recursion",
           "array",
           "maybe"
         ],
@@ -943,17 +946,16 @@
         "name": "Pascal's Triangle",
         "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
         "practices": [
-          "lists"
+          "tail-call-recursion"
         ],
         "prerequisites": [
           "lists",
           "booleans",
-          "let"
+          "let",
+          "recursion",
+          "tail-call-recursion"
         ],
-        "difficulty": 4,
-        "topics": [
-          "recursion"
-        ]
+        "difficulty": 4
       },
       {
         "slug": "roman-numerals",
