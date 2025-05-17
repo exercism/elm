@@ -58,7 +58,7 @@ countOccurrences list x =
 Due to immutability, loops in Elm are written differently from imperative languages.
 For example, loops commonly look like:
 
-```
+```c
 for(i = 0; i < array.length; i++) {
   // do something with array[i]
 }
