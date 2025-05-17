@@ -2,7 +2,7 @@
 
 ## General
 
-- Read about recursion [here][recursion].
+- Read about [recursion from the creator of Elm][recursion].
 - Use pattern matching with `case` expressions.
 - Try to split a problem into a base case and a recursive case. For example, let's say you want to count how many cookies are there in the cookie jar with a recursive approach. A base case is an empty jar - it has zero cookies. If the jar is not empty, then the number of cookies in the jar is equal to one cookie plus the number of cookies in the jar after removing one cookie.
 
