@@ -85,9 +85,9 @@ Under the hood, these functions are implemented using recursion.
 
 ## Infinite execution
 
-Recursive functions, if implemented incorrectly, might never return their result.
+Recursive functions, if implemented incorrectly or for a number of recursion calls too large, might never return their result.
 This can be problematic because each time a function is called, a reference is stored in memory where the runtime should return the result (on the [call stack][wiki-call-stack]).
-If a recursive function calls itself infinitely, it is possible to run out of memory causing the runtime to crash (a [stack overflow error][wiki-stack-overflow]).
+If a recursive function calls itself too much or even infinitely, it is possible to run out of memory causing the runtime to crash (a [stack overflow error][wiki-stack-overflow]).
 Elm's runtime is optimized for recursion and reliability, but infinite recursion can still cause issues.
 
 This problem of infinite execution can be caused by:
