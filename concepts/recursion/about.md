@@ -37,6 +37,8 @@ fibonacci n =
             fibonacci (n - 1) + fibonacci (n - 2)
 ```
 
+Note that this particular implementation is exponentially slow, since related Fibonacci numbers are being calculated from scratch in two independent recursive calls.
+
 Counting the number of occurrences of some given value `x` in a list has two recursive cases:
 
 ```elm
