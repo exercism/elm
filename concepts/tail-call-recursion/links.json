@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://functional-programming-in-elm.netlify.app/recursion/tail-call-elimination.html",
+    "description": "Tail-Call Elimination explained by the creator of Elm"
+  },
+  {
+    "url": "https://jfmengels.net/tail-call-optimization/",
+    "description": "Detailed explanation of tail-call optimization in Elm"
+  }
+]
