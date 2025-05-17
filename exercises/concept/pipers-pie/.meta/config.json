@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "src/PipersPie.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.elm"
+    ]
+  },
+  "blurb": "Learn to write tail-recursive functions in Elm"
+}

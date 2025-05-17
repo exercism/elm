@@ -416,6 +416,20 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "pipers-pie",
+        "name": "Piper's Pie",
+        "uuid": "1f54e219-3f76-4df8-996a-9308ce9d6458",
+        "concepts": [
+          "tail-call-recursion"
+        ],
+        "prerequisites": [
+          "let",
+          "recursion",
+          "basics-2"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
