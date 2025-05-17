@@ -8,7 +8,7 @@ You have chosen to store the data as a list of integers.
 The first number in the list is the number of birds that visited your garden today, the second yesterday, and so on.
 
 ```exercism/note
-For the purpose of learning about recursion, do not use any of the `List` functions in this exercise.
+In real-world applications, you should always use core modules whenever applicable, however for the purpose of learning about recursion, do not use any of the `List` functions in this exercise.
 ```
 
 ## 1. Check how many birds visited today
