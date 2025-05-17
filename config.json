@@ -402,6 +402,20 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "bird-count",
+        "name": "Bird Count",
+        "uuid": "8200e967-8183-4468-a0fc-5f58a38c25cb",
+        "concepts": [
+          "recursion"
+        ],
+        "prerequisites": [
+          "maybe",
+          "lists",
+          "pattern-matching"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -693,10 +707,11 @@
         "name": "Square Root",
         "uuid": "8960514f-17af-4009-b334-d6bfc4722c80",
         "practices": [
-          "pattern-matching"
+          "recursion"
         ],
         "prerequisites": [
           "basics-2",
+          "recursion",
           "pattern-matching"
         ],
         "difficulty": 2
@@ -706,9 +721,10 @@
         "name": "Twelve Days",
         "uuid": "50770287-c734-46ba-b3a1-c36d31b6cc3c",
         "practices": [
-          "strings"
+          "recursion"
         ],
         "prerequisites": [
+          "recursion",
           "booleans",
           "strings",
           "lists",
@@ -817,10 +833,11 @@
         "name": "Largest Series Product",
         "uuid": "1902d726-5a62-475b-b7d3-7188a50e717f",
         "practices": [
-          "strings",
+          "recursion",
           "lists"
         ],
         "prerequisites": [
+          "recursion",
           "strings",
           "lists"
         ],
@@ -1002,8 +1019,7 @@
         "name": "Say",
         "uuid": "ea41b90d-3ff5-43c0-94e5-6b436feb99e5",
         "practices": [
-          "array",
-          "strings"
+          "array"
         ],
         "prerequisites": [
           "array",
@@ -1076,20 +1092,13 @@
         "name": "Armstrong Numbers",
         "uuid": "2a71bafa-87ac-4f36-ba45-a1b24dcca67a",
         "practices": [
-          "strings",
-          "lists"
+          "recursion"
         ],
         "prerequisites": [
-          "strings",
+          "recursion",
           "lists"
         ],
-        "difficulty": 3,
-        "topics": [
-          "integers",
-          "lists",
-          "algorithms",
-          "math"
-        ]
+        "difficulty": 3
       },
       {
         "slug": "scrabble-score",
@@ -1273,9 +1282,7 @@
         "slug": "zebra-puzzle",
         "name": "Zebra Puzzle",
         "uuid": "b4734ab6-cedc-46eb-9648-d59b90f2596e",
-        "practices": [
-          "lists"
-        ],
+        "practices": [],
         "prerequisites": [
           "lists",
           "tuples",
@@ -1475,8 +1482,11 @@
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "e44952ec-185a-4c8e-9404-fb7b365e3961",
-        "practices": [],
+        "practices": [
+          "recursion"
+        ],
         "prerequisites": [
+          "recursion",
           "lists",
           "comparison",
           "dict",
@@ -1491,8 +1501,11 @@
         "slug": "food-chain",
         "name": "Food Chain",
         "uuid": "40e735ba-0bc7-436e-9c5f-5a8abdf8c436",
-        "practices": [],
+        "practices": [
+          "recursion"
+        ],
         "prerequisites": [
+          "recursion",
           "strings",
           "lists",
           "tuples",
@@ -1506,12 +1519,14 @@
         "name": "Knapsack",
         "uuid": "9bf186d3-e904-42f2-a705-dffbe98adb08",
         "practices": [
-          "records"
+          "records",
+          "recursion"
         ],
         "prerequisites": [
           "comparison",
           "lists",
-          "records"
+          "records",
+          "recursion"
         ],
         "difficulty": 7
       },
@@ -1713,6 +1728,11 @@
       "uuid": "9dbfbc83-7e02-4ab4-867a-52ecd2276566",
       "slug": "time",
       "name": "Time"
+    },
+    {
+      "uuid": "651a2eba-41d2-4b80-a861-7291536cad5c",
+      "slug": "recursion",
+      "name": "Recursion"
     }
   ],
   "key_features": [

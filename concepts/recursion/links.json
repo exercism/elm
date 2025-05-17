@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://functional-programming-in-elm.netlify.app/recursion/",
+    "description": "Recursion described by Evan Czaplicki, creator of Elm"
+  },
+  {
+    "url": "https://learnyouanelm.github.io/pages/05-recursion.html",
+    "description": "Recursion chapter from Learn You an Elm"
+  }
+]
