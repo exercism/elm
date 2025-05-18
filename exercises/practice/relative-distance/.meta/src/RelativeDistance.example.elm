@@ -75,7 +75,6 @@ bfs graph queue visited target =
         [] ->
             -1
 
-        -- out of connections
         ( current, distance ) :: rest ->
             if current == target then
                 distance
