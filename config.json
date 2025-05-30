@@ -1391,11 +1391,14 @@
         "name": "Relative Distance",
         "uuid": "9e401593-66c2-45ae-8e8b-c8416711d40f",
         "practices": [
-          "dict",
-          "maybe"
+          "dict"
         ],
         "prerequisites": [
-          "dict"
+          "dict",
+          "maybe",
+          "lists",
+          "set",
+          "pattern-matching"
         ],
         "difficulty": 5
       },

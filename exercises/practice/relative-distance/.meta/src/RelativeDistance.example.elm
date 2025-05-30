@@ -4,7 +4,7 @@ import Dict exposing (Dict)
 import Set exposing (Set)
 
 
-degreeOfSeparation : Dict String (List String) -> String -> String -> Int
+degreeOfSeparation : Dict String (List String) -> String -> String -> Maybe Int
 degreeOfSeparation familyTree personA personB =
     let
         tree =
@@ -14,50 +14,45 @@ degreeOfSeparation familyTree personA personB =
         findDegreeOfSeparation tree personA personB
 
     else
-        -1
+        Nothing
 
 
-bidirectionalTree : Dict String (List String) -> Dict String (List String)
+bidirectionalTree : Dict String (List String) -> Dict String (Set String)
 bidirectionalTree familyTree =
     let
         addRelationship from to tree =
             Dict.update from
                 (\maybeLinks ->
-                    case maybeLinks of
-                        Nothing ->
-                            Just [ to ]
-
-                        Just links ->
-                            if List.member to links then
-                                Just links
-
-                            else
-                                Just (to :: links)
+                    maybeLinks
+                        |> Maybe.map (Set.insert to)
+                        |> Maybe.withDefault (Set.singleton to)
+                        |> Just
                 )
                 tree
     in
-    Dict.foldl
-        (\parent children graph ->
-            List.foldl
-                (\child acc ->
-                    acc
-                        |> addRelationship parent child
-                        |> addRelationship child parent
-                        |> (\links ->
-                                List.foldl
-                                    (\sibling -> addRelationship child sibling)
-                                    links
-                                    (List.filter (\c -> c /= child) children)
-                           )
-                )
-                graph
-                children
-        )
-        Dict.empty
-        familyTree
+    familyTree
+        |> Dict.map (always Set.fromList)
+        |> Dict.foldl
+            (\parent children graph ->
+                Set.foldl
+                    (\child acc ->
+                        acc
+                            |> addRelationship parent child
+                            |> addRelationship child parent
+                            |> (\links ->
+                                    Set.foldl
+                                        (\sibling -> addRelationship child sibling)
+                                        links
+                                        (Set.remove child children)
+                               )
+                    )
+                    graph
+                    children
+            )
+            Dict.empty
 
 
-findDegreeOfSeparation : Dict String (List String) -> String -> String -> Int
+findDegreeOfSeparation : Dict String (Set String) -> String -> String -> Maybe Int
 findDegreeOfSeparation familyTree personA personB =
     let
         initialQueue =
@@ -69,34 +64,33 @@ findDegreeOfSeparation familyTree personA personB =
     bfs familyTree initialQueue initialVisited personB
 
 
-bfs : Dict String (List String) -> List ( String, Int ) -> Set String -> String -> Int
+bfs : Dict String (Set String) -> List ( String, Int ) -> Set String -> String -> Maybe Int
 bfs graph queue visited target =
     case queue of
         [] ->
-            -1
+            Nothing
 
         ( current, distance ) :: rest ->
             if current == target then
-                distance
+                Just distance
 
             else
-                case Dict.get current graph of
-                    Nothing ->
-                        bfs graph rest visited target
+                graph
+                    |> Dict.get current
+                    |> Maybe.andThen
+                        (\connections ->
+                            let
+                                nextConnection next ( currentQueue, alreadyVisited ) =
+                                    if Set.member next alreadyVisited then
+                                        ( currentQueue, alreadyVisited )
 
-                    -- dead end --
-                    Just connections ->
-                        let
-                            nextConnection next ( currentQueue, alreadyVisited ) =
-                                if Set.member next alreadyVisited then
-                                    ( currentQueue, alreadyVisited )
+                                    else
+                                        ( currentQueue ++ [ ( next, distance + 1 ) ]
+                                        , Set.insert next alreadyVisited
+                                        )
 
-                                else
-                                    ( currentQueue ++ [ ( next, distance + 1 ) ]
-                                    , Set.insert next alreadyVisited
-                                    )
-
-                            ( newQueue, newVisited ) =
-                                List.foldl nextConnection ( rest, visited ) connections
-                        in
-                        bfs graph newQueue newVisited target
+                                ( newQueue, newVisited ) =
+                                    Set.foldl nextConnection ( rest, visited ) connections
+                            in
+                            bfs graph newQueue newVisited target
+                        )

@@ -19,7 +19,7 @@ tests =
                     )
                     "Vera"
                     "Tomoko"
-                    |> Expect.equal 1
+                    |> Expect.equal (Just 1)
         , skip <|
             test "Sibling relationship" <|
                 \() ->
@@ -29,7 +29,7 @@ tests =
                         )
                         "Olga"
                         "Yassin"
-                        |> Expect.equal 1
+                        |> Expect.equal (Just 1)
         , skip <|
             test "Two degrees of separation, grandchild" <|
                 \() ->
@@ -41,7 +41,7 @@ tests =
                         )
                         "Khadija"
                         "Rami"
-                        |> Expect.equal 2
+                        |> Expect.equal (Just 2)
         , skip <|
             test "Unrelated individuals" <|
                 \() ->
@@ -53,7 +53,7 @@ tests =
                         )
                         "Priya"
                         "Kaito"
-                        |> Expect.equal -1
+                        |> Expect.equal Nothing
         , skip <|
             test "Complex graph, cousins" <|
                 \() ->
@@ -115,7 +115,7 @@ tests =
                         )
                         "Dimitri"
                         "Fabio"
-                        |> Expect.equal 9
+                        |> Expect.equal (Just 9)
         , skip <|
             test "Complex graph, no shortcut, far removed nephew" <|
                 \() ->
@@ -177,7 +177,7 @@ tests =
                         )
                         "Lucia"
                         "Jun"
-                        |> Expect.equal 14
+                        |> Expect.equal (Just 14)
         , skip <|
             test "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree" <|
                 \() ->
@@ -238,5 +238,5 @@ tests =
                         )
                         "Wyatt"
                         "Xia"
-                        |> Expect.equal 12
+                        |> Expect.equal (Just 12)
         ]
