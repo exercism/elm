@@ -1398,7 +1398,8 @@
           "maybe",
           "lists",
           "set",
-          "pattern-matching"
+          "pattern-matching",
+          "recursion"
         ],
         "difficulty": 5
       },
