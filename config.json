@@ -416,6 +416,20 @@
           "pattern-matching"
         ],
         "status": "beta"
+      },
+      {
+        "slug": "pipers-pie",
+        "name": "Piper's Pie",
+        "uuid": "1f54e219-3f76-4df8-996a-9308ce9d6458",
+        "concepts": [
+          "tail-call-recursion"
+        ],
+        "prerequisites": [
+          "let",
+          "recursion",
+          "basics-2"
+        ],
+        "status": "beta"
       }
     ],
     "practice": [
@@ -881,9 +895,11 @@
         "name": "Collatz Conjecture",
         "uuid": "0edd5fa2-f1db-4572-9810-55a2c6729753",
         "practices": [
-          "result"
+          "tail-call-recursion"
         ],
         "prerequisites": [
+          "recursion",
+          "tail-call-recursion",
           "result",
           "booleans"
         ],
@@ -894,11 +910,12 @@
         "name": "Binary Search",
         "uuid": "5c859d35-f2fe-455c-a7d7-df9398355403",
         "practices": [
-          "comparison",
+          "tail-call-recursion",
           "array"
         ],
         "prerequisites": [
           "comparison",
+          "tail-call-recursion",
           "array",
           "maybe"
         ],
@@ -929,17 +946,16 @@
         "name": "Pascal's Triangle",
         "uuid": "b7e456d7-e383-4e03-9126-c9b57c1287e1",
         "practices": [
-          "lists"
+          "tail-call-recursion"
         ],
         "prerequisites": [
           "lists",
           "booleans",
-          "let"
+          "let",
+          "recursion",
+          "tail-call-recursion"
         ],
-        "difficulty": 4,
-        "topics": [
-          "recursion"
-        ]
+        "difficulty": 4
       },
       {
         "slug": "roman-numerals",
@@ -1750,6 +1766,11 @@
       "uuid": "651a2eba-41d2-4b80-a861-7291536cad5c",
       "slug": "recursion",
       "name": "Recursion"
+    },
+    {
+      "uuid": "edf8ab39-7e08-4dec-ae86-f1a14112e022",
+      "slug": "tail-call-recursion",
+      "name": "Tail Call Recursion"
     }
   ],
   "key_features": [
