@@ -1403,6 +1403,23 @@
         "difficulty": 5
       },
       {
+        "slug": "relative-distance",
+        "name": "Relative Distance",
+        "uuid": "9e401593-66c2-45ae-8e8b-c8416711d40f",
+        "practices": [
+          "dict"
+        ],
+        "prerequisites": [
+          "dict",
+          "maybe",
+          "lists",
+          "set",
+          "pattern-matching",
+          "recursion"
+        ],
+        "difficulty": 5
+      },
+      {
         "slug": "yacht",
         "name": "Yacht",
         "uuid": "394ef7c1-e4b3-484f-a1a3-754870335423",
