@@ -45,3 +45,4 @@ This would not be possible for a function with the type signature `Int -> Int`, 
 
 [recursion-tc]: https://en.wikipedia.org/wiki/Tail_call
 [call-stack]: https://en.wikipedia.org/wiki/Call_stack
+[tail-call-optimization]: https://jfmengels.net/tail-call-optimization/
