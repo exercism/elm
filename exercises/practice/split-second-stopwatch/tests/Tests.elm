@@ -362,6 +362,6 @@ tests =
                             , Ok "previousLaps: 01:23:45, 04:01:40"
                             , Ok "currentLap: 08:43:05"
                             , Ok "total: 14:08:30"
-                            , Ok "previousLaps: 01:23:45, 04:01:40, 08:43:05"
+                            , Ok "previousLaps: 04:01:40, 01:23:45, 08:43:05"
                             ]
         ]
