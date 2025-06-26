@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "src/FlowerField.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/FlowerField.example.elm"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}

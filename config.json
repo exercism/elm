@@ -1372,9 +1372,9 @@
         "difficulty": 8
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "c4e75eb8-6e26-4582-95b6-7ea3205ede6e",
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "e26395e9-2fed-4ede-8175-5e9d7c556566",
         "practices": [
           "dict"
         ],
@@ -1387,6 +1387,15 @@
           "dict"
         ],
         "difficulty": 5
+      },
+      {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "c4e75eb8-6e26-4582-95b6-7ea3205ede6e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5,
+        "status": "deprecated"
       },
       {
         "slug": "protein-translation",
