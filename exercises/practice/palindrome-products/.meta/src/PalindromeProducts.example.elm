@@ -1,7 +1,7 @@
 module PalindromeProducts exposing (largest, smallest)
 
 import Array exposing (Array)
-import Set exposing (Set)
+import Set
 
 
 type alias PalindromeProduct =
