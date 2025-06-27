@@ -595,11 +595,15 @@
         "name": "Eliud's Eggs",
         "uuid": "058c69bd-9c1a-45f0-a94f-62be9f0c9e4e",
         "practices": [
-          "basics-2"
+          "basics-2",
+          "recursion",
+          "tail-call-recursion"
         ],
         "prerequisites": [
           "basics-1",
-          "basics-2"
+          "basics-2",
+          "recursion",
+          "tail-call-recursion"
         ],
         "difficulty": 2
       },
