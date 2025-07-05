@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/PalindromeProducts.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/PalindromeProducts.example.elm"
+    ]
+  },
+  "blurb": "Detect palindrome products in a given range.",
+  "source": "Problem 4 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=4"
+}
