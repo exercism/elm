@@ -1637,6 +1637,29 @@
           "records"
         ],
         "difficulty": 4
+      },
+      {
+        "slug": "palindrome-products",
+        "name": "Palindrome Products",
+        "uuid": "3ef15a49-8f28-4a27-aa83-695db65177f9",
+        "practices": [
+          "tail-call-recursion"
+        ],
+        "prerequisites": [
+          "recursion",
+          "tail-call-recursion",
+          "lists",
+          "records",
+          "result",
+          "pattern-matching",
+          "custom-types",
+          "comparison",
+          "maybe",
+          "set",
+          "array",
+          "strings"
+        ],
+        "difficulty": 8
       }
     ],
     "foregone": [
