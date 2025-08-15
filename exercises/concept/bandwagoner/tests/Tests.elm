@@ -11,81 +11,81 @@ tests =
         [ describe "1"
             [ test "has Coach type alias with correct fields in correct order" <|
                 \_ ->
-                    Coach "Steve Kerr" True
+                    { name = "Steve Kerr", formerPlayer = True }
                         |> Expect.equal { name = "Steve Kerr", formerPlayer = True }
             , test "has Stats type alias with correct fields in correct order" <|
                 \_ ->
-                    Stats 55 27
+                    { wins = 55, losses = 27 }
                         |> Expect.equal { wins = 55, losses = 27 }
             , test "has Team type alias with correct fields in correct order" <|
                 \_ ->
                     let
                         coach =
-                            Coach "Red Auerbach" False
+                            { name = "Red Auerbach", formerPlayer = False }
 
                         stats =
-                            Stats 58 22
+                            { wins = 58, losses = 22 }
 
                         team =
                             { name = "Boston Celtics", coach = coach, stats = stats }
                     in
-                    Expect.equal team (Team "Boston Celtics" coach stats)
+                    Expect.equal team { name = "Boston Celtics", coach = coach, stats = stats }
             ]
         , describe "2"
             [ test "createTeam creates a Team structural type" <|
                 \_ ->
                     let
                         coach =
-                            Coach "Red Auerbach" False
+                            { name = "Red Auerbach", formerPlayer = False }
 
                         stats =
-                            Stats 58 22
+                            { wins = 58, losses = 22 }
 
                         team =
                             createTeam "Boston Celtics" stats coach
                     in
-                    Expect.equal team (Team "Boston Celtics" coach stats)
+                    Expect.equal team { name = "Boston Celtics", coach = coach, stats = stats }
             ]
         , describe "3"
             [ test "can replace coach for a team" <|
                 \_ ->
                     let
                         coach =
-                            Coach "Willis Reed" True
+                            { name = "Willis Reed", formerPlayer = True }
 
                         newCoach =
-                            Coach "Red Holzman" True
+                            { name = "Red Holzman", formerPlayer = True }
 
                         stats =
-                            Stats 6 8
+                            { wins = 6, losses = 8 }
 
                         team =
-                            Team "New York Knicks" coach stats
+                            { name = "New York Knicks", coach = coach, stats = stats }
 
                         newTeam =
                             replaceCoach newCoach team
                     in
-                    Expect.equal newTeam (Team "New York Knicks" newCoach stats)
+                    Expect.equal newTeam { name = "New York Knicks", coach = newCoach, stats = stats }
             ]
         , describe "4"
             [ test "should root for teams that have more wins than losses" <|
                 \_ ->
-                    Team "" (Coach "" True) (Stats 1 0)
+                    { name = "", coach = { name = "", formerPlayer = True }, stats = { wins = 1, losses = 0 } }
                         |> rootForTeam
                         |> Expect.equal True
             , test "should not root for teams that lose more than they win" <|
                 \_ ->
-                    Team "" (Coach "" True) (Stats 43 44)
+                    { name = "", coach = { name = "", formerPlayer = True }, stats = { wins = 43, losses = 44 } }
                         |> rootForTeam
                         |> Expect.equal False
             , test "should not root for teams that have equal losses and wins" <|
                 \_ ->
-                    Team "" (Coach "" True) (Stats 143 143)
+                    { name = "", coach = { name = "", formerPlayer = True }, stats = { wins = 143, losses = 143 } }
                         |> rootForTeam
                         |> Expect.equal False
             , test "should root for extended teams that have more wins than losses" <|
                 \_ ->
-                    { name = "", coach = Coach "" True, stats = Stats 1 0, someOtherField = "" }
+                    { name = "", coach = { name = "", formerPlayer = True }, stats = { wins = 1, losses = 0 }, someOtherField = "" }
                         |> rootForTeam
                         |> Expect.equal True
             ]
