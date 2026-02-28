@@ -11,10 +11,24 @@ tests =
         [ test "just a number" <|
             \() ->
                 Expect.equal (Just 5) <| answer "What is 5?"
+        , test "just a zero" <|
+            \() ->
+                Expect.equal (Just 0) <| answer "What is 0?"
+        , test "just a negative number" <|
+            \() ->
+                Expect.equal (Just -123) <| answer "What is -123?"
         , skip <|
             test "addition" <|
                 \() ->
                     Expect.equal (Just 2) <| answer "What is 1 plus 1?"
+        , skip <|
+            test "addition with a left hand zero" <|
+                \() ->
+                    Expect.equal (Just 2) <| answer "What is 0 plus 2?"
+        , skip <|
+            test "addition with a right hand zero" <|
+                \() ->
+                    Expect.equal (Just 3) <| answer "What is 3 plus 0?"
         , skip <|
             test "more addition" <|
                 \() ->
