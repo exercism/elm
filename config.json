@@ -1660,6 +1660,28 @@
           "strings"
         ],
         "difficulty": 8
+      },
+      {
+        "slug": "camicia",
+        "name": "Camicia",
+        "uuid": "e719ea76-2ada-4360-b5f9-5e7a538a3505",
+        "practices": [
+          "tail-call-recursion"
+        ],
+        "prerequisites": [
+          "recursion",
+          "tail-call-recursion",
+          "lists",
+          "records",
+          "pattern-matching",
+          "custom-types",
+          "comparison",
+          "set",
+          "let",
+          "booleans",
+          "tuples"
+        ],
+        "difficulty": 7
       }
     ],
     "foregone": [
