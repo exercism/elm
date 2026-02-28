@@ -105,4 +105,8 @@ tests =
 112*4*
 1*22*2
 111111"""
+        , skip <|
+            test "multiple adjacent flowers" <|
+                \() ->
+                    FlowerField.annotate " ** " |> Expect.equal "1**1"
         ]

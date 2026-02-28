@@ -39,6 +39,16 @@ tests =
                     TwoBucket.measure 2 3 3 One
                         |> Expect.equal (Just { moves = 2, bucketOne = 2, bucketTwo = 3 })
         , skip <|
+            test "Measure using bucket one much bigger than bucket two" <|
+                \() ->
+                    TwoBucket.measure 5 1 2 One
+                        |> Expect.equal (Just { moves = 6, bucketOne = 2, bucketTwo = 1 })
+        , skip <|
+            test "Measure using bucket one much smaller than bucket two" <|
+                \() ->
+                    TwoBucket.measure 3 15 9 One
+                        |> Expect.equal (Just { moves = 6, bucketOne = 0, bucketTwo = 9 })
+        , skip <|
             test "Not possible to reach the goal" <|
                 \() ->
                     TwoBucket.measure 6 15 5 One
