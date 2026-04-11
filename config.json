@@ -1682,6 +1682,27 @@
           "tuples"
         ],
         "difficulty": 7
+      },
+      {
+        "slug": "hangman",
+        "name": "Hangman",
+        "uuid": "aeb89f0f-d924-4dd4-8ec8-5a74368875f0",
+        "practices": [
+          "web-applications-sandbox"
+        ],
+        "prerequisites": [
+          "web-applications-sandbox",
+          "strings",
+          "lists",
+          "records",
+          "custom-types",
+          "pattern-matching",
+          "let",
+          "booleans",
+          "maybe",
+          "tuples"
+        ],
+        "difficulty": 5
       }
     ],
     "foregone": [
