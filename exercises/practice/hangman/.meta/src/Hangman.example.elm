@@ -1,7 +1,6 @@
 module Hangman exposing (Msg(..), init, update, view)
 
 import Html exposing (Html)
-import Html.Attributes
 
 
 type State
@@ -57,7 +56,7 @@ update msg model =
 
 
 guess : Char -> Model -> Model
-guess letter ({ state, word, maskedWord, remainingFailures } as model) =
+guess letter ({ word, maskedWord, remainingFailures } as model) =
     if List.member letter word then
         let
             revealLetter wordChar maskedChar =
@@ -91,7 +90,7 @@ guess letter ({ state, word, maskedWord, remainingFailures } as model) =
 
 
 view : Model -> Html Msg
-view { state, word, maskedWord, remainingFailures, error } =
+view { state, maskedWord, remainingFailures, error } =
     case error of
         Just errorMessage ->
             Html.div [] [ Html.p [] [ Html.text errorMessage ] ]

@@ -1,7 +1,6 @@
 module Hangman exposing (Msg(..), init, update, view)
 
 import Html exposing (Html)
-import Html.Attributes
 
 
 
