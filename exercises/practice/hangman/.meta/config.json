@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "files": {
+    "solution": [
+      "src/Hangman.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Hangman.example.elm"
+    ]
+  },
+  "blurb": "Implement the logic of the hangman game using the Elm Architecture."
+}
