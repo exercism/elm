@@ -14,8 +14,7 @@ type State
 
 
 type alias Model =
-    { state : State
-    , word : List Char
+    { word : List Char
     , maskedWord : List Char
     , remainingFailures : Int
     , error : Maybe String
@@ -24,8 +23,7 @@ type alias Model =
 
 init : String -> Model
 init word =
-    { state = Ongoing
-    , word = String.toList word
+    { word = String.toList word
     , maskedWord = List.repeat (String.length word) '_'
     , remainingFailures = 9
     , error = Nothing
@@ -44,7 +42,7 @@ update : Msg -> Model -> Model
 update msg model =
     case msg of
         Guess letter ->
-            case model.state of
+            case getState model of
                 Win ->
                     { model | error = Just "cannot guess after the game is won" }
 
@@ -53,6 +51,18 @@ update msg model =
 
                 Ongoing ->
                     guess letter model
+
+
+getState : Model -> State
+getState { word, maskedWord, remainingFailures } =
+    if List.all (\c -> c == '_') word then
+        Win
+
+    else if remainingFailures < 0 then
+        Lose
+
+    else
+        Ongoing
 
 
 guess : Char -> Model -> Model
@@ -68,18 +78,8 @@ guess letter ({ word, maskedWord, remainingFailures } as model) =
 
             ( newWord, newMaskedWord ) =
                 List.map2 revealLetter word maskedWord |> List.unzip
-
-            newState =
-                if List.all (\c -> c == '_') newWord then
-                    Win
-
-                else
-                    Ongoing
         in
-        { model | maskedWord = newMaskedWord, word = newWord, state = newState }
-
-    else if remainingFailures == 0 then
-        { model | state = Lose }
+        { model | maskedWord = newMaskedWord, word = newWord }
 
     else
         { model | remainingFailures = remainingFailures - 1 }
@@ -90,7 +90,7 @@ guess letter ({ word, maskedWord, remainingFailures } as model) =
 
 
 view : Model -> Html Msg
-view { state, maskedWord, remainingFailures, error } =
+view ({ maskedWord, remainingFailures, error } as model) =
     case error of
         Just errorMessage ->
             Html.div [] [ Html.p [] [ Html.text errorMessage ] ]
@@ -99,11 +99,11 @@ view { state, maskedWord, remainingFailures, error } =
             Html.div []
                 [ Html.dl []
                     [ Html.dt [] [ Html.text "State" ]
-                    , Html.dd [] [ Html.text (viewState state) ]
+                    , Html.dd [] [ Html.text (viewState (getState model)) ]
                     , Html.dt [] [ Html.text "Word" ]
                     , Html.dd [] [ Html.text (String.fromList maskedWord) ]
                     , Html.dt [] [ Html.text "Remaining failures" ]
-                    , Html.dd [] [ Html.text (String.fromInt remainingFailures) ]
+                    , Html.dd [] [ Html.text (String.fromInt (max 0 remainingFailures)) ]
                     ]
                 ]
 
