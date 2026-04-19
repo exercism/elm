@@ -54,7 +54,7 @@ update msg model =
 
 
 getState : Model -> State
-getState { word, maskedWord, remainingFailures } =
+getState { word, remainingFailures } =
     if List.all (\c -> c == '_') word then
         Win
 
