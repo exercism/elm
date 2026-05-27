@@ -1,6 +1,6 @@
 # Instructions Append
 
-## Note
+## Track specific instructions
 
 ```exercism/note
 Naive solutions may take a long time to pass the tests involving four digit factors, likely longer than the time limit allocated to the online test runner.

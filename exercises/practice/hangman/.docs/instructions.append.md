@@ -1,6 +1,6 @@
 # Instructions Append
 
-## Implementation
+## Track specific instructions
 
 Historically, Elm was using functional reactive programming until it specialized to using the Elm Architecture.
 

@@ -1,6 +1,6 @@
 # Instructions Append
 
-## Note
+## Track specific instructions
 
 ```exercism/note
 `elm/time` is meant to display a time provided by the browser, not to manipulate dates and times.
