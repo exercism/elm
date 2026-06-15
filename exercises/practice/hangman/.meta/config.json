@@ -13,5 +13,5 @@
       ".meta/src/Hangman.example.elm"
     ]
   },
-  "blurb": "Implement the logic of the hangman game using the Elm Architecture."
+  "blurb": "Implement the logic of the hangman game using functional reactive programming."
 }
