@@ -118,7 +118,7 @@ Decode.decodeString decodeUser
 ## 4. I'm a strong independent comment
 
 Some comments in a pull review are standalone, and therefore do not have a `pull_request_review_id`.
-However, the specification mention that in such a case, there should still be a `pull_request_review_id` field, but the value should be `null`, the poor man's `Nothing`.
+However, the specification mentions that in such a case, there should still be a `pull_request_review_id` field, but the value should be `null`, the poor man's `Nothing`.
 
 Define `decodePullRequestReviewId` so that it can decode an integer in the `pull_request_review_id` field if there is one.
 If there is no integer, there should be a `null`, if there is no `null` the decoder should fail.
