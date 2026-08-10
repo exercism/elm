@@ -8,4 +8,4 @@ Square 1 has one grain, square 2 has two grains, square 3 has four grains, and s
 Write code that calculates:
 
 - the number of grains on a given square
-
+- the total number of grains on the chessboard
