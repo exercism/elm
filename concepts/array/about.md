@@ -68,7 +68,7 @@ oneTwo = Array.fromList [ 1, 2 ]
 Array.length oneTwo --> 2
 ```
 
-Any function/operator that appears to modify an `Array`` (such as adding an element), will actually return a new `Array`.
+Any function/operator that appears to modify an `Array` (such as adding an element), will actually return a new `Array`.
 Performance is usually not an issue though, as the implementation of `Array` prevents unnecessary allocations/copies.
 
 [array]: https://elmprogramming.com/array.html
