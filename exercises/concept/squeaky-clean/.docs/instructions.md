@@ -36,7 +36,7 @@ clean3 "à-ḃç"
 
 ## 4. Omit digits 
 
-Implement 'clean4` to do everything the previous function does and omit all digits.
+Implement `clean4` to do everything the previous function does and omit all digits.
 
 ```elm
 clean4 "123"
