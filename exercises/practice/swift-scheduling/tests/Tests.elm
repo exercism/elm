@@ -217,4 +217,17 @@ tests =
                             , Time.toMinute Time.utc >> Expect.equal 0
                             , Time.toSecond Time.utc >> Expect.equal 0
                             ]
+        , skip <|
+            test "Q2 starting in the last month of the second quarter translates to the last workday of the second quarter of this year" <|
+                \() ->
+                    -- 2019-06-15T09:50:00
+                    SwiftScheduling.deliveryDate (Time.millisToPosix 1560592200000) "Q2"
+                        |> Expect.all
+                            [ Time.toYear Time.utc >> Expect.equal 2019
+                            , Time.toMonth Time.utc >> Expect.equal Jun
+                            , Time.toDay Time.utc >> Expect.equal 28
+                            , Time.toHour Time.utc >> Expect.equal 8
+                            , Time.toMinute Time.utc >> Expect.equal 0
+                            , Time.toSecond Time.utc >> Expect.equal 0
+                            ]
         ]
