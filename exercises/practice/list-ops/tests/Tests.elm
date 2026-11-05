@@ -22,6 +22,9 @@ tests =
             , skip <|
                 test "non-empty list" <|
                     \() -> Expect.equal [ 4, 3, 2, 1 ] (ListOps.reverse (List.range 1 4))
+            , skip <|
+                test "non-empty odd-length list" <|
+                    \() -> Expect.equal [ 13, 11, 9, 7, 5, 3, 1 ] (ListOps.reverse [ 1, 3, 5, 7, 9, 11, 13 ])
             ]
         , describe "map"
             [ skip <|
