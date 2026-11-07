@@ -1,0 +1,19 @@
+mostCommonWord : String -> String
+mostCommonWord text =
+    let
+        addWord word counts =
+            Dict.insert word (Maybe.withDefault 0 (Dict.get word counts) + 1) counts
+
+        pickBest word count ( best, bestCount ) =
+            if count > bestCount then
+                ( word, count )
+
+            else
+                ( best, bestCount )
+
+        ( winner, total ) =
+            String.words (String.toLower text)
+                |> List.foldl addWord Dict.empty
+                |> Dict.foldl pickBest ( "", 0 )
+    in
+    "\"" ++ winner ++ "\" appears " ++ String.fromInt total ++ " times"
