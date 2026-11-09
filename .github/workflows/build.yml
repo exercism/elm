@@ -50,3 +50,18 @@ jobs:
 
       - name: Run tests for all exercises
         run: bin/analyze-all-exercises-in-docker.sh
+
+  tests:
+    name: Tests
+    needs: ci
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check that every Node.js version passed
+        env:
+          RESULT: ${{ needs.ci.result }}
+        run: |
+          if [[ "$RESULT" != "success" ]]; then
+            echo "The exercise tests failed on at least one Node.js version."
+            exit 1
+          fi
