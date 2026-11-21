@@ -32,7 +32,7 @@ The implementation above is not tail recursive, because the last operation in th
 ```elm
 factorial : Int -> Int
 factorial n =
-  factorialHelper n n
+  factorialHelper n 1
 
 factorialHelper : Int -> Int -> Int
 factorialHelper n resultSoFar =
